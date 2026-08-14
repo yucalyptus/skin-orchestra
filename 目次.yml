@@ -1,0 +1,139 @@
+# 目次 ―― セクション・部・並び順の正典。順番を持つのはこのファイルだけ。
+#
+# 章を足す   : chapters に id を1行足し、chapters/ に同じ id を持つmdを置く
+# 章を動かす : この行を動かす
+# 章を分ける : id を2つにして両方の行を置く
+# ここ以外（ファイル名・本文・図・URL）は一切触らなくてよい。
+#
+# id は公開URLになる（例: glycolysis → glycolysis.html）。
+# 一度公開した id は変えない。変えると読者のリンクが切れる。
+#
+# 構造は2階層。section（読者に見せる大区分）> part（部）> 章。
+# part を持たない section は、章を直下に置く（美容内科・おわりに）。
+
+sections:
+
+  # =========================================================================
+  - section: 基礎
+    subtitle: 細胞のしくみを思い出す
+    parts:
+
+      - part: 細胞の地図
+        intro: 美容医療が相手にしている細胞を確認し、細胞の中の分担を見ます。
+        chapters:
+          - cell                      # 細胞とは何か
+          - organelles                # オルガネラ
+          - cell-types                # 細胞はどう仕事を分担するか
+
+      - part: 情報をどう読むか
+        intro: 同じDNAを持つ細胞が、なぜ違うものを作るのか。転写・翻訳・エピゲノム・受容体・膜輸送まで、「読む」「伝える」「出入りする」を通します。
+        chapters:
+          - dna-to-protein            # DNAからタンパク質まで
+          - epigenome                 # エピゲノム
+          - receptors-signaling       # 受容体と細胞内シグナル
+          - membrane-transport        # 細胞膜と物質輸送
+
+      - part: エネルギー
+        intro: 細胞の活動はすべてATPを使います。ではそのATPはどこから来るのか。解糖系からNAD⁺まで、一本の流れとしてたどります。
+        chapters:
+          - atp                       # 代謝とATP
+          - glycolysis                # 解糖系
+          - tca-cycle                 # TCA回路
+          - electron-transport        # 電子伝達系
+          - oxidative-stress          # 酸化ストレスと抗酸化
+          - nad                       # NAD⁺
+
+      - part: 材料を感知し作る
+        intro: エネルギーと並ぶもう一つの前提が材料です。アミノ酸と、材料と成長刺激がそろったかを判定して合成を始めるmTORC1を見ます。「エネルギーがある」と「材料がそろい、作る指令が出る」は別です。
+        chapters:
+          - amino-acids               # アミノ酸は材料でありシグナルでもある
+          - mtorc1                    # mTORC1はアミノ酸をどう感知するか
+
+      - part: 掃除と作り直し
+        intro: 作る話の裏側です。壊して再利用する仕組みと、ミトコンドリアの回転。品質は「量」ではなく「回っているか」で決まります。
+        chapters:
+          - autophagy                 # オートファジーとリソソーム
+          - mito-quality-control      # ミトコンドリア品質管理
+          - ampk-mtor                 # AMPKとmTOR
+
+      - part: 傷つくとどうなるか
+        intro: 細胞周期・細胞死・炎症と創傷治癒・血管・ECM。施術後に組織で起きることの土台がここに揃います。
+        chapters:
+          - cell-cycle                # 細胞周期
+          - cell-death                # 細胞死
+          - wound-healing             # 炎症と創傷治癒
+          - endothelium               # 血管と内皮
+          - ecm                       # ECMとmechanotransduction
+
+      - part: 加齢で何が変わるか
+        intro: ここまでの機序を、加齢の側から整理し直します。Hallmarks of Aging・細胞老化・ミトコンドリア機能不全として一つの絵につなぎます。
+        chapters:
+          - hallmarks-of-aging        # Hallmarks of Aging
+          - senescence                # 細胞老化
+          - mito-dysfunction          # ミトコンドリア機能不全と細胞老化
+
+  # =========================================================================
+  - section: 美容皮膚科
+    subtitle: 局所に施術する
+    parts:
+
+      # 治療は出さない。各論を読むための土台。
+      - part: 皮膚・脂肪・筋の生化学
+        intro: 治療の前に、扱う組織そのものを見ます。真皮の二本柱、糖化、脂肪、筋、皮脂、血管、メラノサイト。ここに治療は出てきません。
+        chapters:
+          - fibroblast-collagen       # 線維芽細胞とコラーゲン
+          - elastic-fibers            # 弾性線維と膠原線維
+          - glycation                 # 糖化とAGE
+          - adipose                   # 脂肪
+          - muscle                    # 筋肉
+          - sagging                   # たるみの多層構造（上の3層を束ねるのでここ）
+          - sebum                     # 皮脂分泌の生化学
+          - erythema                  # 赤みの生化学
+          - melanocytes               # メラノサイトと色素形成
+
+      - part: 外用
+        intro: 角層という関門を越えて分子を届ける治療です。届いた先で、細胞の何を書き換えるのかで剤が分かれます。
+        chapters:
+          - retinoids                 # レチノイド外用の生化学
+          - skin-lightening           # 美白外用の生化学
+          - chemical-peel             # ケミカルピーリングの生化学
+
+      # 置く → 誘導する → 止める → 壊す の順。同じ注射でも一次作用が違う。
+      - part: 注射
+        intro: 分子を組織に直接置く治療です。置く・誘導する・止める・壊す——一次作用のまるで違うものが、同じ「注射」に同居しています。
+        chapters:
+          - ha-filler                 # ヒアルロン酸フィラーの生化学
+          - biostimulators            # バイオスティミュレーター
+          - skin-boosters             # 肌育治療を細胞生物学で読む
+          - exosomes                  # エクソソームと幹細胞培養上清
+          - botulinum                 # ボツリヌストキシンの生化学
+          - fat-reduction             # 脂肪を減らす治療
+
+      - part: デバイス
+        intro: デバイスが入れられるのは熱・光・機械の刺激だけです。組織を作り直すのは、そのあと動く細胞の側になります。
+        chapters:
+          - energy-devices            # 熱・光・機械刺激（総論）
+          - microneedling-rf          # ニードルRFの生化学
+          - hifu                      # HIFUの生化学
+          - fractional-laser          # フラクショナルレーザーの生化学
+          - ipl                       # IPL
+          - pigment-laser             # Qスイッチ・ピコ秒レーザー
+          - vascular-laser            # 血管レーザー
+          - pbm                       # PBM・LEDの生化学
+          - plasma                    # プラズマ治療
+
+  # =========================================================================
+  # 標的が皮膚の特定構造なら美容皮膚科、全身に入れて全身を動かすなら美容内科。
+  # 内服でもトラネキサム酸は skin-lightening、isotretinoin は sebum に置く。
+  - section: 美容内科
+    subtitle: 全身から入れる
+    intro: 経口・点滴で全身に入れる介入です。血中の値が動くことと、標的組織で使われることは別——巻頭で立てた切り分けが、いちばん効く場所です。
+    chapters:
+      - nad-precursors                # NAD⁺前駆体
+      - senolytics                    # senolytic・mitophagy関連介入
+      - antioxidant-supplements       # 抗酸化サプリメントと点滴
+
+  # =========================================================================
+  - section: おわりに
+    chapters:
+      - conclusion                    # 美容医療を細胞から考える

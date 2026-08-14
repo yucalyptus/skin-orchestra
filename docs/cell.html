@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>細胞とは何か ― 生化学で見る美容医療</title>
+<meta name="description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/cell.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="細胞とは何か ― 生化学で見る美容医療">
+<meta property="og:description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/cell.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/cell_組織に効くを細胞の言葉に置き換える.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:17px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:16.5px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:14.5px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
+blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
+padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:13px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:14px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+color:var(--sub);text-align:center}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border-left:2px solid var(--rule);font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:16px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
+border-left:3px solid var(--accent-line);font-family:var(--sans)}
+.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html" class="active">細胞とは何か<span class="badge bnew">NEW</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
+<a href="cell-types.html">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
+<div class="part">情報をどう読むか</div>
+<span class="soon">DNAからタンパク質まで<em>準備中</em></span>
+<span class="soon">エピゲノム<em>準備中</em></span>
+<span class="soon">受容体と細胞内シグナル<em>準備中</em></span>
+<span class="soon">細胞膜と物質輸送<em>準備中</em></span>
+<div class="part">エネルギー</div>
+<span class="soon">代謝とATP<em>準備中</em></span>
+<span class="soon">解糖系<em>準備中</em></span>
+<span class="soon">TCA回路<em>準備中</em></span>
+<span class="soon">電子伝達系<em>準備中</em></span>
+<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
+<span class="soon">NAD⁺<em>準備中</em></span>
+<div class="part">材料を感知し作る</div>
+<span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
+<span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
+<div class="part">掃除と作り直し</div>
+<span class="soon">オートファジーとリソソーム<em>準備中</em></span>
+<span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
+<span class="soon">AMPKとmTOR<em>準備中</em></span>
+<div class="part">傷つくとどうなるか</div>
+<span class="soon">細胞周期<em>準備中</em></span>
+<span class="soon">細胞死<em>準備中</em></span>
+<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<span class="soon">血管と内皮<em>準備中</em></span>
+<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<div class="part">加齢で何が変わるか</div>
+<span class="soon">Hallmarks of Aging<em>準備中</em></span>
+<span class="soon">細胞老化<em>準備中</em></span>
+<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<div class="sec">美容皮膚科</div>
+<div class="part">皮膚・脂肪・筋の生化学</div>
+<span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
+<span class="soon">弾性線維と膠原線維<em>準備中</em></span>
+<span class="soon">糖化とAGE<em>準備中</em></span>
+<span class="soon">脂肪<em>準備中</em></span>
+<span class="soon">筋肉<em>準備中</em></span>
+<span class="soon">たるみの多層構造<em>準備中</em></span>
+<span class="soon">皮脂分泌の生化学<em>準備中</em></span>
+<span class="soon">赤みの生化学<em>準備中</em></span>
+<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter">
+<p class="kicker">基礎　／　細胞の地図</p>
+<h1 class="ch-title">細胞とは何か</h1>
+<p class="dateline">公開 2026-08-14</p>
+<blockquote>私たち美容皮膚科医は「コラーゲンを増やします」「表皮を入れ替えます」と説明して治療をしていますが、実際の反応は細胞レベルで起きています。見えている効果は、細胞の反応の結果です。では、日々行う治療はどの細胞に作用して、どんな反応を起こしているのか。この章ではまず、細胞の基本を復習します。美容治療がどう細胞に影響するかは、美容皮膚科の各章で扱います。</blockquote>
+<h2>この章の一言</h2>
+<blockquote class="lead">「肌」は、何種類もの細胞と、その細胞が作る <span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。<br><br>ECM を作るのも細胞、それを分解する <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> を出すのも細胞です。だから「組織に効く」ということは、<strong>「その細胞たちが反応する」ということです。</strong></blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　なぜ細胞の単位で見るのか</a></li><li><a href="#s2">2　では、どんな細胞がいるのか</a></li><li><a href="#s3">3　細胞の大きさと時間軸</a></li><li><a href="#s4">4　同じDNAでも、使う遺伝子が違う</a></li><li><a href="#s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</a></li></ul></nav><h2 id="s1">1　なぜ細胞の単位で見るのか</h2>
+<p>機器や注射が届くのは組織ですが、反応するのはその中の細胞です。組織の変化は、細胞の反応の<strong>総和</strong>として出てきます。しかも動く細胞は一種類ではありません。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_組織に効くを細胞の言葉に置き換える.webp" alt="「組織に効く」を細胞の反応として見る。" loading="lazy"><figcaption>「組織に効く」を細胞の反応として見る。①組織への刺激 → ②線維芽細胞・免疫細胞・血管内皮・ECMがそれぞれ反応 → ③反応の総和が組織の変化になる</figcaption></figure>
+<p>細胞の単位で見ると、考えることが変わります。「この機器は効くか」ではなく、<strong>「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」</strong>。この章では、この見方で進めます。</p>
+<h2 id="s2">2　では、どんな細胞がいるのか</h2>
+<p>細胞は層ごとに分かれて存在し、その局在がそのまま機能の分担になっています。</p>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_細胞とは何か.webp" alt="皮膚を角層、表皮、DEJ、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。" loading="lazy"><figcaption>皮膚を角層、表皮、<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。">DEJ</span>、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。表皮は約0.05〜0.1 mm、真皮は約1〜3 mm、表皮<span class="term" tabindex="0" data-t="turnover" data-d="作って壊す回転そのもの。ミトコンドリアの健康が数ではなく作る・混ぜる・分ける・捨てるの回転で決まるように、静止画の量ではなく、回っているかで見る指標。">turnover</span>は約4〜6週、細胞1個は数〜数十μmが目安。<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>は基底層、Langerhans cellは表皮内、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>・血管・免疫細胞はECM主体の真皮内に配置される。</figcaption></figure>
+<p>主な役割と、押さえどころ（この先の章で使う性質）を1行ずつ挙げます。どの細胞がどの施術に関わるかは、美容皮膚科の各章で扱います。</p>
+<div class="tblwrap"><table><thead><tr><th>細胞</th><th>主な役割</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span></strong>（角化細胞）</td><td>表皮を作りバリアになる</td><td>表皮の9割以上。基底層で分裂し、扁平化・脱核して角層を構成する。バリアはこの細胞の最終産物。UVやストレスを受けてサイトカインを出す発信源でもある</td></tr><tr><td><strong>melanocyte</strong>（メラノサイト）</td><td>メラニンを作り角化細胞へ渡す</td><td>基底層に点在し、樹状の突起で周囲の数十個へ渡す。<strong>色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差</strong>（→ メラノサイトと色素形成）</td></tr><tr><td><strong>fibroblast</strong>（線維芽細胞）</td><td>ECMを作る真皮の主役</td><td><strong>自分で作ったECMを、自分が出す MMP（matrix metalloproteinase）で分解もする。</strong>真皮の質は、この細胞が合成と分解のどちらに傾いているかの結果（→ 線維芽細胞とコラーゲン）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="adipocyte" data-d="脂質をためて輪郭を作る細胞。leptin・adiponectin を出す内分泌細胞でもあり、単なる詰め物ではない。dWAT・皮下脂肪・内臓脂肪は代謝も分泌も別。">adipocyte</span></strong>（脂肪細胞）</td><td>脂質をエネルギーとして貯蔵する</td><td>貯蔵だけでなく、leptin・adiponectin などを分泌する<strong>内分泌器官</strong>でもある（→ 脂肪）</td></tr><tr><td><strong>myocyte</strong>（筋細胞）</td><td>収縮して力を出す</td><td>多核でエネルギー消費が大きい。表情筋の張力は、上に乗っている皮膚の形にそのまま出る（→ 筋肉）</td></tr><tr><td><strong>endothelial cell</strong>（血管内皮細胞）</td><td>血管の内腔を単層で覆い、血液と組織のあいだを仕切る</td><td>血管を<strong>広げる（血管径）・漏らす（透過性）・増やす（血管新生）</strong>の三つを担う。赤みも治癒も、まずこの細胞から考える（→ 血管と内皮）</td></tr><tr><td><strong>immune cell</strong>（免疫細胞）</td><td>監視・貪食・炎症の調整</td><td>表皮の Langerhans cell、真皮のマクロファージ・T細胞・肥満細胞。貪食だけでなく、修復の時間経過を決めているのもこの細胞（→ 炎症と創傷治癒）</td></tr></tbody></table></div>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_美容皮膚科で出会う7つの細胞.webp" alt="7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。" loading="lazy"><figcaption>7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。局在がそのまま機能の分担になっている</figcaption></figure>
+<h2 id="s3">3　細胞の大きさと時間軸</h2>
+<p>反応する細胞の大きさや時間軸を知らないと、「どこまで届いたか」も「いつ返ってくるか」も判断できません。針を何 mm 刺すか。この波長は真皮のどこで吸収されるか。この外用は角層を越えるのか。いずれも µm と mm の話です。</p>
+<p>以下は目安です。部位差・個人差・加齢差が大きく、顔と手のひら、目のまわりと背中では違います。</p>
+<div class="tblwrap"><table><thead><tr><th>対象</th><th>おおよその大きさ</th></tr></thead><tbody><tr><td>ヒトの体細胞（一般）</td><td>直径 10〜30 µm</td></tr><tr><td>基底層の keratinocyte</td><td>直径 約10 µm</td></tr><tr><td>角層の細胞（扁平化後）</td><td>幅 30〜40 µm・厚さ 1 µm 前後</td></tr><tr><td>fibroblast</td><td>細長い紡錘形で長径 数十 µm</td></tr><tr><td>成熟 adipocyte</td><td>直径 50〜100 µm（ためた脂質量で変わる）</td></tr><tr><td>骨格筋線維（myocyte）</td><td>直径 10〜100 µm・長さは数 cm</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>層</th><th>おおよその厚さ</th></tr></thead><tbody><tr><td>角層（stratum corneum）</td><td>10〜20 µm（手のひら・足の裏は例外的に厚い）</td></tr><tr><td>表皮（epidermis）全体</td><td>0.05〜0.15 mm</td></tr><tr><td>真皮（dermis）</td><td>顔で 1〜2 mm、背中など厚いところは 3 mm 超</td></tr><tr><td>基底膜（dermal–epidermal junction, DEJ）</td><td>50〜100 nm</td></tr></tbody></table></div>
+<p>時間軸も層ごとに違います。基底層で生まれた keratinocyte が角層まで上がるのに約2週間、剥がれ落ちるまでさらに2週間。<strong>表皮のターンオーバーは約1か月</strong>です（加齢で延びるとされます）。真皮の <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> は<strong>年単位</strong>です。だから「効いた」が返ってくる時期も、狙った層で変わります。</p>
+<p>密度も違います。表皮は細胞が密に詰まった層ですが、真皮は体積のほとんどが ECM で、collagen が乾燥重量の7〜8割を占めるとされます。fibroblast は線維の間に疎らに分布します。真皮は細胞が主体の組織ではなく、<strong>体積の大半を ECM が占め、その中に fibroblast が点在している</strong>組織です。だから真皮への治療は、少数の細胞に広い ECM を作り替えさせることになります。</p>
+<blockquote><strong>基底膜（DEJ）も押さえておきます。</strong> 厚さ 50〜100 nm、主成分は type IV collagen と laminin で、type VII collagen の anchoring fibril が真皮側へ伸びて固定しています。<br><br><strong>表皮には血管がありません。</strong> 酸素も栄養も、真皮の血管から DEJ を越えて拡散で届きます。DEJ は接着面であり、物質と情報の通過点でもあります。肝斑でこの構造が壊れる話は → メラノサイトと色素形成。</blockquote>
+<h2 id="s4">4　同じDNAでも、使う遺伝子が違う</h2>
+<p>体の細胞はほぼ全部が同じDNAを持っています。それでも keratinocyte と fibroblast と adipocyte の働きがまるで違うのは、<strong>読んでいるページが細胞ごとに違う</strong>からです。これが分化です（読み方の制御は → 「情報をどう読むか」）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_同じDNAでも使う遺伝子が違う.webp" alt="左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。" loading="lazy"><figcaption>左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。分岐しているのは情報ではなく読み方</figcaption></figure>
+<blockquote>細胞の個性は、持っている遺伝子ではなく<strong>使っている遺伝子</strong>で決まります。この区別が後で効いてきます。治療で狙えるのは細胞を入れ替えることではなく、<strong>発現パターンを変えること</strong>だからです。</blockquote>
+<h2 id="s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</h2>
+<p>7つの細胞のうち、ハリ・弾力・小じわをいちばん左右するのは fibroblast と、それが作る ECM です。ここが本教材の中心になります。理由は4つあり、どれも §3 で見た大きさと時間軸から出てきます。</p>
+<ol><li><strong>体積で圧倒的。</strong> 皮膚の厚みの約9割は真皮で、その真皮はほぼ ECM です。厚み・ハリ・落ち込みという立体の変化は、ECM の量と質でほとんど決まります。表皮は 0.1 mm 前後なので、そこだけでは輪郭は変わりません。</li><li><strong>機械的な性質を担う。</strong> 引っ張りに耐えるのは collagen、伸びて戻るのは <span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。">elastin</span>、水を抱えて張りを出すのは hyaluronan などの糖鎖。いずれも fibroblast の産物です（→ 線維芽細胞とコラーゲン・弾性線維と膠原線維）。</li><li><strong>光の通り方に効く。</strong> collagen 線維の密度・太さ・向きが、入ってきた光の散乱を変えます。透明感やきめの見え方に関わります（色そのものはメラニンとヘモグロビンによります）。</li><li><strong>入れ替わりが遅い。</strong> 表皮は約1か月で入れ替わるのに、真皮の collagen は年単位です。<strong>表皮の変化は戻りやすく、真皮の変化は蓄積として残ります。</strong> 加齢や紫外線を考えるときの分かれ目です。</li></ol>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_線維芽細胞とECM.webp" alt="線維芽細胞とECMが真皮の質をつくる" loading="lazy"><figcaption>線維芽細胞とECMが真皮の質をつくる</figcaption></figure>
+<h2>この章の到達点</h2>
+<ol class="goal"><li><strong>「組織に効く」とは、その細胞たちが反応するということ。</strong> 考えるのは「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」。</li><li>組織の変化は複数の細胞の反応の総和。単一の細胞や分子では説明しない。</li><li>大きさと時間の目安をつかむ。細胞は 10〜30 µm、表皮は 0.1 mm 前後、真皮は 1〜3 mm、基底膜は 50〜100 nm。<strong>表皮のターンオーバーは約1か月、真皮の collagen は年単位。</strong></li><li>同じDNAでも使う遺伝子が違うから細胞ごとに個性がある。治療で狙えるのは発現パターンを変えること。</li><li>見た目をいちばん左右するのが fibroblast と ECM なのは、<strong>体積・機械的性質・光の散乱・入れ替わりの遅さ</strong>の4つが理由。</li></ol>
+<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/cell_まとめ.webp" alt="組織を細胞から見る" loading="lazy"><figcaption>組織を細胞から見る</figcaption></figure>
+<blockquote><a class="chref" href="organelles.html">オルガネラ</a>では細胞の中に入り、オルガネラ（核・リボソーム・ER・<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>・ミトコンドリアなど）を思い出します。「コラーゲンを作る」というひとつの仕事が、どのオルガネラの連携で成り立っているのかを見ていきます。</blockquote>
+
+</article>
+<nav class="pager"><a class="next" href="organelles.html"><span class="lbl">次へ</span>オルガネラ</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-08-14</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',flip);
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null;
+  function show(el){
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  function hide(){tip.classList.remove('on');cur=null;}
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
+    el.addEventListener('blur',hide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>
