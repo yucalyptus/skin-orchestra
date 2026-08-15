@@ -5,7 +5,12 @@
       "Bash(xargs -0 du -ch)",
       "Bash(git branch *)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/)",
-      "Bash(git -c user.name=\"Yuka Aoki\" -c user.email=\"yukaskin@gmail.com\" commit -q -F -)"
+      "Bash(git -c user.name=\"Yuka Aoki\" -c user.email=\"yukaskin@gmail.com\" commit -q -F -)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:www.jidsponline.org)",
+      "Bash(curl -s -o /dev/null -w \"  旧 biyou-cell-textbook: HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/biyou-cell-textbook/)",
+      "Bash(curl -s -o /dev/null -w \"  新 skin-orchestra:      HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/)",
+      "Bash(curl -s https://yucalyptus.github.io/biyou-cell-textbook/)"
     ]
   }
 }
