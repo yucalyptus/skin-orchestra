@@ -670,6 +670,7 @@ def days_since(datestr):
 WIKI_RE = re.compile(r"\[\[([a-z0-9-]+)(?:\|([^\]\n]+))?\]\]")
 CHAPTERS = {}       # id -> 章dict（build時に作る）
 CURRENT_ID = None   # いま組み立てている章。自分自身へのリンクは張らない
+ORPHANS = []        # md はあるのに 目次.yml に無い章。ビルドの最後に必ず知らせる
 
 
 def slug_for(cid):
@@ -1466,9 +1467,7 @@ def collect_chapters():
                     "text": body,
                     "file": name,
                 })
-    extra = sorted(set(by_id) - seen)
-    if extra:
-        sys.stderr.write("WARNING: 目次.yml に無い章（出力しません）: %s\n" % "、".join(extra))
+    ORPHANS[:] = sorted(set(by_id) - seen)
     return out
 
 
@@ -1755,6 +1754,18 @@ def build():
     if not PREVIEW and written == 0:
         sys.stderr.write("  ※ status: approved の章がまだありません。"
                          "著者が読んでOKを出した章だけが公開されます。\n")
+    if ORPHANS:
+        # 目次に入れ忘れると、その章は黙って無視される。いちばん気づきにくい事故なので最後に出す。
+        sys.stderr.write(
+            "\n" + "!" * 62 + "\n"
+            "!! 目次.yml に登録されていない章が %d本あります。\n"
+            "!! **この章はサイトに出ません**（ビルドは無視しています）。\n"
+            % len(ORPHANS))
+        for cid in ORPHANS:
+            sys.stderr.write("!!   - %s\n" % cid)
+        sys.stderr.write(
+            "!! 目次.yml の入れたい部に id を1行足してください。\n"
+            + "!" * 62 + "\n")
 
 
 def write_sitemap(out_dir, chapters):

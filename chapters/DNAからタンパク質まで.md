@@ -15,7 +15,7 @@ status: draft
 
 ## 1　合成と分解は、常に同時に走っている
 
-![天秤の左に合成（転写・翻訳・折りたたみ）、右に3つの分解経路。ubiquitin を付けた短命・不良タンパク質は proteasome が、大きな構造とオルガネラは autophagy がリソソームへ運んで、細胞外のコラーゲンなどは MMP が切断・分解する。下段は合成＝分解・合成＞分解・合成＜分解の3状態で、同じ「量」がどちらの側でも動く](figures/dna-to-protein_合成と分解.png)
+![食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は ubiquitin–proteasome、autophagy–lysosome、MMP による細胞外 collagen の切断という経路で分解される。proteasome と lysosome で回収されたアミノ酸は合成へ再利用され、一部は酸化・尿素として失われる。下段は「今」から「一定時間後」への量を比べ、合成速度＝分解速度なら維持、合成速度＞分解速度なら増加、合成速度＜分解速度なら減少することを示す](figures/dna-to-protein_合成と分解.png)
 
 壊す側は3つに分かれます。
 

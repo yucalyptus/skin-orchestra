@@ -10,7 +10,12 @@
       "WebFetch(domain:www.jidsponline.org)",
       "Bash(curl -s -o /dev/null -w \"  旧 biyou-cell-textbook: HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/biyou-cell-textbook/)",
       "Bash(curl -s -o /dev/null -w \"  新 skin-orchestra:      HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/)",
-      "Bash(curl -s https://yucalyptus.github.io/biyou-cell-textbook/)"
+      "Bash(curl -s https://yucalyptus.github.io/biyou-cell-textbook/)",
+      "Bash(cp /tmp/toc.bak 目次.yml)",
+      "Bash(wait)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
     ]
   }
 }
