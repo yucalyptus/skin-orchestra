@@ -105,13 +105,15 @@ PAGE_HEAD = '''<!DOCTYPE html>
 :root{
 --bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
 --line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
 --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
 --sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
 --mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
 }
 @media(prefers-color-scheme:dark){:root{
 --bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
---line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;}}
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
@@ -413,6 +415,48 @@ h2{margin-top:24pt}
 .ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
 .ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
 @media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:16.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:13.5px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:13.5px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:13px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.score table{width:100%;border-collapse:collapse}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding:6px 0}
+.sc-n{text-align:right;padding:6px 0;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.sc-total th,.sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
 </style></head><body>'''
 
 HERO = '''<header class="cover">
@@ -423,7 +467,7 @@ HERO = '''<header class="cover">
 <div class="hero">
 <p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。臨床でふだん意識しない基礎を思い出し、施術と結びつけて理解するための教材です。</p>
 <div class="flowline">細胞の構造　→　エネルギー代謝　→　品質管理　→　加齢変化　→　美容施術への応答</div>
-<p class="note">{{PROGRESS}}確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
+<p class="note">確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
 </div>'''
 
 INTRO = '''<section class="intro sec-rule">
@@ -444,7 +488,7 @@ CRITERIA = '''<section id="criteria" class="sec-rule">
 <h1>この教材の立ち方 ― 限られた根拠から、どう判断するか</h1>
 <blockquote class="lead">美容医療に、質の高い臨床試験がそろっている領域はほとんどありません。それでも私たちは毎日、治療を選んでいます。<strong>この教材は、限られた材料をつないで地図を作り、つないだところに「どのくらい確かか」を書き添えます。</strong></blockquote>
 <p>「エビデンスがないから何も言えない」で止めてしまうと、<strong>手元に残るのは経験談と広告だけ</strong>になります。美容医療で厳密な対照試験が組まれることは少なく、多くは小規模・単群・企業主導です。それを理由に、考えることをやめるわけにはいきません。</p>
-<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するための手がかり（clue）は、この三つをつなぐところにしかありません。</p>
+<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するには、この三つをつなぐしかありません。</p>
 <p>三つをつなぐには、推論が要ります。<strong>推論は、私たちが日々の診療でしていることそのものです。</strong>問題になるのは推論すること自体ではなく、<strong>推論を確かめられた事実と取り違えること</strong>だけです。だからこの教材は、<strong>どこまでが確立していて、どこからが推論か</strong>を、つないだ矢印ごとに示したまま進みます。それが分かれば、あとは読者が自分の臨床で判断できます——「ヒトでは未確認だが、機序は筋が通っていてリスクも低いなら試す」も、「未確認だから患者さんには断定的に説明しない」も、どちらも成り立ちます。</p>
 <p>下の六つが、その目印です。<strong>主張を却下するためのふるいではなく、いま自分がどの段に立っているかを確かめるためのもの</strong>です。</p>
 {FIG_CRITERIA}
@@ -1054,6 +1098,26 @@ def parse_markdown(text):
             i = j + 1
             continue
 
+        # コラム ::: column タイトル … :::
+        #   章の骨から外れるが面白い話・背景の話を置く受け皿。
+        #   「骨は1本、全節をそれに奉仕させる」を守ったまま余談を置けるようにする。
+        #   本文と視覚的に切り離すので、読者は本筋と区別して読める。
+        if stripped.startswith("::: column"):
+            title = stripped[len("::: column"):].strip()
+            j = i + 1
+            buf = []
+            while j < n and lines[j].strip() != ":::":
+                buf.append(lines[j])
+                j += 1
+            inner = parse_markdown("\n".join(buf))
+            head = '<p class="col-t">コラム</p>'
+            if title:
+                head += '<p class="col-h">%s</p>' % decorate(esc(title))
+            blocks.append('<aside class="column">%s%s</aside>' % (head, "\n".join(inner)))
+            clear_pending()
+            i = j + 1
+            continue
+
         # フェンス ```lang ... ```
         if stripped.startswith("```"):
             lang = stripped[3:].strip()
@@ -1629,10 +1693,37 @@ def pager_html(chapters, i):
     return '<nav class="pager">%s</nav>' % "".join(items) if items else ""
 
 
+def progress_html(chapters):
+    """公開の状況をスコア表で出す。
+
+    章はこれからも増えるので、マスや帯のように「本数だけ場所を取る」形は使わない。
+    数字なら何本になっても崩れない。数は 目次.yml と front matter から毎回数え直す。
+    """
+    order, agg = [], {}
+    for ch in chapters:
+        k = ch["section"]
+        if k not in agg:
+            agg[k] = [0, 0]
+            order.append(k)
+        agg[k][1] += 1
+        if ch["visible"]:
+            agg[k][0] += 1
+    rows = "".join(
+        '<tr><th>%s</th><td class="sc-n"><strong>%d</strong> <span>/ %d</span></td></tr>'
+        % (esc(k), agg[k][0], agg[k][1]) for k in order)
+    done = sum(a[0] for a in agg.values())
+    total = sum(a[1] for a in agg.values())
+    rows += ('<tr class="sc-total"><th>合計</th>'
+             '<td class="sc-n"><strong>%d</strong> <span>/ %d</span></td></tr>'
+             % (done, total))
+    return ('<section class="score"><p class="sc-t">公開の状況</p>'
+            '<table>%s</table>'
+            '<p class="sc-note">確認できたものから、ひとつずつ増やしています。</p>'
+            '</section>' % rows)
+
+
 def index_body(chapters):
-    n_pub = sum(1 for c in chapters if c["visible"])
-    hero = HERO.replace("{{PROGRESS}}", "%d / %d 本を公開しています。" % (n_pub, len(chapters)))
-    blocks = [hero, recent_html(chapters), INTRO, criteria_html(),
+    blocks = [HERO, progress_html(chapters), recent_html(chapters), INTRO, criteria_html(),
               '<section class="contents sec-rule">', "<h1>目次</h1>"]
     sec = part = None
     for ch in chapters:

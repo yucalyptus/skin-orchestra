@@ -134,6 +134,7 @@ sections:
       - nad-precursors                # NAD⁺前駆体
       - senolytics                    # senolytic・mitophagy関連介入
       - antioxidant-supplements       # 抗酸化サプリメントと点滴
+      - gut-microbiome                # 腸内細菌
 
   # =========================================================================
   - section: おわりに

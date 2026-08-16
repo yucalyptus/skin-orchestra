@@ -12,7 +12,15 @@
       "Bash(curl -s -o /dev/null -w \"  新 skin-orchestra:      HTTP %{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/)",
       "Bash(curl -s https://yucalyptus.github.io/biyou-cell-textbook/)",
       "Bash(cp /tmp/toc.bak 目次.yml)",
-      "Bash(wait)"
+      "Bash(wait)",
+      "Bash(grep -n \"^#\\\\{2,3\\\\} \\\\|^!\\\\[\" \"chapters/アミノ酸は材料でありシグナルでもある.md\")",
+      "Bash(grep -o 'JAK–STAT[^|]\\\\{0,60\\\\}' _preview/glossary.html)",
+      "Bash(open _preview/organelles.html)",
+      "Bash(open _preview/mito-quality-control.html)",
+      "Bash(grep -o '<aside class=\"column\">.\\\\{0,120\\\\}' _preview/receptors-signaling.html)",
+      "Bash(/opt/homebrew/opt/python@3.11/bin/python3.11 -c \"import cairosvg\")",
+      "Bash(qlmanage -t -s 400 -o . lipid.svg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/receptors-signaling.html)"
     ],
     "additionalDirectories": [
       "/tmp"
