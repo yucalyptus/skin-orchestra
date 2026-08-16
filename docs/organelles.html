@@ -18,13 +18,15 @@
 :root{
 --bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
 --line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
 --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
 --sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
 --mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
 }
 @media(prefers-color-scheme:dark){:root{
 --bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
---line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;}}
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
@@ -326,6 +328,48 @@ h2{margin-top:24pt}
 .ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
 .ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
 @media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:16.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:13.5px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:13.5px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:13px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.score table{width:100%;border-collapse:collapse}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding:6px 0}
+.sc-n{text-align:right;padding:6px 0;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.sc-total th,.sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -345,10 +389,10 @@ h2{margin-top:24pt}
 <a href="organelles.html" class="active">オルガネラ<span class="badge bnew">NEW</span></a>
 <a href="cell-types.html">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
-<span class="soon">DNAからタンパク質まで<em>準備中</em></span>
-<span class="soon">エピゲノム<em>準備中</em></span>
-<span class="soon">受容体と細胞内シグナル<em>準備中</em></span>
-<span class="soon">細胞膜と物質輸送<em>準備中</em></span>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
 <span class="soon">代謝とATP<em>準備中</em></span>
 <span class="soon">解糖系<em>準備中</em></span>
@@ -406,6 +450,7 @@ h2{margin-top:24pt}
 <span class="soon">血管レーザー<em>準備中</em></span>
 <span class="soon">PBM・LEDの生化学<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">NAD⁺前駆体<em>準備中</em></span>
 <span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
@@ -429,7 +474,7 @@ h2{margin-top:24pt}
 <p>ここから、この章を貫く読み替えが出てきます。<strong>「産生能が上がる」とは、この受け渡しのうち、いちばん遅いステップ（律速段階）が速くなることです。</strong> 見るべきなのは、どのオルガネラかではなく、どこが詰まっているかです。</p>
 <h2 id="s2">2　まず覚える7つのオルガネラ</h2>
 <p>オルガネラは膜で仕切られた別々の環境です。その環境の違いが、そこで何ができるかを決めています。</p>
-<div class="tblwrap"><table><thead><tr><th>オルガネラ</th><th>何を担当するか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>核</strong>（nucleus）</td><td>DNAを保管し、どの遺伝子を読むかを決める</td><td>二重の核膜で囲まれ、<strong>核膜孔</strong>を介してのみ細胞質とやりとりする。<strong>DNAの原本はここから出ない</strong>——出ていくのはコピー（mRNA）だけ。細胞の個性はここで決まる（→ DNAからタンパク質まで・エピゲノム）</td></tr><tr><td><strong>リボソーム</strong>（ribosome）</td><td>mRNAを読んでアミノ酸をつなぐ組み立て機</td><td>オルガネラの中では例外的に<strong>膜を持たない</strong>。細胞質に浮いているものと、粗面ERの膜に貼りついているものがある。<strong>この貼りつくかどうかが §3 の分岐点になる</strong></td></tr><tr><td><strong>粗面ER</strong>（rough ER）</td><td>分泌タンパク質を加工・品質管理する</td><td>リボソームが貼りついた膜の網。内部は細胞質より<strong>酸化的</strong>で、chaperone（折りたたみを介助する分子）がはたらき、折り損じは通さない。<strong>分泌タンパク質はここでしか正しく折りたためない</strong></td></tr><tr><td><strong>Golgi装置</strong></td><td>仕分けて送り出す</td><td>ERから届いた荷物に糖鎖などの仕上げをし、<strong>行き先ごとに仕分ける</strong>。細胞膜へ、リソソームへ、細胞外へ——宛先を付けて送り出す</td></tr><tr><td><strong>ミトコンドリア</strong>（mitochondria）</td><td>ATPを作り、代謝も調節する</td><td>二重膜で、内膜が大きく折れ込んで（cristae）表面積を稼ぐ。ATPを作るだけでなく、代謝物を通じて<strong>核へ状態を報告する調節装置</strong>。独自の小さなDNA（<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span>）を持つ（→ 「エネルギー」・ミトコンドリア品質管理）</td></tr><tr><td><strong>リソソーム</strong>（lysosome）</td><td>不要物を分解して再利用する</td><td>内部が酸性（pH 5前後）の分解槽。古いタンパク質やオルガネラを<strong>アミノ酸・脂肪酸・糖に戻す</strong>。分解産物は材料として再利用される（→ オートファジーとリソソーム）</td></tr><tr><td><strong>ペルオキシソーム</strong>（peroxisome）</td><td>脂質の代謝と酸化還元</td><td><strong>catalase を大量に抱え、過酸化水素（H₂O₂）をその場で水と酸素に分解する場</strong>。同時にミトコンドリアが苦手な<strong>極長鎖脂肪酸のβ酸化</strong>を担い、その反応でH₂O₂を出す——<strong>出す場所と消す場所が同じ小器官の中</strong>にある設計（→ 酸化ストレスと抗酸化・皮脂分泌の生化学）</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>オルガネラ</th><th>何を担当するか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>核</strong>（nucleus）</td><td>DNAを保管し、どの遺伝子を読むかを決める</td><td>二重の核膜で囲まれ、<strong>核膜孔</strong>を介してのみ細胞質とやりとりする。<strong>DNAの原本はここから出ない</strong>——出ていくのはコピー（mRNA）だけ。細胞の個性はここで決まる（→ <a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>・<a class="chref" href="epigenome.html">エピゲノム</a>）</td></tr><tr><td><strong>リボソーム</strong>（ribosome）</td><td>mRNAを読んでアミノ酸をつなぐ組み立て機</td><td>オルガネラの中では例外的に<strong>膜を持たない</strong>。細胞質に浮いているものと、粗面ERの膜に貼りついているものがある。<strong>この貼りつくかどうかが §3 の分岐点になる</strong></td></tr><tr><td><strong>粗面ER</strong>（rough ER）</td><td>分泌タンパク質を加工・品質管理する</td><td>リボソームが貼りついた膜の網。内部は細胞質より<strong>酸化的</strong>で、chaperone（折りたたみを介助する分子）がはたらき、折り損じは通さない。<strong>分泌タンパク質はここでしか正しく折りたためない</strong></td></tr><tr><td><strong>Golgi装置</strong></td><td>仕分けて送り出す</td><td>ERから届いた荷物に糖鎖などの仕上げをし、<strong>行き先ごとに仕分ける</strong>。細胞膜へ、リソソームへ、細胞外へ——宛先を付けて送り出す</td></tr><tr><td><strong>ミトコンドリア</strong>（mitochondria）</td><td>ATPを作り、代謝も調節する</td><td>二重膜で、内膜が大きく折れ込んで（cristae）表面積を稼ぐ。ATPを作るだけでなく、代謝物を通じて<strong>核へ状態を報告する調節装置</strong>。独自の小さなDNA（<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span>）を持つ（→ 「エネルギー」・ミトコンドリア品質管理）</td></tr><tr><td><strong>リソソーム</strong>（lysosome）</td><td>不要物を分解して再利用する</td><td>内部が酸性（pH 5前後）の分解槽。古いタンパク質やオルガネラを<strong>アミノ酸・脂肪酸・糖に戻す</strong>。分解産物は材料として再利用される（→ オートファジーとリソソーム）</td></tr><tr><td><strong>ペルオキシソーム</strong>（peroxisome）</td><td>脂質の代謝と酸化還元</td><td><strong>catalase を大量に抱え、過酸化水素（H₂O₂）をその場で水と酸素に分解する場</strong>。同時にミトコンドリアが苦手な<strong>極長鎖脂肪酸のβ酸化</strong>を担い、その反応でH₂O₂を出す——<strong>出す場所と消す場所が同じ小器官の中</strong>にある設計（→ 酸化ストレスと抗酸化・皮脂分泌の生化学）</td></tr></tbody></table></div>
 <p>このうち<strong>ミトコンドリアとリソソームだけは、特定の工程を担当するのではなく、全工程で同時に働きます。</strong> 作る仕事にはエネルギーが要り、折り損じや古い部品は片づけないと溜まります。この二つが止まると、他のオルガネラが健全でも産生は回りません。</p>
 <h2 id="s3">3　なぜ「核→リボソーム→ER→Golgi→分泌」の順でなければならないのか</h2>
 <p>この順番は決まり事ではありません。分岐点は、翻訳が始まった直後——<strong>鎖の先頭に signal 配列（signal peptide）があるかどうか</strong>です。</p>
@@ -449,7 +494,7 @@ h2{margin-top:24pt}
 <p>この「律速」の考え方は線維芽細胞とコラーゲンで正面から扱います。</p>
 <h2 id="s5">5　補助的に押さえる構造</h2>
 <p>主役ではありませんが、後の章で顔を出します。</p>
-<div class="tblwrap"><table><thead><tr><th>構造</th><th>何をするか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>細胞膜</strong></td><td>内と外を仕切り、物質の出入りを制御する</td><td>通す・通さないの規則は分子の側の性質で決まる（→ 細胞膜と物質輸送）</td></tr><tr><td><strong>endosome</strong>（エンドソーム）</td><td>外から取り込んだものを仕分ける小胞</td><td>分解へ回すか、膜へ戻すかを決める（→ 細胞膜と物質輸送）</td></tr><tr><td><strong>lipid droplet</strong>（脂肪滴）</td><td>中性脂肪をためる小滴</td><td>脂肪細胞では細胞の大部分を占める主役になる（→ 脂肪）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span></strong>（細胞外マトリックス）</td><td>細胞の&quot;外&quot;の足場</td><td>足場であると同時に、細胞に情報も伝える（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>）</td></tr><tr><td><strong>cytoskeleton</strong>（細胞骨格）</td><td>形の維持・運搬・張力の感知</td><td><strong>actin filament</strong>＝膜直下で収縮し張力を生む／<strong>microtubule</strong>＝小胞とオルガネラを運ぶレール／<strong>intermediate filament</strong>＝引っ張りに耐える芯（表皮の keratin）。<strong><span class="term" tabindex="0" data-t="integrin" data-d="細胞膜を貫き、外でECMをつかみ内で細胞骨格につながる受容体。focal adhesion・FAK を介して足場の硬さと張力を細胞内シグナルに変換する入口（mechanotransduction）。">integrin</span></strong> で ECM に接着した点で細胞骨格を引くと、足場の硬さと張力が細胞内シグナルに変換される＝<strong>mechanotransduction</strong>（→ ECMとmechanotransduction）</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>構造</th><th>何をするか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>細胞膜</strong></td><td>内と外を仕切り、物質の出入りを制御する</td><td>通す・通さないの規則は分子の側の性質で決まる（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>endosome</strong>（エンドソーム）</td><td>外から取り込んだものを仕分ける小胞</td><td>分解へ回すか、膜へ戻すかを決める（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>lipid droplet</strong>（脂肪滴）</td><td>中性脂肪をためる小滴</td><td>脂肪細胞では細胞の大部分を占める主役になる（→ 脂肪）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span></strong>（細胞外マトリックス）</td><td>細胞の&quot;外&quot;の足場</td><td>足場であると同時に、細胞に情報も伝える（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>）</td></tr><tr><td><strong>cytoskeleton</strong>（細胞骨格）</td><td>形の維持・運搬・張力の感知</td><td><strong>actin filament</strong>＝膜直下で収縮し張力を生む／<strong>microtubule</strong>＝小胞とオルガネラを運ぶレール／<strong>intermediate filament</strong>＝引っ張りに耐える芯（表皮の keratin）。<strong><span class="term" tabindex="0" data-t="integrin" data-d="細胞膜を貫き、外でECMをつかみ内で細胞骨格につながる受容体。focal adhesion・FAK を介して足場の硬さと張力を細胞内シグナルに変換する入口（mechanotransduction）。">integrin</span></strong> で ECM に接着した点で細胞骨格を引くと、足場の硬さと張力が細胞内シグナルに変換される＝<strong>mechanotransduction</strong>（→ ECMとmechanotransduction）</td></tr></tbody></table></div>
 <h2>この章の到達点</h2>
 <ol class="goal"><li>細胞の仕事は単一のオルガネラでは完結しない。<strong>分泌タンパク質を1本外へ出す</strong>という一つの仕事に、核・リボソーム・粗面ER・Golgi が順に関与し、ミトコンドリアとリソソームが全工程で同時に働く。</li><li>7つのオルガネラはそれぞれ別の環境を持つ（酸化的なER内、pH 5前後のリソソーム、catalase を抱えたペルオキシソーム）。担当する仕事は、その環境で何ができるかで決まっている。</li><li>この順番は決まり事ではない。<strong>signal 配列で行き先が決まり、折りたためるのはERの中だけで、行き先はGolgiの仕分けで確定する。</strong>だからこの順番になる。<strong>どの工程が滞っても出力は落ちる。</strong></li><li>「産生能が上がる」とは、この受け渡しのうち<strong>いちばん遅いステップ（律速段階）が速くなる</strong>こと。見るべきなのは、どのオルガネラかではなく、どこが詰まっているか。</li></ol>
 <figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/organelles_まとめ.webp" alt="細胞の中は連携するオルガネラでできている" loading="lazy"><figcaption>細胞の中は連携するオルガネラでできている</figcaption></figure>
@@ -463,7 +508,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-15 ／ 版 67dbf89</p>
+<p class="stamp">最終更新 2026-08-16 ／ 版 46de328</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

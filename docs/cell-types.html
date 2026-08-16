@@ -18,13 +18,15 @@
 :root{
 --bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
 --line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
 --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
 --sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
 --mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
 }
 @media(prefers-color-scheme:dark){:root{
 --bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
---line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;}}
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
@@ -326,6 +328,48 @@ h2{margin-top:24pt}
 .ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
 .ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
 @media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:16.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:13.5px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:13.5px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:13px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.score table{width:100%;border-collapse:collapse}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding:6px 0}
+.sc-n{text-align:right;padding:6px 0;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.sc-total th,.sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -345,10 +389,10 @@ h2{margin-top:24pt}
 <a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
 <a href="cell-types.html" class="active">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
-<span class="soon">DNAからタンパク質まで<em>準備中</em></span>
-<span class="soon">エピゲノム<em>準備中</em></span>
-<span class="soon">受容体と細胞内シグナル<em>準備中</em></span>
-<span class="soon">細胞膜と物質輸送<em>準備中</em></span>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
 <span class="soon">代謝とATP<em>準備中</em></span>
 <span class="soon">解糖系<em>準備中</em></span>
@@ -406,6 +450,7 @@ h2{margin-top:24pt}
 <span class="soon">血管レーザー<em>準備中</em></span>
 <span class="soon">PBM・LEDの生化学<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">NAD⁺前駆体<em>準備中</em></span>
 <span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
@@ -441,21 +486,21 @@ h2{margin-top:24pt}
 <h2 id="s4">4　オルガネラの状態は、代謝物の形で核へ伝わる</h2>
 <p>オルガネラの部品はすべて、核DNAが設計図を出して作られます。<strong>往きは設計図、返りは代謝物</strong>です。オルガネラの側が専用の伝令を出すのではなく、<strong>代謝物の濃度と比がそのまま状態を表し</strong>、それが遺伝子の読み方を変えます。</p>
 <p>ミトコンドリアがその代表例です。ミトコンドリアは独自の小さなDNA（<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span>）を持ちますが、<strong>部品の大半は核から供給されます</strong>。核からは biogenesis の指令が出る一方（→ ミトコンドリア品質管理）、返りは ATP/AMP比・NAD⁺/NADH比・acetyl-CoA・α-ketoglutarate・<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span> という形をとります。</p>
-<p>代謝物が遺伝子の読み方に効く仕組みは、エピゲノムの章（→ エピゲノム・NAD⁺）で扱います。ここでは、<strong>核とオルガネラが一方通行ではなく常に往復している</strong>ことを押さえます。</p>
+<p>代謝物が遺伝子の読み方に効く仕組みは、エピゲノムの章（→ <a class="chref" href="epigenome.html">エピゲノム</a>・NAD⁺）で扱います。ここでは、<strong>核とオルガネラが一方通行ではなく常に往復している</strong>ことを押さえます。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell-types_核とミトコンドリア.webp" alt="往きは部品の設計図（biogenesis）、返りは ATP/AMP比・NAD⁺/NADH比・acetyl-CoA・α-ketoglutarate・ROS という「代謝物の形をした状…" loading="lazy"><figcaption>往きは部品の設計図（biogenesis）、返りは ATP/AMP比・NAD⁺/NADH比・acetyl-CoA・α-ketoglutarate・ROS という「代謝物の形をした状態報告」</figcaption></figure>
 <h2>この章の到達点</h2>
 <ol class="goal"><li>オルガネラの間を渡るものは<strong>エネルギー・電子・炭素と材料・情報</strong>の4種類。ATP・NAD⁺/NADH・acetyl-CoA・α-ketoglutarate はどれか一つのオルガネラの持ち物ではなく、<strong>複数の区画で共有される</strong>。</li><li>受け渡しには<strong>膜どうしの直接接触</strong>という形もある。ER–mitochondria contact（MAM）では Ca²⁺ と脂質が渡され、渡る Ca²⁺ の量が matrix の脱水素酵素の活性を左右する。</li><li>autophagosome–lysosome の分解は出口が材料に戻るので、分解・ATP産生・合成は連続している。一方の滞りが全体に波及する。</li><li>核とオルガネラの連絡は、往きが設計図、返りが<strong>代謝物の濃度と比</strong>。一方通行ではない。</li><li>だから細胞の産生能は、単一のオルガネラの性能ではなく<strong>連携で決まる</strong>。律速はミトコンドリアとは限らず、材料・分解の回転・足場からの張力のいずれもなりうる。</li></ol>
 <figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/cell-types_まとめ.webp" alt="オルガネラは連携ネットワーク" loading="lazy"><figcaption>オルガネラは連携ネットワーク</figcaption></figure>
 
 </article>
-<nav class="pager"><a class="prev" href="organelles.html"><span class="lbl">前へ</span>オルガネラ</a></nav>
+<nav class="pager"><a class="prev" href="organelles.html"><span class="lbl">前へ</span>オルガネラ</a><a class="next" href="dna-to-protein.html"><span class="lbl">次へ</span>DNAからタンパク質まで</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-15 ／ 版 67dbf89</p>
+<p class="stamp">最終更新 2026-08-16 ／ 版 46de328</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

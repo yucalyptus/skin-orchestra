@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>細胞とは何か ― 生化学で見る美容医療</title>
-<meta name="description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/cell.html">
+<title>細胞膜と物質輸送 ― 生化学で見る美容医療</title>
+<meta name="description" content="細胞の中に入れるか、さらに核まで入れるか。それを決めているのは、脂溶性か水溶性かです。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/membrane-transport.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="細胞とは何か ― 生化学で見る美容医療">
-<meta property="og:description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/cell.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/cell_組織に効くを細胞の言葉に置き換える.webp">
+<meta property="og:title" content="細胞膜と物質輸送 ― 生化学で見る美容医療">
+<meta property="og:description" content="細胞の中に入れるか、さらに核まで入れるか。それを決めているのは、脂溶性か水溶性かです。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/membrane-transport.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/membrane-transport_脂質二重層.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -385,14 +385,14 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html" class="active">細胞とは何か<span class="badge bnew">NEW</span></a>
+<a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
 <a href="cell-types.html">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html" class="active">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
 <span class="soon">代謝とATP<em>準備中</em></span>
 <span class="soon">解糖系<em>準備中</em></span>
@@ -460,45 +460,49 @@ h2{margin-top:24pt}
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter">
-<p class="kicker">基礎　／　細胞の地図</p>
-<h1 class="ch-title">細胞とは何か</h1>
-<p class="dateline">公開 2026-08-14</p>
-<blockquote>私たち美容皮膚科医は「コラーゲンを増やします」「表皮を入れ替えます」と説明して治療をしていますが、実際の反応は細胞レベルで起きています。見えている効果は、細胞の反応の結果です。では、日々行う治療はどの細胞に作用して、どんな反応を起こしているのか。この章ではまず、細胞の基本を復習します。美容治療がどう細胞に影響するかは、美容皮膚科の各章で扱います。</blockquote>
+<p class="kicker">基礎　／　情報をどう読むか</p>
+<h1 class="ch-title">細胞膜と物質輸送</h1>
+<p class="dateline">公開 2026-08-16</p>
+<blockquote>細胞が glucose をエネルギーに変えるにも、アミノ酸からタンパク質を作るにも、<strong>その分子が細胞の中に入っていること</strong>が前提です。どうやって入るのか。<br><br>入り方は分子ごとに違います。そのまま膜を通り抜けるものもあれば、専用の輸送体がなければ1分子も入れないものもある。<strong>入ったあとも、目的の場所まで届くとは限りません。</strong> 薬や栄養が効くかどうかは、この出入りの条件に縛られています。</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead">「肌」は、何種類もの細胞と、その細胞が作る <span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。<br><br>ECM を作るのも細胞、それを分解する <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> を出すのも細胞です。だから「組織に効く」ということは、<strong>「その細胞たちが反応する」ということです。</strong></blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　なぜ細胞の単位で見るのか</a></li><li><a href="#s2">2　では、どんな細胞がいるのか</a></li><li><a href="#s3">3　細胞の大きさと時間軸</a></li><li><a href="#s4">4　同じDNAでも、使う遺伝子が違う</a></li><li><a href="#s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</a></li></ul></nav><h2 id="s1">1　なぜ細胞の単位で見るのか</h2>
-<p>機器や注射が届くのは組織ですが、反応するのはその中の細胞です。組織の変化は、細胞の反応の<strong>総和</strong>として出てきます。しかも動く細胞は一種類ではありません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_組織に効くを細胞の言葉に置き換える.webp" alt="「組織に効く」を細胞の反応として見る。" loading="lazy"><figcaption>「組織に効く」を細胞の反応として見る。①組織への刺激 → ②線維芽細胞・免疫細胞・血管内皮・ECMがそれぞれ反応 → ③反応の総和が組織の変化になる</figcaption></figure>
-<p>細胞の単位で見ると、考えることが変わります。「この機器は効くか」ではなく、<strong>「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」</strong>。この章では、この見方で進めます。</p>
-<h2 id="s2">2　では、どんな細胞がいるのか</h2>
-<p>細胞は層ごとに分かれて存在し、その局在がそのまま機能の分担になっています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_細胞とは何か.webp" alt="皮膚を角層、表皮、DEJ、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。" loading="lazy"><figcaption>皮膚を角層、表皮、<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。">DEJ</span>、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。表皮は約0.05〜0.1 mm、真皮は約1〜3 mm、表皮<span class="term" tabindex="0" data-t="turnover" data-d="作って壊す回転そのもの。ミトコンドリアの健康が数ではなく作る・混ぜる・分ける・捨てるの回転で決まるように、静止画の量ではなく、回っているかで見る指標。">turnover</span>は約4〜6週、細胞1個は数〜数十μmが目安。<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>は基底層、Langerhans cellは表皮内、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>・血管・免疫細胞はECM主体の真皮内に配置される。</figcaption></figure>
-<p>主な役割と、押さえどころ（この先の章で使う性質）を1行ずつ挙げます。どの細胞がどの施術に関わるかは、美容皮膚科の各章で扱います。</p>
-<div class="tblwrap"><table><thead><tr><th>細胞</th><th>主な役割</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span></strong>（角化細胞）</td><td>表皮を作りバリアになる</td><td>表皮の9割以上。基底層で分裂し、扁平化・脱核して角層を構成する。バリアはこの細胞の最終産物。UVやストレスを受けてサイトカインを出す発信源でもある</td></tr><tr><td><strong>melanocyte</strong>（メラノサイト）</td><td>メラニンを作り角化細胞へ渡す</td><td>基底層に点在し、樹状の突起で周囲の数十個へ渡す。<strong>色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差</strong>（→ メラノサイトと色素形成）</td></tr><tr><td><strong>fibroblast</strong>（線維芽細胞）</td><td>ECMを作る真皮の主役</td><td><strong>自分で作ったECMを、自分が出す MMP（matrix metalloproteinase）で分解もする。</strong>真皮の質は、この細胞が合成と分解のどちらに傾いているかの結果（→ 線維芽細胞とコラーゲン）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="adipocyte" data-d="脂質をためて輪郭を作る細胞。leptin・adiponectin を出す内分泌細胞でもあり、単なる詰め物ではない。dWAT・皮下脂肪・内臓脂肪は代謝も分泌も別。">adipocyte</span></strong>（脂肪細胞）</td><td>脂質をエネルギーとして貯蔵する</td><td>貯蔵だけでなく、leptin・adiponectin などを分泌する<strong>内分泌器官</strong>でもある（→ 脂肪）</td></tr><tr><td><strong>myocyte</strong>（筋細胞）</td><td>収縮して力を出す</td><td>多核でエネルギー消費が大きい。表情筋の張力は、上に乗っている皮膚の形にそのまま出る（→ 筋肉）</td></tr><tr><td><strong>endothelial cell</strong>（血管内皮細胞）</td><td>血管の内腔を単層で覆い、血液と組織のあいだを仕切る</td><td>血管を<strong>広げる（血管径）・漏らす（透過性）・増やす（血管新生）</strong>の三つを担う。赤みも治癒も、まずこの細胞から考える（→ 血管と内皮）</td></tr><tr><td><strong>immune cell</strong>（免疫細胞）</td><td>監視・貪食・炎症の調整</td><td>表皮の Langerhans cell、真皮のマクロファージ・T細胞・肥満細胞。貪食だけでなく、修復の時間経過を決めているのもこの細胞（→ 炎症と創傷治癒）</td></tr></tbody></table></div>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_美容皮膚科で出会う7つの細胞.webp" alt="7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。" loading="lazy"><figcaption>7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。局在がそのまま機能の分担になっている</figcaption></figure>
-<h2 id="s3">3　細胞の大きさと時間軸</h2>
-<p>反応する細胞の大きさや時間軸を知らないと、「どこまで届いたか」も「いつ返ってくるか」も判断できません。針を何 mm 刺すか。この波長は真皮のどこで吸収されるか。この外用は角層を越えるのか。いずれも µm と mm の話です。</p>
-<p>以下は目安です。部位差・個人差・加齢差が大きく、顔と手のひら、目のまわりと背中では違います。</p>
-<div class="tblwrap"><table><thead><tr><th>対象</th><th>おおよその大きさ</th></tr></thead><tbody><tr><td>ヒトの体細胞（一般）</td><td>直径 10〜30 µm</td></tr><tr><td>基底層の keratinocyte</td><td>直径 約10 µm</td></tr><tr><td>角層の細胞（扁平化後）</td><td>幅 30〜40 µm・厚さ 1 µm 前後</td></tr><tr><td>fibroblast</td><td>細長い紡錘形で長径 数十 µm</td></tr><tr><td>成熟 adipocyte</td><td>直径 50〜100 µm（ためた脂質量で変わる）</td></tr><tr><td>骨格筋線維（myocyte）</td><td>直径 10〜100 µm・長さは数 cm</td></tr></tbody></table></div>
-<div class="tblwrap"><table><thead><tr><th>層</th><th>おおよその厚さ</th></tr></thead><tbody><tr><td>角層（stratum corneum）</td><td>10〜20 µm（手のひら・足の裏は例外的に厚い）</td></tr><tr><td>表皮（epidermis）全体</td><td>0.05〜0.15 mm</td></tr><tr><td>真皮（dermis）</td><td>顔で 1〜2 mm、背中など厚いところは 3 mm 超</td></tr><tr><td>基底膜（dermal–epidermal junction, DEJ）</td><td>50〜100 nm</td></tr></tbody></table></div>
-<p>時間軸も層ごとに違います。基底層で生まれた keratinocyte が角層まで上がるのに約2週間、剥がれ落ちるまでさらに2週間。<strong>表皮のターンオーバーは約1か月</strong>です（加齢で延びるとされます）。真皮の <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> は<strong>年単位</strong>です。だから「効いた」が返ってくる時期も、狙った層で変わります。</p>
-<p>密度も違います。表皮は細胞が密に詰まった層ですが、真皮は体積のほとんどが ECM で、collagen が乾燥重量の7〜8割を占めるとされます。fibroblast は線維の間に疎らに分布します。真皮は細胞が主体の組織ではなく、<strong>体積の大半を ECM が占め、その中に fibroblast が点在している</strong>組織です。だから真皮への治療は、少数の細胞に広い ECM を作り替えさせることになります。</p>
-<blockquote><strong>基底膜（DEJ）も押さえておきます。</strong> 厚さ 50〜100 nm、主成分は type IV collagen と laminin で、type VII collagen の anchoring fibril が真皮側へ伸びて固定しています。<br><br><strong>表皮には血管がありません。</strong> 酸素も栄養も、真皮の血管から DEJ を越えて拡散で届きます。DEJ は接着面であり、物質と情報の通過点でもあります。肝斑でこの構造が壊れる話は → メラノサイトと色素形成。</blockquote>
-<h2 id="s4">4　同じDNAでも、使う遺伝子が違う</h2>
-<p>体の細胞はほぼ全部が同じDNAを持っています。それでも keratinocyte と fibroblast と adipocyte の働きがまるで違うのは、<strong>読んでいるページが細胞ごとに違う</strong>からです。これが分化です（読み方の制御は → 「情報をどう読むか」）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_同じDNAでも使う遺伝子が違う.webp" alt="左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。" loading="lazy"><figcaption>左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。分岐しているのは情報ではなく読み方</figcaption></figure>
-<blockquote>細胞ごとの性質は、持っている遺伝子ではなく<strong>使っている遺伝子</strong>で決まります。この区別が後で効いてきます。治療で狙えるのは細胞を入れ替えることではなく、<strong>発現パターンを変えること</strong>だからです。</blockquote>
-<h2 id="s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</h2>
-<p>7つの細胞のうち、ハリ・弾力・小じわをいちばん左右するのは fibroblast と、それが作る ECM です。ここが本教材の中心になります。理由は4つあり、どれも §3 で見た大きさと時間軸から出てきます。</p>
-<ol><li><strong>体積で圧倒的。</strong> 皮膚の厚みの約9割は真皮で、その真皮はほぼ ECM です。厚み・ハリ・落ち込みという立体の変化は、ECM の量と質でほとんど決まります。表皮は 0.1 mm 前後なので、そこだけでは輪郭は変わりません。</li><li><strong>機械的な性質を担う。</strong> 引っ張りに耐えるのは collagen、伸びて戻るのは <span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。">elastin</span>、水を抱えて張りを出すのは hyaluronan などの糖鎖。いずれも fibroblast の産物です（→ 線維芽細胞とコラーゲン・弾性線維と膠原線維）。</li><li><strong>光の通り方に効く。</strong> collagen 線維の密度・太さ・向きが、入ってきた光の散乱を変えます。透明感やきめの見え方に関わります（色そのものはメラニンとヘモグロビンによります）。</li><li><strong>入れ替わりが遅い。</strong> 表皮は約1か月で入れ替わるのに、真皮の collagen は年単位です。<strong>表皮の変化は戻りやすく、真皮の変化は蓄積として残ります。</strong> 加齢や紫外線を考えるときの分かれ目です。</li></ol>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_線維芽細胞とECM.webp" alt="線維芽細胞とECMが真皮の質をつくる" loading="lazy"><figcaption>線維芽細胞とECMが真皮の質をつくる</figcaption></figure>
+<blockquote class="lead"><strong>細胞の中に入れるか、さらに核まで入れるか。それを決めているのは、脂溶性か水溶性かです。</strong><br><br>ただし入れたとしても、目的のオルガネラまで届くか、分解される前に十分な量と時間はたらけるかは、また別の話です。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　そのまま通れるものと、通れないもの</a></li><li><a href="#s2">2　通り方は4種類</a></li><li><a href="#s3">3　高分子・粒子の出入り：endocytosis と exocytosis</a></li><li><a href="#s4">4　越える関門は一つではない</a></li></ul></nav><h2 id="s1">1　そのまま通れるものと、通れないもの</h2>
+<p>細胞膜は主に<strong>脂質二重層（lipid bilayer）</strong>でできています。内側に疎水性の尾、外側に親水性の頭が並んだ、選択的な障壁です。ここで分子の行き先が二手に分かれます。</p>
+<div class="tblwrap"><table><thead><tr><th></th><th>脂質二重層を</th><th>例</th></tr></thead><tbody><tr><td><strong>脂溶性の小分子</strong></td><td>そのまま通り抜ける</td><td>レチノイド（→ レチノイド外用の生化学）、ビタミンD、ステロイドホルモン、甲状腺ホルモン、O₂・CO₂</td></tr><tr><td><strong>水溶性の分子・イオン・ペプチド</strong></td><td>自力では通れない</td><td>glucose、アミノ酸、Na⁺・K⁺・Ca²⁺、成長因子、cytokine</td></tr></tbody></table></div>
+<p><strong>脂溶性の小分子は、脂質二重層を通り抜けることができます。</strong> ただし脂溶性でも、大きすぎれば通りにくく、帯電していれば通りません。</p>
+<p><strong>水溶性の分子は、そのままでは通り抜けられません。</strong> これは「細胞に入れない」という意味ではありません。専用の通り道があり、そこを使って入ります。どう入るかは §2 で見ます。</p>
+<p>行き先も分かれます。<strong>脂溶性の小分子は核まで入り、核内受容体に直接結合できます。</strong> 水溶性の <span class="term" tabindex="0" data-t="ligand" data-d="受容体に結合して情報を渡す分子（成長因子・cytokine・ホルモンなど）。水溶性 ligand は細胞の中まで入らず膜受容体の外側で結合して中継され、脂溶性 ligand だけが膜を通って核内受容体に届く。">ligand</span> は膜の外にとどまり、膜受容体に結合して情報だけを中へ渡します（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_脂質二重層.webp" alt="脂質二重層の断面。" loading="lazy"><figcaption>脂質二重層の断面。左に比較的通りやすいもの（O₂・CO₂・ベンゼン・ステロイド・エタノール）、右に、そのままでは通りにくいもの（Na⁺・K⁺・Ca²⁺・Cl⁻・HCO₃⁻・グルコース・アミノ酸・タンパク質）が赤い×付きで並ぶ。右のものは特定の膜タンパク質（チャネル／トランスポーター）を介してしか通れない</figcaption></figure>
+<aside class="column"><p class="col-t">コラム</p><p class="col-h">細胞膜のリン脂質は、食事の脂肪で変わる</p><div style="float:right;width:190px;margin:4px 0 12px 18px"><svg viewBox="0 0 190 140" width="190" role="img" aria-label="まっすぐな尾のリン脂質と、折れ曲がった尾のリン脂質"><g fill="none" stroke-linecap="round"><circle cx="48" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="43" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M40 45 V118" stroke="#E9B98C" stroke-width="6"/><path d="M57 45 V118" stroke="#E9B98C" stroke-width="6"/><circle cx="140" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="135" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M131 45 q-14 16 -1 30 q13 15 -2 28 q-9 9 -3 15" stroke="#93C4A2" stroke-width="6"/><path d="M150 45 q14 15 1 29 q-13 15 1 28 q9 9 4 16" stroke="#93C4A2" stroke-width="6"/></g></svg></div>
+<p>リン脂質は、<strong>リン酸を含む丸い頭</strong>と、そこから伸びる<strong>2本の脂肪酸の尾</strong>でできています。二重層のなかで向かい合っているのが、この尾の部分です。</p>
+<p><strong>尾の脂肪酸の構成は、食事でとる脂質の種類で決まります。</strong> このため、赤血球の膜脂肪酸が摂取量の指標として使われます。</p>
+<p>この尾の脂肪酸の種類によって、<strong>細胞膜の硬さ</strong>と、<strong>細胞に炎症が起きたときに出るものの種類</strong>が変わります。</p>
+<p><strong>膜の硬さを決めるのは、尾にある二重結合の数です。</strong> 飽和脂肪酸の尾はまっすぐで、隣とぴったり並びます。肉の脂、バター、パーム油に多いのがこれです。二重結合があると、そこで尾が折れ曲がる。折れた尾どうしは密に並べないので、隙間ができて膜が柔らかくなります。n-3系（オメガ3）の DHA は二重結合を6か所持ち、いちばん柔らかくなります。<strong>柔らかいほど、膜タンパク質は動きやすくなります。</strong> 受容体が集まって複合体を作る、膜がくぼんで取り込む——そうした膜の作業がしやすくなるということです。</p>
+<p><strong>炎症の質を決めるのは、n-6系か n-3系かです。</strong> 炎症刺激が入ると、酵素（phospholipase A₂）が<strong>膜のリン脂質から脂肪酸を切り出し</strong>、それがメディエーターに変わります。n-6系の出発点は、<strong>大豆油・コーン油・ひまわり油</strong>など、加工食品や外食で広く使われる植物油に多い linoleic acid です。これが体内で arachidonic acid に変わり、そこから<strong>炎症を起こす側</strong>の prostaglandin や leukotriene が作られます。</p>
+<p>一方の n-3系は、<strong>青魚に多い EPA・DHA</strong> です。ここからできるのは、<strong>炎症を収束させる resolvin・protectin</strong> です。</p>
+<p><strong>何を膜に置いているかが、炎症が起きたときに何が出てくるかを決めます。</strong></p>
+<p>細胞膜が自分の食べた脂でできていて、その組成で性質が変わり、起きる反応まで変わる。食べ物って本当に大事ですね。</p>
+<p>かつての日本人は魚をよく食べていたので、EPA・DHA は比較的足りていました。しかし魚介類の摂取量は減り続け、2006年には肉類が魚介類を上回りました。せっかくの島国で、新鮮なお魚が手に入るのですから、<strong>EPA・DHAの豊富な青魚をもっと食べたいですね。</strong></p>
+<div style="clear:both"></div></aside>
+<h2 id="s2">2　通り方は4種類</h2>
+<p>自力で通れない分子は、膜のタンパク質を使って入ります。§1の自力の通り抜けも含めて整理すると、膜を越える道は4つです。</p>
+<ul><li><strong>diffusion（拡散）</strong>：濃度の高い方から低い方へ、エネルギーなしで移動。脂溶性小分子やガス（O₂・CO₂）など</li><li><strong>channel（チャネル）</strong>：特定のイオンを通す孔。開閉が制御される。濃度勾配に従う（受動）</li><li><strong>transporter（輸送体）</strong>：特定の分子に結合し、自身の形を変えて運ぶ。物質特異的</li><li><strong>pump（ポンプ）＝active transport</strong>：濃度勾配に<strong>逆らって</strong>運ぶため、<strong><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化を結びつける連結器。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>などのエネルギーを使う</strong></li></ul>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_膜を越える4つの通り方.webp" alt="4つを高濃度→低濃度の向きで並べると、拡散・channel・transporter はいずれも「坂を下る」側で、ATPを使って「坂を上る」のは pump だけと分かる" loading="lazy"><figcaption>4つを高濃度→低濃度の向きで並べると、拡散・channel・transporter はいずれも「坂を下る」側で、ATPを使って「坂を上る」のは pump だけと分かる</figcaption></figure>
+<h2 id="s3">3　高分子・粒子の出入り：endocytosis と exocytosis</h2>
+<p>タンパク質や大きな粒子は、この4つでは通れません。膜そのものを使って出し入れします。</p>
+<ul><li><strong>endocytosis</strong>：膜がくぼんで対象を包み込み、小胞として細胞内へ取り込む</li><li><strong>exocytosis</strong>：細胞内の小胞が膜と融合して中身を外へ放出する（<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> の分泌もこれにあたる、→ <a class="chref" href="organelles.html">オルガネラ</a>§4）</li></ul>
+<p><strong>endocytosis で取り込まれた物は、多くがまず endosome/<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span> 系に入ります。</strong> 取り込まれた＝目的の場所で自由に働ける、ではありません。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_エンドサイトーシスとエキソサイトーシス.webp" alt="取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。" loading="lazy"><figcaption>取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。「入った＝細胞質で自由に働ける」ではない</figcaption></figure>
+<h2 id="s4">4　越える関門は一つではない</h2>
+<p>細胞膜を越えるのは、最初の一段にすぎません。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_細胞膜と物質輸送.webp" alt="① 組織（細胞外マトリックス）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。" loading="lazy"><figcaption>① 組織（細胞外マトリックス）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。各関門の上に「通れるとは限らない」「届くとは限らない」「働けるとは限らない」と置き、④では標的に到達する分子が&quot;ごく一部&quot;で、大多数は分解・排出・希釈されることを色で分けている</figcaption></figure>
+<ul><li><strong>組織に届いて分布している</strong>ことと、<strong>標的細胞の中へ入る</strong>ことは別です</li><li>分子が大きい、水溶性、帯電している——そのどれかなら、組織に届いていても細胞膜で止まります</li><li>細胞質へ入れたとしても、核で働かせたいなら<strong>核膜孔</strong>を、ミトコンドリアで働かせたいなら<strong>ミトコンドリア膜を越える別の仕組み</strong>を通る必要がある</li><li>endocytosis で入ったものは lysosome で<strong>分解</strong>されてしまうことも多い</li></ul>
 <h2>この章の到達点</h2>
-<ol class="goal"><li><strong>「組織に効く」とは、その細胞たちが反応するということ。</strong> 考えるのは「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」。</li><li>組織の変化は複数の細胞の反応の総和。単一の細胞や分子では説明しない。</li><li>大きさと時間の目安をつかむ。細胞は 10〜30 µm、表皮は 0.1 mm 前後、真皮は 1〜3 mm、基底膜は 50〜100 nm。<strong>表皮のターンオーバーは約1か月、真皮の collagen は年単位。</strong></li><li>同じDNAでも使う遺伝子が違うから、細胞ごとに性質が違う。治療で狙えるのは発現パターンを変えること。</li><li>見た目をいちばん左右するのが fibroblast と ECM なのは、<strong>体積・機械的性質・光の散乱・入れ替わりの遅さ</strong>の4つが理由。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/cell_まとめ.webp" alt="組織を細胞から見る" loading="lazy"><figcaption>組織を細胞から見る</figcaption></figure>
-<blockquote><a class="chref" href="organelles.html">オルガネラ</a>では細胞の中に入り、オルガネラ（核・リボソーム・ER・<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>・ミトコンドリアなど）を思い出します。「コラーゲンを作る」というひとつの仕事が、どのオルガネラの連携で成り立っているのかを見ていきます。</blockquote>
+<ol class="goal"><li>細胞膜は lipid bilayer による選択的な障壁。<strong>脂溶性の小分子はそのまま通り抜けて核内受容体まで届き、水溶性の分子・イオンは自力では通れないが、専用の通り道を使って入る</strong>。大きさと電荷も分かれ目になる。</li><li>越え方は diffusion・channel・transporter（受動）と pump（能動＝ATPを使う）に分かれ、高分子・粒子は endocytosis／exocytosis で出し入れする。endocytosis で入ったものは多くが endosome/lysosome へ向かう。</li><li>「組織に存在する」→「細胞質へ入る」→「標的オルガネラへ届く」→「分解される前に十分な量・時間はたらく」は、それぞれ別の段階である。</li><li>だから「そこにある」＝「効く」ではない。<strong>どこまで届いたか、量と時間は足りているか</strong>まで見る。</li></ol>
+<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/membrane-transport_まとめ.webp" alt="そこにあるから働くまで" loading="lazy"><figcaption>そこにあるから働くまで</figcaption></figure>
 
 </article>
-<nav class="pager"><a class="next" href="organelles.html"><span class="lbl">次へ</span>オルガネラ</a></nav>
+<nav class="pager"><a class="prev" href="receptors-signaling.html"><span class="lbl">前へ</span>受容体と細胞内シグナル</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>

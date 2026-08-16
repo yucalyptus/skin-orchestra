@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>細胞とは何か ― 生化学で見る美容医療</title>
-<meta name="description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/cell.html">
+<title>DNAからタンパク質まで ― 生化学で見る美容医療</title>
+<meta name="description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="細胞とは何か ― 生化学で見る美容医療">
-<meta property="og:description" content="「肌」は、何種類もの細胞と、その細胞が作る ECM（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/cell.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/cell_組織に効くを細胞の言葉に置き換える.webp">
+<meta property="og:title" content="DNAからタンパク質まで ― 生化学で見る美容医療">
+<meta property="og:description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/dna-to-protein_合成と分解.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -385,11 +385,11 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html" class="active">細胞とは何か<span class="badge bnew">NEW</span></a>
+<a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
 <a href="cell-types.html">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="dna-to-protein.html" class="active">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
 <a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
@@ -460,45 +460,47 @@ h2{margin-top:24pt}
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter">
-<p class="kicker">基礎　／　細胞の地図</p>
-<h1 class="ch-title">細胞とは何か</h1>
-<p class="dateline">公開 2026-08-14</p>
-<blockquote>私たち美容皮膚科医は「コラーゲンを増やします」「表皮を入れ替えます」と説明して治療をしていますが、実際の反応は細胞レベルで起きています。見えている効果は、細胞の反応の結果です。では、日々行う治療はどの細胞に作用して、どんな反応を起こしているのか。この章ではまず、細胞の基本を復習します。美容治療がどう細胞に影響するかは、美容皮膚科の各章で扱います。</blockquote>
+<p class="kicker">基礎　／　情報をどう読むか</p>
+<h1 class="ch-title">DNAからタンパク質まで</h1>
+<p class="dateline">公開 2026-08-16</p>
+<blockquote>加齢とともにハリと弾力が失われるのは、真皮のコラーゲンが減るからです。ただし「作らなくなった」だけではありません。<strong>作る側が落ちるのと同時に、壊す側が上がっています。</strong> 光老化した皮膚では、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span> の <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。">procollagen</span> 転写が下がる一方で、<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>を分解する酵素 <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> の転写が上がります（→ 線維芽細胞とコラーゲン）。まずその「作る」側の幹——DNA → RNA → タンパク質——をたどります。</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead">「肌」は、何種類もの細胞と、その細胞が作る <span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>（細胞外マトリックス）でできています。「たるみ」「ハリ」は、その状態を指す言葉です。<br><br>ECM を作るのも細胞、それを分解する <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> を出すのも細胞です。だから「組織に効く」ということは、<strong>「その細胞たちが反応する」ということです。</strong></blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　なぜ細胞の単位で見るのか</a></li><li><a href="#s2">2　では、どんな細胞がいるのか</a></li><li><a href="#s3">3　細胞の大きさと時間軸</a></li><li><a href="#s4">4　同じDNAでも、使う遺伝子が違う</a></li><li><a href="#s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</a></li></ul></nav><h2 id="s1">1　なぜ細胞の単位で見るのか</h2>
-<p>機器や注射が届くのは組織ですが、反応するのはその中の細胞です。組織の変化は、細胞の反応の<strong>総和</strong>として出てきます。しかも動く細胞は一種類ではありません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_組織に効くを細胞の言葉に置き換える.webp" alt="「組織に効く」を細胞の反応として見る。" loading="lazy"><figcaption>「組織に効く」を細胞の反応として見る。①組織への刺激 → ②線維芽細胞・免疫細胞・血管内皮・ECMがそれぞれ反応 → ③反応の総和が組織の変化になる</figcaption></figure>
-<p>細胞の単位で見ると、考えることが変わります。「この機器は効くか」ではなく、<strong>「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」</strong>。この章では、この見方で進めます。</p>
-<h2 id="s2">2　では、どんな細胞がいるのか</h2>
-<p>細胞は層ごとに分かれて存在し、その局在がそのまま機能の分担になっています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_細胞とは何か.webp" alt="皮膚を角層、表皮、DEJ、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。" loading="lazy"><figcaption>皮膚を角層、表皮、<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。">DEJ</span>、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。表皮は約0.05〜0.1 mm、真皮は約1〜3 mm、表皮<span class="term" tabindex="0" data-t="turnover" data-d="作って壊す回転そのもの。ミトコンドリアの健康が数ではなく作る・混ぜる・分ける・捨てるの回転で決まるように、静止画の量ではなく、回っているかで見る指標。">turnover</span>は約4〜6週、細胞1個は数〜数十μmが目安。<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>は基底層、Langerhans cellは表皮内、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>・血管・免疫細胞はECM主体の真皮内に配置される。</figcaption></figure>
-<p>主な役割と、押さえどころ（この先の章で使う性質）を1行ずつ挙げます。どの細胞がどの施術に関わるかは、美容皮膚科の各章で扱います。</p>
-<div class="tblwrap"><table><thead><tr><th>細胞</th><th>主な役割</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span></strong>（角化細胞）</td><td>表皮を作りバリアになる</td><td>表皮の9割以上。基底層で分裂し、扁平化・脱核して角層を構成する。バリアはこの細胞の最終産物。UVやストレスを受けてサイトカインを出す発信源でもある</td></tr><tr><td><strong>melanocyte</strong>（メラノサイト）</td><td>メラニンを作り角化細胞へ渡す</td><td>基底層に点在し、樹状の突起で周囲の数十個へ渡す。<strong>色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差</strong>（→ メラノサイトと色素形成）</td></tr><tr><td><strong>fibroblast</strong>（線維芽細胞）</td><td>ECMを作る真皮の主役</td><td><strong>自分で作ったECMを、自分が出す MMP（matrix metalloproteinase）で分解もする。</strong>真皮の質は、この細胞が合成と分解のどちらに傾いているかの結果（→ 線維芽細胞とコラーゲン）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="adipocyte" data-d="脂質をためて輪郭を作る細胞。leptin・adiponectin を出す内分泌細胞でもあり、単なる詰め物ではない。dWAT・皮下脂肪・内臓脂肪は代謝も分泌も別。">adipocyte</span></strong>（脂肪細胞）</td><td>脂質をエネルギーとして貯蔵する</td><td>貯蔵だけでなく、leptin・adiponectin などを分泌する<strong>内分泌器官</strong>でもある（→ 脂肪）</td></tr><tr><td><strong>myocyte</strong>（筋細胞）</td><td>収縮して力を出す</td><td>多核でエネルギー消費が大きい。表情筋の張力は、上に乗っている皮膚の形にそのまま出る（→ 筋肉）</td></tr><tr><td><strong>endothelial cell</strong>（血管内皮細胞）</td><td>血管の内腔を単層で覆い、血液と組織のあいだを仕切る</td><td>血管を<strong>広げる（血管径）・漏らす（透過性）・増やす（血管新生）</strong>の三つを担う。赤みも治癒も、まずこの細胞から考える（→ 血管と内皮）</td></tr><tr><td><strong>immune cell</strong>（免疫細胞）</td><td>監視・貪食・炎症の調整</td><td>表皮の Langerhans cell、真皮のマクロファージ・T細胞・肥満細胞。貪食だけでなく、修復の時間経過を決めているのもこの細胞（→ 炎症と創傷治癒）</td></tr></tbody></table></div>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_美容皮膚科で出会う7つの細胞.webp" alt="7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。" loading="lazy"><figcaption>7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。局在がそのまま機能の分担になっている</figcaption></figure>
-<h2 id="s3">3　細胞の大きさと時間軸</h2>
-<p>反応する細胞の大きさや時間軸を知らないと、「どこまで届いたか」も「いつ返ってくるか」も判断できません。針を何 mm 刺すか。この波長は真皮のどこで吸収されるか。この外用は角層を越えるのか。いずれも µm と mm の話です。</p>
-<p>以下は目安です。部位差・個人差・加齢差が大きく、顔と手のひら、目のまわりと背中では違います。</p>
-<div class="tblwrap"><table><thead><tr><th>対象</th><th>おおよその大きさ</th></tr></thead><tbody><tr><td>ヒトの体細胞（一般）</td><td>直径 10〜30 µm</td></tr><tr><td>基底層の keratinocyte</td><td>直径 約10 µm</td></tr><tr><td>角層の細胞（扁平化後）</td><td>幅 30〜40 µm・厚さ 1 µm 前後</td></tr><tr><td>fibroblast</td><td>細長い紡錘形で長径 数十 µm</td></tr><tr><td>成熟 adipocyte</td><td>直径 50〜100 µm（ためた脂質量で変わる）</td></tr><tr><td>骨格筋線維（myocyte）</td><td>直径 10〜100 µm・長さは数 cm</td></tr></tbody></table></div>
-<div class="tblwrap"><table><thead><tr><th>層</th><th>おおよその厚さ</th></tr></thead><tbody><tr><td>角層（stratum corneum）</td><td>10〜20 µm（手のひら・足の裏は例外的に厚い）</td></tr><tr><td>表皮（epidermis）全体</td><td>0.05〜0.15 mm</td></tr><tr><td>真皮（dermis）</td><td>顔で 1〜2 mm、背中など厚いところは 3 mm 超</td></tr><tr><td>基底膜（dermal–epidermal junction, DEJ）</td><td>50〜100 nm</td></tr></tbody></table></div>
-<p>時間軸も層ごとに違います。基底層で生まれた keratinocyte が角層まで上がるのに約2週間、剥がれ落ちるまでさらに2週間。<strong>表皮のターンオーバーは約1か月</strong>です（加齢で延びるとされます）。真皮の <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> は<strong>年単位</strong>です。だから「効いた」が返ってくる時期も、狙った層で変わります。</p>
-<p>密度も違います。表皮は細胞が密に詰まった層ですが、真皮は体積のほとんどが ECM で、collagen が乾燥重量の7〜8割を占めるとされます。fibroblast は線維の間に疎らに分布します。真皮は細胞が主体の組織ではなく、<strong>体積の大半を ECM が占め、その中に fibroblast が点在している</strong>組織です。だから真皮への治療は、少数の細胞に広い ECM を作り替えさせることになります。</p>
-<blockquote><strong>基底膜（DEJ）も押さえておきます。</strong> 厚さ 50〜100 nm、主成分は type IV collagen と laminin で、type VII collagen の anchoring fibril が真皮側へ伸びて固定しています。<br><br><strong>表皮には血管がありません。</strong> 酸素も栄養も、真皮の血管から DEJ を越えて拡散で届きます。DEJ は接着面であり、物質と情報の通過点でもあります。肝斑でこの構造が壊れる話は → メラノサイトと色素形成。</blockquote>
-<h2 id="s4">4　同じDNAでも、使う遺伝子が違う</h2>
-<p>体の細胞はほぼ全部が同じDNAを持っています。それでも keratinocyte と fibroblast と adipocyte の働きがまるで違うのは、<strong>読んでいるページが細胞ごとに違う</strong>からです。これが分化です（読み方の制御は → 「情報をどう読むか」）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_同じDNAでも使う遺伝子が違う.webp" alt="左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。" loading="lazy"><figcaption>左端の「同じ設計図」から4本に枝分かれし、開いているページ（遺伝子プログラム）だけが細胞ごとに違う。分岐しているのは情報ではなく読み方</figcaption></figure>
-<blockquote>細胞ごとの性質は、持っている遺伝子ではなく<strong>使っている遺伝子</strong>で決まります。この区別が後で効いてきます。治療で狙えるのは細胞を入れ替えることではなく、<strong>発現パターンを変えること</strong>だからです。</blockquote>
-<h2 id="s5">5　その中でも、fibroblast と ECM が&quot;見た目&quot;を左右する</h2>
-<p>7つの細胞のうち、ハリ・弾力・小じわをいちばん左右するのは fibroblast と、それが作る ECM です。ここが本教材の中心になります。理由は4つあり、どれも §3 で見た大きさと時間軸から出てきます。</p>
-<ol><li><strong>体積で圧倒的。</strong> 皮膚の厚みの約9割は真皮で、その真皮はほぼ ECM です。厚み・ハリ・落ち込みという立体の変化は、ECM の量と質でほとんど決まります。表皮は 0.1 mm 前後なので、そこだけでは輪郭は変わりません。</li><li><strong>機械的な性質を担う。</strong> 引っ張りに耐えるのは collagen、伸びて戻るのは <span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。">elastin</span>、水を抱えて張りを出すのは hyaluronan などの糖鎖。いずれも fibroblast の産物です（→ 線維芽細胞とコラーゲン・弾性線維と膠原線維）。</li><li><strong>光の通り方に効く。</strong> collagen 線維の密度・太さ・向きが、入ってきた光の散乱を変えます。透明感やきめの見え方に関わります（色そのものはメラニンとヘモグロビンによります）。</li><li><strong>入れ替わりが遅い。</strong> 表皮は約1か月で入れ替わるのに、真皮の collagen は年単位です。<strong>表皮の変化は戻りやすく、真皮の変化は蓄積として残ります。</strong> 加齢や紫外線を考えるときの分かれ目です。</li></ol>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_線維芽細胞とECM.webp" alt="線維芽細胞とECMが真皮の質をつくる" loading="lazy"><figcaption>線維芽細胞とECMが真皮の質をつくる</figcaption></figure>
+<blockquote class="lead">タンパク質の量は、作った分ではなく<strong>作る側と壊す側の差し引き</strong>で決まります。<br><br>そして<strong>その多くは、壊した古いタンパク質から回収したアミノ酸を原料に作り直されています。</strong> 合成と分解は切り離せません。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　合成と分解は、常に同時に走っている</a></li><li><a href="#s2">2　DNAと遺伝子：設計図の全ページと1ページ</a></li><li><a href="#s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</a></li><li><a href="#s4">4　translation（翻訳）：mRNA → タンパク質</a></li><li><a href="#s5">5　鎖ができても、まだ完成品ではない</a></li><li><a href="#s6">6　読む量は調節されている。壊す側も同じように調節されている</a></li></ul></nav><h2 id="s1">1　合成と分解は、常に同時に走っている</h2>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_合成と分解.webp" alt="食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は ubiquitin–proteasome、autophag…" loading="lazy"><figcaption>食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は <span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。">ubiquitin–proteasome</span>、<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>–<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>、MMP による細胞外 <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> の切断という経路で分解される。proteasome と lysosome で回収されたアミノ酸は合成へ再利用され、一部は酸化・尿素として失われる。下段は「今」から「一定時間後」への量を比べ、合成速度＝分解速度なら維持、合成速度＞分解速度なら増加、合成速度＜分解速度なら減少することを示す</figcaption></figure>
+<p>壊す側は3つに分かれます。</p>
+<div class="tblwrap"><table><thead><tr><th>経路</th><th>何を壊すか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>ubiquitin–proteasome</strong></td><td>短命・不良・不要なタンパク質</td><td>ubiquitin という目印を付けて選別する。個々の分子単位で壊す</td></tr><tr><td><strong>autophagy–lysosome</strong></td><td>大きな構造やオルガネラごと</td><td>膜で包んで丸ごと lysosome へ運び、酸性下の加水分解酵素で壊す（→ オートファジーとリソソーム）</td></tr><tr><td><strong>MMP</strong>（matrix metalloproteinase）</td><td>細胞外の ECM（collagen など）</td><td>唯一、細胞の外で働く。<strong>分解は作り替えに必要な過程で、MMPが上がること自体が悪いわけではない。</strong>問題になるのは過剰・慢性化したとき。真皮の質は、これと合成の釣り合いで決まる（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>・線維芽細胞とコラーゲン）</td></tr></tbody></table></div>
+<p>分解されたタンパク質はアミノ酸に戻り、次のタンパク質合成の材料になります。成人では<strong>1日におよそ 3〜4 g/kg</strong>——体重60〜70 kg なら <strong>200〜300 g</strong> のタンパク質が、分解と再合成を受けます。食事から入るタンパク質は日本人成人の平均で<strong>1日 65〜80 g</strong> ですから、<strong>合成に使うアミノ酸の大半は、自分のタンパク質を壊して回収したもの</strong>です。</p>
+<p>ただし閉じた循環ではありません。回収したアミノ酸の一部は酸化され、炭素はエネルギーに、窒素は尿素として出ていきます。<strong>食事のタンパク質は、その失われた分を埋めています。</strong></p>
+<p>つまり「作る」は、新しい材料だけで行う工程ではありません。<strong>回収したアミノ酸をプールに戻し、そこから作り直す</strong>循環になっています。</p>
+<h2 id="s2">2　DNAと遺伝子：設計図の全ページと1ページ</h2>
+<p><strong>DNA は設計図の全ページ</strong>、<strong>遺伝子はその中の1項目</strong>（あるタンパク質の作り方が書かれた区間）です。ヒトの細胞は同じ全ページを持ちながら、細胞ごとに読むページを変えることで性質が分かれます（<a class="chref" href="cell.html">細胞とは何か</a>）。「その遺伝子を持っている」ことと「今それを読んで使っている」ことは別です。</p>
+<p>collagen type I の鎖は <strong>COL1A1／COL1A2</strong> という遺伝子に書かれています（合成から細胞外での成熟・分解までの全体像は → 線維芽細胞とコラーゲン）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_DNAからタンパク質まで.webp" alt="この章の全体図。" loading="lazy"><figcaption>この章の全体図。転写→RNA加工→翻訳→ER→<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>→分泌・細胞外成熟の6段を、collagen（COL1A1／COL1A2）を例に並べたもの。上段の転写因子が「読む量」を、下段の proteasome・lysosome が「壊す側」として全段に働いている</figcaption></figure>
+<h2 id="s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</h2>
+<p>必要な遺伝子の区間が、<strong>mRNA（メッセンジャーRNA）</strong>というコピーに写し取られます（transcription）。<strong>DNAそのものは核から出さず、必要な領域の mRNA だけを細胞質へ出します。</strong></p>
+<p>写し取った直後の mRNA（前駆体）は、そのままでは使えません。核の中で仕上げ加工（RNA processing）を受けます。</p>
+<ul><li><strong>splicing</strong>：不要な区間（intron）を切り取り、必要な区間（exon）をつなぐ</li><li>5'端にキャップ、3'端にポリA尾部を付け、安定性と翻訳効率を上げる</li></ul>
+<p>仕上がった成熟 mRNA だけが核の外（細胞質）へ輸送されます。ここも制御点で、加工や輸送が滞れば翻訳まで届きません。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_転写とRNA加工.webp" alt="核の中の4工程。" loading="lazy"><figcaption>核の中の4工程。exon（緑）とintron（赤）が交互に並ぶ前駆mRNAから spliceosome が intron を抜き、5'キャップとポリA尾部が付いて成熟mRNAになる。核膜孔を通るのは成熟mRNAだけで、DNAは核内に残る</figcaption></figure>
+<h2 id="s4">4　translation（翻訳）：mRNA → タンパク質</h2>
+<p>細胞質で <strong>ribosome</strong> が mRNA を読み、コドン（3文字）ごとに対応するアミノ酸をつなげて<strong>タンパク質の鎖</strong>を作ります。</p>
+<p>分泌されるタンパク質は、翻訳の途中から<strong>粗面ER へ送り込まれながら</strong>作られます（行き先を決める signal 配列は<a class="chref" href="organelles.html">オルガネラ</a>§3）。材料であるアミノ酸と、動力である <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化を結びつける連結器。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>・GTP が足りなければ進みません（→ 「材料を感知し作る」）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_翻訳.webp" alt="ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。" loading="lazy"><figcaption>ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。1本のmRNAに複数のribosomeが並ぶ（polysome）。分泌タンパク質は signal peptide が translocon に捕まり、鎖はER内腔側で伸びていく。材料はアミノ酸、動力はATP・GTP</figcaption></figure>
+<h2 id="s5">5　鎖ができても、まだ完成品ではない</h2>
+<p><strong>多くのタンパク質は、アミノ酸の鎖ができた時点では機能しません。</strong> ER で正しく折りたたまれ、S–S 結合が架かり、糖鎖などの修飾を受け、Golgi で仕分けられ、必要なら分泌され、細胞外でさらに切断や架橋を受けて——そこで初めて働きます。<strong>「mRNA が増えた」は「使えるタンパク質が増えた」ではありません。</strong></p>
+<p>この後工程が特に長い代表例が collagen です。具体的な中身（水酸化とその補因子、三重らせん形成、分泌、細胞外での切断と架橋）は線維芽細胞とコラーゲンで扱います。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_コラーゲンの成熟.webp" alt="鎖ができてからの5段。" loading="lazy"><figcaption>鎖ができてからの5段。ER内でプロリン／リシンが水酸化され（O₂・ビタミンC・Fe が必要）、シャペロンの品質管理を通ったものだけが三重らせん procollagen になる。Golgi で修飾・梱包、分泌後に N/C プロペプチドが切られ、自己集合と lysyl oxidase 架橋を経て成熟線維になる</figcaption></figure>
+<h2 id="s6">6　読む量は調節されている。壊す側も同じように調節されている</h2>
+<p><strong>transcription factor（転写因子）</strong>は、遺伝子の近くに結合して転写を上げ下げするタンパク質です。<strong>どの遺伝子を・いつ・どれだけ読むか</strong>を決めているのがこれです。外からの刺激（成長因子やストレスなど）は、多くの場合この転写因子の働きを変えることで、細胞の応答を決めます（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
+<p>ただし調節されているのは、読む側だけではありません。<strong>MMP の発現も、proteasome や autophagy の活性も、同じように調節されています。</strong> 量を増やすには、上流で読む量を増やす道と、壊す側を抑える道があります。実際の組織では、その両方が同時に動いています。だから「この経路が上がった」だけでは、量がどちらへ動くかは決まりません。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li><strong>「組織に効く」とは、その細胞たちが反応するということ。</strong> 考えるのは「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」。</li><li>組織の変化は複数の細胞の反応の総和。単一の細胞や分子では説明しない。</li><li>大きさと時間の目安をつかむ。細胞は 10〜30 µm、表皮は 0.1 mm 前後、真皮は 1〜3 mm、基底膜は 50〜100 nm。<strong>表皮のターンオーバーは約1か月、真皮の collagen は年単位。</strong></li><li>同じDNAでも使う遺伝子が違うから、細胞ごとに性質が違う。治療で狙えるのは発現パターンを変えること。</li><li>見た目をいちばん左右するのが fibroblast と ECM なのは、<strong>体積・機械的性質・光の散乱・入れ替わりの遅さ</strong>の4つが理由。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/cell_まとめ.webp" alt="組織を細胞から見る" loading="lazy"><figcaption>組織を細胞から見る</figcaption></figure>
-<blockquote><a class="chref" href="organelles.html">オルガネラ</a>では細胞の中に入り、オルガネラ（核・リボソーム・ER・<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>・ミトコンドリアなど）を思い出します。「コラーゲンを作る」というひとつの仕事が、どのオルガネラの連携で成り立っているのかを見ていきます。</blockquote>
+<ol class="goal"><li>タンパク質量は<strong>合成と分解の差し引き</strong>で決まる。分解は ubiquitin–proteasome・autophagy–lysosome・細胞外の MMP の3経路。</li><li>全身で1日およそ200〜300 g（3〜4 g/kg）のタンパク質が分解と再合成を受け、食事由来（およそ65〜80 g）を大きく上回る。<strong>合成の材料の多くは壊した自分のタンパク質から回収したアミノ酸で、食事は酸化で失われた分を補っている。</strong></li><li>情報の幹は transcription → RNA processing → 核外輸送 → translation。原本（DNA）は核から出さず、コピー（mRNA）だけを現場へ出す。</li><li>鎖ができた時点では多くのタンパク質はまだ機能しない。<strong>「mRNAが増えた」＝「使えるタンパク質が増えた」ではない。</strong> 調節は、読む側にも壊す側にもかかる。</li></ol>
+<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/dna-to-protein_まとめ.webp" alt="DNAの情報が使えるタンパク質になるまで" loading="lazy"><figcaption>DNAの情報が使えるタンパク質になるまで</figcaption></figure>
+<blockquote><a class="chref" href="epigenome.html">エピゲノム</a>では、その転写因子が働く一段手前——<strong>DNA配列を変えずに、遺伝子の読みやすさ自体を調節するしくみ（エピゲノム）</strong>を見ます。</blockquote>
 
 </article>
-<nav class="pager"><a class="next" href="organelles.html"><span class="lbl">次へ</span>オルガネラ</a></nav>
+<nav class="pager"><a class="prev" href="cell-types.html"><span class="lbl">前へ</span>細胞はどう仕事を分担するか</a><a class="next" href="epigenome.html"><span class="lbl">次へ</span>エピゲノム</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>

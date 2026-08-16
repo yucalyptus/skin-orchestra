@@ -18,13 +18,15 @@
 :root{
 --bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
 --line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
 --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
 --sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
 --mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
 }
 @media(prefers-color-scheme:dark){:root{
 --bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
---line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;}}
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
@@ -326,6 +328,48 @@ h2{margin-top:24pt}
 .ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
 .ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
 @media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:16.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:13.5px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:13.5px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:13px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.score table{width:100%;border-collapse:collapse}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding:6px 0}
+.sc-n{text-align:right;padding:6px 0;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.sc-total th,.sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -345,10 +389,10 @@ h2{margin-top:24pt}
 <a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
 <a href="cell-types.html">細胞はどう仕事を分担するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
-<span class="soon">DNAからタンパク質まで<em>準備中</em></span>
-<span class="soon">エピゲノム<em>準備中</em></span>
-<span class="soon">受容体と細胞内シグナル<em>準備中</em></span>
-<span class="soon">細胞膜と物質輸送<em>準備中</em></span>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
 <span class="soon">代謝とATP<em>準備中</em></span>
 <span class="soon">解糖系<em>準備中</em></span>
@@ -406,6 +450,7 @@ h2{margin-top:24pt}
 <span class="soon">血管レーザー<em>準備中</em></span>
 <span class="soon">PBM・LEDの生化学<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">NAD⁺前駆体<em>準備中</em></span>
 <span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
@@ -422,9 +467,10 @@ h2{margin-top:24pt}
 <div class="hero">
 <p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。臨床でふだん意識しない基礎を思い出し、施術と結びつけて理解するための教材です。</p>
 <div class="flowline">細胞の構造　→　エネルギー代謝　→　品質管理　→　加齢変化　→　美容施術への応答</div>
-<p class="note">3 / 58 本を公開しています。確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
+<p class="note">確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
 </div>
-<section class="recent"><p class="rc-t">最近の更新</p><ul><li><time>2026-08-14</time><span class="k new">新規</span><a href="cell-types.html">細胞はどう仕事を分担するか</a><span class="note">初公開</span></li><li><time>2026-08-14</time><span class="k new">新規</span><a href="cell.html">細胞とは何か</a><span class="note">初公開</span></li><li><time>2026-08-14</time><span class="k new">新規</span><a href="organelles.html">オルガネラ</a><span class="note">初公開</span></li></ul><p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></section>
+<section class="score"><p class="sc-t">公開の状況</p><table><tr><th>基礎</th><td class="sc-n"><strong>7</strong> <span>/ 26</span></td></tr><tr><th>美容皮膚科</th><td class="sc-n"><strong>0</strong> <span>/ 29</span></td></tr><tr><th>美容内科</th><td class="sc-n"><strong>0</strong> <span>/ 3</span></td></tr><tr><th>おわりに</th><td class="sc-n"><strong>0</strong> <span>/ 1</span></td></tr><tr class="sc-total"><th>合計</th><td class="sc-n"><strong>7</strong> <span>/ 59</span></td></tr></table><p class="sc-note">確認できたものから、ひとつずつ増やしています。</p></section>
+<section class="recent"><p class="rc-t">最近の更新</p><ul><li><time>2026-08-16</time><span class="k new">新規</span><a href="membrane-transport.html">細胞膜と物質輸送</a><span class="note">初公開</span></li><li><time>2026-08-16</time><span class="k new">新規</span><a href="receptors-signaling.html">受容体と細胞内シグナル</a><span class="note">初公開</span></li><li><time>2026-08-16</time><span class="k new">新規</span><a href="epigenome.html">エピゲノム</a><span class="note">初公開</span></li><li><time>2026-08-16</time><span class="k new">新規</span><a href="dna-to-protein.html">DNAからタンパク質まで</a><span class="note">初公開</span></li><li><time>2026-08-14</time><span class="k new">新規</span><a href="cell-types.html">細胞はどう仕事を分担するか</a><span class="note">初公開</span></li></ul><p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></section>
 <section class="intro sec-rule">
 <h1>はじめに ― なぜこれを作ったか</h1>
 <blockquote class="lead">医学部で学んだ基礎は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
@@ -442,7 +488,7 @@ h2{margin-top:24pt}
 <h1>この教材の立ち方 ― 限られた根拠から、どう判断するか</h1>
 <blockquote class="lead">美容医療に、質の高い臨床試験がそろっている領域はほとんどありません。それでも私たちは毎日、治療を選んでいます。<strong>この教材は、限られた材料をつないで地図を作り、つないだところに「どのくらい確かか」を書き添えます。</strong></blockquote>
 <p>「エビデンスがないから何も言えない」で止めてしまうと、<strong>手元に残るのは経験談と広告だけ</strong>になります。美容医療で厳密な対照試験が組まれることは少なく、多くは小規模・単群・企業主導です。それを理由に、考えることをやめるわけにはいきません。</p>
-<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するための手がかり（clue）は、この三つをつなぐところにしかありません。</p>
+<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するには、この三つをつなぐしかありません。</p>
 <p>三つをつなぐには、推論が要ります。<strong>推論は、私たちが日々の診療でしていることそのものです。</strong>問題になるのは推論すること自体ではなく、<strong>推論を確かめられた事実と取り違えること</strong>だけです。だからこの教材は、<strong>どこまでが確立していて、どこからが推論か</strong>を、つないだ矢印ごとに示したまま進みます。それが分かれば、あとは読者が自分の臨床で判断できます——「ヒトでは未確認だが、機序は筋が通っていてリスクも低いなら試す」も、「未確認だから患者さんには断定的に説明しない」も、どちらも成り立ちます。</p>
 <p>下の六つが、その目印です。<strong>主張を却下するためのふるいではなく、いま自分がどの段に立っているかを確かめるためのもの</strong>です。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/巻頭_本教材が守る切り分け.webp" alt="手持ちの三つ（臨床・生化学・報告）をつなぎ、つないだ矢印に確かさのラベルを付ける" loading="lazy"><figcaption>手持ちの三つ（臨床・生化学・報告）をつなぎ、つないだ矢印に確かさのラベルを付ける</figcaption></figure>
@@ -473,10 +519,10 @@ h2{margin-top:24pt}
 <div class="part-title">情報をどう読むか</div>
 <p class="part-intro">同じDNAを持つ細胞が、なぜ違うものを作るのか。転写・翻訳・エピゲノム・受容体・膜輸送まで、「読む」「伝える」「出入りする」を通します。</p>
 <ul class="toc-list">
-<li class="soon"><span>DNAからタンパク質まで</span><em>準備中</em></li>
-<li class="soon"><span>エピゲノム</span><em>準備中</em></li>
-<li class="soon"><span>受容体と細胞内シグナル</span><em>準備中</em></li>
-<li class="soon"><span>細胞膜と物質輸送</span><em>準備中</em></li>
+<li><a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a></li>
+<li><a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a></li>
+<li><a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a></li>
+<li><a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a></li>
 </ul></div>
 <div class="part-block">
 <div class="part-title">エネルギー</div>
@@ -571,6 +617,7 @@ h2{margin-top:24pt}
 <li class="soon"><span>血管レーザー</span><em>準備中</em></li>
 <li class="soon"><span>PBM・LEDの生化学</span><em>準備中</em></li>
 <li class="soon"><span>プラズマ治療</span><em>準備中</em></li>
+<li class="soon"><span>導入</span><em>準備中</em></li>
 </ul></div>
 </div>
 <div class="sec-block"><h2 class="sec-title">美容内科<small>全身から入れる</small></h2>
@@ -589,7 +636,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-15 ／ 版 67dbf89</p>
+<p class="stamp">最終更新 2026-08-16 ／ 版 46de328</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

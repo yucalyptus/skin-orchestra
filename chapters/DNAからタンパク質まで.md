@@ -2,7 +2,10 @@
 id: dna-to-protein
 title: DNAからタンパク質まで
 kind: basic
-status: draft
+status: approved
+published: 2026-08-16
+history:
+  - {date: 2026-08-16, note: 初公開}
 ---
 
 > 加齢とともにハリと弾力が失われるのは、真皮のコラーゲンが減るからです。ただし「作らなくなった」だけではありません。**作る側が落ちるのと同時に、壊す側が上がっています。** 光老化した皮膚では、fibroblast の procollagen 転写が下がる一方で、ECMを分解する酵素 MMP の転写が上がります（→ [[fibroblast-collagen]]）。まずその「作る」側の幹——DNA → RNA → タンパク質——をたどります。
