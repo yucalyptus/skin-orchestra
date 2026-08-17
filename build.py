@@ -445,14 +445,17 @@ h2{margin-top:24pt}
 .score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
 .sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
   letter-spacing:.09em;color:var(--faint)}
-.score table{width:100%;border-collapse:collapse}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
 .score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
-  color:var(--sub);padding:6px 0}
-.sc-n{text-align:right;padding:6px 0;font-family:var(--sans);
-  font-variant-numeric:tabular-nums;white-space:nowrap}
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
 .sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
 .sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
-.sc-total th,.sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
 .sc-total th{font-weight:700;color:var(--ink)}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
