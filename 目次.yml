@@ -34,13 +34,12 @@ sections:
           - membrane-transport        # 細胞膜と物質輸送
 
       - part: エネルギー
-        intro: 細胞の活動はすべてATPを使います。ではそのATPはどこから来るのか。解糖系からNAD⁺まで、一本の流れとしてたどります。
+        intro: 細胞の活動はすべてATPを使います。ではそのATPはどこから来るのか。解糖系・TCA回路・電子伝達系からNAD⁺まで、一本の流れとしてたどります。
         chapters:
           - atp                       # 代謝とATP
           - glycolysis                # 解糖系
           - tca-cycle                 # TCA回路
           - electron-transport        # 電子伝達系
-          - oxidative-stress          # 酸化ストレスと抗酸化
           - nad                       # NAD⁺
 
       - part: 材料を感知し作る
@@ -57,8 +56,9 @@ sections:
           - ampk-mtor                 # AMPKとmTOR
 
       - part: 傷つくとどうなるか
-        intro: 細胞周期・細胞死・炎症と創傷治癒・血管・ECM。施術後に組織で起きることの土台がここに揃います。
+        intro: 酸化・細胞周期・細胞死・炎症と創傷治癒・血管・ECM。細胞が傷つくとどうなり、どう修復されるのか——施術後に組織で起きることの土台がここに揃います。
         chapters:
+          - oxidative-stress          # 酸化ストレスと抗酸化
           - cell-cycle                # 細胞周期
           - cell-death                # 細胞死
           - wound-healing             # 炎症と創傷治癒

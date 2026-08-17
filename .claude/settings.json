@@ -22,7 +22,9 @@
       "Bash(qlmanage -t -s 400 -o . lipid.svg)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/receptors-signaling.html)",
       "Bash(sed 's|^|  |')",
-      "Bash(git -c 'user.name=Yuka Aoki' -c user.email=yukaskin@gmail.com commit -q -m ' *)"
+      "Bash(git -c 'user.name=Yuka Aoki' -c user.email=yukaskin@gmail.com commit -q -m ' *)",
+      "Bash(qlmanage -t -s 1100 -o . ge.svg)",
+      "Bash(qlmanage -t -s 1120 -o . gg.svg)"
     ],
     "additionalDirectories": [
       "/tmp"
