@@ -20,7 +20,9 @@
       "Bash(grep -o '<aside class=\"column\">.\\\\{0,120\\\\}' _preview/receptors-signaling.html)",
       "Bash(/opt/homebrew/opt/python@3.11/bin/python3.11 -c \"import cairosvg\")",
       "Bash(qlmanage -t -s 400 -o . lipid.svg)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/receptors-signaling.html)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://yucalyptus.github.io/skin-orchestra/receptors-signaling.html)",
+      "Bash(sed 's|^|  |')",
+      "Bash(git -c 'user.name=Yuka Aoki' -c user.email=yukaskin@gmail.com commit -q -m ' *)"
     ],
     "additionalDirectories": [
       "/tmp"
