@@ -77,9 +77,8 @@ sections:
 
       # 治療は出さない。扱う組織そのものを見る部。
       - part: 組織の生化学
-        intro: 治療の前に、扱う組織そのものを見ます。血管とECM、真皮の二本柱、糖化、脂肪、筋、皮脂、赤み、メラノサイト。何でできていて、どう働き、壊れたときに何が起きるか。ここに治療は出てきません。
+        intro: 治療の前に、扱う組織そのものを見ます。ECMと真皮の二本柱、糖化、脂肪、筋、皮脂、血管と赤み、メラノサイト。何でできていて、どう働き、壊れたときに何が起きるか。ここに治療は出てきません。
         chapters:
-          - endothelium               # 血管と内皮
           - ecm                       # ECMとmechanotransduction
           - fibroblast-collagen       # 線維芽細胞とコラーゲン
           - elastic-fibers            # 弾性線維と膠原線維
@@ -88,6 +87,7 @@ sections:
           - muscle                    # 筋肉
           - sagging                   # たるみの多層構造（上の3層を束ねるのでここ）
           - sebum                     # 皮脂分泌の生化学
+          - endothelium               # 血管と内皮
           - erythema                  # 赤みの生化学
           - melanocytes               # メラノサイトと色素形成
 
