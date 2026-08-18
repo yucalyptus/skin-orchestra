@@ -1555,3 +1555,54 @@ ATPは代謝の出発点ではなく、電子の流れの最後にできあが�
  ラベルは日本語だが、分子名は英語のまま（NAD⁺, NADH, ATP, ADP, Pi, H⁺, e⁻, O₂, H₂O, glycogen）。
  タイトルは「電子の流れの先でATPができる」。
 ```
+
+---
+
+# N. 表皮とターンオーバー（新設章）の図【4点・2026-08-18】
+
+**共通のスタイル**：クリーンな医学教科書調／パステル配色／背景は白／影・立体感・3Dなし／
+ラベルは日本語だが分子名は英語のまま（keratin K5/K14, filaggrin, transglutaminase 1, laminin-332 など）／
+図の中に章名・章番号を描かない。
+**視覚規約**：実線＝確立した反応、破線＝間接的な連結。
+
+**この章の骨**：ターンオーバーは細胞が上がる速さではなく、**分化プログラムが最後まで進むか**で見る。
+4枚とも、この骨に奉仕させる。
+
+### epidermis_分化の4段階.png　【新規・章頭図】
+
+基底層・有棘層・顆粒層・角層を縦に4段。層ごとに**読む遺伝子が入れ替わる**ことを示す。
+
+- 基底層：keratin K5/K14、integrin α6β4 で基底膜に接着、p63。**「増殖するのはこの層だけ」と明記**
+- 有棘層：K1/K10 へ切り替わり、desmosome（desmoglein・desmocollin）で連結
+- 顆粒層：keratohyalin 顆粒（profilaggrin）と lamellar body が現れ、transglutaminase 1 が cornified envelope を架橋
+- 角層：脱核した corneocyte と細胞間脂質
+- **右端に細胞内 Ca²⁺ 濃度の勾配**（基底層で低く顆粒層で最大）を縦に重ね、分化スイッチの一つであることを示す
+
+### epidermis_顆粒層で起きること.png　【新規】
+
+顆粒層で**並行して進む3工程**を1枚に。**この章でいちばん重要な図。**
+
+1. profilaggrin →（切断）→ filaggrin → keratin filament を束ねて corneocyte を扁平化 →（さらに分解）→ NMF（アミノ酸・PCA・urocanic acid）
+2. transglutaminase 1 が involucrin・loricrin を架橋 → cornified envelope。外側に ω-hydroxyceramide が共有結合
+3. lamellar body が顆粒層と角層の境界で放出 → glucosylceramide・sphingomyelin・リン脂質が酵素で ceramide・cholesterol・遊離脂肪酸へ
+
+- 顆粒層の**タイトジャンクション**（claudin-1・occludin）を別のバリアとして併記する
+- 下段：filaggrin 機能喪失変異と TGM1 変異が臨床像を生むことを、**工程が律速である裏づけ**として置く
+- **3工程は横並びにし、どれか一つが欠けても代わりが利かないことが見て取れる配置にする**
+
+### epidermis_ターンオーバーの時間.png　【新規】
+
+- **左**：時間軸。基底層→顆粒層 約2週間、角層通過→脱落 さらに約2週間、合計約1か月。
+  **同じ軸に真皮のcollagen（年単位）を重ねて桁の違いを示す**
+- **右**：若年と高齢の表皮の対比。高齢側はターンオーバーが延び、**rete ridge が平坦化**して接着面積が減る
+- 下段の注記2行：「日数には部位差と測定法による幅がある」「回転を速めることと、分化を最後まで進めることは別」
+
+### epidermis_DEJ.png　【新規】
+
+DEJ の断面を拡大。**厚さ 50〜100 nm を尺度で示す。**
+
+- 上から：基底細胞 → hemidesmosome（integrin α6β4・BP180/type XVII collagen・BP230・plectin）
+  → lamina lucida（laminin-332）→ lamina densa（type IV collagen）→ anchoring fibril（type VII collagen）→ 乳頭真皮
+- **左に明記**：「表皮には血管がない。酸素と栄養はこの面を越えて拡散で届く」
+- **右**：若年と加齢・光老化の対比。rete ridge の波形が平坦化し、接着面積と物質交換の面が減る
+- 下段：DEJ が壊れる3経路（MMPによる分解・慢性UV・物理化学的損傷）
