@@ -34,7 +34,7 @@ sections:
           - membrane-transport        # 細胞膜と物質輸送
 
       - part: エネルギー
-        intro: 細胞の活動はすべてATPを使います。ではそのATPはどこから来るのか。解糖系・TCA回路・電子伝達系からNAD⁺まで、一本の流れとしてたどります。
+        intro: コラーゲンを作るのも、傷んだものを片づけるのも、細胞が1回分裂するのも、ATP・還元力（NADPH）・材料になる炭素の3つを使います。栄養素からこの3つが取り出されるまでを、一本の流れとしてたどります。この経路は発電だけをしているのではありません。同じ経路が、材料と還元力の出どころでもあります。
         chapters:
           - atp                       # 代謝とATP
           - glycolysis                # 解糖系
@@ -56,18 +56,22 @@ sections:
           - ampk-mtor                 # AMPKとmTOR
 
       - part: 傷つくとどうなるか
-        intro: 酸化・細胞周期・細胞死・炎症と創傷治癒・血管・ECM。細胞が傷つくとどうなり、どう修復されるのか——施術後に組織で起きることの土台がここに揃います。
+        intro: ROSは何をどう傷つけるのか。傷ついた細胞はどう死ぬのか。そして組織はどの順で修復されるのか。施術後に組織で起きることの土台です。
         chapters:
           - oxidative-stress          # 酸化ストレスと抗酸化
-          - cell-cycle                # 細胞周期
           - cell-death                # 細胞死
           - wound-healing             # 炎症と創傷治癒
+
+      - part: 血管とECM
+        intro: 細胞の外にある構造です。何でできていて、どう働き、壊れたときに何が起きるかを見ます。赤みも、ハリの低下も、ここの破綻として説明できます。
+        chapters:
           - endothelium               # 血管と内皮
           - ecm                       # ECMとmechanotransduction
 
       - part: 加齢で何が変わるか
-        intro: ここまでの機序を、加齢の側から整理し直します。Hallmarks of Aging・細胞老化・ミトコンドリア機能不全として一つの絵につなぎます。
+        intro: ここまでの機序を、加齢の側から整理し直します。まず「増えていない細胞」の4つの意味を分けたうえで、Hallmarks of Aging・細胞老化・ミトコンドリア機能不全を一つの絵につなぎます。
         chapters:
+          - cell-cycle                # 細胞周期
           - hallmarks-of-aging        # Hallmarks of Aging
           - senescence                # 細胞老化
           - mito-dysfunction          # ミトコンドリア機能不全と細胞老化
