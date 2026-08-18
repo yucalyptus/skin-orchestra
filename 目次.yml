@@ -62,12 +62,6 @@ sections:
           - cell-death                # 細胞死
           - wound-healing             # 炎症と創傷治癒
 
-      - part: 血管とECM
-        intro: 細胞の外にある構造です。何でできていて、どう働き、壊れたときに何が起きるかを見ます。赤みも、ハリの低下も、ここの破綻として説明できます。
-        chapters:
-          - endothelium               # 血管と内皮
-          - ecm                       # ECMとmechanotransduction
-
       - part: 加齢で何が変わるか
         intro: ここまでの機序を、加齢の側から整理し直します。まず「増えていない細胞」の4つの意味を分けたうえで、Hallmarks of Aging・細胞老化・ミトコンドリア機能不全を一つの絵につなぎます。
         chapters:
@@ -81,9 +75,15 @@ sections:
     subtitle: 局所に施術する
     parts:
 
-      # 治療は出さない。各論を読むための土台。
+      # 治療は出さない。扱う組織そのものを見る2つの部。
+      - part: 血管とECM
+        intro: 細胞の外にある構造です。何でできていて、どう働き、壊れたときに何が起きるかを見ます。赤みも、ハリの低下も、ここの破綻として説明できます。
+        chapters:
+          - endothelium               # 血管と内皮
+          - ecm                       # ECMとmechanotransduction
+
       - part: 皮膚・脂肪・筋の生化学
-        intro: 治療の前に、扱う組織そのものを見ます。真皮の二本柱、糖化、脂肪、筋、皮脂、血管、メラノサイト。ここに治療は出てきません。
+        intro: 続けて、扱う組織そのものを見ます。真皮の二本柱、糖化、脂肪、筋、皮脂、赤み、メラノサイト。ここに治療は出てきません。
         chapters:
           - fibroblast-collagen       # 線維芽細胞とコラーゲン
           - elastic-fibers            # 弾性線維と膠原線維
