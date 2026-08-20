@@ -439,6 +439,19 @@ h2{margin-top:24pt}
 @media(max-width:600px){.column{padding:18px 18px 16px}}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:13px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:13px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
    数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
@@ -1098,6 +1111,23 @@ def parse_markdown(text):
                 blocks[-1] = '<div class="pro">%s</div>' % blocks[-1]
             inner = parse_markdown("\n".join(buf))
             blocks.append('<div class="easy">%s</div>' % "\n".join(inner))
+            clear_pending()
+            i = j + 1
+            continue
+
+        # 補足 ::: note タイトル … :::
+        #   本筋ではないが本文の近くに置きたい「ちなみに」。
+        #   コラム（枠付きの余談）より軽い扱いで、左罫線だけで本文と区別する。
+        if stripped.startswith("::: note"):
+            title = stripped[len("::: note"):].strip()
+            j = i + 1
+            buf = []
+            while j < n and lines[j].strip() != ":::":
+                buf.append(lines[j])
+                j += 1
+            inner = parse_markdown("\n".join(buf))
+            head = '<p class="memo-h">%s</p>' % decorate(esc(title)) if title else ""
+            blocks.append('<aside class="memo">%s%s</aside>' % (head, "\n".join(inner)))
             clear_pending()
             i = j + 1
             continue
