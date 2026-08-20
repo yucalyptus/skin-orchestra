@@ -145,3 +145,8 @@ researcher で照合済み。**一次取得できず「要確認」で残した2
 本文で「過食・高血糖・運動不足でミトコンドリアの ROS 産生が増える」「糖尿病合併症の機序として引かれる」と書いた。
 - Brownlee M の unifying mechanism（高血糖 → ミトコンドリア superoxide 過剰産生）の一次文献を確認する（Nature 2001 か Diabetes 2005 の総説）。
 - 「基質過剰＋低ATP需要 → 膜電位上昇 → ROS」を扱った総説（Fisher-Wellman & Neufer などの reductive stress / redox 過負荷の議論）も候補。
+
+## electron-transport note「CoQ10 は部品でもあり抗酸化物質でもある」（2026-08-20 追加）
+
+- statin による CoQ10 低下（血中・筋組織）を示す報告と、補充試験のメタ解析（筋症状への効果は一定しない）の一次文献を確認する。
+- CoQ10 が mevalonate 経路で合成されること、脂溶性抗酸化物質として膜脂質の過酸化を抑えることの標準的な出典も添える。
