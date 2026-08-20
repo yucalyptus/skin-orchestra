@@ -139,3 +139,9 @@ researcher で照合済み。**一次取得できず「要確認」で残した2
 - 血清マグネシウムが体内総量の約1%であること（骨・細胞内が大半）の出典を確認する。
 - thiamine の栄養状態評価に、血漿濃度より全血 TPP／erythrocyte transketolase activity が用いられるとする総説を確認する。
 - 「基準値内＝細胞内で充足」ではない、という言い方の裏づけ（低Mg血症の見逃しに関する報告など）。
+
+## electron-transport §4「需要に対して基質が多すぎるとき」（2026-08-20 追加）
+
+本文で「過食・高血糖・運動不足でミトコンドリアの ROS 産生が増える」「糖尿病合併症の機序として引かれる」と書いた。
+- Brownlee M の unifying mechanism（高血糖 → ミトコンドリア superoxide 過剰産生）の一次文献を確認する（Nature 2001 か Diabetes 2005 の総説）。
+- 「基質過剰＋低ATP需要 → 膜電位上昇 → ROS」を扱った総説（Fisher-Wellman & Neufer などの reductive stress / redox 過負荷の議論）も候補。
