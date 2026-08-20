@@ -448,6 +448,8 @@ h2{margin-top:24pt}
 .memo p{margin:0 0 10px;font-size:13px;line-height:1.9;color:var(--sub)}
 .memo p:last-child{margin-bottom:0}
 .memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:12.5px}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:13px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
