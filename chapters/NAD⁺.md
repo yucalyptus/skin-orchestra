@@ -2,104 +2,249 @@
 id: nad
 title: NAD⁺
 kind: basic
-status: draft
+status: approved
+published: 2026-08-24
+history:
+  - {date: 2026-08-24, note: 初公開}
 ---
 
-> 市販サプリはNMN、点滴はNAD⁺そのもの、内服・外用にはNAM（ナイアシンアミド）。同じNAD⁺の話でも扱われる形が違い、点滴のNAD⁺は血中から速やかに消えることが報告されています。**この章はNAD⁺そのものの生化学**——何をしていて、減るとなぜ困るのか——だけを扱います。**前駆体の補充をどう評価するかは[[nad-precursors]]**が受け持ちます。
->
-> **この章の前提**：NADHが電子を運ぶ場面（→ [[glycolysis]]・[[tca-cycle]]・[[electron-transport]]）／膜を越えるには輸送体が要る（→ [[membrane-transport]]）
+糖や脂肪酸からATPを作る途中では、栄養素から電子を抜き取ります。その電子を受け取るのが**NAD⁺**です。電子を受け取る前がNAD⁺、受け取った後がNADHです。
+
+NADHは、受け取った電子を電子伝達系へ運びます。電子を渡すとNAD⁺へ戻り、再び電子を受け取れます。この往復が止まると、糖や脂肪酸の分解も先へ進みません。**NAD⁺そのものがエネルギーになるのではなく、栄養素からエネルギーを取り出す反応に必要な分子**です。
+
+NAD⁺には、もう一つの使われ方があります。一部の酵素は、NAD⁺を**反応の材料として分子ごと使います。**この場合はNAD⁺の数が減るため、細胞は減った分を作り直します。
+
+この章でまず覚えてほしいのは、三つだけです。
+
+1. **NAD⁺** は、電子を受け取る前の状態。
+2. 電子を受け取ると **NADH** になり、電子伝達系へ電子を渡す。
+3. NAD⁺は一部の酵素にも分子ごと使われるため、減った分は細胞内で作り直される。
+
+## 1　NAD⁺とNADHは、同じ分子の二つの状態
+
+まずは、**NAD⁺が電子を受け取ってNADHになり、再びNAD⁺へ戻る流れ**を見ます。
 
 
-## この章の一言
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 370" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="NADプラスは解糖系、PDH、TCA回路で電子を受け取ってNADHになる。NADHは電子伝達系へ電子を渡してNADプラスに戻る">
+<defs>
+<marker id="nadCycle" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="364" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NAD⁺とNADHは、同じ運び手の二つの姿</text>
+<text x="28" y="68" font-size="13" fill="#3B4A63">電子を受け取る前が NAD⁺、受け取った後が NADH</text>
 
-> NAD⁺には**二つの役割**があります。**電子を運ぶ補酵素として循環する役割**（この使い方では総量は減らない）と、**PARP・sirtuin・CD38・SARM1が分子ごと切って使う基質としての役割**（この使い方では実際に減る）。
->
-> だから細胞の状態を決めているのは総量そのものではなく、**NADH/NAD⁺比と、消費と補充の釣り合い**です。
+<rect x="28" y="126" width="132" height="76" rx="12" fill="#E6F1EA" stroke="#3D6B52" stroke-width="2"/>
+<text x="94" y="157" font-size="23" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<text x="94" y="182" font-size="12.5" text-anchor="middle" fill="#245840">電子を受け取れる</text>
 
+<line x1="170" y1="164" x2="374" y2="164" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="272" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">栄養素から電子を受け取る</text>
+<text x="272" y="136" font-size="12.5" text-anchor="middle" fill="#3B4A63">解糖系・PDH・TCA回路</text>
+<circle cx="246" cy="164" r="12" fill="#DCE9F7" stroke="#2F5C87"/>
+<text x="246" y="169" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<circle cx="278" cy="164" r="12" fill="#DCE9F7" stroke="#2F5C87"/>
+<text x="278" y="169" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<text x="306" y="195" font-size="14" font-weight="700" fill="#1E3A63">＋ H⁺</text>
 
-![中央のNAD⁺⇄NADHを挟んで、左と右で使い方が根本的に違う。左（循環する役割）＝解糖系のGAPDH・ピルビン酸脱水素酵素複合体・TCAの脱水素酵素群がNAD⁺に還元当量を積み、複合体Iで降ろす。姿が変わるだけなのでNAD(H)の総プールは減らない。右（消費される役割）＝PARP・sirtuin・CD38・SARM1がNAD⁺分子そのものを切り、NAM＋ADP-リボース関連産物になる。この反応は不可逆で、プールが実際に減る。下＝減った分はサルベージ経路（NAM →NAMPT→ NMN →NMNAT→ NAD⁺）で作り直される。左下＝NADHは内膜を通れないが、NAD⁺はSLC25A51で運び込まれる](figures/nad_NAD⁺.png)
+<rect x="386" y="126" width="146" height="76" rx="12" fill="#DCE9F7" stroke="#2F5C87" stroke-width="2"/>
+<text x="459" y="157" font-size="23" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<text x="459" y="182" font-size="12.5" text-anchor="middle" fill="#1E3A63">電子を受け取った</text>
 
+<line x1="459" y1="212" x2="459" y2="267" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="444" y="240" font-size="12.5" text-anchor="end" fill="#1E3A63">電子を渡す</text>
+<rect x="350" y="279" width="182" height="62" rx="11" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.8"/>
+<text x="441" y="306" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">電子伝達系</text>
+<text x="441" y="327" font-size="12" text-anchor="middle" fill="#3B4A63">電子の流れから ATP を作る</text>
+<path d="M340 310 H94 V212" fill="none" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="232" y="301" font-size="12.5" text-anchor="middle" fill="#1E3A63">電子を降ろすと NAD⁺ に戻る</text>
 
-## 1　二つの役割を、先に分ける
+</g>
+</svg>
+</div>
+<figcaption>NAD⁺は解糖系・PDH・TCA回路で電子を受け取ってNADHになり、NADHは電子伝達系へ電子を渡してNAD⁺に戻る。図1では、この電子運搬の往復だけを示す</figcaption>
+</figure>
 
-> NAD⁺/NADH：電子を運ぶ補酵素として**循環する**（減らない）
-> NAD⁺：PARP・sirtuin・CD38・SARM1の**基質として消費される**（減る）
+NAD⁺とNADHは、別々の栄養素ではありません。**同じ分子が、電子を受け取る前後で名前を変えています。**
 
-NAD⁺ は電子を運ぶ補酵素としても、sirtuin などの**基質**としても使われます。どちらか一方ではありません。どちらの役割の話をしているかで、意味する量が変わります。
+解糖系・PDH・TCA回路では、栄養素から電子が取り出されます。その電子を受け取るのが NAD⁺ です。電子を受け取った NAD⁺ は、NADH になります。
 
-この区別が実務に効くのは、**「NAD⁺が減る」という言い方が、二つの違う事態を指してしまう**からです。解糖系やTCAで NAD⁺ が NADH になっても、それは荷を積んだだけで、NAD(H) というプール自体は減りません（酸化型の NAD⁺ は減ります）。**プールが本当に減るのは、右側の消費酵素が分子を切ったときだけ**です。加齢で NAD⁺ が低下するとき、原因としてよく挙げられるのは**消費が増える（CD38の増加、慢性的なDNA損傷によるPARPの活性化）／補充が追いつかない（NAMPTの低下）**という、この右側と補充側です。
+このとき、電子を手放した栄養素は**酸化**され、電子を受け取った NAD⁺ は**還元**された、と表現します。酸化と還元は別々の出来事ではなく、同じ電子移動を両側から見た言葉です。
 
-**ただし加齢で動くのは、右側だけではありません。** ミトコンドリアの機能が落ちて NADH が溜まれば、プールが同じでも遊離 NAD⁺ は不足します。**プールの減少と比の偏りは別々の軸ですが、加齢ではどちらも起こり、互いを悪化させます**——NAD⁺ が減れば sirtuin を介したミトコンドリアの維持が鈍り、ミトコンドリアが鈍れば電子の降ろし口が詰まって遊離 NAD⁺ がさらに減る、というループが成り立つとされます（→ [[mito-dysfunction]]）。**どちらの軸で足りないのかで、補充が効く筋道も変わります**（→ [[nad-precursors]]）。
+## 2　NADHは電子を渡し、NAD⁺に戻る
 
-もっとも、**ヒトの組織でどちらがどれだけ効いているかは、切り分けられていません。** 測れるのはたいてい総 NAD⁺ 量で、NADH は抽出の過程で変化しやすく、遊離と結合、区画ごとの違いもあります（→ §5）。**「NAD⁺ が減っている」という測定値は、原因までは指していません。**
+NADH は、受け取った電子をミトコンドリアの**電子伝達系**へ渡します。電子伝達系は、その電子の流れを使って ATP を作ります。電子を渡した NADH は、再び NAD⁺ に戻ります。
 
-そして減ると何が困るのか。**NAD⁺ を要求する反応が同時に複数あるから**です。解糖系のGAPDHもTCAの脱水素酵素もNAD⁺がなければ止まり、sirtuinは脱アシル化ができず、PARPはDNA損傷修復を進められない。**エネルギー産生と修復とエピゲノム調節が、同一のプールを共有している**——ここがNAD⁺という分子の位置づけです。
+この往復が続くことで、栄養素の分解も続けられます。NADH が電子を渡せないと NAD⁺ が戻らず、解糖系やTCA回路は進みにくくなります。
 
-## 2　循環する役割 ―― 効いているのは総量ではなく比
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 310" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="NADHは電子を電子伝達系へ運び、電子伝達系はその電子の流れを使ってATPを作る。ATPは合成、輸送、運動などの仕事へエネルギーを渡す">
+<defs><marker id="nadToAtp" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker></defs>
+<rect x="3" y="3" width="554" height="304" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NADHとATPは、運ぶものが違う</text>
+<rect x="28" y="78" width="150" height="92" rx="11" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="103" y="109" font-size="20" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<text x="103" y="136" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">電子を運ぶ</text>
+<text x="103" y="157" font-size="11.5" text-anchor="middle" fill="#3B4A63">NAD⁺へ戻る</text>
+<line x1="188" y1="124" x2="230" y2="124" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadToAtp)"/>
+<rect x="242" y="78" width="148" height="92" rx="11" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="316" y="108" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">電子伝達系</text>
+<text x="316" y="133" font-size="12.5" text-anchor="middle" fill="#3B4A63">電子の流れを使う</text>
+<text x="316" y="155" font-size="12.5" text-anchor="middle" fill="#3B4A63">ADP ＋ Pi → ATP</text>
+<line x1="400" y1="124" x2="422" y2="124" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadToAtp)"/>
+<rect x="434" y="78" width="98" height="92" rx="11" fill="#F5E9D6" stroke="#B4762B" stroke-width="1.7"/>
+<text x="483" y="116" font-size="22" font-weight="700" text-anchor="middle" fill="#8A5A18">ATP</text>
+<text x="483" y="143" font-size="13" font-weight="700" text-anchor="middle" fill="#8A5A18">仕事へ渡す</text>
+<rect x="28" y="198" width="504" height="76" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="46" y="225" font-size="13.5" fill="#1F2937"><tspan font-weight="700" fill="#1E3A63">NADH：</tspan>栄養素から抜き取った電子を、電子伝達系まで届ける</text>
+<text x="46" y="252" font-size="13.5" fill="#1F2937"><tspan font-weight="700" fill="#8A5A18">ATP：</tspan>そこで得たエネルギーを、合成・輸送・運動へ届ける</text>
+</g>
+</svg>
+</div>
+<figcaption>NADHは電子を運び、ATPは細胞の仕事へエネルギーを渡す。両者がつながる場所が電子伝達系で、NADHから受け取った電子の流れを使ってATPが作られる</figcaption>
+</figure>
 
-NAD⁺ は酸化型、NADH は還元型です。役割はシンプルで、**電子（還元当量）を受け取って運ぶ荷台**です。
+NADH と ATP は同じものではありません。**NADH が運ぶのは電子、ATP が細胞の仕事へ渡すのはエネルギー**です。両者は電子伝達系でつながっています（→ [[electron-transport]]）。
 
-- 解糖系・PDH・TCA回路：NAD⁺ が電子を受け取って **NADH** になる（荷を積む）
-- 電子伝達系（Complex I）：NADH が電子を渡して **NAD⁺** に戻る（荷を降ろす）
+なお、酸素が不足して電子伝達系へ電子を渡しにくいとき、細胞質では pyruvate を lactate に変える反応で NAD⁺を戻します。これは、解糖系を続けるためです（→ [[glycolysis]]）。
 
-![ATP（左）とNAD（右）を並べて役割を分ける。ATPはADP＋Piへの加水分解でエネルギーを放し、それを合成・能動輸送・筋収縮といった"仕事"に共役させる。NADは還元当量（ヒドリド）を受け取ってNADHになり、複合体Iへ電子を渡してNAD⁺に戻る——放出ではなく受け渡し。下の比較表が両者を「本質的な役割／主な形／主な場／機能の例」で対比する。注意書き＝どちらか一方を代謝そのものとみなさない](figures/nad_ATPとNADの違い.png)
+## 3　NAD⁺は、電子運搬とは別の反応でも使われる
 
-ここで細胞の代謝の向きを決めているのは、NAD の総量ではなく **NADH/NAD⁺ 比**です。脱水素酵素の反応はどれも可逆で、**比が反応の進む向きを決める**からです。
+ここまで見た電子運搬では、NAD⁺とNADHが入れ替わるだけです。**NAD全体の数は減りません。**
 
-- 比が低い（NAD⁺ が相対的に多い）＝荷台が空いている。GAPDH も TCA の脱水素酵素も進みやすい。
-- 比が高い（NADH が溜まっている）＝荷台が塞がっている。降ろし口である電子伝達系が追いつかない状態で、解糖系もTCAも押し戻される。だから**低酸素や強い解糖の場面では、LDH が pyruvate を lactate に変えて NAD⁺ を再生し、解糖系を回し続ける**（→ [[glycolysis]]）。乳酸は老廃物ではなく、この再生の副産物です。
-- 比は**区画ごとに違います**。細胞質の遊離 NAD⁺/NADH 比は数百対1のオーダー、ミトコンドリアマトリックスは10対1前後とされます（あくまで目安で、細胞種・状態で動きます）。同じ細胞の中に、酸化的な区画と還元的な区画が同居しています。
+一方、NAD⁺分子そのものを切って使う酵素もあります。この場合は、NAD⁺の数が実際に減ります。
 
-> 総量が同じでも、比が違えば代謝の向きは変わります。**「NAD⁺が多い／少ない」という一次元では、この章の内容は表せません。**
+- **PARP**：DNA損傷への応答に使う
+- **sirtuin（サーチュイン）**：タンパク質の働きを調節するために使う（→ [[epigenome]]、[[hallmarks-of-aging]]）
+- **CD38**：NAD⁺を分解し、細胞内のシグナルにも関わる
+- **SARM1**：傷ついた軸索でNAD⁺を分解する
 
-## 3　消費される役割 ―― 分子ごと切られる
+酵素名をすべて覚える必要はありません。ここで大切なのは、**NAD⁺には「NADHになって戻る使われ方」と、「分子を切られて減る使われ方」がある**ことです。
 
-NAD⁺ を**切って使い切ってしまう**酵素群があります。この使い方では NAD⁺ は実際に**消費されて減ります**。反応はいずれも不可逆で、生成物は NAM ＋ ADP-リボース関連分子です。
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 420" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="PARP、sirtuin、CD38、SARM1は目的は異なるが、いずれもNADプラス分子を切って使うため、NADプラスの数を減らす">
+<defs><marker id="nadConsume" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#8A4B78"/></marker></defs>
+<rect x="3" y="3" width="554" height="414" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">四つとも、NAD⁺分子を切って使う</text>
+<text x="28" y="67" font-size="13" fill="#3B4A63">目的は違うが、この使い方ではNAD⁺の数が減る</text>
 
-- **PARP**：DNA損傷への応答などで NAD⁺ を使う。損傷が慢性的に続けば、消費も続く。
-- **sirtuin（サーチュイン）**：NAD⁺ を使ってタンパク質を**脱アセチル化**する（→ [[epigenome]]、[[hallmarks-of-aging]]）。**遊離 NAD⁺ 濃度に感受性がある**ため、比とプールの状態がそのまま活性に反映されます。
-- **CD38**：NAD⁺ を分解する酵素（加齢で増えるとされる）。分解産物の cyclic ADP-ribose（cADPR）を介して Ca²⁺ シグナルにも関わる。
-- **SARM1**：軸索が傷んだときに活性化して軸索内の NAD⁺ を分解する酵素。**NAD⁺の消費は事故ではなく、細胞のプログラムの一部として起きることもある**という例。
+<rect x="28" y="91" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="121" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">PARP</text>
+<line x1="124" y1="115" x2="164" y2="115" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="91" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="112" font-size="13.5" font-weight="700" fill="#1F2937">DNA損傷への応答</text>
+<text x="194" y="130" font-size="11.5" fill="#3B4A63">NAD⁺を使ってADP-riboseを付加する</text>
 
-![中央のNAD⁺プールから4方向へ矢印が出て、4つの酵素がそれぞれ何のためにNAD⁺を切るかを示す。①PARP＝DNA損傷を検出してPAR鎖を作り、修復因子を呼び寄せる ②sirtuin＝基質タンパクの脱アシル化を通じて転写・代謝・ストレス応答を調節 ③CD38＝NAD分解に加えcADPRを作りCa²⁺シグナルと免疫細胞機能に関わる ④SARM1＝軸索損傷で活性化し軸索内NAD⁺を分解する。共通の生成物はNAM＋ADP-リボース関連分子で、反応はいずれも不可逆。下段のサルベージ経路が戻り道で、「消費と補充の釣り合いがプールを決める」](figures/nad_NAD消費酵素.png)
+<rect x="28" y="151" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="181" font-size="14" font-weight="700" text-anchor="middle" fill="#713A62">sirtuin</text>
+<line x1="124" y1="175" x2="164" y2="175" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="151" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="172" font-size="13.5" font-weight="700" fill="#1F2937">タンパク質の働きを調節</text>
+<text x="194" y="190" font-size="11.5" fill="#3B4A63">転写・代謝・ストレス応答を調節する</text>
 
-## 4　補充 ―― salvage が主で、NAMPT が律速
+<rect x="28" y="211" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="241" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">CD38</text>
+<line x1="124" y1="235" x2="164" y2="235" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="211" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="232" font-size="13.5" font-weight="700" fill="#1F2937">NAD⁺の分解・Ca²⁺シグナル</text>
+<text x="194" y="250" font-size="11.5" fill="#3B4A63">細胞内のシグナルにも関わる</text>
 
-切られた分は作り直されます。細胞で主に働くのは**再利用（salvage）**の経路です。
+<rect x="28" y="271" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="301" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">SARM1</text>
+<line x1="124" y1="295" x2="164" y2="295" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="271" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="292" font-size="13.5" font-weight="700" fill="#1F2937">損傷した軸索でNAD⁺を分解</text>
+<text x="194" y="310" font-size="11.5" fill="#3B4A63">軸索変性のプログラムを進める</text>
 
-- **salvage pathway**：NAM →（**NAMPT**）→ NMN →（NMNAT）→ NAD⁺。**これが主役で、NAMPT が律速**。消費酵素が生じた NAM を再利用する循環になっています。
-- **NR経路**：NR →（NRK）→ NMN → NAD⁺（NMNに合流）
-- **Preiss-Handler経路**：nicotinic acid（ナイアシン）→ NaMN → NaAD → NAD⁺
-- **de novo経路**：tryptophan（トリプトファン）からキヌレニン経路を通って作る
+<rect x="28" y="343" width="504" height="48" rx="10" fill="#713A62"/>
+<text x="280" y="373" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">共通点：分子を切って使う → NAD⁺の数が減る</text>
+</g>
+</svg>
+</div>
+<figcaption>PARP・sirtuin・CD38・SARM1は、それぞれ別の目的でNAD⁺を使う。しかし共通してNAD⁺分子を切るため、NAD⁺とNADHが入れ替わる電子運搬とは違い、NAD⁺の数が実際に減る</figcaption>
+</figure>
 
-NAMPT が律速だということは、**前駆体を増やしても、その手前ないし別の入口でなければ通らない場面がある**ことを意味します。NMN や NR が NAMPT の下流に入る分子であることは、この経路図の上で意味を持ちます。ただし**どの経路がどれだけ効くかは、組織・細胞の種類・栄養・炎症の状態で違います。** 前駆体そのものの評価は → [[nad-precursors]]。
+使われて減ったNAD⁺は、細胞内で作り直されます。その材料と経路、外から補う介入は[[nad-precursors]]で扱います。
 
-![入口が4つ、出口はひとつ。salvage（NAM）・NR・Preiss-Handler（ナイアシン）・de novo（トリプトファン→キヌレニン）が、それぞれ別の酵素（NAMPT／NRK／NAPRT／NADS）を通って**共通のNAD⁺プール**に流れ込む。図の右下の注意＝どの経路がどれだけ寄与するかは組織・状態で変わり、「前駆体を取り込むこと」と「目的の区画でNAD⁺が増えること」は同義ではない](figures/nad_NAD補充経路.png)
+## 4　NADは、細胞内の場所ごとに分けて管理される
 
-## 5　区画化と、教科書の更新点（SLC25A51）
+細胞質とミトコンドリアでは、NAD⁺とNADHが別々に管理されています。**ミトコンドリア・マトリックスにもNAD⁺が必要です。**PDH・TCA回路・β酸化では、NAD⁺が電子を受け取ってNADHになります。また、ミトコンドリアにあるSIRT3・SIRT4・SIRT5は、NAD⁺を反応の材料として使います。
 
-NAD は細胞の中で**区画（コンパートメント）ごと**に管理されています。
+このマトリックス内のNAD⁺を補うため、**NAD⁺分子はSLC25A51という輸送体を通って入ります。**一方、細胞質のNADH分子は内膜を直接通れません。NADHが持っている**電子だけ**が、shuttleを介して内側へ渡されます。
 
-- **核と細胞質**の NAD(H) は、核膜孔を通じてほぼ連続したプールとして扱われる。
-- **ミトコンドリア内膜**は NADH を自由には通さない → だから[[glycolysis]]で出た **shuttle（電子だけを渡す仕組み）** が必要。
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 550" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="ミトコンドリア内膜では、NADプラス分子はSLC25A51を介してマトリックスへ入る。NADH分子は内膜を直接通れないが、持っている電子はシャトルを介して内側へ渡せる。マトリックスへ入ったNADプラスは、エネルギー代謝で電子を受け取るほか、SIRT3、SIRT4、SIRT5の反応材料になる">
+<defs>
+<marker id="nadMitoGreen" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
+<marker id="nadMitoBlue" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="544" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NAD⁺とNADHでは、内膜の越え方が違う</text>
+<text x="28" y="67" font-size="13" fill="#3B4A63">分子そのものが通るのか、電子だけを渡すのかを分けて読む</text>
+<rect x="28" y="87" width="504" height="98" rx="10" fill="#F7F8FA"/>
+<rect x="28" y="205" width="504" height="58" rx="6" fill="#EEF2F8" stroke="#8A97AC" stroke-width="1.3"/>
+<rect x="28" y="280" width="504" height="236" rx="10" fill="#F7F8FA"/>
+<text x="46" y="112" font-size="14" font-weight="700" fill="#1E3A63">細胞質</text>
 
-かつては「NAD⁺はミトコンドリア内膜を越えられない」「細胞質とミトコンドリアのNAD⁺は完全に別々」と説明されていました。しかし2020年、**SLC25A51（別名 MCART1）** が哺乳類ミトコンドリア内膜の主要な **NAD⁺輸送体** として同定されました。
+<rect x="84" y="122" width="132" height="44" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.7"/>
+<text x="150" y="150" font-size="18" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<line x1="150" y1="168" x2="150" y2="212" stroke="#3D6B52" stroke-width="2.7" marker-end="url(#nadMitoGreen)"/>
 
-> つまり「NAD⁺はミトコンドリアに入れない」は**現在では誤り**。NAD⁺はSLC25A51を介してミトコンドリアへ運び込まれる。
+<rect x="344" y="122" width="132" height="44" rx="9" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="410" y="150" font-size="18" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<line x1="370" y1="168" x2="370" y2="195" stroke="#9A3D28" stroke-width="2.4"/>
+<line x1="361" y1="180" x2="379" y2="194" stroke="#9A3D28" stroke-width="3"/>
+<line x1="379" y1="180" x2="361" y2="194" stroke="#9A3D28" stroke-width="3"/>
+<text x="354" y="188" font-size="12.5" font-weight="700" text-anchor="end" fill="#7A2F1D">分子は通れない</text>
+<path d="M450 168 V184 Q450 198 436 204 L410 212" fill="none" stroke="#2F5C87" stroke-width="2.7" marker-end="url(#nadMitoBlue)"/>
+<text x="465" y="190" font-size="13" font-weight="700" fill="#1E3A63">e⁻</text>
 
-これは[[membrane-transport]]の「膜は自由には通れず、通るには専用の輸送体が要る」という原則が、**ミトコンドリア内膜で起きている実例**です。輸送体があるからといって、各区画のNAD⁺の濃度・酸化還元状態・回転が同じになるわけではありません。NAD代謝は**依然として強く区画化されつつ、区画間でやりとり・緩衝もされている**系、と理解するのが正確です。
+<text x="280" y="239" font-size="13" font-weight="700" text-anchor="middle" fill="#3B4A63">ミトコンドリア内膜</text>
+<rect x="89" y="212" width="122" height="44" rx="8" fill="#FFFFFF" stroke="#3D6B52" stroke-width="1.6"/>
+<text x="150" y="240" font-size="13.5" font-weight="700" text-anchor="middle" fill="#245840">SLC25A51</text>
+<rect x="349" y="212" width="122" height="44" rx="8" fill="#FFFFFF" stroke="#2F5C87" stroke-width="1.6"/>
+<text x="410" y="240" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">shuttle</text>
 
-区画化がある以上、**総NAD⁺量・遊離NAD⁺・NADH/NAD⁺比・回転速度、そして血液・皮膚・ミトコンドリアという場所は、すべて別の量**になります。この測定の仕分けは、介入を評価する側の論点なので **→ [[nad-precursors]]** が持ちます。
+<text x="280" y="313" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">ミトコンドリア・マトリックス</text>
+<line x1="150" y1="259" x2="150" y2="334" stroke="#3D6B52" stroke-width="2.7" marker-end="url(#nadMitoGreen)"/>
+<text x="166" y="290" font-size="12.5" font-weight="700" fill="#245840">NAD⁺分子が通る</text>
+<line x1="410" y1="259" x2="410" y2="342" stroke="#2F5C87" stroke-width="2.7" marker-end="url(#nadMitoBlue)"/>
+<text x="426" y="290" font-size="12.5" font-weight="700" fill="#1E3A63">電子だけ渡す</text>
 
-![左＝矢印の色で"何が通れるか"を区別している。緑＝NAD(H)そのものが行き来する経路（核膜孔は自由、内膜はSLC25A51経由でNAD⁺のみ）、青＝リンゴ酸–アスパラギン酸シャトルとグリセロール3-リン酸シャトルで、運ばれるのは還元当量（電子）だけでNADH分子は移動しない。赤い×＝NADHは内膜を直接通れない。右＝測定ダッシュボード。総NAD⁺量・遊離NAD⁺・NAD⁺/NADH比・回転速度と、血液・皮膚組織・ミトコンドリア区画の間が「?」でつながれており、どの組み合わせも自動的には一致しない。下の赤帯＝血液の値→皮膚の値→ミトコンドリアの値→ATP産生→臨床効果は、一つずつ別に検証すべき矢印](figures/nad_NAD区画化と測定.png)
+<rect x="84" y="334" width="132" height="44" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.7"/>
+<text x="150" y="362" font-size="18" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<circle cx="392" cy="356" r="13" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.4"/>
+<text x="392" y="361" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<circle cx="428" cy="356" r="13" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.4"/>
+<text x="428" y="361" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+
+<path d="M150 379 V396 H280 V407" fill="none" stroke="#3D6B52" stroke-width="2.5" marker-end="url(#nadMitoGreen)"/>
+<rect x="45" y="407" width="470" height="94" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.4"/>
+<text x="280" y="430" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">マトリックス内へ入ったNAD⁺の使い道</text>
+<rect x="58" y="442" width="210" height="47" rx="8" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.3"/>
+<text x="163" y="462" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">電子を受け取る</text>
+<text x="163" y="480" font-size="11.5" text-anchor="middle" fill="#245840">PDH・TCA回路・β酸化 → NADH</text>
+<rect x="292" y="442" width="210" height="47" rx="8" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.3"/>
+<text x="397" y="462" font-size="13" font-weight="700" text-anchor="middle" fill="#713A62">酵素の材料になる</text>
+<text x="397" y="480" font-size="11.5" text-anchor="middle" fill="#713A62">SIRT3・SIRT4・SIRT5</text>
+</g>
+</svg>
+</div>
+<figcaption>NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われる。一方、細胞質のNADH分子は内膜を直接越えず、持っている電子だけがshuttleを介して内側へ渡される</figcaption>
+</figure>
 
 
 ## この章の到達点
 
-1. NAD⁺には**二つの役割**：電子運搬として**循環**する（減らない）役割と、**PARP・sirtuin・CD38・SARM1に消費される**（減る）役割。**プールが本当に減るのは後者だけ**。
-2. 循環する役割で効いているのは総量ではなく **NADH/NAD⁺比**。比が脱水素酵素反応の向きを決め、比は区画ごとに違う（細胞質は数百対1、マトリックスは10対1前後が目安）。
-3. 補充の主役は **salvage pathway（NAM →NAMPT→ NMN →NMNAT→ NAD⁺）で、NAMPTが律速**。NR・ナイアシン・トリプトファンは別の入口から同じプールへ合流する。
-4. NAD代謝は区画化されているが、**SLC25A51の発見により「NAD⁺はミトコンドリアに入れない」は現在は誤り**。
-5. 減ると困るのは、**エネルギー産生（脱水素酵素）・修復（PARP）・脱アシル化（sirtuin）が同一のプールを共有している**から。
-
-![6枚の要約パネル。①酸化還元＝NAD⁺とNADHの相互変換そのものでは総NAD(H)量は消費されない ②消費＝PARP・sirtuin・CD38・SARM1がハサミの絵でNAD⁺を切り、NAM＋ADP-リボースへ ③再合成＝NAMPTを律速とするサルベージが主で、NR・ナイアシン・トリプトファン経路も合流 ④区画＝内膜はほぼ不透過でNADHは行き来できない ⑤輸送＝SLC25A51がNAD⁺をマトリックスへ運ぶ ⑥測定＝総量・比率・区画・動態・組織はそれぞれ別の評価軸。結論は「NAD⁺量は酸化還元・消費・補充・区画化の釣り合いで決まる」](figures/nad_まとめ.png)
+1. **NAD⁺は電子を受け取る前、NADHは受け取った後**。同じ分子の二つの状態です。
+2. NADHは電子伝達系へ電子を渡してNAD⁺に戻ります。この往復が、栄養素の分解とATP産生をつないでいます。
+3. NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。
+4. 細胞質のNADH分子はミトコンドリア内膜を直接通れず、電子だけをshuttleで渡します。一方、NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われます。

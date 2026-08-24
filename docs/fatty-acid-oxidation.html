@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>脂肪酸とケトン体 ― 生化学で見る美容医療</title>
+<meta name="description" content="脂肪をエネルギーに使うまでには、① 脂肪細胞から脂肪酸を取り出す ② 血中を運ぶ ③ ミトコンドリアに運び込む ④ 端から炭素2個ずつ切り出して acetyl-CoA にするの4段階があります。できた acetyl-Co…">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/fatty-acid-oxidation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="脂肪酸とケトン体 ― 生化学で見る美容医療">
+<meta property="og:description" content="脂肪をエネルギーに使うまでには、① 脂肪細胞から脂肪酸を取り出す ② 血中を運ぶ ③ ミトコンドリアに運び込む ④ 端から炭素2個ずつ切り出して acetyl-CoA にするの4段階があります。できた acetyl-Co…">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/fatty-acid-oxidation.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
+blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
+padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+color:var(--sub);text-align:center}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border-left:2px solid var(--rule);font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
+border-left:3px solid var(--accent-line);font-family:var(--sans)}
+.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
+<a href="fatty-acid-oxidation.html" class="active">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
+<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<div class="part">材料を感知し作る</div>
+<span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
+<span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
+<div class="part">掃除と作り直し</div>
+<span class="soon">オートファジーとリソソーム<em>準備中</em></span>
+<span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
+<span class="soon">AMPKとmTOR<em>準備中</em></span>
+<div class="part">傷害から修復まで</div>
+<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
+<span class="soon">細胞死<em>準備中</em></span>
+<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<div class="part">細胞は加齢で何が変わるか</div>
+<span class="soon">細胞周期<em>準備中</em></span>
+<span class="soon">Hallmarks of Aging<em>準備中</em></span>
+<span class="soon">細胞老化<em>準備中</em></span>
+<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<span class="soon">表皮とターンオーバー<em>準備中</em></span>
+<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
+<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
+<span class="soon">弾性線維と膠原線維<em>準備中</em></span>
+<span class="soon">糖化とAGE<em>準備中</em></span>
+<span class="soon">皮脂分泌の生化学<em>準備中</em></span>
+<span class="soon">毛包と毛周期<em>準備中</em></span>
+<span class="soon">脂肪<em>準備中</em></span>
+<span class="soon">筋肉<em>準備中</em></span>
+<span class="soon">血管と内皮<em>準備中</em></span>
+<div class="part">訴えを細胞から読み解く</div>
+<span class="soon">赤みの生化学<em>準備中</em></span>
+<span class="soon">しみとくすみ<em>準備中</em></span>
+<span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter">
+<p class="kicker">基礎　／　エネルギー</p>
+<h1 class="ch-title">脂肪酸とケトン体<small>β-oxidation</small></h1>
+<p class="dateline">公開 2026-08-24</p>
+<blockquote><a class="chref" href="atp.html">代謝とATP</a>で見た三大栄養素——糖質・脂質・タンパク質——のうち、この章は<strong>脂質</strong>が <span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。">acetyl-CoA</span> になるまでを扱います。<br><br><strong>この章の前提</strong>：glucose から電子を取り出す流れ（→ <a class="chref" href="glycolysis.html">解糖系</a>）。ここで取り出した acetyl-CoA の合流先は <a class="chref" href="tca-cycle.html">TCA回路</a>です。</blockquote>
+<h2>この章の一言</h2>
+<blockquote class="lead">脂肪をエネルギーに使うまでには、<strong>① 脂肪細胞から脂肪酸を取り出す ② 血中を運ぶ ③ ミトコンドリアに運び込む ④ 端から炭素2個ずつ切り出して acetyl-CoA にする</strong>の4段階があります。できた acetyl-CoA は <a class="chref" href="tca-cycle.html">TCA回路</a>へ、同時に出る <strong>NADH と FADH₂</strong> は<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>へ回り、<strong><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span> ができるのはその先</strong>です（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。<br><br><strong>4段階のうち律速は③、ミトコンドリアの膜です。</strong>細胞質にあるあいだ、脂肪酸は分解されません。そのままでは膜を通れないので、<strong>carnitine と結合した形にしてはじめて中に入れます</strong>。分解が始まるのは、入ってからです。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　脂肪をエネルギーに使うまでの4段階</a></li><li><a href="#s2">2　① 中性脂肪から脂肪酸を取り出す ―― lipolysis</a></li><li><a href="#s3">3　③ ミトコンドリアに運び込む ―― carnitine</a></li><li><a href="#s4">4　④ 脂肪酸をacetyl-CoAに分解する ―― β酸化</a></li><li><a href="#s5">5　acetyl-CoA が余るとき ―― ケトン体</a></li></ul></nav><h2 id="s1">1　脂肪をエネルギーに使うまでの4段階</h2>
+<p>貯蔵されている脂肪は<strong>中性脂肪（トリグリセリド）</strong>です。<strong>glycerol 1個に、長鎖脂肪酸が3本エステル結合でつながった形</strong>をしていて、脂肪細胞はこれを脂肪滴として抱えています。</p>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 400" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="中性脂肪の構造。glycerolの3つの炭素それぞれに、–O–CO–というエステル結合で長鎖脂肪酸の炭素鎖R1・R2・R3がつながっている。左の縦の骨格がglycerol1個、右に伸びる3本が長鎖脂肪酸3本。下段はRの中身で、炭素と水素だけが並んだジグザグの長い鎖。右端のCOがglycerolとつながる。palmitateなら炭素16個"><rect x="2" y="2" width="476" height="396" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<text x="24" y="36" font-size="15" font-weight="700" fill="#2B4C7E">中性脂肪 ＝ glycerol 1個 ＋ 長鎖脂肪酸 3本</text>
+<text x="218" y="114" font-size="12" text-anchor="end" fill="#2B4C7E">H₂C</text>
+<line x1="224" y1="110" x2="238" y2="110" stroke="#3F6F9F" stroke-width="1.2"/>
+<text x="242" y="114" font-size="12.5" font-weight="700" fill="#B04A33">O–CO–R¹</text>
+<text x="218" y="144" font-size="12" text-anchor="end" fill="#2B4C7E">HC</text>
+<line x1="224" y1="140" x2="238" y2="140" stroke="#3F6F9F" stroke-width="1.2"/>
+<text x="242" y="144" font-size="12.5" font-weight="700" fill="#B04A33">O–CO–R²</text>
+<text x="218" y="174" font-size="12" text-anchor="end" fill="#2B4C7E">H₂C</text>
+<line x1="224" y1="170" x2="238" y2="170" stroke="#3F6F9F" stroke-width="1.2"/>
+<text x="242" y="174" font-size="12.5" font-weight="700" fill="#B04A33">O–CO–R³</text>
+<line x1="224" y1="112" x2="224" y2="168" stroke="#3F6F9F" stroke-width="1.4"/>
+<path d="M192 96 L186 96 L186 184 L192 184" fill="none" stroke="#3F6F9F" stroke-width="1.4"/>
+<text x="178" y="136" font-size="12.5" font-weight="700" text-anchor="end" fill="#2B4C7E">glycerol</text><text x="178" y="153" font-size="11" text-anchor="end" fill="#3B4A63">1個</text>
+<path d="M308 96 L314 96 L314 184 L308 184" fill="none" stroke="#B04A33" stroke-width="1.4"/>
+<text x="322" y="136" font-size="12.5" font-weight="700" fill="#8E3A25">長鎖脂肪酸</text><text x="322" y="153" font-size="11" fill="#8E3A25">3本</text>
+<text x="24" y="216" font-size="11.5" fill="#3B4A63">つなぎ目の <tspan font-weight="700" fill="#8E3A25">–O–CO–</tspan> がエステル結合。ここが切れると脂肪酸が1本外れる</text>
+<line x1="24" y1="238" x2="456" y2="238" stroke="#E4E9F2" stroke-width="1.5"/>
+<text x="24" y="272" font-size="13.5" font-weight="700" fill="#8E3A25">R ＝ 長鎖脂肪酸の炭素鎖</text>
+<polyline points="72,322 98,300 124,322 150,300 176,322 202,300 228,322 254,300 280,322 306,300 332,322 358,300" fill="none" stroke="#B04A33" stroke-width="2.4" stroke-linejoin="round"/>
+<text x="66" y="326" font-size="11.5" text-anchor="end" fill="#3B4A63">CH₃</text>
+<text x="364" y="304" font-size="11.5" font-weight="700" fill="#B04A33">CO–</text>
+<text x="24" y="366" font-size="11.5" fill="#3B4A63">炭素と水素だけが並んだ長い鎖。palmitate なら炭素16個</text>
+</g></svg></div><figcaption>中性脂肪は、glycerol 1個に長鎖脂肪酸3本が –O–CO–（エステル結合）でつながった形。R は炭素と水素だけの長い鎖で、palmitate なら炭素16個にあたる</figcaption></figure>
+<p><strong>この形のままでは、細胞の外に出ません。</strong>血中を運ばれるのも、ミトコンドリアで分解されるのも、切り離したあとの脂肪酸です。だから最初にやることは、<strong>3本を外すこと</strong>になります。</p>
+<aside class="memo"><p class="memo-h">ちなみに ―― 脂肪酸は鎖の長さで呼び分ける</p><div class="tblwrap"><table><thead><tr><th></th><th>炭素数</th><th>例</th></tr></thead><tbody><tr><td><strong>短鎖</strong></td><td>6個以下</td><td>酢酸・酪酸（腸内細菌が作る）</td></tr><tr><td><strong>中鎖</strong></td><td>8〜12個</td><td>MCT オイルの成分（→ §3）</td></tr><tr><td><strong>長鎖</strong></td><td>14個以上</td><td>palmitate（16個）、oleate（18個）。<strong>貯蔵されている中性脂肪も食事の脂質も、大半はこれ</strong></td></tr></tbody></table></div>
+<p>区切りの数字は資料によって多少ずれます。<strong>この章で「脂肪酸」と書いているのは長鎖脂肪酸</strong>のことです。</p></aside>
+<p>段階ごとに、<strong>場所も、起きることも違います。</strong></p>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>どこで</th><th>何が起きるか</th></tr></thead><tbody><tr><td><strong>① 取り出す</strong></td><td>脂肪細胞の脂肪滴</td><td>中性脂肪が <strong>lipase</strong> に切られ、<strong>脂肪酸3本と glycerol</strong> になる（<strong>lipolysis</strong> → §2）</td></tr><tr><td><strong>② 運ぶ</strong></td><td>血中</td><td>脂肪酸は水に溶けないので <strong>albumin に結合</strong>して運ばれ、<strong>CD36</strong> などを介して細胞に入る</td></tr><tr><td><strong>③ 運び込む</strong></td><td>ミトコンドリアの膜</td><td><strong>carnitine と結合した形にして膜を通す。通れるかどうかがここで決まる</strong>（→ §3）</td></tr><tr><td><strong>④ 分解する</strong></td><td>マトリックス</td><td>炭素2個ずつ切り出して <strong>acetyl-CoA・NADH・FADH₂</strong> にする（<strong>β酸化</strong> → §4）</td></tr></tbody></table></div>
+<aside class="memo"><p class="memo-h">ちなみに ―― エネルギー源の貯蔵の形は glycogen と中性脂肪。その中でも中性脂肪が大半</p><div class="tblwrap"><table><thead><tr><th></th><th>中性脂肪</th><th>glycogen</th></tr></thead><tbody><tr><td><strong>量</strong></td><td>蓄えの大半。glycogen の数十倍</td><td>肝と筋で約500 g（2,000 kcal 前後）</td></tr><tr><td><strong>強み</strong></td><td>同じ重さで倍以上（9 対 4 kcal/g）。水を伴わないので軽い</td><td>動員が速い。<strong>酸素がなくても使える</strong>。肝のものは<strong>血糖として出せる</strong></td></tr><tr><td><strong>担当</strong></td><td>長期の貯蔵</td><td>速さと血糖の維持</td></tr></tbody></table></div>
+<p><strong>酸素が追いつかず<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>だけで ATP を作る場面</strong>（激しい運動時の筋など）と、<strong>血糖が下がったとき</strong>。この2つは中性脂肪では間に合いません。だから glycogen も持っています。</p></aside>
+<h2 id="s2">2　① 中性脂肪から脂肪酸を取り出す ―― lipolysis</h2>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 510" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="脂肪滴からの脂肪酸の取り出しとその調節。adrenaline・glucagon・ACTH・TSH・成長ホルモンがそれぞれの受容体を介してcAMPを上げ、PKAが脂肪滴の表面を覆うperilipin-1をリン酸化すると、lipaseが働いて中性脂肪から脂肪酸3本とglycerolができる。脂肪酸はalbuminに結合して血中へ、glycerolは解糖系へ向かう。insulinはcAMPを分解させてこの流れを止める"><defs><marker id="lp1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3F6F9F"/></marker><marker id="lp2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker><marker id="lp3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#8A93A6"/></marker><marker id="lpbar" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M6 0 L6 10" stroke="#4F8468" stroke-width="2.6" fill="none"/></marker></defs><rect x="2" y="2" width="476" height="506" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<rect x="132" y="18" width="216" height="76" rx="8" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.3"/>
+<text x="240" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#3B4A63">adrenaline</text>
+<text x="240" y="62" font-size="12.5" text-anchor="middle" fill="#3B4A63">glucagon・ACTH</text>
+<text x="240" y="82" font-size="12.5" text-anchor="middle" fill="#3B4A63">TSH・成長ホルモン</text>
+<line x1="240" y1="96" x2="240" y2="116" stroke="#3F6F9F" stroke-width="2" marker-end="url(#lp1)"/>
+<rect x="164" y="118" width="152" height="32" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.3"/><text x="240" y="140" font-size="12.5" text-anchor="middle" fill="#3B4A63">それぞれの受容体</text>
+<line x1="240" y1="152" x2="240" y2="172" stroke="#3F6F9F" stroke-width="2" marker-end="url(#lp1)"/>
+<rect x="200" y="174" width="80" height="32" rx="7" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.4"/><text x="240" y="196" font-size="13" font-weight="700" text-anchor="middle" fill="#2B4C7E">cAMP</text>
+<rect x="348" y="174" width="86" height="32" rx="7" fill="#EDF4EF" stroke="#4F8468" stroke-width="1.5"/><text x="391" y="196" font-size="13" font-weight="700" text-anchor="middle" fill="#2F6B4F">insulin</text>
+<line x1="344" y1="190" x2="288" y2="190" stroke="#4F8468" stroke-width="2.2" marker-end="url(#lpbar)"/><text x="316" y="224" font-size="11.5" text-anchor="middle" fill="#4F8468">分解させて止める</text>
+<line x1="240" y1="208" x2="240" y2="230" stroke="#3F6F9F" stroke-width="2" marker-end="url(#lp1)"/>
+<rect x="205" y="232" width="70" height="32" rx="7" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.8"/><text x="240" y="254" font-size="14" font-weight="700" text-anchor="middle" fill="#2B4C7E">PKA</text>
+<line x1="240" y1="266" x2="240" y2="304" stroke="#B04A33" stroke-width="2.2" marker-end="url(#lp2)"/><text x="252" y="284" font-size="12" font-weight="700" fill="#B04A33">perilipin-1 をリン酸化</text>
+<ellipse cx="128" cy="368" rx="96" ry="58" fill="#FDF3E3" stroke="#D9A441" stroke-width="6"/>
+<text x="128" y="366" font-size="14" font-weight="700" text-anchor="middle" fill="#8A6A1F">中性脂肪</text><text x="128" y="386" font-size="12" text-anchor="middle" fill="#8A6A1F">（脂肪滴）</text>
+<text x="128" y="452" font-size="11.5" text-anchor="middle" fill="#3B4A63">表面は perilipin-1 に覆われている</text>
+<line x1="228" y1="368" x2="288" y2="368" stroke="#B04A33" stroke-width="2.4" marker-end="url(#lp2)"/><text x="258" y="356" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">lipase</text><text x="258" y="390" font-size="11" text-anchor="middle" fill="#8E3A25">1本ずつ外す</text>
+<rect x="296" y="308" width="160" height="34" rx="8" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.6"/><text x="376" y="331" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">脂肪酸 ×3</text>
+<text x="376" y="360" font-size="11.5" text-anchor="middle" fill="#3B4A63">albumin に結合して血中へ</text>
+<rect x="296" y="382" width="160" height="34" rx="8" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.5"/><text x="376" y="405" font-size="13" font-weight="700" text-anchor="middle" fill="#2B4C7E">glycerol</text>
+<text x="376" y="434" font-size="11.5" text-anchor="middle" fill="#3B4A63">解糖系へ</text>
+</g></svg></div><figcaption>脂肪滴の表面は perilipin-1 に覆われていて、lipase が中性脂肪に触れられるかどうかはこの被覆で決まる。ホルモンはいずれも <span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。">cAMP</span> を上げ、PKA が perilipin-1 をリン酸化すると lipase が働いて脂肪酸3本と glycerol が出る。insulin は cAMP を分解させてこの流れを止める</figcaption></figure>
+<p>中性脂肪から脂肪酸を外すのは <strong>lipase</strong> です。3本を1本ずつ外し、あとに glycerol が残ります。</p>
+<p>切り離された <strong>glycerol</strong> は、脂肪酸とは別の道を行きます。肝へ運ばれます。<strong>中性脂肪1分子のうち、糖になって解糖系に入るのは、この部分だけ</strong>です（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</p>
+<p>この lipase は <strong>hormone-sensitive lipase（ホルモン感受性リパーゼ）</strong> と呼ばれ、<strong>adrenaline・glucagon・ACTH・TSH・成長ホルモン</strong>が活性化し、<strong>insulin が阻害します。</strong></p>
+<p>活性化するホルモンは、いずれも細胞内の <strong>cAMP</strong> を上げます。cAMP が上がると <strong>PKA</strong> が働き、脂肪滴の表面を覆う <strong>perilipin-1</strong> をリン酸化します。<strong>リン酸化された perilipin-1 は形を変え、それまで塞いでいた脂肪滴の表面を lipase に明け渡します。</strong></p>
+<p><strong>insulin は、この流れを止めます。</strong>phosphodiesterase を活性化して cAMP を分解するので、PKA が働かず、perilipin-1 はリン酸化されません。食後に lipolysis が止まるのはこのためです。</p>
+<p>さらに insulin は、<strong>切り出された脂肪酸を、脂肪細胞を出る前に中性脂肪へ戻します</strong>（<strong>re-esterification</strong>）。<strong>分解を止めるだけでなく、戻す側にも働く</strong>——insulin が効いていると脂肪が減りにくいのは、このためです。</p>
+<p><strong>絶食中は insulin が低いので、中性脂肪は脂肪酸に分解され、中性脂肪への戻りも抑えられます。</strong>lipolysis が続いた先で、<strong>ケトン体</strong>が作られます（→ §5）。</p>
+<aside class="memo"><p class="memo-h">ちなみに ―― 余った糖は、脂肪酸として貯蔵される</p><p>食後に glucose が入り、まず使う分と glycogen に蓄える分を超えて炭素が供給されると、流れは脂肪酸を作る側へ向かいます。これが <strong>de novo lipogenesis（DNL、脂肪酸新生）</strong>です。</p>
+<div class="flow"><span class="node">glucose</span><span class="arr">→</span><span class="node">pyruvate</span><span class="arr">→</span><span class="node">acetyl-CoA</span><span class="arr">→</span><span class="node">citrate</span><span class="arr">→</span><span class="node">細胞質の acetyl-CoA</span><span class="arr">→</span><span class="node">malonyl-CoA</span><span class="arr">→</span><span class="node">palmitate</span></div>
+<p>糖からできた pyruvate はミトコンドリアで acetyl-CoA になります。ただし acetyl-CoA 自体は内膜を越えられないため、いったん <strong>citrate</strong> にして細胞質へ出し、<strong>ATP-citrate lyase（ACLY）</strong>が acetyl-CoA に戻します。次に <strong>acetyl-CoA carboxylase（ACC）</strong>が <strong>malonyl-CoA</strong> を作り、<strong>fatty acid synthase（FASN）</strong>が acetyl-CoA・malonyl-CoA と <strong><span class="term" tabindex="0" data-t="NADPH" data-d="主にペントースリン酸経路が供給する還元力。NADPH 自体は ROS を消さず、酸化型の glutathione や thioredoxin を還元型へ戻して抗酸化系を再生する。同じ還元力が NOX の ROS 産生にも使われる。">NADPH</span></strong> を使って、まず palmitate を組み立てます。NADPH の供給元の一つが、解糖系の G6P から分かれる PPP です（→ <a class="chref" href="glycolysis.html">解糖系</a>§4）。</p>
+<p>できた脂肪酸は、glucose から作れる <strong>glycerol-3-phosphate</strong> に3本つながり、中性脂肪として肝や脂肪組織に貯蔵されます。つまり糖はそのまま脂肪滴へ入るのではなく、<strong>糖の炭素から脂肪酸と glycerol 骨格の両方を作って貯蔵形にする</strong>わけです。</p>
+<p>ここでできる malonyl-CoA は、次節の <strong>CPT1 を抑えます</strong>。脂肪酸を作っている食後にはミトコンドリアへの入口を閉じ、同じ脂肪酸をすぐβ酸化しない——<strong>合成と分解を同時に進めないための切り替え</strong>です。ただし「食べた糖がすべて直ちに脂肪になる」という意味ではありません。まず消費と glycogen への貯蔵があり、DNL が大きくなるのは、それを超えるエネルギー供給が続く場面です。</p></aside>
+<h2 id="s3">3　③ ミトコンドリアに運び込む ―― carnitine</h2>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 440" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="ミトコンドリアの入口。細胞質にある脂肪酸はそのままでは膜を通れないので、carnitineを付けたacylcarnitineという形にする。膜にあるCPT1がここを通す酵素で律速にあたる。マトリックスに入るとcarnitineは外れて細胞質へ戻り、脂肪酸はそこから分解にかかる"><defs><marker id="cn1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker><marker id="cn2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#8A93A6"/></marker></defs><rect x="2" y="2" width="476" height="436" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<rect x="16" y="20" width="448" height="164" rx="8" fill="#F6F8FC"/><text x="34" y="44" font-size="12.5" font-weight="700" fill="#3B4A63">細胞質</text>
+<rect x="180" y="62" width="120" height="36" rx="8" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.4"/><text x="240" y="86" font-size="13.5" text-anchor="middle" fill="#3B4A63">脂肪酸</text>
+<line x1="240" y1="100" x2="240" y2="122" stroke="#B04A33" stroke-width="2.2" marker-end="url(#cn1)"/><text x="252" y="116" font-size="12" font-weight="700" fill="#8E3A25">carnitine を付ける</text>
+<rect x="130" y="124" width="220" height="48" rx="8" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.6"/><text x="240" y="146" font-size="13.5" font-weight="700" text-anchor="middle" fill="#8E3A25">acylcarnitine</text><text x="240" y="164" font-size="11" text-anchor="middle" fill="#8E3A25">＝ carnitine が付いた脂肪酸</text>
+<rect x="16" y="196" width="448" height="26" fill="#DCE6F2" stroke="#9FB0C8" stroke-width="1.2"/><text x="456" y="214" font-size="11.5" text-anchor="end" fill="#3B4A63">ミトコンドリアの膜</text>
+<rect x="196" y="194" width="88" height="30" rx="7" fill="#FFFFFF" stroke="#B04A33" stroke-width="2"/><text x="240" y="214" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">CPT1</text>
+<rect x="292" y="197" width="46" height="24" rx="5" fill="#B04A33"/><text x="315" y="214" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">律速</text>
+<line x1="240" y1="176" x2="240" y2="192" stroke="#B04A33" stroke-width="2.2" marker-end="url(#cn1)"/>
+<rect x="16" y="234" width="448" height="188" rx="8" fill="#EDF4EF"/><text x="34" y="258" font-size="12.5" font-weight="700" fill="#2F6B4F">マトリックス</text>
+<line x1="240" y1="226" x2="240" y2="266" stroke="#B04A33" stroke-width="2.2" marker-end="url(#cn1)"/>
+<rect x="140" y="268" width="200" height="46" rx="8" fill="#FFFFFF" stroke="#4F8468" stroke-width="1.6"/><text x="240" y="290" font-size="13.5" font-weight="700" text-anchor="middle" fill="#2F6B4F">脂肪酸</text><text x="240" y="307" font-size="11" text-anchor="middle" fill="#4F8468">carnitine は外れる</text>
+<line x1="240" y1="318" x2="240" y2="340" stroke="#4F8468" stroke-width="2.4" marker-end="url(#cn1)"/><text x="240" y="360" font-size="12.5" font-weight="700" text-anchor="middle" fill="#2F6B4F">ここから分解が始まる</text>
+<path d="M344 291 L410 291 L410 148 L354 148" fill="none" stroke="#8A93A6" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#cn2)"/>
+<text x="240" y="398" font-size="11.5" text-anchor="middle" fill="#3B4A63">外れた carnitine は細胞質へ戻り、また使われる</text>
+</g></svg></div><figcaption>脂肪酸はそのままではミトコンドリアの膜を通れない。carnitine を付けた acylcarnitine という形にして、CPT1 が通す。マトリックスに入ると carnitine は外れて細胞質へ戻り、脂肪酸はそこから分解にかかる</figcaption></figure>
+<p><strong>貯蔵されている中性脂肪は、ほとんどが長鎖脂肪酸でできています。</strong>そして長鎖脂肪酸は、細胞に届いても<strong>そのままではミトコンドリアの膜を通れません。</strong>そこで <strong>carnitine</strong> という小さな分子を付けた形（<strong>acylcarnitine</strong>）にして通します。マトリックスに入ると carnitine は外れて細胞質へ戻り、脂肪酸はそこから分解にかかります。</p>
+<p>通す酵素は <strong>CPT1</strong> です。<strong>脂肪酸が分解されるかどうかは、この CPT1 を通れるかどうかで決まります。</strong>脂肪酸ができても、細胞に届いても、ここを通らなければ何も始まりません。<strong>脂肪酸の分解の速さは、ここで決まります（律速）。</strong></p>
+<p><strong>CPT1 を抑えているのは、脂肪酸を作る側の産物です。</strong>脂肪酸を合成しはじめると <strong>malonyl-CoA</strong> ができ、これが CPT1 を抑えます。作っている最中に、同じものを分解しないための仕組みです。</p>
+<blockquote><strong>切り分け。</strong>「carnitine が欠ければ長鎖脂肪酸は入れない」は確立した生化学です。ただし<strong>「足りている人が足せば分解が増える」は、そこからは導けません。</strong>CPT1 がどれだけ働くかを決めているのは、carnitine の量ではないからです（→ 巻頭「本教材が守る切り分け」）。</blockquote>
+<aside class="column"><p class="col-t">コラム</p><p class="col-h">MCT（中鎖脂肪酸）はなぜ「すぐエネルギーになる」のか</p><p>ここまで見てきた長鎖脂肪酸は、炭素16〜18個です。<strong>MCT は medium-chain triglyceride の略で、炭素8〜12個の中鎖脂肪酸でできた中性脂肪</strong>——鎖が短いぶん、通る道が変わります。</p>
+<p>長鎖脂肪酸がミトコンドリアに入るには、<strong>carnitine を付けてもらい、CPT1 という1か所の通り道を通る</strong>しかありません。<strong>中鎖脂肪酸には、この手続きが要りません。</strong>短いので、carnitine なしで膜を越えられます。</p>
+<p>届くまでの道も違います。長鎖脂肪酸はカイロミクロンに載ってリンパを回ってから血中に入りますが、<strong>中鎖脂肪酸は門脈からまっすぐ肝へ</strong>行きます。</p>
+<p><strong>肝に速く着いて、着いたらそのままミトコンドリアに入れる。</strong>MCT オイルが注目されるのは、この2つが重なって<strong>すぐエネルギーになる</strong>からです。肝に届いた分はケトン体にも回りやすく、ketogenic diet で使われるのもここに由来します。</p>
+<p><strong>ただしこれは、口から入れた MCT の話です。</strong>貯蔵されている中性脂肪は<strong>長鎖脂肪酸</strong>でできています。MCT を摂ったからといって、そちらが分解されやすくなるわけではありません。<strong>貯蔵された中性脂肪を使うときは、これまでどおり carnitine の入口を通ります。</strong></p></aside>
+<h2 id="s4">4　④ 脂肪酸をacetyl-CoAに分解する ―― β酸化</h2>
+<p>マトリックスに入った脂肪酸は、<strong>端から炭素2個ずつ切り出されます</strong>。これが <strong>β酸化</strong> です。外れた2個は <strong>acetyl-CoA</strong> になり、残った鎖は2個ぶん短くなって、この作業を繰り返します。</p>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 580" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="β酸化は、脂肪酸の鎖をCoA側の端から炭素2個ずつ切り出す反応の繰り返し。1回転ごとに炭素2個分がacetyl-CoAとして外れ、NADHが1個とFADH2が1個出る。鎖は2個ずつ短くなり、palmitateなら7回転して8個のacetyl-CoA、7個のNADH、7個のFADH2になる"><defs><marker id="bo1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker></defs><rect x="2" y="2" width="476" height="576" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<text x="24" y="36" font-size="15" font-weight="700" fill="#2B4C7E">端から炭素2個ずつ切り出す</text>
+<text x="24" y="56" font-size="11.5" fill="#3B4A63">1セットは4つの反応（水素を外す → 水を足す → 水素を外す → 切り離す）</text>
+<text x="24" y="74" font-size="12.5" font-weight="700" fill="#3B4A63">1回転目</text>
+<text x="24" y="92" font-size="11" fill="#3B4A63">炭素16個</text>
+<rect x="98" y="84" width="30" height="34" rx="6" fill="#FBEDE9"/>
+<text x="94" y="105" font-size="11.5" text-anchor="end" fill="#3B4A63">CoA–</text>
+<polyline points="104,109 117,91 130,109 143,91 156,109 169,91 182,109 195,91 208,109 221,91 234,109 247,91 260,109 273,91 286,109 299,91" fill="none" stroke="#B04A33" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="128" y1="82" x2="128" y2="120" stroke="#B04A33" stroke-width="1.8" stroke-dasharray="4 3"/>
+<text x="128" y="74" font-size="11.5" font-weight="700" text-anchor="middle" fill="#B04A33">ここで切れる</text>
+<line x1="113" y1="124" x2="113" y2="144" stroke="#B04A33" stroke-width="2" marker-end="url(#bo1)"/>
+<rect x="53" y="148" width="120" height="28" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.4"/><text x="113" y="168" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="183" y="148" width="70" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="218" y="168" font-size="12" text-anchor="middle" fill="#3B4A63">NADH</text>
+<rect x="263" y="148" width="76" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="301" y="168" font-size="12" text-anchor="middle" fill="#3B4A63">FADH₂</text>
+<text x="24" y="224" font-size="12.5" font-weight="700" fill="#3B4A63">2回転目</text>
+<text x="24" y="242" font-size="11" fill="#3B4A63">炭素14個</text>
+<rect x="98" y="234" width="30" height="34" rx="6" fill="#FBEDE9"/>
+<text x="94" y="255" font-size="11.5" text-anchor="end" fill="#3B4A63">CoA–</text>
+<polyline points="104,259 117,241 130,259 143,241 156,259 169,241 182,259 195,241 208,259 221,241 234,259 247,241 260,259 273,241" fill="none" stroke="#B04A33" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="128" y1="232" x2="128" y2="270" stroke="#B04A33" stroke-width="1.8" stroke-dasharray="4 3"/>
+<line x1="113" y1="274" x2="113" y2="294" stroke="#B04A33" stroke-width="2" marker-end="url(#bo1)"/>
+<rect x="53" y="298" width="120" height="28" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.4"/><text x="113" y="318" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="183" y="298" width="70" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="218" y="318" font-size="12" text-anchor="middle" fill="#3B4A63">NADH</text>
+<rect x="263" y="298" width="76" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="301" y="318" font-size="12" text-anchor="middle" fill="#3B4A63">FADH₂</text>
+<text x="24" y="374" font-size="12.5" font-weight="700" fill="#3B4A63">3回転目</text>
+<text x="24" y="392" font-size="11" fill="#3B4A63">炭素12個</text>
+<rect x="98" y="384" width="30" height="34" rx="6" fill="#FBEDE9"/>
+<text x="94" y="405" font-size="11.5" text-anchor="end" fill="#3B4A63">CoA–</text>
+<polyline points="104,409 117,391 130,409 143,391 156,409 169,391 182,409 195,391 208,409 221,391 234,409 247,391" fill="none" stroke="#B04A33" stroke-width="2.2" stroke-linejoin="round"/>
+<line x1="128" y1="382" x2="128" y2="420" stroke="#B04A33" stroke-width="1.8" stroke-dasharray="4 3"/>
+<line x1="113" y1="424" x2="113" y2="444" stroke="#B04A33" stroke-width="2" marker-end="url(#bo1)"/>
+<rect x="53" y="448" width="120" height="28" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.4"/><text x="113" y="468" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="183" y="448" width="70" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="218" y="468" font-size="12" text-anchor="middle" fill="#3B4A63">NADH</text>
+<rect x="263" y="448" width="76" height="28" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="301" y="468" font-size="12" text-anchor="middle" fill="#3B4A63">FADH₂</text>
+<text x="240" y="504" font-size="17" text-anchor="middle" fill="#3B4A63">⋮</text>
+<rect x="16" y="518" width="448" height="50" rx="8" fill="#F6F8FC"/>
+<text x="34" y="540" font-size="12.5" font-weight="700" fill="#2B4C7E">palmitate（炭素16個）なら7回転して、鎖がなくなる</text>
+<text x="34" y="559" font-size="12" fill="#3B4A63">出てくるのは <tspan font-weight="700" fill="#8E3A25">acetyl-CoA 8個</tspan>・<tspan font-weight="700">NADH 7個</tspan>・<tspan font-weight="700">FADH₂ 7個</tspan></text>
+</g></svg></div><figcaption>β酸化は、脂肪酸の鎖を CoA 側の端から炭素2個ずつ切り出す反応の繰り返し。1回転ごとに acetyl-CoA が1個外れ、NADH と FADH₂ が1個ずつ出る。鎖は2個ずつ短くなり、palmitate なら7回転で acetyl-CoA 8個・NADH 7個・FADH₂ 7個になる</figcaption></figure>
+<p>acetyl-CoA は <span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span>へ入り（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）、NADH と FADH₂ は電子伝達系へ電子を運びます（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。<strong>β酸化そのものは ATP を作りません。</strong>ATP ができるのは、この先の TCA回路と電子伝達系です。</p>
+<h2 id="s5">5　acetyl-CoA が余るとき ―― ケトン体</h2>
+<p><strong>脳は普段、glucose をほぼ唯一の燃料にしています</strong>（成人で1日およそ120 g）。脂肪酸は albumin に結合していて血液脳関門を越えられず、脳自身にも脂肪酸をエネルギーに変える力が乏しいので、脳では使えません。<strong>そのため、絶食中でも肝は糖新生で glucose を作り続けます。</strong></p>
+<p>絶食が続くと、lipolysis が進んで<strong>肝に大量の脂肪酸が届きます。</strong>ところが同じ肝では、糖新生が <strong>oxaloacetate</strong> を材料として使っています。</p>
+<p>oxaloacetate は、<strong>TCA回路をまわっている中間体のひとつ</strong>です。糖新生はこれを<strong>TCA回路から抜き取って glucose に変えます</strong>。そのぶん、TCA回路をまわる oxaloacetate は減ります。</p>
+<p>acetyl-CoA は、<strong>oxaloacetate と結びついて citrate になることで TCA回路に入ります</strong>（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。<strong>だから oxaloacetate が減れば、acetyl-CoA は TCA回路に入れません。</strong>行き場を失った acetyl-CoA は、肝のミトコンドリアで <strong>HMG-CoA</strong> を経て<strong>ケトン体</strong>に変えられます。</p>
+<p><strong>ケトン体というのは、次の3つをまとめた呼び名</strong>です。</p>
+<ul><li><strong>acetoacetate</strong>（アセト酢酸）… 最初にできるもの</li><li><strong>β-hydroxybutyrate</strong>（β-ヒドロキシ酪酸）… acetoacetate が還元された形。<strong>血中で測るのは主にこれ</strong></li><li><strong>acetone</strong>（アセトン）… acetoacetate から自然にできる。呼気に出る</li></ul>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 610" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="通常と絶食の比較。通常はacetyl-CoAがoxaloacetateと結びついてcitrateになりTCA回路が回る。絶食時はoxaloacetateが糖新生へ引き抜かれるためacetyl-CoAは結びつく相手がなくTCA回路に入れず、余ったacetyl-CoAがHMG-CoAを経てacetoacetate・β-hydroxybutyrate・acetoneというケトン体になる"><defs><marker id="kg1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3F6F9F"/></marker><marker id="kg2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker></defs><rect x="2" y="2" width="476" height="606" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<rect x="16" y="16" width="448" height="246" rx="10" fill="#F6F8FC"/>
+<text x="36" y="44" font-size="14.5" font-weight="700" fill="#2B4C7E">通常</text><text x="82" y="44" font-size="12.5" fill="#3B4A63">oxaloacetate がある</text>
+<rect x="36" y="64" width="140" height="32" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.5"/><text x="106" y="86" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="264" y="64" width="160" height="32" rx="7" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.5"/><text x="344" y="86" font-size="12.5" font-weight="700" text-anchor="middle" fill="#2B4C7E">oxaloacetate</text>
+<line x1="106" y1="98" x2="200" y2="122" stroke="#3F6F9F" stroke-width="2" marker-end="url(#kg1)"/><line x1="344" y1="98" x2="280" y2="122" stroke="#3F6F9F" stroke-width="2" marker-end="url(#kg1)"/>
+<rect x="180" y="128" width="120" height="32" rx="7" fill="#FFFFFF" stroke="#3F6F9F" stroke-width="1.4"/><text x="240" y="150" font-size="12.5" text-anchor="middle" fill="#2B4C7E">citrate</text>
+<line x1="240" y1="162" x2="240" y2="182" stroke="#3F6F9F" stroke-width="2" marker-end="url(#kg1)"/>
+<circle cx="240" cy="216" r="32" fill="none" stroke="#3F6F9F" stroke-width="3"/><text x="240" y="213" font-size="12.5" font-weight="700" text-anchor="middle" fill="#2B4C7E">TCA回路</text><text x="240" y="231" font-size="11.5" text-anchor="middle" fill="#3B4A63">回る</text>
+<rect x="16" y="278" width="448" height="318" rx="10" fill="#FBEDE9"/>
+<text x="36" y="308" font-size="14.5" font-weight="700" fill="#8E3A25">絶食時</text><text x="94" y="308" font-size="12.5" fill="#8E3A25">oxaloacetate が引き抜かれる</text>
+<rect x="36" y="330" width="140" height="32" rx="7" fill="#FFFFFF" stroke="#B04A33" stroke-width="2"/><text x="106" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="264" y="330" width="160" height="32" rx="7" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3" stroke-dasharray="5 3"/><text x="344" y="352" font-size="12.5" text-anchor="middle" fill="#3B4A63">oxaloacetate</text>
+<line x1="180" y1="346" x2="256" y2="346" stroke="#C6CFDD" stroke-width="2" stroke-dasharray="5 4"/><text x="218" y="353" font-size="19" text-anchor="middle" fill="#B04A33">×</text>
+<text x="36" y="384" font-size="11.5" fill="#8E3A25">脂肪酸が大量に届く</text>
+<line x1="344" y1="364" x2="344" y2="392" stroke="#B04A33" stroke-width="2.4" marker-end="url(#kg2)"/><text x="356" y="384" font-size="12" font-weight="700" fill="#B04A33">糖新生へ</text>
+<circle cx="344" cy="446" r="32" fill="none" stroke="#C6CFDD" stroke-width="3" stroke-dasharray="7 5"/><text x="344" y="443" font-size="12" font-weight="700" text-anchor="middle" fill="#3B4A63">TCA回路</text><text x="344" y="461" font-size="11" text-anchor="middle" fill="#3B4A63">入れない</text>
+<line x1="106" y1="392" x2="106" y2="416" stroke="#B04A33" stroke-width="2.4" marker-end="url(#kg2)"/><text x="118" y="410" font-size="11.5" fill="#8E3A25">余る</text>
+<rect x="36" y="418" width="140" height="30" rx="7" fill="#FFFFFF" stroke="#B04A33" stroke-width="1.5"/><text x="106" y="438" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">HMG-CoA</text>
+<line x1="106" y1="450" x2="106" y2="472" stroke="#B04A33" stroke-width="2.4" marker-end="url(#kg2)"/>
+<rect x="30" y="474" width="186" height="104" rx="8" fill="#FFFFFF" stroke="#B04A33" stroke-width="1.8"/>
+<text x="123" y="498" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">ケトン体</text>
+<text x="44" y="522" font-size="11.5" fill="#3B4A63">acetoacetate</text>
+<text x="44" y="544" font-size="11.5" fill="#3B4A63">β-hydroxybutyrate</text>
+<text x="44" y="566" font-size="11.5" fill="#3B4A63">acetone（呼気へ）</text>
+</g></svg></div><figcaption>絶食では糖新生が oxaloacetate を TCA回路から抜き取るので、acetyl-CoA は結びつく相手を失って TCA回路に入れない。余った acetyl-CoA は HMG-CoA を経てケトン体になる</figcaption></figure>
+<p><strong>作った肝自身は、ケトン体を使えません。</strong>ケトン体を acetyl-CoA に戻す酵素（SCOT）を持たないからです。だから作ったそばから血流に出し、心筋・骨格筋・腎、そして脳が受け取って使います。</p>
+<p><strong>脳にとって、ケトン体は glucose の代わりになる燃料です。</strong>脂肪酸は血液脳関門を越えられませんが、<strong>ケトン体は越えられます</strong>。絶食が続くと脳はケトン体を使う側へ寄り、長期の絶食では脳が使うエネルギーの2/3程度をケトン体が担うとされます（Owen OE, et al. <em>J Clin Invest</em>. 1967;46(10):1589-95. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6061736/" target="_blank" rel="noopener">PMID 6061736</a>）。<strong>それでも glucose の消費がゼロになることはなく、糖新生も止まりません。</strong></p>
+<figure class="book-figure tall"><div style="overflow-x:auto"><svg viewBox="0 0 480 430" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="作ったケトン体の行き先。肝はSCOTを持たないので自分では使えず、血流に出して心筋・骨格筋・腎が燃料にする。脂肪酸はalbuminに結合しているため血液脳関門を越えられないが、ケトン体は越えられるので脳も使える"><defs><marker id="kd1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker><marker id="kd2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#4F8468"/></marker></defs><rect x="2" y="2" width="476" height="426" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<rect x="28" y="28" width="150" height="62" rx="8" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.5"/><text x="103" y="54" font-size="15" font-weight="700" text-anchor="middle" fill="#8E3A25">肝</text><text x="103" y="76" font-size="12" text-anchor="middle" fill="#8E3A25">作る・使えない</text>
+<text x="103" y="110" font-size="12" text-anchor="middle" fill="#B04A33">SCOT を持たない</text>
+<line x1="182" y1="59" x2="216" y2="59" stroke="#B04A33" stroke-width="2.2" marker-end="url(#kd1)"/><text x="199" y="48" font-size="11.5" text-anchor="middle" fill="#B04A33">血流へ</text>
+<rect x="222" y="28" width="228" height="62" rx="8" fill="#EDF4EF" stroke="#4F8468" stroke-width="1.5"/><text x="336" y="54" font-size="14" font-weight="700" text-anchor="middle" fill="#2F6B4F">心筋・骨格筋・腎</text><text x="336" y="76" font-size="12" text-anchor="middle" fill="#4F8468">燃料として使う</text>
+<line x1="28" y1="132" x2="452" y2="132" stroke="#E4E9F2" stroke-width="1.5"/>
+<text x="253" y="164" font-size="12.5" font-weight="700" text-anchor="middle" fill="#5A6782">血液脳関門</text>
+<rect x="248" y="174" width="10" height="222" fill="#9FB0C8"/>
+<rect x="40" y="196" width="120" height="34" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="100" y="219" font-size="13" text-anchor="middle" fill="#3B4A63">脂肪酸</text>
+<line x1="164" y1="213" x2="216" y2="213" stroke="#B04A33" stroke-width="2"/><text x="236" y="221" font-size="20" text-anchor="end" fill="#B04A33">×</text>
+<text x="40" y="256" font-size="11.5" fill="#5A6782">albumin に結合しているので</text><text x="40" y="272" font-size="11.5" fill="#5A6782">越えられない</text>
+<rect x="40" y="310" width="120" height="34" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.4"/><text x="100" y="333" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">ケトン体</text>
+<line x1="164" y1="327" x2="240" y2="327" stroke="#4F8468" stroke-width="2.4" marker-end="url(#kd2)"/><text x="202" y="317" font-size="15" text-anchor="middle" fill="#4F8468">○</text>
+<rect x="272" y="296" width="178" height="62" rx="8" fill="#EDF4EF" stroke="#4F8468" stroke-width="1.5"/><text x="361" y="322" font-size="14.5" font-weight="700" text-anchor="middle" fill="#2F6B4F">脳</text><text x="361" y="344" font-size="12" text-anchor="middle" fill="#4F8468">ケトン体を使う側へ寄る</text>
+<text x="361" y="384" font-size="12" text-anchor="middle" fill="#3B4A63">glucose を使う量が減る</text>
+</g></svg></div><figcaption>肝はケトン体を作るが、SCOT を持たないので自分では使えない。血流に出して心筋・骨格筋・腎が使う。脂肪酸は albumin に結合しているため血液脳関門を越えられないが、ケトン体は越えられる</figcaption></figure>
+<blockquote><strong>ケトン体は老廃物ではありません。</strong>lactate と同じで、<strong>ある細胞が作り、別の細胞が燃料として使う</strong>分子です（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</blockquote>
+<figure class="book-figure summary tall"><p class="fig-label">この章のまとめ</p><div style="overflow-x:auto"><svg viewBox="0 0 480 1000" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="脂肪酸がエネルギーに使われるまでの4段階を縦に並べた図。①脂肪細胞の脂肪滴で、glycerolに長鎖脂肪酸3本がついた中性脂肪をlipaseが1本ずつ切り、脂肪酸3本とglycerolになる。②脂肪酸はalbuminに結合して血中を運ばれCD36で細胞に入る。③ミトコンドリアの膜でcarnitineを付けた形にしてCPT1が通す。ここが律速。④マトリックスで端から炭素2個ずつ切り出され、acetyl-CoAとNADHとFADH2が出る"><defs><marker id="sm1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3F6F9F"/></marker><marker id="sm2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker><marker id="sm3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#8A93A6"/></marker></defs><rect x="2" y="2" width="476" height="996" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.6"/><g font-family="system-ui,-apple-system,sans-serif">
+<rect x="16" y="16" width="448" height="224" rx="10" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/><rect x="16" y="16" width="448" height="42" rx="10" fill="#F6F8FC"/><rect x="16" y="48" width="448" height="10" fill="#F6F8FC"/><circle cx="40" cy="37" r="11" fill="#2B4C7E"/><text x="40" y="42" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">1</text><text x="60" y="42" font-size="15" font-weight="700" fill="#2B4C7E">脂肪酸を取り出す</text><text x="452" y="42" font-size="12" text-anchor="end" fill="#2B4C7E">脂肪細胞の脂肪滴</text>
+<text x="240" y="80" font-size="12.5" text-anchor="middle"><tspan font-weight="700" fill="#2B4C7E">glycerol</tspan><tspan fill="#3B4A63"> 1個 ＋ </tspan><tspan font-weight="700" fill="#8E3A25">長鎖脂肪酸</tspan><tspan fill="#3B4A63"> 3本 ＝ 中性脂肪</tspan></text>
+<rect x="150" y="90" width="180" height="62" rx="26" fill="#FDF3E3" stroke="#D9A441" stroke-width="1.5"/>
+<text x="196" y="108" font-size="10.5" text-anchor="end" fill="#2B4C7E">H₂C</text>
+<line x1="202" y1="104" x2="214" y2="104" stroke="#3F6F9F" stroke-width="1.1"/>
+<text x="218" y="108" font-size="11" font-weight="700" fill="#B04A33">O–CO–R¹</text>
+<text x="196" y="122" font-size="10.5" text-anchor="end" fill="#2B4C7E">HC</text>
+<line x1="202" y1="118" x2="214" y2="118" stroke="#3F6F9F" stroke-width="1.1"/>
+<text x="218" y="122" font-size="11" font-weight="700" fill="#B04A33">O–CO–R²</text>
+<text x="196" y="136" font-size="10.5" text-anchor="end" fill="#2B4C7E">H₂C</text>
+<line x1="202" y1="132" x2="214" y2="132" stroke="#3F6F9F" stroke-width="1.1"/>
+<text x="218" y="136" font-size="11" font-weight="700" fill="#B04A33">O–CO–R³</text>
+<line x1="202" y1="106" x2="202" y2="130" stroke="#3F6F9F" stroke-width="1.2"/>
+<line x1="240" y1="156" x2="240" y2="180" stroke="#B04A33" stroke-width="2.2" marker-end="url(#sm2)"/><text x="250" y="172" font-size="12" font-weight="700" fill="#B04A33">lipase が1本ずつ切る</text>
+<rect x="96" y="184" width="120" height="34" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.5"/><text x="156" y="206" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">脂肪酸 ×3</text>
+<rect x="240" y="184" width="112" height="34" rx="7" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.3"/><text x="296" y="206" font-size="12.5" text-anchor="middle" fill="#2B4C7E">glycerol</text>
+<text x="366" y="206" font-size="11.5" fill="#5A6782">→ 解糖系へ</text>
+<line x1="156" y1="240" x2="156" y2="266" stroke="#3F6F9F" stroke-width="2.6" marker-end="url(#sm1)"/>
+<rect x="16" y="270" width="448" height="150" rx="10" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/><rect x="16" y="270" width="448" height="42" rx="10" fill="#F6F8FC"/><rect x="16" y="302" width="448" height="10" fill="#F6F8FC"/><circle cx="40" cy="291" r="11" fill="#2B4C7E"/><text x="40" y="296" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">2</text><text x="60" y="296" font-size="15" font-weight="700" fill="#2B4C7E">運ぶ</text><text x="452" y="296" font-size="12" text-anchor="end" fill="#2B4C7E">血中</text>
+<rect x="156" y="326" width="150" height="44" rx="22" fill="#EDF1F8" stroke="#3F6F9F" stroke-width="1.5"/><text x="231" y="354" font-size="13.5" font-weight="700" text-anchor="middle" fill="#2B4C7E">albumin</text>
+<circle cx="180" cy="326" r="7" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/><circle cx="231" cy="322" r="7" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/><circle cx="282" cy="326" r="7" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/>
+<text x="240" y="392" font-size="12" text-anchor="middle" fill="#3B4A63">水に溶けないので albumin に結合して運ばれ、</text><text x="240" y="408" font-size="12" text-anchor="middle" fill="#3B4A63"><tspan font-weight="700" fill="#2B4C7E">CD36</tspan> などを介して細胞に入る</text>
+<line x1="156" y1="424" x2="156" y2="450" stroke="#3F6F9F" stroke-width="2.6" marker-end="url(#sm1)"/>
+<rect x="16" y="454" width="448" height="236" rx="10" fill="#FFFFFF" stroke="#B04A33" stroke-width="1.6"/><rect x="16" y="454" width="448" height="42" rx="10" fill="#FBEDE9"/><rect x="16" y="486" width="448" height="10" fill="#FBEDE9"/><circle cx="40" cy="475" r="11" fill="#B04A33"/><text x="40" y="480" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">3</text><text x="60" y="480" font-size="15" font-weight="700" fill="#8E3A25">運び込む</text><text x="452" y="480" font-size="12" text-anchor="end" fill="#8E3A25">ミトコンドリアの膜</text>
+<text x="240" y="524" font-size="13.5" font-weight="700" text-anchor="middle" fill="#3B4A63">脂肪酸</text>
+<line x1="240" y1="532" x2="240" y2="556" stroke="#B04A33" stroke-width="2.2" marker-end="url(#sm2)"/><text x="252" y="550" font-size="12" fill="#8E3A25">carnitine を付ける</text>
+<rect x="60" y="574" width="360" height="16" fill="#DCE6F2" stroke="#9FB0C8" stroke-width="1"/><text x="54" y="586" font-size="11" text-anchor="end" fill="#3B4A63">膜</text>
+<rect x="200" y="566" width="80" height="30" rx="7" fill="#FFFFFF" stroke="#B04A33" stroke-width="2"/><text x="240" y="586" font-size="13" font-weight="700" text-anchor="middle" fill="#8E3A25">CPT1</text>
+<rect x="292" y="569" width="46" height="24" rx="5" fill="#B04A33"/><text x="315" y="586" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">律速</text>
+<line x1="240" y1="600" x2="240" y2="626" stroke="#B04A33" stroke-width="2.2" marker-end="url(#sm2)"/>
+<text x="240" y="646" font-size="12.5" text-anchor="middle" fill="#3B4A63">マトリックスへ（carnitine は外れる）</text>
+<text x="240" y="670" font-size="12" font-weight="700" text-anchor="middle" fill="#8E3A25">分解が始まるのは、ここを通ってから</text>
+<line x1="156" y1="690" x2="156" y2="716" stroke="#3F6F9F" stroke-width="2.6" marker-end="url(#sm1)"/>
+<rect x="16" y="720" width="448" height="190" rx="10" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/><rect x="16" y="720" width="448" height="42" rx="10" fill="#F6F8FC"/><rect x="16" y="752" width="448" height="10" fill="#F6F8FC"/><circle cx="40" cy="741" r="11" fill="#2B4C7E"/><text x="40" y="746" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text><text x="60" y="746" font-size="15" font-weight="700" fill="#2B4C7E">acetyl-CoA にする</text><text x="452" y="746" font-size="12" text-anchor="end" fill="#2B4C7E">マトリックス</text>
+<path d="M 240 750 A 24 24 0 1 1 231 752" fill="none" stroke="#3F6F9F" stroke-width="2.6" marker-end="url(#sm1)"/>
+<text x="240" y="812" font-size="12.5" font-weight="700" text-anchor="middle" fill="#2B4C7E">端から炭素2個ずつ</text><text x="240" y="828" font-size="12" text-anchor="middle" fill="#3B4A63">切り出す作業をくり返す</text>
+<rect x="60" y="852" width="150" height="30" rx="7" fill="#FBEDE9" stroke="#B04A33" stroke-width="1.4"/><text x="135" y="872" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8E3A25">acetyl-CoA</text>
+<rect x="220" y="852" width="90" height="30" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="265" y="872" font-size="12.5" text-anchor="middle" fill="#3B4A63">NADH</text>
+<rect x="320" y="852" width="96" height="30" rx="7" fill="#F6F8FC" stroke="#B9C4D6" stroke-width="1.2"/><text x="368" y="872" font-size="12.5" text-anchor="middle" fill="#3B4A63">FADH₂</text>
+<text x="240" y="898" font-size="12" text-anchor="middle" fill="#3B4A63">→ TCA回路・電子伝達系へ</text>
+<rect x="16" y="926" width="448" height="58" rx="8" fill="#F6F8FC"/>
+<text x="34" y="950" font-size="12.5" font-weight="700" fill="#2B4C7E">① が進んでも ④ が進むとはかぎらない</text>
+<text x="34" y="970" font-size="12" fill="#3B4A63">出た脂肪酸は、分解されずに再び中性脂肪へ戻ることがある</text>
+</g></svg></div><figcaption>脂肪酸がエネルギーに使われるまでの4段階。①脂肪滴の中性脂肪を lipase が1本ずつ切って脂肪酸3本と glycerol にする ②脂肪酸は albumin に結合して運ばれる ③carnitine を付けた形にして CPT1 が膜を通す——ここが律速 ④マトリックスで端から炭素2個ずつ切り出され、acetyl-CoA・NADH・FADH₂ になる</figcaption></figure>
+<h2>この章の到達点</h2>
+<ol class="goal"><li><strong>脂肪をエネルギーに使うまでは、4段階に分かれる。</strong>中性脂肪から脂肪酸を取り出す → 血中を運ぶ → ミトコンドリアに運び込む → acetyl-CoA に分解する。</li><li><strong>中性脂肪を分解するのは hormone-sensitive lipase で、その活性はホルモンが決めている。</strong>adrenaline などが cAMP を上げて働かせ、<strong>insulin は分解を止めるうえに、脂肪酸を中性脂肪へ戻す</strong>。insulin が効いていると脂肪が減りにくいのは、このため。</li><li><strong>律速は3段階目、ミトコンドリアのマトリックスへの運び込み。</strong>脂肪酸はそのままでは膜を通れず、<strong>carnitine を付けた形にしてはじめて入れる</strong>（<strong>CPT1</strong>）。</li><li><strong>β酸化は、端から炭素2個ずつ切り出して acetyl-CoA にする。</strong>同時に NADH と FADH₂ が出る。<strong>β酸化そのものは ATP を作らない</strong>——ATP ができるのは、その先の TCA回路と電子伝達系。</li><li><strong>絶食では糖新生が oxaloacetate を TCA回路から抜くので、acetyl-CoA は TCA回路に入れずケトン体になる。</strong>肝は作るだけで使えず、脳を含む他の組織が燃料にする。<strong>脳では glucose の代わりになるが、glucose の需要がゼロになるわけではない。</strong></li></ol>
+<blockquote><a class="chref" href="tca-cycle.html">TCA回路</a>では、糖から来た pyruvate と脂肪酸から来た acetyl-CoA が<strong>合流したあと</strong>を見ます。入口の作りはまったく違いますが、そこから先は同じ TCA回路です。</blockquote>
+
+</article>
+<nav class="pager"><a class="prev" href="glycolysis.html"><span class="lbl">前へ</span>解糖系</a><a class="next" href="tca-cycle.html"><span class="lbl">次へ</span>TCA回路</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-08-24 ／ 版 d25f8c1</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',flip);
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null;
+  function show(el){
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  function hide(){tip.classList.remove('on');cur=null;}
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
+    el.addEventListener('blur',hide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

@@ -38,6 +38,7 @@ sections:
         chapters:
           - atp                       # 代謝とATP
           - glycolysis                # 解糖系
+          - fatty-acid-oxidation      # 脂肪酸とケトン体
           - tca-cycle                 # TCA回路
           - electron-transport        # 電子伝達系
           - nad                       # NAD⁺

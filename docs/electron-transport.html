@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>電子伝達系 ― 生化学で見る美容医療</title>
+<meta name="description" content="NADHとFADH₂が電子を運ぶ。電子伝達系が電子をO₂へ渡してH⁺の坂を作る。ATP synthaseがH⁺の坂を使ってATPを作る。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/electron-transport.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="電子伝達系 ― 生化学で見る美容医療">
+<meta property="og:description" content="NADHとFADH₂が電子を運ぶ。電子伝達系が電子をO₂へ渡してH⁺の坂を作る。ATP synthaseがH⁺の坂を使ってATPを作る。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/electron-transport.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/electron-transport_ATP収支.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
+blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
+padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+color:var(--sub);text-align:center}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border-left:2px solid var(--rule);font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
+border-left:3px solid var(--accent-line);font-family:var(--sans)}
+.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
+<a href="electron-transport.html" class="active">電子伝達系<span class="badge bnew">NEW</span></a>
+<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<div class="part">材料を感知し作る</div>
+<span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
+<span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
+<div class="part">掃除と作り直し</div>
+<span class="soon">オートファジーとリソソーム<em>準備中</em></span>
+<span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
+<span class="soon">AMPKとmTOR<em>準備中</em></span>
+<div class="part">傷害から修復まで</div>
+<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
+<span class="soon">細胞死<em>準備中</em></span>
+<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<div class="part">細胞は加齢で何が変わるか</div>
+<span class="soon">細胞周期<em>準備中</em></span>
+<span class="soon">Hallmarks of Aging<em>準備中</em></span>
+<span class="soon">細胞老化<em>準備中</em></span>
+<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<span class="soon">表皮とターンオーバー<em>準備中</em></span>
+<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
+<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
+<span class="soon">弾性線維と膠原線維<em>準備中</em></span>
+<span class="soon">糖化とAGE<em>準備中</em></span>
+<span class="soon">皮脂分泌の生化学<em>準備中</em></span>
+<span class="soon">毛包と毛周期<em>準備中</em></span>
+<span class="soon">脂肪<em>準備中</em></span>
+<span class="soon">筋肉<em>準備中</em></span>
+<span class="soon">血管と内皮<em>準備中</em></span>
+<div class="part">訴えを細胞から読み解く</div>
+<span class="soon">赤みの生化学<em>準備中</em></span>
+<span class="soon">しみとくすみ<em>準備中</em></span>
+<span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter">
+<p class="kicker">基礎　／　エネルギー</p>
+<h1 class="ch-title">電子伝達系<small>electron transport chain</small></h1>
+<p class="dateline">公開 2026-08-24</p>
+<blockquote><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>と<span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span>で栄養素から抜き取った電子は、<strong>NADHとFADH₂が<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>へ運びます。</strong>電子伝達系は、電子を <strong>O₂</strong> へ渡しながら <strong>H⁺の坂</strong>を作ります。<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span> synthaseは、H⁺が戻る力を使ってATPの大半を作ります。電子の一部が途中で漏れてO₂と反応すると、<strong><span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span></strong>が生じてミトコンドリアを傷つけます。</blockquote>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>NADHとFADH₂が電子を運ぶ。電子伝達系が電子をO₂へ渡してH⁺の坂を作る。ATP synthaseがH⁺の坂を使ってATPを作る。</strong><br><br>ただし電子は、流している限り一部が途中で漏れ、<strong>O₂ と反応して superoxide になります</strong>。<strong>ATP を作ることと、活性酸素による障害が起きることは、切り離せません。</strong></blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　なぜ、ミトコンドリアが酸化ストレスを受けやすいのか</a></li><li><a href="#s2">2　電子を O₂ へ渡しながら、H⁺の坂を作る</a></li><li><a href="#s3">3　坂から ATP を取り出す ―― ATP synthase と搬出入</a></li><li><a href="#s4">4　電子が漏れると、ROSが生じる</a></li><li><a href="#s5">5　H⁺ の戻り道は2本ある ―― ATP と熱</a></li></ul></nav><h2 id="s1">1　なぜ、ミトコンドリアが酸化ストレスを受けやすいのか</h2>
+<p>体に取り込まれたO₂の大部分は、ミトコンドリアの酸化的リン酸化で使われます。電子伝達系では、内膜の <strong>Complex IV</strong> が電子をO₂へ渡し、H₂Oにします。細胞内にはO₂を使う酵素がほかにもありますが、<strong>大量のO₂を継続して扱う中心がミトコンドリア内膜</strong>です。</p>
+<p>O₂ は電子を4個まとめて受け取れば水になりますが、途中で1個だけ受け取れば superoxide（O₂⁻）になります。O₂ を扱う仕事には、常に部分還元というリスクが付いている。そのリスクが、一枚の膜の上に集中しています。</p>
+<p>しかも、その膜のすぐ内側に <strong><span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span></strong> があります。mtDNA がコードする13個のタンパク質は、<strong>すべて酸化的リン酸化装置の部品</strong>です（Complex I に7個、III に1個、IV に3個、V に2個。Complex II はすべて核コード）。<strong>漏れたROSの近くに、電子伝達系とATP synthaseの一部をコードするDNAがある</strong>、という位置関係です（mtDNA の維持は → ミトコンドリア品質管理、損傷の帰結は → ミトコンドリア機能不全と細胞老化）。</p>
+<p>ミトコンドリアが酸化ストレスに弱いのは<strong>O₂ を扱う仕事を、細胞がここに集めているから</strong>です。以下、その仕事の中身を見ていきます。</p>
+<h2 id="s2">2　電子を O₂ へ渡しながら、H⁺の坂を作る</h2>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 610" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="ミトコンドリア内膜の電子伝達系。matrix NADHはComplex Iへ、succinateの電子はComplex IIへ入る。beta酸化由来の電子はETFとETF-QOを介してQへ、glycerol-3-phosphate shuttle由来の電子はmitochondrial GPDHからQへ入る。Q、Complex III、cytochrome c、Complex IVを経て酸素が水になる。Complex I、III、IVがプロトンを膜間腔へ汲み出し、Complex IIは汲み出さない">
+<defs>
+<marker id="etcElectron" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+<marker id="etcProton" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#7651A8"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="604" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">電子の入口は複数、Qから先は一本</text>
+<text x="28" y="67" font-size="13" fill="#3B4A63">FADを使う反応の電子が、すべてComplex IIへ入るわけではない</text>
+<rect x="20" y="82" width="520" height="110" rx="9" fill="#F5F0FA"/>
+<text x="34" y="105" font-size="13" font-weight="700" fill="#5D3F88">膜間腔：H⁺が多い／正に傾く</text>
+<rect x="20" y="192" width="520" height="82" fill="#EEF2F7" stroke="#C5CEDA" stroke-width="1"/>
+<line x1="20" y1="205" x2="540" y2="205" stroke="#AAB4C4" stroke-width="2"/>
+<line x1="20" y1="261" x2="540" y2="261" stroke="#AAB4C4" stroke-width="2"/>
+<text x="300" y="300" font-size="13" font-weight="700" fill="#245840">マトリックス：H⁺が少ない／負に傾く</text>
+<rect x="48" y="166" width="66" height="114" rx="16" fill="#DCE9F6" stroke="#2F5C87" stroke-width="1.8"/>
+<text x="81" y="219" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">Complex</text>
+<text x="81" y="240" font-size="18" font-weight="700" text-anchor="middle" fill="#1E3A63">I</text>
+<rect x="135" y="194" width="66" height="86" rx="14" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.8"/>
+<text x="168" y="225" font-size="14" font-weight="700" text-anchor="middle" fill="#245840">Complex</text>
+<text x="168" y="246" font-size="17" font-weight="700" text-anchor="middle" fill="#245840">II</text>
+<circle cx="245" cy="226" r="25" fill="#FFF2D8" stroke="#B4762B" stroke-width="1.8"/>
+<text x="245" y="232" font-size="18" font-weight="700" text-anchor="middle" fill="#8A5A18">Q</text>
+<rect x="286" y="166" width="70" height="114" rx="16" fill="#E8E0F2" stroke="#7651A8" stroke-width="1.8"/>
+<text x="321" y="219" font-size="15" font-weight="700" text-anchor="middle" fill="#5D3F88">Complex</text>
+<text x="321" y="240" font-size="18" font-weight="700" text-anchor="middle" fill="#5D3F88">III</text>
+<rect x="373" y="207" width="66" height="38" rx="19" fill="#FCE7EF" stroke="#B04D78" stroke-width="1.5"/>
+<text x="406" y="230" font-size="11.5" font-weight="700" text-anchor="middle" fill="#823655">cyt c</text>
+<rect x="456" y="166" width="66" height="114" rx="16" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.8"/>
+<text x="489" y="219" font-size="15" font-weight="700" text-anchor="middle" fill="#1E625A">Complex</text>
+<text x="489" y="240" font-size="18" font-weight="700" text-anchor="middle" fill="#1E625A">IV</text>
+<path d="M116 208 C145 177 194 177 220 207" fill="none" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#etcElectron)"/>
+<path d="M202 245 Q215 245 220 239" fill="none" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#etcElectron)"/>
+<line x1="272" y1="226" x2="274" y2="226" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#etcElectron)"/>
+<line x1="358" y1="226" x2="361" y2="226" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#etcElectron)"/>
+<line x1="441" y1="226" x2="444" y2="226" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#etcElectron)"/>
+<text x="406" y="183" font-size="11.5" font-weight="700" text-anchor="middle" fill="#2F5C87">電子の流れ</text>
+<line x1="81" y1="158" x2="81" y2="124" stroke="#7651A8" stroke-width="2.6" marker-end="url(#etcProton)"/>
+<text x="81" y="116" font-size="12" font-weight="700" text-anchor="middle" fill="#5D3F88">4 H⁺</text>
+<line x1="321" y1="158" x2="321" y2="124" stroke="#7651A8" stroke-width="2.6" marker-end="url(#etcProton)"/>
+<text x="321" y="116" font-size="12" font-weight="700" text-anchor="middle" fill="#5D3F88">4 H⁺</text>
+<line x1="489" y1="158" x2="489" y2="124" stroke="#7651A8" stroke-width="2.6" marker-end="url(#etcProton)"/>
+<text x="489" y="116" font-size="12" font-weight="700" text-anchor="middle" fill="#5D3F88">2 H⁺</text>
+<rect x="24" y="320" width="160" height="78" rx="9" fill="#F4F8FC" stroke="#8BA7C5" stroke-width="1.3"/>
+<text x="38" y="343" font-size="13" font-weight="700" fill="#1E3A63">Complex I への入口</text>
+<text x="38" y="366" font-size="12.5" fill="#1F2937">matrix NADH → NAD⁺</text>
+<text x="38" y="386" font-size="11.5" fill="#3B4A63">電子2個をQへ渡す</text>
+<path d="M104 320 Q102 300 91 282" fill="none" stroke="#2F5C87" stroke-width="2" marker-end="url(#etcElectron)"/>
+<rect x="200" y="320" width="160" height="78" rx="9" fill="#F4FAF6" stroke="#91B19E" stroke-width="1.3"/>
+<text x="214" y="343" font-size="13" font-weight="700" fill="#245840">Complex II への入口</text>
+<text x="214" y="365" font-size="12" fill="#1F2937">succinate → fumarate</text>
+<text x="214" y="385" font-size="12" fill="#3B4A63">結合FADが電子を受け渡す</text>
+<path d="M280 320 L280 307 Q280 286 201 282" fill="none" stroke="#3D6B52" stroke-width="2" marker-end="url(#etcElectron)"/>
+<rect x="376" y="320" width="160" height="78" rx="9" fill="#F5FBFA" stroke="#82B4AD" stroke-width="1.3"/>
+<text x="390" y="343" font-size="13" font-weight="700" fill="#1E625A">Complex IV の出口</text>
+<text x="456" y="366" font-size="12.5" font-weight="700" text-anchor="middle" fill="#1F2937">O₂ ＋ 4e⁻ ＋ 4H⁺</text>
+<text x="456" y="386" font-size="13" font-weight="700" text-anchor="middle" fill="#1E625A">→ 2H₂O</text>
+<path d="M489 320 Q530 312 530 294 Q530 284 522 282" fill="none" stroke="#2C776D" stroke-width="2" marker-end="url(#etcElectron)"/>
+<rect x="24" y="420" width="512" height="100" rx="10" fill="#FFF9ED" stroke="#D3A15A" stroke-width="1.4"/>
+<text x="40" y="446" font-size="14" font-weight="700" fill="#8A5A18">Complex I・IIを通らず、Qへ直接入る電子もある</text>
+<text x="40" y="472" font-size="12.5" fill="#1F2937">β酸化：acyl-CoA dehydrogenase → ETF → ETF-QO → <tspan font-weight="700">Q</tspan></text>
+<text x="40" y="496" font-size="12.5" fill="#1F2937">glycerol-3-phosphate shuttle：mitochondrial GPDH → <tspan font-weight="700">Q</tspan></text>
+<path d="M192 420 L192 322 Q192 286 220 248" fill="none" stroke="#B4762B" stroke-width="2.2" marker-end="url(#etcElectron)"/>
+<rect x="24" y="542" width="512" height="48" rx="10" fill="#1E3A63"/>
+<text x="280" y="572" font-size="14.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">Q → Complex III → cytochrome c → Complex IV → O₂ → H₂O</text>
+</g>
+</svg>
+</div>
+<figcaption>電子の入口は一つではない。matrix NADHはComplex Iへ、succinateの電子はComplex IIへ入る。β酸化由来の電子はETF・ETF-QOを介してQへ、glycerol-3-phosphate shuttle由来の電子はmitochondrial GPDHからQへ入る。Qから先はComplex III、<span class="term" tabindex="0" data-t="cytochrome" data-d="電子伝達系で電子を中継するタンパク質。cytochrome c は Complex III と IV をつなぐ一方、膜間腔から細胞質へ放出されれば apoptosis の引き金になる。complex IV の cytochrome c oxidase は PBM の光受容体の主要候補。">cytochrome</span> c、Complex IVへ進み、O₂がH₂Oになる。H⁺を膜間腔へ汲み出すのはComplex I・III・IVで、Complex IIは汲み出さない</figcaption>
+</figure>
+<p><strong>NADH</strong>は、matrix側で <strong>Complex I</strong> に電子を渡します。一方、<strong>FAD/FADH₂は多くの場合、酵素に結合したまま電子を受け渡します。</strong>TCA回路のsuccinate dehydrogenaseはComplex IIそのもので、結合FADが受け取った電子をComplex IIからQへ渡します。β酸化では、acyl-CoA dehydrogenaseの結合FADが受け取った電子を、<strong>ETFとETF-QOを介してQへ</strong>渡します（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。β酸化由来の電子はComplex IIを通りません。</p>
+<p>複合体は内膜に埋まって動けないので、そのままでは電子を渡し合えません。あいだをつなぐ運び屋が2つあります。<strong>Q（ubiquinone、CoQ10）</strong> は膜の中を、<strong>cytochrome c</strong> は膜の表面を動いて、電子を次の複合体へ届けます。</p>
+<p>共通する道筋は、<strong>Q → Complex III → cytochrome c → Complex IV → O₂</strong>です。電子はComplex I、Complex II、ETF系、mitochondrial GPDHなど、複数の入口からQへ集まります。最後にO₂が電子を受け取り、H₂Oになります。</p>
+<aside class="memo"><p class="memo-h">ちなみに ―― CoQ10 は、部品でもあり抗酸化物質でもある</p><p>ここでの Q は電子伝達系の部品ですが、<strong>脂溶性の抗酸化物質</strong>としても働き、膜の脂質が酸化されるのを抑えます。サプリとして売られているのは、この2つ目の顔のためです。</p>
+<p>体内では <strong>mevalonate 経路</strong>で作られます。<strong>statin はその経路の上流（HMG-CoA reductase）を止めるので、CoQ10 の合成も一緒に落ちます。</strong>statin 関連の筋症状との関係は繰り返し検討されていますが、補充が症状を改善するという結論は出ていません。皮膚での抗酸化サプリの評価は → 抗酸化サプリメントと点滴。</p></aside>
+<p>この並びは、<strong>電子を引きつける力が強い順</strong>です。<strong>電子は坂を下るように移り、そのたびにエネルギーが出ます。</strong></p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 500" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="電子が自由エネルギーの坂を下る図。青い丸は電子で、NADHの電子はComplex Iから高い位置に入る。succinate、beta酸化、glycerol-3-phosphate shuttle由来の電子はQの位置から合流する。電子はQ、Complex III、cytochrome c、Complex IVを経て酸素へ渡る。紫の上向き矢印はComplex I、III、IVによるプロトンの汲み出しを示す。この図にはATPを描いていない">
+<defs>
+<marker id="slopeElectron" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#1F5FAE"/></marker>
+<marker id="slopeProton" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#7651A8"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="494" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="21" font-weight="700" fill="#1E3A63">青い電子は、自由エネルギーの坂を下る</text>
+<text x="28" y="68" font-size="15" fill="#3B4A63">下るときに出るエネルギーで、H⁺を膜間腔へ汲み出す</text>
+<rect x="296" y="80" width="238" height="64" rx="9" fill="#F7F9FC" stroke="#AAB4C4" stroke-width="1.2"/>
+<circle cx="318" cy="101" r="11" fill="#DDEBFA" stroke="#1F5FAE" stroke-width="1.4"/>
+<text x="318" y="106" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1F5FAE">e⁻</text>
+<text x="338" y="107" font-size="15" font-weight="700" fill="#1E3A63">青い丸＝電子</text>
+<line x1="451" y1="117" x2="451" y2="91" stroke="#7651A8" stroke-width="2.4" marker-end="url(#slopeProton)"/>
+<text x="470" y="107" font-size="15" font-weight="700" fill="#5D3F88">紫＝H⁺</text>
+<text x="318" y="133" font-size="13" font-weight="700" fill="#3B4A63">この図にはATPを描いていない</text>
+<line x1="48" y1="126" x2="48" y2="422" stroke="#64748B" stroke-width="1.8"/>
+<path d="M42 137 L48 124 L54 137" fill="#64748B"/>
+<text x="61" y="143" font-size="14.5" font-weight="700" fill="#1E3A63">高い</text>
+<text x="61" y="422" font-size="14.5" font-weight="700" fill="#1E3A63">低い</text>
+<text x="30" y="286" font-size="14" font-weight="700" text-anchor="middle" fill="#3B4A63" transform="rotate(-90 30 286)">電子の自由エネルギー</text>
+<rect x="74" y="110" width="94" height="38" rx="8" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.5"/>
+<text x="121" y="135" font-size="17" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<circle cx="132" cy="158" r="12" fill="#DDEBFA" stroke="#1F5FAE" stroke-width="1.5"/>
+<text x="132" y="163" font-size="12" font-weight="700" text-anchor="middle" fill="#1F5FAE">e⁻</text>
+<line x1="146" y1="164" x2="147" y2="166" stroke="#1F5FAE" stroke-width="2.8" marker-end="url(#slopeElectron)"/>
+<rect x="152" y="156" width="92" height="58" rx="10" fill="#DCE9F6" stroke="#2F5C87" stroke-width="1.6"/>
+<text x="198" y="191" font-size="16" font-weight="700" text-anchor="middle" fill="#1E3A63">Complex I</text>
+<line x1="198" y1="148" x2="198" y2="118" stroke="#7651A8" stroke-width="2.5" marker-end="url(#slopeProton)"/>
+<text x="198" y="108" font-size="14.5" font-weight="700" text-anchor="middle" fill="#5D3F88">4 H⁺</text>
+<path d="M246 190 C248 202 250 209 251 210" fill="none" stroke="#1F5FAE" stroke-width="3"/>
+<circle cx="254" cy="221" r="12" fill="#DDEBFA" stroke="#1F5FAE" stroke-width="1.5"/>
+<text x="254" y="226" font-size="12" font-weight="700" text-anchor="middle" fill="#1F5FAE">e⁻</text>
+<path d="M260 232 C263 238 264 242 265 247" fill="none" stroke="#1F5FAE" stroke-width="3" marker-end="url(#slopeElectron)"/>
+<rect x="76" y="246" width="154" height="76" rx="9" fill="#FFF8ED" stroke="#D3A15A" stroke-width="1.4"/>
+<text x="90" y="269" font-size="14.5" font-weight="700" fill="#8A5A18">Qの位置から入る電子</text>
+<text x="90" y="292" font-size="13" fill="#1F2937">Complex II・ETF系</text>
+<text x="90" y="313" font-size="13" fill="#1F2937">mitochondrial GPDH</text>
+<line x1="232" y1="283" x2="256" y2="269" stroke="#1F5FAE" stroke-width="2.5" marker-end="url(#slopeElectron)"/>
+<circle cx="279" cy="260" r="25" fill="#FFF2D8" stroke="#B4762B" stroke-width="1.7"/>
+<text x="279" y="267" font-size="20" font-weight="700" text-anchor="middle" fill="#8A5A18">Q</text>
+<path d="M306 271 C309 274 311 276 312 277" fill="none" stroke="#1F5FAE" stroke-width="3"/>
+<circle cx="316" cy="282" r="12" fill="#DDEBFA" stroke="#1F5FAE" stroke-width="1.5"/>
+<text x="316" y="287" font-size="12" font-weight="700" text-anchor="middle" fill="#1F5FAE">e⁻</text>
+<path d="M325 290 C328 294 330 297 332 300" fill="none" stroke="#1F5FAE" stroke-width="3" marker-end="url(#slopeElectron)"/>
+<rect x="338" y="288" width="92" height="58" rx="10" fill="#E8E0F2" stroke="#7651A8" stroke-width="1.6"/>
+<text x="384" y="323" font-size="16" font-weight="700" text-anchor="middle" fill="#5D3F88">Complex III</text>
+<line x1="384" y1="280" x2="384" y2="250" stroke="#7651A8" stroke-width="2.5" marker-end="url(#slopeProton)"/>
+<text x="384" y="240" font-size="14.5" font-weight="700" text-anchor="middle" fill="#5D3F88">4 H⁺</text>
+<path d="M432 328 C440 336 445 342 451 350" fill="none" stroke="#1F5FAE" stroke-width="3" marker-end="url(#slopeElectron)"/>
+<rect x="446" y="342" width="76" height="38" rx="19" fill="#FCE7EF" stroke="#B04D78" stroke-width="1.5"/>
+<text x="484" y="366" font-size="14" font-weight="700" text-anchor="middle" fill="#823655">cyt c</text>
+<path d="M484 382 C484 388 484 392 484 398" fill="none" stroke="#1F5FAE" stroke-width="3" marker-end="url(#slopeElectron)"/>
+<rect x="438" y="404" width="92" height="48" rx="10" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.6"/>
+<text x="484" y="425" font-size="14.5" font-weight="700" text-anchor="middle" fill="#1E625A">Complex IV</text>
+<text x="484" y="444" font-size="13" text-anchor="middle" fill="#3B4A63">O₂ → H₂O</text>
+<line x1="526" y1="396" x2="526" y2="370" stroke="#7651A8" stroke-width="2.5" marker-end="url(#slopeProton)"/>
+<text x="520" y="392" font-size="14.5" font-weight="700" text-anchor="end" fill="#5D3F88">2 H⁺</text>
+<rect x="70" y="440" width="354" height="46" rx="9" fill="#1E3A63"/>
+<text x="247" y="459" font-size="13.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">電子が下る → H⁺を汲み出す</text>
+<text x="247" y="477" font-size="13.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">ATP合成は次の図</text>
+</g>
+</svg>
+</div>
+<figcaption>青い丸は電子（e⁻）、紫の上向き矢印はH⁺の汲み出しを示す。ATPはこの図には描いていない。NADHの電子はComplex Iから高い位置に入り、Complex II・ETF系・mitochondrial GPDH由来の電子はQの位置から合流する。電子はComplex III、cytochrome c、Complex IVへ進み、最後にO₂へ渡る。電子が坂を下るときのエネルギーで、Complex I・III・IVがH⁺を膜間腔へ汲み出す</figcaption>
+</figure>
+<p>複合体は、そのエネルギーを使って <strong>H⁺をマトリックスから膜間腔へ汲み出します</strong>。汲み出すのは <strong>Complex I・III・IV</strong> の3つで、Complex IIは汲み出しません。膜間腔にH⁺がたまると、H⁺はマトリックスへ戻ろうとします。これが、ATP synthaseを動かす<strong>H⁺の坂（proton motive force）</strong>です。</p>
+<p><strong>入口が違えば、汲み出せるH⁺の数も変わります。</strong>NADHの電子はComplex Iから入るため、合計10 H⁺を汲み出します。Complex II・ETF系・mitochondrial GPDHからQへ入る電子はComplex Iを通らないため、合計6 H⁺です。細胞質で使えるATPを1個作るには、およそ4 H⁺分のエネルギーが必要です。したがって、<strong>10 ÷ 4 ≒ 2.5 ATP、6 ÷ 4 ≒ 1.5 ATP</strong>という差になります。</p>
+<p>最後の Complex IV は、<strong>O₂ に電子を4個まとめて渡し、途中の産物を放さずに H₂O まで持っていきます。</strong></p>
+<h2 id="s3">3　坂から ATP を取り出す ―― ATP synthase と搬出入</h2>
+<p>H⁺ が膜を通って戻るとき、その流れで <strong>Complex V（ATP synthase）</strong> が回り、<strong><span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。">ADP</span> と Pi から ATP</strong> が作られます。</p>
+<p>ATP が作られるのは、内膜の内側にある <strong>matrix 側</strong>です。一方、ATP を使う仕事の多くは<strong>細胞質</strong>で行われます。そこで、できた ATP は外へ運ばれ、次の ATP の材料になる <strong>ADP と Pi は matrix へ戻されます</strong>。この膜越しの出し入れも、輸送体を介して行われます。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 500" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="膜間腔のプロトンがATP synthaseを通ってmatrixへ戻ると、ATP synthaseが回転してADPとリン酸からATPを作る。ATPはmatrixから細胞質へ運ばれ、ADPとリン酸は細胞質からmatrixへ運ばれる">
+<defs>
+<marker id="atpProton" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2C776D"/></marker>
+<marker id="atpOut" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#E96824"/></marker>
+<marker id="adpIn" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#7651A8"/></marker>
+<marker id="piIn" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B87812"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="494" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="39" font-size="20" font-weight="700" fill="#1E3A63">H⁺がATP synthaseを通ると、ATPができる</text>
+<text x="28" y="64" font-size="13" fill="#3B4A63">ATPはmatrix側で作られ、細胞質へ運ばれる</text>
+<rect x="20" y="82" width="332" height="366" rx="11" fill="#FAFCFE" stroke="#8BA7C5" stroke-width="1.4"/>
+<text x="186" y="109" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">H⁺の流れをATPへ変える</text>
+<rect x="32" y="124" width="308" height="80" fill="#F5F0FA"/>
+<text x="44" y="148" font-size="13" font-weight="700" fill="#5D3F88">膜間腔：H⁺が多い</text>
+<rect x="32" y="204" width="308" height="42" fill="#EEF2F7" stroke="#C5CEDA" stroke-width="1"/>
+<line x1="32" y1="212" x2="340" y2="212" stroke="#AAB4C4" stroke-width="2"/>
+<line x1="32" y1="238" x2="340" y2="238" stroke="#AAB4C4" stroke-width="2"/>
+<text x="44" y="232" font-size="12" font-weight="700" fill="#475569">内膜</text>
+<rect x="32" y="246" width="308" height="188" fill="#FFF9ED"/>
+<text x="44" y="270" font-size="13" font-weight="700" fill="#8A5A18">matrix</text>
+<circle cx="120" cy="174" r="14" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.4"/>
+<text x="120" y="179" font-size="12" font-weight="700" text-anchor="middle" fill="#1E625A">H⁺</text>
+<circle cx="160" cy="164" r="14" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.4"/>
+<text x="160" y="169" font-size="12" font-weight="700" text-anchor="middle" fill="#1E625A">H⁺</text>
+<circle cx="204" cy="169" r="14" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.4"/>
+<text x="204" y="174" font-size="12" font-weight="700" text-anchor="middle" fill="#1E625A">H⁺</text>
+<rect x="158" y="184" width="56" height="88" rx="20" fill="#DCE9F6" stroke="#2F5C87" stroke-width="1.8"/>
+<line x1="186" y1="184" x2="186" y2="248" stroke="#2C776D" stroke-width="3" marker-end="url(#atpProton)"/>
+<text x="232" y="190" font-size="12.5" font-weight="700" fill="#1E625A">① H⁺が戻る</text>
+<circle cx="186" cy="292" r="42" fill="#E8E0F2" stroke="#7651A8" stroke-width="1.8"/>
+<path d="M186 260 A32 32 0 1 1 158 307" fill="none" stroke="#7651A8" stroke-width="3" marker-end="url(#adpIn)"/>
+<text x="186" y="298" font-size="14" font-weight="700" text-anchor="middle" fill="#5D3F88">回転</text>
+<text x="186" y="350" font-size="13.5" font-weight="700" text-anchor="middle" fill="#5D3F88">② ATP synthaseが回る</text>
+<rect x="52" y="366" width="104" height="48" rx="10" fill="#FFFFFF" stroke="#B19CCB" stroke-width="1.5"/>
+<text x="104" y="396" font-size="15" font-weight="700" text-anchor="middle" fill="#5D3F88">ADP ＋ Pi</text>
+<text x="201" y="375" font-size="12" font-weight="700" text-anchor="middle" fill="#8A5A18">③ 合成</text>
+<line x1="166" y1="390" x2="234" y2="390" stroke="#E96824" stroke-width="3" marker-end="url(#atpOut)"/>
+<rect x="246" y="366" width="74" height="48" rx="10" fill="#FFFFFF" stroke="#E96824" stroke-width="1.5"/>
+<text x="283" y="397" font-size="18" font-weight="700" text-anchor="middle" fill="#C74D18">ATP</text>
+<rect x="368" y="82" width="172" height="366" rx="11" fill="#F8FAFC" stroke="#AAB4C4" stroke-width="1.4"/>
+<text x="454" y="109" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">ATP・ADP・Piの輸送</text>
+<rect x="380" y="126" width="148" height="92" fill="#EAF3FA"/>
+<text x="390" y="148" font-size="13" font-weight="700" fill="#1E3A63">細胞質</text>
+<text x="421" y="170" font-size="11.5" font-weight="700" text-anchor="middle" fill="#C74D18">仕事に使う</text>
+<rect x="380" y="218" width="148" height="18" fill="#F3D88C" stroke="#C6922E" stroke-width="1"/>
+<text x="384" y="232" font-size="10.5" font-weight="700" fill="#73551D">外膜</text>
+<rect x="380" y="236" width="148" height="56" fill="#F3FAF8"/>
+<text x="384" y="258" font-size="11.5" font-weight="700" fill="#1E625A">膜間腔</text>
+<rect x="380" y="292" width="148" height="18" fill="#F3D88C" stroke="#C6922E" stroke-width="1"/>
+<text x="384" y="306" font-size="10.5" font-weight="700" fill="#73551D">内膜</text>
+<rect x="380" y="310" width="148" height="124" fill="#FFF9ED"/>
+<text x="384" y="332" font-size="12.5" font-weight="700" fill="#8A5A18">matrix</text>
+<rect x="400" y="366" width="44" height="28" rx="14" fill="#FFFFFF" stroke="#E96824" stroke-width="1.5"/>
+<text x="422" y="385" font-size="13.5" font-weight="700" text-anchor="middle" fill="#C74D18">ATP</text>
+<line x1="422" y1="356" x2="422" y2="188" stroke="#E96824" stroke-width="3" marker-end="url(#atpOut)"/>
+<rect x="454" y="158" width="44" height="28" rx="14" fill="#FFFFFF" stroke="#7651A8" stroke-width="1.5"/>
+<text x="476" y="177" font-size="13.5" font-weight="700" text-anchor="middle" fill="#5D3F88">ADP</text>
+<line x1="476" y1="196" x2="476" y2="344" stroke="#7651A8" stroke-width="3" marker-end="url(#adpIn)"/>
+<rect x="504" y="158" width="30" height="28" rx="14" fill="#FFFFFF" stroke="#B87812" stroke-width="1.5"/>
+<text x="519" y="177" font-size="13.5" font-weight="700" text-anchor="middle" fill="#8A5A18">Pi</text>
+<line x1="519" y1="196" x2="519" y2="344" stroke="#B87812" stroke-width="3" marker-end="url(#piIn)"/>
+<text x="454" y="420" font-size="11.5" font-weight="700" text-anchor="middle" fill="#3B4A63">ATPは外へ／ADP・Piは内へ</text>
+</g>
+</svg>
+</div>
+<figcaption>膜間腔のH⁺がATP synthaseを通ってmatrixへ戻ると、その流れでATP synthaseが回転し、ADPとPiからATPを作る。ATPはmatrixから細胞質へ運ばれ、次のATPを作るためのADPとPiはmatrixへ運び込まれる</figcaption>
+</figure>
+<p><strong>ATP の収率は、一つの数字には決まりません。</strong>よく使われる <strong>glucose 1分子あたり約30〜32 ATP</strong> も、H⁺ の勘定から逆算した理論値です。幅が出るのは<strong>細胞質の NADH をどう渡すか</strong>の一点で、malate–aspartate shuttle なら約32、glycerol-3-phosphate shuttle なら約30。実際の収率は、H⁺ の漏れ（§4）や uncoupling、細胞の種類と状態で変わります。<strong>「glucose 1個＝32 ATP」と決まっているわけではありません。</strong></p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 454" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="細胞質NADHの電子をミトコンドリアへ渡す二つのshuttle。malate-aspartate shuttleはmatrixにNADHを再生してComplex Iへ電子を入れる。glycerol-3-phosphate shuttleはmitochondrial glycerol-3-phosphate dehydrogenaseのFADを介してQへ電子を入れる。前者は細胞質NADHあたり約2.5 ATP、後者は約1.5 ATPの理論値になる">
+<defs>
+<marker id="shuttleGreen" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2C776D"/></marker>
+<marker id="shuttlePurple" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#7651A8"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="448" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">細胞質NADHは、電子だけを内膜の向こうへ渡す</text>
+<text x="28" y="66" font-size="13" fill="#3B4A63">NADH分子そのものはミトコンドリア内膜を通れない</text>
+<rect x="18" y="84" width="254" height="316" rx="11" fill="#F3FAF8" stroke="#82B4AD" stroke-width="1.4"/>
+<text x="145" y="111" font-size="14.5" font-weight="700" text-anchor="middle" fill="#1E625A">malate–aspartate shuttle</text>
+<rect x="50" y="128" width="190" height="38" rx="8" fill="#FFFFFF" stroke="#2C776D" stroke-width="1.3"/>
+<text x="145" y="152" font-size="13" font-weight="700" text-anchor="middle" fill="#1E625A">細胞質 NADH → NAD⁺</text>
+<text x="145" y="184" font-size="11.5" text-anchor="middle" fill="#3B4A63">malate・aspartateなどの反応で</text>
+<text x="145" y="201" font-size="11.5" text-anchor="middle" fill="#3B4A63">還元当量を運ぶ</text>
+<line x1="145" y1="211" x2="145" y2="229" stroke="#2C776D" stroke-width="2.3" marker-end="url(#shuttleGreen)"/>
+<rect x="50" y="242" width="190" height="38" rx="8" fill="#FFFFFF" stroke="#2C776D" stroke-width="1.3"/>
+<text x="145" y="266" font-size="13" font-weight="700" text-anchor="middle" fill="#1E625A">matrix NAD⁺ → NADH</text>
+<line x1="145" y1="282" x2="145" y2="300" stroke="#2C776D" stroke-width="2.3" marker-end="url(#shuttleGreen)"/>
+<rect x="80" y="312" width="130" height="36" rx="8" fill="#DDF0ED" stroke="#2C776D" stroke-width="1.3"/>
+<text x="145" y="335" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1E625A">Complex Iへ</text>
+<rect x="62" y="360" width="166" height="30" rx="15" fill="#1E625A"/>
+<text x="145" y="380" font-size="12.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">約2.5 ATP／細胞質NADH</text>
+<rect x="288" y="84" width="254" height="316" rx="11" fill="#F8F5FC" stroke="#B19CCB" stroke-width="1.4"/>
+<text x="415" y="111" font-size="14.5" font-weight="700" text-anchor="middle" fill="#5D3F88">glycerol-3-phosphate shuttle</text>
+<rect x="320" y="128" width="190" height="38" rx="8" fill="#FFFFFF" stroke="#7651A8" stroke-width="1.3"/>
+<text x="415" y="152" font-size="13" font-weight="700" text-anchor="middle" fill="#5D3F88">細胞質 NADH → NAD⁺</text>
+<text x="415" y="184" font-size="11.5" text-anchor="middle" fill="#3B4A63">DHAP ⇄ glycerol-3-phosphate</text>
+<line x1="415" y1="194" x2="415" y2="212" stroke="#7651A8" stroke-width="2.3" marker-end="url(#shuttlePurple)"/>
+<rect x="316" y="224" width="198" height="54" rx="8" fill="#FFFFFF" stroke="#7651A8" stroke-width="1.3"/>
+<text x="415" y="245" font-size="11.5" font-weight="700" text-anchor="middle" fill="#5D3F88">mitochondrial GPDH</text>
+<text x="415" y="264" font-size="11.5" text-anchor="middle" fill="#3B4A63">酵素結合FADが電子を受け取る</text>
+<line x1="415" y1="280" x2="415" y2="298" stroke="#7651A8" stroke-width="2.3" marker-end="url(#shuttlePurple)"/>
+<rect x="350" y="310" width="130" height="38" rx="8" fill="#E8E0F2" stroke="#7651A8" stroke-width="1.3"/>
+<text x="415" y="326" font-size="12.5" font-weight="700" text-anchor="middle" fill="#5D3F88">Qへ直接</text>
+<text x="415" y="342" font-size="10.8" text-anchor="middle" fill="#3B4A63">Complex Iを通らない</text>
+<rect x="332" y="360" width="166" height="30" rx="15" fill="#5D3F88"/>
+<text x="415" y="380" font-size="12.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">約1.5 ATP／細胞質NADH</text>
+<rect x="34" y="412" width="492" height="25" rx="12" fill="#1E3A63"/>
+<text x="280" y="429" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">入口の違いが、glucose 1分子あたり約30〜32 ATPの幅を作る</text>
+</g>
+</svg>
+</div>
+<figcaption>細胞質NADHは内膜を通らず、電子だけをshuttleで渡す。malate–aspartate shuttleはmatrix側でNADHを再生してComplex Iへ入れる。glycerol-3-phosphate shuttleはmitochondrial GPDHの酵素結合FADを介してQへ入り、Complex Iを通らない。この入口の差が、細胞質NADHあたり約2.5 ATPと約1.5 ATP、glucose 1分子あたり約32 ATPと約30 ATPという理論値の差になる</figcaption>
+</figure>
+<blockquote><strong>図5は、計算の内訳を確認したい人のための補足です。</strong>細かな数字をすべて追う必要はありません。見るべき点は一つです。細胞質でできた2 NADHの電子を、<strong>malate–aspartate shuttleでComplex Iへ渡すと約5 ATP（選択肢A）</strong>、<strong>glycerol-3-phosphate shuttleでQへ渡すと約3 ATP（選択肢B）</strong>になります。この約2 ATPの差が、合計約32 ATPと約30 ATPの違いになります。</blockquote>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/electron-transport_ATP収支.webp" alt="内訳を積み上げると幅が出るのは細胞質NADHの扱い一点。" loading="lazy"><figcaption>内訳を積み上げると幅が出るのは細胞質NADHの扱い一点。malate–aspartate shuttle なら約32、glycerol-3-phosphate shuttle なら約30</figcaption></figure>
+<h2 id="s4">4　電子が漏れると、ROSが生じる</h2>
+<p>電子は本来、電子伝達系を通って最後に O₂ へ渡されます。しかし一部は、途中の <strong>Complex I と Complex III</strong> から漏れて O₂ と反応し、<strong>superoxide</strong> になります。superoxide は、活性酸素種（<strong>ROS</strong>）の一つです。</p>
+<p>少量の ROS はつねに生じており、細胞内の情報伝達にも使われます。問題になるのは、<strong>作られる ROS が、消去できる量を超えたとき</strong>です。</p>
+<p><strong>電子伝達系からの電子漏れが増える条件は、一つではありません。</strong>代表的なのは、糖や脂肪から電子が多く入るのにATPをあまり使わないとき、電子伝達系や内膜が傷んで電子の受け渡しが滞るとき、虚血後に血流が戻る再灌流です。再灌流では、電子の逆流によって短時間に大量のROSが生じることがあります（Chouchani ET et al., <em>Nature</em> 2014;515:431–435. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25383517/" target="_blank" rel="noopener">PMID 25383517</a>）。</p>
+<p>過食・高血糖と運動不足の組み合わせは、最初の条件に当たる身近な例です。電子の供給がATPの需要を上回ると、電子伝達系に電子が滞り、ROSが生じやすくなります。これが続くと、脂質・タンパク質・DNAの損傷や炎症シグナルが増え、インスリン抵抗性や糖尿病合併症、慢性炎症を介した組織の老化につながる要因になります（Nishikawa T et al., <em>Nature</em> 2000;404:787–790. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10783895/" target="_blank" rel="noopener">PMID 10783895</a>；Furukawa S et al., <em>J Clin Invest</em> 2004;114:1752–1761. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15599400/" target="_blank" rel="noopener">PMID 15599400</a>）。</p>
+<p>ただし、<strong>体内のROSがすべて電子伝達系から生じるわけではありません。</strong>炎症時にROSを作る<span class="term" tabindex="0" data-t="NADPH" data-d="主にペントースリン酸経路が供給する還元力。NADPH 自体は ROS を消さず、酸化型の glutathione や thioredoxin を還元型へ戻して抗酸化系を再生する。同じ還元力が NOX の ROS 産生にも使われる。">NADPH</span> oxidase（NOX）、紫外線、喫煙など、別の産生源もあります。この章ではミトコンドリアから漏れる電子だけを扱い、ROSの種類・その他の産生源・消去方法は酸化ストレスと抗酸化で整理します。</p>
+<h2 id="s5">5　H⁺ の戻り道は2本ある ―― ATP と熱</h2>
+<p>酸素消費は、ミトコンドリアの働きぶりを測る指標としてよく使われます。ただし<strong>測っているのは、電子がどれだけ流れたか</strong>です。ATP をどれだけ作ったか、ではありません。</p>
+<p>酸素が使われるのは <strong>Complex IV の1か所だけ</strong>で、電子の最終受け手として H₂O になります。ATP ができるのはその一段あと、<strong>H⁺ が坂を戻るとき</strong>です。<strong>分かれ道はここにあります。</strong></p>
+<ul><li><strong>ATP synthase を通って戻る</strong> … ADP と Pi から <strong>ATP</strong> ができる</li><li><strong>UCP1 などを通って戻る</strong> … 坂のエネルギーが <strong>熱</strong>になる（<strong>uncoupling、脱共役</strong>）</li></ul>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 468" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="通常の酸化的リン酸化とUCP1による脱共役の比較。どちらも電子伝達系が電子を酸素へ渡してプロトンを膜間腔へ汲み出す。通常はプロトンがATP synthaseを通ってmatrixへ戻りATPができる。褐色脂肪とベージュ脂肪ではUCP1を通って戻るプロトンが増え、ATP合成に使われる割合が下がり、エネルギーが熱になる">
+<defs>
+<marker id="ucpPump" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2C776D"/></marker>
+<marker id="ucpReturn" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#7651A8"/></marker>
+<marker id="ucpHeat" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B4762B"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="462" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">H⁺の戻り道で、ATPになるか熱になるかが変わる</text>
+<text x="28" y="66" font-size="13" fill="#3B4A63">電子伝達とO₂消費が続いても、ATP産生量は同じとは限らない</text>
+<rect x="18" y="84" width="254" height="316" rx="11" fill="#F3FAF8" stroke="#82B4AD" stroke-width="1.4"/>
+<text x="145" y="111" font-size="15" font-weight="700" text-anchor="middle" fill="#1E625A">ATP synthaseを通る</text>
+<text x="36" y="137" font-size="11.5" font-weight="700" fill="#5D3F88">膜間腔：H⁺が多い</text>
+<circle cx="74" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="74" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="118" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="118" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="162" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="162" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="206" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="206" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<rect x="30" y="181" width="230" height="58" fill="#E9EEF4" stroke="#AAB4C4"/>
+<text x="50" y="215" font-size="12" font-weight="700" fill="#1E3A63">電子伝達系 I・III・IV</text>
+<line x1="82" y1="202" x2="82" y2="172" stroke="#2C776D" stroke-width="2.2" marker-end="url(#ucpPump)"/>
+<rect x="178" y="177" width="58" height="68" rx="14" fill="#E8E0F2" stroke="#7651A8" stroke-width="1.5"/>
+<text x="207" y="202" font-size="11" font-weight="700" text-anchor="middle" fill="#5D3F88">ATP</text>
+<text x="207" y="217" font-size="11" font-weight="700" text-anchor="middle" fill="#5D3F88">synthase</text>
+<line x1="207" y1="164" x2="207" y2="252" stroke="#7651A8" stroke-width="2.6" marker-end="url(#ucpReturn)"/>
+<text x="36" y="265" font-size="11.5" font-weight="700" fill="#245840">matrix：H⁺が少ない</text>
+<rect x="62" y="286" width="166" height="42" rx="9" fill="#FFFFFF" stroke="#2C776D" stroke-width="1.4"/>
+<text x="145" y="312" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1E625A">ADP ＋ Pi → ATP</text>
+<text x="145" y="350" font-size="12" text-anchor="middle" fill="#3B4A63">H⁺の坂をATP合成に使う</text>
+<rect x="54" y="365" width="182" height="25" rx="12" fill="#1E625A"/>
+<text x="145" y="382" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">ATP産生効率が高い</text>
+<rect x="288" y="84" width="254" height="316" rx="11" fill="#FFF8ED" stroke="#D3A15A" stroke-width="1.4"/>
+<text x="415" y="111" font-size="15" font-weight="700" text-anchor="middle" fill="#8A5A18">UCP1を通る（脱共役）</text>
+<text x="306" y="137" font-size="11.5" font-weight="700" fill="#5D3F88">膜間腔：H⁺が多い</text>
+<circle cx="344" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="344" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="388" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="388" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="432" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="432" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<circle cx="476" cy="156" r="12" fill="#F2ECFA" stroke="#7651A8"/><text x="476" y="160" font-size="10.5" font-weight="700" text-anchor="middle" fill="#5D3F88">H⁺</text>
+<rect x="300" y="181" width="230" height="58" fill="#E9EEF4" stroke="#AAB4C4"/>
+<text x="320" y="215" font-size="12" font-weight="700" fill="#1E3A63">電子伝達系 I・III・IV</text>
+<line x1="352" y1="202" x2="352" y2="172" stroke="#2C776D" stroke-width="2.2" marker-end="url(#ucpPump)"/>
+<rect x="446" y="177" width="58" height="68" rx="14" fill="#F4E2C5" stroke="#B4762B" stroke-width="1.5"/>
+<text x="475" y="217" font-size="14" font-weight="700" text-anchor="middle" fill="#8A5A18">UCP1</text>
+<line x1="475" y1="164" x2="475" y2="252" stroke="#B4762B" stroke-width="2.6" marker-end="url(#ucpHeat)"/>
+<text x="306" y="265" font-size="11.5" font-weight="700" fill="#245840">matrix：H⁺が少ない</text>
+<circle cx="415" cy="306" r="31" fill="#FBE5C5" stroke="#D9822B" stroke-width="1.5"/>
+<text x="415" y="314" font-size="22" font-weight="700" text-anchor="middle" fill="#B45309">熱</text>
+<text x="415" y="350" font-size="12" text-anchor="middle" fill="#3B4A63">H⁺の坂を熱として散逸</text>
+<rect x="324" y="365" width="182" height="25" rx="12" fill="#8A5A18"/>
+<text x="415" y="382" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">ATP産生効率↓・発熱↑</text>
+<rect x="30" y="414" width="500" height="31" rx="9" fill="#1E3A63"/>
+<text x="280" y="435" font-size="12.5" font-weight="700" text-anchor="middle" fill="#FFFFFF">どちらも電子をO₂へ渡す：酸素消費量とATP産生量は同じではない</text>
+</g>
+</svg>
+</div>
+<figcaption>通常は、膜間腔のH⁺がATP synthaseを通ってmatrixへ戻り、ADPとPiからATPができる。褐色脂肪・ベージュ脂肪でUCP1が働くと、H⁺がUCP1を通って戻る割合が増え、H⁺の坂のエネルギーが熱として散逸する。どちらも電子伝達とO₂消費は続くため、酸素消費量とATP産生量は同じではない</figcaption>
+</figure>
+<h3>UCP1は、寒さから体を守るときに働く</h3>
+<p>UCP1の主な役割は、<strong>寒いときに熱を作り、体温を守ること</strong>です。褐色脂肪・ベージュ脂肪では、H⁺をATP synthaseではなくUCP1からmatrixへ戻します。このときATPは作られず、燃料から得たエネルギーは<strong>熱</strong>になります。したがって、UCP1はエネルギー消費を抑えるのではなく、<strong>脂肪酸やglucoseを使って発熱する仕組み</strong>です。これを<strong>非ふるえ熱産生（non-shivering thermogenesis）</strong>と呼びます。</p>
+<p>成人でも、穏やかな寒冷刺激によって褐色脂肪が活動し、エネルギー消費や糖・脂質の利用が増えることは示されています。ただし、冷刺激による減量や健康寿命の延長が確立したわけではありません（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23780370/" target="_blank" rel="noopener">PMID 23780370</a>；<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25056438/" target="_blank" rel="noopener">PMID 25056438</a>）。</p>
+<h2>この章の到達点</h2>
+<ol class="goal"><li>体に取り込まれたO₂の大部分は、ミトコンドリアの酸化的リン酸化で使われる。<strong>Complex IVが電子をO₂へ渡してH₂Oにする</strong>ため、ミトコンドリア内膜はO₂とROSを継続して扱う中心になる。</li><li>電子は複数の入口からQへ集まり、<strong>Q → Complex III → cytochrome c → Complex IV → O₂</strong>と進む。Complex I・III・IVがH⁺を膜間腔へ汲み出し、H⁺が戻る力でATP synthaseがATPを作る。<strong>Complex Iから入る電子は約2.5 ATP、Complex Iを通らずQへ入る電子は約1.5 ATP</strong>の理論値になる。</li><li><strong>ATP の収率は、一つの数字には決まらない。</strong>glucose 1個あたり約30〜32 は理論値で、細胞質 NADH の渡し方（shuttle）、ATP の搬出入、漏れ、uncoupling、細胞の状態で変わる。</li><li>電子は <strong>Complex I と III</strong> で漏れて superoxide になる。<strong>膜電位が高いまま電子が滞留しているとき（ADP不足、succinate蓄積によるRET）に増える</strong>（→ 酸化ストレスと抗酸化）。</li><li>寒冷時には褐色脂肪・ベージュ脂肪の<strong>UCP1</strong>がH⁺を戻し、ATPではなく熱を作る。したがって、<strong>酸素消費量とATP産生量は同じではない。</strong></li></ol>
+<blockquote><a class="chref" href="nad.html">NAD⁺</a>では、この章で電子を運んでいた <strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。">NAD⁺</span>/NADH</strong> そのものを扱います。電子の運び手であると同時に、酵素に切られて消費される分子でもある——その二つの顔が主役です。ここで漏れた電子が何になるのかは → 酸化ストレスと抗酸化。</blockquote>
+
+</article>
+<nav class="pager"><a class="prev" href="tca-cycle.html"><span class="lbl">前へ</span>TCA回路</a><a class="next" href="nad.html"><span class="lbl">次へ</span>NAD⁺</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-08-24 ／ 版 d25f8c1</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',flip);
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null;
+  function show(el){
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  function hide(){tip.classList.remove('on');cur=null;}
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
+    el.addEventListener('blur',hide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

@@ -117,7 +117,7 @@ PAGE_HEAD = '''<!DOCTYPE html>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
-font-size:17px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
@@ -142,9 +142,9 @@ padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line
 color:var(--accent);margin:0 0 12px}
 h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
 margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
-h2{font-family:var(--sans);font-size:16.5px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
 color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
-h3{font-family:var(--sans);font-size:14.5px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
 p{margin:17px 0}
 strong{font-weight:700}
 
@@ -168,9 +168,12 @@ border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weig
 figure.book-figure{margin:36px 0;counter-increment:fig}
 .book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
 .book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
 .book-figure.square img{max-width:600px}
 .book-figure.zoom img{max-width:100%;cursor:zoom-out}
-.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:13px;line-height:1.85;color:var(--sub)}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 /* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
 .book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
 overflow:hidden;padding-bottom:14px}
@@ -187,7 +190,7 @@ font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 
 /* ---- 表 ---- */
 .tblwrap{overflow-x:auto;margin:30px 0}
-table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:14px;line-height:1.85}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
 th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
 th:not(:last-child),td:not(:last-child){padding-right:20px}
 thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
@@ -212,7 +215,7 @@ hr{border:none;border-top:1px solid var(--line);margin:36px 0}
 
 /* ---- 前後の章 ---- */
 .pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
-font-family:var(--sans);font-size:13.5px;line-height:1.75}
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
 .pager a{display:block;max-width:46%;color:var(--sub)}
 .pager a:hover{color:var(--accent);text-decoration:none}
 .pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
@@ -301,7 +304,7 @@ transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
 .side.open{transform:none}
 .menubtn{display:block}
 .main{padding:66px 20px 64px}
-body{font-size:16px;line-height:1.95}
+body{font-size:17px;line-height:1.95}
 h2{margin-top:46px}
 }
 /* ---- 文献への外部リンク ---- */
@@ -424,18 +427,18 @@ h2{margin-top:24pt}
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:16.5px;font-weight:700;
+.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
   line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
   text-wrap:balance}
-.column p{margin:0 0 14px;font-size:13.5px;line-height:1.95;color:var(--sub)}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
 .column strong{color:var(--ink);font-weight:700}
-.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:13.5px;
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
   line-height:1.95;color:var(--sub)}
 .column li{margin:0 0 5px}
 .column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
 .column figure.book-figure{margin:18px 0}
-.column .tblwrap{margin:16px 0;font-size:13px}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
 @media(max-width:600px){.column{padding:18px 18px 16px}}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
@@ -444,13 +447,13 @@ h2{margin-top:24pt}
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
   border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
   font-family:var(--sans)}
-.memo-h{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.7}
-.memo p{margin:0 0 10px;font-size:13px;line-height:1.9;color:var(--sub)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
 .memo p:last-child{margin-bottom:0}
 .memo strong{color:var(--ink);font-weight:700}
 .memo figure.book-figure{margin:16px 0}
-.memo .tblwrap{margin:14px 0;font-size:12.5px}
-.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:13px;
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
 
@@ -1427,18 +1430,26 @@ def mark_terms(html):
 
     青い印が本文中に何度も出ると読めなくなるので、章ごとに最初の1回に絞る。
     タグの中身（属性値）とリンクの内側は触らない。
+
+    インラインSVGの内側も触らない。SVGの中に <span> を差し込むと、そこは
+    SVGの語彙にないタグなのでブラウザが図を打ち切り、残りを本文として
+    吐き出してしまう（図が途中で切れて、中身の文字が地の文に流れ出す）。
     """
     if not GLOSSARY:
         return html
-    out, in_link = [], False
+    out, in_link, in_svg = [], False, False
     for part in TAG_SPLIT.split(html):
         if part.startswith("<"):
             if part.startswith("<a "):
                 in_link = True
             elif part.startswith("</a>"):
                 in_link = False
+            elif part.startswith("<svg"):
+                in_svg = True
+            elif part.startswith("</svg>"):
+                in_svg = False
             out.append(part)
-        elif in_link or not part.strip():
+        elif in_link or in_svg or not part.strip():
             out.append(part)
         else:
             out.append(_mark_text(part))

@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>エピゲノム ― 生化学で見る美容医療</title>
-<meta name="description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
+<title>NAD⁺ ― 生化学で見る美容医療</title>
+<meta name="description" content="NAD⁺">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/nad.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="エピゲノム ― 生化学で見る美容医療">
-<meta property="og:description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epigenome_エピゲノム.webp">
+<meta property="og:title" content="NAD⁺ ― 生化学で見る美容医療">
+<meta property="og:description" content="NAD⁺">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/nad.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -411,7 +411,7 @@ h2{margin-top:24pt}
 <a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a>
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
-<a href="epigenome.html" class="active">エピゲノム<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
 <a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
@@ -420,7 +420,7 @@ h2{margin-top:24pt}
 <a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
 <a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
 <a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="nad.html" class="active">NAD⁺<span class="badge bnew">NEW</span></a>
 <div class="part">材料を感知し作る</div>
 <span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
 <span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
@@ -487,44 +487,197 @@ h2{margin-top:24pt}
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter">
-<p class="kicker">基礎　／　情報をどう読むか</p>
-<h1 class="ch-title">エピゲノム</h1>
-<p class="dateline">公開 2026-08-16</p>
-<blockquote>細胞の持つDNAの配列は、どの細胞でも同じです。しかし <span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span> と <span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span> は、性質も作るものもまるで違います。<strong>この違いを支えているのがエピゲノム</strong>です。エピゲノムは配列を書き換えず、<strong>その領域が開いているか、閉じているか</strong>を調節します。<a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>の transcription factor が遺伝子に結合できるかどうかは、この開閉で決まります。そのパターンは加齢とともに乱れ、乱れの度合いを数値にしたものが<strong>エピジェネティッククロック</strong>として、いま老化の指標に使われています。</blockquote>
-<h2>この章の一言</h2>
-<blockquote class="lead">エピゲノムは、<strong>DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするか</strong>を決める仕組みです。<br><br>細胞ごとの性質を保っているのはこの開閉パターンで、<strong>加齢とともに乱れます。</strong>だから老化の指標として測られます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　配列は変えない。「読みやすさ」を変える</a></li><li><a href="#s2">2　DNA methylation：DNAそのものへの目印</a></li><li><a href="#s3">3　histone modification と chromatin remodeling：histone 側からの調節</a></li><li><a href="#s4">4　epigenetic drift：加齢で開閉パターンがぼやける</a></li><li><a href="#s5">5　epigenetic clock は何を測っているか</a></li><li><a href="#s6">6　NAD⁺ – sirtuin – chromatin の接点</a></li></ul></nav><h2 id="s1">1　配列は変えない。「読みやすさ」を変える</h2>
-<p><strong>DNAの塩基配列は、どの細胞でも同じです。</strong> 細胞ごとに違うのは、<strong>転写因子や酵素がその配列のどこに近づけるか</strong>です。</p>
-<p>核の中でDNAは裸で伸びているわけではなく、タンパク質に巻き付いて折りたたまれた状態で収まっています。きつく畳まれた領域には転写因子も酵素も近づけず、そこにある遺伝子は読まれません。緩んだ領域には近づけます。この近づけるかどうかを <strong>chromatin accessibility（クロマチンの開き具合）</strong> と呼びます。決めているのは、DNAやタンパク質に付いた化学的な目印（メチル基・アセチル基など）と、その畳み方です。</p>
-<p><strong>この目印と畳み方のパターン全体が、エピゲノムです。</strong> 目印を付け外しするのは専用の酵素で、エピゲノムはその結果として細胞が持っている状態を指します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピゲノム.webp" alt="左（開いたクロマチン）と右（閉じたクロマチン）で塩基配列はまったく同じ。" loading="lazy"><figcaption>左（開いたクロマチン）と右（閉じたクロマチン）で塩基配列はまったく同じ。違うのはヌクレオソームの間隔と、そこに付いた目印だけ。下段に読みやすさを決める3つの仕組み（DNAメチル化・ヒストン修飾・クロマチンリモデリング）と、加齢でパターンがばらつく epigenetic drift を並べた</figcaption></figure>
-<p>一度確立された読み分けは、細胞分裂を越えてある程度受け継がれます。</p>
-<h2 id="s2">2　DNA methylation：DNAそのものへの目印</h2>
-<p>DNAの特定の塩基（多くは <strong>CpG</strong>＝C の隣に G が並ぶ配列の、その C）に<strong>メチル基</strong>が付く修飾です。</p>
-<p><strong>methylation＝常に遺伝子OFF、ではありません。</strong> 遺伝子の<strong>プロモーター領域</strong>のメチル化は発現抑制と関連しやすい一方、<strong>遺伝子本体（gene body）</strong>のメチル化はむしろ発現と正に相関することもあります。「メチル化が付いた＝その遺伝子が黙った」と機械的に読まないこと。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_DNAメチル化.webp" alt="同じ CpG の並びに同じメチル基が付いても、プロモーター領域（左）では転写因子のアクセスが落ちて抑制側に、gene body（右）では転写の伸長・splicing 側に働き、発現…" loading="lazy"><figcaption>同じ CpG の並びに同じメチル基が付いても、プロモーター領域（左）では転写因子のアクセスが落ちて抑制側に、gene body（右）では転写の伸長・splicing 側に働き、発現と正に相関することもある</figcaption></figure>
-<h2 id="s3">3　histone modification と chromatin remodeling：histone 側からの調節</h2>
-<p>DNAは <strong>histone</strong> というタンパク質に巻き付いており、DNA＋histone のまとまりを <strong>chromatin</strong> と呼びます。読みやすさは、この histone 側から二系統で調節されます。</p>
-<ul><li><strong>histone modification</strong>：histone の尾部に化学修飾（アセチル化、メチル化、リン酸化、ユビキチン化など）が付き、巻きを緩める／締める方向に働く。アセチル化は緩める側に関与しやすいのが目安だが、修飾の種類・位置しだいで向きは変わる</li><li><strong>chromatin remodeling</strong>：専用の装置（remodeler）が <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span> を使って、ヌクレオソームの巻き付きを<strong>物理的にずらす</strong>。転写因子や酵素がDNAに近づけるかどうかが変わる</li></ul>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_ヒストンとクロマチン.webp" alt="左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。" loading="lazy"><figcaption>左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。読みやすさはこの二系統の重ね合わせで決まる</figcaption></figure>
-<p>methylation・histone修飾・remodeling は連動して働き、「どの領域を今アクセス可能にするか」を決めています。</p>
-<h2 id="s4">4　epigenetic drift：加齢で開閉パターンがぼやける</h2>
-<p>若いときにきれいに保たれていた開閉パターンは、加齢とともに少しずつ<strong>ずれ・ばらつき（epigenetic drift）</strong>を蓄積します。本来閉じておくべき領域が緩んだり、開けておくべき領域が締まったりして、細胞ごとのばらつきが増えます。<strong>配列の突然変異ではありません。</strong> これが加齢の特徴のひとつ（<strong>エピゲノム変化</strong>）として <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span> に挙がります（→ Hallmarks of Aging）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティックドリフト.webp" alt="若い細胞3個（左）と加齢細胞3個（右）を同じ並びで比較。" loading="lazy"><figcaption>若い細胞3個（左）と加齢細胞3個（右）を同じ並びで比較。DNA配列は3個とも同一のまま、メチル化とヒストン修飾の配置がそろわなくなり、開いた領域／閉じた領域の地図が細胞ごとにばらつく。ドリフトは配列の突然変異ではない</figcaption></figure>
-<h2 id="s5">5　epigenetic clock は何を測っているか</h2>
-<p><strong>その drift を一つの数値にしたのが epigenetic clock です。</strong> あらかじめ選ばれた多数のCpG部位のメチル化状態を測定し、統計モデルに入れて「エピジェネティック年齢」を出します。測っているのは §2 の DNA methylation で、抗加齢・longevity の領域では、これが老化の指標として使われています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティック時計.webp" alt="血液・組織の細胞 → 選ばれたCpG部位のメチル化測定 → 統計モデル → 「エピジェネティック年齢」という1つの数値、の4段。" loading="lazy"><figcaption>血液・組織の細胞 → 選ばれたCpG部位のメチル化測定 → 統計モデル → 「エピジェネティック年齢」という1つの数値、の4段。下段は「時計の数値が変わる」「生物学的機能が改善する」「見た目・臨床結果が改善する」を別々の箱として並べ、あいだの矢印に「別に検証が必要」と置いている</figcaption></figure>
-<p>この数値は <strong>methylation から推定した老化の一断面</strong>であり、多面的な老化（Hallmarks of Agingの12項目）の総合成績ではありません。組織・時計の種類・解析法で値は変わります。そして図の下段——「時計の数値が変わる」→「生物学的機能が改善する」→「見た目・臨床結果が改善する」の矢印は、<strong>それぞれ別に検証が必要</strong>です。</p>
-<h2 id="s6">6　<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。">NAD⁺</span> – <span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。">sirtuin</span> – chromatin の接点</h2>
-<p>エピゲノムと代謝はつながっています（<a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>の「ミトコンドリアの状態は代謝物の形で核へ伝わる」の続き）。<strong>sirtuin</strong> は、<strong>NAD⁺</strong> を消費して histone からアセチル基を外す酵素群です。アセチル基が付くと histone への DNA の巻き付きが緩み、外れると<strong>締まります</strong>。</p>
-<p><strong>加齢で NAD⁺ が下がれば、sirtuin の活性も下がります。</strong>締める力が弱まり、<strong>本来読まれないはずの領域が読まれる側へ傾きます。</strong>§4 の drift の一因として、この経路が提唱されています。ここで言えるのは生化学的な接点までで、NAD⁺を増やす介入が実際にどこまで届くかは <a class="chref" href="nad.html">NAD⁺</a>・NAD⁺前駆体 で扱います。</p>
+<p class="kicker">基礎　／　エネルギー</p>
+<h1 class="ch-title">NAD⁺</h1>
+<p class="dateline">公開 2026-08-24</p>
+<p>糖や脂肪酸から<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>を作る途中では、栄養素から電子を抜き取ります。その電子を受け取るのが<strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。">NAD⁺</span></strong>です。電子を受け取る前がNAD⁺、受け取った後がNADHです。</p>
+<p>NADHは、受け取った電子を<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>へ運びます。電子を渡すとNAD⁺へ戻り、再び電子を受け取れます。この往復が止まると、糖や脂肪酸の分解も先へ進みません。<strong>NAD⁺そのものがエネルギーになるのではなく、栄養素からエネルギーを取り出す反応に必要な分子</strong>です。</p>
+<p>NAD⁺には、もう一つの使われ方があります。一部の酵素は、NAD⁺を<strong>反応の材料として分子ごと使います。</strong>この場合はNAD⁺の数が減るため、細胞は減った分を作り直します。</p>
+<p>この章でまず覚えてほしいのは、三つだけです。</p>
+<ol><li><strong>NAD⁺</strong> は、電子を受け取る前の状態。</li><li>電子を受け取ると <strong>NADH</strong> になり、電子伝達系へ電子を渡す。</li><li>NAD⁺は一部の酵素にも分子ごと使われるため、減った分は細胞内で作り直される。</li></ol>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　NAD⁺とNADHは、同じ分子の二つの状態</a></li><li><a href="#s2">2　NADHは電子を渡し、NAD⁺に戻る</a></li><li><a href="#s3">3　NAD⁺は、電子運搬とは別の反応でも使われる</a></li><li><a href="#s4">4　NADは、細胞内の場所ごとに分けて管理される</a></li></ul></nav><h2 id="s1">1　NAD⁺とNADHは、同じ分子の二つの状態</h2>
+<p>まずは、<strong>NAD⁺が電子を受け取ってNADHになり、再びNAD⁺へ戻る流れ</strong>を見ます。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 370" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="NADプラスは解糖系、PDH、TCA回路で電子を受け取ってNADHになる。NADHは電子伝達系へ電子を渡してNADプラスに戻る">
+<defs>
+<marker id="nadCycle" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="364" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NAD⁺とNADHは、同じ運び手の二つの姿</text>
+<text x="28" y="68" font-size="13" fill="#3B4A63">電子を受け取る前が NAD⁺、受け取った後が NADH</text>
+<rect x="28" y="126" width="132" height="76" rx="12" fill="#E6F1EA" stroke="#3D6B52" stroke-width="2"/>
+<text x="94" y="157" font-size="23" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<text x="94" y="182" font-size="12.5" text-anchor="middle" fill="#245840">電子を受け取れる</text>
+<line x1="170" y1="164" x2="374" y2="164" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="272" y="112" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">栄養素から電子を受け取る</text>
+<text x="272" y="136" font-size="12.5" text-anchor="middle" fill="#3B4A63">解糖系・PDH・TCA回路</text>
+<circle cx="246" cy="164" r="12" fill="#DCE9F7" stroke="#2F5C87"/>
+<text x="246" y="169" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<circle cx="278" cy="164" r="12" fill="#DCE9F7" stroke="#2F5C87"/>
+<text x="278" y="169" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<text x="306" y="195" font-size="14" font-weight="700" fill="#1E3A63">＋ H⁺</text>
+<rect x="386" y="126" width="146" height="76" rx="12" fill="#DCE9F7" stroke="#2F5C87" stroke-width="2"/>
+<text x="459" y="157" font-size="23" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<text x="459" y="182" font-size="12.5" text-anchor="middle" fill="#1E3A63">電子を受け取った</text>
+<line x1="459" y1="212" x2="459" y2="267" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="444" y="240" font-size="12.5" text-anchor="end" fill="#1E3A63">電子を渡す</text>
+<rect x="350" y="279" width="182" height="62" rx="11" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.8"/>
+<text x="441" y="306" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">電子伝達系</text>
+<text x="441" y="327" font-size="12" text-anchor="middle" fill="#3B4A63">電子の流れから ATP を作る</text>
+<path d="M340 310 H94 V212" fill="none" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadCycle)"/>
+<text x="232" y="301" font-size="12.5" text-anchor="middle" fill="#1E3A63">電子を降ろすと NAD⁺ に戻る</text>
+</g>
+</svg>
+</div>
+<figcaption>NAD⁺は<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>・PDH・<span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span>で電子を受け取ってNADHになり、NADHは電子伝達系へ電子を渡してNAD⁺に戻る。図1では、この電子運搬の往復だけを示す</figcaption>
+</figure>
+<p>NAD⁺とNADHは、別々の栄養素ではありません。<strong>同じ分子が、電子を受け取る前後で名前を変えています。</strong></p>
+<p>解糖系・PDH・TCA回路では、栄養素から電子が取り出されます。その電子を受け取るのが NAD⁺ です。電子を受け取った NAD⁺ は、NADH になります。</p>
+<p>このとき、電子を手放した栄養素は<strong>酸化</strong>され、電子を受け取った NAD⁺ は<strong>還元</strong>された、と表現します。酸化と還元は別々の出来事ではなく、同じ電子移動を両側から見た言葉です。</p>
+<h2 id="s2">2　NADHは電子を渡し、NAD⁺に戻る</h2>
+<p>NADH は、受け取った電子をミトコンドリアの<strong>電子伝達系</strong>へ渡します。電子伝達系は、その電子の流れを使って ATP を作ります。電子を渡した NADH は、再び NAD⁺ に戻ります。</p>
+<p>この往復が続くことで、栄養素の分解も続けられます。NADH が電子を渡せないと NAD⁺ が戻らず、解糖系やTCA回路は進みにくくなります。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 310" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="NADHは電子を電子伝達系へ運び、電子伝達系はその電子の流れを使ってATPを作る。ATPは合成、輸送、運動などの仕事へエネルギーを渡す">
+<defs><marker id="nadToAtp" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker></defs>
+<rect x="3" y="3" width="554" height="304" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NADHとATPは、運ぶものが違う</text>
+<rect x="28" y="78" width="150" height="92" rx="11" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="103" y="109" font-size="20" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<text x="103" y="136" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">電子を運ぶ</text>
+<text x="103" y="157" font-size="11.5" text-anchor="middle" fill="#3B4A63">NAD⁺へ戻る</text>
+<line x1="188" y1="124" x2="230" y2="124" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadToAtp)"/>
+<rect x="242" y="78" width="148" height="92" rx="11" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="316" y="108" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">電子伝達系</text>
+<text x="316" y="133" font-size="12.5" text-anchor="middle" fill="#3B4A63">電子の流れを使う</text>
+<text x="316" y="155" font-size="12.5" text-anchor="middle" fill="#3B4A63">ADP ＋ Pi → ATP</text>
+<line x1="400" y1="124" x2="422" y2="124" stroke="#2F5C87" stroke-width="3" marker-end="url(#nadToAtp)"/>
+<rect x="434" y="78" width="98" height="92" rx="11" fill="#F5E9D6" stroke="#B4762B" stroke-width="1.7"/>
+<text x="483" y="116" font-size="22" font-weight="700" text-anchor="middle" fill="#8A5A18">ATP</text>
+<text x="483" y="143" font-size="13" font-weight="700" text-anchor="middle" fill="#8A5A18">仕事へ渡す</text>
+<rect x="28" y="198" width="504" height="76" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="46" y="225" font-size="13.5" fill="#1F2937"><tspan font-weight="700" fill="#1E3A63">NADH：</tspan>栄養素から抜き取った電子を、電子伝達系まで届ける</text>
+<text x="46" y="252" font-size="13.5" fill="#1F2937"><tspan font-weight="700" fill="#8A5A18">ATP：</tspan>そこで得たエネルギーを、合成・輸送・運動へ届ける</text>
+</g>
+</svg>
+</div>
+<figcaption>NADHは電子を運び、ATPは細胞の仕事へエネルギーを渡す。両者がつながる場所が電子伝達系で、NADHから受け取った電子の流れを使ってATPが作られる</figcaption>
+</figure>
+<p>NADH と ATP は同じものではありません。<strong>NADH が運ぶのは電子、ATP が細胞の仕事へ渡すのはエネルギー</strong>です。両者は電子伝達系でつながっています（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。</p>
+<p>なお、酸素が不足して電子伝達系へ電子を渡しにくいとき、細胞質では pyruvate を lactate に変える反応で NAD⁺を戻します。これは、解糖系を続けるためです（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</p>
+<h2 id="s3">3　NAD⁺は、電子運搬とは別の反応でも使われる</h2>
+<p>ここまで見た電子運搬では、NAD⁺とNADHが入れ替わるだけです。<strong>NAD全体の数は減りません。</strong></p>
+<p>一方、NAD⁺分子そのものを切って使う酵素もあります。この場合は、NAD⁺の数が実際に減ります。</p>
+<ul><li><strong><span class="term" tabindex="0" data-t="PARP" data-d="DNA損傷に応じて NAD⁺ を切って使う酵素。損傷が慢性的に続けば消費も続き、プールが実際に減る。修復・エネルギー産生・sirtuin が同じ一つの NAD⁺ プールを取り合っている。">PARP</span></strong>：DNA損傷への応答に使う</li><li><strong><span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。">sirtuin</span>（サーチュイン）</strong>：タンパク質の働きを調節するために使う（→ <a class="chref" href="epigenome.html">エピゲノム</a>、<span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span>）</li><li><strong>CD38</strong>：NAD⁺を分解し、細胞内のシグナルにも関わる</li><li><strong>SARM1</strong>：傷ついた軸索でNAD⁺を分解する</li></ul>
+<p>酵素名をすべて覚える必要はありません。ここで大切なのは、<strong>NAD⁺には「NADHになって戻る使われ方」と、「分子を切られて減る使われ方」がある</strong>ことです。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 420" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="PARP、sirtuin、CD38、SARM1は目的は異なるが、いずれもNADプラス分子を切って使うため、NADプラスの数を減らす">
+<defs><marker id="nadConsume" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#8A4B78"/></marker></defs>
+<rect x="3" y="3" width="554" height="414" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">四つとも、NAD⁺分子を切って使う</text>
+<text x="28" y="67" font-size="13" fill="#3B4A63">目的は違うが、この使い方ではNAD⁺の数が減る</text>
+<rect x="28" y="91" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="121" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">PARP</text>
+<line x1="124" y1="115" x2="164" y2="115" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="91" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="112" font-size="13.5" font-weight="700" fill="#1F2937">DNA損傷への応答</text>
+<text x="194" y="130" font-size="11.5" fill="#3B4A63">NAD⁺を使ってADP-riboseを付加する</text>
+<rect x="28" y="151" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="181" font-size="14" font-weight="700" text-anchor="middle" fill="#713A62">sirtuin</text>
+<line x1="124" y1="175" x2="164" y2="175" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="151" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="172" font-size="13.5" font-weight="700" fill="#1F2937">タンパク質の働きを調節</text>
+<text x="194" y="190" font-size="11.5" fill="#3B4A63">転写・代謝・ストレス応答を調節する</text>
+<rect x="28" y="211" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="241" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">CD38</text>
+<line x1="124" y1="235" x2="164" y2="235" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="211" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="232" font-size="13.5" font-weight="700" fill="#1F2937">NAD⁺の分解・Ca²⁺シグナル</text>
+<text x="194" y="250" font-size="11.5" fill="#3B4A63">細胞内のシグナルにも関わる</text>
+<rect x="28" y="271" width="86" height="48" rx="10" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.5"/>
+<text x="71" y="301" font-size="15" font-weight="700" text-anchor="middle" fill="#713A62">SARM1</text>
+<line x1="124" y1="295" x2="164" y2="295" stroke="#8A4B78" stroke-width="2.4" marker-end="url(#nadConsume)"/>
+<rect x="176" y="271" width="356" height="48" rx="10" fill="#F7F8FA" stroke="#D6DCE6"/>
+<text x="194" y="292" font-size="13.5" font-weight="700" fill="#1F2937">損傷した軸索でNAD⁺を分解</text>
+<text x="194" y="310" font-size="11.5" fill="#3B4A63">軸索変性のプログラムを進める</text>
+<rect x="28" y="343" width="504" height="48" rx="10" fill="#713A62"/>
+<text x="280" y="373" font-size="15" font-weight="700" text-anchor="middle" fill="#FFFFFF">共通点：分子を切って使う → NAD⁺の数が減る</text>
+</g>
+</svg>
+</div>
+<figcaption>PARP・sirtuin・CD38・SARM1は、それぞれ別の目的でNAD⁺を使う。しかし共通してNAD⁺分子を切るため、NAD⁺とNADHが入れ替わる電子運搬とは違い、NAD⁺の数が実際に減る</figcaption>
+</figure>
+<p>使われて減ったNAD⁺は、細胞内で作り直されます。その材料と経路、外から補う介入はNAD⁺前駆体で扱います。</p>
+<h2 id="s4">4　NADは、細胞内の場所ごとに分けて管理される</h2>
+<p>細胞質とミトコンドリアでは、NAD⁺とNADHが別々に管理されています。<strong>ミトコンドリア・マトリックスにもNAD⁺が必要です。</strong>PDH・TCA回路・β酸化では、NAD⁺が電子を受け取ってNADHになります。また、ミトコンドリアにあるSIRT3・SIRT4・SIRT5は、NAD⁺を反応の材料として使います。</p>
+<p>このマトリックス内のNAD⁺を補うため、<strong>NAD⁺分子は<span class="term" tabindex="0" data-t="SLC25A51" data-d="2020年に同定されたミトコンドリア内膜の NAD⁺ 輸送体。「NAD⁺ はミトコンドリアに入れない」は現在は誤り。ただし輸送体があっても、各区画の濃度・比・回転が同じになるわけではない。">SLC25A51</span>という輸送体を通って入ります。</strong>一方、細胞質のNADH分子は内膜を直接通れません。NADHが持っている<strong>電子だけ</strong>が、shuttleを介して内側へ渡されます。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg viewBox="0 0 560 550" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="ミトコンドリア内膜では、NADプラス分子はSLC25A51を介してマトリックスへ入る。NADH分子は内膜を直接通れないが、持っている電子はシャトルを介して内側へ渡せる。マトリックスへ入ったNADプラスは、エネルギー代謝で電子を受け取るほか、SIRT3、SIRT4、SIRT5の反応材料になる">
+<defs>
+<marker id="nadMitoGreen" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
+<marker id="nadMitoBlue" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="544" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">NAD⁺とNADHでは、内膜の越え方が違う</text>
+<text x="28" y="67" font-size="13" fill="#3B4A63">分子そのものが通るのか、電子だけを渡すのかを分けて読む</text>
+<rect x="28" y="87" width="504" height="98" rx="10" fill="#F7F8FA"/>
+<rect x="28" y="205" width="504" height="58" rx="6" fill="#EEF2F8" stroke="#8A97AC" stroke-width="1.3"/>
+<rect x="28" y="280" width="504" height="236" rx="10" fill="#F7F8FA"/>
+<text x="46" y="112" font-size="14" font-weight="700" fill="#1E3A63">細胞質</text>
+<rect x="84" y="122" width="132" height="44" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.7"/>
+<text x="150" y="150" font-size="18" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<line x1="150" y1="168" x2="150" y2="212" stroke="#3D6B52" stroke-width="2.7" marker-end="url(#nadMitoGreen)"/>
+<rect x="344" y="122" width="132" height="44" rx="9" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.7"/>
+<text x="410" y="150" font-size="18" font-weight="700" text-anchor="middle" fill="#1E3A63">NADH</text>
+<line x1="370" y1="168" x2="370" y2="195" stroke="#9A3D28" stroke-width="2.4"/>
+<line x1="361" y1="180" x2="379" y2="194" stroke="#9A3D28" stroke-width="3"/>
+<line x1="379" y1="180" x2="361" y2="194" stroke="#9A3D28" stroke-width="3"/>
+<text x="354" y="188" font-size="12.5" font-weight="700" text-anchor="end" fill="#7A2F1D">分子は通れない</text>
+<path d="M450 168 V184 Q450 198 436 204 L410 212" fill="none" stroke="#2F5C87" stroke-width="2.7" marker-end="url(#nadMitoBlue)"/>
+<text x="465" y="190" font-size="13" font-weight="700" fill="#1E3A63">e⁻</text>
+<text x="280" y="239" font-size="13" font-weight="700" text-anchor="middle" fill="#3B4A63">ミトコンドリア内膜</text>
+<rect x="89" y="212" width="122" height="44" rx="8" fill="#FFFFFF" stroke="#3D6B52" stroke-width="1.6"/>
+<text x="150" y="240" font-size="13.5" font-weight="700" text-anchor="middle" fill="#245840">SLC25A51</text>
+<rect x="349" y="212" width="122" height="44" rx="8" fill="#FFFFFF" stroke="#2F5C87" stroke-width="1.6"/>
+<text x="410" y="240" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">shuttle</text>
+<text x="280" y="313" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">ミトコンドリア・マトリックス</text>
+<line x1="150" y1="259" x2="150" y2="334" stroke="#3D6B52" stroke-width="2.7" marker-end="url(#nadMitoGreen)"/>
+<text x="166" y="290" font-size="12.5" font-weight="700" fill="#245840">NAD⁺分子が通る</text>
+<line x1="410" y1="259" x2="410" y2="342" stroke="#2F5C87" stroke-width="2.7" marker-end="url(#nadMitoBlue)"/>
+<text x="426" y="290" font-size="12.5" font-weight="700" fill="#1E3A63">電子だけ渡す</text>
+<rect x="84" y="334" width="132" height="44" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.7"/>
+<text x="150" y="362" font-size="18" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
+<circle cx="392" cy="356" r="13" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.4"/>
+<text x="392" y="361" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<circle cx="428" cy="356" r="13" fill="#DCE9F7" stroke="#2F5C87" stroke-width="1.4"/>
+<text x="428" y="361" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">e⁻</text>
+<path d="M150 379 V396 H280 V407" fill="none" stroke="#3D6B52" stroke-width="2.5" marker-end="url(#nadMitoGreen)"/>
+<rect x="45" y="407" width="470" height="94" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.4"/>
+<text x="280" y="430" font-size="14" font-weight="700" text-anchor="middle" fill="#1E3A63">マトリックス内へ入ったNAD⁺の使い道</text>
+<rect x="58" y="442" width="210" height="47" rx="8" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.3"/>
+<text x="163" y="462" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">電子を受け取る</text>
+<text x="163" y="480" font-size="11.5" text-anchor="middle" fill="#245840">PDH・TCA回路・β酸化 → NADH</text>
+<rect x="292" y="442" width="210" height="47" rx="8" fill="#F6EAF2" stroke="#8A4B78" stroke-width="1.3"/>
+<text x="397" y="462" font-size="13" font-weight="700" text-anchor="middle" fill="#713A62">酵素の材料になる</text>
+<text x="397" y="480" font-size="11.5" text-anchor="middle" fill="#713A62">SIRT3・SIRT4・SIRT5</text>
+</g>
+</svg>
+</div>
+<figcaption>NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われる。一方、細胞質のNADH分子は内膜を直接越えず、持っている電子だけがshuttleを介して内側へ渡される</figcaption>
+</figure>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>エピゲノムは、DNA配列を変えずに遺伝子の読みやすさを調節し、細胞ごとの性質を保っている。仕組みは DNA methylation・histone modification・chromatin remodeling の連動。</li><li>methylation は常にOFFを意味しない（プロモーターと gene body で向きが違いうる）。</li><li>加齢で開閉パターンがぼやける（<strong>epigenetic drift</strong>）。配列の変異ではない。</li><li><strong>epigenetic clock が測っているのは、選ばれたCpG部位の DNA methylation ＝ この drift。</strong> 値は組織・時計の種類・解析法で変わり、<strong>時計が戻ること＝臨床的若返りの証明ではない</strong>。</li><li>NAD⁺–sirtuin を介して、代謝状態とエピゲノムは接続している。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/epigenome_まとめ.webp" alt="DNA配列を変えずに読みやすさを調節" loading="lazy"><figcaption>DNA配列を変えずに読みやすさを調節</figcaption></figure>
-<blockquote><a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>では、その読みやすさを変えにくる側——細胞が外からの刺激をどう受け取り、核まで伝えるかを見ます。</blockquote>
+<ol class="goal"><li><strong>NAD⁺は電子を受け取る前、NADHは受け取った後</strong>。同じ分子の二つの状態です。</li><li>NADHは電子伝達系へ電子を渡してNAD⁺に戻ります。この往復が、栄養素の分解とATP産生をつないでいます。</li><li>NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。</li><li>細胞質のNADH分子はミトコンドリア内膜を直接通れず、電子だけをshuttleで渡します。一方、NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われます。</li></ol>
 
 </article>
-<nav class="pager"><a class="prev" href="dna-to-protein.html"><span class="lbl">前へ</span>DNAからタンパク質まで</a><a class="next" href="receptors-signaling.html"><span class="lbl">次へ</span>受容体と細胞内シグナル</a></nav>
+<nav class="pager"><a class="prev" href="electron-transport.html"><span class="lbl">前へ</span>電子伝達系</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
