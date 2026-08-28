@@ -422,8 +422,8 @@ h2{margin-top:24pt}
 <a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
 <a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
 <div class="part">材料を感知し作る</div>
-<span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
-<span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
 <span class="soon">オートファジーとリソソーム<em>準備中</em></span>
 <span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
@@ -508,7 +508,13 @@ h2{margin-top:24pt}
 <div class="flow diagram"><span class="node">翻訳中の鎖に signal 配列がある</span><span class="arr">→</span><span class="node">粗面ERへ引き込まれる</span><span class="arr">→</span><span class="node">ER内で折りたたみ・品質検査</span><span class="arr">→</span><span class="node">小胞でGolgiへ</span><span class="arr">→</span><span class="node">分泌小胞</span><span class="arr">→</span><span class="node">細胞外へ　／　signal 配列がない</span><span class="arr">→</span><span class="node">細胞質にとどまり、細胞質で働く</span></div>
 <p><strong>分泌経路に入るかどうかは、あとから選ぶのではなく、設計図に書かれた&quot;宛名&quot;で最初から決まっています。</strong> signal 配列がある鎖は翻訳の途中で認識され、リボソームごと粗面ERの膜に引き寄せられ、合成されながらそのままER内へ送り込まれます（co-translational translocation）。signal 配列がない鎖は細胞質で作られ、細胞質で働きます——<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>の酵素などがこちらです。</p>
 <p><strong>折りたたみは仕上げの工程ではなく、機能そのものを作る工程です。</strong> タンパク質はアミノ酸が一列につながった鎖として作られますが、鎖のままでは働きません。酵素の活性部位も、受容体の結合部位も、鎖の上では離れた位置にあるアミノ酸が、折りたたまれて初めて一か所に集まってできます。並びが正しくても、折りたたみが違えば働きません。</p>
-<p>折りたたみ途中の鎖は、細胞にとって危険でもあります。完成したタンパク質では内側に隠れている疎水的な部分が、途中では外に出ています。細胞の中は分子が高密度に詰まっているので、露出したままの鎖は近くの分子とくっついて凝集します。だからERは折り損じを通さず、直せない鎖は分解へ回します（ERAD, ER-associated degradation）。処理が追いつかずに折り損じが溜まった状態が ER stress で、これに対する応答（UPR）はオートファジーとリソソームで扱います。コラーゲンでいえば、三重らせんを組めなかった鎖は分泌されません。</p>
+<p>折りたたみ途中の鎖は、細胞にとって危険でもあります。完成したタンパク質では内側に隠れている疎水的な部分が、途中では外に出ています。細胞の中は分子が高密度に詰まっているので、露出したままの鎖は近くの分子とくっついて凝集します。だからERは折り損じを通さず、折り直せない鎖は分解へ回します。コラーゲンでいえば、三重らせんを組めなかった鎖は分泌されません。</p>
+<h3>折りたたみが追いつかないとき：ER stressとUPR</h3>
+<p>ERの折りたたみ能力を超えて、未完成や折り損じのタンパク質が溜まった状態が<strong>ER stress（小胞体ストレス）</strong>です。これを感知したERは、<strong>UPR（unfolded protein response）</strong>を起こします。UPRは、ERへ入る仕事量を減らし、折りたたむ能力と分解する能力を増やす応答です。</p>
+<div class="tblwrap"><table><thead><tr><th>UPRが行うこと</th><th>細胞内で起こること</th></tr></thead><tbody><tr><td><strong>新しく入る量を減らす</strong></td><td>タンパク質の翻訳を一時的に抑え、ERへ送り込まれる鎖を減らす</td></tr><tr><td><strong>折りたたむ能力を増やす</strong></td><td>chaperoneを増やし、ERの処理能力を高める</td></tr><tr><td><strong>折り直せないものを分解する</strong></td><td>ERから細胞質へ戻し、ubiquitinを付けてproteasomeで分解する（<strong>ERAD</strong>）</td></tr></tbody></table></div>
+<p>この応答を始めるER膜のセンサーが<strong>PERK・IRE1・ATF6</strong>です。まずは三つの名前を覚えるより、<strong>「入る量を減らす・折りたたむ力を増やす・直せないものを分解する」</strong>という目的を押さえれば十分です。</p>
+<p>ERADで一本ずつ処理できない凝集体や、傷んだER膜の一部は、<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>によってlysosomeへ送られます。ERそのものを選んで回収する仕組みを<strong>ER-phagy</strong>と呼びます（→ オートファジーとリソソーム）。それでもER stressが解消しない状態が続くと、細胞は<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。">apoptosis</span>へ進むことがあります（→ 細胞死）。</p>
+<p>熱刺激で<strong><span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。">HSF1</span>からHSP70や<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。">HSP47</span></strong>が誘導されるheat shock responseと、ER内の折り損じに対するUPRは、どちらもタンパク質の品質を守る応答ですが、感知する場所と経路は異なります。美容デバイスの熱応答は熱・光・機械刺激、ER内でcollagenの三重らせん形成を助けるHSP47は線維芽細胞とコラーゲンで扱います。</p>
 <p>ここから順番の理由が出てきます。</p>
 <ol><li><strong>ERを通らないと折りたためない。</strong> ERの中は細胞質より酸化的で S–S 結合（ジスルフィド結合）が架かり、chaperone が介助し、折り損じを通さない品質管理がはたらきます。<strong>この環境はERにしかありません。</strong></li><li><strong>細胞質に裸で出せない。</strong> 折りたたみ途中の疎水的な鎖を細胞質に放り出せば、他の分子とくっついて凝集します。だから膜の中を通して運ぶ必要があります。</li><li><strong>ERを通ったあとの送り先を振り分けるのはGolgiです。</strong> ERを出たタンパク質は Golgi で仕上げと<strong>仕分け</strong>を受けて初めて送り先が確定します。仕分けを経ずに分泌されることはありません。</li><li><strong>移動は小胞で、向きがある。</strong> ER→Golgi→細胞膜の移動は小胞（vesicle）が細胞骨格のレール上を運ぶ<strong>一方向の物流</strong>です。だからこの順番は、そのまま<strong>物理的な移動経路</strong>でもあります。</li></ol>
 <h2 id="s4">4　実例：線維芽細胞がコラーゲンを作る</h2>
@@ -523,7 +529,7 @@ h2{margin-top:24pt}
 <p>主役ではありませんが、後の章で顔を出します。</p>
 <div class="tblwrap"><table><thead><tr><th>構造</th><th>何をするか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>細胞膜</strong></td><td>内と外を仕切り、物質の出入りを制御する</td><td>通す・通さないの規則は分子の側の性質で決まる（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>endosome</strong>（エンドソーム）</td><td>外から取り込んだものを仕分ける小胞</td><td>分解へ回すか、膜へ戻すかを決める（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>lipid droplet</strong>（脂肪滴）</td><td>中性脂肪をためる小滴</td><td>脂肪細胞では細胞の大部分を占める主役になる（→ 脂肪）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span></strong>（細胞外マトリックス）</td><td>細胞の&quot;外&quot;の足場</td><td>足場であると同時に、細胞に情報も伝える（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>）</td></tr><tr><td><strong>cytoskeleton</strong>（細胞骨格）</td><td>形の維持・運搬・張力の感知</td><td><strong>actin filament</strong>＝膜直下で収縮し張力を生む／<strong>microtubule</strong>＝小胞とオルガネラを運ぶレール／<strong>intermediate filament</strong>＝引っ張りに耐える芯（表皮の keratin）。<strong><span class="term" tabindex="0" data-t="integrin" data-d="細胞膜を貫き、外でECMをつかみ内で細胞骨格につながる受容体。focal adhesion・FAK を介して足場の硬さと張力を細胞内シグナルに変換する入口（mechanotransduction）。">integrin</span></strong> で ECM に接着した点で細胞骨格を引くと、足場の硬さと張力が細胞内シグナルに変換される＝<strong>mechanotransduction</strong>（→ ECMとmechanotransduction）</td></tr></tbody></table></div>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>細胞の仕事は単一のオルガネラでは完結しない。<strong>分泌タンパク質を1本外へ出す</strong>という一つの仕事に、核・リボソーム・粗面ER・Golgi が順に関与し、ミトコンドリアとリソソームが全工程で同時に働く。</li><li>7つのオルガネラはそれぞれ別の環境を持つ（酸化的なER内、pH 5前後のリソソーム、catalase を抱えたペルオキシソーム）。担当する仕事は、その環境で何ができるかで決まっている。</li><li>この順番は覚えるだけの並びではない。<strong>signal 配列で分泌経路に入るかが決まり、折りたためるのはERの中だけで、その先の送り先はGolgiの仕分けで確定する。</strong>だからこの順番になる。<strong>どの工程が滞っても出力は落ちる。</strong></li><li>「産生能が上がる」とは、この受け渡しのうち<strong>いちばん遅いステップ（律速段階）が速くなる</strong>こと。見るべきなのは、どのオルガネラかではなく、どこが詰まっているか。</li></ol>
+<ol class="goal"><li>細胞の仕事は単一のオルガネラでは完結しない。<strong>分泌タンパク質を1本外へ出す</strong>という一つの仕事に、核・リボソーム・粗面ER・Golgi が順に関与し、ミトコンドリアとリソソームが全工程で同時に働く。</li><li>7つのオルガネラはそれぞれ別の環境を持つ（酸化的なER内、pH 5前後のリソソーム、catalase を抱えたペルオキシソーム）。担当する仕事は、その環境で何ができるかで決まっている。</li><li>この順番は覚えるだけの並びではない。<strong>signal 配列で分泌経路に入るかが決まり、折りたためるのはERの中だけで、その先の送り先はGolgiの仕分けで確定する。</strong>だからこの順番になる。<strong>どの工程が滞っても出力は落ちる。</strong></li><li>ERの折りたたみ能力を超えて未完成のタンパク質が溜まると<strong>ER stress</strong>になり、<strong>UPR</strong>が入る量を減らし、折りたたみと分解の能力を高める。</li><li>「産生能が上がる」とは、この受け渡しのうち<strong>いちばん遅いステップ（律速段階）が速くなる</strong>こと。見るべきなのは、どのオルガネラかではなく、どこが詰まっているか。</li></ol>
 <figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/organelles_まとめ.webp" alt="細胞の中は連携するオルガネラでできている" loading="lazy"><figcaption>細胞の中は連携するオルガネラでできている</figcaption></figure>
 <blockquote><a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>では、これらのオルガネラが<strong>独立した袋ではなく、互いに物質やシグナルを交換し合っている</strong>ことを見ます。「ミトコンドリアを活性化する」という説明が、なぜそれだけでは足りないのかという話につながります。</blockquote>
 
@@ -535,7 +541,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-24 ／ 版 d25f8c1</p>
+<p class="stamp">最終更新 2026-08-28 ／ 版 ec1bb84</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

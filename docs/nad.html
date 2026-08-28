@@ -422,8 +422,8 @@ h2{margin-top:24pt}
 <a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
 <a href="nad.html" class="active">NAD⁺<span class="badge bnew">NEW</span></a>
 <div class="part">材料を感知し作る</div>
-<span class="soon">アミノ酸は材料であり、シグナルでもある<em>準備中</em></span>
-<span class="soon">mTORC1はアミノ酸をどう感知するか<em>準備中</em></span>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
 <span class="soon">オートファジーとリソソーム<em>準備中</em></span>
 <span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
@@ -574,6 +574,7 @@ h2{margin-top:24pt}
 <p>一方、NAD⁺分子そのものを切って使う酵素もあります。この場合は、NAD⁺の数が実際に減ります。</p>
 <ul><li><strong><span class="term" tabindex="0" data-t="PARP" data-d="DNA損傷に応じて NAD⁺ を切って使う酵素。損傷が慢性的に続けば消費も続き、プールが実際に減る。修復・エネルギー産生・sirtuin が同じ一つの NAD⁺ プールを取り合っている。">PARP</span></strong>：DNA損傷への応答に使う</li><li><strong><span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。">sirtuin</span>（サーチュイン）</strong>：タンパク質の働きを調節するために使う（→ <a class="chref" href="epigenome.html">エピゲノム</a>、<span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span>）</li><li><strong>CD38</strong>：NAD⁺を分解し、細胞内のシグナルにも関わる</li><li><strong>SARM1</strong>：傷ついた軸索でNAD⁺を分解する</li></ul>
 <p>酵素名をすべて覚える必要はありません。ここで大切なのは、<strong>NAD⁺には「NADHになって戻る使われ方」と、「分子を切られて減る使われ方」がある</strong>ことです。</p>
+<p><strong>切られて減った分は、作り直して補います。</strong>（NADHがNAD⁺に戻る往復では総量が変わらないのは、§2のとおりです。）主な道は <strong>salvage 経路</strong>で、消費で生じた <strong>NAM（nicotinamide）</strong>を <strong><span class="term" tabindex="0" data-t="NAMPT" data-d="salvage pathway で NAM を NMN に変える律速酵素。ここが律速だということは、前駆体を足してもその手前ないし別の入口でなければ通らない場面がある、ということ。">NAMPT</span></strong> が <strong>NMN</strong> に戻し、<strong>NMNAT</strong> が NAD⁺ に戻します。<strong>この経路の律速は NAMPT</strong> です。もうひとつ、<strong>tryptophan</strong> から<strong>キヌレニン経路</strong>を経て作る <strong>de novo 合成</strong>がありますが、多くの組織で寄与は小さく、日々の供給は salvage が担っています。食事由来の前駆体（niacin・NAM・NR・NMN）の入り方はNAD⁺前駆体で扱います。</p>
 <figure class="book-figure">
 <div style="overflow-x:auto">
 <svg viewBox="0 0 560 420" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="PARP、sirtuin、CD38、SARM1は目的は異なるが、いずれもNADプラス分子を切って使うため、NADプラスの数を減らす">
@@ -674,17 +675,17 @@ h2{margin-top:24pt}
 <figcaption>NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われる。一方、細胞質のNADH分子は内膜を直接越えず、持っている電子だけがshuttleを介して内側へ渡される</figcaption>
 </figure>
 <h2>この章の到達点</h2>
-<ol class="goal"><li><strong>NAD⁺は電子を受け取る前、NADHは受け取った後</strong>。同じ分子の二つの状態です。</li><li>NADHは電子伝達系へ電子を渡してNAD⁺に戻ります。この往復が、栄養素の分解とATP産生をつないでいます。</li><li>NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。</li><li>細胞質のNADH分子はミトコンドリア内膜を直接通れず、電子だけをshuttleで渡します。一方、NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われます。</li></ol>
+<ol class="goal"><li><strong>NAD⁺は電子を受け取る前、NADHは受け取った後</strong>。同じ分子の二つの状態です。</li><li>NADHは電子伝達系へ電子を渡してNAD⁺に戻ります。この往復が、栄養素の分解とATP産生をつないでいます。</li><li>NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。作り直しの主体は <strong>NAM → NMN → NAD⁺ の salvage 経路（律速は NAMPT）</strong>で、tryptophan からの de novo 合成の寄与は小さいものです。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。</li><li>細胞質のNADH分子はミトコンドリア内膜を直接通れず、電子だけをshuttleで渡します。一方、NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われます。</li></ol>
 
 </article>
-<nav class="pager"><a class="prev" href="electron-transport.html"><span class="lbl">前へ</span>電子伝達系</a></nav>
+<nav class="pager"><a class="prev" href="electron-transport.html"><span class="lbl">前へ</span>電子伝達系</a><a class="next" href="amino-acids.html"><span class="lbl">次へ</span>アミノ酸は材料であり、シグナルでもある</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-24 ／ 版 d25f8c1</p>
+<p class="stamp">最終更新 2026-08-28 ／ 版 ec1bb84</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

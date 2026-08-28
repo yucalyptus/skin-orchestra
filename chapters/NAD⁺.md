@@ -125,6 +125,8 @@ NADH と ATP は同じものではありません。**NADH が運ぶのは電子
 
 酵素名をすべて覚える必要はありません。ここで大切なのは、**NAD⁺には「NADHになって戻る使われ方」と、「分子を切られて減る使われ方」がある**ことです。
 
+**切られて減った分は、作り直して補います。**（NADHがNAD⁺に戻る往復では総量が変わらないのは、§2のとおりです。）主な道は **salvage 経路**で、消費で生じた **NAM（nicotinamide）**を **NAMPT** が **NMN** に戻し、**NMNAT** が NAD⁺ に戻します。**この経路の律速は NAMPT** です。もうひとつ、**tryptophan** から**キヌレニン経路**を経て作る **de novo 合成**がありますが、多くの組織で寄与は小さく、日々の供給は salvage が担っています。食事由来の前駆体（niacin・NAM・NR・NMN）の入り方は[[nad-precursors]]で扱います。
+
 <figure class="book-figure">
 <div style="overflow-x:auto">
 <svg viewBox="0 0 560 420" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="PARP、sirtuin、CD38、SARM1は目的は異なるが、いずれもNADプラス分子を切って使うため、NADプラスの数を減らす">
@@ -246,5 +248,5 @@ NADH と ATP は同じものではありません。**NADH が運ぶのは電子
 
 1. **NAD⁺は電子を受け取る前、NADHは受け取った後**。同じ分子の二つの状態です。
 2. NADHは電子伝達系へ電子を渡してNAD⁺に戻ります。この往復が、栄養素の分解とATP産生をつないでいます。
-3. NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。
+3. NAD⁺は一部の酵素に分子ごと使われて減るため、細胞内で作り直されます。作り直しの主体は **NAM → NMN → NAD⁺ の salvage 経路（律速は NAMPT）**で、tryptophan からの de novo 合成の寄与は小さいものです。電子運搬でNAD⁺とNADHが入れ替わるだけの使い方とは、ここが違います。
 4. 細胞質のNADH分子はミトコンドリア内膜を直接通れず、電子だけをshuttleで渡します。一方、NAD⁺分子はSLC25A51を介してマトリックスへ入り、エネルギー代謝とSIRT3・SIRT4・SIRT5の反応に使われます。

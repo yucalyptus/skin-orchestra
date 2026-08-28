@@ -3,15 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>生化学で見る美容医療 ― 皮膚の下のオーケストラ</title>
-<meta name="description" content="美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞はどのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。美容医療に携わる医師のための細胞生物学・生化学の教材です。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/index.html">
+<title>mTORC1――タンパク質合成を調節する仕組み ― 生化学で見る美容医療</title>
+<meta name="description" content="mTORC1 は、アミノ酸・成長刺激・エネルギーの状態をまとめて受け取り、タンパク質合成と autophagy の強さを調節します。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/mtorc1.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="生化学で見る美容医療 ― 皮膚の下のオーケストラ">
-<meta property="og:description" content="美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞はどのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。美容医療に携わる医師のための細胞生物学・生化学の教材です。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/index.html">
+<meta property="og:title" content="mTORC1――タンパク質合成を調節する仕組み ― 生化学で見る美容医療">
+<meta property="og:description" content="mTORC1 は、アミノ酸・成長刺激・エネルギーの状態をまとめて受け取り、タンパク質合成と autophagy の強さを調節します。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/mtorc1.html">
 <meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -400,7 +400,7 @@ h2{margin-top:24pt}
 <input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
 <div class="toc">
 <div class="part">はじめに</div>
-<a href="index.html" class="active">表紙と目次</a>
+<a href="index.html">表紙と目次</a>
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
@@ -423,7 +423,7 @@ h2{margin-top:24pt}
 <a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
 <div class="part">材料を感知し作る</div>
 <a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="mtorc1.html" class="active">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
 <span class="soon">オートファジーとリソソーム<em>準備中</em></span>
 <span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
@@ -486,179 +486,135 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<header class="cover">
-<p class="cover-en">An Orchestra Beneath the Skin</p>
-<h1 class="cover-title">生化学で見る美容医療<span class="cover-sub">皮膚の下のオーケストラ</span></h1>
-<p class="cover-author">Yuka Aoki, MD</p>
-</header>
-<div class="hero">
-<p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。臨床でふだん意識しない基礎を思い出し、施術と結びつけて理解するための教材です。</p>
-<div class="flowline">細胞の構造　→　エネルギー代謝　→　品質管理　→　加齢変化　→　美容施術への応答</div>
-<p class="note">確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
+<article class="chapter">
+<p class="kicker">基礎　／　材料を感知し作る</p>
+<h1 class="ch-title">mTORC1――タンパク質合成を調節する仕組み</h1>
+<p class="dateline">公開 2026-08-28</p>
+<blockquote>アミノ酸は、タンパク質の材料であると同時に、<strong>「材料がある」</strong>と細胞へ伝える情報でもあります。この章では、<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。">mTORC1</span></strong>がアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成を調節する仕組みを見ます。<br><br><strong>先に読んでおく章</strong>：アミノ酸の働きと輸送体（→ <a class="chref" href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>）／<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>とエネルギー代謝（→ <a class="chref" href="atp.html">代謝とATP</a>）</blockquote>
+<h2>この章の一言</h2>
+<blockquote class="lead">mTORC1 は、<strong>アミノ酸・成長刺激・エネルギー</strong>の状態をまとめて受け取り、タンパク質合成と <span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span> の強さを調節します。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　mTORC1は、三つの情報をまとめる</a></li><li><a href="#s2">2　アミノ酸の量を感知するセンサー</a></li><li><a href="#s3">3　Ragが移し、Rhebが活性を高める</a></li><li><a href="#s4">4　食後は「作る」、空腹時は「分解して再利用する」</a></li><li><a href="#s5">5　この仕組みが関係するもの</a></li></ul></nav><h2 id="s1">1　mTORC1は、三つの情報をまとめる</h2>
+<p><strong>mTORC1（mechanistic target of rapamycin complex 1）</strong>は、タンパク質合成を調節する酵素複合体です。活性が高まるとタンパク質合成が進み、autophagy は抑えられます。活性が下がると、タンパク質合成は低下し、autophagy が進みやすくなります（→ オートファジーとリソソーム、<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span>とmTOR）。</p>
+<p>mTORC1は、主に三つの情報を受け取ります。</p>
+<ul><li><strong>アミノ酸</strong>：mTORC1を、働く場所である<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>の表面へ移動させます。</li><li><strong>インスリンやIGF-1</strong>：lysosomeの表面で、mTORC1の活性を高めます。</li><li><strong>細胞内のエネルギー</strong>：不足すると AMPK が働き、mTORC1 を抑えます（→ AMPKとmTOR）。</li></ul>
+<h2 id="s2">2　アミノ酸の量を感知するセンサー</h2>
+<p>細胞は20種類のアミノ酸を一つずつ数えているわけではありません。<strong>代表となる数種類に専用のセンサータンパク質があり、そのアミノ酸が直接結合すること自体が「足りている」という情報になります。</strong></p>
+<div class="tblwrap"><table><thead><tr><th>感知するもの</th><th>センサー</th><th>測り方</th></tr></thead><tbody><tr><td><strong>leucine</strong></td><td>Sestrin2</td><td>leucine が直接結合する</td></tr><tr><td><strong>arginine</strong></td><td>CASTOR1</td><td>arginine が直接結合する</td></tr><tr><td><strong>SAM（methionine から作られる）</strong></td><td>SAMTOR</td><td>methionine そのものではなく、そこから作られる SAM が結合する</td></tr></tbody></table></div>
+<p>センサーがアミノ酸の量を感知すると、その情報がいくつかのタンパク質を介して<strong>Rag</strong>へ伝わります。</p>
+<h2 id="s3">3　Ragが移し、Rhebが活性を高める</h2>
+<p><strong>Ragはlysosomeの表面にあります。</strong>アミノ酸センサーから「材料がある」という情報が届くとRagが活性型になり、細胞質にあるmTORC1を<strong>lysosomeの表面へ呼び寄せます</strong>。</p>
+<p>一方、インスリンやIGF-1の刺激は、細胞内の経路を介して<strong>Rhebを活性型にします</strong>。活性型Rhebはlysosomeの表面で、Ragが呼び寄せたmTORC1の活性を高めます。</p>
+<p>つまり、<strong>RagはmTORC1を働く場所へ呼び、RhebはそこでmTORC1を活性化します。</strong>二つの情報がlysosomeの表面でそろうと、mTORC1が働きやすくなります。エネルギーが不足しているときは、AMPKがmTORC1を抑えます。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" style="display:block;width:100%;max-width:900px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="アミノ酸センサーから情報を受け取ったRagがmTORC1をlysosome表面へ呼び寄せる。インスリンとIGF-1は細胞内経路を介してRhebを活性型にし、lysosome表面でmTORC1の活性を高める。エネルギー不足ではAMPKがmTORC1を抑える">
+<defs>
+<marker id="ragMoveArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L11 6 L1 11 z" fill="#245B89"/></marker>
+<marker id="rhebActArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L11 6 L1 11 z" fill="#D6602D"/></marker>
+<marker id="outcomeArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L11 6 L1 11 z" fill="#3F8A50"/></marker>
+</defs>
+<text x="450" y="38" font-size="25" font-weight="700" text-anchor="middle" fill="#173B61">二つの情報がlysosome表面で合流する</text>
+<rect x="40" y="62" width="380" height="165" rx="18" fill="#F3F8FD" stroke="#78A3C8" stroke-width="2.5"/>
+<text x="230" y="96" font-size="21" font-weight="700" text-anchor="middle" fill="#1E4F7D">① アミノ酸が十分にある</text>
+<text x="230" y="130" font-size="17" text-anchor="middle" fill="#405F79">センサーが「材料がある」と感知</text>
+<line x1="230" y1="142" x2="230" y2="158" stroke="#245B89" stroke-width="3.5" marker-end="url(#ragMoveArrow)"/>
+<rect x="115" y="168" width="230" height="43" rx="20" fill="#DDEBFA" stroke="#3974A8" stroke-width="2"/>
+<text x="230" y="196" font-size="18" font-weight="700" text-anchor="middle" fill="#173B61">Ragが活性型になる</text>
+<rect x="480" y="62" width="380" height="165" rx="18" fill="#FEF6F0" stroke="#D8936D" stroke-width="2.5"/>
+<text x="670" y="96" font-size="21" font-weight="700" text-anchor="middle" fill="#A3431E">② インスリン・IGF-1</text>
+<text x="670" y="130" font-size="17" text-anchor="middle" fill="#80503B">細胞内の経路を介して伝わる</text>
+<line x1="670" y1="142" x2="670" y2="158" stroke="#D6602D" stroke-width="3.5" marker-end="url(#rhebActArrow)"/>
+<rect x="555" y="168" width="230" height="43" rx="20" fill="#FBE8DD" stroke="#D6602D" stroke-width="2"/>
+<text x="670" y="196" font-size="18" font-weight="700" text-anchor="middle" fill="#A3431E">Rhebが活性型になる</text>
+<text x="450" y="263" font-size="19" font-weight="700" text-anchor="middle" fill="#536878">lysosomeの表面で、二つの情報がそろう</text>
+<text x="125" y="298" font-size="15" text-anchor="middle" fill="#607487">細胞質</text>
+<rect x="55" y="311" width="140" height="54" rx="24" fill="#DDEBFA" fill-opacity="0.65" stroke="#3974A8" stroke-width="2.5" stroke-dasharray="6 5"/>
+<text x="125" y="345" font-size="19" font-weight="700" text-anchor="middle" fill="#173B61">mTORC1</text>
+<path d="M52 478 Q450 402 848 478 L848 535 L52 535 Z" fill="#F7EAD4" stroke="#C99D5A" stroke-width="2.8"/>
+<text x="735" y="520" font-size="20" font-weight="700" text-anchor="middle" fill="#754E24">lysosome</text>
+<path d="M230 227 C230 292 245 365 285 414" fill="none" stroke="#245B89" stroke-width="4" marker-end="url(#ragMoveArrow)"/>
+<ellipse cx="305" cy="435" rx="58" ry="31" fill="#DDEBFA" stroke="#3974A8" stroke-width="2.5"/>
+<text x="305" y="431" font-size="18" font-weight="700" text-anchor="middle" fill="#173B61">Rag</text>
+<text x="305" y="451" font-size="14" text-anchor="middle" fill="#173B61">lysosome表面</text>
+<path d="M195 338 C265 326 334 338 385 372" fill="none" stroke="#245B89" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#ragMoveArrow)"/>
+<rect x="227" y="294" width="134" height="29" rx="8" fill="#FFFFFF" fill-opacity="0.94"/>
+<text x="294" y="316" font-size="16" font-weight="700" text-anchor="middle" fill="#245B89">Ragが呼び寄せる</text>
+<path d="M349 418 C372 401 387 393 401 391" fill="none" stroke="#245B89" stroke-width="4" marker-end="url(#ragMoveArrow)"/>
+<rect x="385" y="354" width="150" height="67" rx="28" fill="#DDEFD9" stroke="#3F8A50" stroke-width="3"/>
+<text x="460" y="382" font-size="20" font-weight="700" text-anchor="middle" fill="#256436">mTORC1</text>
+<text x="460" y="405" font-size="16" font-weight="700" text-anchor="middle" fill="#256436">lysosome表面</text>
+<path d="M670 227 C670 292 655 365 622 414" fill="none" stroke="#D6602D" stroke-width="4" marker-end="url(#rhebActArrow)"/>
+<ellipse cx="615" cy="435" rx="58" ry="31" fill="#FBE8DD" stroke="#D6602D" stroke-width="2.5"/>
+<text x="615" y="431" font-size="18" font-weight="700" text-anchor="middle" fill="#A3431E">Rheb</text>
+<text x="615" y="451" font-size="14" text-anchor="middle" fill="#A3431E">活性型</text>
+<path d="M568 418 C545 401 530 393 517 391" fill="none" stroke="#D6602D" stroke-width="4" marker-end="url(#rhebActArrow)"/>
+<text x="628" y="342" font-size="16" font-weight="700" text-anchor="middle" fill="#D6602D">活性を高める</text>
+<line x1="460" y1="422" x2="460" y2="552" stroke="#3F8A50" stroke-width="4" marker-end="url(#outcomeArrow)"/>
+<rect x="282" y="558" width="356" height="43" rx="20" fill="#E3F2E5" stroke="#5B9B66" stroke-width="2"/>
+<text x="460" y="586" font-size="18" font-weight="700" text-anchor="middle" fill="#256436">タンパク質・脂質などの合成へ</text>
+<rect x="125" y="615" width="650" height="29" rx="13" fill="#F2F3F5"/>
+<text x="450" y="635" font-size="15" font-weight="700" text-anchor="middle" fill="#6B5555">エネルギー不足 → AMPKが働く → mTORC1を抑える</text>
+</svg>
 </div>
-<section class="score"><p class="sc-t">公開の状況</p><table><tr><th>基礎</th><td class="sc-n"><strong>15</strong> <span>/ 25</span></td></tr><tr><th>美容皮膚科</th><td class="sc-n"><strong>0</strong> <span>/ 34</span></td></tr><tr><th>美容内科</th><td class="sc-n"><strong>0</strong> <span>/ 4</span></td></tr><tr><th>おわりに</th><td class="sc-n"><strong>0</strong> <span>/ 1</span></td></tr><tr class="sc-total"><th>合計</th><td class="sc-n"><strong>15</strong> <span>/ 64</span></td></tr></table><p class="sc-note">確認できたものから、ひとつずつ増やしています。</p></section>
-<section class="recent"><p class="rc-t">最近の更新</p><ul><li><time>2026-08-28</time><span class="k new">新規</span><a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a><span class="note">初公開</span></li><li><time>2026-08-28</time><span class="k new">新規</span><a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a><span class="note">初公開</span></li><li><time>2026-08-24</time><span class="k new">新規</span><a href="electron-transport.html">電子伝達系</a><span class="note">初公開</span></li><li><time>2026-08-24</time><span class="k new">新規</span><a href="glycolysis.html">解糖系</a><span class="note">初公開</span></li><li><time>2026-08-24</time><span class="k new">新規</span><a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a><span class="note">初公開</span></li></ul><p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></section>
-<section class="intro sec-rule">
-<h1>はじめに ― なぜこれを作ったか</h1>
-<blockquote class="lead">医学部で学んだ基礎は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
-<p>私は美容医療に長く携わってきました。でも正直に言うと、最初は「レーザーでコラーゲンを増やす」と言葉で説明しながら、その裏で細胞が実際に何をしているのかを、うまくイメージできていませんでした。</p>
-<p>線維芽細胞（fibroblast）が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりに積み上がって<strong>細胞外マトリックス（ECM）という土台</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
-<p>一つの細胞の中でも、いくつものオルガネラが順に噛み合って、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>どれか一つが主役なのではなく、全体が噛み合ったときに結果が出る。</strong>タイトルに「皮膚の下のオーケストラ」と付けたのは、そういう意味です。生命というのは神秘に溢れていて、とても精巧に作られていて、感動しますね。</p>
-<p>医学部で習った生化学や細胞生物学は、日々の臨床からは遠ざかりがちです。そこまで立ち返らなくても、現場の仕事は回る。<strong>けれど、細胞・生化学のレベルまでイメージできると、治療の選び方が変わってきます。</strong></p>
-<p>これは新しい知識の詰め込みではなく、<strong>「学び直し」</strong>です。臨床で働く仲間が、施術の裏側を細胞から見直すための手がかりになればうれしいです。</p>
-<aside class="notice">
-<p class="notice-t">制作と利用について</p>
-<p>本教材の制作過程では、文章の整理・推敲や図版の作成などに生成AIを使用しています。内容は文献と照らし合わせながら確認していますが、誤りや不十分な点を含む可能性があります。</p>
-<p>本教材は学習を目的としたものであり、個別の診療判断に代わるものではありません。診療にあたっては、最新のガイドライン、添付文書、原著論文などをご確認ください。</p>
-</aside>
-</section>
-<section id="criteria" class="sec-rule">
-<h1>この教材の立ち方 ― 限られた根拠から、どう判断するか</h1>
-<blockquote class="lead">美容医療に、質の高い臨床試験がそろっている領域はほとんどありません。それでも私たちは毎日、治療を選んでいます。<strong>この教材は、限られた材料をつないで地図を作り、つないだところに「どのくらい確かか」を書き添えます。</strong></blockquote>
-<p>「エビデンスがないから何も言えない」で止めてしまうと、<strong>手元に残るのは経験談と広告だけ</strong>になります。美容医療で厳密な対照試験が組まれることは少なく、多くは小規模・単群・企業主導です。それを理由に、考えることをやめるわけにはいきません。</p>
-<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するには、この三つをつなぐしかありません。</p>
-<p>三つをつなぐには、推論が要ります。<strong>推論は、私たちが日々の診療でしていることそのものです。</strong>問題になるのは推論すること自体ではなく、<strong>推論を確かめられた事実と取り違えること</strong>だけです。だからこの教材は、<strong>どこまでが確立していて、どこからが推論か</strong>を、本文や章末の根拠表示で区別しながら進みます。それが分かれば、あとは読者が自分の臨床で判断できます——「ヒトでは未確認だが、機序は筋が通っていてリスクも低いなら試す」も、「未確認だから患者さんには断定的に説明しない」も、どちらも成り立ちます。</p>
-<p>下の六つが、その目印です。<strong>主張を却下するためのふるいではなく、いま自分がどの段に立っているかを確かめるためのもの</strong>です。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/巻頭_本教材が守る切り分け.webp" alt="本教材が確認する六つの切り分け。" loading="lazy"><figcaption>本教材が確認する六つの切り分け。血液の値と標的組織の値、経路が動くことと臨床効果、欠乏の是正と上乗せ効果、経口と外用・皮内注入、全身への供給と局所での利用、前臨床とヒト臨床は、それぞれ同じではなく、左側が確認されても右側まで自動的には証明されない</figcaption></figure>
-<p>確かめられていることは、まだ限られています。それでも、<strong>いま分かっていること・言われていることを知っておくことは必要で、それがより良い治療につながることがある。</strong>この教材はその前提で書かれています。</p>
-<p class="scope-note"><strong>根拠表示の付け方について。</strong>「基礎」の各章（細胞の地図からエネルギー・品質管理・加齢まで）は、標準的な教科書レベルの内容です。ここは確度が争点にならないので、章末の Evidence meter と個別の参考文献は置いていません。<strong>それらを付けているのは、確度そのものが論点になる「美容皮膚科」「美容内科」の各章</strong>——個別の製剤・デバイス・臨床エビデンスを扱う章です。</p>
-</section>
-<section class="contents sec-rule">
-<h1>目次</h1>
-<div class="sec-block"><h2 class="sec-title">基礎<small>細胞のしくみを思い出す</small></h2>
-<div class="part-block">
-<div class="part-title">細胞の地図</div>
-<p class="part-intro">美容医療で扱う細胞を確認し、その中のオルガネラと、オルガネラ同士の連携を見ます。</p>
-<ul class="toc-list">
-<li><a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a></li>
-<li><a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a></li>
-<li><a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">情報をどう読むか</div>
-<p class="part-intro">同じDNAを持つ細胞が、なぜ違うものを作るのか。転写・翻訳・エピゲノム・受容体・膜輸送まで、「読む」「伝える」「出入りする」を通します。</p>
-<ul class="toc-list">
-<li><a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a></li>
-<li><a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a></li>
-<li><a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a></li>
-<li><a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">エネルギー</div>
-<p class="part-intro">コラーゲンを作るのも、傷んだものを片づけるのも、細胞が1回分裂するのも、ATP・還元力（NADPH）・材料になる炭素の3つを使います。栄養素からこの3つが取り出されるまでを、一本の流れとしてたどります。この経路は発電だけをしているのではありません。同じ経路が、材料と還元力の出どころでもあります。</p>
-<ul class="toc-list">
-<li><a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a></li>
-<li><a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a></li>
-<li><a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a></li>
-<li><a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a></li>
-<li><a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a></li>
-<li><a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">材料を感知し作る</div>
-<p class="part-intro">エネルギーと並ぶもう一つの前提が材料です。アミノ酸と、材料と成長刺激がそろったかを判定して合成を始めるmTORC1を見ます。「エネルギーがある」と「材料がそろい、作る指令が出る」は別です。</p>
-<ul class="toc-list">
-<li><a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a></li>
-<li><a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">掃除と作り直し</div>
-<p class="part-intro">作る話の裏側です。壊して再利用する仕組みと、ミトコンドリアの回転。品質は「量」ではなく「回っているか」で決まります。</p>
-<ul class="toc-list">
-<li class="soon"><span>オートファジーとリソソーム</span><em>準備中</em></li>
-<li class="soon"><span>ミトコンドリア品質管理</span><em>準備中</em></li>
-<li class="soon"><span>AMPKとmTOR</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">傷害から修復まで</div>
-<p class="part-intro">ROSは何をどう傷つけるのか。傷ついた細胞はどう死ぬのか。そして壊れた組織はどの順で直るのか。細胞の傷害から組織の修復までを一続きで見ます。施術後に組織で起きることの土台で、あとの各章が繰り返し戻ってくる場所です。</p>
-<ul class="toc-list">
-<li class="soon"><span>酸化ストレスと抗酸化</span><em>準備中</em></li>
-<li class="soon"><span>細胞死</span><em>準備中</em></li>
-<li class="soon"><span>炎症と創傷治癒</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">細胞は加齢で何が変わるか</div>
-<p class="part-intro">ここまでの機序を、加齢の側から整理し直します。まず「増えていない細胞」の4つの意味を分けたうえで、Hallmarks of Aging・細胞老化・ミトコンドリア機能不全を一つの絵につなぎます。</p>
-<ul class="toc-list">
-<li class="soon"><span>細胞周期</span><em>準備中</em></li>
-<li class="soon"><span>Hallmarks of Aging</span><em>準備中</em></li>
-<li class="soon"><span>細胞老化</span><em>準備中</em></li>
-<li class="soon"><span>ミトコンドリア機能不全と細胞老化</span><em>準備中</em></li>
-</ul></div>
+<figcaption>アミノ酸の情報で活性型になったRagは、mTORC1をlysosome表面へ呼び寄せます。インスリン・IGF-1は細胞内経路を介してRhebを活性型にし、Ragが呼び寄せたmTORC1の活性を高めます。</figcaption>
+</figure>
+<h2 id="s4">4　食後は「作る」、空腹時は「分解して再利用する」</h2>
+<p>食事をすると、血中のglucoseとアミノ酸が増え、インスリンが分泌されます。細胞にアミノ酸が届き、インスリンの刺激も加わると、mTORC1の活性は高まりやすくなります。mTORC1は、タンパク質や脂質を<strong>作る方向</strong>へ代謝を進めます。これは成長や組織の修復に必要な、正常な反応です。</p>
+<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンの刺激が減ります。細胞内のエネルギーが不足すればAMPKも働き、mTORC1の活性は下がります。するとタンパク質合成が抑えられ、autophagyが始まりやすくなります。</p>
+<p>autophagyでは、<strong>古いタンパク質や傷んだオルガネラを分解し、回収したアミノ酸や脂肪酸を、新しい細胞成分の材料として再利用します</strong>（→ オートファジーとリソソーム）。栄養が入ると合成が進み、空腹時には分解と再利用が進みやすくなります。細胞は、この二つを状態に応じて切り替えます。</p>
+<figure class="book-figure">
+<div style="overflow-x:auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 390" style="display:block;width:100%;max-width:820px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="食後はアミノ酸とインスリンが増えてmTORC1の活性が高まり、タンパク質や脂質の合成が進む。空腹時はmTORC1の活性が下がり、autophagyによる分解と再利用が進みやすくなる">
+<defs>
+<marker id="fedArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L11 6 L1 11 z" fill="#B26728"/></marker>
+<marker id="fastArrow" markerUnits="userSpaceOnUse" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto"><path d="M1 1 L11 6 L1 11 z" fill="#356C87"/></marker>
+</defs>
+<text x="410" y="32" font-size="24" font-weight="700" text-anchor="middle" fill="#173B61">食後と空腹時で、mTORC1の活性が切り替わる</text>
+<rect x="25" y="58" width="370" height="270" rx="18" fill="#FFF8EF" stroke="#D4A05C" stroke-width="2.5"/>
+<rect x="45" y="76" width="330" height="42" rx="11" fill="#F6E3C8"/>
+<text x="210" y="104" font-size="21" font-weight="700" text-anchor="middle" fill="#8A511E">食後</text>
+<rect x="64" y="140" width="292" height="44" rx="20" fill="#FFF" stroke="#D4A05C" stroke-width="2"/>
+<text x="210" y="168" font-size="17" font-weight="700" text-anchor="middle" fill="#69431E">アミノ酸・インスリンが増える</text>
+<line x1="210" y1="185" x2="210" y2="210" stroke="#B26728" stroke-width="4" marker-end="url(#fedArrow)"/>
+<rect x="115" y="216" width="190" height="48" rx="22" fill="#F3D8B3" stroke="#B26728" stroke-width="2.5"/>
+<text x="210" y="247" font-size="19" font-weight="700" text-anchor="middle" fill="#754111">mTORC1 活性 ↑</text>
+<text x="210" y="292" font-size="17" font-weight="700" text-anchor="middle" fill="#754111">タンパク質・脂質の合成 ↑</text>
+<text x="210" y="316" font-size="16" text-anchor="middle" fill="#754111">autophagy ↓</text>
+<rect x="425" y="58" width="370" height="270" rx="18" fill="#F2F8FB" stroke="#74A2B7" stroke-width="2.5"/>
+<rect x="445" y="76" width="330" height="42" rx="11" fill="#DCECF3"/>
+<text x="610" y="104" font-size="21" font-weight="700" text-anchor="middle" fill="#285D75">空腹時</text>
+<rect x="464" y="132" width="292" height="60" rx="20" fill="#FFF" stroke="#74A2B7" stroke-width="2"/>
+<text x="610" y="157" font-size="17" font-weight="700" text-anchor="middle" fill="#285D75">アミノ酸・インスリンが減る</text>
+<text x="610" y="180" font-size="15" text-anchor="middle" fill="#285D75">エネルギー不足では AMPK ↑</text>
+<line x1="610" y1="193" x2="610" y2="214" stroke="#356C87" stroke-width="4" marker-end="url(#fastArrow)"/>
+<rect x="515" y="220" width="190" height="48" rx="22" fill="#D6E8F0" stroke="#356C87" stroke-width="2.5"/>
+<text x="610" y="251" font-size="19" font-weight="700" text-anchor="middle" fill="#214F65">mTORC1 活性 ↓</text>
+<text x="610" y="293" font-size="17" font-weight="700" text-anchor="middle" fill="#214F65">autophagy ↑</text>
+<text x="610" y="317" font-size="16" text-anchor="middle" fill="#214F65">分解して、材料を再利用する</text>
+<rect x="95" y="346" width="630" height="34" rx="9" fill="#EEF2F7"/>
+<text x="410" y="369" font-size="17" font-weight="700" text-anchor="middle" fill="#173B61">状態に応じて、合成と分解・再利用を切り替える</text>
+</svg>
 </div>
-<div class="sec-block"><h2 class="sec-title">美容皮膚科<small>局所に施術する</small></h2>
-<div class="part-block">
-<div class="part-title">組織の生化学</div>
-<p class="part-intro">治療の前に、扱う組織そのものを見ます。浅いところから順に、表皮と色素、真皮の線維とECM、付属器、その下の脂肪と筋、そして全層を貫く血管。何でできていて、どう働き、壊れたときに何が起きるか。ここに治療は出てきません。</p>
-<ul class="toc-list">
-<li class="soon"><span>表皮とターンオーバー</span><em>準備中</em></li>
-<li class="soon"><span>メラノサイトと色素形成</span><em>準備中</em></li>
-<li class="soon"><span>ECMとmechanotransduction</span><em>準備中</em></li>
-<li class="soon"><span>線維芽細胞とコラーゲン</span><em>準備中</em></li>
-<li class="soon"><span>弾性線維と膠原線維</span><em>準備中</em></li>
-<li class="soon"><span>糖化とAGE</span><em>準備中</em></li>
-<li class="soon"><span>皮脂分泌の生化学</span><em>準備中</em></li>
-<li class="soon"><span>毛包と毛周期</span><em>準備中</em></li>
-<li class="soon"><span>脂肪</span><em>準備中</em></li>
-<li class="soon"><span>筋肉</span><em>準備中</em></li>
-<li class="soon"><span>血管と内皮</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">訴えを細胞から読み解く</div>
-<p class="part-intro">患者の言葉から入ります。赤み・くすみ・たるみは、どれか一つの組織が担当している変化ではありません。複数の層で起きていることが、一つの見た目に集まっています。機序ごとに分けてから、どの手段がどこを狙うのかを地図にします。しみは担当する細胞が決まっているので、メラノサイトと色素形成が扱います。</p>
-<ul class="toc-list">
-<li class="soon"><span>赤みの生化学</span><em>準備中</em></li>
-<li class="soon"><span>しみとくすみ</span><em>準備中</em></li>
-<li class="soon"><span>たるみの多層構造</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">外用</div>
-<p class="part-intro">角層という関門を越えて分子を届ける治療です。届いた先で、細胞の何を書き換えるのかで剤が分かれます。</p>
-<ul class="toc-list">
-<li class="soon"><span>角層バリアと経皮吸収</span><em>準備中</em></li>
-<li class="soon"><span>レチノイド外用の生化学</span><em>準備中</em></li>
-<li class="soon"><span>美白外用の生化学</span><em>準備中</em></li>
-<li class="soon"><span>ケミカルピーリングの生化学</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">注射</div>
-<p class="part-intro">分子を組織に直接置く治療です。置く・誘導する・止める・壊す——一次作用のまるで違うものが、同じ「注射」に同居しています。</p>
-<ul class="toc-list">
-<li class="soon"><span>ヒアルロン酸フィラーの生化学</span><em>準備中</em></li>
-<li class="soon"><span>バイオスティミュレーター</span><em>準備中</em></li>
-<li class="soon"><span>肌育治療を細胞生物学で読む</span><em>準備中</em></li>
-<li class="soon"><span>エクソソームと幹細胞培養上清</span><em>準備中</em></li>
-<li class="soon"><span>ボツリヌストキシンの生化学</span><em>準備中</em></li>
-<li class="soon"><span>脂肪を減らす治療</span><em>準備中</em></li>
-</ul></div>
-<div class="part-block">
-<div class="part-title">デバイス</div>
-<p class="part-intro">デバイスが入れられるのは熱・光・機械の刺激だけです。組織を作り直すのは、そのあと動く細胞の側になります。</p>
-<ul class="toc-list">
-<li class="soon"><span>熱・光・機械刺激</span><em>準備中</em></li>
-<li class="soon"><span>ニードルRFの生化学</span><em>準備中</em></li>
-<li class="soon"><span>HIFUの生化学</span><em>準備中</em></li>
-<li class="soon"><span>フラクショナルレーザーの生化学</span><em>準備中</em></li>
-<li class="soon"><span>IPL</span><em>準備中</em></li>
-<li class="soon"><span>Qスイッチ・ピコ秒レーザー</span><em>準備中</em></li>
-<li class="soon"><span>血管レーザー</span><em>準備中</em></li>
-<li class="soon"><span>PBM・LEDの生化学</span><em>準備中</em></li>
-<li class="soon"><span>プラズマ治療</span><em>準備中</em></li>
-<li class="soon"><span>導入</span><em>準備中</em></li>
-</ul></div>
-</div>
-<div class="sec-block"><h2 class="sec-title">美容内科<small>全身から入れる</small></h2>
-<p class="sec-intro">経口・点滴で全身に入れる介入です。血中の値が動くことと、標的組織で使われることは別——巻頭で立てた切り分けが、いちばん効く場所です。</p>
-<li class="soon"><span>NAD⁺前駆体</span><em>準備中</em></li>
-<li class="soon"><span>senolytic・mitophagy関連介入</span><em>準備中</em></li>
-<li class="soon"><span>抗酸化サプリメントと点滴</span><em>準備中</em></li>
-<li class="soon"><span>腸内細菌</span><em>準備中</em></li>
-</div>
-<div class="sec-block"><h2 class="sec-title">おわりに</h2>
-<li class="soon"><span>美容医療を細胞から考える</span><em>準備中</em></li>
-</div>
-</section>
+<figcaption>食後は合成が進み、空腹時には分解と再利用が進みやすくなります。mTORC1は、その切り替えを調節します。</figcaption>
+</figure>
+<p>mTORC1の活性が高まると、<strong>S6K</strong>と<strong>4E-BP1</strong>（細胞内でタンパク質合成の開始を調節するタンパク質）を介して、<strong>翻訳</strong>（mRNAの配列に従ってタンパク質を作る過程）が進みます。</p>
+<p>最終的なタンパク質の量は、遺伝子の転写、翻訳、ER内での加工、細胞外への分泌、その後の成熟によって決まります。mTORC1は、そのうち主に翻訳を調節します。<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span>も、これらの段階を経て作られます（→ 線維芽細胞とコラーゲン）。</p>
+<h2 id="s5">5　この仕組みが関係するもの</h2>
+<p>インスリンや IGF-1 から mTORC1 へ伝わる経路は、この先の章にも関係します。</p>
+<ul><li><span class="term" tabindex="0" data-t="sebocyte" data-d="皮脂腺で脂質を作る細胞。皮脂は分泌ではなく細胞がまるごと壊れて出る（holocrine）ので、皮脂量を決めるのは崩壊する細胞数、つまり腺の大きさ。">sebocyte</span> における脂質合成（→ 皮脂分泌の生化学）</li><li>加齢に伴う栄養感知の変化と、mTOR・AMPK の調節（→ AMPKとmTOR、<span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span>）</li><li>mTOR を標的とする介入の評価（→ <span class="term" tabindex="0" data-t="senolytic" data-d="老化細胞が生存を依存する抗アポトーシス経路（SCAP）を外して死なせ、数そのものを減らす介入。SASPだけ抑えて細胞は残すsenomorphicとは別物。ヒトの美容アウトカムは空欄。">senolytic</span>・<span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。">mitophagy</span>関連介入）</li></ul>
+<p>ただし、細胞内でこの経路が変化することと、ヒトの皮膚で美容効果が得られることは別です（→ 巻頭「本教材が守る切り分け」）。</p>
+<aside class="column"><p class="col-t">コラム</p><p class="col-h">ラパヌイ島の土から、ロンジェビティ研究へ</p><p>20世紀半ばは、世界各地の土や植物を採取し、そこにいる微生物が作る物質から薬の候補を探す研究が盛んでした。自然界から薬の種を探す研究者は、<strong>drug hunter（ドラッグハンター）</strong>とも呼ばれます。</p>
+<p>1964年、カナダの調査隊がEaster Island（現地名<strong>Rapa Nui、ラパヌイ島</strong>）で土壌を採取しました。そこから分離された放線菌 <em>Streptomyces hygroscopicus</em> が作る抗真菌物質は、島の名前にちなんで<strong>rapamycin</strong>と名づけられました。<strong>rapalog</strong>は、rapamycinをもとに作られた類似薬の総称です。</p>
+<p>rapamycinには、免疫や細胞増殖を抑える作用も見つかりました。開発が中断されたとき、研究者Suren Sehgalは廃棄予定だったrapamycin産生菌を自宅の冷凍庫に保存しました。その後研究は再開され、1999年にrapamycinは<strong>sirolimus</strong>という一般名で、腎移植後の拒絶反応を防ぐ免疫抑制薬としてFDAに承認されました。</p>
+<p>その作用を調べる過程で見つかった標的が<strong>target of rapamycin（TOR）</strong>です。哺乳類のTORを含む複合体の一つがmTORC1です。2009年にrapamycinがマウスの寿命を延ばすことが報告され、ロンジェビティ研究でも注目されるようになりました。ただし、<strong>ヒトの寿命を延ばすことはまだ証明されていません。</strong>現在のrapamycinは免疫抑制薬であり、健康な人への抗老化目的の使用は研究段階です（→ senolytic・mitophagy関連介入）。</p>
+<p>この発見の物語は、Donald R. KirschとOgi Ogasの『<strong>新薬の狩人たち――成功率0.1％の探求</strong>』（寺町朋子訳、早川書房、2018年）でも紹介されています。2021年の文庫版は『<strong>新薬という奇跡――成功率0.1％の探求</strong>』に改題されています。</p>
+<p><strong>この本は、私がとても好きな一冊です。</strong>薬の歴史だけでなく、偶然を見逃さず、失敗しても手放さず、何年も研究をつないだ人たちの情熱が伝わってきます。薬は化学物質であると同時に、研究者たちの執念と時間の積み重ねから生まれたものだと感じさせてくれる、おすすめの本です。</p></aside>
+<h2>この章の到達点</h2>
+<ol class="goal"><li>mTORC1 は、<strong>アミノ酸・成長刺激・エネルギー</strong>の状態を受け取り、タンパク質合成と autophagy を調節する。</li><li>アミノ酸が十分にあると、<strong>Rag</strong> が mTORC1 を lysosome 表面へ移動させる。</li><li>インスリンやIGF-1などの成長刺激は、mTORC1の活性を高める。エネルギーが不足すると、<strong>AMPK</strong>がmTORC1を抑える。</li><li>mTORC1は <strong>S6K・4E-BP1</strong>を介して翻訳を促し、autophagyを抑える。最終的なタンパク質量には、転写・加工・分泌・成熟も影響する。</li></ol>
+<blockquote>次のオートファジーとリソソームでは、細胞内の古い成分を分解し、材料として再利用する仕組みを見ます。mTORC1 の活性が高いと autophagy は抑えられ、mTORC1 の活性が下がると始まりやすくなります。collagen が作られる過程は線維芽細胞とコラーゲンで扱います。</blockquote>
+
+</article>
+<nav class="pager"><a class="prev" href="amino-acids.html"><span class="lbl">前へ</span>アミノ酸は材料であり、シグナルでもある</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
