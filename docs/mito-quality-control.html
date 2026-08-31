@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>DNAからタンパク質まで ― 生化学で見る美容医療</title>
-<meta name="description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
+<title>ミトコンドリア品質管理 ― 生化学で見る美容医療</title>
+<meta name="description" content="細胞は、ミトコンドリアを作り、つなぎ、分け、傷んだものを捨てることで、働けるミトコンドリアの集団を保っています。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/mito-quality-control.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="DNAからタンパク質まで ― 生化学で見る美容医療">
-<meta property="og:description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/dna-to-protein_合成と分解.webp">
+<meta property="og:title" content="ミトコンドリア品質管理 ― 生化学で見る美容医療">
+<meta property="og:description" content="細胞は、ミトコンドリアを作り、つなぎ、分け、傷んだものを捨てることで、働けるミトコンドリアの集団を保っています。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/mito-quality-control.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/mito-quality-control_全体-v2.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -417,7 +417,7 @@ h2{margin-top:24pt}
 <a href="organelles.html">オルガネラ</a>
 <a href="cell-types.html">オルガネラはどう連携するか</a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html" class="active">DNAからタンパク質まで</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
 <a href="epigenome.html">エピゲノム</a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル</a>
 <a href="membrane-transport.html">細胞膜と物質輸送</a>
@@ -433,7 +433,7 @@ h2{margin-top:24pt}
 <a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
 <a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
+<a href="mito-quality-control.html" class="active">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
 <div class="part">傷害から修復まで</div>
 <span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
@@ -494,47 +494,46 @@ h2{margin-top:24pt}
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter">
-<p class="kicker">基礎　／　情報をどう読むか</p>
-<h1 class="ch-title">DNAからタンパク質まで</h1>
-<p class="dateline">公開 2026-08-16</p>
-<blockquote>加齢とともにハリと弾力が失われるのは、真皮のコラーゲンが減るからです。ただし「作らなくなった」だけではありません。<strong>作る側が落ちるのと同時に、壊す側が上がっています。</strong> 光老化した皮膚では、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span> の <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。">procollagen</span> 転写が下がる一方で、<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>を分解する酵素 <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> の転写が上がります（→ 線維芽細胞とコラーゲン）。まずその「作る」側の幹——DNA → RNA → タンパク質——をたどります。</blockquote>
+<p class="kicker">基礎　／　掃除と作り直し</p>
+<h1 class="ch-title">ミトコンドリア品質管理</h1>
+<p class="dateline">公開 2026-08-31</p>
+<blockquote>ミトコンドリアが酸化的リン酸化の中心であり、<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>産生を担うこと、同時に酸化による損傷を受けやすいことは、ここまでに見てきました。細胞は、ミトコンドリアを<strong>作る・つなぐ・分ける・捨てる</strong>という4つの働きによって、受けたダメージを補い、傷んだ部分を取り除きながら、ミトコンドリア全体の機能を保っています。この章では、4つの働きがどのように組み合わさるかを見ます。<br><br><strong>この章の前提</strong>：<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span> と選択的autophagyの仕組み（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）／ミトコンドリアの仕事（→ <a class="chref" href="organelles.html">オルガネラ</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead">タンパク質の量は、作った分ではなく<strong>作る側と壊す側の差し引き</strong>で決まります。<br><br>そして<strong>その多くは、壊した古いタンパク質から回収したアミノ酸を原料に作り直されています。</strong> 合成と分解は切り離せません。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　合成と分解は、常に同時に走っている</a></li><li><a href="#s2">2　DNAと遺伝子：設計図の全ページと1ページ</a></li><li><a href="#s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</a></li><li><a href="#s4">4　translation（翻訳）：mRNA → タンパク質</a></li><li><a href="#s5">5　鎖ができても、まだ完成品ではない</a></li><li><a href="#s6">6　読む量は調節されている。壊す側も同じように調節されている</a></li></ul></nav><h2 id="s1">1　合成と分解は、常に同時に走っている</h2>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_合成と分解.webp" alt="食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は ubiquitin–proteasome、autophag…" loading="lazy"><figcaption>食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は <span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。">ubiquitin–proteasome</span>、<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>–<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>、MMP による細胞外 <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> の切断という経路で分解される。proteasome と lysosome で回収されたアミノ酸は合成へ再利用され、一部は酸化・尿素として失われる。下段は「今」から「一定時間後」への量を比べ、合成速度＝分解速度なら維持、合成速度＞分解速度なら増加、合成速度＜分解速度なら減少することを示す</figcaption></figure>
-<p>壊す側は3つに分かれます。</p>
-<div class="tblwrap"><table><thead><tr><th>経路</th><th>何を壊すか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>ubiquitin–proteasome</strong></td><td>短命・不良・不要なタンパク質</td><td>ubiquitin という目印を付けて選別する。個々の分子単位で壊す</td></tr><tr><td><strong>autophagy–lysosome</strong></td><td>大きな構造やオルガネラごと</td><td>膜で包んで丸ごと lysosome へ運び、酸性下の加水分解酵素で壊す（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）</td></tr><tr><td><strong>MMP</strong>（matrix metalloproteinase）</td><td>細胞外の ECM（collagen など）</td><td>唯一、細胞の外で働く。<strong>分解は作り替えに必要な過程で、MMPが上がること自体が悪いわけではない。</strong>問題になるのは過剰・慢性化したとき。真皮の質は、これと合成の釣り合いで決まる（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>・線維芽細胞とコラーゲン）</td></tr></tbody></table></div>
-<p>分解されたタンパク質はアミノ酸に戻り、次のタンパク質合成の材料になります。成人では<strong>1日におよそ 3〜4 g/kg</strong>——体重60〜70 kg なら <strong>200〜300 g</strong> のタンパク質が、分解と再合成を受けます。食事から入るタンパク質は日本人成人の平均で<strong>1日 65〜80 g</strong> ですから、<strong>合成に使うアミノ酸の大半は、自分のタンパク質を壊して回収したもの</strong>です。</p>
-<p>ただし閉じた循環ではありません。回収したアミノ酸の一部は酸化され、炭素はエネルギーに、窒素は尿素として出ていきます。<strong>食事のタンパク質は、その失われた分を埋めています。</strong></p>
-<p>つまり「作る」は、新しい材料だけで行う工程ではありません。<strong>回収したアミノ酸をプールに戻し、そこから作り直す</strong>循環になっています。</p>
-<h2 id="s2">2　DNAと遺伝子：設計図の全ページと1ページ</h2>
-<p><strong>DNA は設計図の全ページ</strong>、<strong>遺伝子はその中の1項目</strong>（あるタンパク質の作り方が書かれた区間）です。ヒトの細胞は同じ全ページを持ちながら、細胞ごとに読むページを変えることで性質が分かれます（<a class="chref" href="cell.html">細胞とは何か</a>）。「その遺伝子を持っている」ことと「今それを読んで使っている」ことは別です。</p>
-<p>collagen type I の鎖は <strong>COL1A1／COL1A2</strong> という遺伝子に書かれています（合成から細胞外での成熟・分解までの全体像は → 線維芽細胞とコラーゲン）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_DNAからタンパク質まで.webp" alt="この章の全体図。" loading="lazy"><figcaption>この章の全体図。転写→RNA加工→翻訳→ER→<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>→分泌・細胞外成熟の6段を、collagen（COL1A1／COL1A2）を例に並べたもの。上段の転写因子が「読む量」を、下段の proteasome・lysosome が「壊す側」として全段に働いている</figcaption></figure>
-<h2 id="s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</h2>
-<p>必要な遺伝子の区間が、<strong>mRNA（メッセンジャーRNA）</strong>というコピーに写し取られます（transcription）。<strong>DNAそのものは核から出さず、必要な領域の mRNA だけを細胞質へ出します。</strong></p>
-<p>写し取った直後の mRNA（前駆体）は、そのままでは使えません。核の中で仕上げ加工（RNA processing）を受けます。</p>
-<ul><li><strong>splicing</strong>：不要な区間（intron）を切り取り、必要な区間（exon）をつなぐ</li><li>5'端にキャップ、3'端にポリA尾部を付け、安定性と翻訳効率を上げる</li></ul>
-<p>仕上がった成熟 mRNA だけが核の外（細胞質）へ輸送されます。ここも制御点で、加工や輸送が滞れば翻訳まで届きません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_転写とRNA加工.webp" alt="核の中の4工程。" loading="lazy"><figcaption>核の中の4工程。exon（緑）とintron（赤）が交互に並ぶ前駆mRNAから spliceosome が intron を抜き、5'キャップとポリA尾部が付いて成熟mRNAになる。核膜孔を通るのは成熟mRNAだけで、DNAは核内に残る</figcaption></figure>
-<h2 id="s4">4　translation（翻訳）：mRNA → タンパク質</h2>
-<p>細胞質で <strong>ribosome</strong> が mRNA を読み、コドン（3文字）ごとに対応するアミノ酸をつなげて<strong>タンパク質の鎖</strong>を作ります。</p>
-<p>分泌されるタンパク質は、翻訳の途中から<strong>粗面ER へ送り込まれながら</strong>作られます（行き先を決める signal 配列は<a class="chref" href="organelles.html">オルガネラ</a>§3）。材料であるアミノ酸と、動力である <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>・GTP が足りなければ進みません（→ 「材料を感知し作る」）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_翻訳.webp" alt="ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。" loading="lazy"><figcaption>ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。1本のmRNAに複数のribosomeが並ぶ（polysome）。分泌タンパク質は signal peptide が translocon に捕まり、鎖はER内腔側で伸びていく。材料はアミノ酸、動力はATP・GTP</figcaption></figure>
-<h2 id="s5">5　鎖ができても、まだ完成品ではない</h2>
-<p><strong>多くのタンパク質は、アミノ酸の鎖ができた時点では機能しません。</strong> ER で正しく折りたたまれ、S–S 結合が架かり、糖鎖などの修飾を受け、Golgi で仕分けられ、必要なら分泌され、細胞外でさらに切断や架橋を受けて——そこで初めて働きます。<strong>「mRNA が増えた」は「使えるタンパク質が増えた」ではありません。</strong></p>
-<p>この後工程が特に長い代表例が collagen です。具体的な中身（水酸化とその補因子、三重らせん形成、分泌、細胞外での切断と架橋）は線維芽細胞とコラーゲンで扱います。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_コラーゲンの成熟.webp" alt="鎖ができてからの5段。" loading="lazy"><figcaption>鎖ができてからの5段。ER内でプロリン／リシンが水酸化され（O₂・ビタミンC・Fe が必要）、シャペロンの品質管理を通ったものだけが三重らせん procollagen になる。Golgi で修飾・梱包、分泌後に N/C プロペプチドが切られ、自己集合と lysyl oxidase 架橋を経て成熟線維になる</figcaption></figure>
-<h2 id="s6">6　読む量は調節されている。壊す側も同じように調節されている</h2>
-<p><strong>transcription factor（転写因子）</strong>は、遺伝子の近くに結合して転写を上げ下げするタンパク質です。<strong>どの遺伝子を・いつ・どれだけ読むか</strong>を決めているのがこれです。外からの刺激（成長因子やストレスなど）は、多くの場合この転写因子の働きを変えることで、細胞の応答を決めます（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
-<p>ただし調節されているのは、読む側だけではありません。<strong>MMP の発現も、proteasome や autophagy の活性も、同じように調節されています。</strong> 量を増やすには、上流で読む量を増やす道と、壊す側を抑える道があります。実際の組織では、その両方が同時に動いています。だから「この経路が上がった」だけでは、量がどちらへ動くかは決まりません。</p>
+<blockquote class="lead">細胞は、ミトコンドリアを<strong>作り、つなぎ、分け、傷んだものを捨てる</strong>ことで、働けるミトコンドリアの集団を保っています。</blockquote>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_全体-v2.webp" alt="ミトコンドリアの機能を保つ4つの働き。" loading="lazy"><figcaption>ミトコンドリアの機能を保つ4つの働き。①作る：既存のミトコンドリアへ新しい部品を加える。②つなぐ：内容物を混ぜて補い合う。③分ける：傷んだ部分を切り離す。④捨てる：回復できないものを<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>で分解し、材料を再利用する。作る・つなぐ・分ける・捨てる、その釣り合いがミトコンドリアの質を保つ</figcaption></figure>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　ミトコンドリアの機能は、4つの働きで保たれる</a></li><li><a href="#s2">2　biogenesis：既存のミトコンドリアを成長させる</a></li><li><a href="#s3">3　fusion と fission：混ぜて補い、分けて切り離す</a></li><li><a href="#s4">4　mitophagy：どれを捨てるかを、どう見分けるか</a></li><li><a href="#s5">5　4つがそろって初めて「品質」が保たれる</a></li></ul></nav><h2 id="s1">1　ミトコンドリアの機能は、4つの働きで保たれる</h2>
+<p>多くの細胞には、複数のミトコンドリアがあります。ただし、一個ずつ独立した粒として存在するとは限らず、互いにつながってネットワークを作るため、単純に「何個」と数えにくい場合もあります。<strong>細胞分裂</strong>が細胞全体を二つに分けるのに対し、ミトコンドリアの<strong>fission（分裂）</strong>は、一つの細胞の中でミトコンドリアを分ける現象です。</p>
+<p>細胞は、同じミトコンドリアをそのまま使い続けるのではありません。新しい部品を加え、互いにつないで内容物を補い、傷んだ部分を切り離し、回復できないものを分解します。これを、次の4つに分けて見ていきます。</p>
+<ul><li><strong>作る：biogenesis</strong></li><li><strong>つなぐ：fusion</strong></li><li><strong>分ける：fission</strong></li><li><strong>捨てる：<span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。">mitophagy</span></strong></li></ul>
+<p>作る速さと捨てる速さによる入れ替わりを、<strong><span class="term" tabindex="0" data-t="turnover" data-d="ある成分が作られ、分解されて入れ替わること。総量が同じでも、作る速さと壊す速さが釣り合っていれば中身は更新されている。ミトコンドリアでは主にbiogenesisとmitophagyによる入れ替わりを指し、fusionとfissionがその選別を助ける。">turnover</span></strong>と呼びます。fusionとfissionは、内容物を補い合い、傷んだ部分を選り分けることで、この入れ替わりを支えます。</p>
+<h2 id="s2">2　biogenesis：既存のミトコンドリアを成長させる</h2>
+<p><strong>biogenesis（生合成・新生）</strong>は、ミトコンドリアの中で新しいミトコンドリアを一個組み立てる反応ではありません。<strong>既存のミトコンドリアに部品を加えて全体量を増やし、必要に応じて分裂させる過程</strong>です。この過程には、核とミトコンドリアの両方にある遺伝子が使われます。</p>
+<p>ここでいう<strong>成長</strong>とは、ミトコンドリアを構成する膜・タンパク質・<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span>が増えることです。主に<span class="term" tabindex="0" data-t="PGC-1α" data-d="mitochondrial biogenesis の転写の総括役。エネルギー状態・栄養・運動などの入力を受け、NRF1などの転写因子と協力して、ミトコンドリアの部品の発現を高める。">PGC-1α</span>を軸に調節され、運動やエネルギー需要の増加によっても進みます。</p>
+<p>とくに持久的な運動を続けると、骨格筋ではミトコンドリアの量や酸化能力が増加します。「ミトコンドリアが増える」と表現されますが、独立した粒の数だけが増えるとは限りません。既存のミトコンドリアが大きくなり、ネットワークの形や配置が変わることも含みます（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>](https://pubmed.ncbi.nlm.nih.gov/28580772/)）。</p>
+<ul><li>エネルギー需要や運動などの刺激に応じて、<strong>PGC-1α</strong>が<strong>NRF1などの転写因子</strong>と協力し、核にあるミトコンドリア関連遺伝子の発現を高めます。</li><li>その遺伝子をもとにタンパク質が細胞質で作られ、ミトコンドリア膜の入口装置<strong>TOM/TIM</strong>を通って中へ運び込まれます（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）。</li><li>ミトコンドリア内では、<strong>TFAM</strong>がmtDNAの維持と複製を支えます。mtDNAをもとに、<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>の一部のタンパク質もミトコンドリア内で作られます。</li><li>核とmtDNAから作られたタンパク質が組み合わさり、膜や電子伝達系などの部品が増えます。こうして既存のミトコンドリアが成長し、その後の<strong>fission（分裂）</strong>によって分かれます。</li></ul>
+<p>部品を増やすだけで、品質が保たれるわけではありません。fissionで分け、傷んだ部分をmitophagyで取り除く働きと組み合わさることが必要です。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_biogenesis-v2.webp" alt="ミトコンドリアbiogenesisの流れ。" loading="lazy"><figcaption>ミトコンドリアbiogenesisの流れ。核ではエネルギー需要や運動の刺激を受けたPGC-1αがNRF1と協力し、核DNAにあるミトコンドリアの部品を作る遺伝子の発現を高める。核由来のタンパク質は細胞質で合成され、TOMとTIMを通ってミトコンドリアへ入る。ミトコンドリア内ではTFAMがmtDNAの維持と複製を支える。核由来のタンパク質とmtDNA由来の13個のタンパク質が組み合わさり、電子伝達系などの部品になる。biogenesisでは、既存のミトコンドリアが成長して全体量が増え、必要に応じて分裂する</figcaption></figure>
+<h2 id="s3">3　fusion と fission：混ぜて補い、分けて切り離す</h2>
+<ul><li><strong>fusion（融合）</strong>：複数のミトコンドリアをつなぎ、DNAやタンパク質などの内容物を混ぜます。これによって、機能が低下した部分をほかの部分が補うことができます。</li><li><strong>fission（分裂）</strong>：一つのミトコンドリアを分け、傷んだ部分を切り離します。切り離された部分は、次のmitophagyで選んで捨てやすくなります。</li></ul>
+<p>fissionは、傷んだ部分を捨てるときだけに起こるものではありません。細胞分裂のときにミトコンドリアを分配したり、必要な場所へ運んだりするときにも使われます。<strong>fusionで補い、fissionで分ける。二つが組み合わさって、ミトコンドリア集団の状態を整えています。</strong></p>
+<h2 id="s4">4　mitophagy：どれを捨てるかを、どう見分けるか</h2>
+<p>切り離された傷んだミトコンドリアを、autophagyの仕組みで選んで分解・再利用するのが<strong>mitophagy（マイトファジー）</strong>です（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）。捨てる対象を選ぶ方法は、大きく二つに分けられます。</p>
+<ol><li><strong>弱ったものに印を付ける</strong>：膜電位が低下したミトコンドリアでは、PINK1とParkinが働いて、表面にubiquitinの印を付けます。この印がautophagosomeに「包む対象」を伝えます。</li><li><strong>不要になったものを直接つなぐ</strong>：ミトコンドリア外膜の接続役が、形成途中のautophagosome膜に結合し、ミトコンドリアを包ませます。たとえば赤芽球は、核を外へ出して網赤血球になったあと、残ったミトコンドリアも除去して成熟赤血球になります（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18048346/" target="_blank" rel="noopener">PMID 18048346</a>](https://pubmed.ncbi.nlm.nih.gov/18048346/)）。このように、壊れていなくても、細胞の変化に伴って計画的に除去される場合があります。</li></ol>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_mitophagy-v4.webp" alt="mitophagyには二つの入口がある。" loading="lazy"><figcaption>mitophagyには二つの入口がある。膜電位が低下したミトコンドリアではPINK1とParkinが働き、表面にubiquitinの印を付ける。不要になったミトコンドリアでは、外膜の接続役が形成途中のautophagosome膜に結合する。どちらもautophagosomeに包まれ、lysosomeで分解され、材料が再利用される。入口は違っても出口は同じ</figcaption></figure>
+<p>入口は違っても、その後は同じです。autophagosomeが包み、lysosomeで分解し、材料を細胞質へ戻します。<strong>印が付いただけでは、除去はまだ終わっていません。</strong>lysosomeでの分解まで進んで、mitophagyが完了します。</p>
+<h2 id="s5">5　4つがそろって初めて「品質」が保たれる</h2>
+<ul><li>作る（biogenesis）ばかりで捨てられなければ、傷んだものが溜まる。</li><li>捨てる（mitophagy）ばかりで作らなければ、ミトコンドリア量が減る。</li><li>混ぜる（fusion）・分ける（fission）のバランスが崩れても、補い合いや切り離しがうまくいかない。</li></ul>
+<h3>リニューアルは、いつ進むのか</h3>
+<p>ミトコンドリアの入れ替わりは、特別なときだけ始まるものではありません。<strong>基礎的なturnoverは常に続いており、細胞の需要や損傷に応じて4つの働きの強さが変わります。</strong></p>
+<p>この調節には、細胞のエネルギー状態を伝える<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span></strong>と、栄養や成長刺激を受け取る<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。">mTORC1</span></strong>も関与します。ここでは4つの働きに集中し、AMPKとmTORC1がそのバランスをどう変えるかは<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>で扱います。</p>
+<ul><li><strong>運動やエネルギー需要が増えたとき</strong>：PGC-1αを軸にbiogenesisが進み、ミトコンドリアの量と酸化能力が増えます。同時にネットワークの形が組み替えられ、不要になった部分の除去も進みます（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>](https://pubmed.ncbi.nlm.nih.gov/28580772/)、[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39023008/" target="_blank" rel="noopener">PMID 39023008</a>](https://pubmed.ncbi.nlm.nih.gov/39023008/)）。</li><li><strong>一部のミトコンドリアが傷んだとき</strong>：fusionで補えるものは補い、回復しにくい部分はfissionで切り離してmitophagyへ送ります。</li><li><strong>使わない状態が続いたとき</strong>：骨格筋ではbiogenesisの調節が弱まり、ミトコンドリアの全体量や酸化能力が低下しやすくなります。ヒトでも、寝たきりや脚の固定によって筋肉を使わない状態が7日間続くと、骨格筋でミトコンドリアを作り足すシグナルや、mtDNA・酸化酵素などの指標が低下し始めることが報告されています（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21750272/" target="_blank" rel="noopener">PMID 21750272</a>](https://pubmed.ncbi.nlm.nih.gov/21750272/)、[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31495926/" target="_blank" rel="noopener">PMID 31495926</a>](https://pubmed.ncbi.nlm.nih.gov/31495926/)）。</li><li><strong>加齢や強いストレスが重なったとき</strong>：作る・分ける・捨てる反応が一律に止まるのではなく、必要なときに増減させる調節が鈍くなりやすくなります。とくに不活動の影響を受けやすく、運動を再開したときの回復も若年者より小さい場合があります（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31118897/" target="_blank" rel="noopener">PMID 31118897</a>](https://pubmed.ncbi.nlm.nih.gov/31118897/)）。</li></ul>
+<p>つまり、リニューアルが進みにくいとは、4つの働きがすべて弱くなることではありません。<strong>作る量・補う量・捨てる量の釣り合いが崩れ、傷んだミトコンドリアの処理や補充が追いつかない状態</strong>です。</p>
+<p><strong>作る・つなぐ・分ける・捨てるという4つの働きが釣り合って、ミトコンドリア集団の質が保たれます。</strong>「増やす」ことも「捨てる」ことも、それだけでは目標になりません。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>タンパク質量は<strong>合成と分解の差し引き</strong>で決まる。分解は ubiquitin–proteasome・autophagy–lysosome・細胞外の MMP の3経路。</li><li>全身で1日およそ200〜300 g（3〜4 g/kg）のタンパク質が分解と再合成を受け、食事由来（およそ65〜80 g）を大きく上回る。<strong>合成の材料の多くは壊した自分のタンパク質から回収したアミノ酸で、食事は酸化で失われた分を補っている。</strong></li><li>情報の幹は transcription → RNA processing → 核外輸送 → translation。原本（DNA）は核から出さず、コピー（mRNA）だけを現場へ出す。</li><li>鎖ができた時点では多くのタンパク質はまだ機能しない。<strong>「mRNAが増えた」＝「使えるタンパク質が増えた」ではない。</strong> 調節は、読む側にも壊す側にもかかる。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/dna-to-protein_まとめ.webp" alt="DNAの情報が使えるタンパク質になるまで" loading="lazy"><figcaption>DNAの情報が使えるタンパク質になるまで</figcaption></figure>
-<blockquote><a class="chref" href="epigenome.html">エピゲノム</a>では、その転写因子が働く一段手前——<strong>DNA配列を変えずに、遺伝子の読みやすさ自体を調節するしくみ（エピゲノム）</strong>を見ます。</blockquote>
+<ol class="goal"><li>ミトコンドリアの質は、数だけでは判断できない。<strong>機能と、作る・捨てる入れ替わり（turnover）</strong>を合わせて見る必要がある。</li><li>品質管理には、<strong>biogenesis・fusion・fission・mitophagy</strong>という4つの働きがある。</li><li>fusionは内容物を混ぜて補い合い、fissionは傷んだ部分を切り離す。どちらも必要である。</li><li>mitophagyには、<strong>弱ったものにubiquitinの印を付ける方法</strong>と、<strong>不要になったものをautophagosomeへ直接つなぐ方法</strong>がある。どちらも最後はlysosomeで分解される。</li><li>基礎的なturnoverは常に続き、運動やエネルギー需要に応じて高まる。不活動や加齢では、この調節が乱れやすい。どれか一つを強めるのではなく、<strong>4つの釣り合い</strong>によって品質が保たれる。</li></ol>
 
 </article>
-<nav class="pager"><a class="prev" href="cell-types.html"><span class="lbl">前へ</span>オルガネラはどう連携するか</a><a class="next" href="epigenome.html"><span class="lbl">次へ</span>エピゲノム</a></nav>
+<nav class="pager"><a class="prev" href="autophagy.html"><span class="lbl">前へ</span>オートファジーとリソソーム</a><a class="next" href="ampk-mtor.html"><span class="lbl">次へ</span>AMPKとmTORC1――エネルギーと材料の使い方を調節する</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>

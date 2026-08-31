@@ -60,6 +60,7 @@ color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line
 h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
 p{margin:17px 0}
 strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
 blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
@@ -74,6 +75,12 @@ padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
 .flow.vert .arr{margin-left:16px}
 .flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
 .flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
 .flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
 border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
 
@@ -406,14 +413,14 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html" class="active">細胞とは何か<span class="badge bnew">NEW</span></a>
-<a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
-<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a>
+<a href="cell.html" class="active">細胞とは何か</a>
+<a href="organelles.html">オルガネラ</a>
+<a href="cell-types.html">オルガネラはどう連携するか</a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
-<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
+<a href="epigenome.html">エピゲノム</a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
 <a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
 <a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
@@ -425,9 +432,9 @@ h2{margin-top:24pt}
 <a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
 <a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
-<span class="soon">オートファジーとリソソーム<em>準備中</em></span>
-<span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
-<span class="soon">AMPKとmTOR<em>準備中</em></span>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
 <div class="part">傷害から修復まで</div>
 <span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
 <span class="soon">細胞死<em>準備中</em></span>
@@ -499,7 +506,7 @@ h2{margin-top:24pt}
 <p>細胞の単位で見ると、考えることが変わります。「この機器は効くか」ではなく、<strong>「この機器はどの細胞に作用して、どんな反応を起こし、効果を出しているのか」</strong>。この章では、この見方で進めます。</p>
 <h2 id="s2">2　では、どんな細胞がいるのか</h2>
 <p>細胞は層ごとに分かれて存在し、その局在がそのまま機能の分担になっています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_細胞とは何か.webp" alt="皮膚を角層、表皮、DEJ、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。" loading="lazy"><figcaption>皮膚を角層、表皮、<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。">DEJ</span>、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。表皮は約0.05〜0.1 mm、真皮は約1〜3 mm、表皮<span class="term" tabindex="0" data-t="turnover" data-d="作って壊す回転そのもの。ミトコンドリアの健康が数ではなく作る・混ぜる・分ける・捨てるの回転で決まるように、静止画の量ではなく、回っているかで見る指標。">turnover</span>は約4〜6週、細胞1個は数〜数十μmが目安。<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>は基底層、Langerhans cellは表皮内、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>・血管・免疫細胞はECM主体の真皮内に配置される。</figcaption></figure>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_細胞とは何か.webp" alt="皮膚を角層、表皮、DEJ、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。" loading="lazy"><figcaption>皮膚を角層、表皮、<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。">DEJ</span>、乳頭層・網状層からなる真皮、皮下脂肪、筋に分け、主な細胞と尺度を示す。表皮は約0.05〜0.1 mm、真皮は約1〜3 mm、表皮<span class="term" tabindex="0" data-t="turnover" data-d="ある成分が作られ、分解されて入れ替わること。総量が同じでも、作る速さと壊す速さが釣り合っていれば中身は更新されている。ミトコンドリアでは主にbiogenesisとmitophagyによる入れ替わりを指し、fusionとfissionがその選別を助ける。">turnover</span>は約4〜6週、細胞1個は数〜数十μmが目安。<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>は基底層、Langerhans cellは表皮内、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>・血管・免疫細胞はECM主体の真皮内に配置される。</figcaption></figure>
 <p>主な役割と、押さえどころ（この先の章で使う性質）を1行ずつ挙げます。</p>
 <div class="tblwrap"><table><thead><tr><th>細胞</th><th>主な役割</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span></strong>（角化細胞）</td><td>表皮を作りバリアになる</td><td>表皮の9割以上。基底層で分裂し、扁平化・脱核して角層を構成する。バリアはこの細胞の最終産物。UVやストレスを受けてサイトカインを出す発信源でもある</td></tr><tr><td><strong>melanocyte</strong>（メラノサイト）</td><td>メラニンを作り角化細胞へ渡す</td><td>基底層に点在し、樹状の突起で周囲の数十個へ渡す。<strong>色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差</strong>（→ メラノサイトと色素形成）</td></tr><tr><td><strong>fibroblast</strong>（線維芽細胞）</td><td>ECMを作る真皮の主役</td><td><strong>自分で作ったECMを、自分が出す MMP（matrix metalloproteinase）で分解もする。</strong>真皮の質は、この細胞が合成と分解のどちらに傾いているかの結果（→ 線維芽細胞とコラーゲン）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="adipocyte" data-d="脂質をためて輪郭を作る細胞。leptin・adiponectin を出す内分泌細胞でもあり、単なる詰め物ではない。dWAT・皮下脂肪・内臓脂肪は代謝も分泌も別。">adipocyte</span></strong>（脂肪細胞）</td><td>脂質をエネルギーとして貯蔵する</td><td>貯蔵だけでなく、leptin・adiponectin などを分泌する<strong>内分泌器官</strong>でもある（→ 脂肪）</td></tr><tr><td><strong>myocyte</strong>（筋細胞）</td><td>収縮して力を出す</td><td>多核でエネルギー消費が大きい。表情筋の張力は、上に乗っている皮膚の形にそのまま出る（→ 筋肉）</td></tr><tr><td><strong>endothelial cell</strong>（血管内皮細胞）</td><td>血管の内腔を単層で覆い、血液と組織のあいだを仕切る</td><td>血管を<strong>広げる（血管径）・漏らす（透過性）・増やす（血管新生）</strong>の三つを担う。赤みも治癒も、まずこの細胞から考える（→ 血管と内皮）</td></tr><tr><td><strong>immune cell</strong>（免疫細胞）</td><td>監視・貪食・炎症の調整</td><td>表皮の Langerhans cell、真皮のマクロファージ・T細胞・肥満細胞。貪食だけでなく、修復の時間経過を決めているのもこの細胞（→ 炎症と創傷治癒）</td></tr></tbody></table></div>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/cell_美容皮膚科で出会う7つの細胞.webp" alt="7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。" loading="lazy"><figcaption>7細胞を「拡大像／皮膚のどの層にいるか／主な役割」の三段で並べる。局在がそのまま機能の分担になっている</figcaption></figure>
@@ -532,7 +539,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-28 ／ 版 ec1bb84</p>
+<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

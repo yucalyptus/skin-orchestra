@@ -60,6 +60,7 @@ color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line
 h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
 p{margin:17px 0}
 strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
 blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
@@ -74,6 +75,12 @@ padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
 .flow.vert .arr{margin-left:16px}
 .flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
 .flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
 .flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
 border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
 
@@ -406,14 +413,14 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か<span class="badge bnew">NEW</span></a>
-<a href="organelles.html">オルガネラ<span class="badge bnew">NEW</span></a>
-<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bnew">NEW</span></a>
+<a href="cell.html">細胞とは何か</a>
+<a href="organelles.html">オルガネラ</a>
+<a href="cell-types.html">オルガネラはどう連携するか</a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bnew">NEW</span></a>
-<a href="epigenome.html">エピゲノム<span class="badge bnew">NEW</span></a>
-<a href="receptors-signaling.html" class="active">受容体と細胞内シグナル<span class="badge bnew">NEW</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bnew">NEW</span></a>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
+<a href="epigenome.html">エピゲノム</a>
+<a href="receptors-signaling.html" class="active">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
 <a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
 <a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
@@ -425,9 +432,9 @@ h2{margin-top:24pt}
 <a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
 <a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
-<span class="soon">オートファジーとリソソーム<em>準備中</em></span>
-<span class="soon">ミトコンドリア品質管理<em>準備中</em></span>
-<span class="soon">AMPKとmTOR<em>準備中</em></span>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
 <div class="part">傷害から修復まで</div>
 <span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
 <span class="soon">細胞死<em>準備中</em></span>
@@ -541,7 +548,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-28 ／ 版 ec1bb84</p>
+<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

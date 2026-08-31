@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>DNAからタンパク質まで ― 生化学で見る美容医療</title>
-<meta name="description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
+<title>オートファジーとリソソーム ― 生化学で見る美容医療</title>
+<meta name="description" content="細胞は、古くなった部品を分解し、回収した材料で新しい部品を作ることで、細胞内の品質を保っています。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/autophagy.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="DNAからタンパク質まで ― 生化学で見る美容医療">
-<meta property="og:description" content="タンパク質の量は、作った分ではなく作る側と壊す側の差し引きで決まります。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/dna-to-protein.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/dna-to-protein_合成と分解.webp">
+<meta property="og:title" content="オートファジーとリソソーム ― 生化学で見る美容医療">
+<meta property="og:description" content="細胞は、古くなった部品を分解し、回収した材料で新しい部品を作ることで、細胞内の品質を保っています。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/autophagy.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/autophagy_オートファジーとリソソーム-v2.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -417,7 +417,7 @@ h2{margin-top:24pt}
 <a href="organelles.html">オルガネラ</a>
 <a href="cell-types.html">オルガネラはどう連携するか</a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html" class="active">DNAからタンパク質まで</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
 <a href="epigenome.html">エピゲノム</a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル</a>
 <a href="membrane-transport.html">細胞膜と物質輸送</a>
@@ -432,7 +432,7 @@ h2{margin-top:24pt}
 <a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
 <a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html" class="active">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
 <a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
 <div class="part">傷害から修復まで</div>
@@ -494,47 +494,68 @@ h2{margin-top:24pt}
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter">
-<p class="kicker">基礎　／　情報をどう読むか</p>
-<h1 class="ch-title">DNAからタンパク質まで</h1>
-<p class="dateline">公開 2026-08-16</p>
-<blockquote>加齢とともにハリと弾力が失われるのは、真皮のコラーゲンが減るからです。ただし「作らなくなった」だけではありません。<strong>作る側が落ちるのと同時に、壊す側が上がっています。</strong> 光老化した皮膚では、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span> の <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。">procollagen</span> 転写が下がる一方で、<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>を分解する酵素 <span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。">MMP</span> の転写が上がります（→ 線維芽細胞とコラーゲン）。まずその「作る」側の幹——DNA → RNA → タンパク質——をたどります。</blockquote>
+<p class="kicker">基礎　／　掃除と作り直し</p>
+<h1 class="ch-title">オートファジーとリソソーム</h1>
+<p class="dateline">公開 2026-08-31</p>
+<blockquote>細胞の中では、タンパク質やオルガネラが働き続けるうちに古くなり、傷んでいきます。<strong><span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>（オートファジー）</strong>は、それらを回収して<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>へ運び、分解して、材料として再利用する仕組みです。この章では、細胞内のリサイクルがどのように進み、なぜ皮膚や加齢にも関係するのかを見ます。<br><br><strong>先に読んでおく章</strong>：lysosomeというオルガネラ（→ <a class="chref" href="organelles.html">オルガネラ</a>）／栄養状態によって合成とautophagyを切り替える<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。">mTORC1</span>（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead">タンパク質の量は、作った分ではなく<strong>作る側と壊す側の差し引き</strong>で決まります。<br><br>そして<strong>その多くは、壊した古いタンパク質から回収したアミノ酸を原料に作り直されています。</strong> 合成と分解は切り離せません。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　合成と分解は、常に同時に走っている</a></li><li><a href="#s2">2　DNAと遺伝子：設計図の全ページと1ページ</a></li><li><a href="#s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</a></li><li><a href="#s4">4　translation（翻訳）：mRNA → タンパク質</a></li><li><a href="#s5">5　鎖ができても、まだ完成品ではない</a></li><li><a href="#s6">6　読む量は調節されている。壊す側も同じように調節されている</a></li></ul></nav><h2 id="s1">1　合成と分解は、常に同時に走っている</h2>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_合成と分解.webp" alt="食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は ubiquitin–proteasome、autophag…" loading="lazy"><figcaption>食事から補充されたアミノ酸が、translation と folding を経てタンパク質プールへ入る一方、タンパク質は <span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。">ubiquitin–proteasome</span>、<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>–<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>、MMP による細胞外 <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> の切断という経路で分解される。proteasome と lysosome で回収されたアミノ酸は合成へ再利用され、一部は酸化・尿素として失われる。下段は「今」から「一定時間後」への量を比べ、合成速度＝分解速度なら維持、合成速度＞分解速度なら増加、合成速度＜分解速度なら減少することを示す</figcaption></figure>
-<p>壊す側は3つに分かれます。</p>
-<div class="tblwrap"><table><thead><tr><th>経路</th><th>何を壊すか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>ubiquitin–proteasome</strong></td><td>短命・不良・不要なタンパク質</td><td>ubiquitin という目印を付けて選別する。個々の分子単位で壊す</td></tr><tr><td><strong>autophagy–lysosome</strong></td><td>大きな構造やオルガネラごと</td><td>膜で包んで丸ごと lysosome へ運び、酸性下の加水分解酵素で壊す（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）</td></tr><tr><td><strong>MMP</strong>（matrix metalloproteinase）</td><td>細胞外の ECM（collagen など）</td><td>唯一、細胞の外で働く。<strong>分解は作り替えに必要な過程で、MMPが上がること自体が悪いわけではない。</strong>問題になるのは過剰・慢性化したとき。真皮の質は、これと合成の釣り合いで決まる（→ ECMと<span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。">mechanotransduction</span>・線維芽細胞とコラーゲン）</td></tr></tbody></table></div>
-<p>分解されたタンパク質はアミノ酸に戻り、次のタンパク質合成の材料になります。成人では<strong>1日におよそ 3〜4 g/kg</strong>——体重60〜70 kg なら <strong>200〜300 g</strong> のタンパク質が、分解と再合成を受けます。食事から入るタンパク質は日本人成人の平均で<strong>1日 65〜80 g</strong> ですから、<strong>合成に使うアミノ酸の大半は、自分のタンパク質を壊して回収したもの</strong>です。</p>
-<p>ただし閉じた循環ではありません。回収したアミノ酸の一部は酸化され、炭素はエネルギーに、窒素は尿素として出ていきます。<strong>食事のタンパク質は、その失われた分を埋めています。</strong></p>
-<p>つまり「作る」は、新しい材料だけで行う工程ではありません。<strong>回収したアミノ酸をプールに戻し、そこから作り直す</strong>循環になっています。</p>
-<h2 id="s2">2　DNAと遺伝子：設計図の全ページと1ページ</h2>
-<p><strong>DNA は設計図の全ページ</strong>、<strong>遺伝子はその中の1項目</strong>（あるタンパク質の作り方が書かれた区間）です。ヒトの細胞は同じ全ページを持ちながら、細胞ごとに読むページを変えることで性質が分かれます（<a class="chref" href="cell.html">細胞とは何か</a>）。「その遺伝子を持っている」ことと「今それを読んで使っている」ことは別です。</p>
-<p>collagen type I の鎖は <strong>COL1A1／COL1A2</strong> という遺伝子に書かれています（合成から細胞外での成熟・分解までの全体像は → 線維芽細胞とコラーゲン）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_DNAからタンパク質まで.webp" alt="この章の全体図。" loading="lazy"><figcaption>この章の全体図。転写→RNA加工→翻訳→ER→<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。">Golgi</span>→分泌・細胞外成熟の6段を、collagen（COL1A1／COL1A2）を例に並べたもの。上段の転写因子が「読む量」を、下段の proteasome・lysosome が「壊す側」として全段に働いている</figcaption></figure>
-<h2 id="s3">3　transcription と RNA processing：コピーを作って、仕上げて持ち出す</h2>
-<p>必要な遺伝子の区間が、<strong>mRNA（メッセンジャーRNA）</strong>というコピーに写し取られます（transcription）。<strong>DNAそのものは核から出さず、必要な領域の mRNA だけを細胞質へ出します。</strong></p>
-<p>写し取った直後の mRNA（前駆体）は、そのままでは使えません。核の中で仕上げ加工（RNA processing）を受けます。</p>
-<ul><li><strong>splicing</strong>：不要な区間（intron）を切り取り、必要な区間（exon）をつなぐ</li><li>5'端にキャップ、3'端にポリA尾部を付け、安定性と翻訳効率を上げる</li></ul>
-<p>仕上がった成熟 mRNA だけが核の外（細胞質）へ輸送されます。ここも制御点で、加工や輸送が滞れば翻訳まで届きません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_転写とRNA加工.webp" alt="核の中の4工程。" loading="lazy"><figcaption>核の中の4工程。exon（緑）とintron（赤）が交互に並ぶ前駆mRNAから spliceosome が intron を抜き、5'キャップとポリA尾部が付いて成熟mRNAになる。核膜孔を通るのは成熟mRNAだけで、DNAは核内に残る</figcaption></figure>
-<h2 id="s4">4　translation（翻訳）：mRNA → タンパク質</h2>
-<p>細胞質で <strong>ribosome</strong> が mRNA を読み、コドン（3文字）ごとに対応するアミノ酸をつなげて<strong>タンパク質の鎖</strong>を作ります。</p>
-<p>分泌されるタンパク質は、翻訳の途中から<strong>粗面ER へ送り込まれながら</strong>作られます（行き先を決める signal 配列は<a class="chref" href="organelles.html">オルガネラ</a>§3）。材料であるアミノ酸と、動力である <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>・GTP が足りなければ進みません（→ 「材料を感知し作る」）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_翻訳.webp" alt="ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。" loading="lazy"><figcaption>ribosome の P/A サイトで、codon（3塩基）に合う tRNA がアミノ酸を運び込み鎖が伸びる。1本のmRNAに複数のribosomeが並ぶ（polysome）。分泌タンパク質は signal peptide が translocon に捕まり、鎖はER内腔側で伸びていく。材料はアミノ酸、動力はATP・GTP</figcaption></figure>
-<h2 id="s5">5　鎖ができても、まだ完成品ではない</h2>
-<p><strong>多くのタンパク質は、アミノ酸の鎖ができた時点では機能しません。</strong> ER で正しく折りたたまれ、S–S 結合が架かり、糖鎖などの修飾を受け、Golgi で仕分けられ、必要なら分泌され、細胞外でさらに切断や架橋を受けて——そこで初めて働きます。<strong>「mRNA が増えた」は「使えるタンパク質が増えた」ではありません。</strong></p>
-<p>この後工程が特に長い代表例が collagen です。具体的な中身（水酸化とその補因子、三重らせん形成、分泌、細胞外での切断と架橋）は線維芽細胞とコラーゲンで扱います。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/dna-to-protein_コラーゲンの成熟.webp" alt="鎖ができてからの5段。" loading="lazy"><figcaption>鎖ができてからの5段。ER内でプロリン／リシンが水酸化され（O₂・ビタミンC・Fe が必要）、シャペロンの品質管理を通ったものだけが三重らせん procollagen になる。Golgi で修飾・梱包、分泌後に N/C プロペプチドが切られ、自己集合と lysyl oxidase 架橋を経て成熟線維になる</figcaption></figure>
-<h2 id="s6">6　読む量は調節されている。壊す側も同じように調節されている</h2>
-<p><strong>transcription factor（転写因子）</strong>は、遺伝子の近くに結合して転写を上げ下げするタンパク質です。<strong>どの遺伝子を・いつ・どれだけ読むか</strong>を決めているのがこれです。外からの刺激（成長因子やストレスなど）は、多くの場合この転写因子の働きを変えることで、細胞の応答を決めます（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
-<p>ただし調節されているのは、読む側だけではありません。<strong>MMP の発現も、proteasome や autophagy の活性も、同じように調節されています。</strong> 量を増やすには、上流で読む量を増やす道と、壊す側を抑える道があります。実際の組織では、その両方が同時に動いています。だから「この経路が上がった」だけでは、量がどちらへ動くかは決まりません。</p>
+<blockquote class="lead">細胞は、<strong>古くなった部品を分解し、回収した材料で新しい部品を作る</strong>ことで、細胞内の品質を保っています。</blockquote>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_オートファジーとリソソーム-v2.webp" alt="オートファジーの一連の流れ。" loading="lazy"><figcaption>オートファジーの一連の流れ。①傷んだタンパク質やミトコンドリアを二重膜で包む。②膜が閉じてオートファゴソームになる。③リソソームと融合する。④酸性環境と加水分解酵素によって内容物を分解する。⑤生じたアミノ酸・脂肪酸・糖を細胞質へ戻し、エネルギー産生や新しい細胞成分の合成に再利用する</figcaption></figure>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　オートファジーは、細胞内のリサイクル</a></li><li><a href="#s2">2　包んで運び、lysosomeで分解する</a></li><li><a href="#s3">3　lysosomeは、分解工場と材料の回収口</a></li><li><a href="#s4">4　食後は作り、空腹時には分解して再利用する</a></li><li><a href="#s5">5　必要なものを選んで回収することもできる</a></li><li><a href="#s6">6　fluxは、リサイクルが最後まで進んでいるかを見る考え方</a></li><li><a href="#s7">7　なぜ皮膚とlongevityに関係するのか</a></li></ul></nav><h2 id="s1">1　オートファジーは、細胞内のリサイクル</h2>
+<p><strong>autophagy</strong>は、ギリシャ語の「自分」を意味する <em>auto</em> と、「食べる」を意味する <em>phagein</em> に由来します。細胞が自分の中身の一部を分解するため、「自食作用」と訳されます。</p>
+<p>ただし、目的は単に壊すことではありません。主な役割は、次の三つです。</p>
+<ul><li><strong class="accent-label">エネルギーや材料を確保する</strong>：分解して生じたアミノ酸・脂肪酸・糖を、エネルギー産生や新しい細胞成分の合成に使う。</li><li><strong class="accent-label">細胞内の品質を保つ</strong>：傷んだタンパク質やオルガネラを取り除き、細胞内に溜めない。</li><li><strong class="accent-label">ストレス下で細胞の生存を支える</strong>：飢餓時には細胞内の成分から材料を回収し、酸化ストレスなどで傷んだ成分を除去する。</li></ul>
+<p>特に、タンパク質の大きな凝集体や、傷んだミトコンドリアなどのオルガネラは、そのままでは処理できません。autophagyは、これらを<strong>膜でまとめて包み、lysosomeへ運びます</strong>。</p>
+<p>細胞には、ほかにも品質を保つ仕組みがあります。</p>
+<div class="tblwrap"><table><thead><tr><th>対処するもの</th><th>主な仕組み</th><th>何をするか</th></tr></thead><tbody><tr><td>形が崩れかけたタンパク質</td><td><strong>chaperone（<span class="term" tabindex="0" data-t="HSP" data-d="heat shock protein＝chaperone。変性しかけたタンパク質を壊さずに正しい形へ戻す一次防衛線で、熱・酸化・機械ストレスで誘導される。熱を使うデバイスの応答を細胞の言葉で読む入口になる。">HSP</span>）</strong></td><td>正しい形に折り直す</td></tr><tr><td>不要になった個々のタンパク質</td><td><strong><span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。">ubiquitin–proteasome</span>系</strong></td><td>目印を付けて一つずつ分解する</td></tr><tr><td>大きな凝集体やオルガネラ</td><td><strong>autophagy–lysosome系</strong></td><td>膜で包み、まとめて分解する</td></tr></tbody></table></div>
+<p>これらが協力して、細胞内のタンパク質やオルガネラの品質を保っています。この状態を<strong>proteostasis（タンパク質恒常性）</strong>と呼びます（→ <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span>）。</p>
+<p>粗面ERでは、折り損じたタンパク質が増えるとER stressを感知し、UPRによって折りたたみと分解の能力を高めます。ERADで一本ずつ処理できない凝集体や、傷んだER膜の一部は、autophagyがlysosomeへ運びます（→ <a class="chref" href="organelles.html">オルガネラ</a>）。</p>
+<p>熱刺激で誘導されるHSP70・<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。">HSP47</span>と美容デバイスとの関係は熱・光・機械刺激、<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span>専用chaperoneであるHSP47の働きは線維芽細胞とコラーゲンで扱います。</p>
+<h2 id="s2">2　包んで運び、lysosomeで分解する</h2>
+<p>この章で扱うのは、細胞質の一部を二重膜で包む<strong>macroautophagy</strong>です。一般に「autophagy」と言うと、この仕組みを指します。</p>
+<p>流れは、次の五つです。</p>
+<div class="flow vert diagram steps"><span class="node"><span class="num">1</span><span class="step-text"><strong>包む</strong>：杯状の膜が伸び、傷んだタンパク質やオルガネラを取り囲みます。この未完成の膜が<strong>phagophore（隔離膜）</strong>です。</span></span><span class="arr">↓</span><span class="node"><span class="num">2</span><span class="step-text"><strong>閉じる</strong>：膜が閉じると、二重膜の袋である<strong>autophagosome（オートファゴソーム）</strong>になります。</span></span><span class="arr">↓</span><span class="node"><span class="num">3</span><span class="step-text"><strong>lysosomeと融合する</strong>：autophagosomeがlysosomeと融合し、運んできた内容物をlysosomeの中へ渡します。</span></span><span class="arr">↓</span><span class="node"><span class="num">4</span><span class="step-text"><strong>分解する</strong>：lysosomeの酸性環境で働く加水分解酵素が、タンパク質・脂質・糖・核酸などを小さな分子へ分解します。</span></span><span class="arr">↓</span><span class="node"><span class="num">5</span><span class="step-text"><strong>材料を戻す</strong>：生じたアミノ酸・脂肪酸・糖などを、輸送体から細胞質へ戻して再利用します。</span></span></div>
+<p>つまり、<strong>autophagosomeは包んで運ぶ袋であり、実際に分解する場所はlysosomeです。</strong>包むだけでは、リサイクルはまだ終わっていません。</p>
+<h2 id="s3">3　lysosomeは、分解工場と材料の回収口</h2>
+<p><strong>lysosome（リソソーム）</strong>は、不要なものを捨てるだけの袋ではありません。分解したものから材料を回収し、細胞質へ戻す<strong>リサイクル工場</strong>です。</p>
+<ul><li><strong>内部を酸性にする</strong>：膜にあるv-ATPaseがH⁺を汲み入れ、内部をpH 4.5〜5前後に保ちます。</li><li><strong>分解する</strong>：酸性環境で働く酵素が、タンパク質・脂質・糖・核酸を分解します。</li><li><strong>材料を戻す</strong>：分解産物を輸送体から細胞質へ戻し、エネルギー産生や合成に再利用します。</li></ul>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_lysosome-v2.webp" alt="リソソームの四つの役割。" loading="lazy"><figcaption>リソソームの四つの役割。オートファゴソームと融合し、v-ATPaseでHプラスを内部へ汲み入れて酸性に保ち、内容物を小さな分子へ分解し、アミノ酸・脂肪酸・糖を細胞質へ戻す。リソソーム膜の外側ではmTORC1が栄養状態を読み取る</figcaption></figure>
+<p>lysosomeの膜の外側には、栄養状態を受け取る<strong>mTORC1</strong>も集まります。lysosomeは、分解と材料回収の場所であると同時に、<strong>細胞が「いま材料は足りているか」を判断する場所</strong>でもあります（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
+<p>酸性化、autophagosomeとの融合、酵素による分解、材料の排出のどこかが止まれば、リサイクルは途中で滞ります。</p>
+<h2 id="s4">4　食後は作り、空腹時には分解して再利用する</h2>
+<p>食後はアミノ酸とインスリンが増え、mTORC1の活性が高まりやすくなります。すると、タンパク質や脂質を<strong>作る方向</strong>が優先され、autophagyは抑えられます。これは成長や組織の修復に必要な、正常な反応です。</p>
+<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンが減ります。細胞内のエネルギーが不足すると<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span>も働き、mTORC1の活性が下がります。するとautophagyが始まりやすくなり、細胞内の成分から材料を回収します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
+<p>大切なのは、mTORC1とautophagyのどちらか一方を常に働かせることではありません。<strong>栄養が入ったら作り、空腹時には分解して再利用する。細胞は、状態に応じて二つを切り替えています。</strong></p>
+<h2 id="s5">5　必要なものを選んで回収することもできる</h2>
+<p>autophagyは、細胞質の一部をまとめて取り込む場合と、特定の対象を選んで取り込む場合があります。</p>
+<div class="tblwrap"><table><thead><tr><th>回収するもの</th><th>呼び方</th><th>この先の章</th></tr></thead><tbody><tr><td>傷んだミトコンドリア</td><td><strong><span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。">mitophagy</span></strong></td><td>→ <a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a></td></tr><tr><td>タンパク質の凝集体</td><td><strong>aggrephagy</strong></td><td>proteostasisに関係する</td></tr><tr><td>小胞体の一部</td><td><strong>ER-phagy</strong></td><td>ERの量と品質を調節する</td></tr><tr><td>脂肪滴</td><td><strong>lipophagy</strong></td><td>脂質を分解へ回す</td></tr></tbody></table></div>
+<p>選択できるのは、回収する対象とautophagosomeの膜をつなぐ<strong>cargo <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。">receptor</span>（積み荷受容体）</strong>があるからです。たとえばp62/SQSTM1は、目印の付いたタンパク質と膜を橋渡しします。個々のcargo receptorの名前を覚えるより、<strong>必要なものを選んでlysosomeへ届ける仕組みがある</strong>と理解することが大切です。</p>
+<h2 id="s6">6　<span class="term" tabindex="0" data-t="flux" data-d="隔離 → 分解 → 再利用という流れが最後まで回っている速さ。溜まっている量（スナップショット）からは高いか低いかを判断できず、分解を短時間止めたペア比較で読む。">flux</span>は、リサイクルが最後まで進んでいるかを見る考え方</h2>
+<p>autophagyの働きを評価するとき、<strong>autophagosomeの数だけを見ても、リサイクルが順調かどうかは分かりません。</strong>autophagosomeが多く見える場合には、二つの可能性があります。</p>
+<ul><li>次々に作られ、lysosomeで順調に処理されている。</li><li>作られたものの、融合や分解が止まり、途中で溜まっている。</li></ul>
+<p>この二つを区別するには、<strong>包むところから、lysosomeでの分解と材料回収まで、すべての工程が進んでいるか</strong>を見る必要があります。この一連の流れを、<strong>autophagic flux（オートファジー・フラックス）</strong>と呼びます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_flux-v2.webp" alt="オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。" loading="lazy"><figcaption>オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。袋が多くてもオートファジーがよく働いているとは限らず、fluxは包むところから分解・回収まで最後まで進む流れを指す</figcaption></figure>
+<p><strong>autophagosomeの数は、途中の一場面です。fluxは、入口から出口までの流れを見ます。</strong></p>
+<h2 id="s7">7　なぜ皮膚とlongevityに関係するのか</h2>
+<p>細胞が働き続けるあいだ、タンパク質やオルガネラには少しずつ損傷が生じます。autophagyは、それらを回収して細胞内の品質を保つ仕組みです。加齢に伴ってautophagyの働きは低下する傾向があり、分解と再利用の滞りは、加齢性変化や疾患との関連が研究されています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34507801/" target="_blank" rel="noopener">PMID 34507801</a>）。</p>
+<p>皮膚は、紫外線・酸化ストレス・熱・病原体などに繰り返しさらされます。autophagyは、<strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span>の分化とmelanosomeの分解、<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>のストレス応答と生存、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>の細胞内品質と<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>の維持</strong>に関係します（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31417903/" target="_blank" rel="noopener">PMID 31417903</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p>
+<aside class="memo"><p class="memo-h">ちなみに ―― autophagy低下は、低色素化にも過色素化にもつながる</p><p>加齢・紫外線・酸化ストレス・代謝ストレスなどによってautophagyの調節が乱れると、傷んだタンパク質やオルガネラを処理しにくくなり、細胞の機能が低下します。ただし、<strong>どの細胞で強く起こるかによって、皮膚に現れる変化は異なります。</strong></p>
+<ul><li><strong>melanocyte</strong>：<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span>や傷んだオルガネラを処理しにくくなり、<span class="term" tabindex="0" data-t="senescence" data-d="生きて代謝もしているが、増殖刺激を与えても分裂周期に戻らない状態。死細胞でも可逆な休止（G0）でもなく、生きたままSASPを出し続ける。害になるのは居座って出し続けたとき。">senescence</span>や<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。">apoptosis</span>に傾くと、melanocyteの減少と低色素化につながりえます。</li><li><strong>keratinocyte</strong>：分化や角化が乱れるだけでなく、melanocyteから受け取ったmelanosomeを分解しにくくなります。そのため色素が残り、日光黒子や肝斑などの過色素化に関係する可能性があります。</li><li><strong>fibroblast</strong>：酸化・変性したタンパク質やDNA損傷が蓄積し、type I <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。">procollagen</span>・hyaluronan・<span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。">elastin</span>などのECMを維持する働きが低下します。これは真皮の老化や脆弱化につながります。</li></ul>
+<p>vitiligoのmelanocyteでは、<strong>抗酸化応答とautophagyの両方が弱くなる仕組み</strong>が報告されています。酸化ストレスを感知した<span class="term" tabindex="0" data-t="Nrf2" data-d="平常時はKEAP1に捕まって分解される転写因子。酸化ストレスでKEAP1が修飾されると核へ移り、AREを介して抗酸化酵素群を一斉に誘導する。Nrf2自身がROSを消すのではなく、増産の号令を出す側。">Nrf2</span>は、抗酸化酵素とともに<strong>p62</strong>を増やします。p62は、目印の付いた障害タンパク質などをautophagosomeへ運ぶため、Nrf2–p62経路が十分に働かないと、抗酸化応答だけでなくautophagyによる回収も弱くなります。また、<span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。">HSF1</span>は、autophagosomeを作るために必要な<strong>ATG5とATG12</strong>の発現を高めます。HSF1–ATG5/12経路が弱いと、傷んだ成分を包むautophagosomeを作りにくくなります。</p>
+<p>その結果、ROSや傷んだミトコンドリアなどが蓄積し、melanocyteはapoptosisに傾きやすくなります。ただし、<strong>vitiligoはこの経路だけで起こる病気ではありません。</strong>酸化ストレスとautophagyの異常がmelanocyteを傷つきやすくし、免疫による攻撃なども加わってmelanocyteが失われ、白斑として現れると考えられています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28186139/" target="_blank" rel="noopener">PMID 28186139</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34780715/" target="_blank" rel="noopener">PMID 34780715</a>）。</p>
+<p>つまり、<strong>autophagy低下による色の変化は、どの細胞の、どの働きが障害されるかによって異なります。</strong>melanocyteの生存が損なわれれば低色素化に、keratinocyteでmelanosomeの分解が滞れば過色素化につながりえます。「autophagyが下がるとメラニンが増える／減る」と一方向で考えるのではなく、melanocyteで作る、keratinocyteへ渡す、keratinocyteで分解する、という各段階を分けて見る必要があります（Kovacs D et al., <em>Cells.</em> 2022;11:2999. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p></aside>
+<p>過栄養では、インスリン・IGF-1からmTORC1へ届く刺激が高まり、autophagyとの切り替えが乱れることがあります。反対に、絶食やrapamycinなど、longevity研究で注目される介入の一部は、mTORC1とautophagyに作用します。ただし、<strong>autophagyに関係することと、健康な人の寿命延長や美容効果が証明されていることは別です。</strong>介入の評価は後の章で扱います（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>、<span class="term" tabindex="0" data-t="senolytic" data-d="老化細胞が生存を依存する抗アポトーシス経路（SCAP）を外して死なせ、数そのものを減らす介入。SASPだけ抑えて細胞は残すsenomorphicとは別物。ヒトの美容アウトカムは空欄。">senolytic</span>・mitophagy関連介入）。</p>
+<aside class="column"><p class="col-t">コラム</p><p class="col-h">見えない分解を、見える研究へ</p><p>オートファジーらしい構造は1950年代から電子顕微鏡で観察され、1963年には<strong>autophagy</strong>という名前も与えられていました。それでも、細胞内で短時間に進む分解の過程を追うことは難しく、どの遺伝子が、どの順番で働くのかは長く分かりませんでした。</p>
+<p>大隅良典教授は、当時あまり注目されていなかった<strong>酵母の液胞</strong>を研究対象に選びました。そして、液胞の分解酵素を欠く酵母なら、運び込まれたものが壊されず、中に溜まって見えるのではないかと考えます。酵母を飢餓状態にすると、実際に液胞内へ小さな構造が次々に蓄積しました。<strong>すぐに消えてしまう現象を、分解を止めることで観察できるようにした</strong>のです。1993年にはオートファジーができない酵母の変異株を調べ、仕組みに必要な遺伝子群を明らかにしました。</p>
+<p>この発見だけで、現在のオートファジー研究が完成したわけではありません。酵母で見つかった仕組みが哺乳類にもあることを確かめ、細胞内でその動きを追える方法を作る必要がありました。吉森保教授らは、<strong><span class="term" tabindex="0" data-t="LC3" data-d="autophagosome膜に埋め込まれるタンパク質。ATG7・ATG3でPEが付き、可溶性のLC3-Iから膜結合型のLC3-IIになって荷物をつなぐ取っ手になる。LC3-IIの量だけではfluxを読めない。">LC3</span>というタンパク質がautophagosomeの膜に結合する</strong>ことを示しました。LC3を目印にすることで、哺乳類の細胞でもautophagosomeを観察できるようになりました。研究者の少ない時代から続いた観察と試行錯誤が、酵母から哺乳類、さらに疾患や加齢の研究へつながり、2016年のノーベル生理学・医学賞に至りました。</p>
+<p>吉森保先生の『生命を守るしくみ　オートファジー』（講談社ブルーバックス、2022年）は、オートファジーがまだほとんど注目されず、研究者も少なかった時代から始まります。予算も設備も限られるなかで、見えない現象をどうすれば観察できるのかを考え、一つずつ方法を作り、発見を次の研究へつないでいった人たちの努力が描かれています。<strong>私がこの本を面白いと感じたのは、いまでは重要だと分かっている仕組みが、最初から注目されていたわけではなく、研究者の工夫と粘り強さによって少しずつ明らかになった過程が見えるからです。</strong>オートファジーをもう少し知りたい人に、おすすめしたい一冊です。</p>
+<p>（参考文献・推薦図書：[吉森保『生命を守るしくみ　オートファジー――老化、寿命、病気を左右する精巧なメカニズム』講談社ブルーバックス、2022年](https://www.kodansha.co.jp/book/products/0000347678)／[NobelPrize.org「Yoshinori Ohsumi – Biographical」](https://www.nobelprize.org/prizes/medicine/2016/ohsumi/biographical/)／Kabeya Y et al., <em>EMBO J.</em> 2000;19:5720–5728. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11060023/" target="_blank" rel="noopener">PMID 11060023</a>）</p></aside>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>タンパク質量は<strong>合成と分解の差し引き</strong>で決まる。分解は ubiquitin–proteasome・autophagy–lysosome・細胞外の MMP の3経路。</li><li>全身で1日およそ200〜300 g（3〜4 g/kg）のタンパク質が分解と再合成を受け、食事由来（およそ65〜80 g）を大きく上回る。<strong>合成の材料の多くは壊した自分のタンパク質から回収したアミノ酸で、食事は酸化で失われた分を補っている。</strong></li><li>情報の幹は transcription → RNA processing → 核外輸送 → translation。原本（DNA）は核から出さず、コピー（mRNA）だけを現場へ出す。</li><li>鎖ができた時点では多くのタンパク質はまだ機能しない。<strong>「mRNAが増えた」＝「使えるタンパク質が増えた」ではない。</strong> 調節は、読む側にも壊す側にもかかる。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/dna-to-protein_まとめ.webp" alt="DNAの情報が使えるタンパク質になるまで" loading="lazy"><figcaption>DNAの情報が使えるタンパク質になるまで</figcaption></figure>
-<blockquote><a class="chref" href="epigenome.html">エピゲノム</a>では、その転写因子が働く一段手前——<strong>DNA配列を変えずに、遺伝子の読みやすさ自体を調節するしくみ（エピゲノム）</strong>を見ます。</blockquote>
+<ol class="goal"><li>autophagyは、<strong>古くなったタンパク質やオルガネラを分解し、材料を再利用することで、細胞内の品質とストレス下の生存を支える仕組み</strong>である。</li><li><strong>autophagosome</strong>は対象を包んで運び、<strong>lysosome</strong>が酸性環境で分解する。</li><li>lysosomeは、分解工場であると同時に、材料の回収口と栄養感知の場でもある。</li><li>食後は合成が進み、空腹時には分解と再利用が進みやすい。mTORC1とautophagyは、状態に応じて切り替わる。</li><li><strong>flux</strong>は、包むところから分解・回収までが最後まで進んでいるかを評価する考え方である。</li></ol>
+<blockquote>次の<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>では、この仕組みをミトコンドリアに当てはめます。傷んだミトコンドリアを選んで回収するautophagyが、<strong>mitophagy</strong>です。</blockquote>
 
 </article>
-<nav class="pager"><a class="prev" href="cell-types.html"><span class="lbl">前へ</span>オルガネラはどう連携するか</a><a class="next" href="epigenome.html"><span class="lbl">次へ</span>エピゲノム</a></nav>
+<nav class="pager"><a class="prev" href="mtorc1.html"><span class="lbl">前へ</span>mTORC1――タンパク質合成を調節する仕組み</a><a class="next" href="mito-quality-control.html"><span class="lbl">次へ</span>ミトコンドリア品質管理</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
