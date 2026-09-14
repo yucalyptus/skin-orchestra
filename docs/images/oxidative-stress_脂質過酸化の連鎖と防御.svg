@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" role="img" aria-labelledby="title desc">
+  <title id="title">脂質過酸化が隣の脂質へ連鎖する仕組みと二つの防御</title>
+  <desc id="desc">ヒドロキシラジカルが多価不飽和脂肪酸から水素を奪うと脂質ラジカルが生じる。脂質ラジカルは酸素と結びついて脂質ペルオキシラジカルとなり、隣の脂質から水素を奪って脂質過酸化物と新しい脂質ラジカルを作る。vitamin Eは脂質ペルオキシラジカルに水素を渡して連鎖を止め、GPX4とGSHは生じたリン脂質過酸化物を還元する。</desc>
+  <defs>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a34b40"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1d4f91"/></marker>
+    <style>
+      text{font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;fill:#1c1d23}
+      .title{font-size:36px;font-weight:800}.subtitle{font-size:18px;fill:#1d4f91}
+      .section{font-size:26px;font-weight:800}.num{font-size:18px;font-weight:800;fill:#ffffff}
+      .chem{font-size:27px;font-weight:800}.label{font-size:18px;font-weight:750}.small{font-size:15px;fill:#1d4f91}
+      .arrowLabel{font-size:16px;font-weight:750;fill:#a34b40}.brakeTitle{font-size:23px;font-weight:800}.takeaway{font-size:18px;font-weight:750}
+    </style>
+  </defs>
+  <rect width="1200" height="850" fill="#ffffff"/>
+  <text x="600" y="49" text-anchor="middle" class="title">脂質過酸化は、新しいラジカルを作りながら隣へ広がる</text>
+  <text x="600" y="80" text-anchor="middle" class="subtitle">LHは酸化されていない脂質、L•とLOO•はラジカル、LOOHは酸化されてできた脂質過酸化物</text>
+
+  <text x="55" y="130" class="section">連鎖が起こる3つの反応</text>
+
+  <!-- step 1 -->
+  <circle cx="82" cy="190" r="25" fill="#a34b40"/>
+  <text x="82" y="197" text-anchor="middle" class="num">1</text>
+
+  <text x="240" y="192" text-anchor="middle" class="chem">膜の脂質（LH）</text>
+  <text x="240" y="224" text-anchor="middle" class="small">膜の多価不飽和脂肪酸</text>
+  <line x1="375" y1="202" x2="510" y2="202" stroke="#a34b40" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <text x="443" y="178" text-anchor="middle" class="arrowLabel">•OHなどがHを奪う</text>
+
+  <text x="633" y="192" text-anchor="middle" class="chem">脂質ラジカル</text>
+  <text x="633" y="225" text-anchor="middle" class="chem">L•</text>
+
+  <!-- step 2 -->
+  <circle cx="782" cy="130" r="25" fill="#a34b40"/>
+  <text x="782" y="137" text-anchor="middle" class="num">2</text>
+  <line x1="755" y1="202" x2="890" y2="202" stroke="#a34b40" stroke-width="4" marker-end="url(#arrowRed)"/>
+  <text x="822" y="178" text-anchor="middle" class="arrowLabel">O₂と結合</text>
+
+  <text x="1030" y="192" text-anchor="middle" class="chem">脂質ペルオキシ</text>
+  <text x="1030" y="225" text-anchor="middle" class="chem">ラジカル（LOO•）</text>
+
+  <!-- step 3 -->
+  <circle cx="82" cy="335" r="25" fill="#a34b40"/>
+  <text x="82" y="342" text-anchor="middle" class="num">3</text>
+
+  <text x="250" y="335" text-anchor="middle" class="chem">LOO• ＋ 隣のLH</text>
+  <text x="250" y="370" text-anchor="middle" class="small">隣の脂質からHを奪う</text>
+  <line x1="395" y1="348" x2="545" y2="348" stroke="#a34b40" stroke-width="4" marker-end="url(#arrowRed)"/>
+
+  <text x="723" y="335" text-anchor="middle" class="chem">LOOH ＋ 新しいL•</text>
+  <text x="723" y="370" text-anchor="middle" class="small">脂質過酸化物　　次のラジカル</text>
+
+  <text x="1025" y="340" text-anchor="middle" class="arrowLabel">新しいL•が② → ③へ進む</text>
+
+  <rect x="80" y="435" width="1040" height="50" rx="14" fill="#fbf2f0"/>
+  <text x="600" y="467" text-anchor="middle" class="takeaway" fill="#a34b40">一つの脂質が酸化されて終わらず、新しいL•ができるため、酸化が膜の中を隣へ隣へと広がる</text>
+
+  <text x="55" y="535" class="section">二つのブレーキは、違う段階で働く</text>
+
+  <!-- vitamin E brake -->
+  <rect x="55" y="570" width="525" height="205" rx="22" fill="#f2f4f7" stroke="#64748b" stroke-width="2.5"/>
+  <text x="318" y="610" text-anchor="middle" class="brakeTitle" fill="#1d4f91">vitamin E：連鎖が次へ移る前に止める</text>
+  <rect x="90" y="640" width="145" height="72" rx="14" fill="#fbf2f0" stroke="#a34b40" stroke-width="2"/>
+  <text x="163" y="684" text-anchor="middle" class="chem">LOO•</text>
+  <line x1="255" y1="676" x2="385" y2="676" stroke="#64748b" stroke-width="4" marker-end="url(#arrowGreen)"/>
+  <text x="320" y="655" text-anchor="middle" class="small">vitamin EがHを渡す</text>
+  <rect x="405" y="640" width="140" height="72" rx="14" fill="#f2f4f7" stroke="#1d4f91" stroke-width="2"/>
+  <text x="475" y="684" text-anchor="middle" class="chem">LOOH</text>
+  <text x="318" y="746" text-anchor="middle" class="label">LOO•が隣の脂質からHを奪わなくなり、連鎖が止まる</text>
+
+  <!-- GPX4 brake -->
+  <rect x="620" y="570" width="525" height="205" rx="22" fill="#f2f4f7" stroke="#1d4f91" stroke-width="2.5"/>
+  <text x="883" y="610" text-anchor="middle" class="brakeTitle" fill="#1c1d23">GPX4＋GSH：できた過酸化物を還元する</text>
+  <rect x="655" y="640" width="155" height="72" rx="14" fill="#f2f4f7" stroke="#64748b" stroke-width="2"/>
+  <text x="733" y="684" text-anchor="middle" class="chem">PLOOH</text>
+  <line x1="830" y1="676" x2="960" y2="676" stroke="#1d4f91" stroke-width="4" marker-end="url(#arrowGreen)"/>
+  <text x="895" y="655" text-anchor="middle" class="small">GPX4＋2 GSH</text>
+  <rect x="980" y="640" width="130" height="72" rx="14" fill="#f2f4f7" stroke="#1d4f91" stroke-width="2"/>
+  <text x="1045" y="684" text-anchor="middle" class="chem">PLOH</text>
+  <text x="883" y="746" text-anchor="middle" class="label">膜にできたリン脂質過酸化物を、反応性の低い形へ変える</text>
+
+  <text x="600" y="817" text-anchor="middle" class="small">PLOOH：リン脂質過酸化物　　PLOH：還元されたリン脂質</text>
+</svg>

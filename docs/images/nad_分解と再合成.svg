@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-labelledby="nadcut-title nadcut-desc">
+<title id="nadcut-title">NAD⁺を切って使い、NAMから作り直す</title><desc id="nadcut-desc">CD38による加水分解ではNAD⁺からNAMとADP-riboseが生じる。NAMはNAMPTの反応でNMNとなり、NMNATの反応でNAD⁺に戻る。形は構成要素を示す模式図で、水や他の反応材料・生成物は省略。</desc>
+<defs><marker id="nadcut-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="context-stroke" stroke-width="1.6"/></marker></defs><rect width="760" height="560" fill="white"/><g font-family="system-ui,-apple-system,sans-serif" fill="#24272B">
+<text x="30" y="42" font-size="27" fill="#24272B" font-weight="700" text-anchor="start">切って使ったNAD⁺は、材料から作り直す</text>
+<text x="168" y="213" font-size="32" fill="#24272B" font-weight="700" text-anchor="middle">NAD⁺</text>
+<path d="M59 260 Q42 230 83 237 L152 237 Q192 230 176 265 Q195 307 149 314 L84 314 Q42 309 59 260 Z" fill="#F0F2F4" stroke="#687580" stroke-width="2"/>
+<text x="118" y="277" font-size="18" fill="#24272B" font-weight="400" text-anchor="middle">ADP-</text>
+<text x="118" y="299" font-size="18" fill="#24272B" font-weight="400" text-anchor="middle">ribose</text>
+<path d="M178 280 H191" fill="none" stroke="#58616B" stroke-width="3"/>
+<path d="M191 258 L229 236 L267 258 V302 L229 324 L191 302 Z" fill="#EAF0F7" stroke="#1d4f91" stroke-width="2.5"/>
+<text x="229" y="287" font-size="21" fill="#1d4f91" font-weight="700" text-anchor="middle">NAM</text>
+<path d="M552 142 L590 120 L628 142 V186 L590 208 L552 186 Z" fill="#EAF0F7" stroke="#1d4f91" stroke-width="2.5"/>
+<text x="590" y="171" font-size="21" fill="#1d4f91" font-weight="700" text-anchor="middle">NAM</text>
+<text x="590" y="226" font-size="18" fill="#58616B" font-weight="400" text-anchor="middle">ニコチンアミド</text>
+<path d="M512 373 L550 351 L588 373 V417 L550 439 L512 417 Z" fill="#EAF0F7" stroke="#1d4f91" stroke-width="2.5"/>
+<text x="550" y="402" font-size="21" fill="#1d4f91" font-weight="700" text-anchor="middle">NAM</text>
+<path d="M588 395 H600" fill="none" stroke="#58616B" stroke-width="3"/>
+<path d="M603 376 L631 363 L655 383 L646 416 L614 419 Z" fill="#F0F2F4" stroke="#687580" stroke-width="2"/>
+<text x="629" y="400" font-size="18" fill="#24272B" font-weight="400" text-anchor="middle">糖</text>
+<path d="M655 395 H678" fill="none" stroke="#58616B" stroke-width="3"/>
+<circle cx="695" cy="395" r="17" fill="#F0F2F4" stroke="#687580" stroke-width="2"/>
+<text x="695" y="402" font-size="19" fill="#24272B" font-weight="400" text-anchor="middle">P</text>
+<text x="615" y="473" font-size="27" fill="#24272B" font-weight="700" text-anchor="middle">NMN</text>
+<path d="M229 227 C255 139 356 132 529 154" fill="none" stroke="#58616B" stroke-width="3" marker-end="url(#nadcut-arrow)"/>
+<text x="366" y="113" font-size="23" fill="#24272B" font-weight="700" text-anchor="middle">CD38</text>
+<path d="M363 143 Q375 173 402 195" fill="none" stroke="#58616B" stroke-width="3" marker-end="url(#nadcut-arrow)"/>
+<path d="M364 236 Q347 206 388 213 L457 213 Q497 206 481 241 Q500 283 454 290 L389 290 Q347 285 364 236 Z" fill="#F0F2F4" stroke="#687580" stroke-width="2"/>
+<text x="423" y="253" font-size="18" fill="#24272B" font-weight="400" text-anchor="middle">ADP-</text>
+<text x="423" y="275" font-size="18" fill="#24272B" font-weight="400" text-anchor="middle">ribose</text>
+<text x="422" y="317" font-size="18" fill="#58616B" font-weight="400" text-anchor="middle">切り離された部分</text>
+<path d="M590 244 V290 Q590 317 550 338" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#nadcut-arrow)"/>
+<text x="660" y="291" font-size="21" fill="#1d4f91" font-weight="700" text-anchor="middle">NAMPT</text>
+<path d="M503 406 C414 450 275 422 234 341" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#nadcut-arrow)"/>
+<text x="378" y="461" font-size="23" fill="#1d4f91" font-weight="700" text-anchor="middle">NMNAT</text>
+<text x="30" y="520" font-size="23" fill="#24272B" font-weight="700" text-anchor="start">NAMを回収し、NMNを経てNAD⁺へ戻す</text>
+<text x="30" y="550" font-size="17" fill="#58616B" font-weight="400" text-anchor="start">構成要素の模式図。糖＝ribose、P＝リン酸。</text>
+</g></svg>

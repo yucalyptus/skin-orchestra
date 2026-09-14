@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 660" role="img"><title>創傷治癒の四つの過程は、重なって進む</title><style>text{font-family:system-ui,-apple-system,"Hiragino Sans",sans-serif;fill:#1c1d23}.title{font-size:30px;font-weight:700}.head{font-size:25px;font-weight:700}.body{font-size:22px}.small{font-size:19px;fill:#64748b}</style><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1d4f91"/></marker></defs><rect width="1100" height="660" fill="white"/>
+<text x="40" y="50" class="title">創傷治癒の四つの過程は、重なって進む</text>
+<text x="320" y="104" class="small">損傷直後</text>
+<text x="930" y="104" class="small">修復の進行</text>
+<path d="M330 125L1020 125" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arr)"/>
+<text x="40" y="190" class="head">止血期</text>
+<rect x="330" y="162" width="125" height="28" rx="14" fill="#1d4f91" opacity=".7"/>
+<text x="330" y="225" class="body">血小板・凝固反応が出血を止める</text>
+<text x="40" y="290" class="head">炎症期</text>
+<rect x="350" y="262" width="320" height="28" rx="14" fill="#1d4f91" opacity=".7"/>
+<text x="330" y="325" class="body">免疫細胞が細菌や傷んだ組織を処理する</text>
+<text x="40" y="390" class="head">増殖期</text>
+<rect x="445" y="362" width="405" height="28" rx="14" fill="#1d4f91" opacity=".7"/>
+<text x="330" y="425" class="body">表面を閉じ、血管とECMを作る</text>
+<text x="40" y="490" class="head">リモデリング期</text>
+<rect x="680" y="462" width="340" height="28" rx="14" fill="#1d4f91" opacity=".7"/>
+<text x="330" y="525" class="body">ECMを入れ替え、構造と強さを整える</text>
+<text x="40" y="593" class="head">炎症が完全に終わる前から、修復も始まっています。</text>
+<text x="40" y="632" class="small">時間の重なりを示す模式図です。帯の長さは日数や反応の強さを示しません。</text>
+</svg>

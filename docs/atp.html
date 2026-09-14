@@ -4,13 +4,13 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>代謝とATP ― 生化学で見る美容医療</title>
-<meta name="description" content="ATP は、異化から生じるエネルギーの通貨です。栄養素や、体に蓄えた glycogen・中性脂肪を壊すとエネルギーが出ますが、それはそのまま仕事に使われるわけではありません。いったん ATP に移され、細胞はその ATP…">
+<meta name="description" content="ATPは、栄養素の分解で得たエネルギーを、合成・輸送・収縮などの仕事へ渡します。長期の貯蔵はglycogenや中性脂肪が担い、ATPは使われるたびに作り直されます。細胞の働きを支えるのは、需要に応じてATPを作り続けられ…">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/atp.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="代謝とATP ― 生化学で見る美容医療">
-<meta property="og:description" content="ATP は、異化から生じるエネルギーの通貨です。栄養素や、体に蓄えた glycogen・中性脂肪を壊すとエネルギーが出ますが、それはそのまま仕事に使われるわけではありません。いったん ATP に移され、細胞はその ATP…">
+<meta property="og:description" content="ATPは、栄養素の分解で得たエネルギーを、合成・輸送・収縮などの仕事へ渡します。長期の貯蔵はglycogenや中性脂肪が担い、ATPは使われるたびに作り直されます。細胞の働きを支えるのは、需要に応じてATPを作り続けられ…">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/atp.html">
 <meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/atp_異化と同化.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html" class="active">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html" class="active">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,74 +614,45 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="atp">
 <p class="kicker">基礎　／　エネルギー</p>
 <h1 class="ch-title">代謝とATP</h1>
-<p class="dateline">公開 2026-08-24</p>
-<blockquote>転写も翻訳も、折りたたみも輸送も、細胞の仕事はすべて <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span> を使います（→ <a class="chref" href="organelles.html">オルガネラ</a>）。<strong>では、ATP はどこから来るのか。</strong></blockquote>
+<p class="dateline">公開 2026-08-24　／　最終更新 2026-09-13</p>
+<p>タンパク質を作る、膜を介して物質を運ぶ、筋を収縮させる。こうした細胞の仕事には、<strong><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>（adenosine triphosphate、アデノシン三リン酸）</strong>が使われます。細胞は、糖や脂肪酸などを分解してATPを作り続けています。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>ATP は、異化から生じるエネルギーの通貨です。</strong>栄養素や、体に蓄えた glycogen・中性脂肪を壊すとエネルギーが出ますが、それはそのまま仕事に使われるわけではありません。いったん ATP に移され、細胞はその ATP を分解してエネルギーを受け取り、組み立て・輸送・収縮にあてます。<br><br><strong>そして ATP は貯まりません。</strong>使えば <span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。">ADP</span> に戻り、また作り直される。<strong>同じ分子が、1日のうちに何度も作られては使われています。</strong>だいじなのは、ある瞬間の ATP 量ではなく、<strong>需要に応じて作り続けられること</strong>です。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　代謝とは、壊す側と組み立てる側のネットワーク</a></li><li><a href="#s2">2　エネルギー源は3つあり、入る場所が違う</a></li><li><a href="#s3">3　ATP は貯金ではない ―― 在庫は少なく、流れは多い</a></li><li><a href="#s4">4　ATP不足は、AMPの上昇として増幅される</a></li></ul></nav><h2 id="s1">1　代謝とは、壊す側と組み立てる側のネットワーク</h2>
-<p>代謝（metabolism）とは、物質を<strong>分解し・変換し・合成する</strong>化学反応のネットワーク全体を指します。方向が2つあります。</p>
-<ul><li><strong>異化（catabolism）</strong> ── 大きな分子を壊して、<strong>中間代謝物と使えるエネルギー</strong>を取り出す</li><li><strong>同化（anabolism）</strong> ── 材料を組み立てて、大きな分子を作る</li></ul>
-<p><strong>異化が壊す相手は、食べた栄養素とはかぎりません。</strong>体に貯蔵してあるエネルギー——<strong>glycogen（糖の貯蔵形）と中性脂肪（脂質の貯蔵形）</strong>——も、必要になれば同じように分解されます。自分のタンパク質も同じです（→ <a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>・<a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）。</p>
-<p>異化と同化は、つながっています。異化で出たアミノ酸・脂肪酸・糖は<strong>中間代謝物のプール</strong>に入り、同化はそこから材料を取ります。</p>
-<p>エネルギーのほうは、<strong>ATP がすべて引き受けます。</strong>食べたものや体の貯蔵物を分解して ATP を作り（<a class="chref" href="glycolysis.html">解糖系</a>・<a class="chref" href="tca-cycle.html">TCA回路</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）、<strong>その ATP が分解されるときに出るエネルギーで、細胞は仕事をします。</strong></p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/atp_異化と同化.webp" alt="食事や体の蓄えを分解して中間代謝物へつなぎ、そこから新しい物質を組み立てる流れ。" loading="lazy"><figcaption>食事や体の蓄えを分解して中間代謝物へつなぎ、そこから新しい物質を組み立てる流れ。下段はATPとADP＋Piの循環</figcaption></figure>
-<h2 id="s2">2　エネルギー源は3つあり、入る場所が違う</h2>
-<p>糖質・脂質・タンパク質は、どれもエネルギー源になります。<strong>最後は <span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。">acetyl-CoA</span> か <span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span>の中間体に合流しますが、そこへ至る道筋と、入る場所が違います。</strong></p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/atp_三大栄養素の合流.webp" alt="三大栄養素が別々の入口から一つの合流点へ向かう地図。" loading="lazy"><figcaption>三大栄養素が別々の入口から一つの合流点へ向かう地図。糖質は単糖になり細胞質の<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>を通ってpyruvateへ、そこからミトコンドリアでacetyl-CoAになる。脂質は脂肪酸とglycerolに分かれ、脂肪酸はミトコンドリアに入ってから炭素2個ずつacetyl-CoAとして切り出される一方、glycerolだけは解糖系の途中に合流する。タンパク質はアミノ酸になり、アミノ基を外した炭素骨格がpyruvate・acetyl-CoA・TCA回路の中間体という複数の場所から入る。合流したあとは区別されず、TCA回路と<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>を経てATPになる</figcaption></figure>
-<div class="tblwrap"><table><thead><tr><th>栄養素</th><th>分解されて</th><th>どこから入るか</th></tr></thead><tbody><tr><td><strong>糖質</strong></td><td>glucose などの単糖</td><td>細胞質の解糖系を通って <strong>pyruvate</strong> になり、ミトコンドリアで acetyl-CoA へ（→ <a class="chref" href="glycolysis.html">解糖系</a>）</td></tr><tr><td><strong>脂質</strong></td><td>脂肪酸と glycerol</td><td>脂肪酸はミトコンドリアに入ってから、<strong>炭素2個ずつ acetyl-CoA</strong> として切り出される。glycerol だけは解糖系の途中に合流する（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）</td></tr><tr><td><strong>タンパク質</strong></td><td>アミノ酸</td><td>アミノ基を外した<strong>炭素骨格</strong>が、pyruvate・acetyl-CoA・TCA回路の中間体という<strong>複数の場所</strong>から入る（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）</td></tr></tbody></table></div>
-<h2 id="s3">3　ATP は貯金ではない ―― 在庫は少なく、流れは多い</h2>
-<p><strong>ATP は、分解されるときにエネルギーを放します。</strong>ATP が <strong>ADP と無機リン酸（Pi）</strong> に分かれるとき、そこでエネルギーが出て、細胞はそれを使って仕事をします。残った ADP は、異化から得たエネルギーで再び ATP に戻されます。<strong>この往復が絶えず繰り返されています。</strong></p>
-<p>ATP を使う仕事は、大きく3つです。</p>
-<ul><li><strong>同化</strong> ── アミノ酸・脂質・糖といった材料を、タンパク質・膜・glycogen・核酸へ組み立てる</li><li><strong>膜輸送</strong> ── 濃度勾配に逆らって物質を運ぶ（Na⁺/K⁺ポンプなど）</li><li><strong>運動</strong> ── 筋収縮、細胞内の輸送、繊毛の運動</li></ul>
-<p><strong>ATPは貯めておく物質ではありません。</strong> 体内にあるATPは常時わずか数十グラムの桁ですが、1日に作られて使われる総量は体重に相当する桁になるとされます。したがって重要なのは、ある瞬間のATP量ではなく、<strong>需要に応じてATPを作り続けられること</strong>です。</p>
-<p><strong>貯蓄は glycogen と中性脂肪が担い、ATP はその場の受け渡しだけを担当します。</strong> 蓄えから随時ATPを作り、作った分をすぐ使う。だから在庫は少ないのに、流れる量は桁違いに多くなります。</p>
+<blockquote class="lead"><strong>ATPは、栄養素の分解で得たエネルギーを、合成・輸送・収縮などの仕事へ渡します。</strong>長期の貯蔵はglycogenや中性脂肪が担い、ATPは使われるたびに作り直されます。細胞の働きを支えるのは、需要に応じてATPを作り続けられることです。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　代謝は、分解して取り出す反応と、組み立てる反応</a></li><li><a href="#s2">2　糖質・脂質・タンパク質から、ATP産生へつながる</a></li><li><a href="#s3">3　ATPは、使うたびに作り直される</a></li><li><a href="#s4">4　ATP不足は、AMPの上昇として増幅される</a></li></ul></nav><h2 id="s1">1　代謝は、分解して取り出す反応と、組み立てる反応</h2>
+<p><strong>代謝（metabolism）</strong>は、体内の物質を分解・変換・合成する反応全体です。</p>
+<ul><li><strong>異化（catabolism）</strong>：栄養素や体の蓄えを分解し、材料とエネルギーを取り出します。</li><li><strong>同化（anabolism）</strong>：材料とエネルギーを使い、タンパク質や膜などを作ります。</li></ul>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/atp_異化と同化.webp" alt="食事や体の蓄えを分解して材料を取り出し、タンパク質や膜などの合成へ使う。" width="1672" height="1065" loading="lazy"><figcaption>食事や体の蓄えを分解して材料を取り出し、タンパク質や膜などの合成へ使う。エネルギーはATPを介して細胞の仕事へ渡される。</figcaption></figure>
+<p>分解する材料には、食事のほかに<strong>glycogen（糖の貯蔵形）や中性脂肪</strong>、体のタンパク質も含まれます。分解で得た材料は合成に再利用され、エネルギーはATPを作るために使われます。</p>
+<h2 id="s2">2　糖質・脂質・タンパク質から、ATP産生へつながる</h2>
+<p>糖質・脂質・タンパク質は、どれもATPを作る材料になります。糖や脂肪酸の分解で生じる<strong><span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。" data-u="glossary.html#term-e45cb339bfe5">acetyl-CoA</span>（アセチルCoA）</strong>は、ミトコンドリアの<strong><span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。" data-u="glossary.html#term-39f9a8217f46">TCA回路</span></strong>へ炭素を渡します。</p>
+<p>TCA回路では電子が取り出され、その電子が<strong><span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。" data-u="glossary.html#term-e84635b3e956">電子伝達系</span></strong>へ渡ります。この電子の流れが、ATPを作る力になります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/atp_三大栄養素の合流.webp" alt="糖質・脂質・タンパク質は、異なる経路からacetyl-CoAやTCA回路の中間体へ合流する。" width="1672" height="941" loading="lazy"><figcaption>糖質・脂質・タンパク質は、異なる経路からacetyl-CoAやTCA回路の中間体へ合流する。ミトコンドリアの内外の配置と、ATP産生へ至る主な経路を示す。</figcaption></figure>
+<p>糖は細胞質の<strong><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span></strong>でpyruvate（ピルビン酸）へ、脂肪酸はミトコンドリアの<strong>β酸化</strong>でacetyl-CoAへ分解されます。アミノ酸は、種類によって解糖系の産物やTCA回路の中間体など、異なる場所から入ります。各経路の反応は<a class="chref" href="glycolysis.html">解糖系</a>・<a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>・<a class="chref" href="tca-cycle.html">TCA回路</a>で扱います。</p>
+<h2 id="s3">3　ATPは、使うたびに作り直される</h2>
+<p>ATPが<strong><span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。" data-u="glossary.html#term-e9482c5e3b03">ADP</span>（adenosine diphosphate、アデノシン二リン酸）と無機リン酸（Pi）</strong>に分かれる反応で放出されるエネルギーが、細胞の仕事に使われます。</p>
+<div class="reaction"><span class="reaction-label">ATPを使うときの主な変化（加水分解の水は省略）</span><div class="reaction-equation" role="img" aria-label="ATPを使うときの主な変化（加水分解の水は省略）：ATP → ADP ＋ Pi"><span class="reaction-side"><span class="reaction-species"><span>ATP</span><span class="reaction-name">アデノシン三リン酸</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme"></span><span aria-hidden="true">⟶</span></span><span class="reaction-side"><span class="reaction-species"><span>ADP</span><span class="reaction-name">アデノシン二リン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>Pi</span><span class="reaction-name"></span></span></span></div></div>
+<p>細胞は、栄養素の分解で得たエネルギーを使ってADPからATPを作り直します。<strong>ATPを使う反応と、作り直す反応が絶えず続いています。</strong></p>
+<p>ATPが支える主な仕事は、次の3つです。</p>
+<ul><li><strong>合成</strong>：タンパク質・膜・glycogen・核酸などを作る。</li><li><strong>膜輸送</strong>：Na⁺/K⁺ポンプなどで、濃度勾配に逆らって物質を運ぶ。</li><li><strong>運動</strong>：筋収縮、細胞内の輸送、繊毛の運動を進める。</li></ul>
+<p>長期のエネルギー貯蔵はglycogenと中性脂肪が担います。<strong>ATPは必要な場所で使い、需要に合わせて作り続ける分子</strong>です。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― ATPの量と、作り直す量</h3><p>体内にあるATPは数十グラムの桁ですが、1日に作られて使われる総量は体重に相当する桁になります。体内の量が少なくても繰り返し作り直すことで、大量のエネルギーを受け渡せます。</p></aside>
 <h2 id="s4">4　ATP不足は、AMPの上昇として増幅される</h2>
-<p><strong>ATP・ADP・AMP は、同じ分子です。違うのは、付いているリン酸の数だけ</strong>——ATP が <strong>3個</strong>、ADP が <strong>2個</strong>、AMP が <strong>1個</strong>です。</p>
-<p>細胞にある <strong>adenylate kinase</strong> は、<strong>ADP 2個のあいだでリン酸を1個やりとりさせます。</strong>渡された側は3個になって ATP に、渡した側は1個になって AMP になります。反応が速いので、次の式は常にほぼ平衡に保たれています。</p>
-<blockquote><strong>2 ADP ⇄ ATP ＋ AMP</strong><br>リン酸の数：2 ＋ 2 ＝ 3 ＋ 1</blockquote>
-<p><strong>リン酸が付け替わるだけなので、3つを合わせた総量は変わりません。動くのは内訳だけ</strong>です。</p>
-<p>ここで効いてくるのが、<strong>もともとの量の差</strong>です。平常時の比は、おおよそ <strong>ATP : ADP : AMP ＝ 100 : 10 : 1</strong>。<strong>AMP だけ桁違いに少ない。</strong></p>
-<p>だから内訳が動いたとき、<strong>それぞれにとっての「増え方」がまるで違います。</strong>ATP を1割ぶん使ったときの計算がこれです。</p>
-<div class="tblwrap"><table><thead><tr><th></th><th>平常時</th><th>ATP を1割使ったあと</th><th>変化</th></tr></thead><tbody><tr><td><strong>ATP</strong></td><td>100</td><td>91.9</td><td><strong>8% 減っただけ</strong></td></tr><tr><td><strong>ADP</strong></td><td>10</td><td>16.3</td><td>1.6倍</td></tr><tr><td><strong>AMP</strong></td><td>1</td><td>2.9</td><td><strong>約3倍</strong></td></tr><tr><td>合計</td><td>111</td><td>111</td><td><strong>変わらない</strong></td></tr></tbody></table></div>
-<p><strong>ATP の側では誤差にしか見えない変化が、AMP の側では3倍になって現れます。</strong>もとの量が少ないほど、同じだけ増えても倍率が大きくなるからです。<strong>エネルギー不足を測る目盛りとしては、ATP より AMP のほうがずっと感度が高い</strong>ということです。</p>
-<p><strong>AMP の上昇は、エネルギー不足の合図です。</strong> それを感知するのが <strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span>（AMP-activated protein kinase）</strong> です。 異化（ATPを作る側）を促し、同化（ATPを使う側）を抑える——<strong>代謝の向きを切り替える kinase</strong> です（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
-<figure class="book-figure"><div style="overflow-x:auto"><svg viewBox="0 0 760 754" style="display:block;width:100%;max-width:100%;height:auto;background:#fff" role="img" aria-label="ATP・ADP・AMPの違いは付いているリン酸の数。adenylate kinase はADP2個のあいだでリン酸を1個だけ移し、受け取った側をATP、渡した側をAMPにする。ATP対ADP対AMPを100対10対1とし、ATPを10消費してadenylate kinaseの平衡（K＝1）まで戻すと、ATP91.9・ADP16.3・AMP2.9になる。合計111は変わらない。平常時を100とするとATP92・ADP163・AMP287で、ATPが8%減るだけでAMPは約2.9倍になる。この増幅がエネルギー不足の合図としてAMPKに感知される"><defs><marker id="mk1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B04A33"/></marker></defs><rect x="3" y="3" width="754" height="748" rx="12" fill="#FFFFFF" stroke="#9FB0C8" stroke-width="1.8"/><g font-family="system-ui,-apple-system,sans-serif"><rect x="14" y="14" width="732" height="132" rx="8" fill="#F6F8FC"/><text x="30" y="42" font-size="15" font-weight="700" fill="#2B4C7E">① 違いは、付いているリン酸の数だけ</text><rect x="36" y="72" width="108" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="36" y="64" font-size="15" font-weight="700" fill="#2B4C7E">AMP</text><rect x="44" y="81" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="77.0" y="102" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="110" y1="97" x2="114" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="125" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="125" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="36" y="140" font-size="13" fill="#5A6782">リン酸 1個</text><rect x="286" y="72" width="138" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="286" y="64" font-size="15" font-weight="700" fill="#2B4C7E">ADP</text><rect x="294" y="81" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="327.0" y="102" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="360" y1="97" x2="364" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="375" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="375" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="389" y1="97" x2="393" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="404" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="404" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="286" y="140" font-size="13" fill="#5A6782">リン酸 2個</text><rect x="546" y="72" width="166" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="546" y="64" font-size="15" font-weight="700" fill="#2B4C7E">ATP</text><rect x="554" y="81" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="587.0" y="102" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="620" y1="97" x2="624" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="635" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="635" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="649" y1="97" x2="653" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="664" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="664" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="678" y1="97" x2="682" y2="97" stroke="#93A1B8" stroke-width="1.5"/><circle cx="693" cy="97" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="693" y="101.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="546" y="140" font-size="13" fill="#5A6782">リン酸 3個</text><rect x="14" y="158" width="732" height="186" rx="8" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/><text x="30" y="186" font-size="15" font-weight="700" fill="#2B4C7E">② adenylate kinase が、ADP 2個を ATP と AMP に変える</text><rect x="30" y="216" width="138" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="30" y="208" font-size="15" font-weight="700" fill="#2B4C7E">ADP</text><rect x="38" y="225" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="71.0" y="246" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="104" y1="241" x2="108" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="119" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="119" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="133" y1="241" x2="137" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="148" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="148" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="177" y="248" font-size="18" fill="#5A6782">＋</text><rect x="197" y="216" width="138" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="197" y="208" font-size="15" font-weight="700" fill="#2B4C7E">ADP</text><rect x="205" y="225" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="238.0" y="246" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="271" y1="241" x2="275" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="286" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="286" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="300" y1="241" x2="304" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="315" cy="241" r="11.5" fill="#E2725B" stroke="#B04A33" stroke-width="1.3"/><text x="315" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="364" y="250" font-size="24" text-anchor="middle" fill="#2B4C7E">⇄</text><rect x="394" y="216" width="166" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="394" y="208" font-size="15" font-weight="700" fill="#2B4C7E">ATP</text><rect x="402" y="225" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="435.0" y="246" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="468" y1="241" x2="472" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="483" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="483" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="497" y1="241" x2="501" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="512" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="512" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><line x1="526" y1="241" x2="530" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="541" cy="241" r="11.5" fill="#E2725B" stroke="#B04A33" stroke-width="1.3"/><text x="541" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><text x="570" y="248" font-size="18" fill="#5A6782">＋</text><rect x="590" y="216" width="108" height="50" rx="9" fill="#FFFFFF" stroke="#B9C4D6" stroke-width="1.3"/><text x="590" y="208" font-size="15" font-weight="700" fill="#2B4C7E">AMP</text><rect x="598" y="225" width="66" height="32" rx="7" fill="#EDF1F8" stroke="#93A1B8" stroke-width="1.2"/><text x="631.0" y="246" font-size="12" text-anchor="middle" fill="#3B4A63">アデノシン</text><line x1="664" y1="241" x2="668" y2="241" stroke="#93A1B8" stroke-width="1.5"/><circle cx="679" cy="241" r="11.5" fill="#86B39A" stroke="#4F8468" stroke-width="1.3"/><text x="679" y="245.5" font-size="12" font-weight="700" text-anchor="middle" fill="#123A28">P</text><path d="M315 274 C 360 314 500 314 537 278" fill="none" stroke="#B04A33" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mk1)"/><text x="426" y="332" font-size="12.5" text-anchor="middle" fill="#B04A33">この1個が移る</text><rect x="14" y="356" width="732" height="292" rx="8" fill="#F6F8FC"/><text x="30" y="384" font-size="15" font-weight="700" fill="#2B4C7E">③ 総量は変わらない。それでも AMP だけが数倍になる</text>
-<rect x="28" y="396" width="344" height="236" rx="8" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/>
-<text x="46" y="420" font-size="13" font-weight="700" fill="#5A6782">実際の量（同じ目盛り）</text>
-<line x1="44" y1="578" x2="356" y2="578" stroke="#B9C4D6" stroke-width="1.4"/>
-<rect x="56" y="448" width="30" height="130" fill="#86B39A" stroke="#4F8468" stroke-width="1.2"/>
-<rect x="96" y="565" width="30" height="13" fill="#7FA7CE" stroke="#3F6F9F" stroke-width="1.2"/>
-<rect x="136" y="576" width="30" height="2" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/>
-<rect x="216" y="459" width="30" height="119" fill="#86B39A" stroke="#4F8468" stroke-width="1.2"/>
-<rect x="256" y="557" width="30" height="21" fill="#7FA7CE" stroke="#3F6F9F" stroke-width="1.2"/>
-<rect x="296" y="574" width="30" height="4" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/>
-<text x="71" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">ATP</text><text x="111" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">ADP</text><text x="151" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">AMP</text>
-<text x="231" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">ATP</text><text x="271" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">ADP</text><text x="311" y="592" font-size="10.5" text-anchor="middle" fill="#3B4A63">AMP</text>
-<text x="111" y="612" font-size="12" font-weight="700" text-anchor="middle" fill="#5A6782">平常時</text>
-<text x="271" y="612" font-size="12" font-weight="700" text-anchor="middle" fill="#5A6782">ATP を1割使ったあと</text>
-<text x="200" y="440" font-size="11" text-anchor="middle" fill="#8A93A6">この目盛りでは、AMP はどちらも棒が見えない</text>
-<rect x="388" y="396" width="344" height="236" rx="8" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/>
-<text x="406" y="420" font-size="13" font-weight="700" fill="#5A6782">平常時を 100 としたときの変化</text>
-<line x1="404" y1="578" x2="716" y2="578" stroke="#B9C4D6" stroke-width="1.4"/>
-<line x1="404" y1="528" x2="716" y2="528" stroke="#E4E9F2" stroke-width="1.2" stroke-dasharray="4 4"/>
-<rect x="440" y="532" width="56" height="46" fill="#86B39A" stroke="#4F8468" stroke-width="1.2"/>
-<rect x="540" y="496" width="56" height="82" fill="#7FA7CE" stroke="#3F6F9F" stroke-width="1.2"/>
-<rect x="640" y="434" width="56" height="144" fill="#E2725B" stroke="#B04A33" stroke-width="1.2"/>
-<text x="468" y="524" font-size="13" font-weight="700" text-anchor="middle" fill="#4F8468">92</text>
-<text x="568" y="488" font-size="13" font-weight="700" text-anchor="middle" fill="#3F6F9F">163</text>
-<text x="668" y="426" font-size="13" font-weight="700" text-anchor="middle" fill="#B04A33">287</text>
-<text x="468" y="592" font-size="11" text-anchor="middle" fill="#3B4A63">ATP</text><text x="568" y="592" font-size="11" text-anchor="middle" fill="#3B4A63">ADP</text><text x="668" y="592" font-size="11" text-anchor="middle" fill="#3B4A63">AMP</text>
-<text x="406" y="546" font-size="10" fill="#C6CFDD">100</text>
-<text x="560" y="612" font-size="12" font-weight="700" text-anchor="middle" fill="#B04A33">ATP は 8% 減っただけ。AMP は約2.9倍</text>
-<rect x="14" y="660" width="732" height="78" rx="8" fill="#FFFFFF" stroke="#E4E9F2" stroke-width="1"/><text x="30" y="683" font-size="12.5" fill="#3B4A63">ATP : ADP : AMP ＝ 100 : 10 : 1 から ATP を1割消費し、adenylate kinase の平衡まで戻したとき——</text><text x="30" y="705" font-size="12.5" fill="#3B4A63"><tspan font-weight="700">ATP 91.9 ／ ADP 16.3 ／ AMP 2.9。合計は 111 のまま変わらない。</tspan></text><text x="30" y="727" font-size="12.5" fill="#3B4A63">リン酸が移るだけで分子の数は増減しない。この増幅を <tspan font-weight="700" fill="#6B4CA3">AMPK</tspan> が感知する。</text></g></svg></div><figcaption>ATP・ADP・AMPの違いは、付いているリン酸の数（3個・2個・1個）だけ。adenylate kinase は ADP 2個のあいだでリン酸を1個だけ移し、受け取った側を ATP、渡した側を AMP にする。ATP:ADP:AMP＝100:10:1 から ATP を1割使い、adenylate kinase の平衡まで戻すと ATP 91.9／ADP 16.3／AMP 2.9——合計は 111 のまま変わらない。同じ目盛りでは AMP の棒は見えないが、平常時を100として比べると、ATP が8%減っただけで AMP は約2.9倍になる。この増幅された合図を AMPK が感知する</figcaption></figure>
-<blockquote><strong>発展：細胞外へ出たATP。</strong> 組織の傷害などで局所的に細胞外へ放出されたATPは、エネルギー源としてではなく、<strong>P2受容体を介した危険信号</strong>として働きます。この役割は <span class="term" tabindex="0" data-t="DAMPs" data-d="本来は細胞内で役割を持つ分子（ATP・HMGB1・mtDNA など）が、壊れた細胞から外へ出て異常の合図として読まれるもの。場所が変わること自体が信号になる。感染がなくても炎症が始まる理由。">DAMPs</span> を扱う炎症と創傷治癒で説明します。</blockquote>
+<p><strong>ATP・ADP・AMPは、adenosineに付くリン酸の数が異なる分子</strong>です。ATPは3個、ADPは2個、AMPは1個のリン酸を持ちます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/atp_リン酸の数.svg" alt="ATPはリン酸3個、ADPは2個、AMPは1個。" width="760.0" height="330.0" loading="lazy"><figcaption>ATPはリン酸3個、ADPは2個、AMPは1個。adenosineの部分は共通する。</figcaption></figure>
+<p>細胞にある <strong>adenylate kinase</strong> は、<strong>ADP 2個のあいだでリン酸を1個やりとりさせます。</strong>渡された側は3個になって ATP に、渡した側は1個になって AMP になります。この反応は、細胞内で平衡に近い状態に保たれます。</p>
+<div class="reaction"><span class="reaction-label">ADPの間でリン酸を受け渡す反応</span><div class="reaction-equation" role="img" aria-label="ADPの間でリン酸を受け渡す反応：2 ADP ⇌ ATP ＋ AMP"><span class="reaction-side"><span class="reaction-species"><span>2 ADP</span><span class="reaction-name">アデノシン二リン酸</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">adenylate kinase</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>ATP</span><span class="reaction-name">アデノシン三リン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>AMP</span><span class="reaction-name">アデノシン一リン酸</span></span></span></div></div>
+<h3>AMPの増加が、エネルギー不足の合図になる</h3>
+<p>ATPが使われるとADPが増え、adenylate kinaseの反応でAMPも増えます。<strong>AMPはもともとATPより少ないため、少し増えるだけでも、元の量に対しては大きな割合の変化になります。</strong>このため、ATPの小さな減少を、AMPの増加から捉えられます。</p>
+<h3><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014">AMPK</span>が、エネルギー不足を感知する</h3>
+<p><strong>AMPの上昇は、エネルギー不足の合図です。</strong> それを感知するのが <strong>AMPK（AMP-activated protein kinase）</strong> です。 異化（ATPを作る側）を促し、同化（ATPを使う側）を抑える——<strong>代謝の向きを切り替える kinase</strong> です（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
+<blockquote><strong>発展：細胞外へ出たATP。</strong> 組織の傷害などで局所的に細胞外へ放出されたATPは、エネルギー源としてではなく、<strong>P2受容体を介した危険信号</strong>として働きます。この役割は <span class="term" tabindex="0" data-t="DAMPs" data-d="本来は細胞内で役割を持つ分子（ATP・HMGB1・mtDNA など）が、壊れた細胞から外へ出て異常の合図として読まれるもの。場所が変わること自体が信号になる。感染がなくても炎症が始まる理由。" data-u="glossary.html#term-6531e203aa2e">DAMPs</span> を扱う<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>で説明します。</blockquote>
 <h2>この章の到達点</h2>
-<ol class="goal"><li><strong>代謝は、壊す側（異化）と組み立てる側（同化）を含む反応のネットワーク。</strong> エネルギーの受け渡しは ATP がすべて引き受ける——<strong>分解して ATP を作り、その ATP を分解して仕事をする。</strong></li><li><strong>エネルギー源は糖質・脂質・タンパク質の3つ。</strong>最後は acetyl-CoA か TCA回路の中間体に合流するが、<strong>そこへ入る場所が違う</strong>。</li><li><strong>ATP は貯める分子ではない。</strong>在庫は数十グラムの桁でも、1日に作られて使われる総量は体重に相当する桁になる。貯蔵は glycogen と中性脂肪が担う。</li><li><strong>ATP が減ると AMP が大きく増え、AMPK がそれを感知する。</strong></li></ol>
-<blockquote><a class="chref" href="glycolysis.html">解糖系</a>では、電子を抜き取る最初の工程 <strong>解糖系（glycolysis）</strong> を見ます。glucose 1分子から得られる ATP は正味2個——この数字が、細胞の代謝の見方を決めます。</blockquote>
-
+<ol class="goal"><li><strong>代謝には、分解する異化と、合成する同化がある。</strong> ATPがエネルギーを受け渡します。</li><li><strong>エネルギー源は糖質・脂質・タンパク質の3つ。</strong>最後は acetyl-CoA か TCA回路の中間体に合流するが、<strong>そこへ入る場所が違う</strong>。</li><li><strong>ATPは使うたびに作り直す。</strong> 長期のエネルギー貯蔵はglycogenと中性脂肪が担います。</li><li><strong>ATP が減ると AMP が大きく増え、AMPK がそれを感知する。</strong></li></ol>
+<p><a class="chref" href="glycolysis.html">解糖系</a>では、細胞質でglucoseをpyruvateへ分解し、ATPを作る反応を扱います。</p>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>ATP産生とAMPによるエネルギー不足の検知を説明し、本文と図を整理</li><li><time>2026-08-24</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="membrane-transport.html"><span class="lbl">前へ</span>細胞膜と物質輸送</a><a class="next" href="glycolysis.html"><span class="lbl">次へ</span>解糖系</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -569,7 +661,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -596,8 +688,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -643,11 +744,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -659,15 +764,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

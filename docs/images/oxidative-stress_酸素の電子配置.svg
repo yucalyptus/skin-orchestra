@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" role="img" aria-labelledby="title desc">
+<title id="title">通常の酸素と一重項酸素の電子の違い</title>
+<desc id="desc">二つの反結合性πスター軌道に注目した簡略図。通常の酸素では別々の軌道に同じ向きのスピンの電子が一つずつ入る。一重項酸素の最低励起状態は、一方の軌道に逆向きの電子二つを描く代表的な配置で示す。厳密な量子状態の全体は表していない。</desc>
+<style>text{font-family:system-ui,-apple-system,"Hiragino Sans",sans-serif;fill:#1c1d23}.title{font-size:30px;font-weight:700}.head{font-size:26px;font-weight:700}.formula{font-size:42px;font-weight:700}.body{font-size:23px}.note{font-size:20px;fill:#494c54}.blue{fill:#1d4f91}</style>
+<rect width="960" height="580" fill="white"/>
+<text x="35" y="45" class="title">反応性は、不対電子の有無だけでは決まらない</text>
+<text x="225" y="101" class="head" text-anchor="middle">通常の酸素</text>
+<text x="735" y="101" class="head" text-anchor="middle">一重項酸素</text>
+<text x="225" y="156" class="formula" text-anchor="middle">³O₂</text>
+<text x="735" y="156" class="formula blue" text-anchor="middle">¹O₂</text>
+<text x="225" y="190" class="note" text-anchor="middle">エネルギーの低い基底状態</text>
+<text x="735" y="190" class="note" text-anchor="middle">エネルギーを受け取った励起状態</text>
+<g fill="none" stroke="#64748b" stroke-width="2"><rect x="120" y="225" width="90" height="75"/><rect x="240" y="225" width="90" height="75"/><rect x="630" y="225" width="90" height="75"/><rect x="750" y="225" width="90" height="75"/></g>
+<!-- 電子の矢印は移動経路ではなくスピンの向き。 -->
+<g fill="none" stroke="#1c1d23" stroke-width="4"><path d="M165 286 V240 m-10 12 10-12 10 12"/><path d="M285 286 V240 m-10 12 10-12 10 12"/></g>
+<g fill="none" stroke="#1d4f91" stroke-width="4"><path d="M657 286 V240 m-10 12 10-12 10 12"/><path d="M693 240 V286 m-10-12 10 12 10-12"/></g>
+<text x="480" y="207" class="note" text-anchor="middle">エネルギーを受け取る</text>
+<text x="480" y="234" class="note" text-anchor="middle">（光増感など）</text>
+<path d="M375 266 H579" fill="none" stroke="#64748b" stroke-width="3"/><path d="M579 266 l-15-8 v16 Z" fill="#64748b"/>
+<text x="225" y="345" class="body" text-anchor="middle">不対電子が2個ある</text>
+<text x="225" y="377" class="body" text-anchor="middle">多くの生体分子との直接反応は</text>
+<text x="735" y="345" class="body" text-anchor="middle">全体のスピンが0の状態</text>
+<text x="735" y="377" class="body blue" text-anchor="middle">スピンによる制限が変わり、</text>
+<text x="225" y="407" class="body" text-anchor="middle">スピンの制限で進みにくい</text>
+<text x="735" y="407" class="body blue" text-anchor="middle">不飽和脂質などと反応しやすい</text>
+<path d="M35 442 H925" stroke="#c5cdd6"/>
+<text x="35" y="474" class="note">□：軌道　↑・↓：電子のスピン（電子が移動する向きではありません）</text>
+<text x="35" y="506" class="note">二つのπ*軌道だけを抜き出した模式図です。¹Δgは複数の配置で表され、図はその一つです。</text>
+<text x="35" y="538" class="note">電子が対になれば反応性が高まる、という一般則を示す図ではありません。</text>
+</svg>

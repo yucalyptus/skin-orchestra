@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html" class="active">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html" class="active">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,24 +614,24 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="autophagy">
 <p class="kicker">基礎　／　掃除と作り直し</p>
 <h1 class="ch-title">オートファジーとリソソーム</h1>
-<p class="dateline">公開 2026-08-31</p>
-<blockquote>細胞の中では、タンパク質やオルガネラが働き続けるうちに古くなり、傷んでいきます。<strong><span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span>（オートファジー）</strong>は、それらを回収して<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>へ運び、分解して、材料として再利用する仕組みです。この章では、細胞内のリサイクルがどのように進み、なぜ皮膚や加齢にも関係するのかを見ます。<br><br><strong>先に読んでおく章</strong>：lysosomeというオルガネラ（→ <a class="chref" href="organelles.html">オルガネラ</a>）／栄養状態によって合成とautophagyを切り替える<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。">mTORC1</span>（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）</blockquote>
+<p class="dateline">公開 2026-08-31　／　最終更新 2026-09-13</p>
+<blockquote>細胞の中では、タンパク質やオルガネラが働き続けるうちに古くなり、傷んでいきます。<strong><span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span>（オートファジー）</strong>は、それらを回収して<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>（リソソーム）へ運び、分解して、材料として再利用する仕組みです。この章では、細胞内のリサイクルがどのように進み、なぜ皮膚や加齢にも関係するのかを見ます。<br><br><strong>先に読んでおく章</strong>：lysosomeというオルガネラ（→ <a class="chref" href="organelles.html">オルガネラ</a>）／栄養状態によって合成とautophagyを切り替える<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e">mTORC1</span>（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）</blockquote>
 <h2>この章の一言</h2>
 <blockquote class="lead">細胞は、<strong>古くなった部品を分解し、回収した材料で新しい部品を作る</strong>ことで、細胞内の品質を保っています。</blockquote>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_オートファジーとリソソーム-v2.webp" alt="オートファジーの一連の流れ。" loading="lazy"><figcaption>オートファジーの一連の流れ。①傷んだタンパク質やミトコンドリアを二重膜で包む。②膜が閉じてオートファゴソームになる。③リソソームと融合する。④酸性環境と加水分解酵素によって内容物を分解する。⑤生じたアミノ酸・脂肪酸・糖を細胞質へ戻し、エネルギー産生や新しい細胞成分の合成に再利用する</figcaption></figure>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　オートファジーは、細胞内のリサイクル</a></li><li><a href="#s2">2　包んで運び、lysosomeで分解する</a></li><li><a href="#s3">3　lysosomeは、分解工場と材料の回収口</a></li><li><a href="#s4">4　食後は作り、空腹時には分解して再利用する</a></li><li><a href="#s5">5　必要なものを選んで回収することもできる</a></li><li><a href="#s6">6　fluxは、リサイクルが最後まで進んでいるかを見る考え方</a></li><li><a href="#s7">7　なぜ皮膚とlongevityに関係するのか</a></li></ul></nav><h2 id="s1">1　オートファジーは、細胞内のリサイクル</h2>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_オートファジーとリソソーム-v2.webp" alt="オートファジーの一連の流れ。" width="1672" height="941" loading="lazy"><figcaption>オートファジーの一連の流れ。①傷んだタンパク質やミトコンドリアを二重膜で包む。②膜が閉じてオートファゴソームになる。③リソソームと融合する。④酸性環境と加水分解酵素によって内容物を分解する。⑤生じたアミノ酸・脂肪酸・糖を細胞質へ戻し、エネルギー産生や新しい細胞成分の合成に再利用する</figcaption></figure>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　オートファジーは、細胞内のリサイクル</a></li><li><a href="#s2">2　包んで運び、lysosomeで分解する</a></li><li><a href="#s3">3　lysosomeは、分解工場と材料の回収口</a></li><li><a href="#s4">4　食後は作り、空腹時には分解して再利用する</a></li><li><a href="#s5">5　回収する対象を選ぶ仕組み</a></li><li><a href="#s6">6　fluxは、リサイクルが最後まで進んでいるかを見る考え方</a></li><li><a href="#s7">7　なぜ皮膚とlongevityに関係するのか</a></li></ul></nav><h2 id="s1">1　オートファジーは、細胞内のリサイクル</h2>
 <p><strong>autophagy</strong>は、ギリシャ語の「自分」を意味する <em>auto</em> と、「食べる」を意味する <em>phagein</em> に由来します。細胞が自分の中身の一部を分解するため、「自食作用」と訳されます。</p>
 <p>ただし、目的は単に壊すことではありません。主な役割は、次の三つです。</p>
 <ul><li><strong class="accent-label">エネルギーや材料を確保する</strong>：分解して生じたアミノ酸・脂肪酸・糖を、エネルギー産生や新しい細胞成分の合成に使う。</li><li><strong class="accent-label">細胞内の品質を保つ</strong>：傷んだタンパク質やオルガネラを取り除き、細胞内に溜めない。</li><li><strong class="accent-label">ストレス下で細胞の生存を支える</strong>：飢餓時には細胞内の成分から材料を回収し、酸化ストレスなどで傷んだ成分を除去する。</li></ul>
 <p>特に、タンパク質の大きな凝集体や、傷んだミトコンドリアなどのオルガネラは、そのままでは処理できません。autophagyは、これらを<strong>膜でまとめて包み、lysosomeへ運びます</strong>。</p>
 <p>細胞には、ほかにも品質を保つ仕組みがあります。</p>
-<div class="tblwrap"><table><thead><tr><th>対処するもの</th><th>主な仕組み</th><th>何をするか</th></tr></thead><tbody><tr><td>形が崩れかけたタンパク質</td><td><strong>chaperone（<span class="term" tabindex="0" data-t="HSP" data-d="heat shock protein＝chaperone。変性しかけたタンパク質を壊さずに正しい形へ戻す一次防衛線で、熱・酸化・機械ストレスで誘導される。熱を使うデバイスの応答を細胞の言葉で読む入口になる。">HSP</span>）</strong></td><td>正しい形に折り直す</td></tr><tr><td>不要になった個々のタンパク質</td><td><strong><span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。">ubiquitin–proteasome</span>系</strong></td><td>目印を付けて一つずつ分解する</td></tr><tr><td>大きな凝集体やオルガネラ</td><td><strong>autophagy–lysosome系</strong></td><td>膜で包み、まとめて分解する</td></tr></tbody></table></div>
-<p>これらが協力して、細胞内のタンパク質やオルガネラの品質を保っています。この状態を<strong>proteostasis（タンパク質恒常性）</strong>と呼びます（→ <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。">Hallmarks of Aging</span>）。</p>
-<p>粗面ERでは、折り損じたタンパク質が増えるとER stressを感知し、UPRによって折りたたみと分解の能力を高めます。ERADで一本ずつ処理できない凝集体や、傷んだER膜の一部は、autophagyがlysosomeへ運びます（→ <a class="chref" href="organelles.html">オルガネラ</a>）。</p>
-<p>熱刺激で誘導されるHSP70・<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。">HSP47</span>と美容デバイスとの関係は熱・光・機械刺激、<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span>専用chaperoneであるHSP47の働きは線維芽細胞とコラーゲンで扱います。</p>
+<div class="tblwrap"><table><thead><tr><th>対処するもの</th><th>主な仕組み</th><th>何をするか</th></tr></thead><tbody><tr><td>形が崩れかけたタンパク質</td><td><strong>chaperone（<span class="term" tabindex="0" data-t="HSP" data-d="heat shock protein＝chaperone。変性しかけたタンパク質を壊さずに正しい形へ戻す一次防衛線で、熱・酸化・機械ストレスで誘導される。熱を使うデバイスの応答を細胞の言葉で読む入口になる。" data-u="glossary.html#term-d010e3bed310">HSP</span>）</strong></td><td>正しい形に折り直す</td></tr><tr><td>不要になった個々のタンパク質</td><td><strong><span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。" data-u="glossary.html#term-7841be8283cb">ubiquitin–proteasome</span>系</strong></td><td>目印を付けて一つずつ分解する</td></tr><tr><td>大きな凝集体やオルガネラ</td><td><strong>autophagy–lysosome系</strong></td><td>膜で包み、まとめて分解する</td></tr></tbody></table></div>
+<p>これらが協力して、タンパク質の合成・折りたたみ・分解の釣り合いを保っています。この維持の仕組みを<strong>proteostasis（タンパク質恒常性）</strong>と呼びます（→ <a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
+<p>粗面ERでは、折り損じたタンパク質が増えると<strong>小胞体ストレス（ER stress）</strong>への応答が起こります。折りたたみや個々のタンパク質の分解で対処しきれない凝集体、傷んだER膜の一部は、autophagyがlysosomeへ運びます（→ <a class="chref" href="organelles.html">オルガネラ</a>）。</p>
+<p>熱刺激で誘導されるHSP70・<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。" data-u="glossary.html#term-19a718751983">HSP47</span>と美容デバイスとの関係は熱・光・機械刺激、<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span>専用chaperoneであるHSP47の働きは線維芽細胞とコラーゲンで扱います。</p>
 <h2 id="s2">2　包んで運び、lysosomeで分解する</h2>
 <p>この章で扱うのは、細胞質の一部を二重膜で包む<strong>macroautophagy</strong>です。一般に「autophagy」と言うと、この仕組みを指します。</p>
 <p>流れは、次の五つです。</p>
@@ -519,41 +640,43 @@ h2{margin-top:24pt}
 <h2 id="s3">3　lysosomeは、分解工場と材料の回収口</h2>
 <p><strong>lysosome（リソソーム）</strong>は、不要なものを捨てるだけの袋ではありません。分解したものから材料を回収し、細胞質へ戻す<strong>リサイクル工場</strong>です。</p>
 <ul><li><strong>内部を酸性にする</strong>：膜にあるv-ATPaseがH⁺を汲み入れ、内部をpH 4.5〜5前後に保ちます。</li><li><strong>分解する</strong>：酸性環境で働く酵素が、タンパク質・脂質・糖・核酸を分解します。</li><li><strong>材料を戻す</strong>：分解産物を輸送体から細胞質へ戻し、エネルギー産生や合成に再利用します。</li></ul>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_lysosome-v2.webp" alt="リソソームの四つの役割。" loading="lazy"><figcaption>リソソームの四つの役割。オートファゴソームと融合し、v-ATPaseでHプラスを内部へ汲み入れて酸性に保ち、内容物を小さな分子へ分解し、アミノ酸・脂肪酸・糖を細胞質へ戻す。リソソーム膜の外側ではmTORC1が栄養状態を読み取る</figcaption></figure>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_lysosome-v2.webp" alt="リソソームの四つの役割。" width="1536" height="1024" loading="lazy"><figcaption>リソソームの四つの役割。オートファゴソームと融合し、v-ATPaseでHプラスを内部へ汲み入れて酸性に保ち、内容物を小さな分子へ分解し、アミノ酸・脂肪酸・糖を細胞質へ戻す。リソソーム膜の外側ではmTORC1が栄養状態を読み取る</figcaption></figure>
 <p>lysosomeの膜の外側には、栄養状態を受け取る<strong>mTORC1</strong>も集まります。lysosomeは、分解と材料回収の場所であると同時に、<strong>細胞が「いま材料は足りているか」を判断する場所</strong>でもあります（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
 <p>酸性化、autophagosomeとの融合、酵素による分解、材料の排出のどこかが止まれば、リサイクルは途中で滞ります。</p>
 <h2 id="s4">4　食後は作り、空腹時には分解して再利用する</h2>
 <p>食後はアミノ酸とインスリンが増え、mTORC1の活性が高まりやすくなります。すると、タンパク質や脂質を<strong>作る方向</strong>が優先され、autophagyは抑えられます。これは成長や組織の修復に必要な、正常な反応です。</p>
-<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンが減ります。細胞内のエネルギーが不足すると<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span>も働き、mTORC1の活性が下がります。するとautophagyが始まりやすくなり、細胞内の成分から材料を回収します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
+<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンが減ります。細胞内のエネルギーが不足すると<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014">AMPK</span>も働き、mTORC1の活性が下がります。するとautophagyが始まりやすくなり、細胞内の成分から材料を回収します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
 <p>大切なのは、mTORC1とautophagyのどちらか一方を常に働かせることではありません。<strong>栄養が入ったら作り、空腹時には分解して再利用する。細胞は、状態に応じて二つを切り替えています。</strong></p>
-<h2 id="s5">5　必要なものを選んで回収することもできる</h2>
+<h2 id="s5">5　回収する対象を選ぶ仕組み</h2>
 <p>autophagyは、細胞質の一部をまとめて取り込む場合と、特定の対象を選んで取り込む場合があります。</p>
-<div class="tblwrap"><table><thead><tr><th>回収するもの</th><th>呼び方</th><th>この先の章</th></tr></thead><tbody><tr><td>傷んだミトコンドリア</td><td><strong><span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。">mitophagy</span></strong></td><td>→ <a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a></td></tr><tr><td>タンパク質の凝集体</td><td><strong>aggrephagy</strong></td><td>proteostasisに関係する</td></tr><tr><td>小胞体の一部</td><td><strong>ER-phagy</strong></td><td>ERの量と品質を調節する</td></tr><tr><td>脂肪滴</td><td><strong>lipophagy</strong></td><td>脂質を分解へ回す</td></tr></tbody></table></div>
-<p>選択できるのは、回収する対象とautophagosomeの膜をつなぐ<strong>cargo <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。">receptor</span>（積み荷受容体）</strong>があるからです。たとえばp62/SQSTM1は、目印の付いたタンパク質と膜を橋渡しします。個々のcargo receptorの名前を覚えるより、<strong>必要なものを選んでlysosomeへ届ける仕組みがある</strong>と理解することが大切です。</p>
-<h2 id="s6">6　<span class="term" tabindex="0" data-t="flux" data-d="隔離 → 分解 → 再利用という流れが最後まで回っている速さ。溜まっている量（スナップショット）からは高いか低いかを判断できず、分解を短時間止めたペア比較で読む。">flux</span>は、リサイクルが最後まで進んでいるかを見る考え方</h2>
+<div class="tblwrap"><table><thead><tr><th>回収するもの</th><th>呼び方</th><th>主な役割・関連する章</th></tr></thead><tbody><tr><td>傷んだミトコンドリア</td><td><strong><span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。" data-u="glossary.html#term-5c4e142d317d">mitophagy</span></strong></td><td>→ <a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a></td></tr><tr><td>タンパク質の凝集体</td><td><strong>aggrephagy</strong></td><td>proteostasisに関係する</td></tr><tr><td>小胞体の一部</td><td><strong>ER-phagy</strong></td><td>ERの量と品質を調節する</td></tr><tr><td>脂肪滴</td><td><strong>lipophagy</strong></td><td>脂質を分解へ回す</td></tr></tbody></table></div>
+<p>回収する対象と、それを包む膜をつなぐのが<strong>cargo <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span>（積み荷受容体）</strong>です。タンパク質の凝集体を回収する場合には、<strong>p62/SQSTM1</strong>がユビキチンの目印と、膜に結合した<strong><span class="term" tabindex="0" data-t="LC3" data-d="autophagosome膜に埋め込まれるタンパク質。ATG7・ATG3でPEが付き、可溶性のLC3-Iから膜結合型のLC3-IIになって荷物をつなぐ取っ手になる。LC3-IIの量だけではfluxを読めない。" data-u="glossary.html#term-8ba1733c8ccb">LC3</span></strong>を橋渡しします。この結合によって、凝集体を膜で包む過程が進みます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17580304/" target="_blank" rel="noopener">PMID 17580304</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_選択的回収_簡潔版.webp" alt="ユビキチンの目印が付いた凝集体を、p62が膜上のLC3につなぐ。" width="1536" height="1024" loading="lazy"><figcaption>ユビキチンの目印が付いた凝集体を、p62が膜上のLC3につなぐ。積み荷受容体の種類は回収する対象によって異なる。分子の形と配置は模式図。</figcaption></figure>
+<h2 id="s6">6　<span class="term" tabindex="0" data-t="flux" data-d="隔離 → 分解 → 再利用という流れが最後まで回っている速さ。溜まっている量（スナップショット）からは高いか低いかを判断できず、分解を短時間止めたペア比較で読む。" data-u="glossary.html#term-ab35ba20c808">flux</span>は、リサイクルが最後まで進んでいるかを見る考え方</h2>
 <p>autophagyの働きを評価するとき、<strong>autophagosomeの数だけを見ても、リサイクルが順調かどうかは分かりません。</strong>autophagosomeが多く見える場合には、二つの可能性があります。</p>
 <ul><li>次々に作られ、lysosomeで順調に処理されている。</li><li>作られたものの、融合や分解が止まり、途中で溜まっている。</li></ul>
 <p>この二つを区別するには、<strong>包むところから、lysosomeでの分解と材料回収まで、すべての工程が進んでいるか</strong>を見る必要があります。この一連の流れを、<strong>autophagic flux（オートファジー・フラックス）</strong>と呼びます。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_flux-v2.webp" alt="オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。" loading="lazy"><figcaption>オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。袋が多くてもオートファジーがよく働いているとは限らず、fluxは包むところから分解・回収まで最後まで進む流れを指す</figcaption></figure>
-<p><strong>autophagosomeの数は、途中の一場面です。fluxは、入口から出口までの流れを見ます。</strong></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_flux-v2.webp" alt="オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。" width="1672" height="941" loading="lazy"><figcaption>オートファゴソームが形成から融合・分解・再利用まで最後まで流れる場合と、融合または分解が止まって袋が蓄積する場合の比較。袋が多くてもオートファジーがよく働いているとは限らず、fluxは包むところから分解・回収まで最後まで進む流れを指す</figcaption></figure>
 <h2 id="s7">7　なぜ皮膚とlongevityに関係するのか</h2>
 <p>細胞が働き続けるあいだ、タンパク質やオルガネラには少しずつ損傷が生じます。autophagyは、それらを回収して細胞内の品質を保つ仕組みです。加齢に伴ってautophagyの働きは低下する傾向があり、分解と再利用の滞りは、加齢性変化や疾患との関連が研究されています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34507801/" target="_blank" rel="noopener">PMID 34507801</a>）。</p>
-<p>皮膚は、紫外線・酸化ストレス・熱・病原体などに繰り返しさらされます。autophagyは、<strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。">keratinocyte</span>の分化とmelanosomeの分解、<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。">melanocyte</span>のストレス応答と生存、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。">fibroblast</span>の細胞内品質と<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。">ECM</span>の維持</strong>に関係します（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31417903/" target="_blank" rel="noopener">PMID 31417903</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p>
-<aside class="memo"><p class="memo-h">ちなみに ―― autophagy低下は、低色素化にも過色素化にもつながる</p><p>加齢・紫外線・酸化ストレス・代謝ストレスなどによってautophagyの調節が乱れると、傷んだタンパク質やオルガネラを処理しにくくなり、細胞の機能が低下します。ただし、<strong>どの細胞で強く起こるかによって、皮膚に現れる変化は異なります。</strong></p>
-<ul><li><strong>melanocyte</strong>：<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span>や傷んだオルガネラを処理しにくくなり、<span class="term" tabindex="0" data-t="senescence" data-d="生きて代謝もしているが、増殖刺激を与えても分裂周期に戻らない状態。死細胞でも可逆な休止（G0）でもなく、生きたままSASPを出し続ける。害になるのは居座って出し続けたとき。">senescence</span>や<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。">apoptosis</span>に傾くと、melanocyteの減少と低色素化につながりえます。</li><li><strong>keratinocyte</strong>：分化や角化が乱れるだけでなく、melanocyteから受け取ったmelanosomeを分解しにくくなります。そのため色素が残り、日光黒子や肝斑などの過色素化に関係する可能性があります。</li><li><strong>fibroblast</strong>：酸化・変性したタンパク質やDNA損傷が蓄積し、type I <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。">procollagen</span>・hyaluronan・<span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。">elastin</span>などのECMを維持する働きが低下します。これは真皮の老化や脆弱化につながります。</li></ul>
-<p>vitiligoのmelanocyteでは、<strong>抗酸化応答とautophagyの両方が弱くなる仕組み</strong>が報告されています。酸化ストレスを感知した<span class="term" tabindex="0" data-t="Nrf2" data-d="平常時はKEAP1に捕まって分解される転写因子。酸化ストレスでKEAP1が修飾されると核へ移り、AREを介して抗酸化酵素群を一斉に誘導する。Nrf2自身がROSを消すのではなく、増産の号令を出す側。">Nrf2</span>は、抗酸化酵素とともに<strong>p62</strong>を増やします。p62は、目印の付いた障害タンパク質などをautophagosomeへ運ぶため、Nrf2–p62経路が十分に働かないと、抗酸化応答だけでなくautophagyによる回収も弱くなります。また、<span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。">HSF1</span>は、autophagosomeを作るために必要な<strong>ATG5とATG12</strong>の発現を高めます。HSF1–ATG5/12経路が弱いと、傷んだ成分を包むautophagosomeを作りにくくなります。</p>
+<p>皮膚は、紫外線・酸化ストレス・熱・病原体などに繰り返しさらされます。autophagyは、<strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>の分化とmelanosomeの分解、<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。" data-u="glossary.html#term-3f14f8b30147">melanocyte</span>のストレス応答と生存、<span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。" data-u="glossary.html#term-9848bc37cb12">fibroblast</span>の細胞内品質と<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>の維持</strong>に関係します（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31417903/" target="_blank" rel="noopener">PMID 31417903</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p>
+<aside class="memo"><h3 class="memo-h">ちなみに ―― autophagy低下は、低色素化にも過色素化にもつながる</h3><p>加齢・紫外線・酸化ストレス・代謝ストレスなどによってautophagyの調節が乱れると、傷んだタンパク質やオルガネラを処理しにくくなり、細胞の機能が低下します。ただし、<strong>どの細胞で強く起こるかによって、皮膚に現れる変化は異なります。</strong></p>
+<ul><li><strong>melanocyte</strong>：<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。" data-u="glossary.html#term-88d24b96933a">ROS</span>や傷んだオルガネラを処理しにくくなり、<span class="term" tabindex="0" data-t="senescence" data-d="生きて代謝もしているが、増殖刺激を与えても分裂周期に戻らない状態。死細胞でも可逆な休止（G0）でもなく、生きたままSASPを出し続ける。害になるのは居座って出し続けたとき。" data-u="glossary.html#term-24501b34c7c0">senescence</span>や<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span>に傾くと、melanocyteの減少と低色素化につながりえます。</li><li><strong>keratinocyte</strong>：分化や角化が乱れるだけでなく、melanocyteから受け取ったmelanosomeを分解しにくくなります。そのため色素が残り、日光黒子や肝斑などの過色素化に関係する可能性があります。</li><li><strong>fibroblast</strong>：酸化・変性したタンパク質やDNA損傷が蓄積し、type I <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。" data-u="glossary.html#term-f2e750a6fc61">procollagen</span>・hyaluronan・<span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。" data-u="glossary.html#term-b160c75bd9a0">elastin</span>などのECMを維持する働きが低下します。これは真皮の老化や脆弱化につながります。</li></ul>
+<h4>白斑では、抗酸化と回収の働きがともに弱まることがある</h4>
+<p>vitiligoのmelanocyteでは、<strong>抗酸化応答とautophagyの両方が弱くなる仕組み</strong>が報告されています。酸化ストレスを感知した<span class="term" tabindex="0" data-t="Nrf2" data-d="平常時はKEAP1に捕まって分解される転写因子。酸化ストレスでKEAP1が修飾されると核へ移り、AREを介して抗酸化酵素群を一斉に誘導する。Nrf2自身がROSを消すのではなく、増産の号令を出す側。" data-u="glossary.html#term-ab9ff70dbdac">Nrf2</span>は、抗酸化酵素とともに<strong>p62</strong>を増やします。p62は、目印の付いた障害タンパク質などをautophagosomeへ運ぶため、Nrf2–p62経路が十分に働かないと、抗酸化応答だけでなくautophagyによる回収も弱くなります。</p>
+<p>また、転写を調節する<span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。" data-u="glossary.html#term-b3f5891ccf14">HSF1</span>は、autophagosomeを作るために必要な<strong>ATG5とATG12</strong>の発現を高めます。HSF1–ATG5/12経路が弱いと、傷んだ成分を包むautophagosomeを作りにくくなります。</p>
 <p>その結果、ROSや傷んだミトコンドリアなどが蓄積し、melanocyteはapoptosisに傾きやすくなります。ただし、<strong>vitiligoはこの経路だけで起こる病気ではありません。</strong>酸化ストレスとautophagyの異常がmelanocyteを傷つきやすくし、免疫による攻撃なども加わってmelanocyteが失われ、白斑として現れると考えられています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28186139/" target="_blank" rel="noopener">PMID 28186139</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34780715/" target="_blank" rel="noopener">PMID 34780715</a>）。</p>
-<p>つまり、<strong>autophagy低下による色の変化は、どの細胞の、どの働きが障害されるかによって異なります。</strong>melanocyteの生存が損なわれれば低色素化に、keratinocyteでmelanosomeの分解が滞れば過色素化につながりえます。「autophagyが下がるとメラニンが増える／減る」と一方向で考えるのではなく、melanocyteで作る、keratinocyteへ渡す、keratinocyteで分解する、という各段階を分けて見る必要があります（Kovacs D et al., <em>Cells.</em> 2022;11:2999. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p></aside>
-<p>過栄養では、インスリン・IGF-1からmTORC1へ届く刺激が高まり、autophagyとの切り替えが乱れることがあります。反対に、絶食やrapamycinなど、longevity研究で注目される介入の一部は、mTORC1とautophagyに作用します。ただし、<strong>autophagyに関係することと、健康な人の寿命延長や美容効果が証明されていることは別です。</strong>介入の評価は後の章で扱います（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>、<span class="term" tabindex="0" data-t="senolytic" data-d="老化細胞が生存を依存する抗アポトーシス経路（SCAP）を外して死なせ、数そのものを減らす介入。SASPだけ抑えて細胞は残すsenomorphicとは別物。ヒトの美容アウトカムは空欄。">senolytic</span>・mitophagy関連介入）。</p>
-<aside class="column"><p class="col-t">コラム</p><p class="col-h">見えない分解を、見える研究へ</p><p>オートファジーらしい構造は1950年代から電子顕微鏡で観察され、1963年には<strong>autophagy</strong>という名前も与えられていました。それでも、細胞内で短時間に進む分解の過程を追うことは難しく、どの遺伝子が、どの順番で働くのかは長く分かりませんでした。</p>
+<p>色素の変化は、<strong>melanocyteの生存、メラニンの産生と受け渡し、keratinocyte内での分解</strong>を分けて見ると理解しやすくなります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p></aside>
+<p>過栄養では、インスリン・IGF-1からmTORC1へ届く刺激が高まり、autophagyとの切り替えが乱れることがあります。反対に、絶食やrapamycinなど、longevity研究で注目される介入の一部は、mTORC1とautophagyに作用します。ただし、<strong>autophagyに関係することと、健康な人の寿命延長や美容効果が証明されていることは別です。</strong>介入の評価は後の章で扱います（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>、<span class="term" tabindex="0" data-t="senolytic" data-d="老化細胞が生存を依存する抗アポトーシス経路（SCAP）を外して死なせ、数そのものを減らす介入。SASPだけ抑えて細胞は残すsenomorphicとは別物。ヒトの美容アウトカムは空欄。" data-u="glossary.html#term-3f126e9e5140">senolytic</span>・mitophagy関連介入）。</p>
+<aside class="column"><p class="col-t">コラム</p><h3 class="col-h">見えない分解を、見える研究へ</h3><p>オートファジーらしい構造は1950年代から電子顕微鏡で観察され、1963年には<strong>autophagy</strong>という名前も与えられていました。それでも、細胞内で短時間に進む分解の過程を追うことは難しく、どの遺伝子が、どの順番で働くのかは長く分かりませんでした。</p>
 <p>大隅良典教授は、当時あまり注目されていなかった<strong>酵母の液胞</strong>を研究対象に選びました。そして、液胞の分解酵素を欠く酵母なら、運び込まれたものが壊されず、中に溜まって見えるのではないかと考えます。酵母を飢餓状態にすると、実際に液胞内へ小さな構造が次々に蓄積しました。<strong>すぐに消えてしまう現象を、分解を止めることで観察できるようにした</strong>のです。1993年にはオートファジーができない酵母の変異株を調べ、仕組みに必要な遺伝子群を明らかにしました。</p>
-<p>この発見だけで、現在のオートファジー研究が完成したわけではありません。酵母で見つかった仕組みが哺乳類にもあることを確かめ、細胞内でその動きを追える方法を作る必要がありました。吉森保教授らは、<strong><span class="term" tabindex="0" data-t="LC3" data-d="autophagosome膜に埋め込まれるタンパク質。ATG7・ATG3でPEが付き、可溶性のLC3-Iから膜結合型のLC3-IIになって荷物をつなぐ取っ手になる。LC3-IIの量だけではfluxを読めない。">LC3</span>というタンパク質がautophagosomeの膜に結合する</strong>ことを示しました。LC3を目印にすることで、哺乳類の細胞でもautophagosomeを観察できるようになりました。研究者の少ない時代から続いた観察と試行錯誤が、酵母から哺乳類、さらに疾患や加齢の研究へつながり、2016年のノーベル生理学・医学賞に至りました。</p>
+<p>この発見だけで、現在のオートファジー研究が完成したわけではありません。酵母で見つかった仕組みが哺乳類にもあることを確かめ、細胞内でその動きを追える方法を作る必要がありました。吉森保教授らは、<strong>LC3というタンパク質がautophagosomeの膜に結合する</strong>ことを示しました。LC3を目印にすることで、哺乳類の細胞でもautophagosomeを観察できるようになりました。研究者の少ない時代から続いた観察と試行錯誤が、酵母から哺乳類、さらに疾患や加齢の研究へつながり、2016年のノーベル生理学・医学賞に至りました。</p>
 <p>吉森保先生の『生命を守るしくみ　オートファジー』（講談社ブルーバックス、2022年）は、オートファジーがまだほとんど注目されず、研究者も少なかった時代から始まります。予算も設備も限られるなかで、見えない現象をどうすれば観察できるのかを考え、一つずつ方法を作り、発見を次の研究へつないでいった人たちの努力が描かれています。<strong>私がこの本を面白いと感じたのは、いまでは重要だと分かっている仕組みが、最初から注目されていたわけではなく、研究者の工夫と粘り強さによって少しずつ明らかになった過程が見えるからです。</strong>オートファジーをもう少し知りたい人に、おすすめしたい一冊です。</p>
-<p>（参考文献・推薦図書：[吉森保『生命を守るしくみ　オートファジー――老化、寿命、病気を左右する精巧なメカニズム』講談社ブルーバックス、2022年](https://www.kodansha.co.jp/book/products/0000347678)／[NobelPrize.org「Yoshinori Ohsumi – Biographical」](https://www.nobelprize.org/prizes/medicine/2016/ohsumi/biographical/)／Kabeya Y et al., <em>EMBO J.</em> 2000;19:5720–5728. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11060023/" target="_blank" rel="noopener">PMID 11060023</a>）</p></aside>
+<p>（参考文献・推薦図書：<a class="ext" href="https://www.kodansha.co.jp/book/products/0000347678" target="_blank" rel="noopener">吉森保『生命を守るしくみ　オートファジー――老化、寿命、病気を左右する精巧なメカニズム』講談社ブルーバックス、2022年</a>／<a class="ext" href="https://www.nobelprize.org/prizes/medicine/2016/ohsumi/biographical/" target="_blank" rel="noopener">NobelPrize.org「Yoshinori Ohsumi – Biographical」</a>／Kabeya Y et al., <em>EMBO J.</em> 2000;19:5720–5728. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11060023/" target="_blank" rel="noopener">PMID 11060023</a>）</p></aside>
 <h2>この章の到達点</h2>
 <ol class="goal"><li>autophagyは、<strong>古くなったタンパク質やオルガネラを分解し、材料を再利用することで、細胞内の品質とストレス下の生存を支える仕組み</strong>である。</li><li><strong>autophagosome</strong>は対象を包んで運び、<strong>lysosome</strong>が酸性環境で分解する。</li><li>lysosomeは、分解工場であると同時に、材料の回収口と栄養感知の場でもある。</li><li>食後は合成が進み、空腹時には分解と再利用が進みやすい。mTORC1とautophagyは、状態に応じて切り替わる。</li><li><strong>flux</strong>は、包むところから分解・回収までが最後まで進んでいるかを評価する考え方である。</li></ol>
-<blockquote>次の<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>では、この仕組みをミトコンドリアに当てはめます。傷んだミトコンドリアを選んで回収するautophagyが、<strong>mitophagy</strong>です。</blockquote>
-
+<blockquote><a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>では、この仕組みをミトコンドリアに当てはめます。傷んだミトコンドリアを選んで回収するautophagyが、<strong>mitophagy</strong>です。</blockquote>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>説明の順序と重複を整理し、既存イラストを再掲載・調整</li><li><time>2026-08-31</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="mtorc1.html"><span class="lbl">前へ</span>mTORC1――タンパク質合成を調節する仕組み</a><a class="next" href="mito-quality-control.html"><span class="lbl">次へ</span>ミトコンドリア品質管理</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -562,7 +685,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -589,8 +712,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -636,11 +768,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -652,15 +788,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -495,6 +616,75 @@ h2{margin-top:24pt}
 <main class="main"><div class="col">
 <section class="sec-rule"><h1>更新履歴</h1>
 <blockquote class="lead">確認できた章から順に公開しています。新しく公開した章と、あとから直した内容が新しい順に並びます。</blockquote>
+<h2 class="cl-date">2026-09-14</h2><ul class="cl">
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="senescence.html">細胞老化</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="cell-death.html">細胞死</a><span class="note">初公開</span></li>
+<li><span class="k new">新規</span><a href="ecm.html">細胞外基質（ECM）</a><span class="note">初公開。ECMを主題に全身の構造・構成成分・接着と情報伝達・更新を整理し、mechanotransductionをその一節に再配置</span></li>
+<li><span class="k upd">改訂</span><a href="cell-cycle.html">細胞周期</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="wound-healing.html">炎症と創傷治癒</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="melanocytes.html">メラノサイトと色素形成</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a><span class="note">初公開</span></li>
+<li><span class="k upd">改訂</span><a href="hallmarks-of-aging.html">Hallmarks of Aging</a><span class="note">初公開</span></li>
+</ul>
+<h2 class="cl-date">2026-09-13</h2><ul class="cl">
+<li><span class="k upd">改訂</span><a href="electron-transport.html">電子伝達系</a><span class="note">電子・H⁺・ATPの流れを中心に本文と図を整理し、伝わりやすい旧イラストを再採用</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">ROS・抗酸化システムの説明と図を見直し、重複と表示を整理</span></li>
+<li><span class="k upd">改訂</span><a href="glycolysis.html">解糖系</a><span class="note">代謝の流れと図を見直し、臨床コラムを整理・復元</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">第8節を更新の乱れと皮膚の変化へ改稿。製品pHの話を外用総論へ移し、500 Daルールを補足</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">分化の補足を材料作り・AとDの違い・細胞ごとの反応に整理し、重複説明を削減</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">レチノイドの反応は薬と細胞で変わることを、角化細胞と皮脂腺細胞の例で説明</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">分化の補足に活性型Dとレチノイン酸の作用比較を追加し、分化促進と一括りにしない説明へ整理</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">レチノイドの表皮増殖・分化への作用を説明してからRXRの共有へつなぐ構成に修正</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">VDRの補足に乾癬治療への接続とRXRの共有を追記し、レチノイド章へリンク</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">章末の補足を対応する本文の直後へ移し、見出しで開閉できる折りたたみに変更</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">補足を構造・分化・バリア形成・落屑・真皮への信号の5節に整理し、関連する分子の説明を統合</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">弱酸性の由来・バリアと微生物への役割・スキンケア製品のpHを扱うコラムを追加</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">バリア図の上下を顆粒層から角層へ統一し、核の細胞内分解と脂質・酵素の分泌を区別</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">分裂後の分化・成熟と、角層になる際の脱核を順序で説明</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">細胞と4層・DEJの構造から始め、更新・バリア形成・落屑・美容医療へ進む順序に再構成</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">本文を役割と流れから読める構成に整理し、分子・実験の詳細を末尾の補足へ集約</span></li>
+<li><span class="k new">新規</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">表皮の更新と角層の説明を見直し、図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a><span class="note">脂肪の利用・MCT・ケトン体・脂肪酸新生の説明と図を臨床医向けに再構成</span></li>
+<li><span class="k upd">改訂</span><a href="membrane-transport.html">細胞膜と物質輸送</a><span class="note">膜透過と受容体・能動輸送の説明を整理し食事コラムの区切りを改善</span></li>
+<li><span class="k new">新規</span><a href="senescence.html">細胞老化</a><span class="note">皮膚の加齢と細胞老化の違いを明確化し、分子機序・マーカー・図表を整理</span></li>
+<li><span class="k upd">改訂</span><a href="cell-death.html">細胞死</a><span class="note">細胞死の仕組みと炎症・組織修復の関係を整理し、図表と補足を調整</span></li>
+<li><span class="k new">新規</span><a href="cell-cycle.html">細胞周期</a><span class="note">細胞周期の説明と図を整理し、細胞の合成活動と分裂の違いを明確化</span></li>
+<li><span class="k upd">改訂</span><a href="cell.html">細胞とは何か</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="wound-healing.html">炎症と創傷治癒</a><span class="note">炎症から修復までの説明・時間経過・臨床への接続と図表を整理</span></li>
+<li><span class="k upd">改訂</span><a href="receptors-signaling.html">受容体と細胞内シグナル</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="atp.html">代謝とATP</a><span class="note">ATP産生とAMPによるエネルギー不足の検知を説明し、本文と図を整理</span></li>
+<li><span class="k new">新規</span><a href="melanocytes.html">メラノサイトと色素形成</a><span class="note">構造・合成・調節・受け渡し・消失の順に整理し、詳細を本文直後の折りたたみへ移動。色素とUVに関する断定および図の経路を修正</span></li>
+<li><span class="k new">新規</span><a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a><span class="note">ATP・酸化還元・ROS・炎症の関係とMiDAS・品質管理の説明を整理</span></li>
+<li><span class="k upd">改訂</span><a href="mito-quality-control.html">ミトコンドリア品質管理</a><span class="note">構成を維持して説明の順序・見出し・図の説明を整理</span></li>
+<li><span class="k upd">改訂</span><a href="autophagy.html">オートファジーとリソソーム</a><span class="note">説明の順序と重複を整理し、既存イラストを再掲載・調整</span></li>
+<li><span class="k upd">改訂</span><a href="cell-types.html">オルガネラはどう連携するか</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="organelles.html">オルガネラ</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="epigenome.html">エピゲノム</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a><span class="note">構成を維持して説明の順序・見出し・図の説明を整理</span></li>
+<li><span class="k upd">改訂</span><a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a><span class="note">構成を維持して説明の順序・見出し・図の説明を整理</span></li>
+<li><span class="k upd">改訂</span><a href="tca-cycle.html">TCA回路</a><span class="note">3本柱に再構成し、PDHと5種類の補酵素の表・ASTとALT・コラーゲン成熟を本文に配置、詳しい反応は対応する本文の直後に折りたたみで配置</span></li>
+<li><span class="k upd">改訂</span><a href="nad.html">NAD⁺</a><span class="note">電子の受け渡しとATP産生を軸に、NAD⁺/NADHのバランス・修復に伴う消費・再合成を整理</span></li>
+<li><span class="k new">新規</span><a href="hallmarks-of-aging.html">Hallmarks of Aging</a><span class="note">Hallmarksの分類と介入の目的・代表例を整理</span></li>
+<li><span class="k upd">改訂</span><a href="dna-to-protein.html">DNAからタンパク質まで</a><span class="note">通読して説明の順序・重複・見出しと図の配置を整理</span></li>
+<li><span class="k upd">改訂</span><a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a><span class="note">構成を維持して説明の順序・見出し・図の説明を整理</span></li>
+</ul>
+<h2 class="cl-date">2026-09-12</h2><ul class="cl">
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">ROSを水へ変える防御とFenton反応・脂質過酸化による障害を図で明確に区別</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">図2をROSの発生源と生理作用・酸化損傷を示す医学イラストへ変更</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">GPxの図に合わせて反応式の組版と分子名の併記を統一</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">ROSの皮膚への影響を皮膚断面と拡大図で示す医学イラストを追加</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">不対電子の図を左右で一貫した分類に整理し、電子の模式図とROSの例を区切って配置</span></li>
+<li><span class="k upd">改訂</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">組版と図の位置を全面調整し、不対電子・SOD・UVA・鉄の管理・Nrf2を図解</span></li>
+<li><span class="k upd">改訂</span><a href="glycolysis.html">解糖系</a><span class="note">解糖系の収支とLDH反応を全章共通の反応式表示に変更</span></li>
+<li><span class="k new">新規</span><a href="cell-death.html">細胞死</a><span class="note">細胞死から除去・炎症・修復へ進む構成に改稿し、熱損傷と瘢痕の関係を図解</span></li>
+<li><span class="k new">新規</span><a href="wound-healing.html">炎症と創傷治癒</a><span class="note">細胞死から炎症の収束・組織修復へつながる構成に改稿し、時間経過と瘢痕の説明・図を整理</span></li>
+<li><span class="k upd">改訂</span><a href="tca-cycle.html">TCA回路</a><span class="note">TCA回路の収支を全章共通の反応式表示に変更</span></li>
+</ul>
+<h2 class="cl-date">2026-09-09</h2><ul class="cl">
+<li><span class="k new">新規</span><a href="oxidative-stress.html">酸化ストレスと抗酸化</a><span class="note">酸化ストレスから抗酸化へ進む構成に整え、章全体の文章を改稿</span></li>
+</ul>
 <h2 class="cl-date">2026-08-31</h2><ul class="cl">
 <li><span class="k new">新規</span><a href="mito-quality-control.html">ミトコンドリア品質管理</a><span class="note">初公開</span></li>
 <li><span class="k new">新規</span><a href="autophagy.html">オートファジーとリソソーム</a><span class="note">初公開</span></li>
@@ -530,7 +720,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -557,8 +747,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -604,11 +803,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -620,15 +823,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

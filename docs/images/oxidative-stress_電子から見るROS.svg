@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 840" role="img" aria-labelledby="title desc"><title id="title">不対電子の有無で、ROSを左右に分けて見る</title><desc id="desc">左は非ラジカルで、電子は対になり、例は過酸化水素と一重項酸素。右はラジカルで、不対電子を持ち、例はヒドロキシラジカルとスーパーオキシド。左右の分類は図全体で共通。</desc><style>text{font-family:system-ui,-apple-system,"Hiragino Sans",sans-serif;fill:#1c1d23}.title{font-size:30px;font-weight:700}.head{font-size:28px;font-weight:700}.body{font-size:23px}.small{font-size:20px;fill:#1d4f91}.chem{font-size:36px;font-weight:700}</style><rect width="1100" height="840" fill="white"/>
+<text x="40" y="52" class="title">不対電子があるかどうかで、ラジカルを区別する</text>
+<text x="40" y="90" class="body">不対電子＝同じ軌道に、対になる電子がない電子</text>
+<rect x="40" y="124" width="490" height="550" rx="8" fill="#f2f4f7"/>
+<text x="68" y="173" class="head">非ラジカル</text>
+<text x="68" y="216" class="body">電子が対になっている</text>
+<rect x="68" y="246" width="106" height="88" fill="white" stroke="#64748b" stroke-width="2"/>
+<text x="94" y="305" class="chem">↑↓</text>
+<text x="198" y="276" class="small">一つの軌道を示す</text>
+<text x="198" y="310" class="small">模式図</text>
+<text x="68" y="376" class="small">同じ軌道に電子が2個</text>
+<path d="M68 405 H502" stroke="#64748b"/>
+<text x="68" y="445" class="small">この分類に入るROS</text>
+<text x="68" y="500" class="chem">H₂O₂</text>
+<text x="202" y="500" class="body">過酸化水素</text>
+<text x="68" y="562" class="chem">¹O₂</text>
+<text x="202" y="562" class="body">一重項酸素</text>
+<text x="68" y="625" class="small">非ラジカルでも、¹O₂は反応性が高い</text>
+<rect x="570" y="124" width="490" height="550" rx="8" fill="#f2f4f7"/>
+<text x="598" y="173" class="head">フリーラジカル</text>
+<text x="598" y="216" class="body">不対電子を持つ</text>
+<rect x="598" y="246" width="106" height="88" fill="white" stroke="#64748b" stroke-width="2"/>
+<text x="624" y="305" class="chem">↑</text>
+<text x="728" y="276" class="small">一つの軌道を示す</text>
+<text x="728" y="310" class="small">模式図</text>
+<text x="598" y="376" class="small">対を作っていない電子が1個</text>
+<path d="M598 405 H1032" stroke="#64748b"/>
+<text x="598" y="445" class="small">この分類に入るROS</text>
+<text x="598" y="500" class="chem">•OH</text>
+<text x="732" y="500" class="body">ヒドロキシラジカル</text>
+<text x="598" y="562" class="chem">O₂•⁻</text>
+<text x="732" y="562" class="body">スーパーオキシド</text>
+<text x="598" y="617" class="small">「•」は不対電子を表す</text>
+<text x="598" y="648" class="small">「−」は負の電荷を表す</text>
+<text x="40" y="717" class="small">箱は軌道、矢印1本は電子1個。↑と↓はspinの違いを表します。</text>
+<text x="40" y="751" class="small">模式図は電子の対の有無を示し、各分子の全軌道を描いたものではありません。</text>
+<text x="40" y="802" class="body">不対電子の有無だけでは、反応の速さは決まりません。</text>
+</svg>

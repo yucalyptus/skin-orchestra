@@ -4,15 +4,15 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>解糖系 ― 生化学で見る美容医療</title>
-<meta name="description" content="解糖系は、酸素がなくても回ります。細胞質だけで完結し、glucose 1分子から正味2個の ATP を作ります。酸素を使うのはこの先で、ミトコンドリアまで回せば約30〜32個。ATP産生の本体はそちらです。">
+<meta name="description" content="解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質など…">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/glycolysis.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="解糖系 ― 生化学で見る美容医療">
-<meta property="og:description" content="解糖系は、酸素がなくても回ります。細胞質だけで完結し、glucose 1分子から正味2個の ATP を作ります。酸素を使うのはこの先で、ミトコンドリアまで回せば約30〜32個。ATP産生の本体はそちらです。">
+<meta property="og:description" content="解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質など…">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/glycolysis.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/glycolysis_炭素の分割とATP.svg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html" class="active">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html" class="active">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,373 +614,78 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="glycolysis">
 <p class="kicker">基礎　／　エネルギー</p>
 <h1 class="ch-title">解糖系<small>glycolysis</small></h1>
-<p class="dateline">公開 2026-08-24</p>
-<blockquote>glucose からエネルギーを取り出す経路は、<strong><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span> → <span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span> → <span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span></strong>の3つの工程に分かれます。解糖系は細胞質で、あとの2つはミトコンドリアで起きます。<strong>酸素を使うのは、最後の電子伝達系だけです。</strong>この章では最初の工程、解糖系を見ます。</blockquote>
+<p class="dateline">公開 2026-08-24　／　最終更新 2026-09-13</p>
+<p>細胞は、取り込んだ <strong>glucose（グルコース、ブドウ糖）</strong>を分解して<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>を作ります。その最初の工程が、細胞質で進む<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span>です。糖を分解する途中には、細胞を作る材料へつながる分岐もあります。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>解糖系は、酸素がなくても回ります。</strong>細胞質だけで完結し、glucose 1分子から<strong>正味2個の <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span></strong> を作ります。酸素を使うのはこの先で、ミトコンドリアまで回せば約30〜32個。<strong>ATP産生の本体はそちらです。</strong><br><br><strong>それでも解糖系が要る理由は2つ。</strong>ひとつは、酸素が足りない場面でも ATP を作れること。もうひとつは、<strong>「炭素をどこへ流すか」の分岐</strong>がここにあることです——取り込んだ糖の炭素が、核酸の材料になるか、脂質になるか、ミトコンドリアで ATP になるか。</blockquote>
-<figure class="book-figure"><div style="overflow-x:auto"><svg viewBox="0 0 560 958" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="glucoseからpyruvateまでの10段。太い赤矢印が不可逆な律速3か所でhexokinase・PFK-1・pyruvate kinase／PKM2が働く。各段の右で、内向きの矢印が反応に使われる分子、外向きの矢印が反応でできる分子を示す。左の帯が投資マイナス2 ATPと回収プラス4 ATPで、正味プラス2 ATPとプラス2 NADH"><defs><marker id="hd" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="15" markerHeight="15" orient="auto"><path d="M0 0 L9 5 L0 10 z" fill="#9A3D28"/></marker><marker id="hd2" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker><marker id="hb" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker><marker id="in_atp" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#6E5316"/></marker><marker id="out_atp" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#6E5316"/></marker><marker id="in_nad" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#245840"/></marker><marker id="out_nad" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#245840"/></marker></defs><rect x="3" y="3" width="554" height="952" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/><g font-family="system-ui,-apple-system,sans-serif"><text x="28" y="46" font-size="20" font-weight="700" fill="#1E3A63">glucose を pyruvate まで分解する</text><text x="28" y="72" font-size="13" fill="#3B4A63">酸素は使わない。赤い太矢印の3か所だけが不可逆で、流量を決める</text><line x1="34" y1="92" x2="34" y2="114" stroke="#9A3D28" stroke-width="5" marker-end="url(#hd)"/><text x="52" y="110" font-size="12.5" fill="#1F2937">不可逆（律速）</text><line x1="176" y1="94" x2="176" y2="112" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><text x="190" y="110" font-size="12.5" fill="#1F2937">可逆</text><path d="M300 92 Q 282 92 275 99" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#in_atp)"/><text x="306" y="96" font-size="12" fill="#1F2937">使われる分子</text><path d="M275 107 Q 282 114 300 114" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#out_atp)"/><text x="306" y="118" font-size="12" fill="#1F2937">できる分子</text><text x="180" y="181" font-size="14.5" fill="#111827">glucose</text><text x="180" y="261" font-size="14.5" fill="#111827">glucose-6-phosphate</text><text x="180" y="341" font-size="14.5" fill="#111827">fructose-6-phosphate</text><text x="180" y="421" font-size="14.5" fill="#111827">fructose-1,6-bisphosphate</text><text x="170" y="501" font-size="13" font-weight="700" text-anchor="end" fill="#9A3D28">2×</text><text x="180" y="501" font-size="14.5" fill="#111827">glyceraldehyde-3-phosphate</text><text x="170" y="581" font-size="13" font-weight="700" text-anchor="end" fill="#9A3D28">2×</text><text x="180" y="581" font-size="14.5" fill="#111827">1,3-bisphosphoglycerate</text><text x="170" y="661" font-size="13" font-weight="700" text-anchor="end" fill="#9A3D28">2×</text><text x="180" y="661" font-size="14.5" fill="#111827">3-phosphoglycerate</text><text x="170" y="741" font-size="13" font-weight="700" text-anchor="end" fill="#9A3D28">2×</text><text x="180" y="741" font-size="14.5" fill="#111827">phosphoenolpyruvate</text><text x="170" y="821" font-size="13" font-weight="700" text-anchor="end" fill="#9A3D28">2×</text><text x="180" y="821" font-size="14.5" fill="#111827">pyruvate</text><line x1="178" y1="189" x2="178" y2="239" stroke="#9A3D28" stroke-width="5" marker-end="url(#hd)"/><path d="M230 200 Q 200 200 189 211" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#in_atp)"/><path d="M189 221 Q 200 232 230 232" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#out_atp)"/><text x="236" y="205" font-size="13" font-weight="700" fill="#6E5316">ATP</text><text x="236" y="237" font-size="13" font-weight="700" fill="#6E5316">ADP</text><text x="328" y="221" font-size="13.5" font-weight="700" fill="#7A2F1D">hexokinase</text><rect x="414" y="207" width="42" height="19" rx="5" fill="#9A3D28"/><text x="435" y="221" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FFF">律速</text><line x1="178" y1="269" x2="178" y2="319" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><line x1="178" y1="349" x2="178" y2="399" stroke="#9A3D28" stroke-width="5" marker-end="url(#hd)"/><path d="M230 360 Q 200 360 189 371" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#in_atp)"/><path d="M189 381 Q 200 392 230 392" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#out_atp)"/><text x="236" y="365" font-size="13" font-weight="700" fill="#6E5316">ATP</text><text x="236" y="397" font-size="13" font-weight="700" fill="#6E5316">ADP</text><text x="328" y="381" font-size="13.5" font-weight="700" fill="#7A2F1D">PFK-1</text><rect x="376" y="367" width="42" height="19" rx="5" fill="#9A3D28"/><text x="397" y="381" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FFF">律速</text><line x1="178" y1="429" x2="178" y2="479" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><text x="200" y="461" font-size="12" fill="#3B4A63">6炭素が3炭素2分子に割れる</text><line x1="178" y1="509" x2="178" y2="559" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><path d="M230 520 Q 200 520 189 531" fill="none" stroke="#245840" stroke-width="2" marker-end="url(#in_nad)"/><path d="M189 541 Q 200 552 230 552" fill="none" stroke="#245840" stroke-width="2" marker-end="url(#out_nad)"/><text x="236" y="525" font-size="13" font-weight="700" fill="#245840">2 NAD⁺</text><text x="236" y="557" font-size="13" font-weight="700" fill="#245840">2 NADH</text><line x1="178" y1="589" x2="178" y2="639" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><path d="M230 600 Q 200 600 189 611" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#in_atp)"/><path d="M189 621 Q 200 632 230 632" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#out_atp)"/><text x="236" y="605" font-size="13" font-weight="700" fill="#6E5316">2 ADP</text><text x="236" y="637" font-size="13" font-weight="700" fill="#6E5316">2 ATP</text><line x1="178" y1="669" x2="178" y2="719" stroke="#2F5C87" stroke-width="2" marker-start="url(#hb)" marker-end="url(#hb)"/><line x1="178" y1="749" x2="178" y2="799" stroke="#9A3D28" stroke-width="5" marker-end="url(#hd)"/><path d="M230 760 Q 200 760 189 771" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#in_atp)"/><path d="M189 781 Q 200 792 230 792" fill="none" stroke="#6E5316" stroke-width="2" marker-end="url(#out_atp)"/><text x="236" y="765" font-size="13" font-weight="700" fill="#6E5316">2 ADP</text><text x="236" y="797" font-size="13" font-weight="700" fill="#6E5316">2 ATP</text><text x="328" y="781" font-size="13.5" font-weight="700" fill="#7A2F1D">pyruvate kinase</text><rect x="451" y="767" width="42" height="19" rx="5" fill="#9A3D28"/><text x="472" y="781" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FFF">律速</text><rect x="34" y="162" width="10" height="268" rx="5" fill="#EBD9A8"/><text x="62" y="292" font-size="13.5" font-weight="700" fill="#6E5316">投資</text><text x="62" y="312" font-size="13.5" font-weight="700" fill="#6E5316">−2 ATP</text><rect x="34" y="562" width="10" height="268" rx="5" fill="#EBD9A8"/><text x="62" y="692" font-size="13.5" font-weight="700" fill="#6E5316">回収</text><text x="62" y="712" font-size="13.5" font-weight="700" fill="#6E5316">+4 ATP</text><line x1="260" y1="816" x2="318" y2="816" stroke="#9A3D28" stroke-width="2" marker-end="url(#hd2)"/><text x="270" y="807" font-size="11.5" font-weight="700" fill="#9A3D28">LDH</text><text x="326" y="821" font-size="14" font-weight="700" fill="#7A2F1D">lactate</text><text x="326" y="839" font-size="11.5" fill="#3B4A63">NAD⁺ を再生する</text><rect x="26" y="872" width="508" height="60" rx="10" fill="#EEF2F8"/><text x="280" y="898" font-size="15.5" font-weight="700" text-anchor="middle" fill="#1E3A63">正味 ＋2 ATP ＋ 2 NADH</text><text x="280" y="920" font-size="12.5" text-anchor="middle" fill="#3B4A63">ミトコンドリアまで回せば約30〜32 ATP</text></g></svg></div><figcaption>glucose から pyruvate までの10段。太い一方向矢印＝不可逆（律速3か所）、細い双方向矢印＝可逆。fructose-1,6-bisphosphate で6炭素が3炭素2分子に割れるので、以降の段は 2× になる。左帯が投資 −2 ATP と回収 +4 ATP、右列が正味 +2 ATP + 2 NADH と炭素の行き先。ミトコンドリアまで回せば約30〜32 ATP になるのに対し、解糖系だけでは正味2——この差が、解糖系の主役が発電ではないことを示している</figcaption></figure>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　解糖系の産物</a></li><li><a href="#s2">2　3か所の律速段階</a></li><li><a href="#s3">3　低酸素での切り替え ―― HIF-1α</a></li><li><a href="#s4">4　炭素の三つの行き先</a></li><li><a href="#s5">5　NAD⁺を戻さないと解糖は止まる ―― lactate の役割</a></li><li><a href="#s6">6　Warburg効果 ―― 酸素があっても解糖に寄る</a></li></ul></nav><h2 id="s1">1　解糖系の産物</h2>
-<p>解糖系は、glucose 1分子が10段の反応を経て pyruvate 2分子になる過程です。まず前半で <strong>ATP を2個使い</strong>、glucose を反応しやすい形へ変えます。その後、炭素6個の <strong>fructose-1,6-bisphosphate</strong> が、炭素3個の <strong>glyceraldehyde-3-phosphate 2分子</strong>に分かれます。<strong>図1でここから下に <code>2×</code> とあるのは、以降の反応がすべて2本ずつ進むという意味です。</strong></p>
-<p>二本に分かれた後は、それぞれの反応から合計 <strong>4 ATP と 2 NADH</strong> を回収します。前半で使った 2 ATP を引くと、解糖系全体では <strong>正味 2 ATP</strong> です。</p>
-<p>ここで必要な基礎は一つだけです。<strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。">NAD⁺</span> と NADH は、同じ電子運搬体の「積む前」と「積んだ後」</strong>です。NAD⁺ は運ぶ電子をまだ積んでいない状態で、基質から電子を受け取ると NADH になります。NADH が別の相手へ電子を渡せば、NAD⁺ に戻ります。この章ではこの「空の荷台 ↔ 電子を積んだ荷台」だけ押さえれば十分です（酸化・還元、総量と比、区画ごとの違いは → <a class="chref" href="nad.html">NAD⁺</a>）。</p>
-<div class="flow"><span class="node">glucose</span><span class="arr">→</span><span class="node">2 pyruvate ＋ 正味 2 ATP ＋ 2 NADH</span></div>
-<p>ここでできた pyruvate と NADH はミトコンドリアへ渡され、TCA回路と電子伝達系を経て約30〜32 ATP になります（pyruvate が lactate になる経路もあります → §5。幅が出る理由は → <a class="chref" href="electron-transport.html">電子伝達系</a>）。</p>
-<p><strong>この差から、二つのことが見えてきます。</strong></p>
-<ul><li><strong>なぜ酸素があるのに解糖に寄る細胞があるのか。</strong> 欲しいものが ATP ではなく<strong>材料</strong>だからです。解糖系の中間体は、そのまま<strong>核酸・アミノ酸・脂質の材料</strong>になります。増殖・修復中の細胞は、効率を捨ててそちらを取ります（→ §2・§4・§6）</li><li><strong>なぜ加齢でATP産生が落ちるのか。</strong> 組織を維持し続けるエネルギーの大部分は、ミトコンドリア由来の ATP です。<strong>加齢でミトコンドリアが傷むと ATP 産生が減り、その不足を解糖系では埋められません</strong>（なぜミトコンドリアが酸化ストレスを受けやすいのかは → <a class="chref" href="electron-transport.html">電子伝達系</a>・ミトコンドリア機能不全と細胞老化）</li></ul>
-<h2 id="s2">2　3か所の律速段階</h2>
-<p>10段のうち<strong>7段は可逆</strong>で、前にも後ろにも進みます。残る<strong>3段は不可逆</strong>です。この3段を <strong>律速段階</strong>、担当する酵素を <strong>律速酵素</strong> と呼びます。</p>
-<p>まず入口から見ます。glucose のままなら、糖の輸送体（<strong>GLUT</strong>）を通って細胞の外へ戻れます。ところが <strong>hexokinase</strong> が ATP を1個使って glucose にリン酸を付け、<strong>glucose-6-phosphate（G6P）</strong> にすると、リン酸基の負電荷のために <strong>GLUT を通れず、外へ戻れなくなります</strong>。つまりここで使う ATP は、発電のためではありません。<strong>取り込んだ糖を細胞内に閉じ込め、以降の代謝へ渡すための投資</strong>です。</p>
-<aside class="memo"><p class="memo-h">ちなみに ―― FDG-PET が見ているのは、この段です</p><p>FDG は glucose の類似体で、GLUT で取り込まれ hexokinase でリン酸化されますが、その先へは代謝されません。<strong>リン酸化されて外へ戻れなくなったまま細胞内に溜まる</strong>（metabolic trapping）ので、集積として写ります。<strong>PET が測っているのは糖の取り込みとリン酸化の速さであって、ATP産生量ではありません。</strong></p>
+<blockquote class="lead"><strong>解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。</strong>pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質などを作るための材料も供給されます。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　解糖系は、何を受け取り、何を作るのか</a></li><li><a href="#s2">2　流れを調節する、不可逆な3段階</a></li><li><a href="#s3">3　低酸素での切り替え ―― HIF-1α</a></li><li><a href="#s4">4　炭素の三つの行き先</a></li><li><a href="#s5">5　NAD⁺を戻さないと解糖は止まる ―― lactate の役割</a></li><li><a href="#s6">6　Warburg効果 ―― 酸素があっても解糖に寄る</a></li></ul></nav><h2 id="s1">1　解糖系は、何を受け取り、何を作るのか</h2>
+<p>解糖系では、<strong>glucose 1分子からpyruvate 2分子</strong>ができます。前半でATPを2個使い、後半で4個作るため、差し引き <strong>2 ATP</strong>が得られます。</p>
+<p>この過程で、糖から取り出した電子を受け取るのが <strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span></strong>です。電子を受け取ると <strong>NADH</strong>に変わります。glucose 1分子からは、NADHも2分子できます（→ <a class="chref" href="nad.html">NAD⁺</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_炭素の分割とATP.svg" alt="glucoseの炭素6個が3個ずつの2分子へ分かれ、pyruvate 2分子になる。" width="760.0" height="520.0" loading="lazy"><figcaption>glucoseの炭素6個が3個ずつの2分子へ分かれ、pyruvate 2分子になる。ATP・NADHはglucose 1分子分の収支。</figcaption></figure>
+<p>炭素6個の糖が途中で炭素3個の分子二つに分かれるため、後半は2分子分の反応が進みます。<strong>前半でATPを使い、後半で回収する流れ</strong>を、炭素の分かれ方と合わせて見てください。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― なぜ後半は2分子分なのか</h3><p>炭素6個のfructose-1,6-bisphosphateが、<strong>glyceraldehyde-3-phosphate（GAP）</strong>と <strong>dihydroxyacetone phosphate（DHAP）</strong>に分かれます。triose phosphate isomerase（TPI）がDHAPをGAPへ変換するため、後半はGAP 2分子から進みます。次の詳細図は上から下へ読みます。「2×」は後半が2分子分進むことを示します。2-phosphoglycerateなど一部の中間体・酵素名を省略しています。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_ATP投資と回収.svg" alt="解糖系の主経路とATPの投資・回収。" width="560.0" height="958.0" loading="lazy"><figcaption>解糖系の主経路とATPの投資・回収。左の帯がATPを使う区間と作る区間、右が主な調節点。</figcaption></figure></aside>
+<div class="reaction"><span class="reaction-label">解糖系の収支（主な生成物）</span><div class="reaction-equation" role="img" aria-label="解糖系の収支（主な生成物）：glucose → 2 pyruvate ＋ 正味 2 ATP ＋ 2 NADH"><span class="reaction-side"><span class="reaction-species"><span>glucose</span><span class="reaction-name">グルコース</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme"></span><span aria-hidden="true">⟶</span></span><span class="reaction-side"><span class="reaction-species"><span>2 pyruvate</span><span class="reaction-name">ピルビン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>正味 2 ATP</span><span class="reaction-name">アデノシン三リン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>2 NADH</span><span class="reaction-name">還元型NAD</span></span></span></div></div>
+<h3>pyruvateと電子を、ミトコンドリアへ渡す</h3>
+<p>pyruvateをさらに酸化するときは、ミトコンドリアへ入ります。NADHが持つ電子も、<strong>shuttle（シャトル）</strong>という仕組みでミトコンドリア側へ渡されます。shuttleは電子を受け渡す複数の反応を組み合わせたもので、NADH分子そのものが内膜を通るわけではありません。</p>
+<p>glucose 1分子を<span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。" data-u="glossary.html#term-39f9a8217f46">TCA回路</span>・<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。" data-u="glossary.html#term-e84635b3e956">電子伝達系</span>まで利用すると、解糖系の分も含めて約30〜32 ATPを得られます。解糖系はこの一連の代謝の入口です（→ <a class="chref" href="tca-cycle.html">TCA回路</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）。</p>
+<h2 id="s2">2　流れを調節する、不可逆な3段階</h2>
+<p>解糖系には、細胞内で逆向きにほとんど進まない <strong>不可逆な反応が3段階</strong>あります。hexokinase・phosphofructokinase-1（PFK-1）・pyruvate kinaseが担います。<strong>これらは解糖系の流れを調節する重要な場所</strong>で、酵素の働きが変わると、糖を分解する速さも変わります（Tanner et al., <em>Cell Syst</em> 2018. <a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6062487/" target="_blank" rel="noopener">原著論文</a>）。</p>
+<h3>入口：hexokinaseが糖にリン酸を付ける</h3>
+<p>glucoseは、輸送体 <strong>GLUT</strong>を通って細胞へ入ります。<strong>hexokinase</strong>がATPを1個使ってリン酸を付けると、<strong>glucose-6-phosphate（G6P）</strong>になります。</p>
+<p>G6PはGLUTを通れないため、細胞内にとどまって代謝に使われます。入口で使うATPには、<strong>取り込んだ糖を細胞内の代謝へ渡す役割</strong>があります。</p>
+<aside class="memo"><h3 class="memo-h">ちなみに ―― FDG-PET が見ているのは、この段です</h3><p>FDG は glucose の類似体で、GLUT で取り込まれ hexokinase でリン酸化されますが、その先へは代謝されません。<strong>リン酸化されて外へ戻れなくなったまま細胞内に溜まる</strong>（metabolic trapping）ので、集積として写ります。</p>
 <p>多くのがん細胞では、酸素があっても解糖系に寄る <strong>Warburg 効果</strong>に伴って、glucose の取り込みとリン酸化が盛んになります。そのため FDG も多く取り込まれ、<strong>FDG-PET の高集積として見える</strong>わけです（→ §6）。ただし、FDG は炎症や感染でも集積し、がんでも種類や大きさによっては集積が弱いため、<strong>高集積だけでがんと確定する検査ではありません。</strong></p></aside>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 1032" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="解糖系の不可逆な3段を、左の簡略経路と右の詳細カードで示す。1はglucoseからglucose-6-phosphateへのhexokinase反応で、糖を細胞内に閉じ込める。2はfructose-6-phosphateからfructose-1,6-bisphosphateへのPFK-1反応で、解糖系へ炭素を流す主弁。3はphosphoenolpyruvateからpyruvateへのpyruvate kinase反応で、ATPを回収して炭素を出口へ出す。3反応はいずれも細胞内では不可逆で、代謝流量を調節しやすい">
-<defs>
-<marker id="v2r" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="11" markerHeight="11" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker>
-<marker id="v2b" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="1026" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="46" font-size="20" font-weight="700" fill="#1E3A63">3か所の弁は、どこで・なぜ働くか</text>
-<text x="28" y="72" font-size="13" fill="#3B4A63">左で位置を確認し、右で「変換・目的・開閉の条件」を読む</text>
-<line x1="30" y1="96" x2="62" y2="96" stroke="#9A3D28" stroke-width="4.5" marker-end="url(#v2r)"/>
-<text x="72" y="101" font-size="12.5" font-weight="700" fill="#7A2F1D">不可逆な3段</text>
-<line x1="190" y1="96" x2="222" y2="96" stroke="#2F5C87" stroke-width="2" marker-start="url(#v2b)" marker-end="url(#v2b)"/>
-<text x="232" y="101" font-size="12.5" fill="#3B4A63">その間には可逆反応がある</text>
-<rect x="26" y="118" width="158" height="806" rx="11" fill="#F7F9FC" stroke="#AAB4C4" stroke-width="1.5"/>
-<text x="105" y="146" font-size="15" font-weight="700" text-anchor="middle" fill="#1E3A63">解糖系（簡略）</text>
-<rect x="42" y="166" width="126" height="36" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.3"/>
-<text x="105" y="189" font-size="13.5" font-weight="700" text-anchor="middle" fill="#111827">glucose</text>
-<line x1="105" y1="204" x2="105" y2="234" stroke="#9A3D28" stroke-width="4.5" marker-end="url(#v2r)"/>
-<circle cx="61" cy="218" r="14" fill="#9A3D28"/>
-<text x="61" y="223" font-size="13" font-weight="700" text-anchor="middle" fill="#FFF">1</text>
-<text x="125" y="222" font-size="10.5" text-anchor="middle" fill="#7A2F1D">hexokinase</text>
-<rect x="42" y="242" width="126" height="42" rx="8" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.3"/>
-<text x="105" y="260" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">glucose-6-</text>
-<text x="105" y="275" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">phosphate</text>
-<line x1="105" y1="286" x2="105" y2="318" stroke="#2F5C87" stroke-width="2" marker-start="url(#v2b)" marker-end="url(#v2b)"/>
-<rect x="42" y="326" width="126" height="42" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.3"/>
-<text x="105" y="344" font-size="11.5" font-weight="700" text-anchor="middle" fill="#111827">fructose-6-</text>
-<text x="105" y="359" font-size="11.5" font-weight="700" text-anchor="middle" fill="#111827">phosphate</text>
-<line x1="105" y1="370" x2="105" y2="400" stroke="#9A3D28" stroke-width="4.5" marker-end="url(#v2r)"/>
-<circle cx="61" cy="384" r="14" fill="#9A3D28"/>
-<text x="61" y="389" font-size="13" font-weight="700" text-anchor="middle" fill="#FFF">2</text>
-<text x="132" y="388" font-size="10.5" text-anchor="middle" fill="#7A2F1D">PFK-1</text>
-<rect x="42" y="408" width="126" height="42" rx="8" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.3"/>
-<text x="105" y="426" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">fructose-1,6-</text>
-<text x="105" y="441" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">bisphosphate</text>
-<line x1="105" y1="452" x2="105" y2="574" stroke="#2F5C87" stroke-width="2" marker-start="url(#v2b)" marker-end="url(#v2b)"/>
-<rect x="50" y="492" width="110" height="44" rx="8" fill="#E7EEF7"/>
-<text x="105" y="511" font-size="11.5" text-anchor="middle" fill="#3B4A63">複数の反応</text>
-<text x="105" y="527" font-size="11.5" text-anchor="middle" fill="#3B4A63">ATP・NADHを回収</text>
-<rect x="42" y="582" width="126" height="42" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.3"/>
-<text x="105" y="600" font-size="11.5" font-weight="700" text-anchor="middle" fill="#111827">phosphoenol-</text>
-<text x="105" y="615" font-size="11.5" font-weight="700" text-anchor="middle" fill="#111827">pyruvate</text>
-<line x1="105" y1="626" x2="105" y2="656" stroke="#9A3D28" stroke-width="4.5" marker-end="url(#v2r)"/>
-<circle cx="61" cy="640" r="14" fill="#9A3D28"/>
-<text x="61" y="645" font-size="13" font-weight="700" text-anchor="middle" fill="#FFF">3</text>
-<text x="132" y="644" font-size="10.5" text-anchor="middle" fill="#7A2F1D">PK</text>
-<rect x="42" y="664" width="126" height="36" rx="8" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.3"/>
-<text x="105" y="687" font-size="13.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">pyruvate</text>
-<rect x="42" y="738" width="126" height="154" rx="9" fill="#EEF2F8"/>
-<text x="105" y="765" font-size="12.5" font-weight="700" text-anchor="middle" fill="#1E3A63">赤い矢印の意味</text>
-<text x="54" y="791" font-size="11.5" fill="#1F2937">細胞内では逆向きに</text>
-<text x="54" y="809" font-size="11.5" fill="#1F2937">ほぼ進まない。</text>
-<text x="54" y="839" font-size="11.5" fill="#1F2937">だから酵素の活性を</text>
-<text x="54" y="857" font-size="11.5" fill="#1F2937">変えると、経路全体の</text>
-<text x="54" y="875" font-size="11.5" fill="#1F2937">流量を調節しやすい。</text>
-<rect x="200" y="118" width="334" height="222" rx="11" fill="#FFFFFF" stroke="#AAB4C4" stroke-width="1.5"/>
-<circle cx="224" cy="145" r="15" fill="#9A3D28"/>
-<text x="224" y="150" font-size="14" font-weight="700" text-anchor="middle" fill="#FFF">1</text>
-<text x="248" y="151" font-size="16" font-weight="700" fill="#1E3A63">入口　hexokinase</text>
-<rect x="218" y="166" width="298" height="40" rx="8" fill="#FBEDE9"/>
-<text x="367" y="191" font-size="12.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">glucose → glucose-6-phosphate</text>
-<text x="218" y="228" font-size="11.5" font-weight="700" fill="#9A3D28">不可逆</text>
-<text x="274" y="228" font-size="11.5" fill="#3B4A63">ATPを1個使ってリン酸化</text>
-<rect x="218" y="244" width="298" height="58" rx="8" fill="#EEF2F8"/>
-<text x="232" y="266" font-size="12" font-weight="700" fill="#1E3A63">目的</text>
-<text x="272" y="266" font-size="12" fill="#111827">GLUTを通れない形にして、</text>
-<text x="232" y="287" font-size="12.5" font-weight="700" fill="#111827">取り込んだ糖を細胞内に閉じ込める</text>
-<text x="218" y="324" font-size="12" font-weight="700" fill="#7A2F1D">閉じる：</text>
-<text x="274" y="324" font-size="12" fill="#111827">glucose-6-phosphate がたまる</text>
-<rect x="200" y="356" width="334" height="282" rx="11" fill="#FFFFFF" stroke="#9A3D28" stroke-width="2.2"/>
-<circle cx="224" cy="383" r="15" fill="#9A3D28"/>
-<text x="224" y="388" font-size="14" font-weight="700" text-anchor="middle" fill="#FFF">2</text>
-<text x="248" y="389" font-size="16" font-weight="700" fill="#7A2F1D">主弁　PFK-1</text>
-<rect x="405" y="370" width="111" height="26" rx="6" fill="#9A3D28"/>
-<text x="460.5" y="388" font-size="11.5" font-weight="700" text-anchor="middle" fill="#FFF">最大の律速点</text>
-<rect x="218" y="410" width="298" height="40" rx="8" fill="#FBEDE9"/>
-<text x="367" y="435" font-size="12" font-weight="700" text-anchor="middle" fill="#7A2F1D">fructose-6-P → fructose-1,6-bisP</text>
-<text x="218" y="472" font-size="11.5" font-weight="700" fill="#9A3D28">不可逆</text>
-<text x="274" y="472" font-size="11.5" fill="#3B4A63">ATPを1個使ってリン酸化</text>
-<rect x="218" y="488" width="298" height="58" rx="8" fill="#EEF2F8"/>
-<text x="232" y="510" font-size="12" font-weight="700" fill="#1E3A63">目的</text>
-<text x="272" y="510" font-size="12" fill="#111827">炭素を解糖系の先へ進める。</text>
-<text x="232" y="531" font-size="12.5" font-weight="700" fill="#111827">ここが経路全体の流量を決める主弁</text>
-<rect x="218" y="562" width="298" height="28" rx="7" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="232" y="581" font-size="12" font-weight="700" fill="#245840">開く</text>
-<text x="276" y="581" font-size="12" fill="#111827">AMP・ADP・fructose-2,6-bisP</text>
-<rect x="218" y="596" width="298" height="28" rx="7" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.2"/>
-<text x="232" y="615" font-size="12" font-weight="700" fill="#7A2F1D">閉じる</text>
-<text x="284" y="615" font-size="12" fill="#111827">ATP・citrate</text>
-<rect x="200" y="654" width="334" height="270" rx="11" fill="#FFFFFF" stroke="#AAB4C4" stroke-width="1.5"/>
-<circle cx="224" cy="681" r="15" fill="#9A3D28"/>
-<text x="224" y="686" font-size="14" font-weight="700" text-anchor="middle" fill="#FFF">3</text>
-<text x="248" y="687" font-size="16" font-weight="700" fill="#1E3A63">出口　pyruvate kinase／PKM2</text>
-<rect x="218" y="708" width="298" height="40" rx="8" fill="#FBEDE9"/>
-<text x="367" y="733" font-size="12.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">phosphoenolpyruvate → pyruvate</text>
-<text x="218" y="770" font-size="11.5" font-weight="700" fill="#9A3D28">不可逆</text>
-<text x="274" y="770" font-size="11.5" fill="#3B4A63">ADPからATPを1個回収</text>
-<rect x="218" y="786" width="298" height="58" rx="8" fill="#EEF2F8"/>
-<text x="232" y="808" font-size="12" font-weight="700" fill="#1E3A63">目的</text>
-<text x="272" y="808" font-size="12" fill="#111827">ATPを回収し、炭素を</text>
-<text x="232" y="829" font-size="12.5" font-weight="700" fill="#111827">pyruvateとして解糖系の外へ出す</text>
-<rect x="218" y="860" width="298" height="28" rx="7" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="232" y="879" font-size="12" font-weight="700" fill="#245840">開く</text>
-<text x="276" y="879" font-size="12" fill="#111827">fructose-1,6-bisphosphate</text>
-<rect x="218" y="894" width="298" height="28" rx="7" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.2"/>
-<text x="232" y="913" font-size="12" font-weight="700" fill="#7A2F1D">絞る</text>
-<text x="276" y="913" font-size="12" fill="#111827">ATP・alanine／低活性型PKM2</text>
-<rect x="26" y="944" width="508" height="60" rx="10" fill="#1E3A63"/>
-<text x="280" y="969" font-size="14.5" font-weight="700" text-anchor="middle" fill="#FFF">3つとも不可逆だが、目的は同じではない</text>
-<text x="280" y="991" font-size="12.5" text-anchor="middle" fill="#FFF">①閉じ込める　②本流へ送る　③ATPを回収して出口へ出す</text>
-</g>
-</svg>
-</div>
-<figcaption>解糖系の不可逆な3段を、左の簡略経路と右の詳細で対応させた。①hexokinase＝glucose を glucose-6-phosphate にして細胞内に閉じ込める入口、②PFK-1＝fructose-6-phosphate を fructose-1,6-bisphosphate にして解糖系の流量を決める主弁、③pyruvate kinase／PKM2＝phosphoenolpyruvate を pyruvate に変え、ATPを回収して炭素を出口へ出す段。赤い太矢印は、細胞内では逆向きにほぼ進まない不可逆反応を示す</figcaption>
-</figure>
-<p>残る2か所は、細胞の状況に応じて開き具合が変わります。</p>
-<ul><li><strong>PFK-1 は、需要のセンサーです。</strong> 細胞のエネルギーが足りないときだけ開いて、反応を先へ進めます。</li><li><strong>PKM2 は、出口の栓です。</strong> 増殖中の細胞はこの型を使って<strong>あえて出口を絞り</strong>、手前にたまった中間体を<strong>核酸・アミノ酸・脂質を作る枝へ流し込みます</strong>。</li></ul>
-<h2 id="s3">3　低酸素での切り替え ―― <span class="term" tabindex="0" data-t="HIF-1α" data-d="低酸素で安定化する転写因子。速さのつまみではなく設定そのものを書き換える——解糖系の酵素と輸送体を増やし、PDK1経由でPDHゲートを閉じ、VEGFを誘導して血管新生を起こす。">HIF-1α</span></h2>
-<p>ここまでは、すでにある酵素の<strong>活性</strong>を上げ下げする話でした。低酸素では、<strong>酵素の量そのもの</strong>が変わります。</p>
-<p><strong>HIF-1α</strong> は、<strong>解糖系まわりの遺伝子の発現を上げる</strong>転写因子です。通常酸素下では分解されるので、細胞内にはほとんど残りません。低酸素になると分解されずに蓄積し、働きはじめます。</p>
-<p>溜まった HIF-1α は、糖の輸送体・解糖系の酵素・lactate を作る酵素（→ §5）を増やします。<strong>どれも、解糖だけで ATP をまかなうために要るもの</strong>です。糖の取り込みを増やして流量を上げ、lactate を作って NAD⁺ を再生し続ければ、解糖は止まりません。同時に、pyruvate をミトコンドリアへ送る入口（<strong>PDH ゲート</strong> → <a class="chref" href="tca-cycle.html">TCA回路</a>）を閉じます。酸素が乏しいのに電子を流し続ければ、行き場を失った電子が漏れて <span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span> になり細胞を傷つけるからです（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。</p>
-<p>トータルのエネルギー産生量（ATP）は減りますが、<strong>低酸素を乗り切り、細胞を守るための仕組み</strong>です。</p>
-<div class="tblwrap"><table><thead><tr><th></th><th>通常酸素</th><th>低酸素</th></tr></thead><tbody><tr><td><strong>HIF-1α</strong></td><td>作られてもすぐ分解され、残らない</td><td><strong>分解されずに蓄積する</strong></td></tr><tr><td><strong>核で起きること</strong></td><td>変化なし</td><td>糖の輸送体（GLUT）・解糖系の酵素・<strong>LDHA</strong> の転写を上げる</td></tr><tr><td><strong>ミトコンドリアへの入口</strong></td><td>PDH は開き、pyruvate は TCA回路へ</td><td><strong>PDH を閉じ</strong>、pyruvate は lactate へ</td></tr><tr><td><strong>結果</strong></td><td>ATP は多い</td><td><strong>ATP の総量は落ちる</strong>が、ROS を避けて低酸素を乗り切れる</td></tr></tbody></table></div>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_不可逆な3反応.svg" alt="hexokinase・PFK-1・pyruvate kinaseの反応と調節。" width="760.0" height="1000.0" loading="lazy"><figcaption>hexokinase・PFK-1・pyruvate kinaseの反応と調節。不可逆な3段階の位置を示す。</figcaption></figure>
+<h3>PFK-1とpyruvate kinaseが、その先の流れを調節する</h3>
+<ul><li><strong>PFK-1</strong>：ATPやcitrateが多いと活性が下がり、AMPなどが増えると活性が上がります。エネルギー状態に応じて解糖系の流れを調節します。</li><li><strong>pyruvate kinase</strong>：最後の反応でATPを作ります。その一型である <strong>PKM2</strong> は、増殖する細胞などで働きます。活性の調節は、解糖系を進める量と、中間体を合成経路へ回す量に関わります。</li></ul>
+<h2 id="s3">3　低酸素での切り替え ―― <span class="term" tabindex="0" data-t="HIF-1α" data-d="低酸素で安定化する転写因子。速さのつまみではなく設定そのものを書き換える——解糖系の酵素と輸送体を増やし、PDK1経由でPDHゲートを閉じ、VEGFを誘導して血管新生を起こす。" data-u="glossary.html#term-f415c2f9b898">HIF-1α</span></h2>
+<p>酸素が足りないと、ミトコンドリアでのATP産生を続けにくくなります。細胞は、酸素を直接使わない <strong>解糖系の働きを増やして、ATP産生を支えます。</strong>その切り替えに関わるのが <strong>HIF-1α（hypoxia-inducible factor-1α）</strong>です。</p>
+<p>HIF-1αは低酸素で蓄積し、糖の取り込みや解糖系に関わる遺伝子の発現を促します。同時に、pyruvateがTCA回路へ進む量を減らし、lactateへ回りやすくします。これは、限られた酸素のもとで代謝を維持する適応です（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>）。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― HIF-1αが変える酵素</h3><p>HIF-1αは、転写因子HIF-1の一部です。通常酸素下では速やかに分解されますが、低酸素では蓄積し、HIF-1βと組んで遺伝子発現を促します。</p>
+<ul><li><strong>糖の取り込みと解糖を支える</strong>：GLUT、解糖系酵素、乳酸を作るlactate dehydrogenase A（LDHA）などを増やします。LDHAによる反応はNAD⁺の再生にもつながります（→ §5）。</li><li><strong>TCA回路へ進む量を減らす</strong>：PDH kinase 1（PDK1）を増やします。PDK1は、pyruvateを<span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。" data-u="glossary.html#term-e45cb339bfe5">acetyl-CoA</span>へ変える酵素複合体pyruvate dehydrogenase（PDH）の活性を下げます。糖由来の電子がミトコンドリアへ入る量を抑えることで、低酸素での<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。" data-u="glossary.html#term-88d24b96933a">ROS</span>（活性酸素）による傷害を減らす働きがあります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>；→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</li></ul></aside>
 <h2 id="s4">4　炭素の三つの行き先</h2>
-<p>glucose の炭素の主な行き先は、<strong>①G6PからPPPへ ②pyruvateからミトコンドリアへ ③pyruvateからlactateへ</strong>の3つです。分岐は一度に起こるのではなく、G6P と pyruvate の2か所で順に起こります。</p>
-<p>最初の分岐点は、入口でリン酸を付けられた <strong>glucose-6-phosphate（G6P）</strong>です。G6P は、<strong>ペントースリン酸経路（pentose phosphate pathway, PPP）へ進む</strong>か、そのまま<strong>解糖系を進んで pyruvate になる</strong>かに分かれます。PPP では、G6P の炭素から <strong>ribose-5-phosphate</strong>が作られ、同時に G6P から抜き取られた電子を NADP⁺ が受け取って <strong><span class="term" tabindex="0" data-t="NADPH" data-d="主にペントースリン酸経路が供給する還元力。NADPH 自体は ROS を消さず、酸化型の glutathione や thioredoxin を還元型へ戻して抗酸化系を再生する。同じ還元力が NOX の ROS 産生にも使われる。">NADPH</span></strong> になります。ribose-5-phosphate は核酸の材料、NADPH は合成反応へ電子を渡し、酸化された glutathione や thioredoxin を還元型へ戻すための還元力です。</p>
-<p>次の分岐点が <strong>pyruvate</strong> です。pyruvate は、<strong>ミトコンドリアへ入って ATP 産生を支える</strong>か、<strong>lactate になって細胞外へ出る</strong>かに分かれます。</p>
-<p>なお、炭素そのものが ATP に変わるのではありません。<strong>炭素を酸化するときに抜き取った電子が NADH・FADH₂ に積まれ、その電子を使って電子伝達系で ATP が作られます。</strong></p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 780" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="glucoseの炭素の三つの行き先。glucose-6-phosphateからペントースリン酸経路へ分かれるとNADPHとribose-5-phosphateができ、この枝ではATPを作らない。解糖系を進んだpyruvateは、lactateになってNAD⁺を再生するか、ミトコンドリアへ入りacetyl-CoA、TCA回路、電子伝達系を経てATP産生を支える。分岐点はglucose-6-phosphateとpyruvateの二か所">
-<defs>
-<marker id="c3b" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-<marker id="c3g" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
-<marker id="c3r" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="774" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="46" font-size="20" font-weight="700" fill="#1E3A63">炭素の行き先は、2か所で3本に分かれる</text>
-<text x="28" y="72" font-size="13" fill="#3B4A63">G6Pで材料の枝へ。pyruvateでミトコンドリアかlactateへ</text>
-<rect x="207" y="96" width="146" height="36" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.4"/>
-<text x="280" y="119" font-size="14" font-weight="700" text-anchor="middle" fill="#111827">glucose</text>
-<line x1="280" y1="134" x2="280" y2="160" stroke="#2F5C87" stroke-width="2.4" marker-end="url(#c3b)"/>
-<text x="294" y="151" font-size="11.5" fill="#3B4A63">hexokinase</text>
-<rect x="192" y="168" width="176" height="44" rx="9" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.7"/>
-<text x="280" y="187" font-size="12.5" font-weight="700" text-anchor="middle" fill="#1E3A63">glucose-6-phosphate</text>
-<text x="280" y="203" font-size="11" text-anchor="middle" fill="#3B4A63">分岐点 1</text>
-<path d="M192 190 H154 V226" fill="none" stroke="#3D6B52" stroke-width="2.6" marker-end="url(#c3g)"/>
-<text x="44" y="216" font-size="11.5" font-weight="700" fill="#245840">G6PDから入る</text>
-<rect x="26" y="234" width="230" height="212" rx="11" fill="#FFFFFF" stroke="#3D6B52" stroke-width="1.8"/>
-<rect x="26" y="234" width="230" height="40" rx="11" fill="#E6F1EA"/>
-<text x="44" y="260" font-size="15.5" font-weight="700" fill="#245840">1　PPPへ</text>
-<text x="44" y="300" font-size="13" font-weight="700" fill="#111827">NADPH</text>
-<text x="44" y="321" font-size="12.5" fill="#3B4A63">合成反応へ電子を渡す</text>
-<text x="44" y="340" font-size="12.5" fill="#3B4A63">抗酸化系を還元型へ戻す</text>
-<line x1="44" y1="356" x2="238" y2="356" stroke="#D9E2DE" stroke-width="1"/>
-<text x="44" y="381" font-size="13" font-weight="700" fill="#111827">ribose-5-phosphate</text>
-<text x="44" y="402" font-size="12.5" fill="#3B4A63">核酸を作る材料</text>
-<rect x="44" y="414" width="194" height="24" rx="6" fill="#FBEDE9"/>
-<text x="141" y="431" font-size="12.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">この枝では ATP を作らない</text>
-<line x1="280" y1="214" x2="280" y2="292" stroke="#2F5C87" stroke-width="2.4" marker-end="url(#c3b)"/>
-<rect x="300" y="236" width="116" height="34" rx="8" fill="#F7F9FC"/>
-<text x="358" y="258" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">解糖系を進む</text>
-<rect x="207" y="300" width="146" height="44" rx="9" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.7"/>
-<text x="280" y="319" font-size="14" font-weight="700" text-anchor="middle" fill="#7A2F1D">pyruvate</text>
-<text x="280" y="335" font-size="11" text-anchor="middle" fill="#3B4A63">分岐点 2</text>
-<path d="M250 346 V470 H142 V492" fill="none" stroke="#9A3D28" stroke-width="2.6" marker-end="url(#c3r)"/>
-<text x="158" y="458" font-size="11.5" font-weight="700" fill="#7A2F1D">LDH</text>
-<path d="M310 346 V470 H418 V492" fill="none" stroke="#2F5C87" stroke-width="2.6" marker-end="url(#c3b)"/>
-<text x="355" y="458" font-size="11.5" font-weight="700" fill="#1E3A63">PDH → acetyl-CoA</text>
-<rect x="26" y="500" width="250" height="184" rx="11" fill="#FFFFFF" stroke="#9A3D28" stroke-width="1.8"/>
-<rect x="26" y="500" width="250" height="40" rx="11" fill="#FBEDE9"/>
-<text x="44" y="526" font-size="15.5" font-weight="700" fill="#7A2F1D">2　lactateへ</text>
-<text x="44" y="567" font-size="12.5" font-weight="700" fill="#111827">pyruvate ＋ NADH</text>
-<text x="44" y="588" font-size="12.5" font-weight="700" fill="#111827">→ lactate ＋ NAD⁺</text>
-<text x="44" y="617" font-size="12.5" fill="#3B4A63">NAD⁺をその場で再生し、</text>
-<text x="44" y="636" font-size="12.5" fill="#3B4A63">解糖系を回し続ける</text>
-<rect x="44" y="650" width="214" height="24" rx="6" fill="#FBEDE9"/>
-<text x="151" y="667" font-size="12.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">この反応では ATP は増えない</text>
-<rect x="290" y="500" width="244" height="184" rx="11" fill="#FFFFFF" stroke="#2F5C87" stroke-width="1.8"/>
-<rect x="290" y="500" width="244" height="40" rx="11" fill="#E7EEF7"/>
-<text x="308" y="526" font-size="15.5" font-weight="700" fill="#1E3A63">3　ミトコンドリアへ</text>
-<text x="308" y="567" font-size="12.5" font-weight="700" fill="#111827">acetyl-CoA → TCA回路</text>
-<text x="308" y="588" font-size="12.5" font-weight="700" fill="#111827">→ 電子伝達系</text>
-<text x="308" y="617" font-size="12.5" fill="#3B4A63">炭素はCO₂へ、抜き取った</text>
-<text x="308" y="636" font-size="12.5" fill="#3B4A63">電子はATP産生へ</text>
-<rect x="308" y="650" width="208" height="24" rx="6" fill="#E7EEF7"/>
-<text x="412" y="667" font-size="12.5" font-weight="700" text-anchor="middle" fill="#1E3A63">ATP産生の本体はこちら</text>
-<rect x="26" y="704" width="508" height="48" rx="10" fill="#1E3A63"/>
-<text x="280" y="734" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">材料と還元力へ／解糖を継続／効率よくATPを作る</text>
-</g>
-</svg>
-</div>
-<figcaption>glucose の炭素には2つの分岐点がある。G6P から PPP へ進めば NADPH と ribose-5-phosphate、解糖系を進んだ pyruvate から lactate へ進めば NAD⁺ の再生、ミトコンドリアへ進めば <span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。">acetyl-CoA</span>・TCA回路・電子伝達系を経た ATP 産生につながる。PPP と lactate への変換そのものは ATP を増やさない</figcaption>
-</figure>
-<p>3つのうち、<strong>PPP だけは ATP を作りません。</strong> G6P から分かれて作るのは、<strong>ribose-5-phosphate</strong>（核酸の材料）と <strong>NADPH</strong> です。<strong>この枝の入口に立つ酵素が glucose-6-phosphate dehydrogenase（G6PD）</strong>で、NADPH はここで作られます。NADPH は NADH と形は似ていますが役割が違い、<strong>合成反応と抗酸化に電子を渡す還元力</strong>として使われます（→ <a class="chref" href="nad.html">NAD⁺</a>）。</p>
-<p><strong>NADPH自体が活性酸素を直接消すわけではありません。</strong>実際に酸化を受け止めるのは <strong>glutathione</strong>（cysteine を含む3残基のペプチド。細胞内に mM 単位で存在します）と <strong>thioredoxin</strong>（同じく SH 基を持つ小さなタンパク質）です。どちらも<strong>自分が酸化される代わりに相手を還元し</strong>、酸化型（GSSG など）に変わります。NADPH はその酸化型を還元型へ戻し、<strong>同じ仕組みを繰り返し使えるようにします</strong>（→ 酸化ストレスと抗酸化）。</p>
-<p><strong>赤血球は、解糖系と PPP だけで生きています。</strong>核もミトコンドリアも持たないので、ATP は解糖系が、抗酸化に要る NADPH は PPP が供給します。ほかに道はありません。<strong>G6PD 欠損で溶血が起きるのは、その一本しかない NADPH の供給が絶たれるから</strong>です。高濃度ビタミンC点滴の前に G6PD を確認するのも、同じ理由によります。</p>
-<p><strong>材料や還元力が優先される条件では、炭素は PPP へ回されます。</strong>発電へ・材料へ・還元力へ——振り分けはここで決まります。</p>
-<p>3つの行き先を並べると、こうなります。</p>
-<div class="tblwrap"><table><thead><tr><th>行き先</th><th>分岐する場所</th><th>何が得られるか</th></tr></thead><tbody><tr><td><strong>ペントースリン酸経路（pentose phosphate pathway, PPP）</strong></td><td>glucose-6-phosphate</td><td><strong>NADPH</strong>（還元力 → 酸化ストレスと抗酸化）と <strong>ribose-5-phosphate</strong>（核酸の材料）。<strong>ATPは作らない枝</strong></td></tr><tr><td><strong>ミトコンドリア</strong></td><td>pyruvate</td><td>acetyl-CoA に変えて TCA回路へ（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。ATP産生の本体</td></tr><tr><td><strong>lactate</strong></td><td>pyruvate</td><td>ATPは増えないが、その場で <strong>NAD⁺</strong> を再生して解糖を回し続けられる</td></tr></tbody></table></div>
+<p>取り込んだglucoseは、すべてがATP産生へ進むわけではありません。一部は <strong>ペントースリン酸経路（pentose phosphate pathway、PPP）</strong>へ入り、核酸の材料や、合成・抗酸化に必要な電子の供給に使われます。</p>
+<p>図には、二つの分岐点があります。<strong>G6PでPPPへ分かれ、その先のpyruvateでミトコンドリアへ進む経路とlactateを作る経路に分かれます。</strong></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_炭素の分岐.svg" alt="G6PからPPPへ進む分岐と、pyruvateからミトコンドリア・lactateへ進む分岐。" width="760.0" height="680.0" loading="lazy"><figcaption>G6PからPPPへ進む分岐と、pyruvateからミトコンドリア・lactateへ進む分岐。</figcaption></figure>
+<h3>PPPは、合成材料と抗酸化に必要な還元力を作る</h3>
+<p>PPPで得られるのは、<strong>ribose-5-phosphate（リボース5-リン酸）</strong>と <strong><span class="term" tabindex="0" data-t="NADPH" data-d="主にペントースリン酸経路が供給する還元力。NADPH 自体は ROS を消さず、酸化型の glutathione や thioredoxin を還元型へ戻して抗酸化系を再生する。同じ還元力が NOX の ROS 産生にも使われる。" data-u="glossary.html#term-490757283201">NADPH</span></strong>です。ribose-5-phosphateは核酸の材料に、NADPHは合成反応や抗酸化システムへ電子を渡す補酵素として使われます。</p>
+<p>抗酸化では、NADPHが <strong>glutathione（グルタチオン）</strong>や <strong>thioredoxin（チオレドキシン）</strong>を還元型へ戻す反応を支えます。これにより、酸化への対処を繰り返せます。PPP自体はATPを作りませんが、<strong>細胞を作り、酸化から守るために必要な経路</strong>です（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― G6PDと赤血球の抗酸化</h3><p>PPPの入口にある <strong>glucose-6-phosphate dehydrogenase（G6PD）</strong>と、その先の6-phosphogluconate dehydrogenaseがNADPHを作ります。</p>
+<p>成熟赤血球はミトコンドリアを持たず、ATP産生を解糖系に、NADPH産生をPPPに依存します。<strong>G6PD欠損症ではNADPHを供給する能力が低下し、酸化負荷が加わると溶血しやすくなります。</strong>残る酵素活性は変異によって異なります（Powell et al., <em>Genetics</em> 2024. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39607789/" target="_blank" rel="noopener">PMID 39607789</a>）。</p>
+<p>glutathioneはcysteineを含む3残基のペプチド、thioredoxinはSH基を持つ小さなタンパク質です。どちらも酸化還元反応で働き、NADPHの還元力によって再利用されます。</p></aside>
 <h2 id="s5">5　NAD⁺を戻さないと解糖は止まる ―― lactate の役割</h2>
-<p>解糖系を進めるには、<strong>電子を受け取れる状態の NAD⁺</strong>が必要です。<strong>glucose が pyruvate まで分解される途中</strong>にある GAPDH の反応で、細胞質の NAD⁺ が電子を受け取って NADH になります。使える NAD⁺ を戻せなければここで詰まり、解糖系は止まります。戻し方は、電子伝達系へ渡す道と、LDH で pyruvate へ渡す道の二つです。</p>
-<p>図1の GAPDH の部分だけを拡大すると、こうなります。</p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 210" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="図1のGAPDH反応と、その直後のATP回収を拡大。2分子のglyceraldehyde-3-phosphateがGAPDHによって2分子の1,3-bisphosphoglycerateになるとき、2分子のNAD⁺が2分子のNADHになる。次の反応で2分子のADPから2分子のATPができる">
-<defs><marker id="gdxA" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker></defs>
-<rect x="3" y="3" width="554" height="204" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="32" font-size="17" font-weight="700" fill="#1E3A63">図1の GAPDH 反応と、直後の ATP 回収</text>
-<text x="189" y="57" font-size="11" font-weight="700" text-anchor="middle" fill="#1E3A63">GAPDH</text>
-<text x="377" y="57" font-size="10.5" font-weight="700" text-anchor="middle" fill="#1E3A63">次の反応</text>
-<rect x="24" y="68" width="148" height="52" rx="9" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.3"/>
-<text x="98" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">2× glyceraldehyde-</text>
-<text x="98" y="108" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">3-phosphate</text>
-<line x1="176" y1="94" x2="202" y2="94" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#gdxA)"/>
-<rect x="212" y="68" width="148" height="52" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.3"/>
-<text x="286" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">2× 1,3-bisphospho-</text>
-<text x="286" y="108" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">glycerate</text>
-<line x1="364" y1="94" x2="390" y2="94" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#gdxA)"/>
-<rect x="400" y="68" width="136" height="52" rx="9" fill="#FFF8E8" stroke="#B4762B" stroke-width="1.3"/>
-<text x="468" y="90" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">2× 3-phospho-</text>
-<text x="468" y="108" font-size="12" font-weight="700" text-anchor="middle" fill="#111827">glycerate</text>
-<rect x="122" y="136" width="164" height="34" rx="8" fill="#E6F1EA"/>
-<text x="204" y="158" font-size="12.5" font-weight="700" text-anchor="middle" fill="#245840">2 NAD⁺ → 2 NADH</text>
-<rect x="310" y="136" width="164" height="34" rx="8" fill="#FFF1C9"/>
-<text x="392" y="158" font-size="12.5" font-weight="700" text-anchor="middle" fill="#6E5316">2 ADP → 2 ATP</text>
-<text x="280" y="194" font-size="11.5" text-anchor="middle" fill="#3B4A63">GAPDHの段でNADHを作り、ATPはその直後の段で作る</text>
-</g>
-</svg>
-</div>
-<figcaption>glucose が2本の3炭糖に分かれた後の拡大。GAPDH の反応では NADH ができ、ATP ができるのはその直後の反応</figcaption>
-</figure>
-<p>GAPDH の反応では、glyceraldehyde-3-phosphate が電子を手放し、<strong>2 NAD⁺ が 2 NADH</strong> になります。そのエネルギーは、無機リン酸（Pi）を取り込んだ 1,3-bisphosphoglycerate にいったん保存されます。直後の反応でそのリン酸が <span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。">ADP</span> へ渡り、<strong>2 ADP から 2 ATP</strong> ができます。</p>
-<ul><li><strong>電子伝達系が電子を処理できるとき</strong>：細胞質の NADH 自体はミトコンドリア内膜を通れないため、持っている電子だけを shuttle でミトコンドリアへ渡します。電子を手放した NADH は、細胞質で <strong>NAD⁺ に戻ります</strong>。渡された電子は電子伝達系へ入り、最後は <strong>O₂</strong> が受け取ります</li><li><strong>電子伝達系が追いつかないとき</strong>：LDH が NADH の電子を pyruvate へ渡し、<strong>lactate ＋ NAD⁺</strong> にします。低酸素では、電子の最後の受け手である O₂ が足りないため、この道が重要になります。酸素があっても、<strong>解糖系が NADH を作る量が、shuttle と電子伝達系で処理できる量を上回れば</strong>、lactate を作る反応が増えます</li></ul>
-<p>TCA回路でも、反応を進める途中で <strong>NAD⁺ が電子を受け取り、NADH になります</strong>。できた NADH は電子伝達系へ電子を渡して NAD⁺ に戻り、また使われます。低酸素になると電子伝達系が遅れ、ミトコンドリア内で NADH が電子を降ろせなくなるため、使える NAD⁺ が減ります。その結果、NAD⁺ を必要とする <strong>PDH と TCA回路の流れも遅くなります。</strong></p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 730" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="解糖系でできた細胞質のNADHが電子を降ろす二つの道を示す。電子伝達系が処理できるときはNADH分子ではなく電子だけがshuttleでミトコンドリアへ渡り、電子伝達系から酸素へ渡され、細胞質にNAD⁺が戻る。TCA回路でもNAD⁺が電子を受け取ってNADHになり、電子伝達系へ渡す。低酸素、または解糖系によるNADH産生がshuttleと電子伝達系の処理能力を上回るときは、LDHがpyruvateとNADHをlactateとNAD⁺へ変える">
-<defs>
-<marker id="nrB" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-<marker id="nrR" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker>
-<marker id="nrG" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="724" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="46" font-size="20" font-weight="700" fill="#1E3A63">NAD⁺を戻す道は、電子の降ろし先で決まる</text>
-<text x="28" y="72" font-size="13" fill="#3B4A63">TCA回路でもNAD⁺がNADHになる。NADHは電子を電子伝達系へ渡す</text>
-<rect x="26" y="94" width="508" height="72" rx="10" fill="#EEF2F8"/>
-<text x="44" y="120" font-size="13.5" font-weight="700" fill="#1E3A63">解糖系でできた、細胞質の NADH</text>
-<text x="44" y="146" font-size="12.5" fill="#3B4A63">積んだ電子を降ろし、NAD⁺ に戻る道は二つある</text>
-<rect x="26" y="184" width="508" height="292" rx="11" fill="#FFFFFF" stroke="#2F5C87" stroke-width="1.8"/>
-<rect x="26" y="184" width="508" height="42" rx="11" fill="#E7EEF7"/>
-<text x="44" y="211" font-size="16" font-weight="700" fill="#1E3A63">A　電子伝達系が処理できるとき</text>
-<text x="44" y="250" font-size="12.5" font-weight="700" fill="#3B4A63">細胞質</text>
-<text x="308" y="250" font-size="12.5" font-weight="700" fill="#3B4A63">ミトコンドリア</text>
-<rect x="272" y="236" width="14" height="184" fill="#DDE8F4" stroke="#8A97AC" stroke-width="1.1"/>
-<text x="279" y="438" font-size="11.5" text-anchor="middle" fill="#3B4A63">内膜</text>
-<rect x="44" y="270" width="96" height="34" rx="7" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.4"/>
-<text x="92" y="292" font-size="14" font-weight="700" text-anchor="middle" fill="#7A2F1D">NADH</text>
-<line x1="92" y1="306" x2="92" y2="342" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#nrG)"/>
-<text x="108" y="330" font-size="11.5" fill="#245840">電子を手放す</text>
-<rect x="44" y="350" width="96" height="34" rx="7" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.4"/>
-<text x="92" y="372" font-size="14" font-weight="700" text-anchor="middle" fill="#245840">NAD⁺</text>
-<line x1="142" y1="287" x2="316" y2="287" stroke="#2F5C87" stroke-width="2.5" marker-end="url(#nrB)"/>
-<text x="206" y="278" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">電子だけをshuttleで渡す</text>
-<text x="206" y="306" font-size="11.5" font-weight="700" text-anchor="middle" fill="#9A3D28">NADH分子は内膜を通れない</text>
-<rect x="322" y="268" width="102" height="38" rx="8" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.5"/>
-<text x="373" y="292" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1E3A63">電子伝達系</text>
-<line x1="426" y1="287" x2="470" y2="287" stroke="#2F5C87" stroke-width="2.5" marker-end="url(#nrB)"/>
-<text x="480" y="281" font-size="13" font-weight="700" fill="#1E3A63">O₂</text>
-<text x="470" y="304" font-size="11.5" fill="#3B4A63">→ H₂O</text>
-<rect x="316" y="342" width="200" height="72" rx="9" fill="#FFF8E8" stroke="#B4762B" stroke-width="1.4"/>
-<text x="330" y="366" font-size="13.5" font-weight="700" fill="#8A5A18">TCA回路</text>
-<text x="330" y="389" font-size="12" fill="#111827">NAD⁺に電子を積み、</text>
-<text x="330" y="407" font-size="12.5" font-weight="700" fill="#111827">さらにNADHを作る側</text>
-<path d="M416 340 V318 H388 V308" fill="none" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#nrB)"/>
-<rect x="44" y="424" width="194" height="36" rx="8" fill="#EEF2F8"/>
-<text x="141" y="447" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">NAD⁺が戻り、解糖を続けられる</text>
-<rect x="26" y="492" width="508" height="168" rx="11" fill="#FFFFFF" stroke="#9A3D28" stroke-width="1.8"/>
-<rect x="26" y="492" width="508" height="42" rx="11" fill="#FBEDE9"/>
-<text x="44" y="519" font-size="16" font-weight="700" fill="#7A2F1D">B　電子伝達系が追いつかないとき</text>
-<rect x="44" y="548" width="472" height="34" rx="8" fill="#FFF8E8"/>
-<text x="280" y="570" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8A5A18">低酸素　または　NADH産生速度 ＞ shuttle・電子伝達系の処理速度</text>
-<rect x="44" y="596" width="130" height="38" rx="8" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.3"/>
-<text x="109" y="620" font-size="12.5" font-weight="700" text-anchor="middle" fill="#1E3A63">pyruvate ＋ NADH</text>
-<line x1="178" y1="615" x2="250" y2="615" stroke="#9A3D28" stroke-width="2.6" marker-end="url(#nrR)"/>
-<text x="214" y="606" font-size="12" font-weight="700" text-anchor="middle" fill="#7A2F1D">LDH</text>
-<rect x="256" y="596" width="166" height="38" rx="8" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.3"/>
-<text x="339" y="620" font-size="12.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">lactate ＋ NAD⁺</text>
-<text x="438" y="610" font-size="11.5" font-weight="700" fill="#245840">細胞質で</text>
-<text x="438" y="627" font-size="11.5" font-weight="700" fill="#245840">その場で戻す</text>
-<rect x="26" y="676" width="508" height="30" rx="8" fill="#1E3A63"/>
-<text x="280" y="696" font-size="13" font-weight="700" text-anchor="middle" fill="#FFFFFF">電子伝達系が遅れる → NAD⁺が戻りにくい → PDH・TCA回路も遅くなる</text>
-</g>
-</svg>
-</div>
-<figcaption>細胞質の NAD⁺ を戻す道は二つある。A＝細胞質 NADH の電子だけを shuttle で渡し、電子伝達系から O₂ へ降ろす。TCA回路でも NAD⁺ が電子を受け取って NADH になり、電子伝達系へ渡す。B＝低酸素、または解糖系の NADH 産生が shuttle・電子伝達系の処理能力を上回ると、LDH が pyruvate へ電子を渡して lactate と NAD⁺ を作る</figcaption>
-</figure>
-<p><strong>LDH は、この反応を両方向に進められる酵素です。</strong>細胞によって、主に進む向きが変わります。</p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 236" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="LDHがpyruvateとNADHかlactateとNAD⁺になる反応を両方向に進めることを示す。lactateを出す細胞ではpyruvateからlactateへ進みNAD⁺を戻す。lactateを受け取る細胞ではlactateからpyruvateへ進み燃料にする">
-<defs><marker id="ldhBi" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker></defs>
-<rect x="3" y="3" width="554" height="230" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="36" font-size="18" font-weight="700" fill="#1E3A63">LDH は、同じ反応を両方向に進める</text>
-<rect x="24" y="62" width="150" height="46" rx="9" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.4"/>
-<text x="99" y="90" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">pyruvate ＋ NADH</text>
-<line x1="185" y1="85" x2="375" y2="85" stroke="#2F5C87" stroke-width="2.6" marker-start="url(#ldhBi)" marker-end="url(#ldhBi)"/>
-<text x="280" y="75" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">LDH</text>
-<rect x="386" y="62" width="150" height="46" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.4"/>
-<text x="461" y="90" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">lactate ＋ NAD⁺</text>
-<rect x="24" y="130" width="246" height="78" rx="9" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.2"/>
-<text x="40" y="154" font-size="13" font-weight="700" fill="#7A2F1D">→　lactate を出す細胞</text>
-<text x="40" y="178" font-size="12" fill="#111827">pyruvate 側から lactate 側へ進み、</text>
-<text x="40" y="196" font-size="12.5" font-weight="700" fill="#111827">NAD⁺を戻して解糖系を続ける</text>
-<rect x="290" y="130" width="246" height="78" rx="9" fill="#EEF2F8" stroke="#2F5C87" stroke-width="1.2"/>
-<text x="306" y="154" font-size="13" font-weight="700" fill="#1E3A63">←　lactate を受け取る細胞</text>
-<text x="306" y="178" font-size="12" fill="#111827">lactate 側から pyruvate 側へ進み、</text>
-<text x="306" y="196" font-size="12.5" font-weight="700" fill="#111827">TCA回路へ。肝では糖新生にも使う</text>
-</g>
-</svg>
-</div>
-<figcaption>LDH が触媒するのは一つの可逆反応。出す細胞と受け取る細胞で、全体として進む向きが逆になる</figcaption>
-</figure>
-<p>LDH 自身が反応の向きを決めるのではありません。pyruvate と lactate、NADH と NAD⁺ の量、そしてその細胞が燃料を出したいのか使いたいのかによって、<strong>全体としてどちら向きに進むか</strong>が決まります。</p>
-<aside class="memo"><p class="memo-h">LDH が多いと、lactate はたまりやすい？</p><p><strong>LDH が多いだけでは、lactate がたまるとは限りません。</strong>LDH は両方向に働くため、細胞内で pyruvate と NADH が多く作られれば lactate 側を支え、反対に lactate を取り込む細胞では pyruvate へ戻す側も支えます。実際の蓄積は、<strong>解糖系が lactate を作る速さ</strong>と、細胞外への搬出、肝・心筋・酸化的筋線維などが<strong>取り込んで使う速さ</strong>のバランスで決まります。</p>
+<p>解糖系では、NAD⁺が電子を受け取ってNADHになります。<strong>NADHから電子を渡してNAD⁺へ戻すことが、解糖系を続ける条件</strong>です。</p>
+<p>戻し方には、ミトコンドリアへ電子を渡す経路と、<strong>lactate dehydrogenase（LDH）</strong>という酵素でpyruvateへ電子を渡す経路があります。後者ではlactateができます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_NAD再生の2経路.svg" alt="NAD⁺を再生する二つの経路。" width="760.0" height="720.0" loading="lazy"><figcaption>NAD⁺を再生する二つの経路。shuttleで電子を渡す経路と、LDHでpyruvateへ渡す経路。</figcaption></figure>
+<p>酸素が足りないと、電子伝達系へ電子を渡しにくくなるため、lactateを作る経路が重要になります。酸素があっても、解糖系の流量が大きく、shuttleやミトコンドリア側の処理が追いつかなければ、lactateへ回る量が増えます。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― NADHとATPができる段階</h3><p>解糖系の後半でNADHを作るのは、<strong>glyceraldehyde-3-phosphate dehydrogenase（GAPDH）</strong>の反応です。NAD⁺が不足すると、この反応が進みにくくなります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_NADHとATPの回収.svg" alt="GAPDHはNADHを作り、直後のphosphoglycerate kinaseの反応でATPができる。" width="760.0" height="650.0" loading="lazy"><figcaption>GAPDHはNADHを作り、直後のphosphoglycerate kinaseの反応でATPができる。</figcaption></figure>
+<p>GAPから取り出された電子をNAD⁺が受け取ります。同時に無機リン酸（Pi）が取り込まれ、1,3-bisphosphoglycerateができます。そのリン酸を<span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。" data-u="glossary.html#term-e9482c5e3b03">ADP</span>へ渡す直後の反応でATPが作られます。glucose 1分子からGAPが2分子できるため、この部分で得られるのは2 NADHと2 ATPです。</p>
+<p>TCA回路でもNAD⁺が電子を受け取ります。電子伝達系が滞ってNADHをNAD⁺へ戻しにくくなると、PDHとTCA回路の反応も進みにくくなります（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</p></aside>
+<h3>LDHは、lactateとpyruvateを相互に変える</h3>
+<p><strong>LDHは、この反応を両方向に進められる酵素です。</strong>細胞によって、主に進む向きが変わります。</p>
+<div class="reaction"><span class="reaction-label">LDHの可逆反応</span><div class="reaction-equation" role="img" aria-label="LDHの可逆反応：pyruvate ＋ NADH ⇌ lactate ＋ NAD⁺"><span class="reaction-side"><span class="reaction-species"><span>pyruvate</span><span class="reaction-name">ピルビン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>NADH</span><span class="reaction-name">還元型NAD</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">LDH</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>lactate</span><span class="reaction-name">乳酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>NAD⁺</span><span class="reaction-name">酸化型NAD</span></span></span></div></div>
+<ul><li><strong>lactateを出す細胞</strong>：pyruvate側からlactate側へ進み、NAD⁺を戻して解糖系を続ける。</li><li><strong>lactateを受け取る細胞</strong>：lactate側からpyruvate側へ進み、TCA回路へ。肝では糖新生にも使う。</li></ul>
+<p>式はH⁺を省略しています。反応の向きは、pyruvate・lactate・NADH・NAD⁺の量や、その細胞で進む他の代謝反応によって変わります。</p>
+<aside class="memo"><h3 class="memo-h">LDH が多いと、lactate はたまりやすい？</h3><p><strong>LDH が多いだけでは、lactate がたまるとは限りません。</strong>LDH は両方向に働くため、細胞内で pyruvate と NADH が多く作られれば lactate 側を支え、反対に lactate を取り込む細胞では pyruvate へ戻す側も支えます。実際の蓄積は、<strong>解糖系が lactate を作る速さ</strong>と、細胞外への搬出、肝・心筋・酸化的筋線維などが<strong>取り込んで使う速さ</strong>のバランスで決まります。</p>
 <p>なお、血液検査の「LDH高値」は別の話です。これは主に、肝、筋、血球などから血中へ漏れた LDH を測っており、<strong>血中 lactate が高いことを直接示す値ではありません。</strong></p></aside>
-<p><strong>乳酸は長らく、激しい運動で筋の酸素が足りなくなってできる疲労物質だと考えられてきました。</strong>しかし、運動時の lactate 増加を酸素不足だけで説明することはできません。酸素があっても、<strong>解糖系が NADH と pyruvate を作る速度が、shuttle・電子伝達系・pyruvate の酸化が処理できる速度を上回れば</strong>、LDH 側へ流れます。低酸素は lactate を増やす一つの条件ですが、唯一の条件ではありません。疲労のほうも、lactate そのものではなく無機リン酸の蓄積などで説明されています。</p>
-<p>lactate は、出す細胞では<strong>NAD⁺を戻した結果</strong>であり、受け取る細胞では<strong>pyruvate に戻せる炭素と電子の運搬形</strong>です。同じ分子でも、細胞をまたぐと反応の向きと役割が逆になります。</p>
+<p>lactateは、作る細胞ではNAD⁺の再生に関わり、受け取る細胞では燃料になります。運動時の増加も酸素不足だけでは説明できず、疲労をlactate一つに結びつけることはできません。</p>
 <h2 id="s6">6　Warburg効果 ―― 酸素があっても解糖に寄る</h2>
 <p><strong>酸素が十分あるのに解糖に偏り、lactate を出す。</strong> これが Warburg 効果です。腫瘍で最初に記載されましたが、腫瘍に限りません。<strong>活性化した免疫細胞や、増殖・遊走している線維芽細胞でも同じ寄りが報告されています。</strong></p>
-<p>理由は、ここまで見てきたとおりです。増殖・修復のフェーズにある細胞が欲しいのは ATP ではなく、<strong>核酸・アミノ酸・脂質の材料</strong>でした（§4）。出口を絞れば中間体は材料の枝へ回り（§2）、解糖系は反応が速いので、流量を上げれば ATP も間に合います。<strong>効率を捨てて、材料と速さを取っているわけです。</strong></p>
-<p><strong>ただし、ミトコンドリアを止めているわけではありません。</strong>増殖中の細胞も TCA回路は回し、その中間体を脂質やアミノ酸の材料として抜き出しています（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</p>
-<aside class="column"><p class="col-t">コラム</p><p class="col-h">呼吸の進化 ―― 解糖系は酸素より古い</p><p>太古の地球に酸素はほとんどなく、生き物は酸素を使わない経路でエネルギーを得ていました。解糖系はその時代の経路のひとつで、<strong>いまも多くの生き物が使い続けています。</strong></p>
+<p>増殖・修復中の細胞には、<strong>ATPと、核酸・アミノ酸・脂質の材料の両方</strong>が必要です。糖の取り込みや解糖系の流量を増やすことは、ATPを作りながら中間体を合成へ回すことにも役立ちます。ただし、Warburg効果の成り立ちは細胞や条件によって異なり、「材料が必要だから」という一つの理由だけでは説明できません。</p>
+<p>増殖中の細胞は <strong>TCA回路も利用し、その中間体を脂質やアミノ酸の材料として取り出します</strong>（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</p>
+<aside class="column"><p class="col-t">コラム</p><h3 class="col-h">呼吸の進化 ―― 解糖系は酸素より古い</h3><p>太古の地球に酸素はほとんどなく、生き物は酸素を使わない経路でエネルギーを得ていました。解糖系はその時代の経路のひとつで、<strong>いまも多くの生き物が使い続けています。</strong></p>
 <p>約24億年前、シアノバクテリアが酸素発生型の光合成を始め、大気の酸素が増えます。<strong>当時の生き物にとって、O₂ は反応性の高い猛毒でした。</strong>多くが絶滅するか、酸素の届かない場所——地中・深海・そして動物の腸の中——へ退きます。ヒトの腸内細菌に嫌気性菌が多いのは、その名残です（→ 腸内細菌）。</p>
 <p>やがて、その酸素を電子の最後の受け取り手として使う生き物が現れます。<strong>取り出せる ATP は桁違いに増えました</strong>（2 対 約30〜32、§1）。大きなゲノムを持ち、動き回る多細胞生物が現れたのはそのあとです。カンブリア紀の爆発的な多様化も、酸素濃度の上昇と結びつけて語られます。</p>
-<p>ただし、大きな代償がありました。<strong>電子を O₂ へ流し続ける限り、一定の割合は漏れて ROS になります</strong>（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。だから酸素を使う生き物は、例外なく活性酸素を消す仕組みを持っています。細菌からヒトまで、SOD や catalase は共通です。<strong>抗酸化は後から足したものではなく、酸素を使うための条件だった</strong>ということです（→ 酸化ストレスと抗酸化）。<strong>それでも酸素を使う側が繁栄しました。</strong>酸化のリスクを抱え込んでも、取り出せるエネルギーの差がそれを上回ったからです。</p></aside>
+<p>ただし、大きな代償がありました。<strong>電子を O₂ へ流し続ける限り、一定の割合は漏れて ROS になります</strong>（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。だから酸素を使う生き物は、例外なく活性酸素を消す仕組みを持っています。細菌からヒトまで、<span class="term" tabindex="0" data-t="SOD" data-d="superoxide dismutase。2分子のO₂•⁻をH₂O₂とO₂へ変える金属酵素。SOD1・3はCu/Zn、ミトコンドリアmatrixのSOD2はMnを使う。できたH₂O₂は次の酵素系で処理する必要がある。" data-u="glossary.html#term-b60eafc7e56b">SOD</span> や catalase は共通です。<strong>抗酸化は後から足したものではなく、酸素を使うための条件だった</strong>ということです（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。<strong>それでも酸素を使う側が繁栄しました。</strong>酸化のリスクを抱え込んでも、取り出せるエネルギーの差がそれを上回ったからです。</p></aside>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>解糖系は細胞質で glucose を 2 pyruvate に分け、<strong>正味 2 ATP と 2 NADH</strong> を作る。<strong>この工程は酸素を使わない</strong>ので、酸素が足りない場面でも回る。ただし同じ glucose をミトコンドリアまで回せば約30〜32 ATP——<strong>ATP産生の本体はミトコンドリアにある。</strong></li><li>入口の hexokinase が使う ATP は発電のためではなく、<strong>糖を細胞内に閉じ込め、以降の代謝へ渡すための投資</strong>。</li><li>流量を決めるのは<strong>不可逆な3か所</strong>——hexokinase（入口）・PFK-1（途中、最大の律速段階）・pyruvate kinase／PKM2（出口）。<strong>PFK-1 は需要のセンサー、PKM2 は出口の栓</strong>で、絞れば中間体が材料の枝へ回る。</li><li>低酸素では <strong>HIF-1α</strong> が酵素の量ごと切り替え、解糖側を増やしてミトコンドリアへの経路を閉じる。ATP の総量は落ちるが、行き場のない電子が ROS になるのを避けられる。</li><li>炭素の行き先は三つ：<strong>PPP（NADPH＝還元力、ribose-5-phosphate＝核酸の材料）／ミトコンドリア／lactate</strong>。<strong>lactate は老廃物ではなく</strong>、NAD⁺ を再生した結果であり、他の組織の燃料にもなる。</li><li><strong>Warburg効果</strong>＝酸素があっても解糖に寄る現象。増殖・修復中の細胞は、効率より材料と速さを取る。</li></ol>
-<blockquote><a class="chref" href="tca-cycle.html">TCA回路</a>では、ミトコンドリアへ入った pyruvate が <strong>acetyl-CoA</strong> に変わり、<strong>TCA回路</strong>へ進む経路を見ます。その入口で、ビタミンB群が一斉に要求されます。</blockquote>
-
+<ol class="goal"><li>解糖系は酸素を直接使わず、glucose 1分子から <strong>2 pyruvate・正味2 ATP・2 NADH</strong>を作ります。</li><li>hexokinase・PFK-1・pyruvate kinaseは、不可逆な反応を担う重要な調節点です。</li><li>低酸素ではHIF-1αが解糖系を支え、PDK1を介して糖由来の炭素がTCA回路へ進む量を減らします。</li><li>糖の炭素は、ATP産生だけでなく、PPPなどを通じて合成材料と還元力の供給にも使われます。</li><li><strong>NAD⁺の再生が解糖系を支えます。</strong>lactateを作る反応はその一つで、lactateは他の細胞の燃料にもなります。</li><li>Warburg効果は、酸素があってもlactate産生が増える現象です。増殖する細胞も、ATPと合成材料の両方を必要とします。</li></ol>
+<blockquote><a class="chref" href="tca-cycle.html">TCA回路</a>では、ミトコンドリアへ入ったpyruvateがacetyl-CoAに変わり、エネルギー産生と材料供給につながる経路を見ます。</blockquote>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>代謝の流れと図を見直し、臨床コラムを整理・復元</li><li><time>2026-09-12</time>解糖系の収支とLDH反応を全章共通の反応式表示に変更</li><li><time>2026-08-24</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="atp.html"><span class="lbl">前へ</span>代謝とATP</a><a class="next" href="fatty-acid-oxidation.html"><span class="lbl">次へ</span>脂肪酸とケトン体</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -868,7 +694,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -895,8 +721,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -942,11 +777,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -958,15 +797,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

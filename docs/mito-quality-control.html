@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html" class="active">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html" class="active">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,45 +614,45 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="mito-quality-control">
 <p class="kicker">基礎　／　掃除と作り直し</p>
 <h1 class="ch-title">ミトコンドリア品質管理</h1>
-<p class="dateline">公開 2026-08-31</p>
-<blockquote>ミトコンドリアが酸化的リン酸化の中心であり、<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>産生を担うこと、同時に酸化による損傷を受けやすいことは、ここまでに見てきました。細胞は、ミトコンドリアを<strong>作る・つなぐ・分ける・捨てる</strong>という4つの働きによって、受けたダメージを補い、傷んだ部分を取り除きながら、ミトコンドリア全体の機能を保っています。この章では、4つの働きがどのように組み合わさるかを見ます。<br><br><strong>この章の前提</strong>：<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。">autophagy</span> と選択的autophagyの仕組み（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）／ミトコンドリアの仕事（→ <a class="chref" href="organelles.html">オルガネラ</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）</blockquote>
+<p class="dateline">公開 2026-08-31　／　最終更新 2026-09-13</p>
+<blockquote>ミトコンドリアが酸化的リン酸化の中心であり、<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>産生を担うこと、同時に酸化による損傷を受けやすいことは、ここまでに見てきました。細胞は、ミトコンドリアを<strong>作る・つなぐ・分ける・捨てる</strong>という4つの働きによって、受けたダメージを補い、傷んだ部分を取り除きながら、ミトコンドリア全体の機能を保っています。この章では、4つの働きがどのように組み合わさるかを見ます。<br><br><strong>この章の前提</strong>：<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span> と選択的autophagyの仕組み（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）／ミトコンドリアの仕事（→ <a class="chref" href="organelles.html">オルガネラ</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）</blockquote>
 <h2>この章の一言</h2>
 <blockquote class="lead">細胞は、ミトコンドリアを<strong>作り、つなぎ、分け、傷んだものを捨てる</strong>ことで、働けるミトコンドリアの集団を保っています。</blockquote>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_全体-v2.webp" alt="ミトコンドリアの機能を保つ4つの働き。" loading="lazy"><figcaption>ミトコンドリアの機能を保つ4つの働き。①作る：既存のミトコンドリアへ新しい部品を加える。②つなぐ：内容物を混ぜて補い合う。③分ける：傷んだ部分を切り離す。④捨てる：回復できないものを<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span>で分解し、材料を再利用する。作る・つなぐ・分ける・捨てる、その釣り合いがミトコンドリアの質を保つ</figcaption></figure>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_全体-v2.webp" alt="作る・つなぐ・分ける・捨てる。" width="1672" height="941" loading="lazy"><figcaption>作る・つなぐ・分ける・捨てる。四つの働きが組み合わさって、ミトコンドリアの機能を保つ</figcaption></figure>
 <nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　ミトコンドリアの機能は、4つの働きで保たれる</a></li><li><a href="#s2">2　biogenesis：既存のミトコンドリアを成長させる</a></li><li><a href="#s3">3　fusion と fission：混ぜて補い、分けて切り離す</a></li><li><a href="#s4">4　mitophagy：どれを捨てるかを、どう見分けるか</a></li><li><a href="#s5">5　4つがそろって初めて「品質」が保たれる</a></li></ul></nav><h2 id="s1">1　ミトコンドリアの機能は、4つの働きで保たれる</h2>
 <p>多くの細胞には、複数のミトコンドリアがあります。ただし、一個ずつ独立した粒として存在するとは限らず、互いにつながってネットワークを作るため、単純に「何個」と数えにくい場合もあります。<strong>細胞分裂</strong>が細胞全体を二つに分けるのに対し、ミトコンドリアの<strong>fission（分裂）</strong>は、一つの細胞の中でミトコンドリアを分ける現象です。</p>
 <p>細胞は、同じミトコンドリアをそのまま使い続けるのではありません。新しい部品を加え、互いにつないで内容物を補い、傷んだ部分を切り離し、回復できないものを分解します。これを、次の4つに分けて見ていきます。</p>
-<ul><li><strong>作る：biogenesis</strong></li><li><strong>つなぐ：fusion</strong></li><li><strong>分ける：fission</strong></li><li><strong>捨てる：<span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。">mitophagy</span></strong></li></ul>
-<p>作る速さと捨てる速さによる入れ替わりを、<strong><span class="term" tabindex="0" data-t="turnover" data-d="ある成分が作られ、分解されて入れ替わること。総量が同じでも、作る速さと壊す速さが釣り合っていれば中身は更新されている。ミトコンドリアでは主にbiogenesisとmitophagyによる入れ替わりを指し、fusionとfissionがその選別を助ける。">turnover</span></strong>と呼びます。fusionとfissionは、内容物を補い合い、傷んだ部分を選り分けることで、この入れ替わりを支えます。</p>
+<ul><li><strong>作る：biogenesis</strong></li><li><strong>つなぐ：fusion</strong></li><li><strong>分ける：fission</strong></li><li><strong>捨てる：<span class="term" tabindex="0" data-t="mitophagy" data-d="傷んだミトコンドリアをautophagyの仕組みで選択的に分解・再利用する経路。PINK1/Parkinがubiquitin標識を立てる型と、BNIP3/NIX/FUNDC1が直接LC3につながる受容体型がある。標識と分解完了は別。" data-u="glossary.html#term-5c4e142d317d">mitophagy</span></strong></li></ul>
+<p>作る速さと捨てる速さによる入れ替わりを、<strong><span class="term" tabindex="0" data-t="turnover" data-d="ある成分が作られ、分解されて入れ替わること。総量が同じでも、作る速さと壊す速さが釣り合っていれば中身は更新されている。ミトコンドリアでは主にbiogenesisとmitophagyによる入れ替わりを指し、fusionとfissionがその選別を助ける。" data-u="glossary.html#term-83e4fbbbb4a2">turnover</span></strong>と呼びます。fusionとfissionは、内容物を補い合い、傷んだ部分を選り分けることで、この入れ替わりを支えます。</p>
 <h2 id="s2">2　biogenesis：既存のミトコンドリアを成長させる</h2>
-<p><strong>biogenesis（生合成・新生）</strong>は、ミトコンドリアの中で新しいミトコンドリアを一個組み立てる反応ではありません。<strong>既存のミトコンドリアに部品を加えて全体量を増やし、必要に応じて分裂させる過程</strong>です。この過程には、核とミトコンドリアの両方にある遺伝子が使われます。</p>
-<p>ここでいう<strong>成長</strong>とは、ミトコンドリアを構成する膜・タンパク質・<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。">mtDNA</span>が増えることです。主に<span class="term" tabindex="0" data-t="PGC-1α" data-d="mitochondrial biogenesis の転写の総括役。エネルギー状態・栄養・運動などの入力を受け、NRF1などの転写因子と協力して、ミトコンドリアの部品の発現を高める。">PGC-1α</span>を軸に調節され、運動やエネルギー需要の増加によっても進みます。</p>
-<p>とくに持久的な運動を続けると、骨格筋ではミトコンドリアの量や酸化能力が増加します。「ミトコンドリアが増える」と表現されますが、独立した粒の数だけが増えるとは限りません。既存のミトコンドリアが大きくなり、ネットワークの形や配置が変わることも含みます（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>](https://pubmed.ncbi.nlm.nih.gov/28580772/)）。</p>
-<ul><li>エネルギー需要や運動などの刺激に応じて、<strong>PGC-1α</strong>が<strong>NRF1などの転写因子</strong>と協力し、核にあるミトコンドリア関連遺伝子の発現を高めます。</li><li>その遺伝子をもとにタンパク質が細胞質で作られ、ミトコンドリア膜の入口装置<strong>TOM/TIM</strong>を通って中へ運び込まれます（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）。</li><li>ミトコンドリア内では、<strong>TFAM</strong>がmtDNAの維持と複製を支えます。mtDNAをもとに、<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>の一部のタンパク質もミトコンドリア内で作られます。</li><li>核とmtDNAから作られたタンパク質が組み合わさり、膜や電子伝達系などの部品が増えます。こうして既存のミトコンドリアが成長し、その後の<strong>fission（分裂）</strong>によって分かれます。</li></ul>
+<p><strong>biogenesis（生合成・新生）</strong>では、既存のミトコンドリアに新しい膜やタンパク質などの部品を加え、全体量を増やします。成長したミトコンドリアは、必要に応じて分裂します。この過程には、核とミトコンドリアの両方にある遺伝子が使われます。</p>
+<p>ここでいう<strong>成長</strong>とは、ミトコンドリアを構成する膜・タンパク質・<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。" data-u="glossary.html#term-4c6bea64371f">mtDNA</span>が増えることです。主に<span class="term" tabindex="0" data-t="PGC-1α" data-d="mitochondrial biogenesis の転写の総括役。エネルギー状態・栄養・運動などの入力を受け、NRF1などの転写因子と協力して、ミトコンドリアの部品の発現を高める。" data-u="glossary.html#term-554276741c94">PGC-1α</span>を軸に調節され、運動やエネルギー需要の増加によっても進みます。</p>
+<p>とくに持久的な運動を続けると、骨格筋ではミトコンドリアの量や酸化能力が増加します。「ミトコンドリアが増える」と表現されますが、独立した粒の数だけが増えるとは限りません。既存のミトコンドリアが大きくなり、ネットワークの形や配置が変わることも含みます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>）。</p>
+<h3>核とmtDNAが、部品を分担して作る</h3>
+<ul><li>エネルギー需要や運動などの刺激に応じて、<strong>PGC-1α</strong>が<strong>NRF1などの転写因子</strong>と協力し、核にあるミトコンドリア関連遺伝子の発現を高めます。</li><li>その遺伝子をもとにタンパク質が細胞質で作られ、ミトコンドリア膜の入口装置<strong>TOM/TIM</strong>を通って中へ運び込まれます（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）。</li><li>ミトコンドリア内では、<strong>TFAM</strong>がmtDNAの維持と複製を支えます。mtDNAをもとに、<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。" data-u="glossary.html#term-e84635b3e956">電子伝達系</span>の一部のタンパク質もミトコンドリア内で作られます。</li><li>核とmtDNAから作られたタンパク質が組み合わさり、膜や電子伝達系などの部品が増えます。こうして既存のミトコンドリアが成長し、その後の<strong>fission（分裂）</strong>によって分かれます。</li></ul>
 <p>部品を増やすだけで、品質が保たれるわけではありません。fissionで分け、傷んだ部分をmitophagyで取り除く働きと組み合わさることが必要です。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_biogenesis-v2.webp" alt="ミトコンドリアbiogenesisの流れ。" loading="lazy"><figcaption>ミトコンドリアbiogenesisの流れ。核ではエネルギー需要や運動の刺激を受けたPGC-1αがNRF1と協力し、核DNAにあるミトコンドリアの部品を作る遺伝子の発現を高める。核由来のタンパク質は細胞質で合成され、TOMとTIMを通ってミトコンドリアへ入る。ミトコンドリア内ではTFAMがmtDNAの維持と複製を支える。核由来のタンパク質とmtDNA由来の13個のタンパク質が組み合わさり、電子伝達系などの部品になる。biogenesisでは、既存のミトコンドリアが成長して全体量が増え、必要に応じて分裂する</figcaption></figure>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_biogenesis-v2.webp" alt="核とmtDNAから作られる部品を組み合わせ、既存のミトコンドリアを成長させる" width="1672" height="941" loading="lazy"><figcaption>核とmtDNAから作られる部品を組み合わせ、既存のミトコンドリアを成長させる</figcaption></figure>
 <h2 id="s3">3　fusion と fission：混ぜて補い、分けて切り離す</h2>
-<ul><li><strong>fusion（融合）</strong>：複数のミトコンドリアをつなぎ、DNAやタンパク質などの内容物を混ぜます。これによって、機能が低下した部分をほかの部分が補うことができます。</li><li><strong>fission（分裂）</strong>：一つのミトコンドリアを分け、傷んだ部分を切り離します。切り離された部分は、次のmitophagyで選んで捨てやすくなります。</li></ul>
+<ul><li><strong>fusion（融合）</strong>：複数のミトコンドリアをつなぎ、タンパク質や代謝物などの内容物を共有します。これによって、機能が低下した部分をほかの部分が補うことができます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18573913/" target="_blank" rel="noopener">PMID 18573913</a>）。</li><li><strong>fission（分裂）</strong>：一つのミトコンドリアを分けます。傷んだ部分を切り離す働きもあります。切り離された部分は、次のmitophagyで選んで捨てやすくなります。</li></ul>
 <p>fissionは、傷んだ部分を捨てるときだけに起こるものではありません。細胞分裂のときにミトコンドリアを分配したり、必要な場所へ運んだりするときにも使われます。<strong>fusionで補い、fissionで分ける。二つが組み合わさって、ミトコンドリア集団の状態を整えています。</strong></p>
 <h2 id="s4">4　mitophagy：どれを捨てるかを、どう見分けるか</h2>
 <p>切り離された傷んだミトコンドリアを、autophagyの仕組みで選んで分解・再利用するのが<strong>mitophagy（マイトファジー）</strong>です（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）。捨てる対象を選ぶ方法は、大きく二つに分けられます。</p>
-<ol><li><strong>弱ったものに印を付ける</strong>：膜電位が低下したミトコンドリアでは、PINK1とParkinが働いて、表面にubiquitinの印を付けます。この印がautophagosomeに「包む対象」を伝えます。</li><li><strong>不要になったものを直接つなぐ</strong>：ミトコンドリア外膜の接続役が、形成途中のautophagosome膜に結合し、ミトコンドリアを包ませます。たとえば赤芽球は、核を外へ出して網赤血球になったあと、残ったミトコンドリアも除去して成熟赤血球になります（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18048346/" target="_blank" rel="noopener">PMID 18048346</a>](https://pubmed.ncbi.nlm.nih.gov/18048346/)）。このように、壊れていなくても、細胞の変化に伴って計画的に除去される場合があります。</li></ol>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_mitophagy-v4.webp" alt="mitophagyには二つの入口がある。" loading="lazy"><figcaption>mitophagyには二つの入口がある。膜電位が低下したミトコンドリアではPINK1とParkinが働き、表面にubiquitinの印を付ける。不要になったミトコンドリアでは、外膜の接続役が形成途中のautophagosome膜に結合する。どちらもautophagosomeに包まれ、lysosomeで分解され、材料が再利用される。入口は違っても出口は同じ</figcaption></figure>
-<p>入口は違っても、その後は同じです。autophagosomeが包み、lysosomeで分解し、材料を細胞質へ戻します。<strong>印が付いただけでは、除去はまだ終わっていません。</strong>lysosomeでの分解まで進んで、mitophagyが完了します。</p>
+<ol><li><strong>弱ったものに印を付ける</strong>：膜電位が低下したミトコンドリアでは、PINK1とParkinが働いて、表面にubiquitinの印を付けます。この印がautophagosomeに「包む対象」を伝えます。</li><li><strong>不要になったものを直接つなぐ</strong>：ミトコンドリア外膜の接続役が、形成途中のautophagosome膜に結合し、ミトコンドリアを包ませます。たとえば赤芽球は、核を外へ出して網赤血球になったあと、残ったミトコンドリアも除去して成熟赤血球になります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18048346/" target="_blank" rel="noopener">PMID 18048346</a>）。このように、壊れていなくても、細胞の変化に伴って計画的に除去される場合があります。</li></ol>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/mito-quality-control_mitophagy-v4.webp" alt="mitophagyの代表的な二つの入口。" width="1672" height="941" loading="lazy"><figcaption>mitophagyの代表的な二つの入口。対象の選び方は異なっても、autophagosomeに包まれ、lysosomeで分解される</figcaption></figure>
+<p>入口は違っても、その後は同じです。autophagosomeが包み、<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>で分解し、材料を細胞質へ戻します。<strong>印が付いただけでは、除去はまだ終わっていません。</strong>lysosomeでの分解まで進んで、mitophagyが完了します。</p>
 <h2 id="s5">5　4つがそろって初めて「品質」が保たれる</h2>
 <ul><li>作る（biogenesis）ばかりで捨てられなければ、傷んだものが溜まる。</li><li>捨てる（mitophagy）ばかりで作らなければ、ミトコンドリア量が減る。</li><li>混ぜる（fusion）・分ける（fission）のバランスが崩れても、補い合いや切り離しがうまくいかない。</li></ul>
-<h3>リニューアルは、いつ進むのか</h3>
+<h3>入れ替わりは、需要や損傷に応じて変わる</h3>
 <p>ミトコンドリアの入れ替わりは、特別なときだけ始まるものではありません。<strong>基礎的なturnoverは常に続いており、細胞の需要や損傷に応じて4つの働きの強さが変わります。</strong></p>
-<p>この調節には、細胞のエネルギー状態を伝える<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。">AMPK</span></strong>と、栄養や成長刺激を受け取る<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。">mTORC1</span></strong>も関与します。ここでは4つの働きに集中し、AMPKとmTORC1がそのバランスをどう変えるかは<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>で扱います。</p>
-<ul><li><strong>運動やエネルギー需要が増えたとき</strong>：PGC-1αを軸にbiogenesisが進み、ミトコンドリアの量と酸化能力が増えます。同時にネットワークの形が組み替えられ、不要になった部分の除去も進みます（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>](https://pubmed.ncbi.nlm.nih.gov/28580772/)、[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39023008/" target="_blank" rel="noopener">PMID 39023008</a>](https://pubmed.ncbi.nlm.nih.gov/39023008/)）。</li><li><strong>一部のミトコンドリアが傷んだとき</strong>：fusionで補えるものは補い、回復しにくい部分はfissionで切り離してmitophagyへ送ります。</li><li><strong>使わない状態が続いたとき</strong>：骨格筋ではbiogenesisの調節が弱まり、ミトコンドリアの全体量や酸化能力が低下しやすくなります。ヒトでも、寝たきりや脚の固定によって筋肉を使わない状態が7日間続くと、骨格筋でミトコンドリアを作り足すシグナルや、mtDNA・酸化酵素などの指標が低下し始めることが報告されています（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21750272/" target="_blank" rel="noopener">PMID 21750272</a>](https://pubmed.ncbi.nlm.nih.gov/21750272/)、[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31495926/" target="_blank" rel="noopener">PMID 31495926</a>](https://pubmed.ncbi.nlm.nih.gov/31495926/)）。</li><li><strong>加齢や強いストレスが重なったとき</strong>：作る・分ける・捨てる反応が一律に止まるのではなく、必要なときに増減させる調節が鈍くなりやすくなります。とくに不活動の影響を受けやすく、運動を再開したときの回復も若年者より小さい場合があります（[<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31118897/" target="_blank" rel="noopener">PMID 31118897</a>](https://pubmed.ncbi.nlm.nih.gov/31118897/)）。</li></ul>
-<p>つまり、リニューアルが進みにくいとは、4つの働きがすべて弱くなることではありません。<strong>作る量・補う量・捨てる量の釣り合いが崩れ、傷んだミトコンドリアの処理や補充が追いつかない状態</strong>です。</p>
-<p><strong>作る・つなぐ・分ける・捨てるという4つの働きが釣り合って、ミトコンドリア集団の質が保たれます。</strong>「増やす」ことも「捨てる」ことも、それだけでは目標になりません。</p>
+<p>この調節には、細胞のエネルギー状態を伝える<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014">AMPK</span></strong>と、栄養や成長刺激を受け取る<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e">mTORC1</span></strong>も関与します。ここでは4つの働きに集中し、AMPKとmTORC1がそのバランスをどう変えるかは<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>で扱います。</p>
+<ul><li><strong>運動やエネルギー需要が増えたとき</strong>：PGC-1αを軸にbiogenesisが進み、ミトコンドリアの量と酸化能力が増えます。同時にネットワークの形が組み替えられ、不要になった部分の除去も進みます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28580772/" target="_blank" rel="noopener">PMID 28580772</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39023008/" target="_blank" rel="noopener">PMID 39023008</a>）。</li><li><strong>一部のミトコンドリアが傷んだとき</strong>：fusionで補えるものは補い、回復しにくい部分はfissionで切り離してmitophagyへ送ります。</li><li><strong>使わない状態が続いたとき</strong>：骨格筋ではbiogenesisの調節が弱まり、ミトコンドリアの全体量や酸化能力が低下しやすくなります。ヒトでも、寝たきりや脚の固定によって筋肉を使わない状態が7日間続くと、骨格筋でミトコンドリアを作り足すシグナルや、mtDNA・酸化酵素などの指標が低下し始めることが報告されています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21750272/" target="_blank" rel="noopener">PMID 21750272</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31495926/" target="_blank" rel="noopener">PMID 31495926</a>）。</li><li><strong>加齢や強いストレスが重なったとき</strong>：作る・分ける・捨てる反応が一律に止まるのではなく、必要なときに増減させる調節が鈍くなりやすくなります。とくに不活動の影響を受けやすく、運動を再開したときの回復も若年者より小さい場合があります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31118897/" target="_blank" rel="noopener">PMID 31118897</a>）。</li></ul>
+<p><strong>作る量・補う量・捨てる量の釣り合いが崩れると、傷んだミトコンドリアの処理や補充が追いつかなくなります。</strong>一つの働きだけを強めるのでなく、需要に応じて全体を調節することが必要です。</p>
 <h2>この章の到達点</h2>
 <ol class="goal"><li>ミトコンドリアの質は、数だけでは判断できない。<strong>機能と、作る・捨てる入れ替わり（turnover）</strong>を合わせて見る必要がある。</li><li>品質管理には、<strong>biogenesis・fusion・fission・mitophagy</strong>という4つの働きがある。</li><li>fusionは内容物を混ぜて補い合い、fissionは傷んだ部分を切り離す。どちらも必要である。</li><li>mitophagyには、<strong>弱ったものにubiquitinの印を付ける方法</strong>と、<strong>不要になったものをautophagosomeへ直接つなぐ方法</strong>がある。どちらも最後はlysosomeで分解される。</li><li>基礎的なturnoverは常に続き、運動やエネルギー需要に応じて高まる。不活動や加齢では、この調節が乱れやすい。どれか一つを強めるのではなく、<strong>4つの釣り合い</strong>によって品質が保たれる。</li></ol>
-
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>構成を維持して説明の順序・見出し・図の説明を整理</li><li><time>2026-08-31</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="autophagy.html"><span class="lbl">前へ</span>オートファジーとリソソーム</a><a class="next" href="ampk-mtor.html"><span class="lbl">次へ</span>AMPKとmTORC1――エネルギーと材料の使い方を調節する</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -540,7 +661,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -567,8 +688,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -614,11 +744,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -630,15 +764,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

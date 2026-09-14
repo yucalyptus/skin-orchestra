@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>メラノサイトと色素形成 ― 生化学で見る美容医療</title>
+<meta name="description" content="表皮の色素は、メラノサイトと角化細胞の共同作業で保たれています。 合成・受け渡し・分布・消失を順にたどると、肌の色が変わる仕組みが見えてきます。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/melanocytes.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="メラノサイトと色素形成 ― 生化学で見る美容医療">
+<meta property="og:description" content="表皮の色素は、メラノサイトと角化細胞の共同作業で保たれています。 合成・受け渡し・分布・消失を順にたどると、肌の色が変わる仕組みが見えてきます。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/melanocytes.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/melanocytes_表皮メラニン単位.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+color:var(--sub);text-align:center}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border:0;font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border:0;font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   見出しと薄い背景で補足のまとまりを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border:0;border-radius:4px;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<div class="part">材料を感知し作る</div>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<div class="part">掃除と作り直し</div>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
+<div class="part">傷害から修復まで</div>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<div class="part">細胞は加齢で何が変わるか</div>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html" class="active">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
+<span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
+<span class="soon">弾性線維と膠原線維<em>準備中</em></span>
+<span class="soon">糖化とAGE<em>準備中</em></span>
+<span class="soon">皮脂分泌の生化学<em>準備中</em></span>
+<span class="soon">毛包と毛周期<em>準備中</em></span>
+<span class="soon">脂肪<em>準備中</em></span>
+<span class="soon">筋肉<em>準備中</em></span>
+<span class="soon">血管と内皮<em>準備中</em></span>
+<div class="part">訴えを細胞から読み解く</div>
+<span class="soon">赤みの生化学<em>準備中</em></span>
+<span class="soon">しみとくすみ<em>準備中</em></span>
+<span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter" data-chapter="melanocytes">
+<p class="kicker">美容皮膚科　／　組織の生化学</p>
+<h1 class="ch-title">メラノサイトと色素形成<small>核を守る色素を、作って配る</small></h1>
+<p class="dateline">公開 2026-09-14</p>
+<p>表皮では、<strong>メラノサイトがメラニンを作り、周囲の角化細胞へ渡しています。</strong> メラニンは肌の色に関わるとともに、紫外線による核DNAの損傷を減らします。色素形成を理解するには、作る量だけでなく、受け渡した色素がどこに分布し、どのくらい残るかも見る必要があります。</p>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>表皮の色素は、メラノサイトと角化細胞の共同作業で保たれています。</strong> 合成・受け渡し・分布・消失を順にたどると、肌の色が変わる仕組みが見えてきます。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</a></li><li><a href="#s2">2　メラノソームの中で、メラニンを合成する</a></li><li><a href="#s3">3　周囲からの信号が、作る量を変える</a></li><li><a href="#s4">4　色素を渡し、角化細胞の中に配置する</a></li><li><a href="#s5">5　受け渡された色素は、表皮の更新とともに減っていく</a></li><li><a href="#s6">6　美容医療は、どの過程に働きかけるのか</a></li></ul></nav><h2 id="s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</h2>
+<p><strong>メラノサイト（<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。" data-u="glossary.html#term-3f14f8b30147">melanocyte</span>）</strong> は、表皮の基底層にある色素産生細胞です。細胞体から伸びる <strong>樹状突起</strong> を介して、周囲の <strong>角化細胞（<span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>）</strong> へメラニンを渡します。</p>
+<p>1個のメラノサイトと、およそ36個の角化細胞が作る機能単位を <strong>表皮メラニン単位（epidermal melanin unit）</strong> と呼びます。この数は目安で、部位などによって変わります。</p>
+<p>角化細胞に渡された色素は、核の表面側に集まって <strong>核上メラニンキャップ（supranuclear cap）</strong> を作ります。ヒト皮膚を用いた実験では、このキャップのある細胞でUVBによるDNA損傷が少ないことが確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">Kobayashiら, 1998</a></p>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_表皮メラニン単位.webp" alt="基底層のメラノサイトと周囲の角化細胞が作る表皮メラニン単位。" width="1024" height="1536" loading="lazy"><figcaption>基底層のメラノサイトと周囲の角化細胞が作る表皮メラニン単位。下は、受け渡された色素が核の表面側に集まる核上メラニンキャップ。受け渡し方は模式的に示す。</figcaption></figure>
+<details class="supplement"><summary>詳しく：細胞の由来と肌色の違い</summary><div class="supplement-body"><p>メラノサイトは <strong>神経堤（neural crest）</strong> に由来し、発生の過程で皮膚へ移動します。表皮を作る角化細胞とは由来が異なります。</p>
+<p>同じ部位で比べた肌色の違いは、メラノサイトの数だけでは説明できません。メラニンの種類・量に加え、色素を含む粒子の大きさや、角化細胞内での分布・残り方が関わります。ヒト皮膚でも、肌色による角化細胞内の色素分布の違いが調べられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">Thongら, 2003</a></p>
+<p>メラニンはメラノサイトの中でも色を持っています。角化細胞への受け渡しは、すでにある色素を表皮に広く分布させる過程です。</p></div></details>
+<h2 id="s2">2　メラノソームの中で、メラニンを合成する</h2>
+<p>メラノサイトには、色素を作る <strong>メラノソーム（melanosome）</strong> というオルガネラがあります。リソソーム関連オルガネラの一種で、内部の構造を整えながらメラニンを蓄積します（→ <a class="chref" href="organelles.html">オルガネラ</a>）。</p>
+<p>合成の中心となる酵素が <strong>tyrosinase（チロシナーゼ）</strong> です。アミノ酸の <strong>tyrosine（チロシン）</strong> から <strong>DOPA</strong>、さらに <strong>dopaquinone（ドーパキノン）</strong> を作る最初の反応を担います。その後の反応から、褐黒色の <strong>eumelanin（ユーメラニン）</strong> と黄赤色の <strong>pheomelanin（フェオメラニン）</strong> が生じます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_合成と受け渡し_整理版.webp" alt="メラノソームの成熟と色素の合成、角化細胞への受け渡しを示す。" width="1536" height="1024" loading="lazy"><figcaption>メラノソームの成熟と色素の合成、角化細胞への受け渡しを示す。合成の分岐はドーパキノンから始まり、受け渡された色素は角化細胞内に分布する。成熟段階はユーメラニンを含むメラノソームの代表像。</figcaption></figure>
+<details class="supplement"><summary>詳しく：メラノソームの成熟と合成に関わる分子</summary><div class="supplement-body"><p>ユーメラニンを含むメラノソームの成熟は、形態から <strong>stage I〜IV</strong> に分けられます。</p>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>内部で起こること</th></tr></thead><tbody><tr><td><strong>I</strong></td><td>初期小胞の内部に、線維を作る準備が始まる</td></tr><tr><td><strong>II</strong></td><td>線維状の骨組みが整う。まだ明瞭なメラニン沈着はない</td></tr><tr><td><strong>III</strong></td><td>骨組みにメラニンが沈着する</td></tr><tr><td><strong>IV</strong></td><td>メラニンが密に蓄積し、内部の骨組みが見えにくくなる</td></tr></tbody></table></div>
+<p>骨組みには <strong>PMEL（Pmel17）</strong> というタンパク質が関わります。酵素や構造タンパク質は小胞体・ゴルジ体などを経て運ばれ、メラノソームの成熟と合成を支えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11694580/" target="_blank" rel="noopener">Bersonら, 2001</a></p>
+<p>合成にはtyrosinaseに加えて <strong>TYRP1・DCT（TYRP2）</strong> も関わります。DCTはユーメラニン合成過程の反応を担います。ドーパキノンが <strong>cysteine（システイン）</strong> と反応するとフェオメラニン側へ進むため、酵素だけでなく基質の環境も色素の種類を左右します。<span class="term" tabindex="0" data-t="MC1R" data-d="melanocortin 1 receptor。メラノサイトに発現するGPCRで、α-MSHが結合するとcAMP経路を介してMITFを活性化し、eumelanin産生方向へ促す。" data-u="glossary.html#term-e201809ba7c3">MC1R</span>シグナルも、この合成の方向と量の調節に関わります。</p>
+<p>ユーメラニンとフェオメラニンでは光に対する性質も異なり、同じ量なら同じ防御能がある、とは扱えません。</p></div></details>
+<p><strong>メラノソーム内部のpHも、合成酵素の働きを左右します。</strong> 内部の酸性が弱まるとtyrosinaseが働きやすくなります。これはオルガネラ内部の環境の話で、<a class="chref" href="epidermis.html">表皮とターンオーバー</a>で扱った皮膚表面・角層のpHとは分けて考えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">Bellonoら, 2014</a></p>
+<details class="supplement"><summary>詳しく：色素形成とイオン輸送体</summary><div class="supplement-body"><p><strong>OCA2</strong> はメラノソーム膜の塩化物イオンの通過に関わり、内部pHとメラニン合成に影響します。<strong>SLC45A2・SLC24A5</strong> なども色素形成に関わる輸送体です。これらをすべて同じpH調節機構として扱うのではなく、それぞれがイオン環境や成熟をどう変えるかを見ます。OCA2については、オルガネラのイオン電流とpHを測定した研究があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">Bellonoら, 2014</a></p></div></details>
+<h2 id="s3">3　周囲からの信号が、作る量を変える</h2>
+<p>メラノサイトは、周囲の角化細胞などが出す信号に応じてメラニン合成を変えます。代表的なのが、<strong>紫外線を受けた角化細胞からの信号</strong>です。</p>
+<p>角化細胞でDNA損傷への応答が起こると、<strong>α-MSH</strong> というペプチドの産生につながります。α-MSHがメラノサイトの受容体 <strong>MC1R</strong> に結合すると、細胞内の信号を介して、色素形成関連遺伝子を調節する転写因子 <strong>MITF</strong> の働きが高まります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_細胞間シグナル_整理版.webp" alt="角化細胞のDNA損傷からα-MSHを介してメラノサイトへ伝わる代表的な信号。" width="1536" height="1024" loading="lazy"><figcaption>角化細胞のDNA損傷からα-MSHを介してメラノサイトへ伝わる代表的な信号。下段はその他の入力で、すべてが同じ細胞内経路を通るわけではない。</figcaption></figure>
+<p>メラノサイト自身も紫外線を受け、直接応答します。日焼けを理解するには、角化細胞を介した反応と、メラノサイトへの直接作用の両方が必要です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22055294/" target="_blank" rel="noopener">Wicksら, 2011</a></p>
+<details class="supplement"><summary>詳しく：α-MSHからMITFへ、その他の入力との違い</summary><div class="supplement-body"><p>角化細胞では、DNA損傷に応答する <strong><span class="term" tabindex="0" data-t="p53" data-d="DNA損傷を受けて働く転写因子。p21を介してCDK2を止め、修復が済めば下がって周期へ戻る一過性の停止をかける。停止を持続させるp16–RB系とは別系統。" data-u="glossary.html#term-f22c2605df7f">p53</span></strong> が <strong><span class="term" tabindex="0" data-t="POMC" data-d="proopiomelanocortin。切断されてACTH・α-MSH・β-endorphinなどになる前駆体タンパク質。皮膚では、UV刺激を受けたケラチノサイトからPOMC由来ペプチドが産生される。" data-u="glossary.html#term-bebf5fcded7e">POMC</span></strong> の発現を促します。POMCはα-MSHの前駆体です。受け取るメラノサイトでは、<strong>MC1R → <span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。" data-u="glossary.html#term-1121990e3524">cAMP</span> → PKA → CREB → MITF</strong> という経路が働きます。MITFはtyrosinaseなど、合成やメラノソームに関わる遺伝子の発現を調節します（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a></p>
+<p>メラノサイトへの入力はα-MSHだけではありません。</p>
+<div class="tblwrap"><table><thead><tr><th>信号</th><th>受容体・主な関わり</th></tr></thead><tbody><tr><td><strong>endothelin-1（ET-1）</strong></td><td>EDNRBを介し、色素形成などを調節する</td></tr><tr><td><strong>SCF（stem cell factor）</strong></td><td>KITを介し、生存・増殖・色素形成を支える。線維芽細胞などからも供給される</td></tr><tr><td><strong>PGE₂</strong></td><td>EP受容体を介し、樹状突起や色素合成に影響する。受容体の種類によって細胞内の反応が異なる</td></tr></tbody></table></div>
+<p>KITは受容体型チロシンキナーゼで、MC1Rと同じGPCRではありません。これらの信号を、すべて一本のcAMP経路として結ばないことが重要です。PGE₂についても、異なるEP受容体がcAMPに反対方向の影響を及ぼすことが示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20500768/" target="_blank" rel="noopener">Starnerら, 2010</a></p>
+<p>Wnt/β-cateninや酸化還元状態も、メラノサイトの機能に関わります。多数の入力があるため、MITFだけを単純なオン・オフのスイッチとして扱うことはできません（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p></div></details>
+<p>炎症が続くと、周囲の細胞からの信号も変わります。炎症後の色素沈着を考えるときは、メラニン合成だけでなく、色素形成を刺激する組織環境が続いていないかも見ます。</p>
+<details class="supplement"><summary>詳しく：炎症・plasmin系と色素形成</summary><div class="supplement-body"><p><strong>plasmin</strong> はフィブリンを分解する酵素です。角化細胞が作る <strong>plasminogen activator</strong> によるplasminogenの活性化も、色素形成を調節する細胞間の反応との関連が研究されています。</p>
+<p>角化細胞の培養上清を使った実験では、<strong>tranexamic acid（トラネキサム酸）</strong> がその色素形成促進作用を抑え、plasminogen activatorの関与が検討されました。これは角化細胞を介した作用の根拠の一つです。ただし、肝斑や炎症後色素沈着を、すべて「plasmin → PGE₂ → MITF」の一本で説明できるわけではありません。<a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">Maeda・Tomita, 2007</a></p>
+<p>PGE₂・bFGF・<span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>などは、色素細胞や血管を含む組織環境に関わる因子ですが、すべてをplasminの下流に一列に並べるのは単純化しすぎです。病態と治療への接続は しみとくすみ、薬剤の作用は 美白外用の生化学 で扱います。</p></div></details>
+<h2 id="s4">4　色素を渡し、角化細胞の中に配置する</h2>
+<p>色素を含むメラノソームは樹状突起側へ運ばれ、メラニンが角化細胞へ受け渡されます。<strong>細胞内で運ぶ過程と、細胞間で渡す過程は別です。</strong></p>
+<p>受け取った色素は角化細胞内に分布し、核上メラニンキャップにもなります。色素の量だけでなく、大きさ・まとまり方・分布が肌の色と光防御に関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">Thongら, 2003</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">Kobayashiら, 1998</a></p>
+<details class="supplement"><summary>詳しく：輸送と受け渡しを担う分子</summary><div class="supplement-body"><p>メラノサイト内では、微小管を使う輸送と、細胞の周辺部のアクチンに沿った輸送・保持が関わります。<strong>Rab27a・melanophilin・myosin Va</strong> は、メラノソームとアクチン系のモーターをつなぐ複合体です。三つの分子が微小管上の輸送まで一括して担うわけではありません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11887186/" target="_blank" rel="noopener">Wuら, 2002</a></p>
+<p>細胞間の受け渡しには複数のモデルがあります。例えば、メラノサイトがメラニンの芯を放出し、角化細胞が取り込む仕組みが実験で示されています。<strong>Rab11b</strong> はこの放出に関わり、受け手側では <strong>PAR-2</strong> などが取り込みの調節に関わります。メラノソームが常に膜を保ったまま丸ごと渡る、と決めつけずに読みます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24141907/" target="_blank" rel="noopener">Tarafderら, 2014</a></p></div></details>
+<h2 id="s5">5　受け渡された色素は、表皮の更新とともに減っていく</h2>
+<p>角化細胞が上の層へ移動する間に、色素を含む細胞内構造の処理が進みます。表面に残った色素は、角層細胞の落屑とともに失われます。<strong>作る量が減っても、すでに表皮にある色素がすぐになくなるわけではありません。</strong> 表皮の更新は <a class="chref" href="epidermis.html">表皮とターンオーバー</a> で扱った流れです。</p>
+<p>また、色素が真皮へ落ち込み、<span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span>に取り込まれている場合は、表皮のターンオーバーだけでは除去されません。色素がどの層にあるかは、しみの経過を考えるうえでも重要です（→ しみとくすみ）。</p>
+<h2 id="s6">6　美容医療は、どの過程に働きかけるのか</h2>
+<p>色素への作用は、<strong>合成・受け渡し・分布や消失</strong>のどこに働くかで整理できます。例えば、tyrosinaseへの作用は合成、niacinamideの培養研究で示された作用は受け渡しの抑制です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a></p>
+<p>レチノイドは角化細胞の増殖・分化を変えるため、「色素を速く排出する薬」だけでは説明できません。色素を作る細胞、受け取る細胞、周囲の炎症を分けて捉えることが、薬剤や施術の理解につながります（→ レチノイド外用の生化学・美白外用の生化学・Qスイッチ・ピコ秒レーザー）。</p>
+<h2>この章の到達点</h2>
+<ol class="goal"><li><strong>メラノサイトは基底層にあり、樹状突起を介して角化細胞へ色素を配る。</strong></li><li><strong>メラニンはメラノソーム内で合成される。</strong> tyrosinase・内部の成熟・基質やpHが合成に関わる。</li><li><strong>角化細胞などからの信号が、メラノサイトの合成を調節する。</strong> α-MSH–MC1R–MITFは代表的な経路で、入力はこれだけではない。</li><li><strong>色素の受け渡しと分布は、色調と核DNAの保護に関わる。</strong> 合成量だけで見た目は決まらない。</li><li><strong>すでにある色素が減るには時間がかかる。</strong> 表皮内の色素と、真皮に残る色素を区別する。</li></ol>
+<h3>根拠の読み方</h3>
+<p>核上メラニンキャップの光防御、メラノソームの成熟、p53–POMCを介した細胞間の信号には実験的な裏づけがあります。一方、細胞間の受け渡し方や、各病態でどの炎症経路がどれだけ寄与するかは、複数のモデルと研究条件を区別して読みます。分子への作用が確認されても、製品や施術の効果量はそれぞれの臨床研究で判断します。</p>
+<h2>参考文献</h2>
+<ul><li>Kobayashi N, et al. Supranuclear melanin caps reduce ultraviolet induced DNA photoproducts in human epidermis. <em>J Invest Dermatol</em>. 1998. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">PMID: 9579550</a></li><li>Thong HY, et al. The patterns of melanosome distribution in keratinocytes of human skin as one determining factor of skin colour. <em>Br J Dermatol</em>. 2003. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">PMID: 14510981</a></li><li>Berson JF, et al. Pmel17 initiates premelanosome morphogenesis within multivesicular bodies. <em>Mol Biol Cell</em>. 2001. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11694580/" target="_blank" rel="noopener">PMID: 11694580</a></li><li>Bellono NW, et al. An intracellular anion channel critical for pigmentation. <em>eLife</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">PMID: 25513726</a></li><li>Cui R, et al. Central role of p53 in the suntan response and pathologic hyperpigmentation. <em>Cell</em>. 2007. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">PMID: 17350573</a></li><li>Wicks NL, et al. UVA phototransduction drives early melanin synthesis in human melanocytes. <em>Curr Biol</em>. 2011. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22055294/" target="_blank" rel="noopener">PMID: 22055294</a></li><li>Starner RJ, et al. PGE(2) is a UVR-inducible autocrine factor for human melanocytes that stimulates tyrosinase activation. <em>Exp Dermatol</em>. 2010. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20500768/" target="_blank" rel="noopener">PMID: 20500768</a></li><li>Maeda K, Tomita Y. Mechanism of the Inhibitory Effect of Tranexamic Acid on Melanogenesis in Cultured Human Melanocytes in the Presence of Keratinocyte-conditioned Medium. <em>J Health Sci</em>. 2007. <a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">doi:10.1248/jhs.53.389</a></li><li>Wu XS, et al. Identification of an organelle <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> for myosin-Va. <em>Nat Cell Biol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11887186/" target="_blank" rel="noopener">PMID: 11887186</a></li><li>Tarafder AK, et al. Rab11b mediates melanin transfer between donor melanocytes and acceptor keratinocytes via coupled exo/endocytosis. <em>J Invest Dermatol</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24141907/" target="_blank" rel="noopener">PMID: 24141907</a></li><li>Hakozaki T, et al. The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer. <em>Br J Dermatol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">PMID: 12100180</a></li></ul>
+<p>概説：D'Mello SAN, et al. Signaling Pathways in Melanogenesis. <em>Int J Mol Sci</em>. 2016;17:1144. <a class="ext" href="https://doi.org/10.3390/ijms17071144" target="_blank" rel="noopener">doi:10.3390/ijms17071144</a>／Cichorek M, et al. Skin melanocytes: biology and development. <em>Postepy Dermatol Alergol</em>. 2013;30:30–41. <a class="ext" href="https://doi.org/10.5114/pdia.2013.33376" target="_blank" rel="noopener">doi:10.5114/pdia.2013.33376</a>／Videira IFDS, et al. Mechanisms regulating melanogenesis. <em>An Bras Dermatol</em>. 2013;88:76–83. <a class="ext" href="https://doi.org/10.1590/S0365-05962013000100009" target="_blank" rel="noopener">doi:10.1590/S0365-05962013000100009</a></p>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-14</time>初公開</li><li><time>2026-09-13</time>構造・合成・調節・受け渡し・消失の順に整理し、詳細を本文直後の折りたたみへ移動。色素とUVに関する断定および図の経路を修正</li></ul></section>
+</article>
+<nav class="pager"><a class="prev" href="epidermis.html"><span class="lbl">前へ</span>表皮とターンオーバー</a><a class="next" href="ecm.html"><span class="lbl">次へ</span>細胞外基質（ECM）</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
+  function show(el){
+    cancelHide();
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseenter',cancelHide);
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

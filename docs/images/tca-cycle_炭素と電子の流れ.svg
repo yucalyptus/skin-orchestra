@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 736" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="TCA回路。8つの中間体を同じ円周上に配置し、同じ半径の円弧矢印で一周を示す。oxaloacetateにacetyl-CoAが加わってcitrateとなり、isocitrate、alpha-ketoglutarate、succinyl-CoA、succinate、fumarate、malateを経てoxaloacetateに戻る。1周で3 NADH、1 FADH2、1 GTP、2 CO2ができる">
+<defs>
+<marker id="tcaMainArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
+<marker id="tcaEntryArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#245b91"/></marker>
+</defs>
+<rect x="3" y="3" width="554" height="730" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
+<g font-family="system-ui,-apple-system,sans-serif">
+<text x="28" y="42" font-size="21" font-weight="700" fill="#1E3A63">回るあいだに、炭素を捨てて電子を取り出す</text>
+<text x="28" y="69" font-size="14" fill="#3B4A63">回路の矢印は反応の流れ。各反応で生じる分子を併記</text>
+
+<text x="447" y="91" font-size="12.5" text-anchor="middle" fill="#3B4A63">糖からも脂肪酸からも入る</text>
+<rect x="365" y="99" width="168" height="42" rx="9" fill="#f4f6f8" stroke="#245b91" stroke-width="1.7"/>
+<text x="449" y="126" font-size="15.5" font-weight="700" text-anchor="middle" fill="#202124">acetyl-CoA</text>
+<path d="M414 143 Q403 174 380 210" fill="none" stroke="#245b91" stroke-width="3" marker-end="url(#tcaEntryArrow)"/>
+
+COMMENT_HOLDER_1
+<circle cx="280" cy="365" r="175" fill="none" stroke="#DCE3EC" stroke-width="1.4"/>
+<path d="M350 204.6 A175 175 0 0 1 375 218" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M423 264 A175 175 0 0 1 453.5 342" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M453.5 388 A175 175 0 0 1 423 466" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M375 512 A175 175 0 0 1 350 525.4" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M210 525.4 A175 175 0 0 1 185 512" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M137 466 A175 175 0 0 1 106.5 388" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M106.5 342 A175 175 0 0 1 137 264" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+<path d="M185 218 A175 175 0 0 1 210 204.6" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
+
+COMMENT_HOLDER_2
+<rect x="210" y="167" width="140" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="280" y="187" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">oxaloacetate</text>
+<text x="280" y="206" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
+
+<rect x="354" y="218" width="100" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="404" y="238" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">citrate</text>
+<text x="404" y="257" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素6個</text>
+
+<rect x="395" y="342" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="455" y="362" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">isocitrate</text>
+<text x="455" y="381" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素6個</text>
+
+<rect x="324" y="466" width="160" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="404" y="486" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">α-ketoglutarate</text>
+<text x="404" y="505" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素5個</text>
+
+<rect x="210" y="517" width="140" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="280" y="537" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">succinyl-CoA</text>
+<text x="280" y="556" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
+
+<rect x="96" y="466" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="156" y="486" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">succinate</text>
+<text x="156" y="505" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
+
+<rect x="45" y="342" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="105" y="362" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">fumarate</text>
+<text x="105" y="381" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
+
+<rect x="106" y="218" width="100" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
+<text x="156" y="238" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">malate</text>
+<text x="156" y="257" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
+
+<text x="280" y="350" font-size="17" font-weight="700" text-anchor="middle" fill="#8A97AC">TCA回路</text>
+
+<rect x="195" y="274" width="82" height="32" rx="8" fill="#f4f6f8" stroke="#245b91"/>
+<text x="236" y="295" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ NADH</text>
+
+<rect x="320" y="407" width="106" height="46" rx="8" fill="#F7F9FC" stroke="#245b91"/><text x="373" y="426" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ NADH</text><text x="373" y="444" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ CO₂</text><line x1="426" y1="430" x2="441" y2="430" stroke="#245b91" stroke-width="1.4"/>
+<rect x="400" y="548" width="106" height="46" rx="8" fill="#F7F9FC" stroke="#245b91"/><text x="453" y="567" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ NADH</text><text x="453" y="585" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ CO₂</text><line x1="400" y1="561" x2="359" y2="526" stroke="#245b91" stroke-width="1.4"/>
+<rect x="222" y="455" width="72" height="32" rx="8" fill="#F5E9D6" stroke="#B4762B"/>
+<text x="258" y="476" font-size="13" font-weight="700" text-anchor="middle" fill="#8A5A18">＋ GTP</text>
+
+<rect x="139" y="400" width="92" height="32" rx="8" fill="#f4f6f8" stroke="#245b91"/>
+<text x="185" y="421" font-size="13" font-weight="700" text-anchor="middle" fill="#245b91">＋ FADH₂</text>
+
+<rect x="26" y="603" width="508" height="48" rx="10" fill="#EEF2F8"/>
+<text x="280" y="633" font-size="16" font-weight="700" text-anchor="middle" fill="#1E3A63">1周で 3 NADH ・1 FADH₂ ・1 GTP ・2 CO₂</text>
+
+<text x="44" y="681" font-size="14.5" fill="#111827"><tspan font-weight="700">直接得るのは GTP 1個相当。</tspan>主産物は</text>
+<text x="44" y="707" font-size="14.5" fill="#111827"><tspan font-weight="700" fill="#245b91">NADH と FADH₂</tspan> で、ATP はこの電子から電子伝達系で作られる。</text>
+<line x1="236" y1="274" x2="227" y2="220" stroke="#245b91" stroke-width="1.4"/><line x1="139" y1="416" x2="126" y2="425" stroke="#245b91" stroke-width="1.4"/><line x1="222" y1="479" x2="202" y2="514" stroke="#245b91" stroke-width="1.4"/></g>
+</svg>

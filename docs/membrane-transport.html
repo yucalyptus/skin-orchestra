@@ -4,13 +4,13 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>細胞膜と物質輸送 ― 生化学で見る美容医療</title>
-<meta name="description" content="細胞の中に入れるか、さらに核まで入れるか。それを大きく分けているのは、脂溶性か水溶性かです。">
+<meta name="description" content="細胞膜は、分子を選んで通す障壁です。 脂溶性・大きさ・電荷によって通りやすさが変わり、そのまま通れない分子には輸送体や小胞を使う経路があります。">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/membrane-transport.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="細胞膜と物質輸送 ― 生化学で見る美容医療">
-<meta property="og:description" content="細胞の中に入れるか、さらに核まで入れるか。それを大きく分けているのは、脂溶性か水溶性かです。">
+<meta property="og:description" content="細胞膜は、分子を選んで通す障壁です。 脂溶性・大きさ・電荷によって通りやすさが変わり、そのまま通れない分子には輸送体や小胞を使う経路があります。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/membrane-transport.html">
 <meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/membrane-transport_脂質二重層.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html" class="active">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html" class="active">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,48 +614,53 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="membrane-transport">
 <p class="kicker">基礎　／　情報をどう読むか</p>
 <h1 class="ch-title">細胞膜と物質輸送</h1>
-<p class="dateline">公開 2026-08-16</p>
-<blockquote>細胞が glucose をエネルギーに変えるにも、アミノ酸からタンパク質を作るにも、<strong>その分子が細胞の中に入っていること</strong>が前提です。どうやって入るのか。<br><br>入り方は分子ごとに違います。そのまま膜を通り抜けるものもあれば、専用の輸送体がなければ1分子も入れないものもある。<strong>入ったあとも、目的の場所まで届くとは限りません。</strong> 薬や栄養が効くかどうかは、この出入りの条件に縛られています。</blockquote>
+<p class="dateline">公開 2026-08-16　／　最終更新 2026-09-13</p>
+<blockquote>細胞が glucose をエネルギーに変えるにも、アミノ酸からタンパク質を作るにも、<strong>その分子が細胞の中に入っていること</strong>が前提です。どうやって入るのか。<br><br>入り方は分子ごとに違います。そのまま膜を通り抜けるものもあれば、専用の輸送体を使って入るものもあります。<strong>入ったあとも、目的の場所まで届くとは限りません。</strong> 薬や栄養が効くかどうかは、この出入りの条件に縛られています。</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>細胞の中に入れるか、さらに核まで入れるか。それを大きく分けているのは、脂溶性か水溶性かです。</strong><br><br>ただし入れたとしても、目的のオルガネラまで届くか、分解される前に十分な量と時間はたらけるかは、また別の話です。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　そのまま通れるものと、通れないもの</a></li><li><a href="#s2">2　通り方は4種類</a></li><li><a href="#s3">3　高分子・粒子の出入り：endocytosis と exocytosis</a></li><li><a href="#s4">4　越える関門は一つではない</a></li></ul></nav><h2 id="s1">1　そのまま通れるものと、通れないもの</h2>
-<p>細胞膜は主に<strong>脂質二重層（lipid bilayer）</strong>でできています。内側に疎水性の尾、外側に親水性の頭が並んだ、選択的な障壁です。ここで分子の行き先が二手に分かれます。</p>
-<div class="tblwrap"><table><thead><tr><th></th><th>脂質二重層を</th><th>例</th></tr></thead><tbody><tr><td><strong>脂溶性の小分子</strong></td><td>そのまま通り抜ける</td><td>レチノイド（→ レチノイド外用の生化学）、ビタミンD、ステロイドホルモン、甲状腺ホルモン、O₂・CO₂</td></tr><tr><td><strong>水溶性の分子・イオン・ペプチド</strong></td><td>自力では通れない</td><td>glucose、アミノ酸、Na⁺・K⁺・Ca²⁺、成長因子、cytokine</td></tr></tbody></table></div>
-<p><strong>脂溶性の小分子は、脂質二重層を通り抜けることができます。</strong> ただし脂溶性でも、大きすぎれば通りにくく、帯電していれば通りません。</p>
+<blockquote class="lead"><strong>細胞膜は、分子を選んで通す障壁です。</strong> 脂溶性・大きさ・電荷によって通りやすさが変わり、そのまま通れない分子には輸送体や小胞を使う経路があります。<br><br>細胞に入ったあとも、目的のオルガネラに届き、十分な量と時間はたらく必要があります。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　そのまま通れるものと、通れないもの</a></li><li><a href="#s2">2　膜を通る仕組みと、エネルギーの使い方</a></li><li><a href="#s3">3　高分子・粒子の出入り：endocytosis と exocytosis</a></li><li><a href="#s4">4　越える関門は一つではない</a></li></ul></nav><h2 id="s1">1　そのまま通れるものと、通れないもの</h2>
+<p>細胞膜は主に<strong>脂質二重層（lipid bilayer）</strong>でできています。内側に疎水性の尾、外側に親水性の頭が並んだ、選択的な障壁です。この内側の疎水性部分が、分子の通りやすさを左右します。</p>
+<div class="tblwrap"><table><thead><tr><th></th><th>脂質二重層を</th><th>例</th></tr></thead><tbody><tr><td><strong>脂溶性の小分子</strong></td><td>比較的通りやすい</td><td>レチノイド（→ レチノイド外用の生化学）、ビタミンD、ステロイドホルモン、O₂・CO₂</td></tr><tr><td><strong>水溶性の分子・イオン・ペプチド</strong></td><td>そのままでは通りにくい</td><td>glucose、アミノ酸、Na⁺・K⁺・Ca²⁺、成長因子、cytokine</td></tr></tbody></table></div>
+<p><strong>脂溶性の小分子は、脂質二重層を通り抜けることができます。</strong> ただし大きさや電荷も関係します。たとえば甲状腺ホルモンの細胞内への取り込みには、MCT8 などの輸送体が働きます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12871948/" target="_blank" rel="noopener">PMID 12871948</a>）。</p>
 <p><strong>水溶性の分子は、そのままでは通り抜けられません。</strong> これは「細胞に入れない」という意味ではありません。専用の通り道があり、そこを使って入ります。どう入るかは §2 で見ます。</p>
-<p>行き先も分かれます。<strong>脂溶性の小分子は核まで入り、核内受容体に直接結合できます。</strong> 水溶性の <span class="term" tabindex="0" data-t="ligand" data-d="受容体に結合して情報を渡す分子（成長因子・cytokine・ホルモンなど）。水溶性 ligand は細胞の中まで入らず膜受容体の外側で結合して中継され、脂溶性 ligand だけが膜を通って核内受容体に届く。">ligand</span> は膜の外にとどまり、膜受容体に結合して情報だけを中へ渡します（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_脂質二重層.webp" alt="脂質二重層の断面。" loading="lazy"><figcaption>脂質二重層の断面。左に比較的通りやすいもの（O₂・CO₂・ベンゼン・ステロイド・エタノール）、右に、そのままでは通りにくいもの（Na⁺・K⁺・Ca²⁺・Cl⁻・HCO₃⁻・グルコース・アミノ酸・タンパク質）が赤い×付きで並ぶ。右のものは特定の膜タンパク質（チャネル／トランスポーター）を介してしか通れない</figcaption></figure>
-<aside class="column"><p class="col-t">コラム</p><p class="col-h">細胞膜のリン脂質は、食事の脂肪で変わる</p><div style="float:right;width:190px;margin:4px 0 12px 18px"><svg viewBox="0 0 190 140" width="190" role="img" aria-label="まっすぐな尾のリン脂質と、折れ曲がった尾のリン脂質"><g fill="none" stroke-linecap="round"><circle cx="48" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="43" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M40 45 V118" stroke="#E9B98C" stroke-width="6"/><path d="M57 45 V118" stroke="#E9B98C" stroke-width="6"/><circle cx="140" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="135" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M131 45 q-14 16 -1 30 q13 15 -2 28 q-9 9 -3 15" stroke="#93C4A2" stroke-width="6"/><path d="M150 45 q14 15 1 29 q-13 15 1 28 q9 9 4 16" stroke="#93C4A2" stroke-width="6"/></g></svg></div>
+<p><strong>ステロイドホルモンやレチノイドは、細胞内の受容体に結合して遺伝子発現を調節します。</strong> 一方、成長因子や cytokine は主に膜受容体に結合し、情報を細胞内へ伝えます。脂溶性は膜の通りやすさに関わる性質で、すべての脂溶性分子が核内受容体に作用するわけではありません（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_脂質二重層.webp" alt="脂質二重層の断面。" width="1672" height="941" loading="lazy"><figcaption>脂質二重層の断面。左に比較的通りやすいもの（O₂・CO₂・ベンゼン・ステロイド・エタノール）、右に、そのままでは通りにくいもの（Na⁺・K⁺・Ca²⁺・Cl⁻・HCO₃⁻・グルコース・アミノ酸・タンパク質）が赤い×付きで並ぶ。イオンや小分子にはチャネル・輸送体、高分子には小胞による輸送経路がある</figcaption></figure>
+<aside class="column"><p class="col-t">コラム</p><h3 class="col-h">細胞膜のリン脂質は、食事の脂肪で変わる</h3><div style="float:right;width:190px;margin:4px 0 12px 18px"><svg viewBox="0 0 190 140" width="190" role="img" aria-label="まっすぐな尾のリン脂質と、折れ曲がった尾のリン脂質"><g fill="none" stroke-linecap="round"><circle cx="48" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="43" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M40 45 V118" stroke="#E9B98C" stroke-width="6"/><path d="M57 45 V118" stroke="#E9B98C" stroke-width="6"/><circle cx="140" cy="28" r="16" fill="#C3D9F0" stroke="#7FA6CC" stroke-width="3"/><circle cx="135" cy="23" r="4" fill="#EAF2FB" stroke="none"/><path d="M131 45 q-14 16 -1 30 q13 15 -2 28 q-9 9 -3 15" stroke="#93C4A2" stroke-width="6"/><path d="M150 45 q14 15 1 29 q-13 15 1 28 q9 9 4 16" stroke="#93C4A2" stroke-width="6"/></g></svg></div>
 <p>リン脂質は、<strong>リン酸を含む丸い頭</strong>と、そこから伸びる<strong>2本の脂肪酸の尾</strong>でできています。二重層のなかで向かい合っているのが、この尾の部分です。</p>
-<p><strong>尾の脂肪酸の構成は、食事でとる脂質の種類で決まります。</strong> このため、赤血球の膜脂肪酸が摂取量の指標として使われます。</p>
-<p>この尾の脂肪酸の種類によって、<strong>細胞膜の硬さ</strong>と、<strong>細胞に炎症が起きたときに出るものの種類</strong>が変わります。</p>
-<p><strong>膜の硬さを決めるのは、尾にある二重結合の数です。</strong> 飽和脂肪酸の尾はまっすぐで、隣とぴったり並びます。肉の脂、バター、パーム油に多いのがこれです。二重結合があると、そこで尾が折れ曲がる。折れた尾どうしは密に並べないので、隙間ができて膜が柔らかくなります。n-3系（オメガ3）の DHA は二重結合を6か所持ち、いちばん柔らかくなります。<strong>柔らかいほど、膜タンパク質は動きやすくなります。</strong> 受容体が集まって複合体を作る、膜がくぼんで取り込む——そうした膜の作業がしやすくなるということです。</p>
-<p><strong>炎症の質を決めるのは、n-6系か n-3系かです。</strong> 炎症刺激が入ると、酵素（phospholipase A₂）が<strong>膜のリン脂質から脂肪酸を切り出し</strong>、それがメディエーターに変わります。n-6系の出発点は、<strong>大豆油・コーン油・ひまわり油</strong>など、加工食品や外食で広く使われる植物油に多い linoleic acid です。これが体内で arachidonic acid に変わり、そこから<strong>炎症を起こす側</strong>の prostaglandin や leukotriene が作られます。</p>
-<p>一方の n-3系は、<strong>青魚に多い EPA・DHA</strong> です。ここからできるのは、<strong>炎症を収束させる resolvin・protectin</strong> です。</p>
-<p><strong>何を膜に置いているかが、炎症が起きたときに何が出てくるかを決めます。</strong></p>
-<p>細胞膜が自分の食べた脂でできていて、その組成で性質が変わり、起きる反応まで変わる。食べ物って本当に大事ですね。</p>
-<p>かつての日本人は魚をよく食べていたので、EPA・DHA は比較的足りていました。しかし魚介類の摂取量は減り続け、2006年には肉類が魚介類を上回りました。せっかくの島国で、新鮮なお魚が手に入るのですから、<strong>EPA・DHAの豊富な青魚をもっと食べたいですね。</strong></p>
+<h4>食事は膜の脂肪酸組成に影響する</h4>
+<p><strong>尾の脂肪酸の構成には、食事でとる脂質が反映されます。</strong> 体内での合成・分解やリン脂質の作り替えも加わるため、食べた脂肪がそのまま膜の組成になるわけではありません。</p>
+<h4>脂肪酸の形が、膜の流動性に関わる</h4>
+<p>飽和脂肪酸の尾はまっすぐで、隣の尾と密に並びやすい形です。<strong>cis 型の二重結合があると尾が折れ曲がり、密に並びにくくなります。</strong> EPA や DHA は、この二重結合を複数持つ脂肪酸です。</p>
+<p>こうした違いは膜の流動性や、膜タンパク質の働きに影響します。ただし膜の性質は、脂肪酸の鎖の長さや cholesterol の量などでも変わります。柔らかければ柔らかいほどよい、という単純な関係ではありません。</p>
+<h4>膜の脂肪酸は、炎症を調節する分子の材料にもなる</h4>
+<p>炎症刺激が入ると、<strong>phospholipase A₂ が膜のリン脂質から脂肪酸を切り出し</strong>、それを材料に脂質メディエーターが作られます。</p>
+<div class="tblwrap"><table><thead><tr><th>膜に含まれる脂肪酸</th><th>そこから作られるメディエーターの例</th></tr></thead><tbody><tr><td><strong>n-6系の arachidonic acid</strong></td><td>炎症や血管反応に関わる prostaglandin・leukotriene、炎症の収束に関わる lipoxin</td></tr><tr><td><strong>n-3系の EPA・DHA</strong></td><td>炎症の収束に関わる resolvin・protectin など</td></tr></tbody></table></div>
+<p><strong>n-6系＝炎症を起こす、n-3系＝炎症を抑える、とは分けきれません。</strong> 同じ arachidonic acid からも、炎症の異なる局面に働く分子が作られます。どの酵素が働くかによって、作られるメディエーターは変わります（→ <a class="chref" href="wound-healing.html">炎症と創傷治癒</a>）。</p>
+<p>細胞膜が自分の食べた脂からも作られ、その組成で性質や起きる反応が変わる。食べ物って本当に大事ですね。青魚に含まれる EPA・DHA も、こうした膜の材料の一つです。</p>
 <div style="clear:both"></div></aside>
-<h2 id="s2">2　通り方は4種類</h2>
-<p>自力で通れない分子は、膜のタンパク質を使って入ります。§1の自力の通り抜けも含めて整理すると、膜を越える道は4つです。</p>
-<ul><li><strong>diffusion（拡散）</strong>：濃度の高い方から低い方へ、エネルギーなしで移動。脂溶性小分子やガス（O₂・CO₂）など</li><li><strong>channel（チャネル）</strong>：特定のイオンを通す孔。開閉が制御される。濃度勾配に従う（受動）</li><li><strong>transporter（輸送体）</strong>：特定の分子に結合し、自身の形を変えて運ぶ。物質特異的</li><li><strong>pump（ポンプ）＝active transport</strong>：濃度勾配に<strong>逆らって</strong>運ぶため、<strong><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>などのエネルギーを使う</strong></li></ul>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_膜を越える4つの通り方.webp" alt="4つを高濃度→低濃度の向きで並べると、拡散・channel・transporter はいずれも「坂を下る」側で、ATPを使って「坂を上る」のは pump だけと分かる" loading="lazy"><figcaption>4つを高濃度→低濃度の向きで並べると、拡散・channel・transporter はいずれも「坂を下る」側で、ATPを使って「坂を上る」のは pump だけと分かる</figcaption></figure>
+<h2 id="s2">2　膜を通る仕組みと、エネルギーの使い方</h2>
+<p>小分子やイオンが膜を越える仕組みには、単純拡散・channel・transporter・pump があります。<strong>どの構造を通るか</strong>と、<strong>エネルギーを使うか</strong>を分けて見ると整理できます。</p>
+<div class="tblwrap"><table><thead><tr><th>仕組み</th><th>どう通るか</th><th>エネルギーとの関係</th></tr></thead><tbody><tr><td><strong>単純拡散（simple diffusion）</strong></td><td>脂質二重層を直接通る</td><td>濃度勾配に従う受動輸送</td></tr><tr><td><strong>channel（チャネル）</strong></td><td>開閉する孔を通る</td><td>イオンの濃度差と電位差を合わせた<strong>電気化学的勾配</strong>に従う受動輸送</td></tr><tr><td><strong>transporter（輸送体）</strong></td><td>分子に結合し、形を変えて運ぶ</td><td>勾配に従う促進拡散と、別の物質の勾配を利用する二次能動輸送がある</td></tr><tr><td><strong>pump（ポンプ）</strong></td><td><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span> などのエネルギーで物質を運ぶ</td><td>勾配に逆らう一次能動輸送。広い意味では輸送体の一種</td></tr></tbody></table></div>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_膜を越える4つの通り方.webp" alt="単純拡散・channel・促進拡散型の transporter と、ATPを使う pump の比較。" width="1672" height="941" loading="lazy"><figcaption>単純拡散・channel・促進拡散型の transporter と、ATPを使う pump の比較。図の transporter は受動輸送の例で、輸送体すべてが受動輸送という意味ではない</figcaption></figure>
+<p><strong>二次能動輸送では、別のイオンが勾配に従って動く力を利用します。</strong> たとえば Na⁺–glucose 共輸送体（SGLT）は、Na⁺ とともに glucose を取り込み、glucose の濃度勾配に逆らって運べます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2446136/" target="_blank" rel="noopener">PMID 2446136</a>）。この Na⁺ の勾配を保つのが、ATP を使う Na⁺/K⁺-ATPase です。輸送体が直接 ATP を使わなくても、能動輸送を担うことがあります。</p>
 <h2 id="s3">3　高分子・粒子の出入り：endocytosis と exocytosis</h2>
 <p>タンパク質や大きな粒子は、この4つでは通れません。膜そのものを使って出し入れします。</p>
-<ul><li><strong>endocytosis</strong>：膜がくぼんで対象を包み込み、小胞として細胞内へ取り込む</li><li><strong>exocytosis</strong>：細胞内の小胞が膜と融合して中身を外へ放出する（<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。">collagen</span> の分泌もこれにあたる、→ <a class="chref" href="organelles.html">オルガネラ</a>§4）</li></ul>
-<p><strong>endocytosis で取り込まれた物は、多くがまず endosome/<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。">lysosome</span> 系に入ります。</strong> 取り込まれた＝目的の場所で自由に働ける、ではありません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_エンドサイトーシスとエキソサイトーシス.webp" alt="取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。" loading="lazy"><figcaption>取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。「入った＝細胞質で自由に働ける」ではない</figcaption></figure>
+<ul><li><strong>endocytosis</strong>：膜がくぼんで対象を包み込み、小胞として細胞内へ取り込む</li><li><strong>exocytosis</strong>：細胞内の小胞が膜と融合して中身を外へ放出する（<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span> の分泌もこれにあたる、→ <a class="chref" href="organelles.html">オルガネラ</a>§4）</li></ul>
+<p><strong>endocytosis で取り込まれた物は、多くがまず endosome/<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span> 系に入ります。</strong> 取り込まれた＝目的の場所で自由に働ける、ではありません。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_エンドサイトーシスとエキソサイトーシス.webp" alt="取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。" width="1672" height="941" loading="lazy"><figcaption>取り込まれた荷物は初期→後期エンドソームを経てリソソームで分解される道と、膜へ戻る道に分かれる。「入った＝細胞質で自由に働ける」ではない</figcaption></figure>
 <h2 id="s4">4　越える関門は一つではない</h2>
 <p>細胞膜を越えるのは、最初の一段にすぎません。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_細胞膜と物質輸送.webp" alt="① 組織（細胞外マトリックス）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。" loading="lazy"><figcaption>① 組織（細胞外マトリックス）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。各関門の上に「通れるとは限らない」「届くとは限らない」「働けるとは限らない」と置き、④では標的に到達する分子が&quot;ごく一部&quot;で、大多数は分解・排出・希釈されることを色で分けている</figcaption></figure>
-<ul><li><strong>組織に届いて分布している</strong>ことと、<strong>標的細胞の中へ入る</strong>ことは別です</li><li>分子が大きい、水溶性、帯電している——そのどれかなら、組織に届いていても細胞膜で止まります</li><li>細胞質へ入れたとしても、核で働かせたいなら<strong>核膜孔</strong>を、ミトコンドリアで働かせたいなら<strong>ミトコンドリア膜を越える別の仕組み</strong>を通る必要がある</li><li>endocytosis で入ったものは lysosome で<strong>分解</strong>されてしまうことも多い</li></ul>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/membrane-transport_細胞膜と物質輸送.webp" alt="① 組織（ECM）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。" width="1672" height="941" loading="lazy"><figcaption>① 組織（ECM）に分布している状態から、② 細胞膜、③ 標的オルガネラ、④ 分解・排出をくぐって働く、という4つの関門を横並びにした図。各関門の上に「通れるとは限らない」「届くとは限らない」「働けるとは限らない」と置き、④では標的に到達する分子が&quot;ごく一部&quot;で、大多数は分解・排出・希釈されることを色で分けている</figcaption></figure>
+<ul><li><strong>組織に届いて分布している</strong>ことと、<strong>標的細胞の中へ入る</strong>ことは別です</li><li>分子が大きい、水溶性、帯電している場合には、対応する輸送体や取り込み経路が必要です</li><li>細胞質へ入れたとしても、核で働かせたいなら<strong>核膜孔</strong>を、ミトコンドリアで働かせたいなら<strong>ミトコンドリア膜を越える別の仕組み</strong>を通る必要がある</li><li>endocytosis で入ったものは lysosome で<strong>分解</strong>されてしまうことも多い</li></ul>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>細胞膜は lipid bilayer による選択的な障壁。<strong>脂溶性の小分子はそのまま通り抜けて核内受容体まで届き、水溶性の分子・イオンは自力では通れないが、専用の通り道を使って入る</strong>。大きさと電荷も分かれ目になる。</li><li>越え方は diffusion・channel・transporter（受動）と pump（能動＝ATPを使う）に分かれ、高分子・粒子は endocytosis／exocytosis で出し入れする。endocytosis で入ったものは多くが endosome/lysosome へ向かう。</li><li>「組織に存在する」→「細胞質へ入る」→「標的オルガネラへ届く」→「分解される前に十分な量・時間はたらく」は、それぞれ別の段階である。</li><li>だから「そこにある」＝「効く」ではない。<strong>どこまで届いたか、量と時間は足りているか</strong>まで見る。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/membrane-transport_まとめ.webp" alt="そこにあるから働くまで" loading="lazy"><figcaption>そこにあるから働くまで</figcaption></figure>
-
+<ol class="goal"><li><strong>膜の通りやすさは脂溶性・大きさ・電荷で変わる。</strong> そのまま通れない分子にも、輸送体や小胞による取り込み経路がある。</li><li><strong>輸送体には、受動輸送を担うものと能動輸送を担うものがある。</strong> ATPを直接使うポンプと、イオン勾配を利用する二次能動輸送を区別する。高分子や粒子には endocytosis／exocytosis が働く。</li><li>「組織に存在する」→「細胞質へ入る」→「標的オルガネラへ届く」→「分解される前に十分な量・時間はたらく」は、それぞれ別の段階である。</li><li>だから「そこにある」＝「効く」ではない。<strong>どこまで届いたか、量と時間は足りているか</strong>まで見る。</li></ol>
+<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/membrane-transport_まとめ.webp" alt="そこにあるから働くまで" width="1672" height="941" loading="lazy"><figcaption>そこにあるから働くまで</figcaption></figure>
+<h2>主な参考文献</h2>
+<ul><li>Friesema ECH, et al. Identification of monocarboxylate transporter 8 as a specific thyroid hormone transporter. <em>J Biol Chem</em>. 2003;278:40128–40135. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12871948/" target="_blank" rel="noopener">PMID 12871948</a>.</li><li>Hediger MA, et al. Expression cloning and cDNA sequencing of the Na⁺/glucose co-transporter. <em>Nature</em>. 1987;330:379–381. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2446136/" target="_blank" rel="noopener">PMID 2446136</a>.</li><li>Serhan CN, Hamberg M, Samuelsson B. Lipoxins: novel series of biologically active compounds formed from arachidonic acid in human leukocytes. <em>Proc Natl Acad Sci USA</em>. 1984;81:5335–5339. <a class="ext" href="https://doi.org/10.1073/pnas.81.17.5335" target="_blank" rel="noopener">DOI 10.1073/pnas.81.17.5335</a>.</li></ul>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>膜透過と受容体・能動輸送の説明を整理し食事コラムの区切りを改善</li><li><time>2026-08-16</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="receptors-signaling.html"><span class="lbl">前へ</span>受容体と細胞内シグナル</a><a class="next" href="atp.html"><span class="lbl">次へ</span>代謝とATP</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -543,7 +669,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -570,8 +696,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -617,11 +752,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -633,15 +772,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

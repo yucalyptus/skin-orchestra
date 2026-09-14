@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">GPxが過酸化物を処理し、使ったGSHを再生する流れ</title>
+  <desc id="desc">上段ではGPxが2分子のGSHから電子を受け取り、過酸化水素または有機過酸化物を水または反応性の低い形へ還元する。このときGSHはGSSGになる。下段ではglutathione reductaseがNADPHの電子を使い、GSSGを2分子のGSHへ戻す。</desc>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1d4f91"/></marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker>
+    <style>
+      text{font-family:system-ui,-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;fill:#1c1d23}
+      .title{font-size:36px;font-weight:800}.subtitle{font-size:18px;fill:#1d4f91}
+      .stepNo{font-size:18px;font-weight:800;fill:#ffffff}.stepTitle{font-size:25px;font-weight:800}
+      .chem{font-size:34px;font-weight:600}.label{font-size:17px;font-weight:700}.small{font-size:15px;fill:#1d4f91}
+      .enzyme{font-size:20px;font-weight:700;fill:#1d4f91}.foot{font-size:18px;font-weight:700;fill:#1d4f91}
+    </style>
+  </defs>
+<rect width="1200" height="760" fill="white"/>
+<path d="M55 337 H1160" stroke="#c5cdd6"/>
+  <text x="600" y="49" text-anchor="middle" class="title">GPx系は、過酸化物の処理とGSHの再生で回る</text>
+  <text x="600" y="80" text-anchor="middle" class="subtitle">GSHは電子を渡すとGSSGになり、NADPHの電子を使って再びGSHへ戻る</text>
+
+  <circle cx="70" cy="133" r="25" fill="#1d4f91"/>
+  <text x="70" y="140" text-anchor="middle" class="stepNo">1</text>
+  <text x="110" y="141" class="stepTitle">GPxが、GSHの電子を使って過酸化物を処理する</text>
+
+  <text x="173" y="218" text-anchor="middle" class="chem">H₂O₂</text>
+  <text x="173" y="248" text-anchor="middle" class="label">処理したい過酸化物</text>
+  <text x="173" y="274" text-anchor="middle" class="small">過酸化水素を例に示す</text>
+  <text x="320" y="218" text-anchor="middle" class="chem">＋</text>
+
+  <text x="448" y="221" text-anchor="middle" class="chem">2 GSH</text>
+  <text x="448" y="251" text-anchor="middle" class="label">電子を渡す</text>
+  <text x="448" y="276" text-anchor="middle" class="small">還元型glutathione</text>
+
+  <line x1="575" y1="208" x2="715" y2="208" stroke="#1d4f91" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <text x="642" y="186" text-anchor="middle" class="enzyme">GPx</text>
+
+  <text x="853" y="218" text-anchor="middle" class="chem">2 H₂O</text>
+  <text x="853" y="248" text-anchor="middle" class="label">処理された物質</text>
+  <text x="853" y="274" text-anchor="middle" class="small">水</text>
+  <text x="986" y="218" text-anchor="middle" class="chem">＋</text>
+
+  <text x="1088" y="221" text-anchor="middle" class="chem">GSSG</text>
+  <text x="1088" y="251" text-anchor="middle" class="label">電子を渡した後</text>
+  <text x="1088" y="276" text-anchor="middle" class="small">酸化型</text>
+
+  <circle cx="70" cy="384" r="25" fill="#64748b"/>
+  <text x="70" y="391" text-anchor="middle" class="stepNo">2</text>
+  <text x="110" y="392" class="stepTitle">NADPHの電子を使って、GSSGを2 GSHへ戻す</text>
+
+  <text x="160" y="470" text-anchor="middle" class="chem">GSSG</text>
+  <text x="160" y="500" text-anchor="middle" class="label">Step 1でできた酸化型</text>
+  <text x="295" y="470" text-anchor="middle" class="chem">＋</text>
+
+  <text x="415" y="470" text-anchor="middle" class="chem" style="font-size:28px">NADPH ＋ H⁺</text>
+  <text x="415" y="502" text-anchor="middle" class="label">電子を供給</text>
+
+  <line x1="535" y1="458" x2="715" y2="458" stroke="#1d4f91" stroke-width="4" marker-end="url(#arrowBlue)"/>
+  <text x="625" y="423" text-anchor="middle" class="enzyme">glutathione</text>
+  <text x="625" y="444" text-anchor="middle" class="enzyme">reductase</text>
+
+  <text x="840" y="470" text-anchor="middle" class="chem">2 GSH</text>
+  <text x="840" y="500" text-anchor="middle" class="label">Step 1で再利用</text>
+  <text x="965" y="470" text-anchor="middle" class="chem">＋</text>
+
+  <text x="1078" y="470" text-anchor="middle" class="chem">NADP⁺</text>
+  <text x="1078" y="502" text-anchor="middle" class="label">電子を渡した後</text>
+
+  <text x="416" y="605" text-anchor="middle" class="label">pentose phosphate pathwayなど</text>
+  <text x="416" y="629" text-anchor="middle" class="small">NADPHを作る</text>
+  <line x1="416" y1="578" x2="416" y2="548" stroke="#1d4f91" stroke-width="4" marker-end="url(#arrowBlue)"/>
+
+  <text x="600" y="711" text-anchor="middle" class="foot">電子の流れ：NADPH → GSH → 過酸化物　　GPxとGSHを繰り返し働かせるにはNADPHが必要</text>
+</svg>

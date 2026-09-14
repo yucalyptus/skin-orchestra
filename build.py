@@ -12,12 +12,15 @@ build.py — 本文/*.md を、1章＝1ページの静的サイトにビルド�
     ※ Pillow が無いと PNG→WebP 変換が黙って効かず docs/images が肥大する。README の一時venvを使う。
 """
 import datetime
+import hashlib
 import io
 import os
 import re
 import shutil
 import subprocess
 import sys
+import tempfile
+import xml.etree.ElementTree as ET
 
 try:
     from PIL import Image
@@ -147,11 +150,52 @@ color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line
 h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
 p{margin:17px 0}
 strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -161,6 +205,12 @@ padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
 .flow.vert .arr{margin-left:16px}
 .flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
 .flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
 .flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
 border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
 
@@ -268,11 +318,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -312,12 +362,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -345,7 +396,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -355,6 +407,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -422,13 +475,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -443,9 +496,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -456,6 +509,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -478,6 +538,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>'''
 
 HERO = '''<header class="cover">
@@ -495,7 +618,7 @@ INTRO = '''<section class="intro sec-rule">
 <h1>はじめに ― なぜこれを作ったか</h1>
 <blockquote class="lead">医学部で学んだ基礎は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
 <p>私は美容医療に長く携わってきました。でも正直に言うと、最初は「レーザーでコラーゲンを増やす」と言葉で説明しながら、その裏で細胞が実際に何をしているのかを、うまくイメージできていませんでした。</p>
-<p>線維芽細胞（fibroblast）が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりに積み上がって<strong>細胞外マトリックス（ECM）という土台</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
+<p>線維芽細胞（fibroblast）が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりに積み上がって<strong>ECMという土台</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
 <p>一つの細胞の中でも、いくつものオルガネラが順に噛み合って、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>どれか一つが主役なのではなく、全体が噛み合ったときに結果が出る。</strong>タイトルに「皮膚の下のオーケストラ」と付けたのは、そういう意味です。生命というのは神秘に溢れていて、とても精巧に作られていて、感動しますね。</p>
 <p>医学部で習った生化学や細胞生物学は、日々の臨床からは遠ざかりがちです。そこまで立ち返らなくても、現場の仕事は回る。<strong>けれど、細胞・生化学のレベルまでイメージできると、治療の選び方が変わってきます。</strong></p>
 <p>これは新しい知識の詰め込みではなく、<strong>「学び直し」</strong>です。臨床で働く仲間が、施術の裏側を細胞から見直すための手がかりになればうれしいです。</p>
@@ -556,8 +679,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -603,11 +735,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -619,15 +755,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
@@ -786,9 +922,11 @@ def esc(s):
 def decorate(s):
     """エスケープ済みの文字列に、許可したMarkdown記法だけを適用する。
 
-    **bold** -> <strong>、*italic*（誌名・学名）-> <em>、`code` -> <code>。
+    **bold** -> <strong>、==accent== -> 青い強調、
+    *italic*（誌名・学名）-> <em>、`code` -> <code>。
     **を先に処理してから単独の*を見るので、太字が斜体に食われることはない。
     """
+    s = re.sub(r"==(.+?)==", r'<strong class="accent-label">\1</strong>', s)
     s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
     s = re.sub(r"\*([^*\n]+?)\*", r"<em>\1</em>", s)
     s = re.sub(r"`([^`]+?)`", r"<code>\1</code>", s)
@@ -797,6 +935,7 @@ def decorate(s):
 
 def strip_marks(s):
     """Markdownの装飾記号だけを落とす（alt属性など、タグを置けない場所用）。"""
+    s = re.sub(r"==(.+?)==", r"\1", s)
     s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)
     s = re.sub(r"\*([^*\n]+?)\*", r"\1", s)
     s = re.sub(r"`([^`]+?)`", r"\1", s)
@@ -841,8 +980,20 @@ def linkify_refs(s):
 
 
 def inline(s):
-    """本文のインライン変換。エスケープ -> 装飾 -> 文献リンク -> 「第N章」リンク。"""
-    return resolve_wikilinks(linkify_refs(decorate(esc(s))))
+    """本文を変換し、HTTP(S)のMarkdownリンクはラベルだけを表示する。"""
+    def plain(text):
+        return resolve_wikilinks(linkify_refs(decorate(esc(text))))
+
+    parts = []
+    pos = 0
+    for m in re.finditer(r"\[([^\[\]\n]+)\]\((https?://[^\s<>\)]+)\)", s):
+        parts.append(plain(s[pos:m.start()]))
+        # ラベル内のPMIDを再リンク化して、a要素を入れ子にしない。
+        parts.append('<a class="ext" href="%s" target="_blank" rel="noopener">%s</a>'
+                     % (esc(m.group(2)), decorate(esc(m.group(1)))))
+        pos = m.end()
+    parts.append(plain(s[pos:]))
+    return ''.join(parts)
 
 
 def heading_id(txt):
@@ -921,8 +1072,69 @@ def render_blockquote(lines, lead):
     return "<blockquote%s>%s</blockquote>" % (cls, body)
 
 
+def render_chemical_reaction(label, formula, enzyme_override=None):
+    """全章共通。可逆性と分子の係数・電荷を保持する反応式表示。"""
+    arrow = "⇌" if "⇌" in formula else "→"
+    if formula.count(arrow) == 1:
+        left, right = formula.split(arrow)
+        enzyme = enzyme_override if enzyme_override is not None else {
+            "SODが触媒する反応": "SOD",
+            "LDHの可逆反応": "LDH",
+            "catalaseが触媒する反応": "catalase",
+            "H₂O₂を処理する反応": "GPx",
+            "有機過酸化物を処理する反応": "GPx",
+            "glutathione reductaseが触媒する反応": "glutathione reductase",
+            "GPX4が触媒する反応": "GPX4",
+        }.get(label, "")
+        def reaction_side(side):
+            # Full-width plus is an operator; superscript charges stay with their molecule.
+            names = {
+                "pyruvate": "ピルビン酸", "lactate": "乳酸",
+                "glucose": "グルコース", "acetyl-CoA": "アセチルCoA",
+                "NADH": "還元型NAD", "NAD⁺": "酸化型NAD",
+                "CO₂": "二酸化炭素", "FADH₂": "還元型FAD",
+                "ATP": "アデノシン三リン酸", "GTP": "グアノシン三リン酸",
+                "ADP": "アデノシン二リン酸", "AMP": "アデノシン一リン酸",
+                "O₂•⁻": "スーパーオキシド", "H₂O₂": "過酸化水素",
+                "H₂O": "水", "O₂": "酸素", "H⁺": "水素イオン",
+                "GSH": "還元型グルタチオン", "GSSG": "酸化型グルタチオン",
+                "NADPH": "還元型NADP", "NADP⁺": "酸化型NADP",
+                "ROOH": "有機過酸化物", "ROH": "アルコール型",
+                "PLOOH": "リン脂質過酸化物", "PLOH": "還元されたリン脂質",
+                "Fe²⁺": "二価鉄", "Fe³⁺": "三価鉄",
+                "•OH": "ヒドロキシラジカル", "OH⁻": "水酸化物イオン",
+                "NO•": "一酸化窒素", "ONOO⁻": "ペルオキシナイトライト",
+            }
+            terms = []
+            for term in side.split("＋"):
+                term = term.strip()
+                name = names.get(re.sub(r"^(?:正味\s*)?\d+\s+", "", term).removesuffix(" 1分子"), "")
+                terms.append('<span class="reaction-species"><span>%s</span>'
+                             '<span class="reaction-name">%s</span></span>'
+                             % (esc(term), esc(name)))
+            return '<span class="reaction-plus">＋</span>'.join(terms)
+        reaction_class = "reaction reaction-long" if max(len(left.split("＋")), len(right.split("＋"))) >= 4 else "reaction"
+        return ('<div class="%s"><span class="reaction-label">%s</span>'
+                '<div class="reaction-equation" role="img" aria-label="%s">'
+                '<span class="reaction-side">%s</span>'
+                '<span class="reaction-arrow"><span class="reaction-enzyme">%s</span>'
+                '<span aria-hidden="true">%s</span></span>'
+                '<span class="reaction-side">%s</span></div></div>') % (
+                    reaction_class, esc(label), esc(label + "：" + formula), reaction_side(left),
+                    esc(enzyme), "⇌" if arrow == "⇌" else "⟶", reaction_side(right))
+    return ('<div class="reaction"><span class="reaction-label">%s</span>'
+            '<span class="reaction-formula">%s</span></div>') % (esc(label), esc(formula))
+
+
 def render_paragraph(lines):
     joined_space = " ".join(lines)
+    if (is_flow_text(joined_space) and (CURRENT_ID == "oxidative-stress"
+            or re.match(r"^\*\*[^：]+反応：", joined_space))):
+        text, _ = strip_wrapping_bold(joined_space)
+        label, sep, formula = text.partition("：")
+        if not sep:
+            label, formula = "", text
+        return render_chemical_reaction(label, formula)
     if is_flow_text(joined_space):
         return inline_flow(joined_space)
     body = "<br>".join(inline(l) for l in lines)
@@ -931,6 +1143,10 @@ def render_paragraph(lines):
 
 def render_list(items, list_class):
     """items: [(indent, 'ul'|'ol', content), ...]（1段のネストまで対応）。"""
+    if (CURRENT_ID == "oxidative-stress" and len(items) == 4
+            and items[0][2] == "**スーパーオキシド（O₂•⁻）**"
+            and items[-1][2] == "**一重項酸素（¹O₂）**"):
+        list_class = "ros-species"
     top_tag = "ol" if items[0][1] == "ol" else "ul"
     cls = ' class="%s"' % list_class if list_class else ""
     out = []
@@ -985,26 +1201,56 @@ def render_figslot(alt, src):
             public_src = "images/" + base
         output_path = os.path.join(OUT_DIR, public_src)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
-        if public_src.lower().endswith(".webp"):
-            with Image.open(source_path) as im:
-                im.convert("RGB").save(output_path, "WEBP", quality=85, method=4)
-        else:
-            shutil.copy2(source_path, output_path)
+        # プレビュー閲覧中も既存画像を読み続けられるよう、完成後に差し替える。
+        target_path = output_path
+        temp_path = None
+        if PREVIEW:
+            fd, temp_path = tempfile.mkstemp(dir=os.path.dirname(output_path), suffix=".tmp")
+            os.close(fd)
+            target_path = temp_path
+        try:
+            if public_src.lower().endswith(".webp"):
+                with Image.open(source_path) as im:
+                    im.convert("RGB").save(target_path, "WEBP", quality=85, method=4)
+            else:
+                shutil.copy2(source_path, target_path)
+            if temp_path is not None:
+                os.replace(temp_path, output_path)
+        finally:
+            if temp_path is not None and os.path.exists(temp_path):
+                os.unlink(temp_path)
         caption = alt.strip() or os.path.splitext(os.path.basename(src))[0]
         caption = strip_wikilinks(caption)
         # 縦長の図を横幅いっぱいに出すと、縦に1000px以上占領して読みにくい。
         # 縦横比でクラスを振り、CSS側で上限幅を決める（クリックで拡大できる）。
         shape = ""
+        dimensions = ""
+        if base.lower().endswith(".svg"):
+            try:
+                viewbox = ET.parse(source_path).getroot().get("viewBox", "").split()
+                if len(viewbox) == 4 and float(viewbox[2]) > 0 and float(viewbox[3]) > 0:
+                    dimensions = ' width="%s" height="%s"' % (float(viewbox[2]), float(viewbox[3]))
+            except (ET.ParseError, ValueError):
+                pass
         if Image is not None:
             try:
                 with Image.open(source_path) as im:
                     w, h = im.size
+                # 遅延読み込み前にも縦横比を確保し、図が消えたように見えるのを防ぐ。
+                dimensions = ' width="%d" height="%d"' % (w, h)
                 if h / w > 1.15:
                     shape = " tall"
                 elif h / w > 0.72:
                     shape = " square"
             except Exception:
                 pass
+        # 医学イラストの表示。縦長の皮膚断面図はPCで全体を見渡し、クリックで拡大する。
+        if os.path.basename(src) in {"oxidative-stress_ROSが皮膚に与える影響.png",
+                                     "oxidative-stress_発生と二つの働き.png",
+                                     "oxidative-stress_発生と二つの働き_科学イラスト.png"}:
+            shape = " illustration"
+            if os.path.basename(src) == "oxidative-stress_ROSが皮膚に与える影響.png":
+                shape += " portrait-illustration"
         # 図の中に章番号を書かない方針にしたので、「まとめ」であることは
         # 画像ではなくHTML側の帯で示す（章が動いても作り直さずに済む）。
         is_summary = "まとめ" in os.path.basename(src)
@@ -1016,9 +1262,9 @@ def render_figslot(alt, src):
         return (
             '<figure class="%s" role="button" tabindex="0" aria-expanded="false"'
             ' aria-label="図を拡大／縮小">'
-            '%s<img src="%s" alt="%s" loading="lazy">'
+            '%s<img src="%s" alt="%s"%s loading="lazy">'
             '<figcaption>%s</figcaption></figure>'
-        ) % (cls, label, public_src, alt_text(caption), decorate(esc(caption)))
+        ) % (cls, label, public_src, alt_text(caption), dimensions, decorate(esc(caption)))
     return (
         '<div class="figslot"><div class="fs-icon">🖼️</div>'
         '<div class="fs-txt"><strong>画像スロット（画像は未配置）</strong><br>'
@@ -1050,11 +1296,11 @@ def render_steps_fence(buf):
     inner = []
     for k, s in enumerate(steps):
         inner.append(
-            '<span class="node"><span class="num">%d</span>%s</span>' % (k + 1, inline(s))
+            '<span class="node"><span class="num">%d</span><span class="step-text">%s</span></span>' % (k + 1, inline(s))
         )
         if k < len(steps) - 1:
             inner.append('<span class="arr">↓</span>')
-    return '<div class="flow vert diagram">%s</div>' % "".join(inner)
+    return '<div class="flow vert diagram steps">%s</div>' % "".join(inner)
 
 
 def render_code_fence(buf):
@@ -1095,6 +1341,26 @@ def parse_markdown(text):
             i += 1
             continue
 
+        # 明示的な反応式。概念フローの矢印は自動で化学反応と判定しない。
+        if stripped.startswith("::: reaction "):
+            title = stripped[len("::: reaction "):].strip()
+            j = i + 1
+            equation = ""
+            enzyme = ""
+            while j < n and lines[j].strip() != ":::":
+                value = lines[j].strip()
+                if value.startswith("enzyme:"):
+                    enzyme = value[len("enzyme:"):].strip()
+                elif value:
+                    equation += (" " if equation else "") + value
+                j += 1
+            if j == n or not equation or sum(equation.count(a) for a in ("→", "⇌")) != 1:
+                raise ValueError("反応式ブロックは終端 ::: と1本の反応矢印が必要です: " + title)
+            blocks.append(render_chemical_reaction(title, equation, enzyme))
+            clear_pending()
+            i = j + 1
+            continue
+
         # 平易版のブロック ::: easy … :::
         #   直前のブロックが専門版、この中身が平易版。どちらも無い段落は両版に共通で出る。
         if stripped.startswith("::: easy"):
@@ -1111,9 +1377,35 @@ def parse_markdown(text):
             i = j + 1
             continue
 
+        # 本文に隣接する折りたたみ補足（既定では閉じる）。
+        if stripped.startswith("::: details "):
+            title = stripped[len("::: details "):].strip()
+            j = i + 1
+            buf = []
+            depth = 1
+            while j < n:
+                nested = lines[j].strip()
+                if nested.startswith("::: "):
+                    depth += 1
+                elif nested == ":::":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                buf.append(lines[j])
+                j += 1
+            if j == n:
+                raise ValueError("折りたたみ補足に終端 ::: が必要です: " + title)
+            inner = parse_markdown("\n".join(buf))
+            blocks.append('<details class="supplement"><summary>%s</summary>'
+                          '<div class="supplement-body">%s</div></details>'
+                          % (esc(title), "\n".join(inner)))
+            clear_pending()
+            i = j + 1
+            continue
+
         # 補足 ::: note タイトル … :::
         #   本筋ではないが本文の近くに置きたい「ちなみに」。
-        #   コラム（枠付きの余談）より軽い扱いで、左罫線だけで本文と区別する。
+        #   タイトルと薄い背景で本文と区別する。
         if stripped.startswith("::: note"):
             title = stripped[len("::: note"):].strip()
             j = i + 1
@@ -1122,7 +1414,7 @@ def parse_markdown(text):
                 buf.append(lines[j])
                 j += 1
             inner = parse_markdown("\n".join(buf))
-            head = '<p class="memo-h">%s</p>' % decorate(esc(title)) if title else ""
+            head = '<h3 class="memo-h">%s</h3>' % decorate(esc(title)) if title else ""
             blocks.append('<aside class="memo">%s%s</aside>' % (head, "\n".join(inner)))
             clear_pending()
             i = j + 1
@@ -1142,7 +1434,7 @@ def parse_markdown(text):
             inner = parse_markdown("\n".join(buf))
             head = '<p class="col-t">コラム</p>'
             if title:
-                head += '<p class="col-h">%s</p>' % decorate(esc(title))
+                head += '<h3 class="col-h">%s</h3>' % decorate(esc(title))
             blocks.append('<aside class="column">%s%s</aside>' % (head, "\n".join(inner)))
             clear_pending()
             i = j + 1
@@ -1170,6 +1462,11 @@ def parse_markdown(text):
             continue
 
         # 見出し
+        if stripped.startswith("#### "):
+            blocks.append("<h4>%s</h4>" % inline(stripped[5:].strip()))
+            clear_pending()
+            i += 1
+            continue
         if stripped.startswith("### "):
             txt = stripped[4:].strip()
             blocks.append("<h3>%s</h3>" % inline(txt))
@@ -1353,10 +1650,26 @@ TERM_ALIAS = {
     "YAP/TAZ": ["YAP/TAZ"],
     "ubiquitin–proteasome": ["ubiquitin–proteasome"],
     "PBM": ["PBM"],
+    "free radical": ["free radical", "フリーラジカル"],
+    "superoxide": ["スーパーオキシド", "superoxide"],
+    "hydroxyl radical": ["ヒドロキシラジカル", "hydroxyl radical", "•OH"],
+    "Fenton reaction": ["Fenton反応", "Fenton reaction"],
+    "SOD": ["SOD"],
+    "GPx": ["GPx", "GPX"],
+    "GSSG": ["GSSG"],
+    "selenocysteine": ["selenocysteine", "セレノシステイン"],
+    "ferroptosis": ["ferroptosis"],
+    "squalene / squalane": ["squalene", "squalane", "スクアレン", "スクワラン"],
+    "macrophage": ["macrophage", "マクロファージ"],
 }
 
 GLOSSARY = []       # [(表示名, 定義, 登場章, [検索パターン]), ...]
 TERMS_SEEN = set()  # 1章のなかで既に印を付けた語。章ごとにリセットする
+
+
+def glossary_anchor(term):
+    """用語集の各語へ直接移動するための、安定したHTML id。"""
+    return "term-" + hashlib.sha1(term.encode("utf-8")).hexdigest()[:12]
 
 
 def load_glossary():
@@ -1403,14 +1716,13 @@ def _mark_text(text):
                 m = _boundary_re(pat).search(rest)
                 if m and (best is None or m.start() < best[0].start()):
                     best = (m, term, defi)
-                break
         if best is None:
             break
         m, term, defi = best
         TERMS_SEEN.add(term)
         done.append(rest[:m.start()])
-        done.append('<span class="term" tabindex="0" data-t="%s" data-d="%s">%s</span>'
-                    % (esc(term), esc(strip_marks(defi)), m.group(0)))
+        done.append('<span class="term" tabindex="0" data-t="%s" data-d="%s" data-u="glossary.html#%s">%s</span>'
+                    % (esc(term), esc(strip_marks(defi)), glossary_anchor(term), m.group(0)))
         rest = rest[m.end():]
     done.append(rest)
     return "".join(done)
@@ -1428,7 +1740,7 @@ def mark_terms(html):
     """
     if not GLOSSARY:
         return html
-    out, in_link, in_svg = [], False, False
+    out, in_link, in_svg, in_caption = [], False, False, False
     for part in TAG_SPLIT.split(html):
         if part.startswith("<"):
             if part.startswith("<a "):
@@ -1439,8 +1751,12 @@ def mark_terms(html):
                 in_svg = True
             elif part.startswith("</svg>"):
                 in_svg = False
+            elif part.startswith("<figcaption"):
+                in_caption = True
+            elif part.startswith("</figcaption>"):
+                in_caption = False
             out.append(part)
-        elif in_link or in_svg or not part.strip():
+        elif in_link or in_svg or in_caption or not part.strip():
             out.append(part)
         else:
             out.append(_mark_text(part))
@@ -1466,7 +1782,7 @@ def glossary_body():
     for line in open(GLOSSARY_MD, encoding="utf-8"):
         if line.startswith("## "):
             title = line[3:].strip()
-            if title in ("語の選び方", "定義を書くときのルール", "表示のしかた（実装はこれから）"):
+            if title in ("語の選び方", "定義を書くときのルール", "表示のしかた", "表示のしかた（実装はこれから）"):
                 section = None
                 continue
             flush()
@@ -1481,8 +1797,8 @@ def glossary_body():
         term, defi, chaps = (c.strip() for c in cells[1:4])
         if not term or not defi or term == "用語" or set(term) <= set("-: "):
             continue
-        rows.append("<tr><td><strong>%s</strong></td><td>%s</td><td class=\"g-ch\">%s</td></tr>"
-                    % (esc(term), decorate(esc(defi)), resolve_wikilinks(esc(chaps))))
+        rows.append("<tr class=\"g-term\"><td class=\"g-name\" id=\"%s\"><strong>%s</strong></td><td>%s</td><td class=\"g-ch\">%s</td></tr>"
+                    % (glossary_anchor(term), esc(term), decorate(esc(defi)), resolve_wikilinks(esc(chaps))))
     flush()
     blocks.append("</article>")
     return "\n".join(blocks)
@@ -1580,8 +1896,9 @@ def mark_visibility(chapters):
 
 
 def badge_of(ch):
-    """NEW / 更新 バッジ。最終更新から NEW_DAYS 以内のときだけ出す。手では貼らない。"""
-    if not ch.get("visible") or not ch["latest"]:
+    """公開済みの章だけに、最終更新から NEW_DAYS 以内の NEW / 更新を出す。"""
+    if (not ch.get("visible") or ch["status"] != "approved"
+            or not ch.get("published") or not ch["latest"]):
         return ""
     d = days_since(ch["latest"])
     if d is None or d > NEW_DAYS:
@@ -1609,8 +1926,8 @@ def dateline_html(ch):
 
 
 def history_html(ch):
-    """この章の更新。初公開だけのときは出さない。"""
-    if len(ch["history"]) < 2:
+    """この章の更新。未公開の章と初公開だけのときは出さない。"""
+    if not ch.get("published") or len(ch["history"]) < 2:
         return ""
     items = "".join(
         "<li><time>%s</time>%s</li>" % (esc(h["date"]), decorate(esc(h["note"])))
@@ -1623,7 +1940,7 @@ def changelog_rows(chapters):
     """(日付, 章, 内容, 新規か) を新しい順に。表紙の「最近の更新」と更新履歴の共通の元。"""
     rows = []
     for ch in chapters:
-        if not ch["visible"]:
+        if not ch["visible"] or ch["status"] != "approved" or not ch.get("published"):
             continue
         for h in ch["history"]:
             rows.append((h["date"], ch, h["note"], h["date"] == ch["first"]))
@@ -1808,9 +2125,11 @@ def build():
     img_dir = os.path.join(OUT_DIR, "images")
     os.makedirs(img_dir, exist_ok=True)
     # 出力は毎回作り直す（章を減らした・未承認に戻したときに古いページを残さない）。
-    for name in os.listdir(img_dir):
-        if name.lower().endswith((".png", ".webp")):
-            os.unlink(os.path.join(img_dir, name))
+    # 未公開プレビューでは、更新中に参照中の画像を消さない。
+    if not PREVIEW:
+        for name in os.listdir(img_dir):
+            if name.lower().endswith((".png", ".webp")):
+                os.unlink(os.path.join(img_dir, name))
     for name in os.listdir(OUT_DIR):
         if name.endswith(".html"):
             os.unlink(os.path.join(OUT_DIR, name))
@@ -1835,7 +2154,7 @@ def build():
         if toc:
             body = re.sub(r'(?=<h2 id="s)', toc, body, count=1)
         article = "\n".join([
-            '<article class="chapter">',
+            '<article class="chapter" data-chapter="%s">' % esc(ch["id"]),
             '<p class="kicker">%s%s</p>'
             % (esc(ch["section"]), "　／　" + esc(ch["part"]) if ch["part"] else ""),
             '<h1 class="ch-title">%s%s</h1>'

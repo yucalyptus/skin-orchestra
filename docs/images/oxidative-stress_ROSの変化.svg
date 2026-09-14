@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 980" role="img" aria-labelledby="title desc"><title id="title">ROSを処理する防御と、酸化障害につながる反応</title><desc id="desc">上段は酵素がROSを水に変えて障害を抑える防御。下段は防御の経路ではなく、Fenton反応でヒドロキシラジカルが生じて分子を傷つける反応と、一重項酸素が膜の脂質を酸化し障害につながる反応。</desc><defs>
+<marker id="blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker>
+<marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#a34b40"/></marker>
+<marker id="neutral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#64748b"/></marker>
+</defs><style>text{font-family:system-ui,-apple-system,"Hiragino Sans",sans-serif;fill:#1c1d23}.title{font-size:32px;font-weight:700}.head{font-size:27px;font-weight:700}.chem{font-size:36px;font-weight:600}.body{font-size:24px}.subhead{font-size:30px;font-weight:700}.result{font-size:24px;font-weight:700;fill:#a34b40}.small{font-size:22px;fill:#494c54}.enzyme{font-size:21px;font-weight:700;fill:#1d4f91}.danger{fill:#a34b40}.safe{fill:#1d4f91}</style><rect width="1200" height="980" fill="white"/>
+<text x="40" y="49" class="title" text-anchor="start">ROSを水に変えるのは防御。酸化障害につながる反応は抑える。</text>
+<rect x="35" y="83" width="1130" height="260" rx="8" fill="#f2f4f7"/>
+<text x="60" y="126" class="head safe" text-anchor="start">防御の経路：酵素がROSを水へ変える</text>
+<text x="175" y="219" class="chem" text-anchor="middle">O₂•⁻</text>
+<text x="175" y="254" class="small" text-anchor="middle">スーパーオキシド</text>
+<text x="555" y="219" class="chem" text-anchor="middle">H₂O₂</text>
+<text x="555" y="254" class="small" text-anchor="middle">過酸化水素</text>
+<text x="975" y="219" class="chem" text-anchor="middle">H₂O</text>
+<text x="975" y="254" class="small" text-anchor="middle">水</text>
+<path d="M295 208 H425" stroke="#1d4f91" stroke-width="3" marker-end="url(#blue)"/>
+<text x="360" y="181" class="enzyme" text-anchor="middle">SOD</text>
+<path d="M680 208 H840" stroke="#1d4f91" stroke-width="3" marker-end="url(#blue)"/>
+<text x="760" y="157" class="enzyme" text-anchor="middle">catalase</text>
+<text x="760" y="185" class="enzyme" text-anchor="middle">GPx・Prx</text>
+<text x="555" y="305" class="body" text-anchor="middle">まだROS</text>
+<text x="975" y="305" class="body safe" text-anchor="middle">ROSではなくなる</text>
+<rect x="35" y="386" width="1130" height="519" rx="8" fill="#fbf2f0"/>
+<text x="60" y="432" class="head" text-anchor="start">障害につながる反応</text>
+<text x="60" y="478" class="subhead" text-anchor="start">Fenton反応</text>
+<text x="175" y="551" class="chem" text-anchor="middle">H₂O₂</text>
+<text x="175" y="586" class="small" text-anchor="middle">過酸化水素</text>
+<text x="555" y="551" class="chem" text-anchor="middle">•OH</text>
+<text x="555" y="586" class="small" text-anchor="middle">ヒドロキシラジカル</text>
+<path d="M290 540 H420" stroke="#64748b" stroke-width="3" marker-end="url(#neutral)"/>
+<text x="355" y="516" class="body" text-anchor="middle">＋ Fe²⁺</text>
+<path d="M705 540 H810" stroke="#64748b" stroke-width="3" marker-end="url(#neutral)"/>
+<text x="980" y="539" class="result" text-anchor="middle">近くの分子を傷つける</text>
+<text x="980" y="576" class="small" text-anchor="middle">膜脂質・タンパク質・DNA</text>
+<text x="60" y="635" class="body" text-anchor="start">•OHは発生後すぐに反応するため、発生を抑えることが重要です。</text>
+<path d="M60 666 H1140" stroke="#c5cdd6"/>
+<text x="60" y="706" class="subhead" text-anchor="start">一重項酸素による脂質の酸化</text>
+<text x="155" y="783" class="chem" text-anchor="middle">O₂</text>
+<text x="155" y="818" class="small" text-anchor="middle">通常の酸素</text>
+<text x="550" y="783" class="chem" text-anchor="middle">¹O₂</text>
+<text x="550" y="818" class="small" text-anchor="middle">一重項酸素</text>
+<path d="M240 772 H435" stroke="#64748b" stroke-width="3" marker-end="url(#neutral)"/>
+<text x="337" y="745" class="small" text-anchor="middle">紫外線・光増感</text>
+<path d="M650 772 H805" stroke="#64748b" stroke-width="3" marker-end="url(#neutral)"/>
+<text x="980" y="775" class="result" text-anchor="middle">膜の脂質が酸化される</text>
+<text x="980" y="811" class="small" text-anchor="middle">脂質過酸化物ができる</text>
+<text x="60" y="867" class="body" text-anchor="start">脂質過酸化が進むと、膜の働きが損なわれ、強く進めば細胞死につながります。</text>
+<text x="40" y="947" class="small" text-anchor="start">反応の要点を示した模式図です。係数・副生成物・電子供与体は省略しています。</text>
+</svg>

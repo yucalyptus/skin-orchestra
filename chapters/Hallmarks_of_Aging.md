@@ -1,99 +1,127 @@
 ---
 id: hallmarks-of-aging
 title: Hallmarks of Aging
-subtitle: 老化の指標
+subtitle: 老化を構成する仕組み
 kind: basic
-status: draft
+status: approved
+published: 2026-09-14
+updated: 2026-09-14
+history:
+  - {date: 2026-09-14, note: 初公開}
+  - {date: 2026-09-13, note: Hallmarksの分類と介入の目的・代表例を整理}
 ---
 
-> エピジェネティッククロックやテロメア長の測定は、老化の指標として使われています。その原理は、この章で扱う12のHallmarksのうちの2つにあたります。
-> **この章の前提**：品質管理の三段構えとflux（→ [[autophagy]]）／細胞周期の4つの出口（→ [[cell-cycle]]）／炎症は始まって終わるもの（→ [[wound-healing]]）
-
+> 加齢に伴う皮膚の変化には、細胞の損傷、代謝や分泌の変化、組織を維持する力の低下が関わります。この章では、これまで学んだ仕組みを、加齢の側から整理します。
 
 ## この章の一言
 
-> **「老化した」を、「どの機序が互いを回しているか」と読み替えます。**
->
-> 老化は一つの現象ではなく、互いに影響し合う複数の仕組み（Hallmarks）が積み重なった結果です。Hallmarkは「老化そのもの」ではなく、**老化を構成し、相互作用する機序**です。
+> **加齢では、損傷の蓄積と、細胞・組織を維持する仕組みの変化が重なります。** Hallmarks of Agingは、それらの関係を整理する枠組みです。
+
+![老化に関わる12の仕組みを、損傷の蓄積・細胞の応答・組織への波及に分けて整理する。各群は互いに影響する。](figures/hallmarks-of-aging_Hallmarks_of_Aging.png)
 
 
-![12項目を3つの帯に分けた縦長の図。上の帯が損傷系5項目（ゲノム不安定性・テロメア短縮・エピゲノム変化・プロテオスタシス破綻・マクロオートファジー低下）、中の帯が応答系3項目（栄養感知の異常・ミトコンドリア機能不全・細胞老化）、下の帯が波及系4項目（幹細胞枯渇・細胞間コミュニケーション異常・慢性炎症・dysbiosis）。中央の太い下向き矢印だけでなく、**左右の外側を細い矢印が下から上へ何本も戻っている**のが要点で、3段階は一方通行の時間順ではない](figures/hallmarks-of-aging_Hallmarks_of_Aging.png)
+## 1　皮膚の加齢を、細胞の変化から捉える
 
+加齢に伴うハリの低下や修復の遅れには、コラーゲンの状態だけでなく、それを作る細胞の代謝、損傷への対応、周囲との情報交換も関わります。
 
-## 1　この読み替えが、なぜ必要か
+López-Otínらは2023年の総説で、老化に関わる仕組みを **12のHallmarks** に整理しました。本章では、理解しやすいように **損傷の蓄積・細胞の応答・組織への波及** の3群に分けます。これらは互いに影響し合います。[López-Otínら, 2023](https://pubmed.ncbi.nlm.nih.gov/36599349/)
 
-臨床では「加齢で肌がたるむ」「歳をとると治りが悪い」と、結果をまとめて語ります。しかし細胞のレベルでは、老化は**複数の仕組みが少しずつ狂い、互いを巻き込みながら進む**現象です。2023年版の総説（López-Otín らの Hallmarks of Aging）は、これを**12項目**に整理しました。
+テロメア長の測定やエピジェネティッククロックは、このうち一部の変化を捉えます。クロックはDNAメチル化のパターンなどから年齢を推定するもので、皮膚の修復力や12項目すべてを測る検査ではありません（→ [[epigenome]]）。
 
-本章はこの12項目を**3層**に分けて眺めます——**損傷系（DNA損傷・異常タンパク・未分解物がたまる）・応答系（反応そのものが乱れる）・波及系（組織の回復力が落ちる）**。
-
-**この3層は時間順ではありません。相互作用の整理です。** 章頭の図で外側を上向きに戻っている細い矢印がその意味で、②が①を悪化させ、③が①を増やします（§5）。だから「どのHallmarkが根本原因か」を一つに決めることはできません。個々を暗記するより、**どれとどれが互いを回しているか**をつかむのが目的です。
-
-冒頭の測定機器も、この地図の上に置けます。**テロメア長は損傷系の1項目、エピジェネティッククロックはもう1項目（エピゲノム変化）の読み出し**にあたります。12のうちの2つを測っている、というのが位置づけです。
-
-
-## 2　① 損傷がたまる（損傷系）
+## 2　損傷がたまる（損傷系）
 
 | Hallmark | 一言でいうと | どこかで触れた話 |
 |---|---|---|
 | **ゲノム不安定性**（genomic instability） | DNAの傷や変異がたまる | 核・DNA損傷（[[organelles]]・[[dna-to-protein]]、[[cell-cycle]]のp53） |
-| **テロメア短縮**（telomere attrition） | 染色体の末端が分裂ごとに削れる | 増殖の限界（[[cell-cycle]]） |
+| **テロメア短縮**（telomere attrition） | 染色体末端の保護領域が短くなり、損傷応答を起こす | 増殖の限界（[[cell-cycle]]） |
 | **エピゲノム変化**（epigenetic alterations） | 「どの遺伝子を読むか」の調節が乱れる | エピゲノム（[[epigenome]]） |
 | **プロテオスタシス破綻**（loss of proteostasis） | 折り直す（chaperone/HSP）・タグを付けて壊す・包んで壊すの三手が崩れる | 品質管理の三段構え（[[autophagy]]）、ER・folding（[[organelles]]・[[autophagy]]） |
 | **マクロオートファジー低下**（disabled macroautophagy） | 不要物を分解・再利用する掃除が滞る | 量ではなくflux（[[autophagy]]） |
 
-![5項目を並べて、その間を双方向の矢印で結んだ図。中央にエピゲノム変化が置かれ、ゲノム不安定性・テロメア短縮・プロテオスタシス破綻・マクロオートファジー低下の4つと相互に矢印が行き交う。5本の矢印は下の「損傷・異常分子・不要物の蓄積」という一つの箱へ集まる。下端に2つの注意——5項目は独立ではない／測定マーカー1つで生物学的年齢を断定しない。テロメアの枠にも「長さだけで老化を決めない」と添えられている](figures/hallmarks-of-aging_損傷系Hallmarks.png)
+![DNA・エピゲノム・タンパク質の変化と、不要物を分解する仕組みの低下。](figures/hallmarks-of-aging_損傷系Hallmarks.png)
 
-## 3　② 細胞の対応が乱れる（応答系）
+## 3　細胞の対応が乱れる（応答系）
 
 損傷に対して細胞は感知して反応します。この**反応そのものが乱れる**のが第2層です。
 
 | Hallmark | 一言でいうと | どこかで触れた話 |
 |---|---|---|
-| **栄養感知の異常**（deregulated nutrient sensing） | 「材料・エネルギーがあるか」の読み取りが狂う | AMPK・mTOR（[[mtorc1]]・[[ampk-mtor]]） |
+| **栄養感知の異常**（deregulated nutrient sensing） | 栄養・エネルギー状態に応じた成長と維持の調節が変わる | AMPK・mTOR（[[mtorc1]]・[[ampk-mtor]]） |
 | **ミトコンドリア機能不全**（mitochondrial dysfunction） | エネルギー変換と代謝調整が崩れる | ミトコンドリア（[[organelles]]・[[electron-transport]]・[[mito-quality-control]]、→[[mito-dysfunction]]） |
 | **細胞老化**（cellular senescence） | 細胞が増殖をやめ、性質と分泌物を変える | quiescenceとの違い（[[cell-cycle]]、→[[senescence]]） |
 
-> ここが本教材の要になる層です。**細胞老化**は[[senescence]]、**ミトコンドリア機能不全**とその関係は[[mito-dysfunction]]で扱います。ここでは「損傷への"応答"が慢性化すると、かえって害になり得る」という向きだけ押さえます。
+栄養感知には、細胞の成長を促すmTORや、エネルギー不足に応答するAMPKなどが関わります。ここでいう異常には、成長を促す信号の持続も含まれます。**栄養不足だけの話ではありません。**
 
-![3項目を三角に配置し、中央に「損傷への応答 → 適応 → 慢性化すると機能低下へ」という円環を置いた図。栄養感知はインスリン/IGF-1・mTOR・AMPK・SIRTが成長と維持の天秤を取る枠、ミトコンドリアはATP産生だけでなくredox・代謝物供給・シグナル伝達・品質管理という5つの役割を持つ枠、細胞老化は安定した増殖停止・細胞状態の変化・SASPの3要素の枠として描かれる。3つから下へ「損傷の蓄積」が伸び、さらに組織・臓器レベルの影響（恒常性破綻・炎症の持続・再生能力の低下など）へ落ちる](figures/hallmarks-of-aging_応答系Hallmarks.png)
+細胞老化に伴う分泌の変化を **SASP（老化関連分泌形質）** と呼びます。詳しくは[[senescence]]、ミトコンドリアとの関係は[[mito-dysfunction]]で扱います。
 
-## 4　③ 組織全体が弱る（波及系）
+![栄養感知、ミトコンドリア、細胞老化の変化。SASPの内容と強さは、細胞種や刺激で異なる。](figures/hallmarks-of-aging_応答系Hallmarks.png)
+
+## 4　組織全体が弱る（波及系）
 
 個々の細胞の乱れが、組織・個体のレベルへ波及します。
 
 | Hallmark | 一言でいうと | どこかで触れた話 |
 |---|---|---|
-| **幹細胞枯渇**（stem cell exhaustion） | 組織を作り直す供給源が減る・鈍る | 修復・ターンオーバー（[[wound-healing]]） |
+| **幹細胞枯渇**（stem cell exhaustion） | 組織を補う幹細胞の数や働きが低下する | 修復・ターンオーバー（[[wound-healing]]） |
 | **細胞間コミュニケーション異常**（altered intercellular communication） | 細胞どうしの連絡（分泌シグナル等）が乱れる | 受容体・シグナル（[[receptors-signaling]]） |
-| **慢性炎症**（chronic inflammation / "inflammaging"） | 低レベルの炎症が持続する | 炎症は本来"始まって終わる"もの（[[wound-healing]]） |
-| **dysbiosis**（細菌叢の乱れ） | 常在菌のバランスが崩れる。皮膚では *C. acnes* の菌株構成やバリア機能との関連が議論されている | （本教材では概要のみ） |
+| **慢性炎症**（chronic inflammation） | 低レベルの炎症が持続する | 炎症は本来"始まって終わる"もの（[[wound-healing]]） |
+| **dysbiosis**（細菌叢の乱れ） | 腸管などの微生物叢の構成や働きが変わり、宿主の代謝・免疫に影響する | （本教材では概要のみ） |
 
-> ここは**個々の細胞の変化が、組織の修復力低下として現れる**層です。幹細胞の供給が減り、細胞間シグナルが乱れ、炎症が持続する——修復の土台そのものが弱ります。
+加齢に伴う持続的で低度の炎症は **inflammaging** と呼ばれます。炎症は細胞の損傷を増やし、組織の維持や修復にも影響します。
 
-![4項目を四隅に置き、中央の円「恒常性・再生・修復力の低下」へ矢印を集めた図。幹細胞枯渇の枠には「ゼロではないが、量・質・機能の低下」と留保が付き、若い組織と加齢した組織の対比が描かれる。dysbiosisは宿主側と菌側が両向き矢印で結ばれ、一方向ではないと明示。下段は起点となる細胞レベルの変化と応答・適応の変化を並べ、それが両脇の矢印で四隅へ戻る。最下部に「組織老化は一つの細胞だけでは説明できない」](figures/hallmarks-of-aging_波及系Hallmarks.png)
+![幹細胞、細胞間の情報交換、炎症、微生物叢の変化が、組織の維持・修復に影響する。](figures/hallmarks-of-aging_波及系Hallmarks.png)
 
 
-## 5　どれとどれが互いを回しているか
+## 5　損傷・代謝・炎症が、互いを悪化させる
 
-§1で断ったとおり、3層は一方通行ではありません。具体的な戻り経路を挙げます。
+例えば、次のようなつながりがあります。
 
-- 慢性炎症（③）は、さらにDNA損傷（①）を増やし得る。
-- ミトコンドリア機能不全（②）は、ROSを介して損傷（①）を悪化させ得る。
-- 細胞老化（②）が出すSASPは、周囲の細胞のコミュニケーション（③）を乱し得る。
-- オートファジー低下（①）は品質管理の負荷を上げ、ミトコンドリア機能不全（②）を悪化させ得る。
+- 慢性炎症は、さらにDNA損傷を増やし得る。
+- ミトコンドリア機能不全は、ROSを介して損傷を悪化させ得る。
+- 細胞老化が出すSASPは、周囲の細胞のコミュニケーションを乱し得る。
+- オートファジー低下は品質管理の負荷を上げ、ミトコンドリア機能不全を悪化させ得る。
 
-> **老化を単一の分子や単一の仕組みで説明しない。** 「これさえ改善すれば若返る」という単純化は、Hallmarksの発想とかみ合いません。
+皮膚では、こうした変化が重なり、細胞の増殖、ECMの合成・分解、炎症の収束に影響します。
 
-![損傷系・応答系・波及系を三角形の3つの円にし、辺をすべて**両向き**の太い矢印で結んだ図。四隅に具体的な戻り経路の実例が4つ添えられる：慢性炎症→DNA損傷・プロテオスタシス負荷／ミトコンドリア機能不全→redox・代謝ストレス／細胞老化→SASP→細胞間コミュニケーション異常／オートファジー低下→品質管理負荷→ミトコンドリア機能不全。中央に「相互増幅・文脈依存」、下に「"根本原因は1つ"と決めない」「3段階は理解の地図であり、固定された時間順ではない」](figures/hallmarks-of-aging_Hallmarksネットワーク.png)
+![炎症・ROS・SASP・品質管理を通じて、複数の加齢変化が互いを悪化させる。](figures/hallmarks-of-aging_Hallmarksネットワーク.png)
 
+
+## 6　老化の仕組みへの介入は、何を目指すのか
+
+Hallmarksを学ぶと、老化への介入が、細胞のどの働きを変えようとしているかが分かります。目指すのは、損傷を減らすこと、代謝や品質管理を保つこと、老化細胞の蓄積や炎症性の分泌を抑えることです。一つの介入が、複数の仕組みに関わる場合もあります。
+
+| 何を目指すか | 介入の代表例 | ヒトで確認されていること |
+|---|---|---|
+| **新たな損傷を減らす** | 日焼け止めなどの紫外線対策 | 日焼け止めを日常的に使う群で、皮膚の光老化の進行を抑えた無作為化試験がある。[Hughesら, 2013](https://pubmed.ncbi.nlm.nih.gov/23732711/) |
+| **代謝とミトコンドリアの働きを保つ** | 運動 | 高齢者を含む介入試験で、骨格筋のミトコンドリア呼吸能などの改善が示されている。[Robinsonら, 2017](https://pubmed.ncbi.nlm.nih.gov/28273480/) |
+| **NAD⁺代謝に働きかける** | NR・NMNなどのNAD⁺前駆体 | NRの試験では血液中のNAD⁺増加が確認されている。皮膚での合成・修復への効果は別に検証する。[Martensら, 2018](https://pubmed.ncbi.nlm.nih.gov/29599478/) |
+| **傷んだミトコンドリアの更新を促す** | urolithin A | 高齢者の筋肉で、ミトコンドリア関連の遺伝子発現や代謝指標の変化が報告されている。[Andreuxら, 2019](https://pubmed.ncbi.nlm.nih.gov/32694802/) |
+| **蓄積した老化細胞を減らす** | セノリティクス（dasatinib＋quercetinなど） | 糖尿病性腎疾患患者の小規模試験で、皮膚・脂肪の老化細胞マーカーが低下した。美容効果を確立する試験ではない。[Hicksonら, 2019](https://pubmed.ncbi.nlm.nih.gov/31542391/) |
+| **SASPなどの老化形質を抑える** | セノモルフィクス。mTORを抑えるrapamycinなどが研究対象 | 外用rapamycinの探索的試験で、皮膚のp16や外観の変化が報告されている。効果の再現性や長期安全性は検証が必要。[Chungら, 2019](https://pubmed.ncbi.nlm.nih.gov/31761958/) |
+
+運動や紫外線対策から、研究段階の薬剤まで、確かめられている範囲は異なります。栄養も代謝の土台ですが、摂取量を増やすだけで吸収・利用や品質管理まで改善するとは限りません。
+
+NAD⁺前駆体は[[nad-precursors]]、老化細胞やミトファジーへの介入は[[senolytics]]で詳しく扱います。**ここまで学んだ代謝・品質管理・炎症は、こうした介入が何に働きかけるかを理解する基礎になります。**
 
 ## この章の到達点
 
-1. 「老化した」は、**12の仕組み（Hallmarks）のうちどれが互いを回しているか**と読み替える。
-2. Hallmarkは「老化そのもの」ではなく、**老化を構成し相互作用する機序**である。
-3. 3層で捉える：**① 損傷がたまる／② 細胞の対応が乱れる／③ 組織全体が弱る**。テロメア長とエピジェネティッククロックは、①の2項目を測っている。
-4. 3層は**時間順ではなく相互作用の整理**。だから単一原因では説明しない。
+1. Hallmarks of Agingは、老化に関わる複数の仕組みを整理する枠組み。
+2. **損傷の蓄積・細胞の応答・組織への波及** をつなげて理解する。
+3. 細胞老化はその一つであり、加齢に伴う変化は細胞老化以外にも起こる。
+4. テロメア長やエピジェネティッククロックは、加齢変化の一部を捉える指標。
+5. 介入は、損傷・代謝・品質管理・老化細胞のどこに働きかけるかと、ヒトで何が確認されたかを合わせて理解する。
 
-![この章を6枚で振り返る：12という数と「老化そのものではなく老化を構成する機序」／損傷系5／応答系3／波及系4／3層をつなぐフィードバック（炎症・SASP・redox・品質管理のループ）／そして読み方——3段階は理解の地図で、固定された時間順や順位ではない](figures/hallmarks-of-aging_まとめ.png)
+![12のHallmarksと、その相互作用を振り返る。](figures/hallmarks-of-aging_まとめ.png)
 
-> [[senescence]]では、②の中の一つ「**細胞老化**」を取り出します。「老化細胞は死細胞ではない」「一時的には役に立つ」「p16だけでは判定できない」——誤解されやすい点を整理します。
+## 参考文献
+
+- López-Otín C, et al. Hallmarks of aging: An expanding universe. *Cell*. 2023. 総説・枠組みの提案。[PMID: 36599349](https://pubmed.ncbi.nlm.nih.gov/36599349/).
+
+- Hughes MCB, et al. Sunscreen and prevention of skin aging: a randomized trial. *Annals of Internal Medicine*. 2013. [PMID: 23732711](https://pubmed.ncbi.nlm.nih.gov/23732711/).
+- Robinson MM, et al. Enhanced Protein Translation Underlies Improved Metabolic and Physical Adaptations to Different Exercise Training Modes in Young and Old Humans. *Cell Metabolism*. 2017. [PMID: 28273480](https://pubmed.ncbi.nlm.nih.gov/28273480/).
+- Martens CR, et al. Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD⁺ in healthy middle-aged and older adults. *Nature Communications*. 2018. [PMID: 29599478](https://pubmed.ncbi.nlm.nih.gov/29599478/).
+- Andreux PA, et al. The mitophagy activator urolithin A is safe and induces a molecular signature of improved mitochondrial and cellular health in humans. *Nature Metabolism*. 2019. [PMID: 32694802](https://pubmed.ncbi.nlm.nih.gov/32694802/).
+- Hickson LJ, et al. Senolytics decrease senescent cells in humans: Preliminary report from a clinical trial of Dasatinib plus Quercetin in individuals with diabetic kidney disease. *EBioMedicine*. 2019. [PMID: 31542391](https://pubmed.ncbi.nlm.nih.gov/31542391/).
+- Chung CL, et al. Topical rapamycin reduces markers of senescence and aging in human skin: an exploratory, prospective, randomized trial. *GeroScience*. 2019. [PMID: 31761958](https://pubmed.ncbi.nlm.nih.gov/31761958/).
+
+> [[senescence]]では、増殖を止めた細胞の働きと、分泌物が皮膚へ与える影響を扱います。

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>表皮とターンオーバー ― 生化学で見る美容医療</title>
+<meta name="description" content="表皮は、細胞をバリアへと作り替え、入れ替えながら体の水分を守っています。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/epidermis.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="表皮とターンオーバー ― 生化学で見る美容医療">
+<meta property="og:description" content="表皮は、細胞をバリアへと作り替え、入れ替えながら体の水分を守っています。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/epidermis.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epidermis_分化の4段階.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
+color:var(--sub);text-align:center}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border:0;font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border:0;font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   見出しと薄い背景で補足のまとまりを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border:0;border-radius:4px;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<div class="part">材料を感知し作る</div>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<div class="part">掃除と作り直し</div>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
+<div class="part">傷害から修復まで</div>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<div class="part">細胞は加齢で何が変わるか</div>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<a href="epidermis.html" class="active">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
+<span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
+<span class="soon">弾性線維と膠原線維<em>準備中</em></span>
+<span class="soon">糖化とAGE<em>準備中</em></span>
+<span class="soon">皮脂分泌の生化学<em>準備中</em></span>
+<span class="soon">毛包と毛周期<em>準備中</em></span>
+<span class="soon">脂肪<em>準備中</em></span>
+<span class="soon">筋肉<em>準備中</em></span>
+<span class="soon">血管と内皮<em>準備中</em></span>
+<div class="part">訴えを細胞から読み解く</div>
+<span class="soon">赤みの生化学<em>準備中</em></span>
+<span class="soon">しみとくすみ<em>準備中</em></span>
+<span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter" data-chapter="epidermis">
+<p class="kicker">美容皮膚科　／　組織の生化学</p>
+<h1 class="ch-title">表皮とターンオーバー<small>角化とDEJ</small></h1>
+<p class="dateline">公開 2026-09-14</p>
+<p>皮膚は、外側の<strong>表皮</strong>と、その下で皮膚を支える<strong>真皮</strong>からなります。表皮の最も外側にある<strong>角層</strong>は、体内から水分が蒸発するのを抑え、外から異物や刺激物が入り込むのを防いでいます。</p>
+<p>脊椎動物が水中から陸上へ生活の場を広げる過程では、体の水分を空気中へ失わない仕組みが重要でした。表皮の角化とバリアの発達は、陸上生活を支えた適応の一つです。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25169930/" target="_blank" rel="noopener">Strasserら, 2014</a></p>
+<p>このバリアを担う細胞がどのように並び、真皮とどうつながっているのか。まず表皮の構造を見ます。</p>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>表皮は、細胞をバリアへと作り替え、入れ替えながら体の水分を守っています。</strong></blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　表皮を作る細胞と、四つの層</a></li><li><a href="#s2">2　DEJ ―― 表皮を真皮につなぐ</a></li><li><a href="#s3">3　細胞が生まれ、角層になってはがれる</a></li><li><a href="#s4">4　角層は、三つのしくみで水分を守る</a></li><li><a href="#s5">5　接着が分解され、角層細胞がはがれる</a></li><li><a href="#s6">6　表皮の更新には、数週間かかる</a></li><li><a href="#s7">7　表皮と真皮は、互いに働きかける</a></li><li><a href="#s8">8　更新の釣り合いが崩れると、何が起こるのか</a></li></ul></nav><h2 id="s1">1　表皮を作る細胞と、四つの層</h2>
+<p>表皮の主な細胞は <strong><span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>（角化細胞）</strong> です。細胞どうしが接着し、層をなして並んでいます。真皮に近い側から、<strong>基底層・有棘層・顆粒層・角層</strong>の四つに分かれます。</p>
+<div class="tblwrap"><table><thead><tr><th>層</th><th>主な働き</th></tr></thead><tbody><tr><td><strong>基底層</strong></td><td>分裂して、新しい細胞を補う</td></tr><tr><td><strong>有棘層</strong></td><td>細胞の骨格と、細胞どうしの接着を強める</td></tr><tr><td><strong>顆粒層</strong></td><td>角層に必要なタンパク質と脂質を準備する</td></tr><tr><td><strong>角層</strong></td><td>核を失った細胞と細胞間脂質が、バリアを担う</td></tr></tbody></table></div>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epidermis_分化の4段階.webp" alt="基底層から有棘層・顆粒層・角層へ進むにつれて、角化細胞は増殖からバリア形成へ役割を変える。" width="1536" height="1024" loading="lazy"><figcaption>基底層から有棘層・顆粒層・角層へ進むにつれて、角化細胞は増殖からバリア形成へ役割を変える。</figcaption></figure>
+<details class="supplement"><summary>詳しく：四つの層の分子と接着構造</summary><div class="supplement-body"><p>角化細胞は、層を上がるにつれて細胞骨格や接着構造を変えます。まず、それぞれの層で使われる分子を整理します。</p>
+<div class="tblwrap"><table><thead><tr><th>層</th><th>細胞の働き</th><th>関わる分子・構造</th></tr></thead><tbody><tr><td><strong>基底層</strong></td><td>新しい細胞を補充し、基底膜に接着する。増殖は主にこの層で起こる</td><td>細胞骨格の <strong>keratin K5/K14</strong>、基底膜への接着を担う <strong><span class="term" tabindex="0" data-t="integrin" data-d="細胞膜を貫き、外でECMをつかみ内で細胞骨格につながる受容体。focal adhesion・FAK を介して足場の硬さと張力を細胞内シグナルに変換する入口（mechanotransduction）。" data-u="glossary.html#term-16f6a280a6cc">integrin</span> α6β4</strong></td></tr><tr><td><strong>有棘層</strong></td><td>細胞骨格と細胞間の接着を強め、力に耐える構造を作る</td><td><strong>keratin K1/K10</strong>、細胞どうしをつなぐ <strong>desmosome</strong></td></tr><tr><td><strong>顆粒層</strong></td><td>角層の強度・保水・バリアに必要な成分を準備する</td><td>タンパク質を含む <strong>keratohyalin 顆粒</strong>、脂質や酵素を運ぶ <strong>lamellar body（層板顆粒）</strong></td></tr><tr><td><strong>角層</strong></td><td>水分の蒸散と外からの物質の侵入を抑える</td><td>核を失った <strong>角層細胞</strong>と、その間を満たす<strong>細胞間脂質</strong></td></tr></tbody></table></div>
+<p>顆粒層の細胞どうしをつなぐ <strong>tight junction（タイトジャンクション）</strong> も、細胞間を物質が通り抜けるのを制限します。その構成タンパク質には <strong>claudin-1・occludin</strong> があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11889141/" target="_blank" rel="noopener">Furuseら, 2002</a></p></div></details>
+<h2 id="s2">2　<span class="term" tabindex="0" data-t="DEJ" data-d="表皮と真皮の境をなす領域。基底膜（type IV collagen・laminin）に、hemidesmosome と anchoring fibril が加わって表皮を真皮につなぐ。表皮に血管はなく、酸素も栄養もここを越えて拡散で届く。" data-u="glossary.html#term-c85bf1d627d5">DEJ</span> ―― 表皮を真皮につなぐ</h2>
+<p><strong>DEJ（dermal–epidermal junction、表皮真皮接合部）</strong> は、表皮と真皮をつなぐ領域です。基底細胞の接着装置、基底膜、真皮へ伸びる線維が一緒に働き、表皮を支えます。表皮には血管がなく、栄養は真皮の毛細血管から拡散して届きます。</p>
+<p>基底細胞の接着装置が基底膜をつかみ、基底膜から伸びる係留線維が真皮につなぎます。</p>
+<p>表皮が真皮側へ入り込む <strong>rete ridge（表皮突起）</strong> は、接触面積を広げ、ずれる力に抵抗する構造です。加齢に伴ってこの凹凸は平坦化し、表皮と真皮の接合が弱くなります。</p>
+<p>色素との関係は <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a> で扱います。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epidermis_DEJ.webp" alt="表皮と真皮をつなぐ接着装置・基底膜・係留線維。" width="1536" height="1024" loading="lazy"><figcaption>表皮と真皮をつなぐ接着装置・基底膜・係留線維。表皮突起の凹凸は接触面積を広げる。</figcaption></figure>
+<details class="supplement"><summary>詳しく：DEJをつなぐ分子</summary><div class="supplement-body"><p>細胞から基底膜、基底膜から真皮へと、接着を担う分子が連なっています。</p>
+<div class="tblwrap"><table><thead><tr><th>要素</th><th>何でできているか</th><th>役割</th></tr></thead><tbody><tr><td><strong>hemidesmosome</strong></td><td>integrin α6β4、<strong>BP180（type XVII <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span>）</strong>、BP230、plectin</td><td>基底細胞を基底膜へ固定する</td></tr><tr><td><strong>lamina lucida / densa</strong></td><td><strong>laminin-332</strong>、<strong>type IV collagen</strong></td><td>基底膜の網目構造を作り、細胞を支える</td></tr><tr><td><strong>anchoring fibril</strong></td><td><strong>type VII collagen</strong></td><td>基底膜を乳頭真皮につなぐ</td></tr></tbody></table></div></div></details>
+<h2 id="s3">3　細胞が生まれ、角層になってはがれる</h2>
+<p>基底膜という足場に接する<strong>基底層</strong>には、幹細胞と、その子孫である増殖を担う細胞がいます。これらは核を持ち、分裂して新しい細胞を補います。生まれた細胞の一部は基底層に残り、一部は分化して上の層へ移動します。<strong>基底層に残っている間に、脱核するわけではありません。</strong></p>
+<p>基底層から上へ進む細胞は、バリアの材料を準備して角層になり、最後にはがれ落ちます。<strong>細胞の補充から落屑までを含む、この一連の更新がターンオーバーです。</strong></p>
+<p>上の層へ進む角化細胞は、バリアに必要なタンパク質や脂質を作りながら、しだいに平たくなります。このように、角層細胞になるために形と働きを変えて成熟していく過程が、角化細胞の <strong>分化</strong> です。</p>
+<p>有棘層・顆粒層ではまだ核を持っていますが、<strong>角層になるときに、核が細胞内で分解されて失われます（脱核）。</strong> 核をそのまま外へ押し出すわけではありません。細胞内小器官も失われ、バリアを担う <strong>corneocyte（角層細胞）</strong> へと変わるこの最終段階を <strong>角化（cornification）</strong> と呼びます（→ <a class="chref" href="cell-death.html">細胞死</a>）。</p>
+<p><strong>核を失っても、すぐにはがれるわけではありません。</strong> 角層細胞は積み重なって表面を守ります。新しいタンパク質の合成は行いませんが、用意しておいた材料と酵素によって、保水成分の形成や接着の分解が続きます。</p>
+<p>この分化を支える信号の一つが <strong>Ca²⁺（カルシウムイオン）</strong> です。表皮内のカルシウムは、基底層側で少なく、顆粒層付近で多くなり、角層では再び少なくなります。角化細胞はCa²⁺を感知し、接着や作るタンパク質を変えていきます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12485427/" target="_blank" rel="noopener">Eliasら, 2002</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22622426/" target="_blank" rel="noopener">Tuら, 2012</a></p>
+<details class="supplement"><summary>詳しく：分化を調節するCa²⁺・ビタミンD・レチノイド</summary><div class="supplement-body"><p><strong>Ca²⁺とビタミンDは、角層になるための材料作りを支えます。</strong></p>
+<p>本文で見たカルシウムの勾配は、組織内の分布です。血液中の濃度や、細胞内の遊離Ca²⁺濃度とは区別します。角化細胞は <strong>CaSR（calcium-sensing <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span>）</strong> などを介して細胞外のCa²⁺を感知し、細胞内シグナルや接着、分化に必要な遺伝子の発現を変えます。CaSRを欠損させたマウスの角化細胞では、分化とバリア機能に障害が見られます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12485427/" target="_blank" rel="noopener">Eliasら, 2002</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22622426/" target="_blank" rel="noopener">Tuら, 2012</a></p>
+<p><strong>活性型ビタミンD〔1,25(OH)₂D₃〕</strong> は、核内受容体 <strong>VDR</strong> を介して遺伝子発現を調節します。ヒト角化細胞の培養では、VDRの発現を抑えると分化が妨げられ、特定の <strong>glucosylceramide</strong> の産生や <strong>層板顆粒（lamellar body）</strong> の形成も低下します。VDRは、角層の脂質と、それを運ぶ仕組みの準備にも関わっています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17082781/" target="_blank" rel="noopener">Hawkerら, 2007</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19052561/" target="_blank" rel="noopener">Odaら, 2009</a></p>
+<p>活性型ビタミンD₃外用薬が乾癬に使われる背景にも、過剰な増殖を抑え、分化を調節する作用があります。ただし、上の脂質産生の実験だけで治療効果全体を説明できるわけではありません。<a class="ext" href="https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/130202_2691702M1052_1_05" target="_blank" rel="noopener">マキサカルシトール添付文書</a></p>
+<p><strong>ビタミンA系も分化に関わりますが、Dと同じ作用ではありません。</strong></p>
+<p>ヒト角化細胞の培養研究では、次の違いが見られます。</p>
+<div class="tblwrap"><table><thead><tr><th>活性体</th><th>角化細胞に見られる作用</th></tr></thead><tbody><tr><td><strong>活性型ビタミンD</strong></td><td>増殖を抑え、角層へ向かう分化を進める</td></tr><tr><td><strong>レチノイン酸（ビタミンA系）</strong></td><td>増殖・分化の進み方を変え、角化に関わるタンパク質や脂質合成関連遺伝子の発現を抑えることもある</td></tr></tbody></table></div>
+<p>これは特定の培養条件での比較で、<strong>「Dは分化、Aは増殖」という固定的な分担ではありません。</strong> <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8950452/" target="_blank" rel="noopener">Gibbsら, 1996</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19388012/" target="_blank" rel="noopener">Leeら, 2009</a></p>
+<p>VDRと、レチノイン酸の受容体 <strong>RAR</strong> は、どちらも <strong>RXR</strong> と組んで遺伝子発現を調節します。RXRを共有していても、組む相手が異なるため、同じ指示が出るわけではありません。受容体の詳しい比較は レチノイド外用の生化学 で扱います。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1662118/" target="_blank" rel="noopener">Yuら, 1991</a></p>
+<p><strong>レチノイドの反応は、薬の種類と、受け取る細胞によって変わります。</strong></p>
+<p>細胞ごとに、薬を活性のある形に変えたり分解したりする働きや、反応する遺伝子が違います。濃度や作用時間も、増殖・分化・細胞死への影響を左右します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10951254/" target="_blank" rel="noopener">Tsukadaら, 2000</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21564055/" target="_blank" rel="noopener">Nelsonら, 2011</a></p>
+<p>例えば、角化細胞の培養ではレチノイン酸が増殖する性質を保つ場合があります。一方、培養した皮脂腺細胞では、イソトレチノインが増殖を抑え、アポトーシス（制御された細胞死）を起こします。この比較では、細胞も薬も異なります。「ビタミンAの作用」と一括りにせず、どの薬がどの細胞に働くかを見ます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8950452/" target="_blank" rel="noopener">Gibbsら, 1996</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16575387/" target="_blank" rel="noopener">Nelsonら, 2006</a></p></div></details>
+<h2 id="s4">4　角層は、三つのしくみで水分を守る</h2>
+<p>角層では、<strong>細胞内で水分を保つ・細胞を丈夫にする・細胞間から水分を逃がしにくくする</strong>という働きが組み合わさっています。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epidermis_顆粒層から角層への変化.webp" alt="三つのしくみを、下の顆粒層から上の角層へ示す。" width="1536" height="1024" loading="lazy"><figcaption>三つのしくみを、下の顆粒層から上の角層へ示す。顆粒層の細胞には核があり、角層細胞にはない。左は細胞内でのNMF形成、中央は角化膜の形成、右は脂質・酵素の分泌と細胞間脂質の形成。</figcaption></figure>
+<h3>細胞の中で水分を保つ ―― NMF</h3>
+<p><strong>filaggrin</strong> は、細胞の骨格となるkeratinを束ねるタンパク質です。角層になるとさらに分解され、アミノ酸などの保水成分になります。これらは <strong>NMF（天然保湿因子）</strong> の一部として、主に角層細胞の内側で水分を保ちます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21654840/" target="_blank" rel="noopener">Hosteら, 2011</a></p>
+<p>核を失う前に材料を用意し、角層になってから加工して使う、という流れです。</p>
+<details class="supplement"><summary>詳しく：filaggrinからNMFができるまで</summary><div class="supplement-body"><p>顆粒層の keratohyalin 顆粒には <strong>profilaggrin</strong> が蓄えられています。これが切断されて <strong>filaggrin</strong> となり、keratin filament を束ねて、角層細胞の形成を助けます。</p>
+<p>角層では filaggrin がさらに分解され、アミノ酸やその誘導体である <strong>PCA・urocanic acid</strong> などになります。これらは <strong>NMF（natural moisturizing factor、天然保湿因子）</strong> の一部として、主に<strong>角層細胞の内側</strong>で水分を保ちます。NMFは核が分解されてできるものではなく、脱核前に用意したfilaggrinなどの成分を加工して作られます。</p>
+<p>この加工には <strong>caspase-14</strong> などの酵素が関わります。caspase-14欠損マウスではfilaggrinの分解が途中で滞り、PCAやurocanic acidが減ることが示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21654840/" target="_blank" rel="noopener">Hosteら, 2011</a></p></div></details>
+<h3>細胞を丈夫にする ―― 角化膜</h3>
+<p>細胞の周囲では、タンパク質どうしをつなぎ合わせて、丈夫な外殻を作ります。これが <strong>角化膜（cornified envelope）</strong> です。図中央の <strong>TGM1</strong> は、この結合を作る酵素です。</p>
+<details class="supplement"><summary>詳しく：角化膜を作るTGM1とタンパク質</summary><div class="supplement-body"><p><strong>transglutaminase 1（TGM1）</strong> は、<strong>involucrin・loricrin</strong> などのタンパク質を共有結合でつなぐ酵素です。細胞膜の内側に <strong>cornified envelope（角化膜）</strong> という丈夫な外殻を作ります。その外側には ω-hydroxyceramide などの脂質が結合します。</p></div></details>
+<h3>細胞の間を脂質で満たす ―― セラミドなど</h3>
+<p>顆粒層の細胞は、<strong>層板顆粒（lamellar body）</strong> という小さな袋から、脂質と酵素を細胞の外へ放出します。放出された脂質は加工され、角層細胞の間に層状に並びます。</p>
+<p>主成分は <strong>ceramide（セラミド）・cholesterol・遊離脂肪酸</strong> です。NMFが細胞内に水分を保ち、この細胞間脂質が水分の通り道を制限します（→ 角層バリアと経皮吸収）。</p>
+<details class="supplement"><summary>詳しく：層板顆粒とセラミドの加工</summary><div class="supplement-body"><p><strong>lamellar body（層板顆粒）</strong> は、顆粒層と角層の境界で脂質と酵素を細胞間へ放出します。glucosylceramide・sphingomyelin からは ceramide が、リン脂質からは遊離脂肪酸が作られます。これらが cholesterol とともに並び、層状の構造になります。</p>
+<p>角層の脂質を加工する <strong>β-glucocerebrosidase</strong> や <strong>acid sphingomyelinase</strong> は、酸性環境で働く酵素です。それぞれglucosylceramide、sphingomyelinからceramideを作ります。材料を放出したあとに、適切なpHで加工することもバリア形成の一部です。</p></div></details>
+<details class="supplement"><summary>詳しく：角層を通る分子と500 Daルール</summary><div class="supplement-body"><p>健常な角層を受動的に通過する分子を考えるとき、<strong>分子量が約500 Daを超えると通りにくい</strong>という経験則があります。これが <strong>500ダルトンルール</strong> です。500 Daは0.5 kDaに相当します。</p>
+<p>境界を一つ超えると急に通れなくなる法則でも、500 Da以下なら必ず届くという保証でもありません。親油性・電荷・製剤・バリアの状態も通過量を左右します。角層に留まることと、その下の細胞まで届くことの違いは 角層バリアと経皮吸収 で扱います。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10839713/" target="_blank" rel="noopener">Bos・Meinardi, 2000</a></p></div></details>
+<h3>脂質を整えるには、pHも関わる</h3>
+<p><strong>皮膚表面は酸性側で、角層の深部へ進むほど、平均的なpHは中性側に近づきます。</strong> これが <strong>pH勾配</strong> です。さらに細胞間には局所的な酸性領域もあり、各層が一様なpHで区切られているわけではありません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7817676/" target="_blank" rel="noopener">Öhman・Vahlquist, 1994</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12202391/" target="_blank" rel="noopener">Hansonら, 2002</a></p>
+<p>酸性環境は、セラミドを作る酵素が働く条件の一つです。また、細胞どうしの接着を分解する酵素の働きにも影響します。pHは、<strong>バリアを作ることと、角層をはがすことの両方</strong>に関わっています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12880427/" target="_blank" rel="noopener">Hachemら, 2003</a></p>
+<details class="supplement"><summary>詳しく：pH勾配と酵素の働く場所</summary><div class="supplement-body"><p>皮膚表面から深部へ向かうpH勾配に加え、角層の細胞間には局所的な酸性領域があります。表面で測ったpHだけでは、酵素が働く場所の環境をすべて表せません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7817676/" target="_blank" rel="noopener">Öhman・Vahlquist, 1994</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12202391/" target="_blank" rel="noopener">Hansonら, 2002</a></p>
+<p>この酸性環境を作る仕組みには、リン脂質からの遊離脂肪酸の生成や、<strong>NHE1（Na⁺/H⁺交換輸送体）</strong> によるH⁺の輸送などがあります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11442748/" target="_blank" rel="noopener">Fluhrら, 2001</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15009712/" target="_blank" rel="noopener">Fluhrら, 2004</a></p>
+<p>一方、pHが上がると、角層細胞どうしの接着を分解するserine proteaseの活性が高まり、接着や脂質加工酵素が過剰に分解されることがあります。角層を中性側へ変えたマウスの実験では、脂質の加工障害と接着の低下、バリア回復の遅れが確認されています。<strong>弱酸性環境は、脂質を整えることと、角層を適切に保つことの両方に関わります。</strong> <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12880427/" target="_blank" rel="noopener">Hachemら, 2003</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16117792/" target="_blank" rel="noopener">Hachemら, 2005</a></p></div></details>
+<aside class="memo"><h3 class="memo-h">コラム　弱酸性は、バリアと微生物への防御を支える</h3><p><strong>弱酸性なのは、主に皮膚表面から角層の環境です。</strong> 表皮全体を酸性にする必要があるわけではありません。皮膚では、脂質から遊離脂肪酸を作る反応や、細胞による水素イオン（H⁺）の輸送などが酸性環境を支えています。NMFに含まれるPCA（ピロリドンカルボン酸）なども関わり、保水とpHはつながっています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11442748/" target="_blank" rel="noopener">Fluhrら, 2001</a>、<a class="ext" href="https://doi.org/10.2147/CCID.S409534" target="_blank" rel="noopener">Liら, 2023</a></p>
+<p><strong>弱酸性は、バリアを作り、保つための条件です。</strong> セラミドを作る酵素が働きやすく、角層細胞の接着を分解する酵素が働きすぎるのを抑えます。角層を中性側へ変えたマウスの実験では、脂質の加工や接着が乱れ、バリアの回復が遅れました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12880427/" target="_blank" rel="noopener">Hachemら, 2003</a></p>
+<p>微生物への防御にも関わります。ヒトから採取した角層を使った研究では、酸性環境とPCAが、黄色ブドウ球菌の増殖を抑える働きに関係していました。ただし、皮膚には常在菌も暮らしています。<strong>弱酸性は皮膚を無菌にする仕組みではなく、菌の種類や周囲の成分によって作用が変わる環境条件です。</strong> <a class="ext" href="https://doi.org/10.2147/CCID.S409534" target="_blank" rel="noopener">Liら, 2023</a></p></aside>
+<h2 id="s5">5　接着が分解され、角層細胞がはがれる</h2>
+<p>角層細胞は、<strong>corneodesmosome</strong> という接着構造でつながっています。皮膚表面に近づくとこの接着が分解され、細胞がはがれ落ちます。これが <strong>落屑</strong> です。</p>
+<p>接着を分解する酵素の働きは、<strong>pH・水分量・酵素を抑える仕組み</strong>によって調節されます。新しい角層が作られる量と、表面からはがれる量が釣り合うことで、角層の厚さが保たれます。</p>
+<p>ターンオーバーを考えるときは、細胞が増える速さに加えて、十分に分化し、バリアを作ってからはがれているかを見ます。</p>
+<details class="supplement"><summary>詳しく：落屑を調節するKLKとLEKTI</summary><div class="supplement-body"><p>pHによる調節に加えて、接着を分解する酵素と、その働きを抑える分子の関係も角層の維持を支えます。</p>
+<div class="tblwrap"><table><thead><tr><th>分子</th><th>働き</th></tr></thead><tbody><tr><td><strong>KLK5・KLK7</strong></td><td>corneodesmosomeを分解するタンパク質分解酵素</td></tr><tr><td><strong>LEKTI</strong></td><td>KLKなどの働きを抑え、接着が過剰に分解されるのを防ぐ。<em>SPINK5</em>遺伝子から作られる</td></tr></tbody></table></div></div></details>
+<h2 id="s6">6　表皮の更新には、数週間かかる</h2>
+<p>ターンオーバーは「約28日」と説明されますが、日数は部位・年齢・測り方で変わります。ヒトの前腕では、表皮全体の更新を <strong>約45日</strong> と推定した研究もあります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/871385/" target="_blank" rel="noopener">Bergstresser・Taylor, 1977</a></p>
+<p>また、<strong>角層だけが入れ替わる時間</strong>を調べた研究では、若年成人で約20日、高齢者ではそれより10日以上長くなっていました。<a class="ext" href="https://doi.org/10.1093/geronj/38.2.137" target="_blank" rel="noopener">Grove・Kligman, 1983</a></p>
+<p>表皮の更新は数週間かけて進みますが、保水状態やバリア機能は、その途中でも変化します。治療後は、ざらつき・乾燥・赤み・色調など、評価する変化に合わせて経過を見ます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epidermis_ターンオーバーの時間.webp" alt="表皮全体は基底層から落屑まで、角層だけの入れ替わりは角層になってから落屑までを測る。" width="1536" height="1024" loading="lazy"><figcaption>表皮全体は基底層から落屑まで、角層だけの入れ替わりは角層になってから落屑までを測る。矢印は測定範囲であり、長さは日数を表さない。日数は部位・年齢・測定法で変わる。</figcaption></figure>
+<h2 id="s7">7　表皮と真皮は、互いに働きかける</h2>
+<p><strong>角化細胞と線維芽細胞は、サイトカインや増殖因子を介して互いの働きを調節しています。</strong> この信号のやりとりが、表皮と真皮の <strong>クロストーク</strong> です。表皮の更新や傷の修復は、こうした細胞間の連携に支えられています。</p>
+<p>例えば、角化細胞が出した信号を受けて、線維芽細胞が表皮の増殖を助ける因子を作ります。</p>
+<div class="tblwrap"><table><thead><tr><th>信号の向き</th><th>相手の細胞に起こること</th></tr></thead><tbody><tr><td><strong>角化細胞 → 線維芽細胞</strong></td><td>角化細胞からの <strong>IL-1</strong> が、線維芽細胞に増殖因子を作らせる</td></tr><tr><td><strong>線維芽細胞 → 角化細胞</strong></td><td>線維芽細胞からの <strong>KGF（FGF-7、角化細胞増殖因子）</strong> が、角化細胞の増殖を促す</td></tr></tbody></table></div>
+<p>この往復は、ヒトの角化細胞と線維芽細胞を一緒に培養した研究で確かめられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10341204/" target="_blank" rel="noopener">Maas-Szabowskiら, 1999</a></p>
+<p>表皮からの信号は、真皮のコラーゲンの分解・再構築にも関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15140222/" target="_blank" rel="noopener">Ghaharyら, 2004</a></p>
+<p>美容医療で表皮に刺激を加えたときも、表皮から出る信号を通じて真皮の反応が変わる可能性があります。治療を理解するには、<strong>刺激が届く深さに加えて、その細胞が周囲へ何を伝えるか</strong>も考えます。炎症と修復の経過は <a class="chref" href="wound-healing.html">炎症と創傷治癒</a>、線維芽細胞の働きは 線維芽細胞とコラーゲン へつながります。</p>
+<details class="supplement"><summary>詳しく：表皮から真皮の<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>代謝への信号</summary><div class="supplement-body"><p>表皮の更新には、細胞の分化や落屑だけでなく、周囲の細胞との信号のやりとりも関わります。本文では真皮から表皮の増殖を助ける信号を見ましたが、逆方向に、表皮が真皮のECM代謝を変える作用も調べられています。</p>
+<p>培養研究では、角化細胞の分泌物が線維芽細胞の <strong><span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。" data-u="glossary.html#term-f1261b95fd78">MMP</span>-1（コラーゲンを分解する酵素）</strong> を増やすことも示されています。表皮は、真皮のコラーゲンの分解・再構築にも関わっています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15140222/" target="_blank" rel="noopener">Ghaharyら, 2004</a></p></div></details>
+<h2 id="s8">8　更新の釣り合いが崩れると、何が起こるのか</h2>
+<p><strong>ターンオーバーの乱れは、単に「遅くなる」ことではありません。</strong> 細胞を補うこと、分化してバリアを作ること、適切にはがれることの、どこが乱れるかで皮膚の変化も異なります。</p>
+<div class="tblwrap"><table><thead><tr><th>乱れる過程</th><th>起こりうる変化</th></tr></thead><tbody><tr><td><strong>細胞の補充・修復が追いつかない</strong></td><td>傷んだ表皮を覆い直す過程が遅れる</td></tr><tr><td><strong>十分なバリアを作れない</strong></td><td>水分が逃げやすく、刺激物も入りやすくなる。乾燥やヒリつき、炎症につながる</td></tr><tr><td><strong>角層が適切にはがれない</strong></td><td>角層が残って厚くなる、表面が不均一になってざらつくなどの変化が起こる</td></tr><tr><td><strong>作られる量より多く角層が失われる</strong></td><td>バリアが弱まり、刺激を受けやすくなる</td></tr></tbody></table></div>
+<p>乾燥や炎症は、逆に角層の酵素や接着の働きにも影響します。そのため、更新とバリアの乱れは互いに関わります。「皮がむける」「更新が速い」だけでは、正常に更新できているかは判断できません。</p>
+<p><strong>表皮の色素の問題も、ターンオーバーだけでは説明できません。</strong> メラニンを作る量、角化細胞への受け渡し、細胞内での分布、色素が残る時間が関わります。表皮の更新はそのうちの一過程です。メラノサイトとの共同作業は <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a> で扱います。</p>
+<p>治療を考えるときも、更新・バリア・色素形成のどの過程に働きかけるかを区別します。具体的な外用や施術は 角層バリアと経皮吸収・レチノイド外用の生化学・ケミカルピーリングの生化学・美白外用の生化学 で扱います。</p>
+<h2>この章の到達点</h2>
+<ol class="goal"><li><strong>表皮は角化細胞が層を作り、DEJを介して真皮につながっている。</strong> 角層は表皮の最も外側で、水分の蒸散を抑える。</li><li><strong>細胞は材料を準備し、核を失って角層になり、最後にはがれる。</strong> この一連の更新がターンオーバー。</li><li><strong>NMFは主に細胞内で保水し、角化膜は細胞を丈夫にし、細胞間脂質は水分の通過を抑える。</strong></li><li><strong>Ca²⁺は分化を支え、pHは脂質加工と落屑の調節に関わる。</strong> バリアを作る過程と、はがす過程の釣り合いが必要。</li><li><strong>表皮全体と角層だけの更新時間を区別する。</strong> 治療では作用する場所と過程を捉え、バリアが保たれているかも見る。</li></ol>
+<h2>参考文献</h2>
+<ul><li>Öhman H, Vahlquist A. In vivo studies concerning a pH gradient in human stratum corneum and upper epidermis. <em>Acta Derm Venereol</em>. 1994. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7817676/" target="_blank" rel="noopener">PMID: 7817676</a></li><li>Hanson KM, et al. Two-photon fluorescence lifetime imaging of the skin stratum corneum pH gradient. <em>Biophys J</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12202391/" target="_blank" rel="noopener">PMID: 12202391</a></li></ul>
+<ul><li>Strasser B, et al. Evolutionary origin and diversification of epidermal barrier proteins in amniotes. <em>Mol Biol Evol</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25169930/" target="_blank" rel="noopener">PMID: 25169930</a></li><li>Elias PM, et al. Origin of the epidermal calcium gradient: regulation by barrier status and role of active vs passive mechanisms. <em>J Invest Dermatol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12485427/" target="_blank" rel="noopener">PMID: 12485427</a></li><li>Tu CL, et al. Ablation of the calcium-sensing receptor in keratinocytes impairs epidermal differentiation and barrier function. <em>J Invest Dermatol</em>. 2012. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22622426/" target="_blank" rel="noopener">PMID: 22622426</a></li><li>Hawker NP, et al. Regulation of human epidermal keratinocyte differentiation by the vitamin D receptor and its coactivators DRIP205, SRC2, and SRC3. <em>J Invest Dermatol</em>. 2007. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17082781/" target="_blank" rel="noopener">PMID: 17082781</a></li><li>Oda Y, et al. Vitamin D receptor and coactivators SRC2 and 3 regulate epidermis-specific sphingolipid production and permeability barrier formation. <em>J Invest Dermatol</em>. 2009. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19052561/" target="_blank" rel="noopener">PMID: 19052561</a></li><li>Hoste E, et al. Caspase-14 is required for filaggrin degradation to natural moisturizing factors in the skin. <em>J Invest Dermatol</em>. 2011. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21654840/" target="_blank" rel="noopener">PMID: 21654840</a></li><li>Fluhr JW, et al. Generation of free fatty acids from phospholipids regulates stratum corneum acidification and integrity. <em>J Invest Dermatol</em>. 2001. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11442748/" target="_blank" rel="noopener">PMID: 11442748</a></li><li>Fluhr JW, et al. Stratum corneum acidification in neonatal skin: secretory phospholipase A2 and the sodium/hydrogen antiporter-1 acidify neonatal rat stratum corneum. <em>J Invest Dermatol</em>. 2004. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15009712/" target="_blank" rel="noopener">PMID: 15009712</a></li><li>Hachem JP, et al. pH directly regulates epidermal permeability barrier homeostasis, and stratum corneum integrity/cohesion. <em>J Invest Dermatol</em>. 2003. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12880427/" target="_blank" rel="noopener">PMID: 12880427</a></li><li>Hachem JP, et al. Sustained serine proteases activity by prolonged increase in pH leads to degradation of lipid processing enzymes and profound alterations of barrier function and stratum corneum integrity. <em>J Invest Dermatol</em>. 2005. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16117792/" target="_blank" rel="noopener">PMID: 16117792</a></li><li>Bergstresser PR, Taylor JR. Epidermal '<span class="term" tabindex="0" data-t="turnover" data-d="ある成分が作られ、分解されて入れ替わること。総量が同じでも、作る速さと壊す速さが釣り合っていれば中身は更新されている。ミトコンドリアでは主にbiogenesisとmitophagyによる入れ替わりを指し、fusionとfissionがその選別を助ける。" data-u="glossary.html#term-83e4fbbbb4a2">turnover</span> time'—a new examination. <em>Br J Dermatol</em>. 1977. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/871385/" target="_blank" rel="noopener">PMID: 871385</a></li><li>Grove GL, Kligman AM. Age-associated changes in human epidermal cell renewal. <em>J Gerontol</em>. 1983. <a class="ext" href="https://doi.org/10.1093/geronj/38.2.137" target="_blank" rel="noopener">doi:10.1093/geronj/38.2.137</a></li><li>Furuse M, et al. Claudin-based tight junctions are crucial for the mammalian epidermal barrier: a lesson from claudin-1-deficient mice. <em>J Cell Biol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11889141/" target="_blank" rel="noopener">PMID: 11889141</a></li><li>Weiss JS, et al. Topical tretinoin improves photoaged skin. A double-blind vehicle-controlled study. <em>JAMA</em>. 1988. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/3336176/" target="_blank" rel="noopener">PMID: 3336176</a></li><li>Maas-Szabowski N, Shimotoyodome A, Fusenig NE. Keratinocyte growth regulation in <span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。" data-u="glossary.html#term-9848bc37cb12">fibroblast</span> cocultures via a double paracrine mechanism. <em>J Cell Sci</em>. 1999. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10341204/" target="_blank" rel="noopener">PMID: 10341204</a></li><li>Ghahary A, et al. Keratinocyte-releasable stratifin functions as a potent collagenase-stimulating factor in fibroblasts. <em>J Invest Dermatol</em>. 2004. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15140222/" target="_blank" rel="noopener">PMID: 15140222</a></li><li>Li R, et al. Association Between Skin Acid Mantle, Natural Moisturizing Factors, and Antibacterial Activity Against S. aureus in the Stratum Corneum. <em>Clin Cosmet Investig Dermatol</em>. 2023. <a class="ext" href="https://doi.org/10.2147/CCID.S409534" target="_blank" rel="noopener">doi:10.2147/CCID.S409534</a></li><li>Kilic A, et al. Skin acidification with a water-in-oil emulsion (pH 4) restores disrupted epidermal barrier and improves structure of lipid lamellae in the elderly. <em>J Dermatol</em>. 2019. <a class="ext" href="https://doi.org/10.1111/1346-8138.14891" target="_blank" rel="noopener">doi:10.1111/1346-8138.14891</a></li><li>Hawkins S, Dasgupta BR, Ananthapadmanabhan KP. Role of pH in skin cleansing. <em>Int J Cosmet Sci</em>. 2021. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34137035/" target="_blank" rel="noopener">PMID: 34137035</a></li></ul>
+<ul><li>Lee DD, et al. Retinoid-responsive transcriptional changes in epidermal keratinocytes. <em>J Cell Physiol</em>. 2009. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19388012/" target="_blank" rel="noopener">PMID: 19388012</a></li></ul>
+<ul><li>Gibbs S, Backendorf C, Ponec M. Regulation of keratinocyte proliferation and differentiation by all-trans-retinoic acid, 9-cis-retinoic acid and 1,25-dihydroxy vitamin D3. <em>Arch Dermatol Res</em>. 1996. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8950452/" target="_blank" rel="noopener">PMID: 8950452</a></li></ul>
+<ul><li>Tsukada M, et al. 13-cis retinoic acid exerts its specific activity on human sebocytes through selective intracellular isomerization to all-trans retinoic acid and binding to retinoid acid receptors. <em>J Invest Dermatol</em>. 2000. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10951254/" target="_blank" rel="noopener">PMID: 10951254</a></li><li>Nelson AM, et al. 13-cis Retinoic acid induces <span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span> and cell cycle arrest in human SEB-1 sebocytes. <em>J Invest Dermatol</em>. 2006. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16575387/" target="_blank" rel="noopener">PMID: 16575387</a></li><li>Nelson AM, et al. TRAIL contributes to the apoptotic effect of 13-cis retinoic acid in human sebaceous gland cells. <em>Br J Dermatol</em>. 2011. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21564055/" target="_blank" rel="noopener">PMID: 21564055</a></li></ul>
+<ul><li>Bos JD, Meinardi MMHM. The 500 Dalton rule for the skin penetration of chemical compounds and drugs. <em>Exp Dermatol</em>. 2000. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10839713/" target="_blank" rel="noopener">PMID: 10839713</a></li></ul>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-14</time>初公開</li><li><time>2026-09-13</time>第8節を更新の乱れと皮膚の変化へ改稿。製品pHの話を外用総論へ移し、500 Daルールを補足</li><li><time>2026-09-13</time>分化の補足を材料作り・AとDの違い・細胞ごとの反応に整理し、重複説明を削減</li><li><time>2026-09-13</time>レチノイドの反応は薬と細胞で変わることを、角化細胞と皮脂腺細胞の例で説明</li><li><time>2026-09-13</time>分化の補足に活性型Dとレチノイン酸の作用比較を追加し、分化促進と一括りにしない説明へ整理</li><li><time>2026-09-13</time>レチノイドの表皮増殖・分化への作用を説明してからRXRの共有へつなぐ構成に修正</li><li><time>2026-09-13</time>VDRの補足に乾癬治療への接続とRXRの共有を追記し、レチノイド章へリンク</li><li><time>2026-09-13</time>章末の補足を対応する本文の直後へ移し、見出しで開閉できる折りたたみに変更</li><li><time>2026-09-13</time>補足を構造・分化・バリア形成・落屑・真皮への信号の5節に整理し、関連する分子の説明を統合</li><li><time>2026-09-13</time>弱酸性の由来・バリアと微生物への役割・スキンケア製品のpHを扱うコラムを追加</li><li><time>2026-09-13</time>バリア図の上下を顆粒層から角層へ統一し、核の細胞内分解と脂質・酵素の分泌を区別</li><li><time>2026-09-13</time>分裂後の分化・成熟と、角層になる際の脱核を順序で説明</li><li><time>2026-09-13</time>細胞と4層・DEJの構造から始め、更新・バリア形成・落屑・美容医療へ進む順序に再構成</li><li><time>2026-09-13</time>本文を役割と流れから読める構成に整理し、分子・実験の詳細を末尾の補足へ集約</li><li><time>2026-09-13</time>表皮の更新と角層の説明を見直し、図の配置を整理</li></ul></section>
+</article>
+<nav class="pager"><a class="prev" href="mito-dysfunction.html"><span class="lbl">前へ</span>ミトコンドリア機能不全と細胞老化</a><a class="next" href="melanocytes.html"><span class="lbl">次へ</span>メラノサイトと色素形成</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
+  function show(el){
+    cancelHide();
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseenter',cancelHide);
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

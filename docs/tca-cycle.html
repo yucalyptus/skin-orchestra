@@ -4,15 +4,15 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>TCA回路 ― 生化学で見る美容医療</title>
-<meta name="description" content="TCA回路は、ミトコンドリアの中で回り続けるサイクルです。acetyl-CoA が oxaloacetate と結びついて citrate になり、8つの反応を進むあいだに炭素を CO₂ として捨て、最後はまた oxal…">
+<meta name="description" content="TCA回路は、糖や脂肪から取り出した電子を、電子伝達系でのATP産生へつなぎます。アミノ酸からも材料を受け取り、同時に、アミノ酸・核酸・脂質などを作る材料を供給します。">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/tca-cycle.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="TCA回路 ― 生化学で見る美容医療">
-<meta property="og:description" content="TCA回路は、ミトコンドリアの中で回り続けるサイクルです。acetyl-CoA が oxaloacetate と結びついて citrate になり、8つの反応を進むあいだに炭素を CO₂ として捨て、最後はまた oxal…">
+<meta property="og:description" content="TCA回路は、糖や脂肪から取り出した電子を、電子伝達系でのATP産生へつなぎます。アミノ酸からも材料を受け取り、同時に、アミノ酸・核酸・脂質などを作る材料を供給します。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/tca-cycle.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/tca-cycle_PDH反応.svg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -63,9 +63,49 @@ strong{font-weight:700}
 .accent-label{color:var(--accent);font-weight:700}
 
 /* ---- 引用（章の入口・この章の一言） ---- */
-blockquote{margin:28px 0;padding:2px 0 2px 20px;border-left:2px solid var(--rule);color:var(--sub)}
-blockquote.lead{border-left:3px solid var(--accent);color:var(--ink);background:var(--accent-bg);
-padding:18px 22px;border-radius:0 6px 6px 0;margin:26px 0}
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
 
 /* ---- 矢印フロー ---- */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
@@ -188,11 +228,11 @@ font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
 
 /* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
 .scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
-border-left:2px solid var(--accent-line);font-size:15px;line-height:1.9}
+border:0;font-size:15px;line-height:1.9}
 
 /* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
 .notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
-border-left:2px solid var(--rule);font-family:var(--sans);
+border:0;font-family:var(--sans);
 font-size:14px;line-height:1.95;color:var(--sub)}
 .notice p{margin:0 0 10px}
 .notice p:last-child{margin:0}
@@ -232,12 +272,13 @@ a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
 a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
 
 /* ---- 章内目次 ---- */
-.chaptoc{margin:34px 0 8px;padding:14px 18px;background:var(--soft);
-border-left:3px solid var(--accent-line);font-family:var(--sans)}
-.chaptoc-t{margin:0 0 6px;font-size:12px;font-weight:700;color:var(--faint);letter-spacing:.08em}
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
 /* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
 .chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
-.chaptoc li{font-size:13.5px;line-height:1.7;padding-left:0}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
 .chaptoc a{color:var(--sub)}
 .chaptoc a:hover{color:var(--accent)}
 
@@ -265,7 +306,8 @@ body.mode-easy .easy{display:block}
 body.mode-easy .pro{display:none}
 
 /* ---- 用語のツールチップ ---- */
-.term{border-bottom:1px dotted var(--accent);cursor:help}
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
 .term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
 #tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
 background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
@@ -275,6 +317,7 @@ font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
 #tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
 #tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
 .g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
 
 /* ---- 版と最終更新 ---- */
 .stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
@@ -342,13 +385,13 @@ h2{margin-top:24pt}
 /* ---- コラム ---- */
 /* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
    地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
-   色は装飾（ラベル・見出し左の縦線）にだけ持たせ、読む文字は地の文と同じ濃さを保つ。 */
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
 .column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
   border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
 .col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
   color:var(--col-ink)}
-.col-h{margin:0 0 14px;padding-left:13px;font-size:17.5px;font-weight:700;
-  line-height:1.6;color:var(--ink);border-left:3px solid var(--col-ink);
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
   text-wrap:balance}
 .column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
 .column p:last-child{margin-bottom:0}
@@ -363,9 +406,9 @@ h2{margin-top:24pt}
 @media print{.column{background:none;border:1px solid var(--rule)}}
 
 /* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
-   左の罫線とゴシック体だけで、本筋から一段下がった声であることを示す。 */
+   見出しと薄い背景で補足のまとまりを示す。 */
 .memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
-  border-left:3px solid var(--rule);border-radius:0 6px 6px 0;
+  border:0;border-radius:4px;
   font-family:var(--sans)}
 .memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
 .memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
@@ -376,6 +419,13 @@ h2{margin-top:24pt}
 .memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
   line-height:1.9;color:var(--sub)}
 .memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
 
 /* ---- 公開の状況（スコア表） ---- */
 /* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
@@ -398,6 +448,69 @@ h2{margin-top:24pt}
 .sc-total .sc-n strong{color:var(--accent)}
 .sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
 @media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -413,42 +526,42 @@ h2{margin-top:24pt}
 <a href="glossary.html">用語集</a>
 <div class="sec">基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か</a>
-<a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか</a>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
-<a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム</a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
-<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
+<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bnew">NEW</span></a>
-<a href="glycolysis.html">解糖系<span class="badge bnew">NEW</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bnew">NEW</span></a>
-<a href="tca-cycle.html" class="active">TCA回路<span class="badge bnew">NEW</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bnew">NEW</span></a>
-<a href="nad.html">NAD⁺<span class="badge bnew">NEW</span></a>
+<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html" class="active">TCA回路<span class="badge bupd">更新</span></a>
+<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
+<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bnew">NEW</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bnew">NEW</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bnew">NEW</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bnew">NEW</span></a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bnew">NEW</span></a>
+<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<span class="soon">酸化ストレスと抗酸化<em>準備中</em></span>
-<span class="soon">細胞死<em>準備中</em></span>
-<span class="soon">炎症と創傷治癒<em>準備中</em></span>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<span class="soon">細胞周期<em>準備中</em></span>
-<span class="soon">Hallmarks of Aging<em>準備中</em></span>
-<span class="soon">細胞老化<em>準備中</em></span>
-<span class="soon">ミトコンドリア機能不全と細胞老化<em>準備中</em></span>
+<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
+<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<span class="soon">表皮とターンオーバー<em>準備中</em></span>
-<span class="soon">メラノサイトと色素形成<em>準備中</em></span>
-<span class="soon">ECMとmechanotransduction<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <span class="soon">線維芽細胞とコラーゲン<em>準備中</em></span>
 <span class="soon">弾性線維と膠原線維<em>準備中</em></span>
 <span class="soon">糖化とAGE<em>準備中</em></span>
@@ -461,6 +574,14 @@ h2{margin-top:24pt}
 <span class="soon">赤みの生化学<em>準備中</em></span>
 <span class="soon">しみとくすみ<em>準備中</em></span>
 <span class="soon">たるみの多層構造<em>準備中</em></span>
+<div class="part">疾患・病態を細胞から理解する</div>
+<span class="soon">酒さ<em>準備中</em></span>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
 <div class="part">外用</div>
 <span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
@@ -493,372 +614,93 @@ h2{margin-top:24pt}
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter">
+<article class="chapter" data-chapter="tca-cycle">
 <p class="kicker">基礎　／　エネルギー</p>
 <h1 class="ch-title">TCA回路</h1>
-<p class="dateline">公開 2026-08-24</p>
-<blockquote><span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。">TCA回路</span>へ入るのは <strong><span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。">acetyl-CoA</span></strong> です。糖は<a class="chref" href="glycolysis.html">解糖系</a>で pyruvate になり、さらに <strong>PDH</strong> によって acetyl-CoA に変わります。脂肪酸からは、<a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>の<strong>β酸化</strong>によって acetyl-CoA が切り出されます。糖と脂肪酸では acetyl-CoA になるまでの経路が違いますが、<strong>どちらも acetyl-CoA としてTCA回路へ入ります。</strong></blockquote>
+<p class="dateline">公開 2026-08-24　／　最終更新 2026-09-13</p>
+<p><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span>では、glucose（ブドウ糖）から<strong>pyruvate（ピルビン酸）</strong>ができました。このピルビン酸は、ミトコンドリアに入ると<strong><span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。" data-u="glossary.html#term-e45cb339bfe5">acetyl-CoA</span>（アセチルCoA）</strong>に変わり、<strong><span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。" data-u="glossary.html#term-39f9a8217f46">TCA回路</span></strong>でさらにエネルギーを取り出すために使われます。</p>
+<p>脂肪酸も、<strong>β酸化</strong>によってacetyl-CoAになります。TCA回路は、こうして糖と脂肪酸の分解が合流する場所です。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>TCA回路は、ミトコンドリアの中で回り続けるサイクルです。</strong>acetyl-CoA が oxaloacetate と結びついて citrate になり、8つの反応を進むあいだに炭素を CO₂ として捨て、最後はまた oxaloacetate に戻り、次の acetyl-CoA を受け取って循環します。<br><br>役割は2つあります。栄養素から取り出した電子を <strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。">NAD⁺</span>・FAD</strong> に積み、<strong>NADH・FADH₂</strong> として<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。">電子伝達系</span>へ送ること。もう一つは、回路の中間体を<strong>アミノ酸・脂質・核酸・heme の材料</strong>として抜き出すことです。この二役を <strong>amphibolic</strong> といいます。<br><br>そしてこのサイクルは、<strong>ビタミンB群・ミネラル・アミノ酸がそろって初めて回ります。</strong></blockquote>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 736" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="TCA回路。8つの中間体を同じ円周上に配置し、同じ半径の円弧矢印で一周を示す。oxaloacetateにacetyl-CoAが加わってcitrateとなり、isocitrate、alpha-ketoglutarate、succinyl-CoA、succinate、fumarate、malateを経てoxaloacetateに戻る。1周で3 NADH、1 FADH2、1 GTP、2 CO2ができる">
-<defs>
-<marker id="tcaMainArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-<marker id="tcaEntryArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="730" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="42" font-size="21" font-weight="700" fill="#1E3A63">回るあいだに、炭素を捨てて電子を取り出す</text>
-<text x="28" y="69" font-size="14" fill="#3B4A63">炭素は CO₂として抜け、電子は NADH・FADH₂に載って出ていく</text>
-<text x="447" y="91" font-size="12.5" text-anchor="middle" fill="#3B4A63">糖からも脂肪酸からも入る</text>
-<rect x="365" y="99" width="168" height="42" rx="9" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.7"/>
-<text x="449" y="126" font-size="15.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">acetyl-CoA</text>
-<path d="M414 143 Q403 174 380 210" fill="none" stroke="#9A3D28" stroke-width="3" marker-end="url(#tcaEntryArrow)"/>
-<circle cx="280" cy="365" r="175" fill="none" stroke="#DCE3EC" stroke-width="1.4"/>
-<path d="M350 204.6 A175 175 0 0 1 375 218" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M423 264 A175 175 0 0 1 453.5 342" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M453.5 388 A175 175 0 0 1 423 466" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M375 512 A175 175 0 0 1 350 525.4" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M210 525.4 A175 175 0 0 1 185 512" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M137 466 A175 175 0 0 1 106.5 388" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M106.5 342 A175 175 0 0 1 137 264" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<path d="M185 218 A175 175 0 0 1 210 204.6" fill="none" stroke="#2F5C87" stroke-width="2.8" marker-end="url(#tcaMainArrow)"/>
-<rect x="210" y="167" width="140" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="280" y="187" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">oxaloacetate</text>
-<text x="280" y="206" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
-<rect x="354" y="218" width="100" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="404" y="238" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">citrate</text>
-<text x="404" y="257" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素6個</text>
-<rect x="395" y="342" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="455" y="362" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">isocitrate</text>
-<text x="455" y="381" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素6個</text>
-<rect x="324" y="466" width="160" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="404" y="486" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">α-ketoglutarate</text>
-<text x="404" y="505" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素5個</text>
-<rect x="210" y="517" width="140" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="280" y="537" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">succinyl-CoA</text>
-<text x="280" y="556" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
-<rect x="96" y="466" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="156" y="486" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">succinate</text>
-<text x="156" y="505" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
-<rect x="45" y="342" width="120" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="105" y="362" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">fumarate</text>
-<text x="105" y="381" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
-<rect x="106" y="218" width="100" height="46" rx="10" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.5"/>
-<text x="156" y="238" font-size="15" font-weight="700" text-anchor="middle" fill="#111827">malate</text>
-<text x="156" y="257" font-size="12.5" text-anchor="middle" fill="#3B4A63">炭素4個</text>
-<text x="280" y="350" font-size="17" font-weight="700" text-anchor="middle" fill="#8A97AC">TCA回路</text>
-<rect x="195" y="274" width="82" height="32" rx="8" fill="#E6F1EA" stroke="#3D6B52"/>
-<text x="236" y="295" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">＋ NADH</text>
-<rect x="315" y="292" width="106" height="46" rx="8" fill="#F7F9FC" stroke="#3D6B52"/>
-<text x="368" y="311" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">＋ NADH</text>
-<text x="368" y="329" font-size="13" font-weight="700" text-anchor="middle" fill="#9A3D28">＋ CO₂</text>
-<rect x="320" y="407" width="106" height="46" rx="8" fill="#F7F9FC" stroke="#3D6B52"/>
-<text x="373" y="426" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">＋ NADH</text>
-<text x="373" y="444" font-size="13" font-weight="700" text-anchor="middle" fill="#9A3D28">＋ CO₂</text>
-<rect x="222" y="455" width="72" height="32" rx="8" fill="#F5E9D6" stroke="#B4762B"/>
-<text x="258" y="476" font-size="13" font-weight="700" text-anchor="middle" fill="#8A5A18">＋ GTP</text>
-<rect x="139" y="400" width="92" height="32" rx="8" fill="#E6F1EA" stroke="#3D6B52"/>
-<text x="185" y="421" font-size="13" font-weight="700" text-anchor="middle" fill="#245840">＋ FADH₂</text>
-<rect x="26" y="603" width="508" height="48" rx="10" fill="#EEF2F8"/>
-<text x="280" y="633" font-size="16" font-weight="700" text-anchor="middle" fill="#1E3A63">1周で 3 NADH ・1 FADH₂ ・1 GTP ・2 CO₂</text>
-<text x="44" y="681" font-size="14.5" fill="#111827"><tspan font-weight="700">直接作る高エネルギー化合物は GTP 1個だけ。</tspan>主産物は</text>
-<text x="44" y="707" font-size="14.5" fill="#111827"><tspan font-weight="700" fill="#245840">NADH と FADH₂</tspan> で、ATP はこの電子から電子伝達系で作られる。</text>
-</g>
-</svg>
-</div>
-<figcaption>8つの中間体を同じ円周上に置き、反応矢印を同じ半径の円弧でつないだ。acetyl-CoA が oxaloacetate と結びついて citrate になり、一周して oxaloacetate に戻る。各反応で生じる NADH・FADH₂・GTP・CO₂を回路の内側に示した。1周で 3 NADH・1 FADH₂・1 GTP・2 CO₂ができる</figcaption>
-</figure>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　糖から来た炭素は、PDH で acetyl-CoA になる</a></li><li><a href="#s2">2　pyruvateをTCA回路へ渡すPDHは、活性が調節される</a></li><li><a href="#s3">3　TCA回路で得られるもの</a></li><li><a href="#s4">4　アミノ酸は、窒素を外してから代謝へ入る</a></li></ul></nav><h2 id="s1">1　糖から来た炭素は、PDH で acetyl-CoA になる</h2>
-<p>ミトコンドリアへ入った pyruvate は、<strong>pyruvate dehydrogenase（PDH）</strong> という酵素複合体で <strong>acetyl-CoA</strong> に変えられます。TCA回路そのものではなく、その手前の一反応です。<strong>脂肪酸から来る acetyl-CoA は、この反応を通りません</strong>（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。</p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 164" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="pyruvate、CoA、NAD⁺が、矢印の途中で働くPDHによってacetyl-CoA、CO₂、NADHに変わる不可逆反応">
-<defs><marker id="pdhArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="11" markerHeight="11" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker></defs>
-<rect x="3" y="3" width="554" height="158" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="34" font-size="17" font-weight="700" fill="#1E3A63">PDH は、pyruvate を TCA回路へ渡す手前で働く</text>
-<rect x="24" y="58" width="202" height="48" rx="9" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.4"/>
-<text x="125" y="87" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1E3A63">pyruvate ＋ CoA ＋ NAD⁺</text>
-<line x1="238" y1="82" x2="322" y2="82" stroke="#9A3D28" stroke-width="2.8" marker-end="url(#pdhArrow)"/>
-<text x="280" y="70" font-size="13" font-weight="700" text-anchor="middle" fill="#7A2F1D">PDH</text>
-<rect x="334" y="58" width="202" height="48" rx="9" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.4"/>
-<text x="435" y="87" font-size="13.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">acetyl-CoA ＋ CO₂ ＋ NADH</text>
-<text x="280" y="138" font-size="12" text-anchor="middle" fill="#3B4A63">CO₂が抜け、NAD⁺が電子を受け取ってNADHになる</text>
-</g>
-</svg>
-</div>
-<figcaption>PDH は TCA回路の中ではなく、pyruvate を acetyl-CoA に変えて回路へ渡す手前の不可逆反応を進める</figcaption>
-</figure>
-<p><strong>この反応には、5つの補酵素が同時に必要です。</strong>その多くはビタミンB群から作られ、さらにマグネシウムも要ります。補酵素と金属イオンをまとめた呼び名が <strong>補因子</strong> です。</p>
+<blockquote class="lead"><strong>TCA回路は、糖や脂肪から取り出した電子を、<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。" data-u="glossary.html#term-e84635b3e956">電子伝達系</span>での<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>産生へつなぎます。</strong>アミノ酸からも材料を受け取り、同時に、アミノ酸・核酸・脂質などを作る材料を供給します。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　糖や脂肪から電子を取り出し、電子伝達系へ渡す</a></li><li><a href="#s2">2　アミノ酸も、エネルギー源と回路の補充に使う</a></li><li><a href="#s3">3　アミノ酸・核酸・脂質などを作る材料を供給する</a></li></ul></nav><h2 id="s1">1　糖や脂肪から電子を取り出し、電子伝達系へ渡す</h2>
+<h3>PDHが、ピルビン酸をacetyl-CoAに変える</h3>
+<p>糖からできたpyruvateをTCA回路へつなぐのが、<strong>pyruvate dehydrogenase（PDH、ピルビン酸脱水素酵素）複合体</strong>です。ミトコンドリア内で、pyruvateをacetyl-CoAに変えます。脂肪酸からは、β酸化によってacetyl-CoAが作られます（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_PDH反応.svg" alt="PDHの反応で炭素1個がCO₂として外れ、残る2個のアセチル基がCoAに結合する。" width="760.0" height="340.0" loading="lazy"><figcaption>PDHの反応で炭素1個がCO₂として外れ、残る2個のアセチル基がCoAに結合する。炭素数の模式図。</figcaption></figure>
+<p>この反応では、炭素3個のpyruvateからCO₂が一つ抜け、残る炭素2個がacetyl-CoAになります。同時に<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span>が電子を受け取り、NADHになります。</p>
+<details class="supplement"><summary>詳しく読む：PDHの活性調節と低酸素への応答</summary><div class="supplement-body"><p>細胞は、必要なエネルギー量や酸素の供給に合わせて、糖を利用する量を調節します。その調節を受ける酵素の一つがPDHです。</p>
+<h4>リン酸を付け外しして、活性を調節する</h4>
+<p><strong>PDH kinase</strong>がリン酸を付けるとPDHの活性が下がり、<strong>PDH phosphatase</strong>がリン酸を外すと活性が上がります。こうして活性型の割合を変え、pyruvateをacetyl-CoAへ変換する量を調節します。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_PDH活性の調節.svg" alt="PDHの活性は、リン酸化で下がり、脱リン酸化で上がる。" width="800.0" height="480.0" loading="lazy"><figcaption>PDHの活性は、リン酸化で下がり、脱リン酸化で上がる。</figcaption></figure>
+<p>PDHの活性が下がると、acetyl-CoAに変わるpyruvateが減り、lactate（乳酸）やalanine（アラニン）へ変わる割合が増えます。活性が上がると、糖由来のacetyl-CoAをTCA回路へ供給しやすくなります。</p>
+<h4>低酸素では、PDHの活性を下げる</h4>
+<p>電子伝達系では、最後に酸素が電子を受け取ります。酸素が足りなくなると、TCA回路で取り出した電子を処理しにくくなります。そこで細胞は、<strong>PDHの活性を下げ、TCA回路に供給するacetyl-CoAを減らします。</strong>pyruvateは乳酸に変わりやすくなります（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</p>
+<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― 低酸素でPDHが抑えられる仕組み</h3><p>低酸素では <strong><span class="term" tabindex="0" data-t="HIF-1α" data-d="低酸素で安定化する転写因子。速さのつまみではなく設定そのものを書き換える——解糖系の酵素と輸送体を増やし、PDK1経由でPDHゲートを閉じ、VEGFを誘導して血管新生を起こす。" data-u="glossary.html#term-f415c2f9b898">HIF-1α</span></strong>が蓄積し、<strong>PDK1（PDH kinaseの一つ）</strong>を増やします。PDK1がPDHをリン酸化すると、pyruvateからacetyl-CoAへの変換が減ります。ミトコンドリアへ入る電子を減らし、低酸素での<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。" data-u="glossary.html#term-88d24b96933a">ROS</span>（活性酸素）による傷害を抑える適応です（Kim JW et al., <em>Cell Metab</em> 2006;3:177–185. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>）。</p>
+<p>酸素が電子伝達系の反応を制限するほど不足すると、NADHをNAD⁺へ戻しにくくなります。この変化も、NAD⁺を必要とするPDHとTCA回路を進みにくくします。血流が再開して酸素が戻る再酸素化では、ROSによる傷害も問題になります（→ <a class="chref" href="electron-transport.html">電子伝達系</a>・<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p>
+<p>低酸素は、肺での酸素の取り込みが減る場合に加え、出血・血流低下・局所虚血でも起こります。SpO₂が保たれていても、組織への血流が不足すれば低酸素になり得ます。</p></aside></div></details>
+<h3>acetyl-CoAを受け取り、回路が進む</h3>
+<p>acetyl-CoAは、炭素2個の<strong>アセチル基</strong>を運びます。これが炭素4個の<strong>oxaloacetate（オキサロ酢酸）</strong>と結びつくと、炭素6個の<strong>citrate（クエン酸）</strong>になります。クエン酸から反応が進み、<strong>回路が一周するとオキサロ酢酸が再生されます。</strong>再びアセチル基を受け取れるため、反応が繰り返されます。</p>
+<p>この過程で取り出した電子を、<strong>NAD⁺とFADが受け取ります。</strong>生じたNADHとFADH₂の電子は、電子伝達系でATPを作るために使われます。回路内では、ATPの合成に使える<strong>GTP（グアノシン三リン酸）</strong>もできます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_炭素と電子の流れ.svg" alt="TCA回路の8反応と、NADH・FADH₂・GTP・CO₂が生じる位置。" width="560.0" height="736.0" loading="lazy"><figcaption>TCA回路の8反応と、NADH・FADH₂・GTP・CO₂が生じる位置。回路の矢印は反応の流れを示し、可逆反応も一方向に描いている。</figcaption></figure>
+<h3>酵素の働きを、補酵素と金属イオンが支える</h3>
+<p>PDHが反応を進めるには、ビタミンB群から作られる補酵素などが必要です。<strong>酵素の働きを助ける補酵素と金属イオンを、まとめて補因子と呼びます。</strong>マグネシウムもその一つです。</p>
+<p>糖があっても、必要な補因子が不足すれば、その糖をエネルギーとして十分に利用できません。ビタミンやミネラルがエネルギー代謝に必要なのは、こうした酵素の反応を支えるためです。</p>
+<h4>PDHが使う5つの補酵素</h4>
+<p>PDH複合体は、E1・E2・E3という3種類の酵素が協力して反応を進めます。</p>
 <div class="tblwrap"><table><thead><tr><th>補酵素</th><th>由来</th><th>PDH複合体のどこで働くか</th></tr></thead><tbody><tr><td><strong>TPP</strong>（thiamine pyrophosphate）</td><td><strong>thiamine（B1）</strong></td><td>E1：pyruvate の脱炭酸。結合には <strong>Mg²⁺</strong> が要る</td></tr><tr><td><strong>lipoate</strong>（lipoamide）</td><td>lipoic acid（体内でも合成される）</td><td>E2：アセチル基を受け取って転移する</td></tr><tr><td><strong>CoA</strong></td><td><strong>pantothenate（B5）</strong></td><td>E2：アセチル基を acetyl-CoA として持ち出す</td></tr><tr><td><strong>FAD</strong></td><td><strong>riboflavin（B2）</strong></td><td>E3：使い終わった lipoamide を再酸化する</td></tr><tr><td><strong>NAD⁺</strong></td><td><strong>niacin（B3）</strong></td><td>E3：電子を受け取り NADH になる</td></tr></tbody></table></div>
-<p><strong>1つでも欠ければ、PDH は働けないため、pyruvate は acetyl-CoA になれません。</strong>行き場を失った pyruvate は、lactate へ回されます（→ <a class="chref" href="glycolysis.html">解糖系</a>§5）。ただし<strong>止まるのは糖から来る炭素だけ</strong>で、β酸化から来る acetyl-CoA はこの門を通らないので、回路へ入り続けます。</p>
-<p><strong>TCA回路に入ったあとも、回路を回すには補酵素と材料（アミノ酸）がそろっている必要があります。</strong></p>
-<ul><li><strong>ビタミンB群</strong> … 補酵素の材料（B1 → TPP、B2 → FAD、B3 → NAD⁺、B5 → CoA）。同じ5つは、pyruvateをacetyl-CoAに変える <strong>PDH</strong> と、回路内の <strong><span class="term" tabindex="0" data-t="α-ketoglutarate" data-d="TCA回路の中間体であり、コラーゲンを水酸化する prolyl/lysyl hydroxylase が反応のたびに消費する共基質。機序上の接点であって、TCA を上げれば成熟が進むとは結論できない。">α-ketoglutarate</span> dehydrogenase</strong>（PDH と同型の複合体）の<strong>2か所</strong>で要る</li><li><strong>マグネシウム</strong> … TPP を酵素につなぎ止める。PDH を再活性化する phosphatase にも要る（→ §2）</li><li><strong>鉄と硫黄</strong> … <strong>Fe–S クラスター</strong>として aconitase と Complex II（succinate dehydrogenase）に組み込まれている</li><li><strong>アミノ酸</strong> … 抜き出された中間体を補充する（→ §3）。その炭素骨格を回路へ渡すアミノ基転移には、<strong>pyridoxal phosphate（B6）</strong> が要る（→ §4）</li></ul>
-<p>アミノ酸が要るのは、<strong>中間体が絶えず抜き出されるから</strong>です。抜けた分を補わなければ、回転は落ちます（→ §3）。</p>
-<p><strong>疲労に対してビタミンB群やマグネシウムを含む点滴・サプリが使われるのは、この依存関係を根拠にしています。</strong></p>
-<blockquote><strong>切り分け。</strong>「補因子が欠けていれば回らない」は確立した生化学です。「足せば回転が上がる」は、<strong>欠乏がある場合にしか導けません</strong>。充足している状態で追加したときに代謝回転や臨床所見がどう動くかは、別に検証すべき問いです（→ 巻頭「本教材が守る切り分け」）。</blockquote>
-<aside class="memo"><p class="memo-h">ちなみに ―― 「充足しているか」は測りにくい</p><p>切り分けの前提になる「欠乏か、充足か」の判定そのものが、臨床では簡単ではありません。<strong>血清の値が体内のプールを反映しないもの</strong>があるからです。マグネシウムは体内の大半が骨と細胞内にあり、<strong>血中にあるのは1%程度</strong>です。thiamine も、血漿濃度より全血の thiamine pyrophosphate や transketolase 活性のほうが状態を反映するとされます。<strong>基準値内であることは、細胞内で足りていることの保証にはなりません。</strong></p></aside>
-<h2 id="s2">2　pyruvateをTCA回路へ渡すPDHは、活性が調節される</h2>
-<p><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。">解糖系</span>でできた <strong>pyruvate</strong> の炭素がTCA回路へ進むには、まずPDHによって <strong>acetyl-CoA</strong> に変換される必要があります。<strong>PDHの活性によって、糖由来の炭素がTCA回路へ進む量が変わります。</strong></p>
-<p>PDHは、<strong>リン酸が付いていないときは活性型</strong>です。<strong>PDH kinase</strong>がリン酸を付けると不活性型になり、pyruvateからacetyl-CoAへの変換が減ります。反対に、<strong>PDH phosphatase</strong>がリン酸を外すと活性型に戻り、変換が増えます。PDHが完全に開く・閉じるのではなく、<strong>活性型PDHの割合が変わることで、通過するpyruvateの量が調節されます。</strong></p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 482" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="PDHは脱リン酸化された活性型とリン酸化された不活性型の間を移る。PDH kinaseがリン酸を付けると不活性型になり、PDH phosphataseがリン酸を外すと活性型になる。ATPを作る必要があると活性型PDHが増え、ATP、NADH、acetyl-CoAが多いと不活性型PDHが増える">
-<defs>
-<marker id="pdhOffArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#9A3D28"/></marker>
-<marker id="pdhOnArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="476" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="40" font-size="19" font-weight="700" fill="#1E3A63">PDHの活性は、リン酸化で変わる</text>
-<text x="28" y="64" font-size="13.5" fill="#3B4A63">調節するのは、pyruvateをacetyl-CoAに変える反応</text>
-<rect x="26" y="84" width="508" height="54" rx="10" fill="#F4F7FA" stroke="#AAB4C4" stroke-width="1.4"/>
-<text x="280" y="117" font-size="16" font-weight="700" text-anchor="middle" fill="#1E3A63">pyruvate ── PDH ──→ acetyl-CoA ──→ TCA回路</text>
-<rect x="22" y="166" width="220" height="112" rx="11" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.8"/>
-<text x="132" y="194" font-size="15" font-weight="700" text-anchor="middle" fill="#245840">脱リン酸化されたPDH</text>
-<text x="132" y="220" font-size="17" font-weight="700" text-anchor="middle" fill="#245840">活性型</text>
-<text x="132" y="250" font-size="13" text-anchor="middle" fill="#1F2937">pyruvate → acetyl-CoA が増える</text>
-<rect x="318" y="166" width="220" height="112" rx="11" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.8"/>
-<text x="428" y="194" font-size="15" font-weight="700" text-anchor="middle" fill="#7A2F1D">リン酸化されたPDH</text>
-<text x="428" y="220" font-size="17" font-weight="700" text-anchor="middle" fill="#7A2F1D">不活性型</text>
-<text x="428" y="250" font-size="13" text-anchor="middle" fill="#1F2937">pyruvate → acetyl-CoA が減る</text>
-<line x1="242" y1="190" x2="316" y2="190" stroke="#9A3D28" stroke-width="2.4" marker-end="url(#pdhOffArrow)"/>
-<text x="280" y="178" font-size="11.5" font-weight="700" text-anchor="middle" fill="#7A2F1D">PDH kinase</text>
-<text x="280" y="207" font-size="11" text-anchor="middle" fill="#7A2F1D">リン酸を付ける</text>
-<line x1="318" y1="248" x2="244" y2="248" stroke="#3D6B52" stroke-width="2.4" marker-end="url(#pdhOnArrow)"/>
-<text x="280" y="295" font-size="11.5" font-weight="700" text-anchor="middle" fill="#245840">PDH phosphatase：リン酸を外す</text>
-<rect x="22" y="302" width="246" height="118" rx="11" fill="#F3FAF6" stroke="#86AA94" stroke-width="1.4"/>
-<text x="40" y="329" font-size="14.5" font-weight="700" fill="#245840">ATPを作る必要があるとき</text>
-<text x="40" y="354" font-size="12.5" fill="#1F2937">ADP↑：PDH kinaseを抑える</text>
-<text x="40" y="377" font-size="12.5" fill="#1F2937">pyruvate↑：糖由来の材料が十分にある</text>
-<text x="40" y="400" font-size="12.5" fill="#1F2937">筋収縮のCa²⁺：phosphataseを促す</text>
-<rect x="292" y="302" width="246" height="118" rx="11" fill="#FFF5F2" stroke="#C68B7C" stroke-width="1.4"/>
-<text x="310" y="329" font-size="14" font-weight="700" fill="#7A2F1D">糖をさらに使う必要が低いとき</text>
-<text x="310" y="356" font-size="12.5" fill="#1F2937">ATP・NADH・acetyl-CoA↑</text>
-<text x="310" y="380" font-size="12.5" fill="#1F2937">→ PDH kinaseが働く</text>
-<text x="310" y="404" font-size="12.5" fill="#1F2937">→ PDHがリン酸化され、活性が下がる</text>
-<rect x="26" y="438" width="508" height="25" rx="12" fill="#1E3A63"/>
-<text x="280" y="455" font-size="12" font-weight="700" text-anchor="middle" fill="#FFFFFF">完全な開閉ではなく、活性型PDHの割合が連続的に変わる</text>
-</g>
-</svg>
-</div>
-<figcaption><span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。">ATP</span>を作る必要があると活性型PDHが増え、pyruvateからacetyl-CoAへの変換が増える。ATP・NADH・acetyl-CoAが多いとPDH kinaseがPDHをリン酸化し、不活性型を増やす。PDH phosphataseがリン酸を外すと活性型に戻る</figcaption>
-</figure>
-<p><strong>PDHの活性が下がると</strong>、pyruvateからacetyl-CoAへの変換が減り、pyruvateはlactateやalanineへ回りやすくなります。<strong>PDHの活性が上がると</strong>、acetyl-CoAへの変換が増え、糖由来の炭素がTCA回路へ進みます。ただし、実際に回路が回るにはoxaloacetateがあり、NADHの電子を電子伝達系へ渡せることも必要です。</p>
-<p>基本的には、<strong>ATPを作る必要があるとPDHの活性が上がります。反対に、ミトコンドリア内にATP・NADH・acetyl-CoAが多く、糖をさらに使う必要が低いと、PDHの活性は下がります。</strong><span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。">ADP</span>が増えるのはATPが使われている合図です。pyruvateが増えるのは、<strong>acetyl-CoAへ変換できる糖由来の材料が十分にある</strong>という合図です。筋収縮時のCa²⁺は、筋がATPを使って仕事をしていることを伝えます。</p>
-<p>反対に、<strong>ミトコンドリア内にATP・NADH・acetyl-CoAが多いとき</strong>は、PDH kinaseが働いてPDHの活性を下げます。これは、<strong>糖由来のpyruvateから、さらにacetyl-CoAとNADHを作る必要が低い</strong>という合図です。</p>
-<h3>特殊な条件：細胞への酸素供給が需要に追いつかないとき</h3>
-<p>通常は、細胞への酸素供給と消費のバランスが保たれています。<strong>細胞へ届く酸素が、ミトコンドリアで必要な量に追いつかない状態を、低酸素と呼びます。</strong>空気中の酸素が少ない場合だけでなく、血流が途絶える虚血や重い呼吸不全、血流の乏しい創傷や腫瘍などでも、低酸素は局所的・持続的に起こります。</p>
-<aside class="memo"><p class="memo-h">たとえば、手術・救急では</p><ul><li><strong>気道閉塞・低換気・無呼吸・無気肺</strong>：肺から血液へO₂を取り込めず、動脈血の酸素が下がる</li><li><strong>大量出血・ショック・重い血圧低下</strong>：酸素を運ぶHbや組織へ送る血流が不足する。SpO₂が保たれていても、組織は低酸素になり得る</li><li><strong>血管の一時遮断や駆血</strong>：その先の組織だけ血流が止まり、局所的な虚血になる</li></ul>
-<p>どれも、最終的には<strong>細胞への酸素供給が需要に追いつかない状態</strong>です。</p></aside>
-<p><strong>細胞への酸素供給が不足すると、まず電子伝達系が滞ります。</strong>電子伝達系の最後では、Complex IVが電子をO₂へ渡します。O₂が少なくなると、この受け渡しが遅くなります。NADHは電子を降ろしてNAD⁺へ戻りにくくなり、NAD⁺を必要とするTCA回路も回りにくくなります。酸素が減った瞬間に完全停止するのではなく、<strong>酸素の低下に応じて電子伝達系とTCA回路の流れが落ちる</strong>と考えると分かりやすいでしょう。</p>
-<p>細胞はさらに、糖由来の電子をミトコンドリアへ入れすぎないようにします。低酸素になると <strong><span class="term" tabindex="0" data-t="HIF-1α" data-d="低酸素で安定化する転写因子。速さのつまみではなく設定そのものを書き換える——解糖系の酵素と輸送体を増やし、PDK1経由でPDHゲートを閉じ、VEGFを誘導して血管新生を起こす。">HIF-1α</span></strong> が増え、<strong>PDK1</strong>（PDH kinase の一つ）を増やします。<strong>PDK1はPDHをリン酸化して、不活性化します。</strong>するとpyruvateからacetyl-CoAへの変換が減り、糖由来の炭素はTCA回路へ入りにくくなります。つまり、糖の経路をTCA回路の手前で抑え、pyruvateの多くをlactateへ回します。</p>
-<p>この調節には、電子の渋滞を減らす意味があります。酸素供給が不足していてもO₂が少し残っていると、滞った電子の一部がそのO₂へ漏れ、<strong><span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。">ROS</span>（reactive oxygen species）</strong>を生じることがあります。PDHの活性を下げれば、TCA回路が作るNADHが減り、電子伝達系へ入る電子も減ります。その結果、<strong>電子漏れとROSによる細胞傷害を抑えられます</strong>（Kim JW et al., <em>Cell Metab</em> 2006;3:177–185. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>；→ <a class="chref" href="glycolysis.html">解糖系</a>§3）。</p>
-<p>なお、酸素が完全にゼロなら、O₂と反応してROSを作ることもできません。その場合の大きな問題は、電子伝達系とATP産生が止まることです。ROSがとくに問題になりやすいのは、<strong>酸素が少し残る低酸素状態</strong>や、血流が戻って酸素が再び入る<strong>再酸素化</strong>のときです。</p>
-<p><strong>回路の中の酵素も、同じように代謝産物で調節されています。回路は一定の速さで回っているのではなく、使った分だけ回ります。</strong></p>
-<h2 id="s3">3　TCA回路で得られるもの</h2>
-<div class="flow"><span class="node">acetyl-CoA 1分子</span><span class="arr">→</span><span class="node">2 CO₂ ＋ 3 NADH ＋ 1 FADH₂ ＋ 1 GTP</span></div>
-<p>glucose 1分子からは pyruvate が2つできるので、<strong>回路は2周します</strong>（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</p>
-<p><strong>回路が直接作る高エネルギー化合物は、1周あたり GTP 1個だけ</strong>です。GTP は ATP と同じように使えますが、量はわずかです。<strong>回路の主産物は NADH と FADH₂</strong>で、積んだ電子を<a class="chref" href="electron-transport.html">電子伝達系</a>へ運びます。ATP の大半は、そこで作られます。</p>
-<p>つまりTCA回路から得られるものは、<strong>ATPの大半を電子伝達系で作るための NADH・FADH₂</strong>と、<strong>体の成分を合成する材料となる中間体</strong>の二つです。</p>
-<p>回路の<strong>中間体</strong>は、次々と<strong>合成の材料として抜き出されます</strong>。抜き出し口は4か所です。</p>
-<div class="tblwrap"><table><thead><tr><th>抜き出す中間体</th><th>何になるか</th></tr></thead><tbody><tr><td><strong>citrate</strong></td><td>細胞質へ出て、<strong>脂肪酸・コレステロール</strong>の材料になる</td></tr><tr><td><strong>α-ketoglutarate</strong></td><td>glutamate を経て<strong>アミノ酸</strong>へ。<strong>コラーゲンの <span class="term" tabindex="0" data-t="proline" data-d="collagen に多く含まれるアミノ酸で、TCA回路の α-ketoglutarate から作られる。鎖に入った後にER内で hydroxyproline へ水酸化される。材料であることは律速の証明ではない。">proline</span> の水酸化</strong>にも使われる</td></tr><tr><td><strong>oxaloacetate</strong></td><td>aspartate を経て<strong>核酸</strong>の材料になる。細胞質へ出れば<strong>糖新生で glucose</strong> になる</td></tr><tr><td><strong>succinyl-CoA</strong></td><td><strong>heme</strong> の材料になる</td></tr></tbody></table></div>
-<figure class="book-figure"><div style="overflow-x:auto"><svg viewBox="0 0 560 602" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="TCA回路の中間体は合成の材料として抜き出される。citrateは脂肪酸とコレステロール、α-ketoglutarateはアミノ酸とコラーゲンのproline水酸化、oxaloacetateは核酸と糖新生、succinyl-CoAはhemeへ。抜けた分はpyruvate carboxylaseとglutaminolysisで補充される"><defs><marker id="ox" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B4762B"/></marker></defs><rect x="3" y="3" width="554" height="596" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/><g font-family="system-ui,-apple-system,sans-serif"><text x="28" y="46" font-size="20" font-weight="700" fill="#1E3A63">同じ扉が、出口にも入口にもなる</text><text x="28" y="72" font-size="13" fill="#3B4A63">回路は電子を送るだけでなく、体を作る材料の供給元でもある</text><rect x="26" y="98" width="508" height="34" rx="8" fill="#F5E9D6"/><text x="44" y="121" font-size="15" font-weight="700" fill="#8A5A18">抜き出す（cataplerosis）── 中間体は合成の材料になる</text><text x="44" y="162" font-size="13.5" font-weight="700" fill="#111827">citrate</text><line x1="196" y1="157" x2="228" y2="157" stroke="#B4762B" stroke-width="2" marker-end="url(#ox)"/><text x="238" y="162" font-size="13" fill="#1F2937">細胞質へ出て、脂肪酸・コレステロールの材料</text><line x1="44" y1="176" x2="516" y2="176" stroke="#EEF0F4" stroke-width="1"/><text x="44" y="208" font-size="13.5" font-weight="700" fill="#111827">α-ketoglutarate</text><line x1="196" y1="203" x2="228" y2="203" stroke="#B4762B" stroke-width="2" marker-end="url(#ox)"/><text x="238" y="208" font-size="13" fill="#1F2937">アミノ酸へ。コラーゲンの proline 水酸化にも</text><line x1="44" y1="222" x2="516" y2="222" stroke="#EEF0F4" stroke-width="1"/><text x="44" y="254" font-size="13.5" font-weight="700" fill="#111827">oxaloacetate</text><line x1="196" y1="249" x2="228" y2="249" stroke="#B4762B" stroke-width="2" marker-end="url(#ox)"/><text x="238" y="254" font-size="13" fill="#1F2937">核酸の材料。細胞質へ出れば糖新生で glucose</text><line x1="44" y1="268" x2="516" y2="268" stroke="#EEF0F4" stroke-width="1"/><text x="44" y="300" font-size="13.5" font-weight="700" fill="#111827">succinyl-CoA</text><line x1="196" y1="295" x2="228" y2="295" stroke="#B4762B" stroke-width="2" marker-end="url(#ox)"/><text x="238" y="300" font-size="13" fill="#1F2937">heme の材料</text><rect x="26" y="334" width="508" height="34" rx="8" fill="#E7EEF7"/><text x="44" y="357" font-size="15" font-weight="700" fill="#1E3A63">補充する（anaplerosis）── 抜けた分を別の経路から足す</text><text x="44" y="398" font-size="13.5" font-weight="700" fill="#111827">pyruvate carboxylase</text><text x="44" y="416" font-size="13" fill="#1F2937">pyruvate ＋ CO₂ → oxaloacetate（biotin が要る）</text><line x1="44" y1="428" x2="516" y2="428" stroke="#EEF0F4" stroke-width="1"/><text x="44" y="444" font-size="13.5" font-weight="700" fill="#111827">glutaminolysis</text><text x="44" y="462" font-size="13" fill="#1F2937">glutamine → glutamate → α-ketoglutarate</text><rect x="26" y="478" width="508" height="52" rx="10" fill="#1E3A63"/><text x="280" y="510" font-size="15.5" font-weight="700" text-anchor="middle" fill="#FFF">抜いた分を補わなければ、回転は落ちる</text><text x="44" y="556" font-size="13.5" fill="#1F2937">とくに <tspan font-weight="700">oxaloacetate</tspan> が減ると、acetyl-CoA を受け取る相手が</text><text x="44" y="578" font-size="13.5" fill="#1F2937">いなくなり、入口で滞る。</text></g></svg></div><figcaption>TCA回路の中間体は、合成の材料として抜き出される（cataplerosis）。citrate は脂肪酸とコレステロール、α-ketoglutarate はアミノ酸とコラーゲンの proline 水酸化、oxaloacetate は核酸と糖新生、succinyl-CoA は heme へ。抜けた分は pyruvate carboxylase と glutaminolysis が補う（anaplerosis）</figcaption></figure>
-<p><strong>抜き出せば、回路内の中間体は減ります。</strong>とくに oxaloacetate が減ると、acetyl-CoA を受け取る相手がいなくなり、入口で滞ります。絶食時の肝で実際にこれが起こり、行き場を失った acetyl-CoA がケトン体になります（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。</p>
-<p>だから細胞は、抜いた分を別の経路から<strong>補充</strong>します。これが <strong>anaplerosis</strong> で、代表例は次の二つ。</p>
-<ul><li><strong>pyruvate carboxylase</strong>：pyruvate ＋ CO₂ → <strong>oxaloacetate</strong>。解糖系から来た炭素を、燃やすためではなく<strong>回路の材料を足すために</strong>使う。この酵素は補因子として <strong>biotin（B7）</strong> を要求します。<strong>同じ反応が糖新生の出発点でもあります</strong>——回路を保つ側にも、glucose を作る側にも使われる反応です</li><li><strong>glutaminolysis</strong>：glutamine → glutamate → <strong>α-ketoglutarate</strong>。増殖中の細胞がよく使うルートで、<strong>アミノ酸から回路を支えます</strong></li></ul>
-<p>抜き出す方向が <strong>cataplerosis</strong>、補充する方向が <strong>anaplerosis</strong> です。</p>
-<blockquote>TCA回路は、エネルギーを取り出すためだけの回路ではありません。<strong>同じ回路が、体を作る材料の供給元でもあります。</strong></blockquote>
-<aside class="memo"><p class="memo-h">ちなみに ―― α-ketoglutarate はコラーゲンの成熟に消費される</p><p>コラーゲンは、作られたあとに <strong>prolyl hydroxylase</strong>・<strong>lysyl hydroxylase</strong> による<strong>水酸化</strong>を受けて初めて成熟します（工程の詳細は線維芽細胞とコラーゲン）。この酵素は反応のたびに <strong>α-ketoglutarate を共基質として消費します</strong>。TCA回路の中間体が、そのままコラーゲンの加工に使われているということです。</p>
-<p><strong>ただし α-ketoglutarate は、必要な要素の一つにすぎません。</strong>同じ反応には <strong>O₂・Fe²⁺・ascorbate</strong> も要ります。しかも α-ketoglutarate はコラーゲンの一部になるのではなく、消費されて succinate と CO₂ に変わります。</p>
-<p>だから「TCA回路を活発にすればコラーゲンが増える」とは言えません。<strong>ここで言えるのは、機序の上でつながっているというところまで</strong>です。この線引きが、のちに栄養や治療を評価するときに効いてきます。</p></aside>
-<h2 id="s4">4　アミノ酸は、窒素を外してから代謝へ入る</h2>
-<blockquote><strong>この節でまず理解したいことは一つです。</strong>アミノ酸を燃料として使うときは、先に<strong>窒素を含む部分</strong>と<strong>炭素骨格</strong>に分けます。窒素は尿素にして捨て、残った炭素骨格を、形に合う場所から代謝へ入れます。</blockquote>
-<h3>まず、アミノ酸を二つの部分に分ける</h3>
+<p>回路内の <strong><span class="term" tabindex="0" data-t="α-ketoglutarate" data-d="TCA回路の中間体であり、コラーゲンを水酸化する prolyl/lysyl hydroxylase が反応のたびに消費する共基質。機序上の接点であって、TCA を上げれば成熟が進むとは結論できない。" data-u="glossary.html#term-58b916d0015e">α-ketoglutarate</span> dehydrogenase</strong>も、同じ5種類の補酵素を使います。そのため補因子不足の影響は、糖が回路へ入る段階だけにとどまりません。thiamine欠乏の動物実験でも、PDHとα-ketoglutarate dehydrogenaseの活性低下が確認されています（<em>Neurology</em> 1984. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6493495/" target="_blank" rel="noopener">PMID 6493495</a>）。</p>
+<p>マグネシウムはTPPの結合と、PDHを再活性化するphosphataseに必要です。また、鉄と硫黄はFe–SクラスターとしてaconitaseやComplex IIに組み込まれます。アミノ酸の炭素骨格を利用するアミノ基転移には、vitamin B6由来のPLPが必要です（→ 補足「アミノ基転移の反応式と、窒素の処理」）。</p>
+<p>血液中の濃度だけでは、細胞内の状態を十分に反映しない補因子があります。マグネシウムは大半が骨と細胞内にあり、thiamineの評価には全血のthiamine pyrophosphateやtransketolase活性なども用いられます。どの指標を測っているかを踏まえて判断します。</p>
+<h3>取り出した電子で、ATPを作る</h3>
+<p>acetyl-CoAを1分子受け取って回路が1周すると、<strong>NADHが3分子、FADH₂が1分子、GTPが1分子</strong>できます。また、炭素はCO₂として2個分放出されます。</p>
+<div class="reaction reaction-long"><span class="reaction-label">TCA回路1周の収支（主な生成物）</span><div class="reaction-equation" role="img" aria-label="TCA回路1周の収支（主な生成物）：acetyl-CoA 1分子 → 2 CO₂ ＋ 3 NADH ＋ 1 FADH₂ ＋ 1 GTP"><span class="reaction-side"><span class="reaction-species"><span>acetyl-CoA 1分子</span><span class="reaction-name">アセチルCoA</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme"></span><span aria-hidden="true">⟶</span></span><span class="reaction-side"><span class="reaction-species"><span>2 CO₂</span><span class="reaction-name">二酸化炭素</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>3 NADH</span><span class="reaction-name">還元型NAD</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>1 FADH₂</span><span class="reaction-name">還元型FAD</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>1 GTP</span><span class="reaction-name">グアノシン三リン酸</span></span></span></div></div>
+<p>glucose 1分子からできたpyruvate 2分子が両方ともacetyl-CoAへ進む場合、<strong>回路2周分に相当します</strong>（→ <a class="chref" href="glycolysis.html">解糖系</a>）。</p>
+<p><strong>GTPは<span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。" data-u="glossary.html#term-e9482c5e3b03">ADP</span>にリン酸を渡してATPを作れるため、1分子をATP 1分子分として数えます。</strong>さらに、NADHとFADH₂が受け取った電子を使うことで、電子伝達系ではより多くのATPを作れます。</p>
+<h2 id="s2">2　アミノ酸も、エネルギー源と回路の補充に使う</h2>
+<p>アミノ酸は、タンパク質を作るだけでなく、<strong>エネルギー産生にも使われます。</strong>アミノ基を外した炭素骨格が、pyruvateやTCA回路の中間体などに変わるためです。図では、合流する場所が異なる3例を示します。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_アミノ酸の入口.svg" alt="アラニンはピルビン酸を経て、アスパラギン酸はオキサロ酢酸として、グルタミン酸はα-ケトグルタル酸としてTCA回路につながる。" width="900.0" height="650.0" loading="lazy"><figcaption>アラニンはピルビン酸を経て、アスパラギン酸はオキサロ酢酸として、グルタミン酸はα-ケトグルタル酸としてTCA回路につながる。</figcaption></figure>
+<details class="supplement"><summary>詳しく読む：糖原性・ケト原性と、糖を作れる理由</summary><div class="supplement-body"><p>食事から糖が入ってこない間も、体は血糖を保つ必要があります。そのために肝臓などで糖を作るのが<strong>糖新生</strong>です。アミノ酸も、その材料になります。</p>
+<p>たとえば、先ほどのALTの反応で、<strong>alanine（アラニン）はpyruvate（ピルビン酸）になります。このpyruvateからglucoseを作れます。</strong>このように、分解後の炭素骨格を糖の材料にできるアミノ酸を、<strong>糖原性（glucogenic）</strong>と呼びます。</p>
+<p>一方、<strong>leucine（ロイシン）とlysine（リシン）は、分解しても糖の材料にはなりません。</strong>分解後の炭素はacetyl-CoAやacetoacetateになり、エネルギー産生やケトン体の材料として使われます。これが<strong>ケト原性（ketogenic）</strong>です。アミノ酸によっては、糖原性とケト原性の両方の経路を持ちます。</p>
+<aside class="memo"><h3 class="memo-h">acetyl-CoAは、エネルギー源にはなるが糖の材料にはならない</h3><p>この補足は、<strong>なぜロイシンやリシンからは糖を作れないのか</strong>を、分解後の反応から説明するものです。</p>
+<p>アラニンからできるpyruvateは、糖新生に使えます。一方、acetyl-CoAまで分解された炭素は、PDHの反応を逆にたどってpyruvateへ戻すことができません。</p>
+<p>TCA回路を通れば、糖の材料になるoxaloacetateを増やせそうにも見えます。しかし、<strong>回路で再生されるoxaloacetateは、最初にacetyl-CoAを受け取った分です。</strong>1周で炭素2個を受け取り、2個をCO₂として出すため、acetyl-CoAを加えてもoxaloacetateの量は増えません。</p>
+<p>つまり、<strong>acetyl-CoAから電子を取り出してATPを作ることはできますが、その炭素を使って糖を新たに作ることはできません。</strong>これが、糖原性とケト原性を分ける理由です（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。</p></aside></div></details>
+<h3>AST・ALTは、アミノ酸を代謝につなぐ酵素</h3>
+<p>採血で見慣れた<strong>ALT（alanine aminotransferase）</strong>と<strong>AST（aspartate aminotransferase）</strong>は、本来、<strong>細胞内でアミノ酸の代謝を担う酵素</strong>です。ALTはalanineから、ASTはaspartateから、アミノ基をα-ketoglutarateへ渡します。</p>
+<p>アミノ基を渡したalanineはpyruvateに、aspartateはoxaloacetateになります。<strong>アミノ基を移すことで、残った炭素骨格をエネルギー代謝に利用できます。</strong></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_アミノ基と炭素骨格.svg" alt="ALTによるアミノ基の受け渡し。" width="800.0" height="580.0" loading="lazy"><figcaption>ALTによるアミノ基の受け渡し。アラニンはピルビン酸になり、アミノ基を受け取ったα-ケトグルタル酸はグルタミン酸になる。丸は炭素数の模式図。</figcaption></figure>
+<p>肝細胞などが傷つくと、細胞内のAST・ALTが血中へ出てきます。採血では、その<strong>血中の酵素活性</strong>を測ることで、肝細胞の傷害を知る手がかりにしています。<strong>細胞内で代謝を担っている酵素が、血中では細胞傷害の指標になる</strong>というつながりです（<a class="ext" href="https://www.jslm.org/books/guideline/2021/gl/JSLM_GL2021.pdf" target="_blank" rel="noopener">日本臨床検査医学会『臨床検査のガイドライン2021』</a>）。</p>
+<details class="supplement"><summary>詳しく読む：アミノ基転移の反応式・窒素の処理・BUN</summary><div class="supplement-body"><p>アミノ酸もエネルギー産生や糖を作る材料になります。そのときは、<strong>窒素を含む部分を処理し、残る炭素骨格を代謝へ入れます。</strong>炭素骨格の形が違うため、回路への入口も一つではありません。</p>
+<h4>アミノ基を移し、炭素骨格を利用する</h4>
 <p>アミノ酸は、<strong>窒素を含むアミノ基</strong>と、<strong>炭素でできた骨格</strong>を持っています。エネルギー産生や糖新生に使えるのは、主に炭素骨格の側です。一方、余った窒素は体内にためておけないため、分けて排泄する必要があります。</p>
 <p>多くの場合、最初に <strong>aminotransferase（トランスアミナーゼ）</strong>が、アミノ酸のアミノ基を <strong>α-ketoglutarate</strong> へ移します。この反応が<strong>アミノ基転移</strong>です。aminotransferase が働くには、補酵素の <strong>pyridoxal phosphate（PLP、vitamin B6の誘導体）</strong>が必要です。</p>
 <p>アミノ基を渡したアミノ酸は、<strong>炭素骨格（α-ケト酸）</strong>になります。反対に、アミノ基を受け取った α-ketoglutarate は <strong>glutamate</strong> になります。つまりglutamateは、いろいろなアミノ酸から出た窒素を、いったん集める役目です。</p>
-<h3>ALT・ASTは、アミノ基を移す酵素</h3>
-<p><strong>ALT（alanine aminotransferase、アラニンアミノトランスフェラーゼ）</strong>と<strong>AST（aspartate aminotransferase、アスパラギン酸アミノトランスフェラーゼ）</strong>は、aminotransferaseの代表です。どちらも<strong>アミノ基を別の分子へ移す酵素</strong>です。</p>
-<blockquote><strong>ALT</strong>：alanine ＋ α-ketoglutarate ⇄ <strong>pyruvate</strong> ＋ glutamate<br><strong>AST</strong>：aspartate ＋ α-ketoglutarate ⇄ <strong>oxaloacetate</strong> ＋ glutamate</blockquote>
-<p>血液検査では、肝細胞や筋細胞から血中へ出てきたAST・ALTを測ります。しかし細胞内での本来の仕事は、上のように<strong>アミノ基を移し、残った炭素骨格を代謝へつなぐこと</strong>です。</p>
-<h3>glutamateに集めた窒素は、尿素にして排泄する</h3>
-<p>次に <strong>glutamate dehydrogenase</strong> が、glutamate から窒素を <strong>NH₃</strong> として外します。これが<strong>酸化的脱アミノ</strong>です。NH₃は肝臓で尿素に変えられ、尿中へ排泄されます。窒素を渡したglutamateは α-ketoglutarate に戻り、再びアミノ基の受け手として使われます。</p>
-<aside class="memo"><p class="memo-h">ちなみに ―― BUNは、この窒素処理の下流を見ている</p><p><strong>BUN（blood urea nitrogen、血中尿素窒素）</strong>は、血液中の尿素に含まれる窒素を測った値です。アミノ酸から外された窒素は、<strong>NH₃ → 肝臓で尿素 → 血液 → 腎臓から尿中へ排泄</strong>という順に処理されます。したがってBUNは、この流れの最後にある尿素を見ています。</p>
-<p>ただし、BUNはglutamate dehydrogenaseの働きを直接測る検査ではありません。<strong>腎機能の低下や脱水</strong>で上がるほか、<strong>高タンパク食・消化管出血・タンパク質分解の亢進</strong>でも上がります。反対に、<strong>低タンパク摂取・低栄養・過剰な水分・重い肝機能低下</strong>では下がることがあります。BUN単独ではなく、creatinine・eGFR・水分状態・肝機能と合わせて読みます。</p></aside>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 700" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="アミノ酸のアミノ基をaminotransferaseがalpha-ketoglutarateへ移してglutamateに集める。glutamate dehydrogenaseがglutamateから窒素を外し、alpha-ketoglutarateは再利用され、アンモニアは肝臓で尿素になる。ALTはalanineをpyruvateへ、ASTはaspartateをoxaloacetateへ変える双方向反応を触媒する">
-<defs>
-<marker id="nitrogenArrow" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-<marker id="nitrogenBack" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
-<marker id="nitrogenWaste" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B4762B"/></marker>
-<marker id="nitrogenBlueBack" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="694" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="44" font-size="20" font-weight="700" fill="#1E3A63">アミノ酸は、窒素と炭素骨格に分けて使う</text>
-<text x="28" y="70" font-size="13.5" fill="#3B4A63">窒素は glutamate に集め、残った炭素骨格を代謝へ渡す</text>
-<rect x="20" y="88" width="520" height="226" rx="11" fill="#F4F8FC" stroke="#AAB4C4" stroke-width="1.4"/>
-<text x="36" y="116" font-size="16" font-weight="700" fill="#1E3A63">① アミノ基を glutamate へ集める</text>
-<rect x="30" y="140" width="174" height="54" rx="9" fill="#FFF" stroke="#3D6B52" stroke-width="1.5"/>
-<text x="117" y="162" font-size="13.5" font-weight="700" text-anchor="middle" fill="#245840">アミノ酸</text>
-<text x="117" y="181" font-size="12" text-anchor="middle" fill="#3B4A63">炭素骨格 ＋ <tspan font-weight="700" fill="#A45A16">NH₂</tspan></text>
-<text x="117" y="218" font-size="20" font-weight="700" text-anchor="middle" fill="#64748B">＋</text>
-<rect x="30" y="232" width="174" height="50" rx="9" fill="#FFF" stroke="#2F5C87" stroke-width="1.5"/>
-<text x="117" y="253" font-size="13.5" font-weight="700" text-anchor="middle" fill="#1E3A63">α-ketoglutarate</text>
-<text x="117" y="271" font-size="11.8" text-anchor="middle" fill="#3B4A63">アミノ基の受け手</text>
-<line x1="218" y1="211" x2="342" y2="211" stroke="#3D6B52" stroke-width="2.4" marker-start="url(#nitrogenBack)" marker-end="url(#nitrogenBack)"/>
-<text x="280" y="178" font-size="13.5" font-weight="700" text-anchor="middle" fill="#245840">aminotransferase</text>
-<rect x="241" y="186" width="78" height="20" rx="10" fill="#F5E9D6"/>
-<text x="280" y="200" font-size="11.5" font-weight="700" text-anchor="middle" fill="#8A5A18">PLP（B6）</text>
-<text x="280" y="234" font-size="11.8" text-anchor="middle" fill="#3B4A63">アミノ基転移</text>
-<rect x="356" y="140" width="174" height="54" rx="9" fill="#FFF" stroke="#3D6B52" stroke-width="1.5"/>
-<text x="443" y="162" font-size="13.5" font-weight="700" text-anchor="middle" fill="#245840">α-ケト酸</text>
-<text x="443" y="181" font-size="12" text-anchor="middle" fill="#3B4A63">残った炭素骨格</text>
-<text x="443" y="218" font-size="20" font-weight="700" text-anchor="middle" fill="#64748B">＋</text>
-<rect x="356" y="232" width="174" height="50" rx="9" fill="#FFF7E8" stroke="#B4762B" stroke-width="1.5"/>
-<text x="443" y="253" font-size="13.5" font-weight="700" text-anchor="middle" fill="#8A5A18">glutamate</text>
-<text x="443" y="271" font-size="11.8" text-anchor="middle" fill="#3B4A63"><tspan font-weight="700" fill="#A45A16">NH₂</tspan> を受け取る</text>
-<rect x="20" y="328" width="520" height="150" rx="11" fill="#F6FAF7" stroke="#91B19E" stroke-width="1.4"/>
-<text x="36" y="356" font-size="16" font-weight="700" fill="#245840">② ALT・AST は、このアミノ基転移を行う</text>
-<rect x="32" y="372" width="194" height="40" rx="8" fill="#FFF" stroke="#3D6B52" stroke-width="1.3"/>
-<text x="129" y="397" font-size="12.5" font-weight="700" text-anchor="middle" fill="#245840">alanine ＋ α-ketoglutarate</text>
-<line x1="241" y1="392" x2="319" y2="392" stroke="#3D6B52" stroke-width="2.2" marker-start="url(#nitrogenBack)" marker-end="url(#nitrogenBack)"/>
-<text x="280" y="383" font-size="12" font-weight="700" text-anchor="middle" fill="#245840">ALT</text>
-<rect x="334" y="372" width="194" height="40" rx="8" fill="#FFF" stroke="#3D6B52" stroke-width="1.3"/>
-<text x="431" y="397" font-size="12.5" font-weight="700" text-anchor="middle" fill="#245840">pyruvate ＋ glutamate</text>
-<rect x="32" y="424" width="194" height="40" rx="8" fill="#FFF" stroke="#2F5C87" stroke-width="1.3"/>
-<text x="129" y="449" font-size="12.3" font-weight="700" text-anchor="middle" fill="#1E3A63">aspartate ＋ α-ketoglutarate</text>
-<line x1="241" y1="444" x2="319" y2="444" stroke="#2F5C87" stroke-width="2.2" marker-start="url(#nitrogenBlueBack)" marker-end="url(#nitrogenBlueBack)"/>
-<text x="280" y="435" font-size="12" font-weight="700" text-anchor="middle" fill="#1E3A63">AST</text>
-<rect x="334" y="424" width="194" height="40" rx="8" fill="#FFF" stroke="#2F5C87" stroke-width="1.3"/>
-<text x="431" y="449" font-size="12.3" font-weight="700" text-anchor="middle" fill="#1E3A63">oxaloacetate ＋ glutamate</text>
-<rect x="20" y="492" width="520" height="184" rx="11" fill="#FFF8ED" stroke="#D3A15A" stroke-width="1.4"/>
-<text x="36" y="520" font-size="16" font-weight="700" fill="#8A5A18">③ glutamate から窒素を外す</text>
-<text x="36" y="542" font-size="12" fill="#3B4A63">肝臓での酸化的脱アミノと尿素への処理</text>
-<rect x="30" y="572" width="128" height="50" rx="9" fill="#FFF" stroke="#B4762B" stroke-width="1.5"/>
-<text x="94" y="603" font-size="14" font-weight="700" text-anchor="middle" fill="#8A5A18">glutamate</text>
-<line x1="170" y1="597" x2="240" y2="597" stroke="#2F5C87" stroke-width="2.4" marker-end="url(#nitrogenArrow)"/>
-<text x="205" y="571" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">glutamate</text>
-<text x="205" y="585" font-size="11.5" font-weight="700" text-anchor="middle" fill="#1E3A63">dehydrogenase</text>
-<circle cx="252" cy="597" r="4" fill="#2F5C87"/>
-<path d="M252 597 C270 597 270 569 294 569" fill="none" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#nitrogenArrow)"/>
-<rect x="306" y="547" width="116" height="44" rx="8" fill="#E7EEF7" stroke="#2F5C87" stroke-width="1.4"/>
-<text x="364" y="566" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">α-ketoglutarate</text>
-<text x="364" y="582" font-size="11" text-anchor="middle" fill="#3B4A63">受け手として再利用</text>
-<path d="M252 597 C270 597 270 631 294 631" fill="none" stroke="#B4762B" stroke-width="2.2" marker-end="url(#nitrogenWaste)"/>
-<rect x="306" y="609" width="82" height="44" rx="8" fill="#FBEDE9" stroke="#B05A24" stroke-width="1.4"/>
-<text x="347" y="637" font-size="14" font-weight="700" text-anchor="middle" fill="#8A431C">NH₃</text>
-<line x1="400" y1="631" x2="432" y2="631" stroke="#B4762B" stroke-width="2.2" marker-end="url(#nitrogenWaste)"/>
-<rect x="444" y="609" width="76" height="44" rx="8" fill="#FBEDE9" stroke="#B05A24" stroke-width="1.4"/>
-<text x="482" y="627" font-size="13" font-weight="700" text-anchor="middle" fill="#8A431C">尿素</text>
-<text x="482" y="644" font-size="10.8" text-anchor="middle" fill="#3B4A63">→ 排泄</text>
-</g>
-</svg>
-</div>
-<figcaption>アミノ酸のアミノ基は、aminotransferase によって α-ketoglutarate へ移され、glutamate に集められる。代表がALTとASTで、ALTはalanineとpyruvate、ASTはaspartateとoxaloacetateの間のアミノ基転移を触媒する。どちらも双方向に働き、PLP（vitamin B6）を必要とする。その後、glutamate dehydrogenaseが窒素をNH₃として外し、肝で尿素に変えて排泄する</figcaption>
-</figure>
-<h3>残った炭素骨格は、形によって入口が違う</h3>
-<p>アミノ基を移したあとに残る<strong>炭素骨格</strong>は、元のアミノ酸によって形が違います。alanineの炭素骨格はpyruvateに、aspartateの炭素骨格はoxaloacetateになります。</p>
-<p>そのため、すべてのアミノ酸がacetyl-CoAになって同じ入口から入るわけではありません。<strong>pyruvateになるもの、TCA回路の途中へ直接入るもの、acetyl-CoA側へ入るもの</strong>があります。個々のアミノ酸名を暗記するより、まず「入口は一つではない」と理解できれば十分です。次の図は、その入口をまとめた地図です。</p>
-<figure class="book-figure">
-<div style="overflow-x:auto">
-<svg viewBox="0 0 560 760" style="display:block;width:100%;max-width:560px;margin:0 auto;height:auto;background:#fff" role="img" aria-label="アミノ酸から窒素を外した炭素骨格が、①pyruvate、②alpha-ketoglutarate、③succinyl-CoA、④fumarate、⑤oxaloacetateという糖原性の入口と、acetyl-CoAまたはacetoacetateというケト原性の入口へ分かれる。isoleucine、phenylalanine、threonine、tryptophan、tyrosineは両方に現れ、leucineとlysineだけが純粋にケト原性">
-<defs>
-<marker id="aaCycle" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#2F5C87"/></marker>
-<marker id="aaIn" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#3D6B52"/></marker>
-<marker id="aaKet" markerUnits="userSpaceOnUse" viewBox="0 0 10 10" refX="0.5" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 1 L9 5 L0 9 z" fill="#B05A24"/></marker>
-</defs>
-<rect x="3" y="3" width="554" height="754" rx="12" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.8"/>
-<g font-family="system-ui,-apple-system,sans-serif">
-<text x="28" y="42" font-size="20" font-weight="700" fill="#1E3A63">アミノ酸の炭素骨格は、6か所から入る</text>
-<text x="28" y="68" font-size="13" fill="#3B4A63">先に窒素を外し、残った炭素を解糖系の出口またはTCA回路へ渡す</text>
-<rect x="28" y="84" width="12" height="12" rx="3" fill="#E6F1EA" stroke="#3D6B52"/>
-<text x="48" y="95" font-size="12" font-weight="700" fill="#245840">①〜⑤　糖原性の入口</text>
-<rect x="172" y="84" width="12" height="12" rx="3" fill="#FBEDE9" stroke="#B05A24"/>
-<text x="192" y="95" font-size="12" font-weight="700" fill="#8A431C">ケト原性の入口</text>
-<rect x="24" y="122" width="164" height="102" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.3"/>
-<text x="40" y="148" font-size="13.5" font-weight="700" fill="#245840">① → pyruvate</text>
-<text x="40" y="173" font-size="11.5" fill="#111827">alanine・cysteine</text>
-<text x="40" y="193" font-size="11.2" fill="#111827">glycine・serine・threonine</text>
-<text x="40" y="213" font-size="11.5" fill="#111827">tryptophan</text>
-<line x1="188" y1="190" x2="200" y2="190" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#aaIn)"/>
-<rect x="210" y="174" width="140" height="34" rx="8" fill="#FFFFFF" stroke="#2F5C87" stroke-width="1.4"/>
-<text x="280" y="196" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">pyruvate</text>
-<line x1="280" y1="210" x2="280" y2="234" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="244" width="140" height="34" rx="8" fill="#FBEDE9" stroke="#9A3D28" stroke-width="1.4"/>
-<text x="280" y="266" font-size="13" font-weight="700" text-anchor="middle" fill="#7A2F1D">acetyl-CoA</text>
-<rect x="372" y="116" width="164" height="132" rx="9" fill="#FBEDE9" stroke="#B05A24" stroke-width="1.3"/>
-<text x="388" y="141" font-size="12.5" font-weight="700" fill="#8A431C">→ acetyl-CoA／</text>
-<text x="388" y="159" font-size="12.5" font-weight="700" fill="#8A431C">　 acetoacetate</text>
-<text x="388" y="181" font-size="11.5" font-weight="700" fill="#111827">leucine・lysine</text>
-<text x="388" y="200" font-size="10.5" fill="#111827">isoleucine・phenylalanine</text>
-<text x="388" y="219" font-size="11" fill="#111827">threonine・tryptophan</text>
-<text x="388" y="238" font-size="11.5" fill="#111827">tyrosine</text>
-<path d="M390 250 Q376 261 360 261" fill="none" stroke="#B05A24" stroke-width="2.2" marker-end="url(#aaKet)"/>
-<rect x="198" y="290" width="164" height="318" rx="12" fill="#F7F9FC" stroke="#AAB4C4" stroke-width="1.5"/>
-<text x="280" y="314" font-size="13" font-weight="700" text-anchor="middle" fill="#1E3A63">TCA回路（簡略）</text>
-<line x1="280" y1="280" x2="280" y2="318" stroke="#2F5C87" stroke-width="2.2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="326" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.2"/>
-<text x="280" y="347" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">citrate</text>
-<line x1="280" y1="360" x2="280" y2="376" stroke="#2F5C87" stroke-width="2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="384" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.2"/>
-<text x="280" y="405" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">α-ketoglutarate</text>
-<line x1="280" y1="418" x2="280" y2="434" stroke="#2F5C87" stroke-width="2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="442" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.2"/>
-<text x="280" y="463" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">succinyl-CoA</text>
-<line x1="280" y1="476" x2="280" y2="492" stroke="#2F5C87" stroke-width="2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="500" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.2"/>
-<text x="280" y="521" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">fumarate</text>
-<line x1="280" y1="534" x2="280" y2="550" stroke="#2F5C87" stroke-width="2" marker-end="url(#aaCycle)"/>
-<rect x="210" y="558" width="140" height="32" rx="8" fill="#FFFFFF" stroke="#8A97AC" stroke-width="1.2"/>
-<text x="280" y="579" font-size="12.5" font-weight="700" text-anchor="middle" fill="#111827">oxaloacetate</text>
-<path d="M210 574 Q178 455 210 342" fill="none" stroke="#2F5C87" stroke-width="2" marker-end="url(#aaCycle)"/>
-<rect x="372" y="344" width="164" height="80" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="388" y="367" font-size="12.5" font-weight="700" fill="#245840">② → α-ketoglutarate</text>
-<text x="388" y="388" font-size="11.2" fill="#111827">arginine・glutamate</text>
-<text x="388" y="407" font-size="10.8" fill="#111827">glutamine・histidine・proline</text>
-<line x1="372" y1="400" x2="360" y2="400" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#aaIn)"/>
-<rect x="372" y="434" width="164" height="80" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="388" y="457" font-size="12.5" font-weight="700" fill="#245840">③ → succinyl-CoA</text>
-<text x="388" y="478" font-size="11.2" fill="#111827">isoleucine・methionine</text>
-<text x="388" y="497" font-size="11.5" fill="#111827">threonine・valine</text>
-<path d="M372 477 Q366 458 360 458" fill="none" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#aaIn)"/>
-<rect x="24" y="478" width="164" height="70" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="40" y="501" font-size="12.5" font-weight="700" fill="#245840">④ → fumarate</text>
-<text x="40" y="523" font-size="11" fill="#111827">aspartate・phenylalanine</text>
-<text x="40" y="541" font-size="11.5" fill="#111827">tyrosine</text>
-<path d="M188 512 Q194 516 200 516" fill="none" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#aaIn)"/>
-<rect x="24" y="556" width="164" height="58" rx="9" fill="#E6F1EA" stroke="#3D6B52" stroke-width="1.2"/>
-<text x="40" y="579" font-size="12.5" font-weight="700" fill="#245840">⑤ → oxaloacetate</text>
-<text x="40" y="601" font-size="11.5" fill="#111827">asparagine・aspartate</text>
-<path d="M188 585 Q194 574 200 574" fill="none" stroke="#3D6B52" stroke-width="2.2" marker-end="url(#aaIn)"/>
-<rect x="24" y="630" width="512" height="40" rx="9" fill="#E6F1EA"/>
-<text x="280" y="655" font-size="12.5" font-weight="700" text-anchor="middle" fill="#245840">①〜⑤の入口 → oxaloacetate を経て、糖新生で glucose に戻せる</text>
-<rect x="24" y="682" width="512" height="50" rx="9" fill="#FBEDE9"/>
-<text x="280" y="703" font-size="12.5" font-weight="700" text-anchor="middle" fill="#8A431C">橙の入口 → acetyl-CoA／acetoacetate 側</text>
-<text x="280" y="722" font-size="12" text-anchor="middle" fill="#7A2F1D">ここからは、glucoseの材料にできない</text>
-</g>
-</svg>
-</div>
-<figcaption>アミノ酸は窒素を外した後、炭素骨格の形に応じて別々の位置から代謝の本流へ入る。① pyruvate、② α-ketoglutarate、③ succinyl-CoA、④ fumarate、⑤ oxaloacetate は糖原性の入口。橙の acetyl-CoA・acetoacetate 側はケト原性の入口。両方に名前があるアミノ酸は、糖原性とケト原性の両方の性質を持つ</figcaption>
-</figure>
-<h3>最後に、「糖に戻れるか」で二つに分ける</h3>
-<p>図の緑色の①〜⑤は、<strong>pyruvateまたはTCA回路の中間体になる入口</strong>です。ここへ入った炭素はoxaloacetateへつながり、肝臓などでは糖新生によってglucoseの材料にできます。このような炭素を持つアミノ酸を、<strong>糖原性（glucogenic）</strong>と呼びます。</p>
-<p>一方、橙色の <strong>acetyl-CoA・acetoacetate</strong> 側へ入るものが、<strong>ケト原性（ketogenic）</strong>です。<strong>ケト原性の炭素は、TCA回路でエネルギー産生に使うことはできますが、glucoseの材料にはできません。</strong></p>
-<p>acetyl-CoAは、すでに回路内にあるoxaloacetateと結びついてTCA回路へ入ります。しかしacetyl-CoAとして2個の炭素が入っても、回路から2個の炭素がCO₂として出るため、<strong>TCA回路が一周してもoxaloacetateの量は増えません。</strong>さらにPDHの反応は不可逆なので、acetyl-CoAからpyruvateへ戻ることもできません。したがって、<strong>acetyl-CoA側へ入った炭素はglucoseの材料にできません</strong>（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>）。</p>
-<p>なお、ミトコンドリア内のacetyl-CoAは、<strong>citrateにして細胞質へ出し、ATP-citrate lyase（ACLY）で再びacetyl-CoAに戻す</strong>ことができます。これがcitrate shuttleです。ただし、これはacetyl基を脂肪酸やコレステロールの合成場所へ運ぶ仕組みであり、<strong>acetyl-CoAをpyruvateやglucoseへ戻す反応ではありません</strong>（→ <a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>§2「余った糖は、脂肪酸として貯蔵される」）。</p>
-<p>アミノ酸のなかには、糖原性とケト原性の両方の経路を持つものもあります。純粋にケト原性なのは <strong>leucineとlysine</strong> の2つです。この分類も、まずは名前を暗記するより、<strong>「pyruvate・TCA中間体側なら糖の材料になれる／acetyl-CoA側からは糖へ戻れない」</strong>という境界が分かれば十分です。</p>
-<p>§3では、TCA回路の中間体を脂質・アミノ酸・核酸などの材料として<strong>回路から取り出しました</strong>。この節では反対に、アミノ酸の炭素骨格をpyruvateやTCA回路の中間体として<strong>代謝へ入れました</strong>。同じ中間体の名前が何度も出てくるのは、そこが出口にも入口にもなるからです。</p>
-<blockquote><strong>この節のまとめ：</strong>アミノ酸を使うときは、まず窒素と炭素骨格に分ける。窒素は尿素として捨て、炭素骨格は形に合う入口から代謝へ入る。その入口によって、糖の材料に戻れるかどうかが決まる。</blockquote>
+<h4>ALT・ASTは、アミノ基を移す酵素</h4>
+<p>ALTはalanineをpyruvateに、ASTはaspartateをoxaloacetateに変えるアミノ基転移を担います。反応式は次のとおりです。</p>
+<div class="reaction"><span class="reaction-label">ALTの反応</span><div class="reaction-equation" role="img" aria-label="ALTの反応：alanine ＋ α-ketoglutarate ⇌ pyruvate ＋ glutamate"><span class="reaction-side"><span class="reaction-species"><span>alanine</span><span class="reaction-name"></span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>α-ketoglutarate</span><span class="reaction-name"></span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">ALT</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>pyruvate</span><span class="reaction-name">ピルビン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>glutamate</span><span class="reaction-name"></span></span></span></div></div>
+<div class="reaction"><span class="reaction-label">ASTの反応</span><div class="reaction-equation" role="img" aria-label="ASTの反応：aspartate ＋ α-ketoglutarate ⇌ oxaloacetate ＋ glutamate"><span class="reaction-side"><span class="reaction-species"><span>aspartate</span><span class="reaction-name"></span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>α-ketoglutarate</span><span class="reaction-name"></span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">AST</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>oxaloacetate</span><span class="reaction-name"></span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>glutamate</span><span class="reaction-name"></span></span></span></div></div>
+<h4>glutamateに集めた窒素は、尿素にして排泄する</h4>
+<p>glutamateに集まった窒素は、<strong>glutamate dehydrogenase</strong>によってアンモニウムイオン（NH₄⁺）として外されます。これが酸化的脱アミノです。生じた窒素は肝臓の尿素回路で処理されます。尿素のもう一つの窒素はaspartateから供給されます。glutamateはα-ketoglutarateに戻り、再びアミノ基を受け取れます。</p>
+<aside class="memo"><h3 class="memo-h">ちなみに ―― BUNは、この窒素処理の下流を見ている</h3><p><strong>BUN（blood urea nitrogen、血中尿素窒素）</strong>は、血液中の尿素に含まれる窒素を測った値です。アミノ酸から外された窒素は、肝臓で尿素に変えられ、血液を通って腎臓へ運ばれ、尿中に排泄されます。</p>
+<p>ただし、BUNはglutamate dehydrogenaseの働きを直接測る検査ではありません。<strong>腎機能の低下や脱水</strong>で上がるほか、<strong>高タンパク食・消化管出血・タンパク質分解の亢進</strong>でも上がります。反対に、<strong>低タンパク摂取・低栄養・過剰な水分・重い肝機能低下</strong>では下がることがあります。BUN単独ではなく、creatinine・eGFR・水分状態・肝機能と合わせて読みます。</p></aside></div></details>
+<h3>回路の中間体を補う</h3>
+<p>反応の途中でできる分子を<strong>中間体</strong>と呼びます。中間体を体の成分の合成に使うと、回路内の量が減るため、別の反応で補う必要があります。</p>
+<p>たとえば、<strong>glutamine（グルタミン）からglutamate（グルタミン酸）、さらにα-ketoglutarate（α-ケトグルタル酸）を作る</strong>ことで、回路の中間体を補えます。アミノ酸は、エネルギー源になるだけでなく、回路を続けるための材料も供給しています。</p>
+<p>アミノ酸以外では、<strong>pyruvateからoxaloacetateを作る反応</strong>も補充に使われます。ピルビン酸カルボキシラーゼが炭素を一つ加え、炭素3個のpyruvateから炭素4個のoxaloacetateを作ります。</p>
+<details class="supplement"><summary>詳しく読む：中間体の補充反応と補因子</summary><div class="supplement-body"><p>中間体の補充を<strong>anaplerosis（アナプレローシス）</strong>、合成のために取り出すことを<strong>cataplerosis</strong>と呼びます。エネルギー産生と合成材料の供給の両方を担う性質が、<strong>amphibolic（両用性）</strong>です。</p>
+<p>pyruvate carboxylaseの反応には、ATPと<strong>biotin（B7）</strong>が必要です。同じ反応は糖新生にも使われます。glutamineからglutamate、α-ketoglutarateへ進む経路は<strong>glutaminolysis</strong>と呼ばれ、増殖中の細胞でもよく使われます。</p></div></details>
+<h2 id="s3">3　アミノ酸・核酸・脂質などを作る材料を供給する</h2>
+<p>TCA回路は、エネルギー産生とともに、<strong>細胞の成分を作るための材料の供給</strong>も担います。回路の中間体から、次のような物質が作られます。</p>
+<div class="tblwrap"><table><thead><tr><th>抜き出す中間体</th><th>何になるか</th></tr></thead><tbody><tr><td><strong>citrate</strong></td><td>細胞質へ出て、<strong>脂肪酸・コレステロール</strong>の材料になる</td></tr><tr><td><strong>α-ketoglutarate</strong></td><td>glutamate を経て<strong>アミノ酸</strong>へ。<strong>コラーゲンの <span class="term" tabindex="0" data-t="proline" data-d="collagen に多く含まれるアミノ酸で、TCA回路の α-ketoglutarate から作られる。鎖に入った後にER内で hydroxyproline へ水酸化される。材料であることは律速の証明ではない。" data-u="glossary.html#term-af0b30241251">proline</span> の水酸化</strong>にも使われる</td></tr><tr><td><strong>oxaloacetate</strong></td><td>aspartate を経て<strong>核酸</strong>の材料になる。malateなどに変えて炭素を細胞質へ渡し、<strong>糖新生</strong>につなぐ</td></tr><tr><td><strong>succinyl-CoA</strong></td><td><strong>heme</strong> の材料になる</td></tr></tbody></table></div>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_中間体の供給と補充.svg" alt="合成へ中間体を取り出すcataplerosisと、中間体を補うanaplerosis。" width="760.0" height="790.0" loading="lazy"><figcaption>合成へ中間体を取り出すcataplerosisと、中間体を補うanaplerosis。</figcaption></figure>
+<h3>コラーゲンの成熟にも、TCA回路の中間体が使われる</h3>
+<p>コラーゲンは、作られたあとに <strong>prolyl hydroxylase</strong>・<strong>lysyl hydroxylase</strong> による<strong>水酸化</strong>を受けて初めて成熟します（工程の詳細は線維芽細胞とコラーゲン）。この酵素は反応のたびに <strong>α-ketoglutarate を共基質として消費します</strong>。TCA回路の中間体が、そのままコラーゲンの加工に使われているということです。</p>
+<p>この水酸化には、<strong>O₂・Fe²⁺・ascorbate（ビタミンC）</strong>も必要です。α-ketoglutarateは反応を支える材料として使われ、<strong>succinateとCO₂に変わります。</strong>コラーゲンの構造に組み込まれるわけではありません。</p>
+<aside class="memo"><h3 class="memo-h">絶食時には、acetyl-CoAからケトン体を作る</h3><p>絶食時の肝では、oxaloacetateが糖新生にも使われる一方、脂肪酸からできるacetyl-CoAが増えます。肝はそのacetyl-CoAからケトン体を作り、脳などへ燃料として送ります。詳しくは<a class="chref" href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>で扱います。</p></aside>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>TCA回路は、<strong>acetyl-CoAの炭素をCO₂まで酸化し、その途中で電子をNADHとFADH₂へ渡す回路</strong>です。一周するとoxaloacetateへ戻り、次のacetyl-CoAを受け取ります。acetyl-CoAは、糖・脂肪酸・一部のアミノ酸から作られます。</li><li>糖からできたpyruvateがTCA回路へ進むには、まず<strong>PDHによってacetyl-CoAへ変換される</strong>必要があります。PDHの反応には、<strong>TPP（B1）・lipoate・CoA（B5）・FAD（B2）・NAD⁺（B3）</strong>とMg²⁺が必要です。一方、脂肪酸からできたacetyl-CoAはPDHを通りません。</li><li>PDHは、<strong>脱リン酸化されると活性が上がり、リン酸化されると活性が下がります。</strong>ATPが使われてADPが増えたとき、pyruvateが十分にあるとき、筋収縮でCa²⁺が増えたときは、PDHの活性が上がる方向へ調節されます。反対に、ミトコンドリア内にATP・NADH・acetyl-CoAが多いと、PDH kinaseがPDHをリン酸化して活性を下げます。こうして、<strong>糖由来の炭素をTCA回路へ入れる量が、ATPを作る必要性に合わせて調節されます。</strong></li><li>acetyl-CoA 1分子が一周すると、<strong>3 NADH・1 FADH₂・1 GTP・2 CO₂</strong>が生じます。TCA回路で直接できるATP相当量はGTP 1分子です。ATPの大半は、NADHとFADH₂が運ぶ電子を使って、電子伝達系で作られます。</li><li>TCA回路の中間体は、<strong>脂質・アミノ酸・核酸・hemeなどを合成する材料</strong>にもなります。材料として抜けた中間体は、pyruvate carboxylaseやglutaminolysisなどの<strong>anaplerosis（補充反応）</strong>で補われます。エネルギー産生と合成材料の供給を担うため、TCA回路は<strong>amphibolic</strong>な回路です。</li><li>アミノ酸を使うときは、窒素を含む部分と炭素骨格に分けます。窒素はglutamateに集め、最終的に尿素として排泄します。炭素骨格は、その形に応じてpyruvate、TCA回路の中間体、acetyl-CoAなどになります。<strong>pyruvate・TCA回路の中間体になればglucoseの材料にできますが、acetyl-CoA側からはglucoseへ戻れません。</strong>ALT・ASTは、この最初のアミノ基転移を行う酵素です。</li></ol>
-<blockquote><strong>低酸素時の補足：</strong>細胞への酸素供給が需要に追いつかないときは、HIF-1αがPDK1を増やしてPDHの活性を下げます。これは、通常のエネルギー需要による調節とは別に働く、低酸素への適応です。</blockquote>
-<blockquote><a class="chref" href="electron-transport.html">電子伝達系</a>では、TCA回路で生じた <strong>NADH・FADH₂</strong> が、電子を<strong>電子伝達系</strong>へ渡す過程を見ます。電子は最後にO₂へ渡されます。</blockquote>
-
+<ol class="goal"><li><strong>糖や脂肪由来のacetyl-CoAから電子を取り出し、電子伝達系でのATP産生につなぐ。</strong></li><li><strong>アミノ酸の炭素骨格も、エネルギー源や回路の中間体の補充に使われる。</strong></li><li><strong>回路の中間体は、アミノ酸・核酸・脂質などを作る材料にもなる。</strong></li></ol>
+<p><a class="chref" href="electron-transport.html">電子伝達系</a>では、受け取った電子を使ってATPを作る仕組みを見ます。</p>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>3本柱に再構成し、PDHと5種類の補酵素の表・ASTとALT・コラーゲン成熟を本文に配置、詳しい反応は対応する本文の直後に折りたたみで配置</li><li><time>2026-09-12</time>TCA回路の収支を全章共通の反応式表示に変更</li><li><time>2026-08-24</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="fatty-acid-oxidation.html"><span class="lbl">前へ</span>脂肪酸とケトン体</a><a class="next" href="electron-transport.html"><span class="lbl">次へ</span>電子伝達系</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -867,7 +709,7 @@ h2{margin-top:24pt}
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-08-31 ／ 版 852d96b</p>
+<p class="stamp">最終更新 2026-09-14 ／ 版 dd162dd</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -894,8 +736,17 @@ document.addEventListener('keydown',e=>{
 });
 /* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
 document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
   const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
-  f.addEventListener('click',flip);
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
   f.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
   });
@@ -941,11 +792,15 @@ if(filt)filt.addEventListener('input',()=>{
   if(!terms.length)return;
   const tip=document.createElement('div');
   tip.id='tip';document.body.appendChild(tip);
-  let cur=null;
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
   function show(el){
+    cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="glossary.html">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -957,15 +812,15 @@ if(filt)filt.addEventListener('input',()=>{
     if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
     tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
   }
-  function hide(){tip.classList.remove('on');cur=null;}
   terms.forEach(el=>{
     el.addEventListener('mouseenter',()=>show(el));
     el.addEventListener('focus',()=>show(el));
-    el.addEventListener('mouseleave',e=>{if(!tip.matches(':hover'))hide();});
-    el.addEventListener('blur',hide);
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
     /* スマホ：タップで開閉 */
     el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
   });
+  tip.addEventListener('mouseenter',cancelHide);
   tip.addEventListener('mouseleave',hide);
   document.addEventListener('click',e=>{
     if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();

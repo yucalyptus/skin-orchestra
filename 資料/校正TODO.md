@@ -150,3 +150,106 @@ researcher で照合済み。**一次取得できず「要確認」で残した2
 
 - statin による CoQ10 低下（血中・筋組織）を示す報告と、補充試験のメタ解析（筋症状への効果は一定しない）の一次文献を確認する。
 - CoQ10 が mevalonate 経路で合成されること、脂溶性抗酸化物質として膜脂質の過酸化を抑えることの標準的な出典も添える。
+
+## fatty-acid-oxidation（脂肪酸とケトン体）
+
+- **glycogen 貯蔵量「肝と筋で約500 g（2,000 kcal 前後）」** ―― 教科書値。出典を確定する。
+- **脳の glucose 消費「1日およそ120 g」** ―― 出典を確定する（Owen 1967 と同系統の古典値か要確認）。
+- **Owen OE, et al. Brain metabolism during fasting. J Clin Invest. 1967;46(10):1589-95. PMID 6061736** ―― 「長期絶食で脳のエネルギーの2/3程度をケトン体が担う」の根拠として引用済み。原著で数値の表現を確認する。
+- **MCT のコラム（§4）** ―― 中鎖脂肪酸が carnitine を介さず膜を越えること、門脈経由で肝へ入ること、ketogenic diet での使用。一次資料を特定する。炭素数の範囲（8〜12）も確認。
+- **脂肪酸の鎖長分類（§1 note）** ―― 短鎖6個以下／中鎖8〜12個／長鎖14個以上。区切りは資料により差があるため本文でもその旨を明記。標準的な出典を1つ決めて揃える。
+
+## amino-acids / skin-boosters ―― ペプチドの照合結果（2026-08-24、researcher 照合済み）
+
+### 確定した（本文に書ける）
+
+- **KTTKS は type I procollagen の C末端プロペプチド（α1(I)）残基212–216**。Katayama K, et al. *J Biol Chem* 1993;268(14):9941-4. **PMID 8486721**（最小活性配列の同定）／*Biochemistry* 1991;30(29):7097-104. **PMID 1854722**（collagen・fibronectin を6〜8倍に。**mRNA は不変＝翻訳後レベル**。「転写を上げる」とは書かないこと）。受容体は未同定。
+- **pal-KTTKS の外用ヒト試験は split-face RCT が1本**。Robinson LR, et al. *Int J Cosmet Sci* 2005;27(3):155-60. **PMID 18492182**（n=93、12週、3 ppm、**P&G 主導＝COI あり、生検なし**）。SR/MA は存在しない。
+- **経皮**：パルミチン酸付加で logP −1.6 → 約3.7（PMID 31829923）。**ヘアレスマウス皮膚**で未修飾 KTTKS はどの層からも検出されず、pal-KTTKS は角層4.2・表皮2.8・真皮0.3 µg/cm²で全層通過はしない（PMID 25143811。**マウス皮膚はヒトより透過を過大評価する**）。ヒトのデータは**摘出ヒト全層皮膚**での microneedle 実験で、蛍光シグナルが2〜22倍（PMID 25033398）。
+- **GHK は1973年にヒト血漿から同定**（Pickart L, Thaler MM. *Nat New Biol* 1973;243:85-7. **PMID 4349963**）。**Cu(II) と錯体を作り細胞への銅取り込みを促す**（*Nature* 1980;288:715-7. **PMID 7453802**）。線維芽細胞の collagen 産生刺激は **10⁻¹²〜10⁻⁹ M、in vitro のみ**（Maquart FX, et al. *FEBS Lett* 1988;238:343-6. **PMID 3169264**）。
+- **GHK-Cu の美容領域の系統的レビューは、20試験中 RCT が2本のみ**と報告（Mokhtar J, et al. *Aesthet Surg J* 2026. **PMID 42619529 / DOI 10.1093/asj/sjag169**）。CO₂ resurfacing 後の外用RCT（n=13）は**客観指標に有意差なし、有意なのは患者満足度のみ**（Miller TR, et al. *Arch Facial Plast Surg* 2006;8(4):252-9. **PMID 16847171**）。
+- **無処置のヒト皮膚では GHK-Cu はほとんど透過せず、microneedle 前処理で実測可能な量が入る**（Li H, et al. *Pharm Res* 2015;32(8):2678-89. **PMID 25690343**）。
+
+### 書いてはいけない
+
+- **「GHK は collagen α2(I) 鎖 853–855 由来」** ―― 一次文献で追えない。Pickart 総説（PMID 29986520・26236730）が引くのは配列の所在を示した論文ではない。**文献で追える内因性の供給源は SPARC の蛋白分解**（Lane TF, et al. *J Cell Biol* 1994;125:929-43. **PMID 7514608**）。
+- **「GHK-Cu が lysyl oxidase に銅を供給して架橋を増やす」** ―― LOX が銅依存酵素であることと、GHK-Cu がその活性を上げることは別の主張。後者の一次文献は見つかっていない。**→ amino-acids §4 には著者判断で「銅を運ぶことから collagen 産生を上げうると説明される」と伝聞形で残してある。断定形にしないこと。**
+- **「GHK-Cu クリームの試験（n=71）でしわが改善」** ―― 実体は2002年のAADポスター抄録。他2件も機関レポートと書籍章。
+- **「Boots の RCT で fibrillin-1 が増えた（PMID 19438432）」を pal-KTTKS の根拠にする** ―― その製品に pal-KTTKS は入っていない（palmitoyl oligopeptide と palmitoyl tetrapeptide-7）。
+- **pal-KTTKS を「signal peptide」と単純に書く** ―― C16-KTTKS の collagen 刺激は**臨界会合濃度付近で立ち上がる**ため、自己集合に伴う現象の可能性がある（Jones RR, et al. *Mol Pharm* 2013;10(3):1063-9. **PMID 23320752**）。
+
+### 注入製剤への配合（skin-boosters 側の宿題）
+
+- **pal-KTTKS 配合の注入製剤は、査読文献・添付文書レベルでは確認できない**（販売店の成分表示が1例のみ＝要確認）。「存在しない」とは書かないこと。
+- **GHK-Cu（INCI: copper tripeptide-1）は Dermaheal HSR・Curenex の成分表に実在する**。ただし**いずれも「化粧品・外用専用、注射用ではない」と表示**されており、日本では未承認。皮内注入は製品表示を逸脱した使用。
+- **アミノ酸系（Jalupro・Sunekos）は遊離アミノ酸でペプチドではない**。polynucleotide 系（Rejuran ほか）も別。**NCTF 135HA に名指しのペプチドはない。**
+- Caregen 系の biomimetic peptide（oligopeptide-24 ほか）は、**独立した査読一次文献が見つからない**（メーカー資料のみ）。
+- **→ skin-boosters §3 は pal-KTTKS・GHK-Cu を注入の文脈で「代表」として挙げているので、この照合結果に合わせて書き直す必要がある。**
+
+### 残る要確認（固有番号を付けない）
+
+- GHK の α2(I) 鎖 853–855 という残基番号
+- GHK-Cu と lysyl oxidase の直接的な機序連関
+- pal-KTTKS を含む注入製剤（販売店表示のみ）
+- GHK-Cu の FDA 503A bulks list 分類（FDA 公式ページから確認できず）
+
+## 注入製剤に入っているペプチドは何か（2026-08-24、researcher 照合済み）
+
+### Jalupro Super Hydro / Young Eye ―― ペプチドが入っている
+
+- **acetyl decapeptide-3（CG-Rejuline）・oligopeptide-24（CG-EDP3）・acetyl tetrapeptide-5（Eyeseryl）** の3種。遊離アミノ酸**7種**（glycine, L-proline, L-leucine, L-lysine, L-alanine, L-valine, L-arginine）＋非架橋HA **80 mg/2.5 mL（3.2%、高＋低分子量）**。
+- 出典は査読文献 Shelemba E, et al. *J Cosmet Dermatol* 2025;24(1):e16586. **PMID 39279301**。**メーカー公式の組成表・IFU は非公開**で、ブランド公式サイト（jalupro.fr）の Super Hydro ページは**アミノ酸を4種と書いている**（本社サイトは成分名を開示せず）。**「全成分はこれで確定」と書かないこと。書くなら「査読文献による」と出典を明示する。**
+- **Classic / HMW はアミノ酸4種で、ペプチドの記載なし**。ただし「不含が確認できた」ではなく「記載がない」。**同じ Jalupro でも製品によって組成が違う。**
+- **acetyl decapeptide-3 と oligopeptide-24 は Caregen（Dermaheal の製造元）由来の分子と同じ INCI 名**。「イタリア系＝アミノ酸、韓国系＝ペプチド」という整理は現行処方では成立しない。
+- acetyl decapeptide-3 が **bFGF の部分配列を模した10残基**とする記載はサプライヤー／INCIデータベースレベルで、**一次論文は未確認＝要確認**。
+- 臨床データは **n=28・単施設・非盲検・非対照**（PMID 39279301、企業が資材提供）。**ペプチドの寄与を分離できる設計ではない**（HA・アミノ酸・注射手技と交絡）。アミノ酸配合HAのSR/MAは Mosteirin M, et al. *J Cosmet Dermatol* 2026. **PMID 41724989**（I²=79–99%、製剤横断、Super Hydro 単独の効果量ではない）。
+
+### BENEV ―― GHK-Cu は入っているが、注射用ではない
+
+- **Exosome Regenerative Complex のメーカー公式成分表に copper tripeptide-1（GHK-Cu）**、acetyl hexapeptide-8、palmitoyl pentapeptide-4／tetrapeptide-7／tripeptide-1、sh-oligopeptide-1/-2、sh-polypeptide-1/-3/-22、glutathione を確認。
+- **ただしメーカー自身が "designed exclusively for topical use … not approved for injection" と明記**。BENEV を「ペプチド入りの注入製剤」の例として書くことはできない。注入は製品の意図された用法から外れる。
+- BENEV の "FDA-registered manufacturer" は**施設登録であって製品承認ではない**。触れるなら区別する。
+- 外用製剤を皮内注射した後の有害事象の症例集積：Park KY. *J Cosmet Dermatol* 2025. **PMID 41097876**（n=4、製品ブランド不特定、病理確認なし。**特定製品の安全性データとしては使えない**）。
+
+### INCI 名の読み方（本文に置くと成分表が読めるようになる）
+
+- **palmitoyl-／acetyl-** ＝脂肪酸・アセチル基を付けた修飾（角層を通しやすくする目的）
+- **〜pentapeptide-4** ＝残基数（penta＝5）＋登録番号。**番号自体に化学的な意味はない**
+- **sh-／rh-** ＝ synthetic human／recombinant human。内因性配列を組換えで作ったもの（sh-oligopeptide-1→EGF、sh-polypeptide-1→bFGF などの対応は**INCI 命名慣行レベル＝製品ごとの確認は要**）
+
+### PMID 照合の結果（2026-08-24、researcher が E-utilities で全件確認）
+
+- **本文・資料の29件は全て実在し、書誌も一致。取得不能・捏造はゼロ。**
+- **ただし PMID 23146065 は引用文脈が誤りだったので本文から削除した。**実体は Lungu C, et al. *Eur J Neurol* 2013;20(3):515-8 の**眼瞼痙攣に対する BoNT 併用パイロット（n=24）**で、美容の外用試験ではなく、**主要評価項目は有意差なし（傾向のみ）**。美容の文脈で引ける代替候補は Wang Y, et al. *Am J Clin Dermatol* 2013;14(2):147-53. **PMID 23417317**（n=60、眼周囲皺、4週、総合有効率48.9% vs 0%。単施設・短期）。透過の実測は Kraeling ME, et al. *Cutan Ocul Toxicol* 2015;34(1):46-52. **PMID 24754410**（ヒト屍体皮膚、10%製剤で角層0.22%・表皮0.01%・**真皮は検出されず**）。**「作用点は神経筋接合部なのに、そこへ届いた証拠がない」という切れ目**として使える。
+- **PMID 8486721 が扱ったのは未修飾の KTTKS** で pal-KTTKS ではない。本文は「もとの5残基（KTTKS）で」と主語を明示した。pal-KTTKS のヒト外用エビデンスは **18492182 の1本のみ**。
+- **GHK の同定は「ヒト血清」**（1973年の原題は human serum、1980年 Nature は plasma）。本文は「ヒトの血液中から」に統一した。
+- **PMID 7514608（SPARC）の主役は KGHK で、血管新生活性は銅非依存**と原著が明記。GHK-Cu の銅依存機序の根拠には使えない。
+- **PMID 20721598 と 20703511 は同一グループのほぼ同題の連作。**2本並べて「複数の報告」と書かない。
+- **Pickart の総説3本（18644225・26236730・29986520）は narrative review で、著者は GHK-Cu 製品企業の創業者＝構造的COI。**機序の根拠として引かない。第三者の系統的レビュー **42619529** に置き換える。
+- **42619529 は online ahead of print で巻号頁が未付与。**引用形式は「*Aesthet Surg J.* 2026 Aug 20 [Epub ahead of print]. doi:10.1093/asj/sjag169」。
+
+
+## 細胞老化（2026-08-26）
+
+セリスタ社の学術情報メール「細胞老化（cellular senescence）の基礎と臨床」を参照し、本文に3点を追記した（誘導刺激の列挙／SASPのTGF-β／p16・p21と細胞周期の接続）。**血中バイオマーカー（IL-6・GDF-15）と「見える化」検査の話は、まだ研究段階であり基礎の章には置かない、という著者判断（2026-08-26）。**下の1件目は本文の根拠としては不要になったが、将来 senolytics か美容内科側で扱うときのために残す。**追記分はいずれも総説レベルで確立した内容として、固有番号を付けずに書いている。** 以下は照合待ち。**出典はすべて業者メール記載の書誌＝二次情報なので、PubMedで一次照合するまで本文に番号を付けない。**
+
+- **血中SASP関連指標とアウトカムの関連**（本文§2の「血中から測る試み」の根拠）：Cummings SR, Lui LY, Zaira A, et al. *GeroScience.* 2025;47:3407-3415. doi:10.1007/s11357-024-01474-9 ／ St Sauver JL, Weston SA, Atkinson EJ, et al. *Aging Cell.* 2023;22:e14006. doi:10.1111/acel.14006。**どの指標が・どの集団で・どのアウトカムと関連したかを実見してから、本文の書き方（「高齢者を追跡した研究で」）を確定する。**
+- **「細胞老化そのものを単独で診断できる標準化された臨床検査はない」**：否定形の主張なので、総説の記述を根拠にする形にする。候補は Zanders L, et al. *Immunol Rev.* 2026;337:e70084 ／ Zubova A, et al. *J Transl Med.* 2026;24:747（いずれも未照合）。
+- ~~**ミトコンドリアRNAの細胞質漏出がSASPを駆動する**~~ → **2026-08-26 照合済み。実在。本文§3に1文で反映した。** Victorelli S, Eppard M, Martini H, et al. Mitochondrial RNA cytosolic leakage drives the SASP. *Nat Commun.* 2025;16:10992. **PMID 41398033**／PMC12705736. doi:10.1038/s41467-025-66159-z（2025-12-15）。
+    - 漏出機序は **BAX/BAK による miMOMP**で、同グループの先行研究（mtDNA→cGAS–STING）と共通。**mtDNA は cGAS–STING、mtRNA は RIG-I/MDA5–MAVS** という役割分担。TLR3 は発現は上がるが機能的に寄与しない。
+    - **寄与の大きさは cGAS–STING が優位**：STING阻害はSASP因子を顕著に低下させるが、MAVSノックダウンの効果はより弱く、併用は相加的でない（下流で収束するか冗長）。→ 本文で「こちらが主」と書かないこと。
+    - 系：ヒト線維芽細胞 **MRC5・IMR90（胎児肺由来。皮膚ではない）**、X線10–20 Gy・複製老化・doxorubicin/etoposide。in vivo はマウス（Bak⁻/⁻ Bax^fl/fl）のFFC食MASH肝。
+    - 依存するSASP成分は **IL-1α・IL-6・IL-8、IFNB1標的、NF-κB/TNFA系**。**p16・p21 の増殖停止は影響を受けない**——本文§3の「増殖停止とSASPは駆動経路が違う」の裏づけとして使える。
+    - **限界：単一グループ・単一論文で独立再現がない。**本文にもその旨を書いてある。再現報告が出たら「独立した再現はまだありません」を外す。
+- **単一マーカーの限界の一次データ**：Seshadri V, Chng C, Tyler J, et al. *Aging Cell.* 2025:e70209（single-cell imaging で senescence biomarker の heterogeneity を示した、とされる）。§2の判定の節を一次データで支えられる候補。
+- 参考：同メールは Senolytics/Senomorphics を D+Q・fisetin・navitoclax／rapamycin・metformin・ruxolitinib で整理しており、[[senolytics]]の分類と矛盾しない。**ruxolitinib（JAK阻害によるSASP抑制）は本教材に未登場**——senomorphicの例として足すかは著者判断。
+
+## 2026-09-12 創傷治癒章の改稿に伴う関連章の確認
+
+- `chapters/ニードルRFの生化学.md` に、HSPピーク・MMP/TGF-βの12週正常化を一般的な評価時期に結び付ける記述と、procollagen I:III比で若返り／線維化を分ける記述が残る。個別の機器・動物モデルの測定結果と、臨床で確立した判断基準を分けて改稿する必要がある。今回は創傷治癒章で共通の時間定数・判定基準としての記述を撤去。
+
+## 2026-09-13 冒頭〜炎症と創傷治癒の21章通読
+
+基本構成と既存イラストを保ち、初出用語・重複・小見出し・キャプションを整理。脂肪酸章の誤解につながる5図を改稿し、元図は別名保存。共通表示の見出し、反応式、図の拡大と読み込み領域を調整。21章のPC幅／390px幅でページの横はみ出しがないことを確認。全文献の再監査とは別作業。
+
+追加の出典照合候補：解糖系のFDG-PET補足と遊走中の線維芽細胞の代謝、TCA回路のthiamine状態判定・血中Mg比率の記述。今回の通読では、これらの既存記述に直接対応する一次引用までは追加していない。
