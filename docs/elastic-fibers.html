@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>エピゲノム ― 生化学で見る美容医療</title>
-<meta name="description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
+<title>弾性線維と膠原線維 ― 生化学で見る美容医療</title>
+<meta name="description" content="コラーゲン線維は皮膚を支える強さを、弾性線維は伸びて戻る力を担います。成人の弾性線維は作り直されにくく、傷む前の構造と機能を回復させる治療は、まだ確立していません。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/elastic-fibers.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="エピゲノム ― 生化学で見る美容医療">
-<meta property="og:description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epigenome_エピゲノム.webp">
+<meta property="og:title" content="弾性線維と膠原線維 ― 生化学で見る美容医療">
+<meta property="og:description" content="コラーゲン線維は皮膚を支える強さを、弾性線維は伸びて戻る力を担います。成人の弾性線維は作り直されにくく、傷む前の構造と機能を回復させる治療は、まだ確立していません。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/elastic-fibers.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/elastic-fibers_弾性線維の組み立て.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -531,7 +531,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
-<a href="epigenome.html" class="active">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
 <a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
@@ -563,7 +563,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
+<a href="elastic-fibers.html" class="active">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
 <a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
 <a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
 <span class="soon">毛包と毛周期<em>準備中</em></span>
@@ -614,45 +614,85 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter" data-chapter="epigenome">
-<p class="kicker">基礎　／　情報をどう読むか</p>
-<h1 class="ch-title">エピゲノム</h1>
-<p class="dateline">公開 2026-08-16　／　最終更新 2026-09-13</p>
-<blockquote>体の細胞は、基本的に共通のDNA配列を持っています。しかし <span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span> と <span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。" data-u="glossary.html#term-9848bc37cb12">fibroblast</span> は、性質も作るものもまるで違います。<strong>この違いを支えているのがエピゲノム</strong>です。エピゲノムは配列を書き換えず、<strong>その領域が開いているか、閉じているか</strong>を調節します。<a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>の transcription factor が遺伝子に結合できるかどうかは、この開閉で決まります。そのパターンは加齢でも変化します。特定の部位のDNAメチル化から年齢などを推定する方法が、<strong>エピジェネティッククロック</strong>です。</blockquote>
+<article class="chapter" data-chapter="elastic-fibers">
+<p class="kicker">美容皮膚科　／　組織の生化学</p>
+<h1 class="ch-title">弾性線維と膠原線維<small>皮膚を支える強さと、伸びて戻る力</small></h1>
+<p class="dateline">公開 2026-09-15</p>
+<p>皮膚は、体の動きに合わせて伸び、力が抜けると元の形に戻ります。同時に、引っ張られても簡単には破れない強さを持っています。この性質を支えるのが、真皮にある<strong>膠原線維（コラーゲン線維）</strong>と、<strong>弾性線維（エラスチンを主成分とする線維）</strong>です。</p>
+<p>コラーゲン線維は引っ張る力に耐え、皮膚が伸びすぎるのを防ぎます。弾性線維は伸びた皮膚が元に戻るのを助けます。両者は同じ真皮の中で働きますが、分子の構造も、傷んだあとの作り直され方も異なります。</p>
+<p>コラーゲンの合成と線維への組み立ては<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。ここでは、<strong>二つの線維の役割、作られ方と更新、傷み方を比較</strong>し、治療でどこまで回復できるかを考えます。弾性線維については、材料のエラスチンが線維になる過程も詳しく見ていきます。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead">エピゲノムは、<strong>DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするか</strong>を決める仕組みです。<br><br>細胞ごとの性質を保っているのはこの開閉パターンで、<strong>加齢とともに乱れます。</strong>だから老化の指標として測られます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　配列は変えない。「読みやすさ」を変える</a></li><li><a href="#s2">2　DNA methylation：DNAそのものへの目印</a></li><li><a href="#s3">3　histone modification と chromatin remodeling：histone 側からの調節</a></li><li><a href="#s4">4　epigenetic drift：加齢で開閉パターンがぼやける</a></li><li><a href="#s5">5　epigenetic clock は何を測っているか</a></li><li><a href="#s6">6　NAD⁺ – sirtuin – chromatin の接点</a></li></ul></nav><h2 id="s1">1　配列は変えない。「読みやすさ」を変える</h2>
-<p><strong>細胞ごとの性質の違いは、基本的に共通のDNAのどこを使うかによって生まれます。</strong> 細胞ごとに違うのは、<strong>転写因子や酵素がその配列のどこに近づけるか</strong>です。</p>
-<p>核の中でDNAは裸で伸びているわけではなく、タンパク質に巻き付いて折りたたまれた状態で収まっています。きつく畳まれた領域には転写因子も酵素も近づけず、そこにある遺伝子は読まれません。緩んだ領域には近づけます。この近づけるかどうかを <strong>chromatin accessibility（クロマチンの開き具合）</strong> と呼びます。決めているのは、DNAやタンパク質に付いた化学的な目印（メチル基・アセチル基など）と、その畳み方です。</p>
-<p><strong>この目印と畳み方のパターン全体が、エピゲノムです。</strong> 目印を付け外しするのは専用の酵素で、エピゲノムはその結果として細胞が持っている状態を指します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピゲノム.webp" alt="クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。" width="1672" height="941" loading="lazy"><figcaption>クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。図は同じDNA配列の読みやすさの違いを示す。</figcaption></figure>
-<p>一度確立された読み分けは、細胞分裂を越えてある程度受け継がれます。</p>
-<h2 id="s2">2　DNA methylation：DNAそのものへの目印</h2>
-<p>DNAの特定の塩基（多くは <strong>CpG</strong>＝C の隣に G が並ぶ配列の、その C）に<strong>メチル基</strong>が付く修飾です。</p>
-<p><strong>methylation＝常に遺伝子OFF、ではありません。</strong> 遺伝子の<strong>プロモーター領域</strong>のメチル化は発現抑制と関連しやすい一方、<strong>遺伝子本体（gene body）</strong>のメチル化はむしろ発現と正に相関することもあります。「メチル化が付いた＝その遺伝子が黙った」と機械的に読まないこと。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_DNAメチル化.webp" alt="DNAメチル化の意味は、付く場所によって異なる。" width="1672" height="941" loading="lazy"><figcaption>DNAメチル化の意味は、付く場所によって異なる。プロモーターの抑制と遺伝子本体のメチル化を分けて見る。</figcaption></figure>
-<h2 id="s3">3　histone modification と chromatin remodeling：histone 側からの調節</h2>
-<p>DNAは <strong>histone</strong> というタンパク質に巻き付いており、DNA＋histone のまとまりを <strong>chromatin</strong> と呼びます。読みやすさは、この histone 側から二系統で調節されます。</p>
-<ul><li><strong>histone modification</strong>：histone の尾部に化学修飾（アセチル化、メチル化、リン酸化、ユビキチン化など）が付き、巻きを緩める／締める方向に働く。アセチル化は緩める側に関与しやすいのが目安だが、修飾の種類・位置しだいで向きは変わる</li><li><strong>chromatin remodeling</strong>：専用の装置（remodeler）が <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span> を使って、ヌクレオソームの巻き付きを<strong>物理的にずらす</strong>。転写因子や酵素がDNAに近づけるかどうかが変わる</li></ul>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_ヒストンとクロマチン.webp" alt="左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。" width="1672" height="941" loading="lazy"><figcaption>左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。読みやすさはこの二系統の重ね合わせで決まる</figcaption></figure>
-<p>methylation・histone修飾・remodeling は連動して働き、「どの領域を今アクセス可能にするか」を決めています。</p>
-<h2 id="s4">4　epigenetic drift：加齢で開閉パターンがぼやける</h2>
-<p>若いときにきれいに保たれていた開閉パターンは、加齢とともに少しずつ<strong>ずれ・ばらつき（epigenetic drift）</strong>を蓄積します。本来閉じておくべき領域が緩んだり、開けておくべき領域が締まったりして、細胞ごとのばらつきが増えます。<strong>配列の突然変異ではありません。</strong> これが加齢の特徴のひとつ（<strong>エピゲノム変化</strong>）として <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。" data-u="glossary.html#term-d2cc465eadb1">Hallmarks of Aging</span> に挙がります（→ <a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティックドリフト.webp" alt="加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。" width="1672" height="941" loading="lazy"><figcaption>加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。DNA配列の突然変異とは異なる。</figcaption></figure>
-<h2 id="s5">5　epigenetic clock は何を測っているか</h2>
-<p><strong>epigenetic clockは、DNAメチル化のパターンから年齢などを推定する統計モデルです。</strong> ランダムなばらつきであるdriftの程度を、そのまま点数にしたものではありません。 あらかじめ選ばれた多数のCpG部位のメチル化状態を測定し、統計モデルに入れて「エピジェネティック年齢」を出します。測っているのは §2 の DNA methylation で（<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4015143/" target="_blank" rel="noopener">Horvathの多組織時計の研究</a>）、抗加齢・longevity の領域では、これが老化の指標として使われています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティック時計.webp" alt="選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。" width="1672" height="941" loading="lazy"><figcaption>選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。時計の値の変化だけでは、機能や見た目の改善は判定できない。</figcaption></figure>
-<p>この数値は <strong>methylation から推定した老化の一断面</strong>であり、多面的な老化（<a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>の12項目）の総合成績ではありません。組織・時計の種類・解析法で値は変わります。そして図の下段——「時計の数値が変わる」→「生物学的機能が改善する」→「見た目・臨床結果が改善する」の矢印は、<strong>それぞれ別に検証が必要</strong>です。</p>
-<h2 id="s6">6　<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span> – <span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。" data-u="glossary.html#term-6588d1474b33">sirtuin</span> – chromatin の接点</h2>
-<p>エピゲノムと代謝はつながっています（<a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>の「ミトコンドリアの状態は代謝物の形で核へ伝わる」の続き）。<strong>sirtuin</strong>はNAD⁺を使ってタンパク質の修飾を変える酵素群です。その一部はhistoneからアセチル基を外し、クロマチンの状態や転写を調節します。</p>
-<p>NAD⁺の利用可能量が変わると、sirtuinを介した調節にも影響しえます。作用する場所や標的はsirtuinごとに異なるため、NAD⁺の増減だけで遺伝子全体の読みやすさが一方向に変わるわけではありません。ここで言えるのは生化学的な接点までで、NAD⁺を増やす介入が実際にどこまで届くかは <a class="chref" href="nad.html">NAD⁺</a>・NAD⁺前駆体 で扱います。</p>
+<blockquote class="lead"><strong>コラーゲン線維は皮膚を支える強さを、弾性線維は伸びて戻る力を担います。成人の弾性線維は作り直されにくく、傷む前の構造と機能を回復させる治療は、まだ確立していません。</strong></blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　コラーゲンとエラスチンは、何が違うのか</a></li><li><a href="#s2">2　作られ方と、更新の違い</a></li><li><a href="#s3">3　二つの線維は、どのように傷むのか</a></li><li><a href="#s4">4　治療で、どこまで回復できるのか</a></li></ul></nav><h2 id="s1">1　コラーゲンとエラスチンは、何が違うのか</h2>
+<p><strong>コラーゲン（<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span>）とエラスチン（<span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う弾性線維の本体。tropoelastin を fibrillin 足場に沈着させ LOX が架橋して組まれる。成人では回転が極めて遅く（半減期は数十年）、collagen のように刺激で増やす余地がない。" data-u="glossary.html#term-b160c75bd9a0">elastin</span>）はタンパク質の名前</strong>です。コラーゲン分子が集まってできるのが膠原線維です。弾性線維は、エラスチンを中心に、fibrillin（フィブリリン）というタンパク質に富む細い線維が組み合わさった構造です。この細い線維を<strong>微細線維（microfibril）</strong>と呼びます。</p>
+<div class="tblwrap"><table><thead><tr><th></th><th>膠原線維（コラーゲン線維）</th><th>弾性線維</th></tr></thead><tbody><tr><td>主な構造</td><td>主にI型・III型コラーゲンが集まり、束を作る</td><td>エラスチンと、fibrillinに富む微細線維が組み合わさる</td></tr><tr><td>力がかかったとき</td><td>波打った線維が伸びて張り、さらに引っ張る力に抵抗する</td><td>伸びて変形し、力が抜けると元に戻る</td></tr><tr><td>皮膚での役割</td><td>引っ張りに耐える強さを保ち、過度な伸展を抑える</td><td>動きに合わせて伸縮し、形の回復を助ける</td></tr><tr><td>たとえると</td><td>引っ張る力を受け止めるロープの束</td><td>伸ばすと戻るゴムの網</td></tr></tbody></table></div>
+<p>皮膚では、この二つが重なって働きます。伸ばし始めには弾性線維が変形に応じ、さらに伸ばすとコラーゲン線維が張って抵抗が強くなります。皮膚をつまんで離したときの戻りには、これらの線維に加えて、<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>の水分や皮下組織も関わります。</p>
+<p>この役割の違いは、分子の構造と線維の組み立て方から生まれます。</p>
+<h2 id="s2">2　作られ方と、更新の違い</h2>
+<p>どちらも線維芽細胞が材料を作り、細胞外で線維に組み立てます。材料を分泌したあとに、分子の配置と架橋が進むことが共通しています。</p>
+<div class="tblwrap"><table><thead><tr><th>過程</th><th>コラーゲン線維</th><th>弾性線維</th></tr></thead><tbody><tr><td>細胞内で作る材料</td><td>小胞体内で加工され、三重らせんになった<span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。" data-u="glossary.html#term-f2e750a6fc61">procollagen</span></td><td>エラスチンの前駆体tropoelastin</td></tr><tr><td>細胞外での組立</td><td>両端のpropeptideが切断され、分子がずれて並んで原線維・線維になる</td><td>tropoelastinが集まり、fibrillinに富む微細線維に沿って配置される</td></tr><tr><td>架橋の役割</td><td>分子を結び、線維の強さと安定性を支える</td><td>分子の鎖をつなぎ、繰り返し伸縮できる網を保つ</td></tr><tr><td>成人での更新</td><td>合成と分解が続き、創傷などに応じて産生と再構築が進む</td><td>成熟エラスチンは長く残り、入れ替わりは緩やか</td></tr></tbody></table></div>
+<p>コラーゲンの細胞内加工・分泌・線維形成の詳細は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。ここでは、異なる組み立て方をする弾性線維を補足します。</p>
+<h3>エラスチンが、伸びて戻る線維になるまで</h3>
+<p>線維芽細胞は、エラスチンの材料となる<strong>tropoelastin（トロポエラスチン）</strong>を作り、細胞外へ分泌します。材料は互いに集まり、fibrillinに富む微細線維の足場に沿って配置されます。そこへ分子同士を結ぶ<strong>架橋</strong>ができ、安定したエラスチンになります。</p>
+<p>エラスチンの分子の鎖は、力を受けると伸びる方向へ並び、力が抜けると元の乱れた配置へ戻ろうとします。架橋は鎖同士が離れてしまうのを防ぎ、繰り返し伸縮できる網を保ちます。</p>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/elastic-fibers_弾性線維の組み立て.webp" alt="線維芽細胞が分泌したtropoelastinが、fibrillinに富む微細線維の足場に配置され、架橋を経て弾性線維になる。" width="1024" height="1536" loading="lazy"><figcaption>線維芽細胞が分泌したtropoelastinが、fibrillinに富む微細線維の足場に配置され、架橋を経て弾性線維になる。材料の分泌と足場の形成は協調して進む。右上はコラーゲンとの組立の比較。</figcaption></figure>
+<p><strong>伸びて戻る力には、エラスチンの性質と、線維としてつながった構造の両方が必要です。</strong> 材料の産生、足場への配置、架橋がそろって、力を伝えられる線維になります。</p>
+<details class="supplement"><summary>詳しく：架橋と、組み立てを助けるタンパク質</summary><div class="supplement-body"><p>架橋には、銅を必要とするlysyl oxidase（<span class="term" tabindex="0" data-t="LOX" data-d="lysyl oxidase。lysine・hydroxylysine を酸化的脱アミノ化して線維間に共有結合の架橋をかけるCu²⁺依存の酵素。弾性線維の desmosine 架橋も担う。" data-u="glossary.html#term-853ccd68cb25">LOX</span>）とその関連酵素が関わります。lysine残基の一部を反応しやすい形に変え、分子間の結合が形成されます。成熟エラスチンに特徴的なのが、desmosine・isodesmosineという架橋です。</p>
+<p>材料を足場に配置する過程にはfibulin-5なども関わります。fibulin-5を欠くマウスでは、弾性線維の配列が乱れ、皮膚の弛緩や肺・血管の異常が生じます。材料の量に加え、組み立てを助けるタンパク質が機能に重要であることを示す研究です。<a class="ext" href="https://doi.org/10.1038/415168a" target="_blank" rel="noopener">Yanagisawaら, 2002</a></p></div></details>
+<details class="supplement"><summary>詳しく：弾性線維の足場は、表皮の近くまで続く</summary><div class="supplement-body"><p>真皮の深い部分にはエラスチンを多く含む弾性線維があり、表皮に近づくにつれて細い線維へつながります。表皮直下ではfibrillinに富む微細線維が発達しています。光老化したヒト皮膚では、この表皮近くの微細線維の減少と配列の乱れが観察されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10233772/" target="_blank" rel="noopener">Watsonら, 1999</a></p>
+<p>fibrillinの微細線維は、潜在形<span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75">TGF-β</span>を結合したLTBPを介して、成長因子をECMに保持する場にもなります。弾性線維の周囲の構造は、力を支えるとともに細胞へのシグナルにも関わります。その仕組みは<a class="chref" href="ecm.html">細胞外基質（ECM）</a>で扱います。</p></div></details>
+<h3>作られた線維は、どのように更新されるか</h3>
+<p>コラーゲンは成人の皮膚でも合成と分解が続き、創傷治癒などで産生が増えます。線維の配列や架橋も変わりながら、組織が作り直されます。</p>
+<p>弾性線維は発生・成長期に盛んに形成され、成熟したエラスチンは長く組織に残ります。成人での更新は緩やかで、傷んだ線維を正常な構造へ組み直す能力は限られています。長く働ける一方で、長年受けた損傷が蓄積しやすい成分です。ヒト皮膚から取り出したエラスチンの化学変化を調べた研究も、その長寿命と更新の乏しさを支持しています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14632798/" target="_blank" rel="noopener">Ritz-Timmeら, 2003</a></p>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/elastic-fibers_回転速度の非対称.webp" alt="コラーゲンの更新と、長く組織に残る弾性線維を比較する模式図。" width="1024" height="1536" loading="lazy"><figcaption>コラーゲンの更新と、長く組織に残る弾性線維を比較する模式図。成人でも弾性線維の成分は産生されるが、正常な線維の配列と伸縮機能の回復には、材料の産生に加えて組立が必要になる。</figcaption></figure>
+<h2 id="s3">3　二つの線維は、どのように傷むのか</h2>
+<p>どちらの線維も酵素で分解され、紫外線や糖化の影響を受けます。ただし、分解する酵素や、組織に現れる変化には違いがあります。</p>
+<div class="tblwrap"><table><thead><tr><th>変化</th><th>コラーゲン線維</th><th>弾性線維</th></tr></thead><tbody><tr><td>酵素による分解</td><td><span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。" data-u="glossary.html#term-f1261b95fd78">MMP</span>-1などがI型・III型コラーゲンを切断する</td><td>好中球エラスターゼやMMP-12などがエラスチンを切断する</td></tr><tr><td>光老化</td><td>線維の断片化と産生低下によって、連続した構造が失われる</td><td>正常な線維・微細線維の配列が乱れ、変性したエラスチンを含む物質が蓄積する</td></tr><tr><td>糖化</td><td><span class="term" tabindex="0" data-t="AGE" data-d="還元糖とタンパク質の非酵素反応（Schiff base → Amadori）の最終産物。酵素が介在しないので逆反応がなく、できた架橋は外れない。蓄積は曝露時間で決まり、長寿命のcollagen・elastinが標的。" data-u="glossary.html#term-4aaae5b2c198">AGE</span>架橋などで硬くなり、酵素で分解されにくくなる</td><td>糖化修飾により、伸縮の性質や酵素による分解のされやすさが変わる</td></tr></tbody></table></div>
+<h3>分解酵素：エラスチンにもMMPが働く</h3>
+<p>コラーゲンはMMPによる切断後、さらに分解され、細胞による取り込みと処理も受けます。分解とその調節は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。</p>
+<p><strong>エラスターゼは、エラスチンを分解する酵素の呼び方</strong>です。好中球エラスターゼはセリンプロテアーゼに分類され、<span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span>などが作るMMP-12はMMPに分類されます。MMP-12はマクロファージエラスターゼとも呼ばれ、ヒト皮膚から取り出した成熟エラスチンを切断することが確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18334288/" target="_blank" rel="noopener">ヒト皮膚エラスチンの分解研究</a></p>
+<h3>紫外線：正常な線維が傷み、変性した成分が蓄積する</h3>
+<p>紫外線は酸化ストレスやECMを分解する酵素の増加を通じて、真皮の線維構造を傷めます。光老化では、コラーゲンの断片化に加え、弾性線維とその周囲の微細線維の配列も乱れます。</p>
+<p>慢性的に日光を浴びた皮膚では、真皮に変性したエラスチンを含む物質が塊状に蓄積します。この組織所見を<strong>日光弾性線維症（solar elastosis）</strong>と呼びます。光老化を特徴づける所見の一つです。正常な細い線維のつながりが損なわれ、異常な物質の蓄積が進むため、線維の量と伸びて戻る機能が一致しにくくなります。</p>
+<h3>糖化：長く残るタンパク質に化学的な変化が積み重なる</h3>
+<p>コラーゲンとエラスチンは、長く組織に残る間に糖などとの反応を受け、AGEsが蓄積します。コラーゲンではAGE架橋が硬さを増し、糖化修飾はMMPによる分解を受けにくくします。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28634008/" target="_blank" rel="noopener">Panwarら, 2018</a></p>
+<p>エラスチンも糖化の影響を受けます。ヒト皮膚の研究では、弾性線維の網や日光弾性線維症の部位にAGEの蓄積が観察されています。<a class="ext" href="https://doi.org/10.1046/j.1365-2133.2001.04275.x" target="_blank" rel="noopener">Jeanmaireら, 2001</a></p>
+<p>糖化に伴う分子間の結合や水分状態の変化は、線維の硬さと伸縮のしやすさに影響します。ブタ大動脈から取り出したエラスチンを高濃度の糖に浸した実験では、硬さが増し、伸ばして戻す際のエネルギー損失も増えました。皮膚でどの程度の機能低下を起こすかは、組織全体での評価が必要です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26042769/" target="_blank" rel="noopener">Wangら, 2015</a></p>
+<p>糖化とAGEの仕組みは<a class="chref" href="glycation.html">糖化とAGE</a>で扱います。</p>
+<h3>皮膚の強さとしなやかさを保つために</h3>
+<p>生活習慣やスキンケアでは、紫外線への曝露を減らし、高血糖や持続する炎症などに対応することが、損傷の蓄積を抑える基本になります。活性酸素は、紫外線や炎症による傷みを仲介する仕組みの一つです。日焼け止めによる光老化の進行抑制や、1型糖尿病での長期の血糖管理と皮膚コラーゲンの糖化産物の少なさを示すヒト研究があります。予防の仕組みは<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>や<a class="chref" href="glycation.html">糖化とAGE</a>で扱います。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23732711/" target="_blank" rel="noopener">Hughesら, 2013</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10102706/" target="_blank" rel="noopener">DCCT皮膚コラーゲン研究, 1999</a></p>
+<h2 id="s4">4　治療で、どこまで回復できるのか</h2>
+<h3>コラーゲンの産生・再構築を促す治療と、弾性線維の回復</h3>
+<p>皮膚のハリやしわの改善を目指す美容医療では、<strong>線維芽細胞に働きかけ、コラーゲンの産生や再構築を促すこと</strong>が、治療の大きな柱になっています。レーザーや高周波（RF）、コラーゲンの産生を誘導する注入治療などがあり、刺激の与え方や組織の反応は治療によって異なります。<a class="ext" href="https://doi.org/10.1001/archderm.140.11.1326" target="_blank" rel="noopener">Orringerら, 2004</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19143021/" target="_blank" rel="noopener">Hantashら, 2009</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25703057/" target="_blank" rel="noopener">Steinら, 2015</a></p>
+<p>皮膚が伸びて戻る力を取り戻すには、弾性線維の回復も重要です。コラーゲンの産生が増えたとき、弾性線維もどこまで作り直されるかが、もう一つの課題になります。</p>
+<p>弾性線維についても、レチノイン酸外用後にfibrillinに富む微細線維が増えた報告があります。さらに、頸部・デコルテを対象とした20人のCaHA注入の予備研究では、エラスチン染色の増加と、皮膚を吸引して変形・戻りを測るCutometerによる弾力の改善が報告されています。材料の量と皮膚の力学特性を合わせて調べる研究も進んでいます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11348454/" target="_blank" rel="noopener">Watsonら, 2001</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28095536/" target="_blank" rel="noopener">Yutskovskaya・Kogan, 2017</a></p>
+<h3>弾性線維の回復には、三つの課題がある</h3>
+<p><strong>一つは、成人では作り直しにくいことです。</strong> エラスチンの更新は緩やかで、機能する線維を作るには、材料の産生に加えて微細線維への配置と架橋が必要です。傷んだ線維のつながりまで組み直すことが課題になります。</p>
+<p><strong>二つ目は、機能の回復を評価する難しさです。</strong> 染色では成分の量や分布を、組織像では線維の配列を、力学的な測定では皮膚の変形と戻りを調べます。皮膚全体の弾力にはコラーゲンや水分も影響するため、改善のどれだけが弾性線維の再建によるものかを見極める必要があります。</p>
+<p><strong>三つ目は、傷む前の構造と機能を取り戻す治療が、まだ確立していないことです。</strong> 改善を示す研究はありますが、正常な弾性線維網をどこまで再建し、その働きがどれだけ続くかは、治療ごとの検証が必要です。</p>
+<p>コラーゲンについても、産生量に加えて線維の配列や架橋が皮膚の性質に関わります。<strong>皮膚の回復を考えるには、コラーゲンの支える強さと、弾性線維の伸びて戻る力の両方が重要です。</strong> 治療ごとの作用は熱・光・機械刺激やレチノイド外用の生化学、皮下組織も含むたるみの構造はたるみの多層構造で扱います。</p>
+<aside class="column"><p class="col-t">コラム</p><h3 class="col-h">美容医療で、若い頃の皮膚を取り戻せるのか</h3><p>美容医療では、線維芽細胞を刺激してコラーゲンの産生を促し、皮膚の改善を目指す治療が行われています。そのとき、コラーゲン以外の成分も、若い頃の状態に近づいているのでしょうか。</p>
+<p>弾性線維についても研究は進んでいます。CaHA注入後に、エラスチン染色の増加と皮膚の弾力の改善を同時に認めたヒト研究があります。こうした改善のうち、弾性線維の再建がどれだけを担い、若い頃の構造にどこまで近づいているのか。そこが、さらに知りたいところです。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28095536/" target="_blank" rel="noopener">Yutskovskaya・Kogan, 2017</a></p>
+<p>新しく作ることと同時に、傷んだ成分の行方も気になります。断片化したコラーゲンや変性したエラスチン、AGEで架橋された成分は、治療後のリモデリングでどうなるのでしょうか。</p>
+<p>一部のレーザー治療では、照射部位の損傷に続いて分解と再合成が進みます。フラクショナルレーザー後に、エラスチンを含む真皮の成分が表皮を通って排出される経路も報告されています。ただし、処理されるのは照射した領域を中心とする一部の組織です。傷んだ成分だけを選んだり、すべてを除去したりするものではなく、既存のAGE架橋がどれだけ減るかも、これらの研究では分かりません。<a class="ext" href="https://doi.org/10.1001/archderm.140.11.1326" target="_blank" rel="noopener">Orringerら, 2004</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16965143/" target="_blank" rel="noopener">Hantashら, 2006</a></p>
+<p>AGEで修飾されたコラーゲンは、MMPで分解されにくくなることが実験で示されています。エラスチンでも、糖化による修飾でエラスターゼによる分解を受けにくくなる報告があります。組織に直接損傷を与えない治療でも、こうした残りやすい成分の除去まで進むのか。新しい線維が増える一方で、古い成分はどれだけ残るのか。この点は、まだ十分に確かめられていないように思います。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28634008/" target="_blank" rel="noopener">Panwarら, 2018</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21956123/" target="_blank" rel="noopener">エラスチンの糖化修飾の研究</a></p>
+<p>コラーゲン自体も、量が増えたあとにどう組み立てられるかが大切です。正常な真皮では、線維がさまざまな方向に組み合わさって力を受け止めます。修復の過程でできた線維は、その後も分解と再合成を受け、量や配列、架橋が変わっていきます。瘢痕では線維の配列に加え、蓄積量や収縮なども変わり、皮膚の硬さや動きに影響します。</p>
+<p>PLLA投与後の組織では、異物への反応に伴って粒子の周囲にI型・III型コラーゲンが形成されます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25703057/" target="_blank" rel="noopener">Steinら, 2015</a></p>
+<p><strong>粒子の周囲にできた線維は、時間とともに正常な皮膚の構造を補うものになっていくのでしょうか。</strong> 粒子が分解されたあと、作られた線維はどれだけ残り、周囲の線維とどうつながるのか。厚みやボリュームの変化に加えて、その後の組織の姿も大切だと思います。</p>
+<p>新しい線維が作られ、傷んだ成分が取り除かれ、自然な配列としなやかな働きを取り戻す。美容医療で若い頃の皮膚を目指すなら、そこまで近づける治療を期待したいと思います。</p></aside>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>エピゲノムは、DNA配列を変えずに遺伝子の読みやすさを調節し、細胞ごとの性質を保っている。仕組みは DNA methylation・histone modification・chromatin remodeling の連動。</li><li>methylation は常にOFFを意味しない（プロモーターと gene body で向きが違いうる）。</li><li>加齢で開閉パターンがぼやける（<strong>epigenetic drift</strong>）。配列の変異ではない。</li><li><strong>epigenetic clockは、選ばれたCpG部位のDNA methylationから年齢などを推定する。</strong> 値は組織・時計の種類・解析法で変わり、<strong>時計が戻ること＝臨床的若返りの証明ではない</strong>。</li><li>NAD⁺–sirtuin を介して、代謝状態とエピゲノムは接続している。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/epigenome_まとめ.webp" alt="DNA配列を変えずに読みやすさを調節" width="1672" height="941" loading="lazy"><figcaption>DNA配列を変えずに読みやすさを調節</figcaption></figure>
-<blockquote><a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>では、その読みやすさを変えにくる側——細胞が外からの刺激をどう受け取り、核まで伝えるかを見ます。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-16</time>初公開</li></ul></section>
+<ol class="goal"><li>膠原線維は引っ張る力に耐え、弾性線維は伸びた皮膚の形が戻るのを助けます。</li><li>両者とも細胞外で配置と架橋を経て線維になります。コラーゲンの合成と分解が続く一方、成熟エラスチンの更新は緩やかです。</li><li>両者とも酵素による分解・紫外線・糖化の影響を受けます。分解する酵素と、組織に現れる変化には違いがあります。</li><li>治療による改善を示す研究はあります。弾性線維は作り直しにくく、機能回復の評価も難しいため、傷む前の構造と機能を取り戻す治療の確立が課題です。</li></ol>
+<h3>Evidence meter</h3>
+<ul class="evidence"><li>コラーゲン線維と弾性線維の役割、弾性線維の組立：<strong>確立した構造・生化学</strong></li><li>光老化皮膚の微細線維の減少、弾性線維関連部位のAGE蓄積：<strong>ヒト組織で観察</strong></li><li>レチノイン酸外用後のfibrillinに富む微細線維の増加：<strong>小規模なヒト研究で報告</strong></li><li>CaHA注入後のエラスチン染色増加と皮膚の力学特性の改善：<strong>小規模なヒト研究で報告</strong></li><li>正常な弾性線維網と伸縮機能の持続的な再建：<strong>治療ごとに検証が必要</strong></li></ul>
+<h3>中核参考文献</h3>
+<ul><li>Yanagisawa H, et al. Fibulin-5 is an elastin-binding protein essential for elastic fibre development in vivo. <em>Nature.</em> 2002;415:168–171. <a class="ext" href="https://doi.org/10.1038/415168a" target="_blank" rel="noopener">DOI: 10.1038/415168a</a>.</li><li>Watson REB, et al. Fibrillin-rich microfibrils are reduced in photoaged skin. Distribution at the dermal-epidermal junction. <em>J Invest Dermatol.</em> 1999;112:782–787. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10233772/" target="_blank" rel="noopener">PMID: 10233772</a>. <a class="ext" href="https://doi.org/10.1046/j.1523-1747.1999.00562.x" target="_blank" rel="noopener">DOI: 10.1046/j.1523-1747.1999.00562.x</a>.</li><li>Watson REB, et al. A short-term screening protocol, using fibrillin-1 as a reporter molecule, for photoaging repair agents. <em>J Invest Dermatol.</em> 2001;116:672–678. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11348454/" target="_blank" rel="noopener">PMID: 11348454</a>. <a class="ext" href="https://doi.org/10.1046/j.1523-1747.2001.01322.x" target="_blank" rel="noopener">DOI: 10.1046/j.1523-1747.2001.01322.x</a>.</li><li>Ritz-Timme S, Laumeier I, Collins MJ. Aspartic acid racemization: evidence for marked longevity of elastin in human skin. <em>Br J Dermatol.</em> 2003;149:951–959. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14632798/" target="_blank" rel="noopener">PMID: 14632798</a>. <a class="ext" href="https://doi.org/10.1111/j.1365-2133.2003.05618.x" target="_blank" rel="noopener">DOI: 10.1111/j.1365-2133.2003.05618.x</a>.</li><li>Jeanmaire C, Danoux L, Pauly G. Glycation during human dermal intrinsic and actinic ageing: an in vivo and in vitro model study. <em>Br J Dermatol.</em> 2001;145:10–18. <a class="ext" href="https://doi.org/10.1046/j.1365-2133.2001.04275.x" target="_blank" rel="noopener">DOI: 10.1046/j.1365-2133.2001.04275.x</a>.</li><li>Wang Y, et al. Effect of glucose on the biomechanical function of arterial elastin. <em>J Mech Behav Biomed Mater.</em> 2015;49:244–254. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26042769/" target="_blank" rel="noopener">PMID: 26042769</a>.</li><li>Hughes MCB, et al. Sunscreen and prevention of skin aging: a randomized trial. <em>Ann Intern Med.</em> 2013;158:781–790. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23732711/" target="_blank" rel="noopener">PMID: 23732711</a>.</li></ul>
+<ul><li>Orringer JS, et al. Connective tissue remodeling induced by carbon dioxide laser resurfacing of photodamaged human skin. <em>Arch Dermatol.</em> 2004;140:1326–1332. <a class="ext" href="https://doi.org/10.1001/archderm.140.11.1326" target="_blank" rel="noopener">DOI: 10.1001/archderm.140.11.1326</a>.</li><li>Hantash BM, et al. Bipolar fractional radiofrequency treatment induces neoelastogenesis and neocollagenesis. <em>Lasers Surg Med.</em> 2009;41:1–9. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19143021/" target="_blank" rel="noopener">PMID: 19143021</a>. <a class="ext" href="https://doi.org/10.1002/lsm.20731" target="_blank" rel="noopener">DOI: 10.1002/lsm.20731</a>.</li><li>Hantash BM, et al. Laser-induced transepidermal elimination of dermal content by fractional photothermolysis. <em>J Biomed Opt.</em> 2006;11:041115. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16965143/" target="_blank" rel="noopener">PMID: 16965143</a>. <a class="ext" href="https://doi.org/10.1117/1.2241745" target="_blank" rel="noopener">DOI: 10.1117/1.2241745</a>.</li></ul>
+<ul><li>Stein P, et al. The biological basis for poly-L-lactic acid-induced augmentation. <em>J Dermatol Sci.</em> 2015;78:26–33. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25703057/" target="_blank" rel="noopener">PMID: 25703057</a>. <a class="ext" href="https://doi.org/10.1016/j.jdermsci.2015.01.012" target="_blank" rel="noopener">DOI: 10.1016/j.jdermsci.2015.01.012</a>.</li></ul>
+<ul><li>Panwar P, et al. Aging-associated modifications of collagen affect its degradation by matrix metalloproteinases. <em>Matrix Biol.</em> 2018;65:30–44. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28634008/" target="_blank" rel="noopener">PMID: 28634008</a>. <a class="ext" href="https://doi.org/10.1016/j.matbio.2017.06.004" target="_blank" rel="noopener">DOI: 10.1016/j.matbio.2017.06.004</a>.</li></ul>
+<ul><li>Yutskovskaya YA, Kogan EA. Improved Neocollagenesis and Skin Mechanical Properties After Injection of Diluted Calcium Hydroxylapatite in the Neck and Décolletage: A Pilot Study. <em>J Drugs Dermatol.</em> 2017;16:68–74. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28095536/" target="_blank" rel="noopener">PMID: 28095536</a>.</li></ul>
+
 </article>
-<nav class="pager"><a class="prev" href="dna-to-protein.html"><span class="lbl">前へ</span>DNAからタンパク質まで</a><a class="next" href="receptors-signaling.html"><span class="lbl">次へ</span>受容体と細胞内シグナル</a></nav>
+<nav class="pager"><a class="prev" href="fibroblast-collagen.html"><span class="lbl">前へ</span>線維芽細胞とコラーゲン</a><a class="next" href="glycation.html"><span class="lbl">次へ</span>糖化とAGE</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>

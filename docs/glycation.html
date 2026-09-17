@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>エピゲノム ― 生化学で見る美容医療</title>
-<meta name="description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
+<title>糖化とAGE ― 生化学で見る美容医療</title>
+<meta name="description" content="糖化はタンパク質の性質を変え、長く残る線維に蓄積します。AGEの形成を抑えることと、すでに変化した組織を更新することの両方が重要です。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/glycation.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="エピゲノム ― 生化学で見る美容医療">
-<meta property="og:description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epigenome_エピゲノム.webp">
+<meta property="og:title" content="糖化とAGE ― 生化学で見る美容医療">
+<meta property="og:description" content="糖化はタンパク質の性質を変え、長く残る線維に蓄積します。AGEの形成を抑えることと、すでに変化した組織を更新することの両方が重要です。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/glycation.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/glycation_糖化の始まり_模式図.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -531,7 +531,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
-<a href="epigenome.html" class="active">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
 <a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
 <div class="part">エネルギー</div>
@@ -564,7 +564,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
+<a href="glycation.html" class="active">糖化とAGE<span class="badge bupd">更新</span></a>
 <a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
 <span class="soon">毛包と毛周期<em>準備中</em></span>
 <span class="soon">脂肪<em>準備中</em></span>
@@ -614,45 +614,89 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter" data-chapter="epigenome">
-<p class="kicker">基礎　／　情報をどう読むか</p>
-<h1 class="ch-title">エピゲノム</h1>
-<p class="dateline">公開 2026-08-16　／　最終更新 2026-09-13</p>
-<blockquote>体の細胞は、基本的に共通のDNA配列を持っています。しかし <span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span> と <span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。" data-u="glossary.html#term-9848bc37cb12">fibroblast</span> は、性質も作るものもまるで違います。<strong>この違いを支えているのがエピゲノム</strong>です。エピゲノムは配列を書き換えず、<strong>その領域が開いているか、閉じているか</strong>を調節します。<a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>の transcription factor が遺伝子に結合できるかどうかは、この開閉で決まります。そのパターンは加齢でも変化します。特定の部位のDNAメチル化から年齢などを推定する方法が、<strong>エピジェネティッククロック</strong>です。</blockquote>
+<article class="chapter" data-chapter="glycation">
+<p class="kicker">美容皮膚科　／　組織の生化学</p>
+<h1 class="ch-title">糖化とAGE<small>長く残るタンパク質に積み重なる変化</small></h1>
+<p class="dateline">公開 2026-09-17</p>
+<p><strong>糖化（glycation）とは、糖がタンパク質などに、酵素の働きを介さず化学的に結びつくことです。</strong> ここでは、皮膚を支えるタンパク質の糖化を見ていきます。</p>
+<p>体内の糖は、エネルギー源として使われる一方で、周囲のタンパク質とも少しずつ反応します。コラーゲンやエラスチンもその対象です。糖が結びつき、さらに反応が進むと、タンパク質の形や働きが変わったり、分子同士が余分な結合でつながったりします。</p>
+<p>このような反応から生まれる多様な物質を、<strong>AGEs（advanced glycation end products：終末糖化産物）</strong>と呼びます。長く残る線維では、こうした変化が積み重なり、硬さや分解されやすさに影響します。</p>
+<p>線維の構造や役割は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>と<a class="chref" href="elastic-fibers.html">弾性線維と膠原線維</a>で扱います。ここでは、糖化がどう進み、組織に何を起こすかを見ていきます。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead">エピゲノムは、<strong>DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするか</strong>を決める仕組みです。<br><br>細胞ごとの性質を保っているのはこの開閉パターンで、<strong>加齢とともに乱れます。</strong>だから老化の指標として測られます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　配列は変えない。「読みやすさ」を変える</a></li><li><a href="#s2">2　DNA methylation：DNAそのものへの目印</a></li><li><a href="#s3">3　histone modification と chromatin remodeling：histone 側からの調節</a></li><li><a href="#s4">4　epigenetic drift：加齢で開閉パターンがぼやける</a></li><li><a href="#s5">5　epigenetic clock は何を測っているか</a></li><li><a href="#s6">6　NAD⁺ – sirtuin – chromatin の接点</a></li></ul></nav><h2 id="s1">1　配列は変えない。「読みやすさ」を変える</h2>
-<p><strong>細胞ごとの性質の違いは、基本的に共通のDNAのどこを使うかによって生まれます。</strong> 細胞ごとに違うのは、<strong>転写因子や酵素がその配列のどこに近づけるか</strong>です。</p>
-<p>核の中でDNAは裸で伸びているわけではなく、タンパク質に巻き付いて折りたたまれた状態で収まっています。きつく畳まれた領域には転写因子も酵素も近づけず、そこにある遺伝子は読まれません。緩んだ領域には近づけます。この近づけるかどうかを <strong>chromatin accessibility（クロマチンの開き具合）</strong> と呼びます。決めているのは、DNAやタンパク質に付いた化学的な目印（メチル基・アセチル基など）と、その畳み方です。</p>
-<p><strong>この目印と畳み方のパターン全体が、エピゲノムです。</strong> 目印を付け外しするのは専用の酵素で、エピゲノムはその結果として細胞が持っている状態を指します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピゲノム.webp" alt="クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。" width="1672" height="941" loading="lazy"><figcaption>クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。図は同じDNA配列の読みやすさの違いを示す。</figcaption></figure>
-<p>一度確立された読み分けは、細胞分裂を越えてある程度受け継がれます。</p>
-<h2 id="s2">2　DNA methylation：DNAそのものへの目印</h2>
-<p>DNAの特定の塩基（多くは <strong>CpG</strong>＝C の隣に G が並ぶ配列の、その C）に<strong>メチル基</strong>が付く修飾です。</p>
-<p><strong>methylation＝常に遺伝子OFF、ではありません。</strong> 遺伝子の<strong>プロモーター領域</strong>のメチル化は発現抑制と関連しやすい一方、<strong>遺伝子本体（gene body）</strong>のメチル化はむしろ発現と正に相関することもあります。「メチル化が付いた＝その遺伝子が黙った」と機械的に読まないこと。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_DNAメチル化.webp" alt="DNAメチル化の意味は、付く場所によって異なる。" width="1672" height="941" loading="lazy"><figcaption>DNAメチル化の意味は、付く場所によって異なる。プロモーターの抑制と遺伝子本体のメチル化を分けて見る。</figcaption></figure>
-<h2 id="s3">3　histone modification と chromatin remodeling：histone 側からの調節</h2>
-<p>DNAは <strong>histone</strong> というタンパク質に巻き付いており、DNA＋histone のまとまりを <strong>chromatin</strong> と呼びます。読みやすさは、この histone 側から二系統で調節されます。</p>
-<ul><li><strong>histone modification</strong>：histone の尾部に化学修飾（アセチル化、メチル化、リン酸化、ユビキチン化など）が付き、巻きを緩める／締める方向に働く。アセチル化は緩める側に関与しやすいのが目安だが、修飾の種類・位置しだいで向きは変わる</li><li><strong>chromatin remodeling</strong>：専用の装置（remodeler）が <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span> を使って、ヌクレオソームの巻き付きを<strong>物理的にずらす</strong>。転写因子や酵素がDNAに近づけるかどうかが変わる</li></ul>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_ヒストンとクロマチン.webp" alt="左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。" width="1672" height="941" loading="lazy"><figcaption>左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。読みやすさはこの二系統の重ね合わせで決まる</figcaption></figure>
-<p>methylation・histone修飾・remodeling は連動して働き、「どの領域を今アクセス可能にするか」を決めています。</p>
-<h2 id="s4">4　epigenetic drift：加齢で開閉パターンがぼやける</h2>
-<p>若いときにきれいに保たれていた開閉パターンは、加齢とともに少しずつ<strong>ずれ・ばらつき（epigenetic drift）</strong>を蓄積します。本来閉じておくべき領域が緩んだり、開けておくべき領域が締まったりして、細胞ごとのばらつきが増えます。<strong>配列の突然変異ではありません。</strong> これが加齢の特徴のひとつ（<strong>エピゲノム変化</strong>）として <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。" data-u="glossary.html#term-d2cc465eadb1">Hallmarks of Aging</span> に挙がります（→ <a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティックドリフト.webp" alt="加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。" width="1672" height="941" loading="lazy"><figcaption>加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。DNA配列の突然変異とは異なる。</figcaption></figure>
-<h2 id="s5">5　epigenetic clock は何を測っているか</h2>
-<p><strong>epigenetic clockは、DNAメチル化のパターンから年齢などを推定する統計モデルです。</strong> ランダムなばらつきであるdriftの程度を、そのまま点数にしたものではありません。 あらかじめ選ばれた多数のCpG部位のメチル化状態を測定し、統計モデルに入れて「エピジェネティック年齢」を出します。測っているのは §2 の DNA methylation で（<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4015143/" target="_blank" rel="noopener">Horvathの多組織時計の研究</a>）、抗加齢・longevity の領域では、これが老化の指標として使われています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティック時計.webp" alt="選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。" width="1672" height="941" loading="lazy"><figcaption>選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。時計の値の変化だけでは、機能や見た目の改善は判定できない。</figcaption></figure>
-<p>この数値は <strong>methylation から推定した老化の一断面</strong>であり、多面的な老化（<a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>の12項目）の総合成績ではありません。組織・時計の種類・解析法で値は変わります。そして図の下段——「時計の数値が変わる」→「生物学的機能が改善する」→「見た目・臨床結果が改善する」の矢印は、<strong>それぞれ別に検証が必要</strong>です。</p>
-<h2 id="s6">6　<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span> – <span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。" data-u="glossary.html#term-6588d1474b33">sirtuin</span> – chromatin の接点</h2>
-<p>エピゲノムと代謝はつながっています（<a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>の「ミトコンドリアの状態は代謝物の形で核へ伝わる」の続き）。<strong>sirtuin</strong>はNAD⁺を使ってタンパク質の修飾を変える酵素群です。その一部はhistoneからアセチル基を外し、クロマチンの状態や転写を調節します。</p>
-<p>NAD⁺の利用可能量が変わると、sirtuinを介した調節にも影響しえます。作用する場所や標的はsirtuinごとに異なるため、NAD⁺の増減だけで遺伝子全体の読みやすさが一方向に変わるわけではありません。ここで言えるのは生化学的な接点までで、NAD⁺を増やす介入が実際にどこまで届くかは <a class="chref" href="nad.html">NAD⁺</a>・NAD⁺前駆体 で扱います。</p>
+<blockquote class="lead"><strong>糖化はタンパク質の性質を変え、長く残る線維に蓄積します。<span class="term" tabindex="0" data-t="AGE" data-d="還元糖とタンパク質の非酵素反応（Schiff base → Amadori）の最終産物。酵素が介在しないので逆反応がなく、できた架橋は外れない。蓄積は曝露時間で決まり、長寿命のcollagen・elastinが標的。" data-u="glossary.html#term-4aaae5b2c198">AGE</span>の形成を抑えることと、すでに変化した組織を更新することの両方が重要です。</strong></blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　糖化は、どのように進むのか</a></li><li><a href="#s2">2　長く残る線維に、変化が積み重なる</a></li><li><a href="#s3">3　ECMの性質と、細胞への刺激が変わる</a></li><li><a href="#s4">4　糖化を抑えるには</a></li></ul></nav><h2 id="s1">1　糖化は、どのように進むのか</h2>
+<h3>AGEには、体内で作られるものと、食品から入るものがある</h3>
+<p><strong>体内では、血液や組織にある糖がタンパク質と反応し、AGEが作られます。</strong> この反応は通常の血糖でも少しずつ進みますが、高血糖が続くと、タンパク質が多くの糖に長くさらされ、糖化とAGE形成が進みやすくなります。血糖管理は、この体内での形成を抑えることにつながります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10102706/" target="_blank" rel="noopener">Monnierら, 1999</a></p>
+<p><strong>食品の中でできたAGEを、食事から取り込む経路もあります。</strong> 焼く・揚げるなどの高温で水分の少ない調理では、食品中でAGEが増えやすくなります。食べたAGEの一部は、消化・吸収を経て体内に入ります。食品中のAGE量は、焦げの有無だけでなく、食材や加熱時間、水分などでも変わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20497781/" target="_blank" rel="noopener">Uribarriら, 2010</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/35133989/" target="_blank" rel="noopener">食事介入試験, 2022</a></p>
+<p>糖化への対策は、体内での形成を抑えることと、食品由来のAGEへの曝露を減らすことから考えます。皮膚にどれだけ蓄積するかには、その後の代謝・排泄や、組織の更新も関わります。</p>
+<h3>糖が結びついてから、AGEになるまで</h3>
+<p>グルコースなどの糖は、タンパク質のアミノ基と反応します。この結合は酵素の働きを必要とせず、体温でも進みます。酵素によって糖鎖を付ける「糖鎖修飾」とは、別の過程です。</p>
+<p>グルコースから始まる代表的な経路では、次のように反応が進みます。</p>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>タンパク質に起きること</th></tr></thead><tbody><tr><td>Schiff base（シッフ塩基）</td><td>糖がアミノ基と結びつく初期段階。結合はできたり外れたりする</td></tr><tr><td>Amadori（アマドリ）産物</td><td>分子内の構造が変わり、比較的安定した初期糖化産物になる</td></tr><tr><td>AGEs</td><td>さらに酸化・脱水・再配列などを経て、多様な修飾や架橋ができる</td></tr></tbody></table></div>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycation_糖化の始まり_模式図.webp" alt="糖がタンパク質に結びつく初期段階と、反応が進んでAGEによる修飾や架橋ができる過程。" width="1536" height="1024" loading="lazy"><figcaption>糖がタンパク質に結びつく初期段階と、反応が進んでAGEによる修飾や架橋ができる過程。形と結合は模式的に示す。</figcaption></figure>
+<p>HbA1cも初期糖化産物の一つです。赤血球が循環する間の血糖への曝露を反映するため、血糖管理の指標に使われます。</p>
+<p>AGEは、糖の代謝などで生じる<strong>methylglyoxal（メチルグリオキサール）</strong>のような、反応性の高い物質からもできます。糖の濃度、反応する物質の量、酸化ストレス、タンパク質が組織に残る時間などが、形成と蓄積に関わります。</p>
+<details class="supplement"><summary>詳しく：細胞には、糖化の負担を減らす仕組みがある</summary><div class="supplement-body"><p>細胞内では、<strong>glyoxalase（グリオキサラーゼ）系と還元型グルタチオン（<span class="term" tabindex="0" data-t="GSH" data-d="glycine・glutamate・cysteine からなるトリペプチドで、細胞内の主力の還元系。GPxがH₂O₂や脂質過酸化物を還元するときの還元当量を渡して酸化型（GSSG）になり、グルタチオン還元酵素がNADPHを使ってGSHへ戻す。それ自体がROSを消すのではなく、再生系とセットで回る。" data-u="glossary.html#term-2087d8e6dfd1">GSH</span>）</strong>が、メチルグリオキサールの処理に働きます。</p>
+<p>まず、メチルグリオキサールがGSHと一時的に結合します。glyoxalase-I（GLO-1）がこの結合体をS-D-lactoylglutathioneへ変え、glyoxalase-II（GLO-2）が加水分解すると、D-乳酸とGSHが生じます。<strong>GSHはこの過程で再び遊離し、次の反応に使われます。</strong> タンパク質に反応しやすい前駆体を処理することで、新しい糖化を抑えます。</p>
+<p>培養血管内皮細胞では、GLO-1の発現を増やすと、高グルコース条件でのメチルグリオキサールとAGEの増加が抑えられました。GSHは、酸化ストレスへの対応に加えて、こうした糖化の前駆体の処理にも関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9486985/" target="_blank" rel="noopener">Shinoharaら, 1998</a></p>
+<p>初期糖化を受けた細胞内タンパク質には、<strong>fructosamine 3-kinase（FN3K）</strong>による修復も働きます。この酵素を欠くマウスでは、複数の組織の細胞内タンパク質で糖化が増加しました。こうした前駆体の処理や初期段階の修復は、成熟した<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>のAGE架橋を取り除く仕組みとは区別して考えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16819943/" target="_blank" rel="noopener">Veiga da-Cunhaら, 2006</a></p></div></details>
+<h2 id="s2">2　長く残る線維に、変化が積み重なる</h2>
+<p>組織に残る時間が長いタンパク質ほど、糖や反応性の高い物質に繰り返しさらされます。コラーゲンや成熟エラスチンでは、糖化による変化が蓄積しやすくなります。</p>
+<p>蓄積量は、作られる量と、修飾されたタンパク質が除去・更新される速さで変わります。<strong>AGE架橋をその場で切り離すことと、架橋を含むタンパク質ごと分解して更新することは、異なる過程です。</strong> 糖化した線維では、分解を受けにくくなることが更新の難しさにつながります。</p>
+<p>AGEには、タンパク質を結ぶ「架橋型」と、分子の一部を修飾する「非架橋型」があります。</p>
+<div class="tblwrap"><table><thead><tr><th>代表的なAGE</th><th>どのような変化か</th><th>皮膚で知っておきたいこと</th></tr></thead><tbody><tr><td>glucosepane（グルコスパン）</td><td>lysineとarginineを結ぶ架橋。非蛍光性</td><td>ヒト皮膚コラーゲンで量的に主要なAGE架橋。長く残る線維の架橋の蓄積を考えるときに重要</td></tr><tr><td>pentosidine（ペントシジン）</td><td>lysineとarginineを結ぶ架橋。蛍光性</td><td>組織の糖化・糖酸化の指標として測定される。蛍光を利用した評価にも関わる</td></tr><tr><td>CML（カルボキシメチルリジン）</td><td>lysine残基にできる非架橋型の修飾。非蛍光性</td><td>抗体染色や化学分析で、修飾の分布や蓄積を調べる指標になる</td></tr></tbody></table></div>
+<p><strong>グルコスパンは「架橋の蓄積」、ペントシジンは「蛍光を持つ架橋」、CMLは「架橋を作らない修飾」</strong>として押さえると、研究で何を測っているかが読みやすくなります。ヒト皮膚コラーゲンでは、グルコスパンやCMLの加齢に伴う蓄積が報告されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15677467/" target="_blank" rel="noopener">Sellら, 2005</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1899338/" target="_blank" rel="noopener">Dunnら, 1991</a></p>
+<p>CMLは、日光にさらされたヒト皮膚でも多く観察されます。CMLの増加はタンパク質の修飾を示す所見であり、架橋の量を知るにはグルコスパンなどを別に調べます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24116020/" target="_blank" rel="noopener">Crisanら, 2013</a></p>
+<h2 id="s3">3　ECMの性質と、細胞への刺激が変わる</h2>
+<h3>線維が硬くなり、分解されにくくなる</h3>
+<p>コラーゲンでは、AGE架橋によって分子同士の動きが制限され、線維の硬さが増します。糖化修飾したコラーゲンを用いた酵素実験では、<span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。" data-u="glossary.html#term-f1261b95fd78">MMP</span>による分解を受けにくくなることも示されています。修飾の種類や程度によって、分解への影響は変わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28634008/" target="_blank" rel="noopener">Panwarら, 2018</a></p>
+<p>正常な線維を作る際にも、<span class="term" tabindex="0" data-t="LOX" data-d="lysyl oxidase。lysine・hydroxylysine を酸化的脱アミノ化して線維間に共有結合の架橋をかけるCu²⁺依存の酵素。弾性線維の desmosine 架橋も担う。" data-u="glossary.html#term-853ccd68cb25">LOX</span>などによる架橋が必要です。糖化による架橋は、線維の組み立てに伴うこの架橋に追加され、長年にわたって組織の性質を変えていきます。</p>
+<p>エラスチンにも糖化修飾が起こります。ヒト皮膚では弾性線維へのAGE蓄積が観察されており、取り出したエラスチンを使う実験では、糖化による硬さや伸縮の性質の変化が報告されています。両線維の傷み方と実験で分かっている範囲は<a class="chref" href="elastic-fibers.html">弾性線維と膠原線維</a>で比較しています。</p>
+<p>新しいコラーゲンを作ることに加え、こうした分解されにくい成分がどの程度除去されるかも、組織の再構築を考えるうえで重要です。糖化の程度と美容治療への反応との関係は、治療後の組織や機能を調べて確かめる必要があります。</p>
+<h3>RAGEを介して、炎症に関わる遺伝子が働く</h3>
+<p>一部のAGEで修飾されたタンパク質は、細胞表面の<strong>RAGE（<span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> for advanced glycation end products）</strong>という受容体に結合します。これにより、炎症に関わる遺伝子の働きを調節する<strong><span class="term" tabindex="0" data-t="NF-κB" data-d="炎症の中心的な転写因子。DAMPsやAGE–RAGEなどの入力を炎症性サイトカインの転写へ変え、SASPの炎症成分も駆動する。始まるだけでなく、確実に終わることまで含めて正常。" data-u="glossary.html#term-1533efdfddd2">NF-κB</span></strong>などが活性化し、酸化ストレスや炎症反応につながります。AGEで修飾したアルブミンを用いた内皮細胞の実験などで、この反応が確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8144582/" target="_blank" rel="noopener">Yanら, 1994</a></p>
+<p>つまり、糖化は<strong>ECMそのものの性質</strong>と、<strong>細胞が受け取る刺激</strong>の両方に影響します。受容体を介する反応の強さは、AGEの種類や細胞の状態によって異なります。炎症と酸化ストレスの仕組みは<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>と<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>で扱います。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycation_AGEの二つの作用.webp" alt="左はコラーゲン分子間のAGE架橋、右はAGEで修飾されたタンパク質がRAGEを介して細胞に作用する模式図。" width="1536" height="1024" loading="lazy"><figcaption>左はコラーゲン分子間のAGE架橋、右はAGEで修飾されたタンパク質がRAGEを介して細胞に作用する模式図。右の矢印は途中のシグナル伝達を省略して示す。</figcaption></figure>
+<h2 id="s4">4　糖化を抑えるには</h2>
+<h3>体内での形成を抑え、紫外線による損傷を減らす</h3>
+<p>高血糖が続く状態への対応は、糖化の負担を減らすうえで重要です。1型糖尿病の患者216人の皮膚を調べたDCCTの付随研究では、長期に強化血糖管理を受けた群で、コラーゲンの糖化・糖酸化・架橋に関する指標が低くなっていました。これは、血糖への曝露を抑えることが皮膚にも反映されるヒトでの知見です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10102706/" target="_blank" rel="noopener">Monnierら, 1999</a></p>
+<p>日常で取り組めることは、糖への曝露と、皮膚に加わる損傷を減らすことです。</p>
+<div class="tblwrap"><table><thead><tr><th>取り組み</th><th>何につながるか</th></tr></thead><tbody><tr><td>食事・運動を通じて血糖を管理する</td><td>高血糖が続く状態に対応し、糖への過剰な曝露を減らす。糖尿病がある場合は治療も含めて管理する</td></tr><tr><td>日焼け止め、衣類、帽子、日陰を使う</td><td>紫外線による酸化ストレスと線維の損傷を減らす</td></tr><tr><td>調理法を組み合わせる</td><td>焼く・揚げる調理に偏らず、蒸す・煮るなど水分を使う方法も取り入れ、食品中でのAGE形成を抑える</td></tr></tbody></table></div>
+<p>紫外線対策は、糖化した成分が残る皮膚でも重要です。日光曝露部でのCML蓄積の観察に加え、日焼け止めを日常的に使用することで光老化の進行が抑えられたヒト研究があります。糖化と光老化の両方を考えて、線維への損傷を減らします。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24116020/" target="_blank" rel="noopener">Crisanら, 2013</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23732711/" target="_blank" rel="noopener">Hughesら, 2013</a></p>
+<h3>食品の中でもAGEができる</h3>
+<p>食品でも、糖とタンパク質などの反応からAGEができます。生成量は食材と温度・時間・水分・酸性度によって変わります。食品分析では、乾いた高温での加熱に比べ、水分を使った調理や、酢・レモン汁などによる下処理で、測定したAGEが少なくなることが示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20497781/" target="_blank" rel="noopener">Uribarriら, 2010</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycation_調理法とAGE_4種類.webp" alt="同じ魚を刺身・蒸し料理・焼き料理・揚げ物にした場合の調理条件を比較する。" width="1660" height="948" loading="lazy"><figcaption>同じ魚を刺身・蒸し料理・焼き料理・揚げ物にした場合の調理条件を比較する。水分を使い、過度な高温・長時間の加熱を避ける工夫は、食品中のAGE形成を抑えることにつながる。食品中のAGE量の実測値を示した図ではない。</figcaption></figure>
+<p><strong>食品中のAGE量、体内に吸収される量、皮膚に蓄積する量は、それぞれの段階で評価する必要があります。</strong> 調理の工夫は食事由来の曝露を減らす方法として考え、皮膚の架橋やしわへの効果は別に検証します。</p>
+<details class="supplement"><summary>詳しく：食事のAGEを減らすと、体内では何が変わるか</summary><div class="supplement-body"><p>低AGE食と高AGE食を4週間比較した腹部肥満のある成人73人の無作為化試験では、摂取量に応じて血液・尿中の特定のAGEが変化しました。一方、インスリン感受性、血管機能、全体的な炎症の指標には群間差が認められませんでした。食事由来のAGEが体内の測定値に反映されることと、その変化が組織機能の改善につながることを、それぞれ調べる必要があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/35133989/" target="_blank" rel="noopener">食事介入試験, 2022</a></p></div></details>
+<details class="supplement"><summary>詳しく：抗糖化成分は、どこに働きかけるのか</summary><div class="supplement-body"><p>研究されている作用には、反応性の高い物質を捕捉すること、酸化反応を抑えること、GLO-1などの前駆体処理を促すことがあります。ピリドキサミン（ビタミンB6の一型）、カルノシン、ポリフェノール類などが調べられています。</p>
+<p>ピリドキサミンによるAGE形成の抑制はタンパク質を使う実験で、カルノシンによる反応性カルボニル化合物の捕捉はヒトの摂取研究でも検討されています。また、ケルセチンの摂取で血中メチルグリオキサールが低下したヒト試験もあります。成分ごとに、対象と測定した作用が異なります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8602828/" target="_blank" rel="noopener">ピリドキサミンの実験</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/27265207/" target="_blank" rel="noopener">カルノシンのヒト研究</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/30398646/" target="_blank" rel="noopener">ケルセチンのヒト試験</a></p>
+<p>製品の効果を評価するときは、使った量と投与経路、皮膚への到達、皮膚で測ったAGEや機能の変化まで確認します。前駆体の処理や形成抑制の研究は、既存の皮膚架橋の減少を目指す研究へつながる基礎になります。</p></div></details>
+<h3>蓄積した成分への介入</h3>
+<p>蓄積したAGEへの介入には、反応の段階ごとに異なる目標があります。</p>
+<div class="tblwrap"><table><thead><tr><th>目標</th><th>変えようとしていること</th><th>現時点で分かっていること</th></tr></thead><tbody><tr><td>形成を抑える</td><td>糖や反応性の高い前駆体への曝露を減らし、新しい修飾を抑える</td><td><strong>取り組める対策がある。</strong> 長期の血糖管理で皮膚コラーゲンの糖化指標が低くなるヒトの知見がある。食品中のAGE形成も調理条件で減らせる</td></tr><tr><td>修飾された成分を減らす</td><td>AGEで修飾されたタンパク質を分解・除去し、新しい成分へ更新する</td><td><strong>皮膚のAGE蓄積を減らす治療としては未確立。</strong> 生体の除去・更新の仕組みはあるが、治療で既存の修飾成分をどれだけ減らせるかは研究段階</td></tr><tr><td>既存の架橋に直接働きかける</td><td>すでにできたAGE架橋の化学結合を切り離す</td><td><strong>皮膚の治療としては未確立。</strong> ヒト皮膚で既存のAGE架橋を安全に減らし、機能回復まで示す検証が必要</td></tr></tbody></table></div>
+<p><strong>皮膚に蓄積したAGE架橋を安全に減らし、構造や機能の回復まで示す治療の確立が課題です。</strong> 「抗糖化」の効果を読むときは、形成の抑制を測ったのか、既存成分の減少を測ったのかを確認します。</p>
+<details class="supplement"><summary>詳しく：RFと、糖化の前駆体を処理する仕組み</summary><div class="supplement-body"><p>加齢マウスの皮膚にRFを照射した研究では、約4週後に、細胞の防御応答を調節するNRF2の活性化を示す所見、GLO-1の発現増加、AGEの測定値低下が報告されています。コラーゲンと弾性線維の染色密度も増加しました。糖化の前駆体を処理する仕組みが、RF後の変化に関わる可能性を示す研究です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/35328415/" target="_blank" rel="noopener">Ohら, 2022</a></p>
+<p>使用したのはPOTENZAの非侵襲ダイヤモンドチップで、モノポーラとバイポーラの組み合わせを比較しています。各群3匹の動物研究で、AGEは抗体を用いて評価されました。GLO-1の発現増加とAGE測定値の低下が観察されており、前駆体の処理速度や、既存のglucosepane架橋がどれだけ除去されたかについては、さらに検証が必要です。</p></div></details>
+<details class="supplement"><summary>詳しく：すでに糖化した皮膚への研究も進んでいる</summary><div class="supplement-body"><p>摘出したヒト皮膚を実験的に糖化させ、FN3Kなどの酵素で処理した研究では、自家蛍光の低下が報告されています。摘出した肥厚性瘢痕1例については、伸展性の変化も調べられました。糖化した組織への介入を探る研究です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/37240327/" target="_blank" rel="noopener">De Deckerら, 2023</a></p>
+<p>この研究で主に評価したのは、実験条件下での蛍光や組織の性質です。実際の治療として評価するには、生体の皮膚でどのAGEがどれだけ減るか、機能の改善が続くか、安全に使えるかを確かめる必要があります。</p></div></details>
+<h3>AGEの蓄積をどう調べるか</h3>
+<p>AGEには多くの種類があり、<strong>蓄積の目安を知りたいのか、どこにあるかを見たいのか、特定のAGEの量を測りたいのか</strong>によって、方法を選びます。</p>
+<div class="tblwrap"><table><thead><tr><th>方法</th><th>何をするか</th><th>分かること</th></tr></thead><tbody><tr><td>皮膚自家蛍光</td><td>皮膚に光を当て、発せられる蛍光を測る</td><td>皮膚を採取せず、AGE蓄積の間接的な指標を得る</td></tr><tr><td>抗体染色</td><td>採取した皮膚組織に、CMLなどを認識する抗体を反応させる</td><td>対象の修飾が、どの細胞や組織に分布しているかを見る</td></tr><tr><td>化学分析・質量分析</td><td>採取した組織を処理し、目的のAGEを分離・測定する</td><td>グルコスパン、CMLなど、個々のAGEの量を調べる</td></tr></tbody></table></div>
+<p>たとえば、日光曝露部のCMLの分布は抗体染色で、皮膚コラーゲン中のグルコスパンなどの量は質量分析で調べられています。染色の強さは対象の分布や相対的な変化を評価する手がかりになり、個々の分子の定量には、それに適した分析法を使います。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24116020/" target="_blank" rel="noopener">Crisanら, 2013</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23153673/" target="_blank" rel="noopener">皮膚コラーゲンのAGE分析</a></p>
+<h4>クリニックなどで使われる、光によるAGE測定</h4>
+<p>皮膚の蛍光を測り、AGEの蓄積を間接的に評価する方法です。皮膚に光を当てると、一部の成分が別の波長の光を発します。この<strong>自家蛍光（skin autofluorescence）</strong>を利用した測定は、短時間で繰り返し評価しやすい方法です。ヒトの皮膚生検と照合した研究では、自家蛍光と、組織中のペントシジン、CMLなどの量との相関が示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15243705/" target="_blank" rel="noopener">Meerwaldtら, 2004</a></p>
+<p>測定値には、蛍光を持つAGEや、それ以外の蛍光成分が寄与します。ペントシジンは蛍光を持ちますが、CMLやグルコスパンは非蛍光性です。自家蛍光と非蛍光性AGEの量が相関することもあるため、<strong>自家蛍光は、組織分析との関係に基づいて蓄積を推定する指標</strong>として使います。</p>
+<p>治療による変化を調べるときは、測定部位や条件をそろえたうえで、蛍光の変化、目的とするAGEの量、皮膚の硬さや伸縮性を対応させて評価します。こうすることで、測定値の変化がどの成分の変化を反映し、皮膚の働きにどうつながるかを確かめられます。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>エピゲノムは、DNA配列を変えずに遺伝子の読みやすさを調節し、細胞ごとの性質を保っている。仕組みは DNA methylation・histone modification・chromatin remodeling の連動。</li><li>methylation は常にOFFを意味しない（プロモーターと gene body で向きが違いうる）。</li><li>加齢で開閉パターンがぼやける（<strong>epigenetic drift</strong>）。配列の変異ではない。</li><li><strong>epigenetic clockは、選ばれたCpG部位のDNA methylationから年齢などを推定する。</strong> 値は組織・時計の種類・解析法で変わり、<strong>時計が戻ること＝臨床的若返りの証明ではない</strong>。</li><li>NAD⁺–sirtuin を介して、代謝状態とエピゲノムは接続している。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/epigenome_まとめ.webp" alt="DNA配列を変えずに読みやすさを調節" width="1672" height="941" loading="lazy"><figcaption>DNA配列を変えずに読みやすさを調節</figcaption></figure>
-<blockquote><a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>では、その読みやすさを変えにくる側——細胞が外からの刺激をどう受け取り、核まで伝えるかを見ます。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-16</time>初公開</li></ul></section>
+<ol class="goal"><li>糖化は酵素を必要とせずに進み、初期糖化産物や多様なAGEを作ります。細胞には前駆体の処理や初期糖化の修復の仕組みもあります。</li><li>長く残るコラーゲンやエラスチンには修飾が蓄積しやすく、蓄積量には形成と除去・更新の両方が関わります。</li><li>糖化は、架橋などによるECMの性質の変化と、RAGEなどを介した細胞への刺激につながります。</li><li>形成抑制、修飾された成分の除去、既存架橋への直接介入では、目標と評価方法が異なります。</li></ol>
+<h3>中核参考文献</h3>
+<ul><li>Gkogkolou P, Böhm M. Advanced glycation end products: key players in skin aging? <em>Dermatoendocrinol.</em> 2012;4(3):259-270. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23467327/" target="_blank" rel="noopener">PMID: 23467327</a>. <a class="ext" href="https://doi.org/10.4161/derm.22028" target="_blank" rel="noopener">DOI: 10.4161/derm.22028</a>.（<strong>皮膚のAGE・糖化の総説</strong>）</li><li>Monnier VM, Bautista O, Kenny D, et al. Skin <span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span> glycation, glycoxidation, and crosslinking are lower in subjects with long-term intensive versus conventional therapy of type 1 diabetes. <em>Diabetes.</em> 1999;48(4):870-880. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10102706/" target="_blank" rel="noopener">PMID: 10102706</a>. <a class="ext" href="https://doi.org/10.2337/diabetes.48.4.870" target="_blank" rel="noopener">DOI: 10.2337/diabetes.48.4.870</a>.（<strong>強化血糖管理と皮膚コラーゲン糖化・架橋指標</strong>。DCCTの皮膚生検付随研究）</li><li>Avery NC, Bailey AJ. The effects of the Maillard reaction on the physical properties and cell interactions of collagen. <em>Pathol Biol (Paris).</em> 2006;54(7):387-395. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16962252/" target="_blank" rel="noopener">PMID: 16962252</a>. <a class="ext" href="https://doi.org/10.1016/j.patbio.2006.07.005" target="_blank" rel="noopener">DOI: 10.1016/j.patbio.2006.07.005</a>.（<strong>AGE架橋がコラーゲンの力学と分解抵抗に及ぼす影響</strong>。力学データは主に in vitro／ex vivo）</li><li>Sell DR, Biemel KM, Reihl O, et al. Glucosepane is a major protein cross-link of the senescent human extracellular matrix. Relationship with diabetes. <em>J Biol Chem.</em> 2005;280(13):12310-12315. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15677467/" target="_blank" rel="noopener">PMID: 15677467</a>. <a class="ext" href="https://doi.org/10.1074/jbc.M500733200" target="_blank" rel="noopener">DOI: 10.1074/jbc.M500733200</a>.（<strong>ヒト皮膚・糸球体基底膜コラーゲンの定量分析。glucosepane が既知AGE架橋の中で桁違いに多い</strong>）</li></ul>
+<ul><li>Veiga da-Cunha M, et al. Increased protein glycation in fructosamine 3-kinase-deficient mice. <em>Biochem J.</em> 2006;399:257–264. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16819943/" target="_blank" rel="noopener">PMID: 16819943</a>. <a class="ext" href="https://doi.org/10.1042/BJ20060684" target="_blank" rel="noopener">DOI: 10.1042/BJ20060684</a>.</li><li>Panwar P, et al. Aging-associated modifications of collagen affect its degradation by matrix metalloproteinases. <em>Matrix Biol.</em> 2018;65:30–44. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28634008/" target="_blank" rel="noopener">PMID: 28634008</a>. <a class="ext" href="https://doi.org/10.1016/j.matbio.2017.06.004" target="_blank" rel="noopener">DOI: 10.1016/j.matbio.2017.06.004</a>.</li><li>Meerwaldt R, et al. Simple non-invasive assessment of advanced glycation endproduct accumulation. <em>Diabetologia.</em> 2004;47:1324–1330. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15243705/" target="_blank" rel="noopener">PMID: 15243705</a>. <a class="ext" href="https://doi.org/10.1007/s00125-004-1451-2" target="_blank" rel="noopener">DOI: 10.1007/s00125-004-1451-2</a>.</li><li>De Decker I, et al. Enzymatic Deglycation of Damaged Skin by Means of Combined Treatment of Fructosamine-3-Kinase and Fructosyl-Amino Acid Oxidase. <em>Int J Mol Sci.</em> 2023;24:8981. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/37240327/" target="_blank" rel="noopener">PMID: 37240327</a>. <a class="ext" href="https://doi.org/10.3390/ijms24108981" target="_blank" rel="noopener">DOI: 10.3390/ijms24108981</a>.</li></ul>
+<ul><li>Oh S, et al. Combined Treatment of Monopolar and Bipolar Radiofrequency Increases Skin Elasticity by Decreasing the Accumulation of Advanced Glycated End Products in Aged Animal Skin. <em>Int J Mol Sci.</em> 2022;23:2993. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/35328415/" target="_blank" rel="noopener">PMID: 35328415</a>. <a class="ext" href="https://doi.org/10.3390/ijms23062993" target="_blank" rel="noopener">DOI: 10.3390/ijms23062993</a>.</li></ul>
+<ul><li>Uribarri J, et al. Advanced glycation end products in foods and a practical guide to their reduction in the diet. <em>J Am Diet Assoc.</em> 2010;110:911–916.e12. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20497781/" target="_blank" rel="noopener">PMID: 20497781</a>. <a class="ext" href="https://doi.org/10.1016/j.jada.2010.03.018" target="_blank" rel="noopener">DOI: 10.1016/j.jada.2010.03.018</a>.</li><li>Hughes MCB, et al. Sunscreen and prevention of skin aging: a randomized trial. <em>Ann Intern Med.</em> 2013;158:781–790. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23732711/" target="_blank" rel="noopener">PMID: 23732711</a>.</li></ul>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-17</time>初公開</li><li><time>2026-09-15</time>糖化の形成・蓄積からECMと細胞への作用へ再構成。調節不能・分解不能という断定を修正し、初期糖化の修復と前駆体の処理を補足。形成抑制・除去・自家蛍光の評価を整理。糖化の始まりとAGEの二つの作用の図を追加し、エビデンスメーターを削除。GSHを介するグリオキサラーゼ系と非侵襲RFのマウス研究を補足。代表的AGEの違いと、血糖・光防御・食事・抗糖化成分の節を追加。AGEの測定法を比較し、自家蛍光の位置づけを説明。冒頭に体内形成と食品由来の二つの経路を追加。刺身・蒸し料理・焼き料理・揚げ物で調理条件を比べる図を追加。介入目標の表に形成抑制の知見と除去・架橋への治療が未確立であることを明記</li></ul></section>
 </article>
-<nav class="pager"><a class="prev" href="dna-to-protein.html"><span class="lbl">前へ</span>DNAからタンパク質まで</a><a class="next" href="receptors-signaling.html"><span class="lbl">次へ</span>受容体と細胞内シグナル</a></nav>
+<nav class="pager"><a class="prev" href="elastic-fibers.html"><span class="lbl">前へ</span>弾性線維と膠原線維</a><a class="next" href="sebum.html"><span class="lbl">次へ</span>皮脂分泌の生化学</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
