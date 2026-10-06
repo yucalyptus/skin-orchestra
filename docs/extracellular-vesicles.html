@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
-<title>解糖系 ― 生化学で見る美容医療</title>
-<meta name="description" content="解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質など…">
-<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/glycolysis.html">
+<title>細胞外小胞とエクソソーム ― 生化学で見る美容医療</title>
+<meta name="description" content="細胞外小胞（EV）は、細胞が放出する膜小胞の総称で、エクソソームはその一種です。 EVがほかの細胞に作用する仕組みは分かってきていますが、生体内でどの小胞がどの細胞に届き、何をどれほど変えているかは、まだ解明の途中です。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/extracellular-vesicles.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="解糖系 ― 生化学で見る美容医療">
-<meta property="og:description" content="解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質など…">
-<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/glycolysis.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/glycolysis_炭素の分割とATP.svg">
+<meta property="og:title" content="細胞外小胞とエクソソーム ― 生化学で見る美容医療">
+<meta property="og:description" content="細胞外小胞（EV）は、細胞が放出する膜小胞の総称で、エクソソームはその一種です。 EVがほかの細胞に作用する仕組みは分かってきていますが、生体内でどの小胞がどの細胞に届き、何をどれほど変えているかは、まだ解明の途中です。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/extracellular-vesicles.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/extracellular-vesicles_エクソソームの放出.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -592,10 +592,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
 <a href="receptors-signaling.html">受容体と細胞内シグナル</a>
 <a href="membrane-transport.html">細胞膜と物質輸送</a>
-<a href="extracellular-vesicles.html">細胞外小胞とエクソソーム<span class="badge bnew">NEW</span></a>
+<a href="extracellular-vesicles.html" class="active">細胞外小胞とエクソソーム<span class="badge bnew">NEW</span></a>
 <div class="part">エネルギー</div>
 <a href="atp.html">代謝とATP</a>
-<a href="glycolysis.html" class="active">解糖系<span class="badge bupd">更新</span></a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
 <a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
 <a href="tca-cycle.html">TCA回路</a>
 <a href="electron-transport.html">電子伝達系</a>
@@ -673,80 +673,52 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter" data-chapter="glycolysis">
-<p class="kicker">生化学・細胞生物学の基礎　／　エネルギー</p>
-<h1 class="ch-title">解糖系<small>glycolysis</small></h1>
-<p class="dateline">公開 2026-08-24　／　最終更新 2026-10-06</p>
-<p>細胞は、取り込んだ <strong>glucose（グルコース、ブドウ糖）</strong>を分解して<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>を作ります。その最初の工程が、細胞質で進む<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span>です。糖を分解する途中には、細胞を作る材料へつながる分岐もあります。</p>
+<article class="chapter" data-chapter="extracellular-vesicles">
+<p class="kicker">生化学・細胞生物学の基礎　／　情報をどう読むか</p>
+<h1 class="ch-title">細胞外小胞とエクソソーム<small>細胞が膜に包んで送り出すもの</small></h1>
+<p class="dateline">公開 2026-10-06</p>
+<p>細胞は、周囲の細胞に働きかけながら、組織を維持しています。そのやり取りには、成長因子やサイトカインのような分子だけでなく、膜に包まれた小さな小胞も関わります。</p>
+<p>こうした小胞をまとめて細胞外小胞（EV）と呼び、エクソソームはその一種です。細胞が送り出す小胞が、相手の細胞にどう作用するのかを見ていきます。</p>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>解糖系は、glucoseをpyruvate（ピルビン酸）へ分解し、少量のATPを作る経路です。</strong>pyruvateはミトコンドリアでさらに利用されるほか、lactate（乳酸）にもなります。解糖系の途中からは、核酸や脂質などを作るための材料も供給されます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　解糖系は、何を受け取り、何を作るのか</a></li><li><a href="#s2">2　流れを調節する、不可逆な3段階</a></li><li><a href="#s3">3　低酸素での切り替え ―― HIF-1α</a></li><li><a href="#s4">4　炭素の三つの行き先</a></li><li><a href="#s5">5　NAD⁺を戻さないと解糖は止まる ―― lactate の役割</a></li><li><a href="#s6">6　Warburg効果 ―― 酸素があっても解糖に寄る</a></li></ul></nav><h2 id="s1">1　解糖系は、何を受け取り、何を作るのか</h2>
-<p>解糖系では、<strong>glucose 1分子からpyruvate 2分子</strong>ができます。前半でATPを2個使い、後半で4個作るため、差し引き <strong>2 ATP</strong>が得られます。</p>
-<p>この過程で、糖から取り出した電子を受け取るのが <strong><span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span></strong>です。電子を受け取ると <strong>NADH</strong>に変わります。glucose 1分子からは、NADHも2分子できます（→ <a class="chref" href="nad.html">NAD⁺</a>）。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_炭素の分割とATP.svg" alt="glucoseの炭素6個が3個ずつの2分子へ分かれ、pyruvate 2分子になる。" width="760.0" height="520.0" loading="lazy"><figcaption>glucoseの炭素6個が3個ずつの2分子へ分かれ、pyruvate 2分子になる。ATP・NADHはglucose 1分子分の収支。</figcaption></figure>
-<p>炭素6個の糖が途中で炭素3個の分子二つに分かれるため、後半は2分子分の反応が進みます。<strong>前半でATPを使い、後半で回収する流れ</strong>を、炭素の分かれ方と合わせて見てください。</p>
-<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― なぜ後半は2分子分なのか</h3><p>炭素6個のfructose-1,6-bisphosphateが、<strong>glyceraldehyde-3-phosphate（GAP）</strong>と <strong>dihydroxyacetone phosphate（DHAP）</strong>に分かれます。triose phosphate isomerase（TPI）がDHAPをGAPへ変換するため、後半はGAP 2分子から進みます。次の詳細図は上から下へ読みます。「2×」は後半が2分子分進むことを示します。2-phosphoglycerateなど一部の中間体・酵素名を省略しています。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_ATP投資と回収.svg" alt="解糖系の主経路とATPの投資・回収。" width="560.0" height="958.0" loading="lazy"><figcaption>解糖系の主経路とATPの投資・回収。左の帯がATPを使う区間と作る区間、右が主な調節点。</figcaption></figure></aside>
-<div class="reaction"><span class="reaction-label">解糖系の収支（主な生成物）</span><div class="reaction-equation" role="img" aria-label="解糖系の収支（主な生成物）：glucose → 2 pyruvate ＋ 正味 2 ATP ＋ 2 NADH"><span class="reaction-side"><span class="reaction-species"><span>glucose</span><span class="reaction-name">グルコース</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme"></span><span aria-hidden="true">⟶</span></span><span class="reaction-side"><span class="reaction-species"><span>2 pyruvate</span><span class="reaction-name">ピルビン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>正味 2 ATP</span><span class="reaction-name">アデノシン三リン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>2 NADH</span><span class="reaction-name">還元型NAD</span></span></span></div></div>
-<h3>pyruvateと電子を、ミトコンドリアへ渡す</h3>
-<p>pyruvateをさらに酸化するときは、ミトコンドリアへ入ります。NADHが持つ電子も、<strong>shuttle（シャトル）</strong>という仕組みでミトコンドリア側へ渡されます。shuttleは電子を受け渡す複数の反応を組み合わせたもので、NADH分子そのものが内膜を通るわけではありません。</p>
-<p>glucose 1分子を<span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。" data-u="glossary.html#term-39f9a8217f46">TCA回路</span>・<span class="term" tabindex="0" data-t="電子伝達系（electron transport chain）" data-d="ミトコンドリア内膜で NADH・FADH₂ の電子を O₂ へ渡し、H⁺ の勾配を作って ATPの大半を生む工程。代謝の中で酸素を使うのはここだけ。ただし H⁺ が ATP synthase を通らず熱に逃げる道（uncoupling）があるので、酸素消費＝ATP産生ではない。" data-u="glossary.html#term-e84635b3e956">電子伝達系</span>まで利用すると、解糖系の分も含めて約30〜32 ATPを得られます。解糖系はこの一連の代謝の入口です（→ <a class="chref" href="tca-cycle.html">TCA回路</a>・<a class="chref" href="electron-transport.html">電子伝達系</a>）。</p>
-<h2 id="s2">2　流れを調節する、不可逆な3段階</h2>
-<p>解糖系には、細胞内で逆向きにほとんど進まない <strong>不可逆な反応が3段階</strong>あります。hexokinase・phosphofructokinase-1（PFK-1）・pyruvate kinaseが担います。<strong>これらは解糖系の流れを調節する重要な場所</strong>で、酵素の働きが変わると、糖を分解する速さも変わります（Tanner et al., <em>Cell Syst</em> 2018. <a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6062487/" target="_blank" rel="noopener">原著論文</a>）。</p>
-<h3>入口：hexokinaseが糖にリン酸を付ける</h3>
-<p>glucoseは、輸送体 <strong>GLUT</strong>を通って細胞へ入ります。<strong>hexokinase</strong>がATPを1個使ってリン酸を付けると、<strong>glucose-6-phosphate（G6P）</strong>になります。</p>
-<p>G6PはGLUTを通れないため、細胞内にとどまって代謝に使われます。入口で使うATPには、<strong>取り込んだ糖を細胞内の代謝へ渡す役割</strong>があります。</p>
-<aside class="memo"><h3 class="memo-h">ちなみに ―― FDG-PET が見ているのは、この段です</h3><p>FDG は glucose の類似体で、GLUT で取り込まれ hexokinase でリン酸化されますが、その先へは代謝されません。<strong>リン酸化されて外へ戻れなくなったまま細胞内に溜まる</strong>（metabolic trapping）ので、集積として写ります。</p>
-<p>多くのがん細胞では、酸素があっても解糖系に寄る <strong>Warburg 効果</strong>に伴って、glucose の取り込みとリン酸化が盛んになります。そのため FDG も多く取り込まれ、<strong>FDG-PET の高集積として見える</strong>わけです（→ §6）。ただし、FDG は炎症や感染でも集積し、がんでも種類や大きさによっては集積が弱いため、<strong>高集積だけでがんと確定する検査ではありません。</strong></p></aside>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_不可逆な3反応.svg" alt="hexokinase・PFK-1・pyruvate kinaseの反応と調節。" width="760.0" height="1000.0" loading="lazy"><figcaption>hexokinase・PFK-1・pyruvate kinaseの反応と調節。不可逆な3段階の位置を示す。</figcaption></figure>
-<h3>PFK-1とpyruvate kinaseが、その先の流れを調節する</h3>
-<ul><li><strong>PFK-1</strong>：ATPやcitrateが多いと活性が下がり、AMPなどが増えると活性が上がります。エネルギー状態に応じて解糖系の流れを調節します。</li><li><strong>pyruvate kinase</strong>：最後の反応でATPを作ります。その一型である <strong>PKM2</strong> は、増殖する細胞などで働きます。活性の調節は、解糖系を進める量と、中間体を合成経路へ回す量に関わります。</li></ul>
-<h2 id="s3">3　低酸素での切り替え ―― <span class="term" tabindex="0" data-t="HIF-1α" data-d="低酸素で安定化する転写因子。速さのつまみではなく設定そのものを書き換える——解糖系の酵素と輸送体を増やし、PDK1経由でPDHゲートを閉じ、VEGFを誘導して血管新生を起こす。" data-u="glossary.html#term-f415c2f9b898">HIF-1α</span></h2>
-<p>酸素が足りないと、ミトコンドリアでのATP産生を続けにくくなります。細胞は、酸素を直接使わない <strong>解糖系の働きを増やして、ATP産生を支えます。</strong>その切り替えに関わるのが <strong>HIF-1α（hypoxia-inducible factor-1α）</strong>です。</p>
-<p>HIF-1αは低酸素で蓄積し、糖の取り込みや解糖系に関わる遺伝子の発現を促します。同時に、pyruvateがTCA回路へ進む量を減らし、lactateへ回りやすくします。これは、限られた酸素のもとで代謝を維持する適応です（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>）。</p>
-<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― HIF-1αが変える酵素</h3><p>HIF-1αは、転写因子HIF-1の一部です。通常酸素下では速やかに分解されますが、低酸素では蓄積し、HIF-1βと組んで遺伝子発現を促します。</p>
-<ul><li><strong>糖の取り込みと解糖を支える</strong>：GLUT、解糖系酵素、乳酸を作るlactate dehydrogenase A（LDHA）などを増やします。LDHAによる反応はNAD⁺の再生にもつながります（→ §5）。</li><li><strong>TCA回路へ進む量を減らす</strong>：PDH kinase 1（PDK1）を増やします。PDK1は、pyruvateを<span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。" data-u="glossary.html#term-e45cb339bfe5">acetyl-CoA</span>へ変える酵素複合体pyruvate dehydrogenase（PDH）の活性を下げます。糖由来の電子がミトコンドリアへ入る量を抑えることで、低酸素での<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。" data-u="glossary.html#term-88d24b96933a">ROS</span>（活性酸素）による傷害を減らす働きがあります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16517405/" target="_blank" rel="noopener">PMID 16517405</a>；→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</li></ul></aside>
-<h2 id="s4">4　炭素の三つの行き先</h2>
-<p>取り込んだglucoseは、すべてがATP産生へ進むわけではありません。一部は <strong>ペントースリン酸経路（pentose phosphate pathway、PPP）</strong>へ入り、核酸の材料や、合成・抗酸化に必要な電子の供給に使われます。</p>
-<p>図には、二つの分岐点があります。<strong>G6PでPPPへ分かれ、その先のpyruvateでミトコンドリアへ進む経路とlactateを作る経路に分かれます。</strong></p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_炭素の分岐.svg" alt="G6PからPPPへ進む分岐と、pyruvateからミトコンドリア・lactateへ進む分岐。" width="760.0" height="680.0" loading="lazy"><figcaption>G6PからPPPへ進む分岐と、pyruvateからミトコンドリア・lactateへ進む分岐。</figcaption></figure>
-<h3>PPPは、合成材料と抗酸化に必要な還元力を作る</h3>
-<p>PPPで得られるのは、<strong>ribose-5-phosphate（リボース5-リン酸）</strong>と <strong><span class="term" tabindex="0" data-t="NADPH" data-d="主にペントースリン酸経路が供給する還元力。NADPH 自体は ROS を消さず、酸化型の glutathione や thioredoxin を還元型へ戻して抗酸化系を再生する。同じ還元力が NOX の ROS 産生にも使われる。" data-u="glossary.html#term-490757283201">NADPH</span></strong>です。ribose-5-phosphateは核酸の材料に、NADPHは合成反応や抗酸化システムへ電子を渡す補酵素として使われます。</p>
-<p>抗酸化では、NADPHが <strong>glutathione（グルタチオン）</strong>や <strong>thioredoxin（チオレドキシン）</strong>を還元型へ戻す反応を支えます。これにより、酸化への対処を繰り返せます。PPP自体はATPを作りませんが、<strong>細胞を作り、酸化から守るために必要な経路</strong>です（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p>
-<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― G6PDと赤血球の抗酸化</h3><p>PPPの入口にある <strong>glucose-6-phosphate dehydrogenase（G6PD）</strong>と、その先の6-phosphogluconate dehydrogenaseがNADPHを作ります。</p>
-<p>成熟赤血球はミトコンドリアを持たず、ATP産生を解糖系に、NADPH産生をPPPに依存します。<strong>G6PD欠損症ではNADPHを供給する能力が低下し、酸化負荷が加わると溶血しやすくなります。</strong>残る酵素活性は変異によって異なります（Powell et al., <em>Genetics</em> 2024. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39607789/" target="_blank" rel="noopener">PMID 39607789</a>）。</p>
-<p>glutathioneはcysteineを含む3残基のペプチド、thioredoxinはSH基を持つ小さなタンパク質です。どちらも酸化還元反応で働き、NADPHの還元力によって再利用されます。</p></aside>
-<h2 id="s5">5　NAD⁺を戻さないと解糖は止まる ―― lactate の役割</h2>
-<p>解糖系では、NAD⁺が電子を受け取ってNADHになります。<strong>NADHから電子を渡してNAD⁺へ戻すことが、解糖系を続ける条件</strong>です。</p>
-<p>戻し方には、ミトコンドリアへ電子を渡す経路と、<strong>lactate dehydrogenase（LDH）</strong>という酵素でpyruvateへ電子を渡す経路があります。後者ではlactateができます。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_NAD再生の2経路.svg" alt="NAD⁺を再生する二つの経路。" width="760.0" height="720.0" loading="lazy"><figcaption>NAD⁺を再生する二つの経路。shuttleで電子を渡す経路と、LDHでpyruvateへ渡す経路。</figcaption></figure>
-<p>酸素が足りないと、電子伝達系へ電子を渡しにくくなるため、lactateを作る経路が重要になります。酸素があっても、解糖系の流量が大きく、shuttleやミトコンドリア側の処理が追いつかなければ、lactateへ回る量が増えます。</p>
-<aside class="memo"><h3 class="memo-h">もう少し詳しく ―― NADHとATPができる段階</h3><p>解糖系の後半でNADHを作るのは、<strong>glyceraldehyde-3-phosphate dehydrogenase（GAPDH）</strong>の反応です。NAD⁺が不足すると、この反応が進みにくくなります。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/glycolysis_NADHとATPの回収.svg" alt="GAPDHはNADHを作り、直後のphosphoglycerate kinaseの反応でATPができる。" width="760.0" height="650.0" loading="lazy"><figcaption>GAPDHはNADHを作り、直後のphosphoglycerate kinaseの反応でATPができる。</figcaption></figure>
-<p>GAPから取り出された電子をNAD⁺が受け取ります。同時に無機リン酸（Pi）が取り込まれ、1,3-bisphosphoglycerateができます。そのリン酸を<span class="term" tabindex="0" data-t="ADP" data-d="ATP が分解されてできる形。リン酸は2個（ATPは3個、AMPは1個）。エネルギーを渡したあと、また ATP に作り直される。adenylate kinase の平衡（2 ADP ⇄ ATP + AMP）を通じて、ATP のわずかな低下を AMP の大きな上昇として増幅して伝える中継点でもある。" data-u="glossary.html#term-e9482c5e3b03">ADP</span>へ渡す直後の反応でATPが作られます。glucose 1分子からGAPが2分子できるため、この部分で得られるのは2 NADHと2 ATPです。</p>
-<p>TCA回路でもNAD⁺が電子を受け取ります。電子伝達系が滞ってNADHをNAD⁺へ戻しにくくなると、PDHとTCA回路の反応も進みにくくなります（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</p></aside>
-<h3>LDHは、lactateとpyruvateを相互に変える</h3>
-<p><strong>LDHは、この反応を両方向に進められる酵素です。</strong>細胞によって、主に進む向きが変わります。</p>
-<div class="reaction"><span class="reaction-label">LDHの可逆反応</span><div class="reaction-equation" role="img" aria-label="LDHの可逆反応：pyruvate ＋ NADH ⇌ lactate ＋ NAD⁺"><span class="reaction-side"><span class="reaction-species"><span>pyruvate</span><span class="reaction-name">ピルビン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>NADH</span><span class="reaction-name">還元型NAD</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">LDH</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>lactate</span><span class="reaction-name">乳酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>NAD⁺</span><span class="reaction-name">酸化型NAD</span></span></span></div></div>
-<ul><li><strong>lactateを出す細胞</strong>：pyruvate側からlactate側へ進み、NAD⁺を戻して解糖系を続ける。</li><li><strong>lactateを受け取る細胞</strong>：lactate側からpyruvate側へ進み、TCA回路へ。肝では糖新生にも使う。</li></ul>
-<p>式はH⁺を省略しています。反応の向きは、pyruvate・lactate・NADH・NAD⁺の量や、その細胞で進む他の代謝反応によって変わります。</p>
-<aside class="memo"><h3 class="memo-h">LDH が多いと、lactate はたまりやすい？</h3><p><strong>LDH が多いだけでは、lactate がたまるとは限りません。</strong>LDH は両方向に働くため、細胞内で pyruvate と NADH が多く作られれば lactate 側を支え、反対に lactate を取り込む細胞では pyruvate へ戻す側も支えます。実際の蓄積は、<strong>解糖系が lactate を作る速さ</strong>と、細胞外への搬出、肝・心筋・酸化的筋線維などが<strong>取り込んで使う速さ</strong>のバランスで決まります。</p>
-<p>なお、血液検査の「LDH高値」は別の話です。これは主に、肝、筋、血球などから血中へ漏れた LDH を測っており、<strong>血中 lactate が高いことを直接示す値ではありません。</strong></p></aside>
-<p>lactateは、作る細胞ではNAD⁺の再生に関わり、受け取る細胞では燃料になります。運動時の増加も酸素不足だけでは説明できず、疲労をlactate一つに結びつけることはできません。</p>
-<h2 id="s6">6　Warburg効果 ―― 酸素があっても解糖に寄る</h2>
-<p><strong>酸素が十分あるのに解糖に偏り、lactate を出す。</strong> これが Warburg 効果です。腫瘍で最初に記載されましたが、腫瘍に限りません。<strong>活性化した免疫細胞や、増殖・遊走している線維芽細胞でも同じ寄りが報告されています。</strong></p>
-<p>増殖・修復中の細胞には、<strong>ATPと、核酸・アミノ酸・脂質の材料の両方</strong>が必要です。糖の取り込みや解糖系の流量を増やすことは、ATPを作りながら中間体を合成へ回すことにも役立ちます。ただし、Warburg効果の成り立ちは細胞や条件によって異なり、「材料が必要だから」という一つの理由だけでは説明できません。</p>
-<p>増殖中の細胞は <strong>TCA回路も利用し、その中間体を脂質やアミノ酸の材料として取り出します</strong>（→ <a class="chref" href="tca-cycle.html">TCA回路</a>）。</p>
-<aside class="column"><p class="col-t">コラム</p><h3 class="col-h">呼吸の進化 ―― 解糖系は酸素より古い</h3><p>太古の地球に酸素はほとんどなく、生き物は酸素を使わない経路でエネルギーを得ていました。解糖系はその時代の経路のひとつで、<strong>いまも多くの生き物が使い続けています。</strong></p>
-<p>酸素発生型の光合成によって酸素が供給され、約24億年前には大気中の酸素が大きく増加しました。光合成そのものは、それより前に成立していました（<a class="ext" href="https://doi.org/10.1038/ngeo2122" target="_blank" rel="noopener">Planavskyら, 2014</a>）。酸素は、耐性を持たない生き物には有害です。現在も、酸素への耐性が低い微生物は、酸素の少ない環境で生きています。</p>
-<p>酸素を電子の最後の受け取り手として使う代謝では、<strong>glucoseからより多くのATPを得られます</strong>。ヒトでは、解糖から乳酸を作る場合は正味2 ATP、ミトコンドリアでの酸化的リン酸化まで利用すると約30〜32 ATPです（§1）。</p>
-<p>一方、酸素を利用する過程ではROSも生じます（→ <a class="chref" href="electron-transport.html">電子伝達系</a>）。酸素を使ってATPを作る細胞には、<strong>ROSによる障害を抑える抗酸化の仕組みも必要です</strong>。ヒトでは、<span class="term" tabindex="0" data-t="SOD" data-d="superoxide dismutase。2分子のO₂•⁻をH₂O₂とO₂へ変える金属酵素。SOD1・3はCu/Zn、ミトコンドリアmatrixのSOD2はMnを使う。できたH₂O₂は次の酵素系で処理する必要がある。" data-u="glossary.html#term-b60eafc7e56b">SOD</span>やcatalaseなどがその役割を担います（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p></aside>
+<p><strong>細胞外小胞（EV）は、細胞が放出する膜小胞の総称で、エクソソームはその一種です。</strong> EVがほかの細胞に作用する仕組みは分かってきていますが、生体内でどの小胞がどの細胞に届き、何をどれほど変えているかは、まだ解明の途中です。</p>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　細胞外小胞とは何か</a></li><li><a href="#s2">2　エクソソームはどう作られるのか</a></li><li><a href="#s3">3　相手の細胞にどう作用するのか</a></li><li><a href="#s4">4　なぜ注目されているのか</a></li><li><a href="#s5">5　何がまだ分かっていないのか</a></li></ul></nav><h2 id="s1">1　細胞外小胞とは何か</h2>
+<p>細胞が放出する、脂質二重膜に包まれた粒子を<strong>細胞外小胞</strong>（extracellular vesicle：EV）と呼びます。膜にはタンパク質があり、内側にはタンパク質やRNAなどが含まれることがあります。細胞そのものではなく、単独で増殖することもありません。</p>
+<p>EVは一種類ではありません。細胞内のエンドソームを経て放出されるものも、細胞膜が外側へ膨らんで、そのまま切り離されるものもあります。<strong>エクソソーム</strong>（exosome）は、前者の経路で作られるEVを指します（<a class="ext" href="https://doi.org/10.1002/jev2.12404" target="_blank" rel="noopener">MISEV2023</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/extracellular-vesicles_エクソソームの放出.webp" alt="エンドソームの膜が内側へくぼんで小胞を作り、多胞体が細胞膜と融合すると、中の小胞がエクソソームとして放出される。" width="1536" height="1024" loading="lazy"><figcaption>エンドソームの膜が内側へくぼんで小胞を作り、多胞体が細胞膜と融合すると、中の小胞がエクソソームとして放出される。細胞膜から直接出芽する細胞外小胞は別の経路。構造と大きさは模式的。</figcaption></figure>
+<p>研究の対象は、エクソソームに限らず、EV全体です。EVの働きを考えるには、生成経路に加えて、<strong>どの細胞が出し、何を含み、どの細胞にどう作用するか</strong>を調べます。</p>
+<h3>中身は、送り出す細胞によって変わる</h3>
+<p>どのタンパク質やRNAが含まれるかは、細胞の種類や状態、培養条件などによって変わります。すべての小胞が同じ成分を含むわけではなく、同じ細胞から出た小胞にも違いがあります。</p>
+<p>タンパク質を作るための情報を持つRNAが、<strong>mRNA</strong>です。これに対し、<strong>マイクロRNA</strong>（miRNA）は、mRNAに結合し、そこから作られるタンパク質の量を減らす働きを持つ短いRNAです。EVの中に含まれることもあり、別の細胞に届いたときに、タンパク質を作る量を変えられるかが研究されています。</p>
+<h2 id="s2">2　エクソソームはどう作られるのか</h2>
+<p><strong>エンドソーム</strong>は、細胞が外から取り込んだ物質や膜成分を仕分ける、膜に囲まれた細胞内の構造です。その膜が内側へくぼみ、切り離されると、エンドソームの中に小さな小胞ができます。この過程で、膜の成分や細胞質にある物質の一部が小胞に取り込まれます。</p>
+<p>小さな小胞を複数含むエンドソームを、<strong>多胞体</strong>（multivesicular body：MVB）と呼びます。多胞体の外側の膜が細胞膜と融合すると、中の小胞が細胞の外へ放出されます。外へ出た小胞がエクソソームです。</p>
+<p>多胞体はリソソームへ向かうこともあり、その場合は中の小胞や成分が分解されます。小胞が作られても、すべてが細胞の外へ出るわけではありません。細胞内の仕分けと分解については<a class="chref" href="organelles.html">オルガネラ</a>・<a class="chref" href="autophagy.html">オートファジーとリソソーム</a>で扱います。</p>
+<h2 id="s3">3　相手の細胞にどう作用するのか</h2>
+<p>EVは、表面の分子が相手の細胞の受容体に作用し、細胞内のシグナルを変えることがあります。この作用では、EVの内容物を細胞内へ渡す必要はありません。</p>
+<p>別の経路として、EVの内容物が相手の細胞内へ届き、働く場合があります。EVは、細胞膜で包み込む<strong>エンドサイトーシス</strong>によって取り込まれることがあります。その場合、EVはまず相手の細胞のエンドソームに入り、細胞質とは膜で隔てられています。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/extracellular-vesicles_近隣細胞への作用.webp" alt="EVが近隣細胞に作用する2つの経路。" width="1536" height="1024" loading="lazy"><figcaption>EVが近隣細胞に作用する2つの経路。上は表面の分子が受容体に作用する経路、下はエンドサイトーシスで取り込まれる経路。破線は内容物が細胞質へ届く場合を示し、その成立は条件によって異なる。細胞・小胞・分子の大きさは模式的。</figcaption></figure>
+<p>表面からの作用の例として、細胞の分化や増殖に関わる<strong>Wnt</strong>というシグナル分子があります。培養細胞などを用いた研究では、小胞の表面にあるWntが相手の細胞のシグナルを活性化しました（<a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">Grossら, 2012</a>）。受容体から細胞内へ情報を伝える基本は<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>で扱います。</p>
+<h3>取り込まれることと、中身が働くことは違う</h3>
+<p>たとえばmiRNAが細胞質のmRNAに作用するには、EVから出て、さらにエンドソームの膜を越えて細胞質へ届く必要があります。取り込まれたEVがリソソームで分解されることもあります。<strong>細胞内に小胞が見えたことだけでは、内容物が働いたとは言えません</strong>。</p>
+<p>培養細胞で、EVの内容物が細胞質へ届く過程を測定した研究があります。一方、別の培養実験では、EVが細胞に結合しても、miRNAによる遺伝子発現の変化は検出されませんでした。結果は小胞や受け取る細胞、実験条件によって異なります（<a class="ext" href="https://doi.org/10.1038/s41467-021-22126-y" target="_blank" rel="noopener">Bonsergentら, 2021</a>・<a class="ext" href="https://doi.org/10.1371/journal.pgen.1009951" target="_blank" rel="noopener">Albaneseら, 2021</a>）。</p>
+<h2 id="s4">4　なぜ注目されているのか</h2>
+<p><strong>小胞を通じて別の細胞の働きが変わることがあり、それを診断や治療に利用できる可能性がある</strong>ためです。研究で注目されている点は、次のように分けられます。</p>
+<div class="tblwrap"><table><thead><tr><th>注目されている点</th><th>研究で示されたこと・応用への期待</th></tr></thead><tbody><tr><td><strong>細胞間の情報伝達</strong></td><td>培養実験で、タンパク質を作る情報を持つRNA（mRNA）が小胞を通じて別の細胞へ届き、そこでタンパク質が作られる例が示されました。細胞どうしが物質を受け渡して働きを変える仕組みを理解する手掛かりになります（<a class="ext" href="https://doi.org/10.1038/ncb1596" target="_blank" rel="noopener">Valadiら, 2007</a>）</td></tr><tr><td><strong>細胞を使わない修復への応用</strong></td><td>幹細胞などが出す小胞の作用を利用する発想です。マウスの実験では、間葉系幹細胞由来の小胞が心筋の虚血・再灌流傷害を軽減しました。細胞そのものを投与せず、分泌物を修復に利用できるかが研究されています（<a class="ext" href="https://doi.org/10.1016/j.scr.2009.12.003" target="_blank" rel="noopener">Laiら, 2010</a>）</td></tr><tr><td><strong>治療用の物質を運ぶ</strong></td><td>小胞に治療用RNAを載せ、標的細胞へ届ける研究があります。自然に放出された小胞の働きを調べるだけでなく、中身を加工して運搬に使う試みです（<a class="ext" href="https://doi.org/10.1038/s41551-019-0502-4" target="_blank" rel="noopener">Reshkeら, 2020</a>）</td></tr><tr><td><strong>病気の状態を調べる</strong></td><td>小胞の成分には、送り出した細胞の状態が反映されることがあります。尿中の小胞のタンパク質を調べ、前立腺の病変を捉える研究など、診断への応用も進められています（<a class="ext" href="https://doi.org/10.1038/s41467-024-49424-5" target="_blank" rel="noopener">Khooら, 2024</a>）</td></tr></tbody></table></div>
+<p>こうした研究への期待と、特定の美容製剤の効果が確かめられていることは別です。</p>
+<h2 id="s5">5　何がまだ分かっていないのか</h2>
+<p>EVの存在や生成経路、細胞に作用する例は確認されています。ただし、生体内での役割は、個々の実験結果だけでは説明しきれません。</p>
+<div class="tblwrap"><table><thead><tr><th>調べられていること</th><th>まだ確かめる必要があること</th></tr></thead><tbody><tr><td><strong>どの細胞に届くか</strong></td><td>放出されたEVが、組織の中でどこまで移動し、どの細胞に、どれだけ届くのか</td></tr><tr><td><strong>何が作用を担うか</strong></td><td>表面の分子と内容物のうち、何が細胞の変化を起こしたのか。混在する別の分泌物の作用はないか</td></tr><tr><td><strong>体の中でどれほど働くか</strong></td><td>培養実験で見られた作用が、生体内の量や条件でも起こり、組織の働きにどれほど影響するのか</td></tr></tbody></table></div>
+<p>そのため、研究では小胞の量や成分を調べるだけでなく、相手の細胞への到達、内容物の受け渡し、細胞の働きの変化をそれぞれ確かめます。これらの点は、国際細胞外小胞学会の研究指針でも重視されています（<a class="ext" href="https://doi.org/10.1002/jev2.12404" target="_blank" rel="noopener">MISEV2023</a>）。</p>
+<details class="supplement"><summary>詳しく読む：「エクソソーム」と「small EV」の違い</summary><div class="supplement-body"><p>研究試料には、エンドソーム由来のエクソソームと、細胞膜から直接出芽したEVなど、異なる経路で作られた小胞が混在することがあります。大きさが近く、共通する膜タンパク質もあるため、大きさや一つのマーカーだけでは生成経路を区別できません。</p>
+<p>生成経路を示せない場合は、総称のEVや、測定した性質に応じた名称を使います。<strong>small EV</strong>（小型の細胞外小胞）は大きさに基づく呼び方で、エクソソームと同義ではありません。「由来が不明ならすべてsmall EV」と呼ぶわけでもありません（<a class="ext" href="https://doi.org/10.1002/jev2.12404" target="_blank" rel="noopener">MISEV2023</a>）。</p></div></details>
+<p>細胞が培養液へ出した分泌物を回収する培養上清と、EVを分離した試料の違い、美容医療への応用はエクソソームと幹細胞培養上清で扱います。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>解糖系は酸素を直接使わず、glucose 1分子から <strong>2 pyruvate・正味2 ATP・2 NADH</strong>を作ります。</li><li>hexokinase・PFK-1・pyruvate kinaseは、不可逆な反応を担う重要な調節点です。</li><li>低酸素ではHIF-1αが解糖系を支え、PDK1を介して糖由来の炭素がTCA回路へ進む量を減らします。</li><li>糖の炭素は、ATP産生だけでなく、PPPなどを通じて合成材料と還元力の供給にも使われます。</li><li><strong>NAD⁺の再生が解糖系を支えます。</strong>lactateを作る反応はその一つで、lactateは他の細胞の燃料にもなります。</li><li>Warburg効果は、酸素があってもlactate産生が増える現象です。増殖する細胞も、ATPと合成材料の両方を必要とします。</li></ol>
-<blockquote><a class="chref" href="tca-cycle.html">TCA回路</a>では、ミトコンドリアへ入ったpyruvateがacetyl-CoAに変わり、エネルギー産生と材料供給につながる経路を見ます。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-10-06</time>酸素発生型光合成の成立と大気酸素の増加を区別し、腸内細菌へ直接つなぐ進化コラムの説明を修正。</li><li><time>2026-09-13</time>代謝の流れと図を見直し、臨床コラムを整理・復元</li><li><time>2026-09-12</time>解糖系の収支とLDH反応を全章共通の反応式表示に変更</li><li><time>2026-08-24</time>初公開</li></ul></section>
+<ol class="goal"><li>細胞外小胞は細胞が放出する膜小胞で、エクソソームはエンドソームを経て作られる一種です。</li><li>EVは表面の分子や内容物を通じて細胞に作用します。取り込みと、内容物が働くことは別の段階です。</li><li>生体内でどの細胞に届き、何がどれほど作用するかは、まだ解明の途中です。</li></ol>
+<h3>中核参考文献</h3>
+<ul><li>Welsh JA, et al. Minimal information for studies of extracellular vesicles (MISEV2023): From basic to advanced approaches. <em>J Extracell Vesicles.</em> 2024;13:e12404. <a class="ext" href="https://doi.org/10.1002/jev2.12404" target="_blank" rel="noopener">DOI: 10.1002/jev2.12404</a>.</li><li>Gross JC, et al. Active Wnt proteins are secreted on exosomes. <em>Nat Cell Biol.</em> 2012;14:1036–1045. <a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">DOI: 10.1038/ncb2574</a>.</li><li>Bonsergent E, et al. Quantitative characterization of extracellular vesicle uptake and content delivery within mammalian cells. <em>Nat Commun.</em> 2021;12:1864. <a class="ext" href="https://doi.org/10.1038/s41467-021-22126-y" target="_blank" rel="noopener">DOI: 10.1038/s41467-021-22126-y</a>.</li><li>Albanese M, et al. MicroRNAs are minor constituents of extracellular vesicles that are rarely delivered to target cells. <em>PLoS Genet.</em> 2021;17:e1009951. <a class="ext" href="https://doi.org/10.1371/journal.pgen.1009951" target="_blank" rel="noopener">DOI: 10.1371/journal.pgen.1009951</a>.</li><li>Valadi H, et al. Exosome-mediated transfer of mRNAs and microRNAs is a novel mechanism of genetic exchange between cells. <em>Nat Cell Biol.</em> 2007;9:654–659. <a class="ext" href="https://doi.org/10.1038/ncb1596" target="_blank" rel="noopener">DOI: 10.1038/ncb1596</a>.</li><li>Lai RC, et al. Exosome secreted by MSC reduces myocardial ischemia/reperfusion injury. <em>Stem Cell Res.</em> 2010;4:214–222. <a class="ext" href="https://doi.org/10.1016/j.scr.2009.12.003" target="_blank" rel="noopener">DOI: 10.1016/j.scr.2009.12.003</a>.</li><li>Reshke R, et al. Reduction of the therapeutic dose of silencing RNA by packaging it in extracellular vesicles via a pre-microRNA backbone. <em>Nat Biomed Eng.</em> 2020;4:52–68. <a class="ext" href="https://doi.org/10.1038/s41551-019-0502-4" target="_blank" rel="noopener">DOI: 10.1038/s41551-019-0502-4</a>.</li><li>Khoo A, et al. Prostate cancer reshapes the secreted and extracellular vesicle urinary proteomes. <em>Nat Commun.</em> 2024;15:5069. <a class="ext" href="https://doi.org/10.1038/s41467-024-49424-5" target="_blank" rel="noopener">DOI: 10.1038/s41467-024-49424-5</a>.</li></ul>
+
 </article>
-<nav class="pager"><a class="prev" href="atp.html"><span class="lbl">前へ</span>代謝とATP</a><a class="next" href="fatty-acid-oxidation.html"><span class="lbl">次へ</span>脂肪酸とケトン体</a></nav>
+<nav class="pager"><a class="prev" href="membrane-transport.html"><span class="lbl">前へ</span>細胞膜と物質輸送</a><a class="next" href="atp.html"><span class="lbl">次へ</span>代謝とATP</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
