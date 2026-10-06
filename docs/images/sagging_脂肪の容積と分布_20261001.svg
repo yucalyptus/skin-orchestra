@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 720" role="img" aria-labelledby="t d"><title id="t">脂肪の容積減少と区画内の厚みの偏り</title><desc id="d">脂肪の容積減少と区画内の厚みの偏り。変化の方向を示す模式図で、実測の厚みや移動量ではない。</desc><defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#4b6570" stroke-width="1.7"/></marker></defs><rect width="800" height="720" fill="#fff"/><g font-family="system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif" fill="#23363d">
+<text x="30" y="48" font-size="31" font-weight="700">脂肪は、容積と厚みの分布が変わる</text>
+<text x="240" y="111" font-size="30" text-anchor="middle">変化前</text><text x="605" y="111" font-size="30" text-anchor="middle">変化後の一例</text>
+<text x="30" y="167" font-size="30" font-weight="700">深層脂肪の容積減少</text>
+<path d="M144 236C135 201 169 181 227 181C296 180 339 207 334 239C328 276 284 290 230 285C182 281 151 266 144 236Z" fill="#e9ba67" stroke="#aa7a32" stroke-width="3"/>
+<path d="M541 238C539 215 563 199 600 199C645 198 675 218 673 240C670 264 641 274 605 272C570 271 545 256 541 238Z" fill="#e9ba67" stroke="#aa7a32" stroke-width="3"/>
+<path d="M371 238H484" stroke="#4b6570" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="114" y="335" font-size="29">前方への厚みが減る → 頬の平坦化・こけ</text>
+<line x1="30" y1="371" x2="770" y2="371" stroke="#d9e0e3" stroke-width="2"/>
+<text x="30" y="418" font-size="30" font-weight="700">区画内の厚みの偏り</text>
+<text x="70" y="471" font-size="28">上方</text><text x="70" y="636" font-size="28">下方</text>
+<path d="M241 451C210 451 193 486 197 531C201 579 213 611 241 611C273 611 287 583 287 532C287 487 274 452 241 451Z" fill="#f2d394" stroke="#aa7a32" stroke-width="3"/>
+<path d="M597 451C582 451 577 480 578 504C579 529 552 544 552 572C552 598 571 620 599 621C632 623 653 603 650 575C647 547 621 534 621 507C621 479 615 452 597 451Z" fill="#f2d394" stroke="#aa7a32" stroke-width="3"/>
+<path d="M371 533H484" stroke="#4b6570" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="667" y="484" font-size="28">薄い</text><path d="M652 486H626" stroke="#9b855c" stroke-width="2"/>
+<text x="677" y="587" font-size="28">厚い</text><path d="M666 582H655" stroke="#9b855c" stroke-width="2"/>
+<text x="59" y="686" font-size="28">下方の膨らみは、脂肪の増加とは限らない</text>
+</g></svg>

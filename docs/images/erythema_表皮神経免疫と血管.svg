@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="820" viewBox="0 0 840 820" role="img" aria-labelledby="title desc">
+<title id="title">表皮・神経・免疫の反応が血管へ伝わる</title>
+<desc id="desc">表皮への傷害やバリアの乱れは角化細胞のサイトカイン応答へ、温熱や化学的刺激は感覚神経へつながる。炎症性因子と神経ペプチドが血管へ作用する。血管の内皮は白血球の集積にも参加する。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#1d4f91"/></marker></defs>
+<rect width="840" height="820" fill="white"/>
+<g font-family="Hiragino Sans,Noto Sans JP,sans-serif" fill="#1c1d23" text-anchor="middle">
+<text x="420" y="42" font-size="27" font-weight="600">表皮・神経・免疫の反応が血管へ伝わる</text>
+<text x="220" y="103" font-size="22">表皮の傷害・バリアの乱れ</text>
+<text x="635" y="103" font-size="22">温熱・化学的な刺激</text>
+<g fill="none" stroke="#1d4f91" stroke-width="2.8" marker-end="url(#a)">
+<path d="M220 120V168"/><path d="M635 120V168"/>
+</g>
+<rect x="65" y="174" width="310" height="100" rx="20" fill="#f2f4f7" stroke="#c5cdd6"/>
+<text x="220" y="214" font-size="25" font-weight="600">角化細胞</text>
+<text x="220" y="251" font-size="20">サイトカインの放出・産生</text>
+<rect x="480" y="174" width="310" height="100" rx="20" fill="#f2f4f7" stroke="#c5cdd6"/>
+<text x="635" y="214" font-size="25" font-weight="600">感覚神経</text>
+<text x="635" y="251" font-size="20">TRPチャネルなどで感知</text>
+<path d="M220 278V374" stroke="#1d4f91" stroke-width="2.8" fill="none" marker-end="url(#a)"/>
+<text x="285" y="334" font-size="19" fill="#64748b">IL-1など</text>
+<rect x="65" y="380" width="310" height="100" rx="20" fill="#fbf2f0" stroke="#c5cdd6"/>
+<text x="220" y="420" font-size="25" font-weight="600">免疫細胞の反応</text>
+<text x="220" y="457" font-size="20">肥満細胞・白血球など</text>
+<g stroke="#1d4f91" stroke-width="2.8" fill="none" marker-end="url(#a)">
+<path d="M520 278L383 397"/>
+<path d="M635 278V580"/>
+<path d="M220 484V580"/>
+<path d="M65 224H25V624H59"/>
+</g>
+<text x="550" y="334" font-size="17" fill="#64748b">神経ペプチド</text>
+<text x="715" y="407" font-size="20" fill="#1d4f91">CGRPなど</text>
+<text x="715" y="440" font-size="18">血管拡張</text>
+<text x="242" y="524" font-size="19" text-anchor="start">histamineなど</text>
+<text x="242" y="555" font-size="18" text-anchor="start">拡張・透過性の変化</text>
+<text x="15" y="446" transform="rotate(-90 15 446)" font-size="17" fill="#64748b">内皮への作用</text>
+<rect x="65" y="586" width="725" height="85" rx="22" fill="#f2f4f7" stroke="#1d4f91" stroke-width="2"/>
+<text x="427" y="621" font-size="26" font-weight="600" fill="#1d4f91">血管の反応</text>
+<text x="427" y="653" font-size="19">平滑筋による血管径の調節 ／ 内皮のバリア・接着分子</text>
+<g stroke="#1d4f91" stroke-width="2.8" fill="none" marker-end="url(#a)">
+<path d="M185 675V708"/><path d="M420 675V708"/><path d="M675 675V708"/>
+</g>
+<text x="185" y="743" font-size="22">血液量が増える</text><text x="185" y="774" font-size="22" font-weight="600">赤み</text>
+<text x="420" y="743" font-size="22">血漿成分が漏れる</text><text x="420" y="774" font-size="22" font-weight="600">浮腫</text>
+<text x="675" y="743" font-size="22">白血球が接着・通過</text><text x="675" y="774" font-size="22" font-weight="600">炎症細胞の集積</text>
+<text x="420" y="810" font-size="15" fill="#64748b">矢印は代表的な作用の方向。各反応の強さと組み合わせは、疾患や刺激によって異なる。</text>
+</g></svg>

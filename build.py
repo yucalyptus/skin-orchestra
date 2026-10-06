@@ -21,6 +21,8 @@ import subprocess
 import sys
 import tempfile
 import xml.etree.ElementTree as ET
+from html import unescape
+from urllib.parse import unquote
 
 try:
     from PIL import Image
@@ -75,7 +77,7 @@ OUT = os.path.join(OUT_DIR, "index.html")
 
 # 公開先。canonical・OGP・sitemap.xml の絶対URLを組むのに使う。
 BASE_URL = "https://yucalyptus.github.io/skin-orchestra/"
-OG_DEFAULT = "images/巻頭_本教材が守る切り分け.webp"
+OG_DEFAULT = "images/og-cover-20260917.png"
 
 # 公開・更新から何日「NEW」「更新」バッジを出すか。
 NEW_DAYS = 14
@@ -299,9 +301,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -569,6 +569,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -601,6 +605,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>'''
 
 HERO = '''<header class="cover">
@@ -609,17 +669,18 @@ HERO = '''<header class="cover">
 <p class="cover-author">Yuka Aoki, MD</p>
 </header>
 <div class="hero">
-<p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。臨床でふだん意識しない基礎を思い出し、施術と結びつけて理解するための教材です。</p>
-<div class="flowline">細胞の構造　→　エネルギー代謝　→　品質管理　→　加齢変化　→　美容施術への応答</div>
-<p class="note">確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
+<p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。生化学と細胞生物学を学び直し、日々の施術と結びつけて理解するための教材です。</p>
+<p class="learning-path">細胞の構造から、エネルギーの使い方、傷んだものを除いて作り直す仕組み、加齢による変化へ。細胞の中で起こる反応を一つずつたどり、美容施術への応答を生化学から理解していきます。</p>
+<p class="note">確認できた章から少しずつ公開しています。</p>
+<nav class="home-jump" aria-label="このページの案内"><a href="#contents">目次から読む</a><a href="#introduction">はじめに</a><a href="#criteria">この教材の立ち方</a></nav>
 </div>'''
 
-INTRO = '''<section class="intro sec-rule">
-<h1>はじめに ― なぜこれを作ったか</h1>
-<blockquote class="lead">医学部で学んだ基礎は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
+INTRO = '''<section id="introduction" class="intro sec-rule">
+<h2>はじめに ― なぜこれを作ったか</h2>
+<blockquote class="lead">医学部で学んだ生化学や細胞生物学は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
 <p>私は美容医療に長く携わってきました。でも正直に言うと、最初は「レーザーでコラーゲンを増やす」と言葉で説明しながら、その裏で細胞が実際に何をしているのかを、うまくイメージできていませんでした。</p>
-<p>線維芽細胞（fibroblast）が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりに積み上がって<strong>ECMという土台</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
-<p>一つの細胞の中でも、いくつものオルガネラが順に噛み合って、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>どれか一つが主役なのではなく、全体が噛み合ったときに結果が出る。</strong>タイトルに「皮膚の下のオーケストラ」と付けたのは、そういう意味です。生命というのは神秘に溢れていて、とても精巧に作られていて、感動しますね。</p>
+<p>線維芽細胞が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりで線維を作り、<strong>細胞外基質（ECM）という、細胞を支える構造の一部</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
+<p>一つの細胞の中でも、核やリボソーム、小胞体など、細胞内で役割を分担する構造が連携して、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>一つひとつの働きがつながって、組織全体の営みを支えている。</strong>その連携にオーケストラの姿を重ね、この教材を「皮膚の下のオーケストラ」と名づけました。生命というのは神秘に溢れていて、とても精巧にできていて、知れば知るほど感動します。</p>
 <p>医学部で習った生化学や細胞生物学は、日々の臨床からは遠ざかりがちです。そこまで立ち返らなくても、現場の仕事は回る。<strong>けれど、細胞・生化学のレベルまでイメージできると、治療の選び方が変わってきます。</strong></p>
 <p>これは新しい知識の詰め込みではなく、<strong>「学び直し」</strong>です。臨床で働く仲間が、施術の裏側を細胞から見直すための手がかりになればうれしいです。</p>
 <aside class="notice">
@@ -630,15 +691,10 @@ INTRO = '''<section class="intro sec-rule">
 </section>'''
 
 CRITERIA = '''<section id="criteria" class="sec-rule">
-<h1>この教材の立ち方 ― 限られた根拠から、どう判断するか</h1>
-<blockquote class="lead">美容医療に、質の高い臨床試験がそろっている領域はほとんどありません。それでも私たちは毎日、治療を選んでいます。<strong>この教材は、限られた材料をつないで地図を作り、つないだところに「どのくらい確かか」を書き添えます。</strong></blockquote>
-<p>「エビデンスがないから何も言えない」で止めてしまうと、<strong>手元に残るのは経験談と広告だけ</strong>になります。美容医療で厳密な対照試験が組まれることは少なく、多くは小規模・単群・企業主導です。それを理由に、考えることをやめるわけにはいきません。</p>
-<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するには、この三つをつなぐしかありません。</p>
-<p>三つをつなぐには、推論が要ります。<strong>推論は、私たちが日々の診療でしていることそのものです。</strong>問題になるのは推論すること自体ではなく、<strong>推論を確かめられた事実と取り違えること</strong>だけです。だからこの教材は、<strong>どこまでが確立していて、どこからが推論か</strong>を、本文や章末の根拠表示で区別しながら進みます。それが分かれば、あとは読者が自分の臨床で判断できます——「ヒトでは未確認だが、機序は筋が通っていてリスクも低いなら試す」も、「未確認だから患者さんには断定的に説明しない」も、どちらも成り立ちます。</p>
-<p>下の六つが、その目印です。<strong>主張を却下するためのふるいではなく、いま自分がどの段に立っているかを確かめるためのもの</strong>です。</p>
-{FIG_CRITERIA}
-<p>確かめられていることは、まだ限られています。それでも、<strong>いま分かっていること・言われていることを知っておくことは必要で、それがより良い治療につながることがある。</strong>この教材はその前提で書かれています。</p>
-<p class="scope-note"><strong>根拠表示の付け方について。</strong>「基礎」の各章（細胞の地図からエネルギー・品質管理・加齢まで）は、標準的な教科書レベルの内容です。ここは確度が争点にならないので、章末の Evidence meter と個別の参考文献は置いていません。<strong>それらを付けているのは、確度そのものが論点になる「美容皮膚科」「美容内科」の各章</strong>——個別の製剤・デバイス・臨床エビデンスを扱う章です。</p>
+<h2>この教材の立ち方 ― 仕組みと根拠をつなぐ</h2>
+<p>美容医療の情報に触れるとき、「細胞を活性化する」「若返りを促す」という説明だけでは、何がどう変わるのか、どこまで確かめられているのかが見えにくいことがあります。そこを、細胞の働きと研究の結果に立ち返って考えたいと思っています。</p>
+<p>この教材では、臨床で見ている現象を、細胞生物学・生化学の仕組みと結びつけます。そのうえで、<strong>研究で確かめられたこと、仕組みから考えられること、まだ分からないこと</strong>を区別して記します。</p>
+<p>例えば、細胞内である分子が重要な役割を持つことと、それを補う治療で効果が得られることは、確かめるべき内容が違います。仕組みを知り、根拠を確かめることを、治療を考え、患者さんに説明するための手がかりにしていただければと思います。</p>
 </section>'''
 
 # 感想欄。FEEDBACK_URL が空なら、この節ごと出力しない。
@@ -1251,6 +1307,8 @@ def render_figslot(alt, src):
             shape = " illustration"
             if os.path.basename(src) == "oxidative-stress_ROSが皮膚に与える影響.png":
                 shape += " portrait-illustration"
+        if os.path.basename(src).startswith("sagging_皮膚と固定部_縦断面解剖_"):
+            shape = " illustration compact-illustration"
         # 図の中に章番号を書かない方針にしたので、「まとめ」であることは
         # 画像ではなくHTML側の帯で示す（章が動いても作り直さずに済む）。
         is_summary = "まとめ" in os.path.basename(src)
@@ -1596,9 +1654,8 @@ def first_heading(text):
 
 
 def criteria_html():
-    """巻頭「この教材の立ち方」。図があればfigure、無ければプレースホルダを差し込む。"""
-    fig = render_figslot("本教材が確認する六つの切り分け。血液の値と標的組織の値、経路が動くことと臨床効果、欠乏の是正と上乗せ効果、経口と外用・皮内注入、全身への供給と局所での利用、前臨床とヒト臨床は、それぞれ同じではなく、左側が確認されても右側まで自動的には証明されない", "figures/巻頭_本教材が守る切り分け.png")
-    return CRITERIA.replace("{FIG_CRITERIA}", fig)
+    """巻頭の編集方針。仕組みと根拠の扱いを短く伝える。"""
+    return CRITERIA
 
 
 def build_stamp():
@@ -1627,7 +1684,7 @@ def chapter_desc(text, fallback):
 
 
 def first_figure(text):
-    """OGP画像。章の最初の図を使う（無ければ巻頭図）。"""
+    """OGP画像。章の最初の図を使う（無ければ教材の表紙）。"""
     m = re.search(r"^!\[[^\]]*\]\(figures/([^)]+)\)", text, flags=re.M)
     if not m:
         return OG_DEFAULT
@@ -1876,7 +1933,7 @@ def collect_chapters():
                     "published": fm.get("published", ""),
                     "history": hist,
                     "latest": max(dates) if dates else fm.get("published", ""),
-                    "first": min(dates) if dates else fm.get("published", ""),
+                    "first": fm.get("published") or (min(dates) if dates else ""),
                     "section": sec["section"],
                     "sec_subtitle": sec["subtitle"],
                     "sec_intro": sec["intro"],
@@ -1927,11 +1984,14 @@ def dateline_html(ch):
 
 def history_html(ch):
     """この章の更新。未公開の章と初公開だけのときは出さない。"""
-    if not ch.get("published") or len(ch["history"]) < 2:
+    if not ch.get("published"):
+        return ""
+    history = [h for h in ch["history"] if h["date"] >= ch["published"]]
+    if len(history) < 2:
         return ""
     items = "".join(
         "<li><time>%s</time>%s</li>" % (esc(h["date"]), decorate(esc(h["note"])))
-        for h in sorted(ch["history"], key=lambda h: h["date"], reverse=True))
+        for h in sorted(history, key=lambda h: h["date"], reverse=True))
     return ('<section class="ch-history"><p class="chh-t">この章の更新</p>'
             "<ul>%s</ul></section>" % items)
 
@@ -1943,6 +2003,8 @@ def changelog_rows(chapters):
         if not ch["visible"] or ch["status"] != "approved" or not ch.get("published"):
             continue
         for h in ch["history"]:
+            if h["date"] < ch["published"]:
+                continue
             rows.append((h["date"], ch, h["note"], h["date"] == ch["first"]))
     rows.sort(key=lambda r: (r[0], r[1]["title"]), reverse=True)
     return rows
@@ -1962,8 +2024,8 @@ def recent_html(chapters, limit=5):
     if not rows:
         return ""
     items = "".join(_cl_item(*r) for r in rows[:limit])
-    return ('<section class="recent"><p class="rc-t">最近の更新</p><ul>%s</ul>'
-            '<p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></section>'
+    return ('<details class="recent"><summary>最近の更新</summary><ul>%s</ul>'
+            '<p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></details>'
             % items)
 
 
@@ -1988,6 +2050,29 @@ def changelog_body(chapters):
     return "\n".join(blocks)
 
 
+def load_pathways_reference():
+    """独立した参照ページ。未承認の原稿はプレビューのみ出力する。"""
+    path = os.path.join(ROOT, "資料", "よく出会うシグナル経路.md")
+    if not os.path.exists(path):
+        return None
+    with io.open(path, encoding="utf-8") as f:
+        meta, text = parse_front_matter(f.read())
+    if not PREVIEW and meta.get("status") != "approved":
+        return None
+    return meta, text
+
+
+def pathways_body(meta, text):
+    body = "\n".join(parse_markdown(text))
+    toc = chapter_toc(body).replace("この章の節", "経路を選ぶ")
+    body = re.sub(r'(?=<h2 id="s)', toc, body, count=1)
+    return ('<article class="chapter pathways"><p class="kicker">経路の解説%s</p>'
+            '<h1>%s</h1><p>最終更新 %s</p>%s</article>') % (
+                " ／ 下書き" if meta.get("status") != "approved" else "",
+                esc(meta.get("title", "美容医療に関わるシグナル伝達経路")),
+                esc(meta.get("updated", "")), body)
+
+
 def nav_html(chapters, active_slug):
     """全ページ共通の左ナビ。セクション > 部の2階層。いま開いている章に active を付ける。"""
     lines = [
@@ -2006,6 +2091,9 @@ def nav_html(chapters, active_slug):
         '<a href="glossary.html"%s>用語集</a>'
         % (' class="active"' if active_slug == "glossary.html" else ""),
     ]
+    if load_pathways_reference() is not None:
+        lines.append('<a href="pathways.html"%s>シグナル伝達経路</a>'
+                     % (' class="active"' if active_slug == "pathways.html" else ""))
     sec = part = None
     for ch in chapters:
         if ch["section"] != sec:
@@ -2061,7 +2149,8 @@ def progress_html(chapters):
             agg[k] = [0, 0]
             order.append(k)
         agg[k][1] += 1
-        if ch["visible"]:
+        # プレビューの閲覧可否とは分け、公開対象の章だけを数える。
+        if ch["status"] == "approved":
             agg[k][0] += 1
     rows = "".join(
         '<tr><th>%s</th><td class="sc-n"><strong>%d</strong> <span>/ %d</span></td></tr>'
@@ -2078,8 +2167,8 @@ def progress_html(chapters):
 
 
 def index_body(chapters):
-    blocks = [HERO, progress_html(chapters), recent_html(chapters), INTRO, criteria_html(),
-              '<section class="contents sec-rule">', "<h1>目次</h1>"]
+    blocks = ['<div class="home">', HERO, progress_html(chapters), recent_html(chapters), INTRO, criteria_html(),
+              '<section id="contents" class="contents sec-rule">', "<h2>目次</h2>"]
     sec = part = None
     for ch in chapters:
         if ch["section"] != sec:
@@ -2088,7 +2177,7 @@ def index_body(chapters):
             if sec is not None:
                 blocks.append("</div>")
             sec, part = ch["section"], None
-            blocks.append('<div class="sec-block"><h2 class="sec-title">%s%s</h2>'
+            blocks.append('<div class="sec-block"><h3 class="sec-title">%s%s</h3>'
                           % (esc(ch["section"]),
                              "<small>%s</small>" % esc(ch["sec_subtitle"])
                              if ch["sec_subtitle"] else ""))
@@ -2100,7 +2189,7 @@ def index_body(chapters):
             part = ch["part"]
             blocks.append('<div class="part-block">')
             if part:
-                blocks.append('<div class="part-title">%s</div>' % esc(part))
+                blocks.append('<h4 class="part-title">%s</h4>' % esc(part))
                 if ch["part_intro"]:
                     blocks.append('<p class="part-intro">%s</p>'
                                   % decorate(esc(ch["part_intro"])))
@@ -2115,8 +2204,30 @@ def index_body(chapters):
         blocks.append("</ul></div>")
     if sec is not None:
         blocks.append("</div>")
-    blocks.append("</section>")
+    blocks.append("</section></div>")
     return "\n".join(blocks)
+
+
+def prune_unused_images(out_dir):
+    """完成したページが参照しない旧画像を除去する。原図には触れない。"""
+    image_dir = os.path.join(out_dir, "images")
+    # OGP・リンク・SVG内の参照も含め、名前が残る画像は保守的に保持する。
+    sources = [os.path.join(out_dir, name) for name in os.listdir(out_dir)
+               if name.endswith(".html")]
+    sources += [os.path.join(image_dir, name) for name in os.listdir(image_dir)
+                if name.lower().endswith(".svg")]
+    references = "\n".join(unquote(unescape(io.open(path, encoding="utf-8").read()))
+                           for path in sources)
+    removed = 0
+    for name in os.listdir(image_dir):
+        path = os.path.join(image_dir, name)
+        if (os.path.isfile(path) and
+                name.lower().endswith((".png", ".webp", ".svg", ".jpg", ".jpeg", ".gif")) and
+                name not in references):
+            os.unlink(path)
+            removed += 1
+    if removed:
+        sys.stderr.write("Removed %d unused generated images\n" % removed)
 
 
 def build():
@@ -2133,6 +2244,10 @@ def build():
     for name in os.listdir(OUT_DIR):
         if name.endswith(".html"):
             os.unlink(os.path.join(OUT_DIR, name))
+
+    # 共通の共有画像は本文の図から独立させ、図の差し替えに左右されないようにする。
+    shutil.copy2(os.path.join(ROOT, "assets", os.path.basename(OG_DEFAULT)),
+                 os.path.join(OUT_DIR, OG_DEFAULT))
 
     chapters = collect_chapters()
     mark_visibility(chapters)
@@ -2194,8 +2309,17 @@ def build():
                          desc="この教材で章をまたいで出てくる用語を、"
                               "1語＝定義2〜3行と登場章つきでまとめました。",
                          url="glossary.html"))
+    reference = load_pathways_reference()
+    if reference is not None:
+        meta, text = reference
+        with io.open(os.path.join(OUT_DIR, "pathways.html"), "w", encoding="utf-8") as f:
+            f.write(page("美容医療に関わるシグナル伝達経路 ― 生化学で見る美容医療",
+                         nav_html(chapters, "pathways.html"), pathways_body(meta, text),
+                         desc="美容医療に関わるシグナル伝達経路を、刺激・伝達・細胞の変化から理解する参照ページ。",
+                         url="pathways.html"))
     if not PREVIEW:
         write_sitemap(OUT_DIR, [c for c in chapters if c["visible"]])
+    prune_unused_images(OUT_DIR)
     sys.stderr.write("Wrote %s（%s）: %d / %d 章\n"
                      % (OUT_DIR, "プレビュー・全章" if PREVIEW else "公開・approved のみ",
                         written, len(chapters)))
@@ -2220,6 +2344,8 @@ def write_sitemap(out_dir, chapters):
     """sitemap.xml。1ページ1章なので、公開した章の場所を検索エンジンに知らせる。"""
     today = datetime.date.today().isoformat()
     urls = ["index.html", "changelog.html"] + [ch["slug"] for ch in chapters]
+    if load_pathways_reference() is not None:
+        urls.append("pathways.html")
     items = "".join(
         "<url><loc>%s%s</loc><lastmod>%s</lastmod></url>" % (BASE_URL, u, today)
         for u in urls)

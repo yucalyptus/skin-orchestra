@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 465" role="img" aria-labelledby="title desc">
+  <title id="title">転写とRNA加工、成熟mRNAの核外輸送</title>
+  <desc id="desc">核内のDNAから前駆mRNAが転写される。前駆mRNAはスプライシング、5プライムキャップ、ポリA尾部などの加工を受けて成熟mRNAとなり、核膜孔を通って細胞質へ出る。DNAは核内に残る。</desc>
+  <rect width="1100" height="465" fill="#fff" />
+  <text x="36" y="51" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="34px" font-weight="700">DNAの情報を、使えるmRNAに仕上げる</text>
+  <rect x="35" y="89" width="825" height="330" rx="27" fill="#f2eef9" stroke="#a99acd" stroke-width="3" />
+  <text x="59" y="129" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#5e5199" font-size="29px" font-weight="700">核内</text>
+  <text x="918" y="129" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#5e5199" font-size="29px" font-weight="700">細胞質</text>
+  <path d="M94 181C135 204 135 260 94 283M140 181C99 204 99 260 140 283" fill="none" stroke="#66549e" stroke-width="6" />
+  <path d="M103 198H131M111 219H121M112 241H123M102 269H130" stroke="#a394cd" stroke-width="4" />
+  <text x="87" y="329" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="26px" font-weight="700">DNA</text>
+  <text x="63" y="369" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">核内に残る</text>
+  <path d="M167 237H229" fill="none" stroke="#245d9c" stroke-width="5" stroke-linecap="round" />
+  <polygon points="229,237 216,229 216,245" fill="#245d9c" />
+  <text x="170" y="207" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">転写</text>
+  <path d="M260 233H299" stroke="#288aaa" stroke-width="11" stroke-linecap="round" />
+  <path d="M304 233H330" stroke="#d67d71" stroke-width="11" stroke-linecap="round" />
+  <path d="M336 233H378" stroke="#288aaa" stroke-width="11" stroke-linecap="round" />
+  <text x="239" y="329" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="26px" font-weight="700">前駆mRNA</text>
+  <text x="243" y="369" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">不要な区間を含む</text>
+  <path d="M392 237H440" fill="none" stroke="#245d9c" stroke-width="5" stroke-linecap="round" />
+  <polygon points="440,237 427,229 427,245" fill="#245d9c" />
+  <rect x="449" y="167" width="221" height="147" rx="18" fill="#fff" stroke="#afa1ce" stroke-width="2" />
+  <text x="472" y="207" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="26px" font-weight="700">RNA加工</text>
+  <text x="468" y="246" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">・スプライシング</text>
+  <text x="468" y="275" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">・5′キャップ</text>
+  <text x="468" y="304" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">・ポリA尾部</text>
+  <path d="M682 237H717" fill="none" stroke="#245d9c" stroke-width="5" stroke-linecap="round" />
+  <polygon points="717,237 704,229 704,245" fill="#245d9c" />
+  <circle cx="743" cy="235" r="11" fill="#d9b34e" />
+  <path d="M758 235H807" stroke="#288aaa" stroke-width="11" stroke-linecap="round" />
+  <text x="813" y="243" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#a67531" font-size="17px">AAA</text>
+  <text x="674" y="329" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="26px" font-weight="700">成熟mRNA</text>
+  <text x="685" y="369" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">核外へ出る</text>
+  <path d="M860 120V205M860 268V389" stroke="#a99acd" stroke-width="7" />
+  <rect x="847" y="205" width="26" height="63" rx="11" fill="#d9d0e9" stroke="#66549e" stroke-width="3" />
+  <text x="877" y="291" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">核膜孔</text>
+  <path d="M874 236H931" fill="none" stroke="#245d9c" stroke-width="5" stroke-linecap="round" />
+  <polygon points="931,236 918,228 918,244" fill="#245d9c" />
+  <circle cx="951" cy="237" r="7" fill="#d9b34e" />
+  <path d="M959 237q12 -14 24 0t24 0t24 0" fill="none" stroke="#288aaa" stroke-width="6" stroke-linecap="round" />
+  <text x="1032" y="245" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#a67531" font-size="17px">AAA</text>
+  <text x="952" y="329" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#1f3045" font-size="26px" font-weight="700">mRNA</text>
+  <text x="930" y="369" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#485d72" font-size="21px">翻訳の場へ</text>
+</svg>

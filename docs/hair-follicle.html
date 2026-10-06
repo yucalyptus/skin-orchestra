@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>毛と毛包 ― 生化学で見る美容医療</title>
+<meta name="description" content="毛包は、毛を作り直す細胞を保ち、傷ついた表皮の修復にも関わる構造です。 毛周期は、その細胞たちが毛を作る活動を繰り返す過程です。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/hair-follicle.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="毛と毛包 ― 生化学で見る美容医療">
+<meta property="og:description" content="毛包は、毛を作り直す細胞を保ち、傷ついた表皮の修復にも関わる構造です。 毛周期は、その細胞たちが毛を作る活動を繰り返す過程です。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/hair-follicle.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/hair-follicle_毛包の構造と毛の形成.webp">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border:0;font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border:0;font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   見出しと薄い背景で補足のまとまりを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border:0;border-radius:4px;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<div class="sec">生化学・細胞生物学の基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
+<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP</a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
+<div class="part">材料を感知し作る</div>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
+<div class="part">掃除と作り直し</div>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
+<div class="part">傷害から修復まで</div>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
+<div class="part">細胞は加齢で何が変わるか</div>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html" class="active">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
+<div class="part">訴えを細胞から読み解く</div>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
+<div class="part">疾患・病態を細胞から理解する</div>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
+<span class="soon">脂漏性皮膚炎<em>準備中</em></span>
+<span class="soon">尋常性痤瘡<em>準備中</em></span>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<span class="soon">肝斑<em>準備中</em></span>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="part">デバイス</div>
+<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<span class="soon">ニードルRFの生化学<em>準備中</em></span>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter" data-chapter="hair-follicle">
+<p class="kicker">美容皮膚科　／　組織の生化学</p>
+<h1 class="ch-title">毛と毛包<small>毛を作る構造と、再生・修復を支える細胞</small></h1>
+<p class="dateline">公開 2026-10-06</p>
+<p>毛は、皮膚の中にある<strong>毛包</strong>で作られます。毛包には、毛を作る細胞、その細胞を補充する幹細胞、増殖や分化を調節する間葉系の細胞が集まっています。これらがやり取りすることで、毛は伸び、成長を止め、再び作られます。</p>
+<p>毛包は、皮膚が傷ついたときに表皮を修復する細胞の供給源にもなります。発毛と創傷治癒を理解するために、まず毛そのものと、それを作る毛包の構造を見ていきます。</p>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>毛包は、毛を作り直す細胞を保ち、傷ついた表皮の修復にも関わる構造です。</strong> 毛周期は、その細胞たちが毛を作る活動を繰り返す過程です。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　毛と、それを作る毛包</a></li><li><a href="#s2">2　細胞が分裂し、角化して毛になる</a></li><li><a href="#s3">3　バルジに細胞を残し、毛を作り直す</a></li><li><a href="#s4">4　毛周期は、毛包の下部を作り直す過程</a></li><li><a href="#s5">5　毛が抜けることと、細くなること</a></li><li><a href="#s6">6　毛包は、傷ついた表皮の修復にも関わる</a></li></ul></nav><h2 id="s1">1　毛と、それを作る毛包</h2>
+<p>皮膚の表面に出ている毛の部分を<strong>毛幹</strong>、皮膚の中にある部分を<strong>毛根</strong>と呼びます。その毛根を取り囲み、毛を作る上皮性の構造が<strong>毛包</strong>です。毛包の周囲には、結合組織、血管、神経が分布します。毛包の上皮と、毛乳頭・結合組織性毛根鞘などの間葉系組織が、互いにシグナルを送り合って毛の形成を支えます。</p>
+<p>成長中の毛包の最も深い部分は膨らんでおり、<strong>毛球</strong>と呼ばれます。毛球には、毛を作る<strong>毛母細胞</strong>と、その増殖・分化を調節する<strong>毛乳頭</strong>があります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/hair-follicle_毛包の構造と毛の形成.webp" alt="成長期の毛包と毛球、毛の横断面。" width="1536" height="1024" loading="lazy"><figcaption>成長期の毛包と毛球、毛の横断面。毛母細胞が毛乳頭の周囲で増殖し、上方で分化・角化して毛になる。バルジは毛球より上の外毛根鞘にある。メデュラの有無は毛によって異なる。</figcaption></figure>
+<div class="tblwrap"><table><thead><tr><th>部位</th><th>どこにあるか</th><th>主な役割</th></tr></thead><tbody><tr><td>毛母（毛母細胞の集団）</td><td>毛球内で毛乳頭を取り囲む</td><td>活発に分裂し、毛や内毛根鞘になる細胞を供給する</td></tr><tr><td>毛乳頭</td><td>毛球の底部に入り込む結合組織</td><td>上皮細胞へシグナルを送り、毛の成長を調節する</td></tr><tr><td>内毛根鞘</td><td>成長中の毛をすぐ外側から囲む</td><td>作られる毛を支持し、形が整う過程に関わる</td></tr><tr><td>外毛根鞘</td><td>内毛根鞘の外側から毛包を囲む</td><td>表皮に連続する上皮で、幹細胞・前駆細胞を含む</td></tr><tr><td>結合組織性毛根鞘（dermal sheath）</td><td>毛包上皮の外側を包む間葉系の組織</td><td>毛乳頭とともに毛包の環境を構成し、毛周期に伴う形の変化にも関わる</td></tr><tr><td>バルジ</td><td>皮脂腺の開口部より下、立毛筋が付着する付近の外毛根鞘</td><td>毛包を再生する上皮性幹細胞が存在する領域</td></tr></tbody></table></div>
+<p>毛包の上部には皮脂腺の導管が開き、皮脂が毛包を通って皮膚表面へ出ます。皮脂の形成と全分泌は<a class="chref" href="sebum.html">皮脂分泌の生化学</a>で扱います。</p>
+<details class="supplement"><summary>詳しく：毛包の上部と下部では、残り方が違う</summary><div class="supplement-body"><p>皮膚表面から皮脂腺の導管が開く位置までを<strong>漏斗部</strong>、そこからバルジ付近までを<strong>峡部</strong>と呼びます。その下に、毛周期に応じて伸び縮みする下部があります。</p>
+<p>上部は表皮や皮脂腺につながる構造を保ち、下部は成長期に発達して退行期に縮小します。バルジの幹細胞が保たれる位置と、毛母細胞が活発に毛を作る位置を分けると、毛周期に伴う形の変化が理解しやすくなります。</p></div></details>
+<h3>軟毛と硬毛、部位による違い</h3>
+<p>細く短く、色素の少ない毛を<strong>軟毛（vellus hair）</strong>、太く色素の多い毛を<strong>硬毛（terminal hair）</strong>と呼びます。頭髪やひげに加え、眉毛・まつ毛も硬毛に含まれます。毛包の大きさや深さも、作る毛の種類によって異なります。<a class="ext" href="https://doi.org/10.1111/j.1600-0625.2007.00602.x" target="_blank" rel="noopener">Vogtら, Exp Dermatol., 2007</a></p>
+<p>毛が伸びる長さには、太さだけでなく、成長を続ける期間が関わります。頭髪、眉毛、まつ毛では成長期の長さが異なり、それぞれの部位に合った長さの毛になります。</p>
+<h2 id="s2">2　細胞が分裂し、角化して毛になる</h2>
+<p>毛母細胞が分裂して生まれた細胞は、上方へ移動しながら分化します。毛になる細胞はケラチンなどを蓄積し、核や細胞内の構造を失って、硬い線維状の構造になります。<strong>毛が伸びるのは、根元で新しい細胞が作られ、毛へと変わるためです。</strong></p>
+<p>毛の最外層は、鱗状の細胞が重なる<strong>毛小皮（キューティクル）</strong>です。その内側の<strong>毛皮質（コルテックス）</strong>が毛の大部分を占め、強さや色に関わります。中心には<strong>毛髄質（メデュラ）</strong>がある場合もあります。</p>
+<h3>ケラチンが束になり、架橋されて強さを持つ</h3>
+<p>毛の強さには、<strong>毛ケラチンの線維と、その周囲にあるケラチン関連タンパク質（KAP）</strong>が関わります。毛皮質では、ケラチンの細い線維が長軸方向に束を作り、KAPとともに密な構造を形成します。</p>
+<p>システイン残基どうしが作る<strong>ジスルフィド結合（S–S結合）</strong>は、このタンパク質の構造を安定させます。毛の手触りや切れにくさは、作られた線維の配列、結合、表面のキューティクルの状態によって変わります。<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9247342/" target="_blank" rel="noopener">ヒト毛髪の力学特性を調べた研究, 2022</a></p>
+<p>皮膚から出た毛は、角化した細胞からなる構造です。生きた細胞のように、傷んだ部分を新しいタンパク質へ置き換える働きは持ちません。</p>
+<h3>毛を作る細胞と、色を作る細胞</h3>
+<p>毛球のメラノサイトは、毛になる細胞へメラニンを渡します。毛の形成と色素の供給が組み合わさって、色のついた毛が作られます。メラニンの合成は<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>で扱います。</p>
+<p>毛包には、毛を構成する上皮細胞の幹細胞とは別に、<strong>メラノサイト幹細胞</strong>も存在します。毛の形を作る細胞と色素を供給する細胞は、成長期に合わせて働きます。白髪では、毛の形成が続いていても、十分な色素が供給されなくなります。</p>
+<details class="supplement"><summary>詳しく：白髪とメラノサイト幹細胞</summary><div class="supplement-body"><p>毛の色を保つには、成長期ごとに色素を作るメラノサイトを補う必要があります。メラノサイト幹細胞の維持と白髪の関係は、マウスとヒト毛包を調べた研究で示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15618488/" target="_blank" rel="noopener">Nishimuraら, 2005</a></p>
+<p>マウスの休止期毛包では、メラノサイト幹細胞は<strong>バルジと、その下にある毛芽（次の毛の形成を始める細胞集団）</strong>に存在し、多くは毛芽に見られます。細胞追跡では、毛周期に合わせて場所を移り、分化が進んだ状態から未分化な状態へ戻ることも示されました。移動先で受けるWntなどのシグナルが、この変化に関わります。</p>
+<p>加齢したマウスでは、バルジにとどまり、毛芽へ戻らない細胞が増えました。こうした細胞は色素を作るメラノサイトの供給に参加しにくくなります。<strong>幹細胞が残っていることに加え、必要な場所へ移り、分化できること</strong>が毛の色を保つうえで重要です。<a class="ext" href="https://www.nature.com/articles/s41586-023-05960-6" target="_blank" rel="noopener">Sunら, 2023</a></p></div></details>
+<h2 id="s3">3　バルジに細胞を残し、毛を作り直す</h2>
+<p>毛母細胞は、成長中に毛を作る細胞を大量に供給します。一方、バルジには、繰り返し毛包を再生するための幹細胞が保たれています。<strong>今の毛を作る毛母と、次の毛を作る細胞を供給するバルジは、場所も役割も異なります。</strong></p>
+<p>ヒトの毛包でも、バルジから増殖能力の高い細胞を分離した研究があり、幹細胞に富む領域としての性質が調べられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16395407/" target="_blank" rel="noopener">Ohyamaら, 2006</a></p>
+<p>幹細胞から生まれた細胞の一部は、増殖を繰り返して数を増やし、毛母などの細胞集団を作ります。こうした増幅の段階を経て、毛や内毛根鞘へ分化する細胞を大量に供給できます。</p>
+<p>幹細胞の性質は、その細胞が接する基底膜、周囲の細胞、受け取るシグナルによって保たれています。この局所環境を<strong>幹細胞ニッチ</strong>と呼びます。毛包では、細胞を長く残す仕組みと、必要な時期に増殖・分化させる仕組みが組み合わさっています。</p>
+<h3>毛乳頭は、毛の形成を調節する間葉系の細胞集団</h3>
+<p>毛乳頭の細胞は、特殊化した線維芽細胞の性質を持ちます。周囲の上皮細胞へシグナルを送り、毛包が毛を作る構造へ発達する過程を調節します。血管から材料や酸素が届くことに加えて、<strong>毛乳頭と上皮細胞のやり取り</strong>が毛の形成に必要です。</p>
+<details class="supplement"><summary>詳しく：毛乳頭細胞は、培養の仕方で毛を作らせる能力が変わる</summary><div class="supplement-body"><p>ヒト毛乳頭細胞を平面上で増やすと、元の毛乳頭に特徴的な遺伝子発現が失われ、毛包の形成を誘導する能力が低下します。細胞を立体的な塊にして培養すると、その性質の一部が回復しました。</p>
+<p>この細胞塊を使い、免疫不全マウスへ移植したヒト皮膚内で新しい毛包の形成を誘導した研究があります。細胞の種類に加えて、立体配置や周囲との接触が機能を左右することを示す実験です。<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3856847/" target="_blank" rel="noopener">Higginsら, 2013</a></p></div></details>
+<p>休止期には、バルジの下、毛乳頭に接する位置に<strong>二次毛芽（secondary hair germ）</strong>という小さな上皮細胞集団があります。毛芽とバルジの細胞が、毛乳頭などからのシグナルに応答し、毛包の下部を再形成します。</p>
+<details class="supplement"><summary>詳しく：毛乳頭と幹細胞の間にある「毛芽」</summary><div class="supplement-body"><p>マウスの研究では、成長期の開始時に毛芽の細胞がバルジの細胞より先に増殖し、毛包の再形成を始めることが示されています。毛乳頭、毛芽、バルジが時間差をもって応答することで、新しい成長期へ移ります。<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2668200/" target="_blank" rel="noopener">Grecoら, 2009</a></p></div></details>
+<h3>増殖を始めるシグナルと、静止を保つシグナル</h3>
+<p>毛包の再生は、周囲のシグナルによって始まる時期が調節されています。<strong>Wnt/β-catenin</strong>は毛の形成や成長期への移行に関わり、<strong>BMP（骨形成タンパク質）</strong>は幹細胞が静止した状態を保つ調節に関わります。作用は細胞の種類や毛周期の段階で変わります。</p>
+<details class="supplement"><summary>詳しく：Wnt・BMP・SHHは、どの段階で働くか</summary><div class="supplement-body"><p>マウスでは、周囲の真皮でBMPシグナルが強い時期には、毛包が成長期へ入りにくくなります。BMPの作用が弱まると、再生を始める刺激へ応答しやすくなります。休止期にも、再生を始めやすい時期と始めにくい時期があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18202659/" target="_blank" rel="noopener">Plikusら, 2008</a></p>
+<p>再生が始まると、増殖中の毛母前駆細胞などから<strong>SHH（Sonic Hedgehog）</strong>が分泌され、バルジの幹細胞の増殖や、毛乳頭の応答に関わります。幹細胞から生まれた細胞も、幹細胞と周囲の環境へシグナルを返しています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24813615/" target="_blank" rel="noopener">Hsuら, 2014</a></p>
+<p>これらは主にマウスで解析された機序です。各シグナルの働く場所と時期を踏まえて、毛包全体の再生を捉える必要があります。</p></div></details>
+<h2 id="s4">4　毛周期は、毛包の下部を作り直す過程</h2>
+<p>毛包は、毛を作る成長期、下部が縮小する退行期、次の成長に備える休止期を繰り返します。これが<strong>毛周期</strong>です。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/hair-follicle_毛周期と下部の再形成.webp" alt="成長期には深い毛球で毛を作り、退行期には下部が縮小する。" width="1774" height="887" loading="lazy"><figcaption>成長期には深い毛球で毛を作り、退行期には下部が縮小する。休止期にもバルジと毛芽が残り、次の成長期に下部を再形成する。期間や縮尺は模式的に示している。</figcaption></figure>
+<div class="tblwrap"><table><thead><tr><th>時期</th><th>毛包で起きること</th><th>毛との関係</th></tr></thead><tbody><tr><td>成長期（anagen）</td><td>毛包の下部が発達し、毛母細胞が活発に増殖する</td><td>毛が作られ、伸びる</td></tr><tr><td>退行期（catagen）</td><td>下部の上皮細胞にアポトーシスが起こり、毛包が縮小する</td><td>毛の形成が止まる</td></tr><tr><td>休止期（telogen）</td><td>短くなった毛包に幹細胞や毛芽が保たれる</td><td>古い毛が保持され、次の成長期への移行を待つ</td></tr></tbody></table></div>
+<p>頭髪の成長期は<strong>約2〜6年</strong>、休止期は<strong>約3か月</strong>が目安です。毛包ごとに周期の段階がずれているため、通常は一斉に毛が抜けず、毛量が保たれます。期間には部位差・個人差があり、女性29人のまつ毛を調べた研究では、成長期は平均約1か月でした。<a class="ext" href="https://doi.org/10.1007/s13555-017-0171-8" target="_blank" rel="noopener">Martínez-Velascoら, Dermatol Ther (Heidelb)., 2017</a>、<a class="ext" href="https://doi.org/10.1111/j.1365-2133.2009.09487.x" target="_blank" rel="noopener">Thibautら, Br J Dermatol., 2010</a></p>
+<p>毛が抜ける過程は<strong>脱毛期（exogen）</strong>として区別されます。古い毛の脱落と、新しい毛の形成は、それぞれ調節されています。</p>
+<p>退行期に縮小するのは主に毛包の下部です。上部の構造と幹細胞を残すことで、次の成長期に毛を作る部分を再形成できます。発毛を考えるときには、細胞が残っているか、その細胞が活動を始められるか、作られる毛がどの程度成長するかを見ます。</p>
+<details class="supplement"><summary>詳しく：退行期には、毛乳頭も位置を変える</summary><div class="supplement-body"><p>ヒト毛包では、退行期に毛球周囲などの上皮細胞でアポトーシスが増えることが確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9856801/" target="_blank" rel="noopener">ヒト毛包の研究</a></p>
+<p>マウスでは、毛包を外側から包む<strong>結合組織性毛根鞘（dermal sheath）</strong>の収縮が、毛乳頭を上方へ移動させることに関わります。毛包が短くなると、毛乳頭が再び毛芽の近くに位置し、次の再生につながる配置になります。細胞死と組織の収縮が協調して、毛包の形を変えています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31857493/" target="_blank" rel="noopener">Heitmanら, 2020</a></p></div></details>
+<h2 id="s5">5　毛が抜けることと、細くなること</h2>
+<p>見た目の毛量には、毛の本数、一本の太さ、伸びる長さが関わります。成長期が短くなると長い毛に育ちにくくなり、毛包が小さくなると細い毛が作られるようになります。<strong>毛が抜ける変化と、作られる毛が細くなる変化を分ける</strong>と、毛包のどの働きが変わったかを整理できます。</p>
+<div class="tblwrap"><table><thead><tr><th>変化</th><th>毛包で起きていること</th><th>見た目へのつながり</th></tr></thead><tbody><tr><td>休止期へ移る毛包が増える</td><td>成長を終える毛包の割合が増え、その後に毛が脱落する</td><td>きっかけから時間をおいて抜け毛が増えることがある</td></tr><tr><td>毛包がミニチュア化する</td><td>毛包と毛母の規模が小さくなり、細く短い毛を作るようになる</td><td>毛が残っていても、地肌が見えやすくなる</td></tr><tr><td>幹細胞を保つ領域まで傷つく</td><td>再生に必要な細胞と環境が失われ、瘢痕に置き換わることがある</td><td>毛の再生が難しくなる</td></tr></tbody></table></div>
+<details class="supplement"><summary>詳しく：成長中の毛球を免疫反応から守る仕組み</summary><div class="supplement-body"><p>成長期の毛球には、免疫細胞に認識されにくい局所環境があります。これを<strong>免疫特権（immune privilege）</strong>と呼びます。ヒト毛包では、毛球の一部で抗原を提示するMHCクラスI分子の発現が低く保たれる一方、上部には免疫細胞が分布します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10809841/" target="_blank" rel="noopener">Christophら, Br J Dermatol., 2000</a></p>
+<p>培養したヒト毛包に炎症性サイトカインIFN-γを加えると、毛球のMHCクラスIなどの発現が増えました。この保護的な環境の変化は、円形脱毛症で毛包が免疫反応の標的になる仕組みの一つとして研究されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14742267/" target="_blank" rel="noopener">Itoら, Am J Pathol., 2004</a></p></div></details>
+<h3>AGAでは、毛乳頭の応答と細胞の供給が変わる</h3>
+<p>男性型脱毛症（AGA）では、アンドロゲンへの応答に伴って、感受性のある部位の毛包がミニチュア化します。ヒトの培養毛乳頭細胞では、アンドロゲンの一種である<strong>DHT（ジヒドロテストステロン）</strong>によってWntシグナルを抑える<strong>DKK1</strong>の産生が増え、毛包の上皮細胞の増殖抑制やアポトーシスに関わることが報告されています。ホルモンを受け取った毛乳頭が、隣の上皮細胞へ及ぼす作用を変える例です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17657240/" target="_blank" rel="noopener">Kwackら, 2008</a></p>
+<details class="supplement"><summary>詳しく：幹細胞が残っていても、十分な毛を作れないことがある</summary><div class="supplement-body"><p>AGA患者の薄毛部と非薄毛部を比較した研究では、薄毛部にもKRT15を高発現する幹細胞集団が保たれる一方、CD200を高発現する細胞やCD34陽性の前駆細胞集団が減っていました。</p>
+<p>この結果は、幹細胞が存在することに加えて、そこから毛を作る細胞集団へ進む過程が重要であることを示唆します。研究者は、幹細胞から前駆細胞への移行の障害を、AGAに関わる可能性として提案しています。<a class="ext" href="https://doi.org/10.1172/JCI44478" target="_blank" rel="noopener">Garzaら, 2011</a></p></div></details>
+<details class="supplement"><summary>詳しく：加齢した毛包とXVII型コラーゲン</summary><div class="supplement-body"><p>毛包の幹細胞には、基底膜への接着に関わる膜貫通型タンパク質<strong>XVII型コラーゲン（COL17A1）</strong>があります。真皮で太い線維を作るI型・III型とは異なり、細胞の接着構造を構成するコラーゲンです。</p>
+<p>マウスの細胞追跡では、DNA損傷応答に伴うCOL17A1の分解が、幹細胞の性質の喪失と表皮方向への分化につながり、毛包の縮小に関わる機序が示されました。ヒトの加齢毛包でも関連する変化が調べられています。毛包の維持には、幹細胞そのものと、接着を含むニッチの維持が関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26912707/" target="_blank" rel="noopener">Matsumuraら, 2016</a></p></div></details>
+<h2 id="s6">6　毛包は、傷ついた表皮の修復にも関わる</h2>
+<p>皮膚の表面が傷つくと、創の周囲の表皮や、創の下に残った毛包などから上皮細胞が増殖・移動し、傷の表面を覆います。これを<strong>再上皮化</strong>と呼びます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/hair-follicle_付属器からの再上皮化.webp" alt="部分層創傷では、創縁の表皮に加え、傷の下に残る毛包や汗腺系の上皮が増殖・移動する。" width="1774" height="887" loading="lazy"><figcaption>部分層創傷では、創縁の表皮に加え、傷の下に残る毛包や汗腺系の上皮が増殖・移動する。上皮が創面に広がり、互いにつながって表面を覆う。</figcaption></figure>
+<p>毛包は皮膚の深部まで続いているため、表面が傷ついても、その一部が残ることがあります。残った上皮が細胞の供給源になることが、毛包と創傷治癒のつながりです。炎症や真皮の修復を含む全体の流れは<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>で扱います。</p>
+<details class="supplement"><summary>詳しく：バルジの研究と、ヒトの創傷で確認されたこと</summary><div class="supplement-body"><p>マウスで細胞の由来を追った研究では、バルジ由来の細胞が傷ついた表皮へ移動し、修復に参加しました。この研究では、その多くは修復した表皮に長期間とどまらず、主に初期の修復へ寄与しました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16288281/" target="_blank" rel="noopener">Itoら, 2005</a></p>
+<p>ヒト前腕の部分層創傷を調べた研究では、毛包脂腺系とエクリン汗腺系の両方から上皮が広がり、新しい表皮を作る様子が確認されています。ヒトでは、毛包に加えて汗腺系も重要な細胞の供給源です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23159944/" target="_blank" rel="noopener">Rittiéら, 2013</a></p>
+<p>細胞の供給源は、傷の深さと、どの構造が残っているかによって変わります。マウスで示されたバルジ細胞の動きと、ヒトで確認された付属器からの再上皮化は、研究対象を明記して捉えます。</p></div></details>
+<h3>表面を覆う修復と、毛包そのものを作る再生</h3>
+<p>再上皮化では、毛包などから供給された細胞が、創面を覆う表皮を作ります。新しい毛包を作るには、さらに上皮と間葉系の細胞が配置を整え、毛乳頭や毛母、幹細胞を保つ領域まで形成する必要があります。</p>
+<p>ヒトの深い傷が瘢痕として治る場合、表面が閉じても、毛包や汗腺などの付属器は十分に再建されないことがあります。<strong>傷を閉じることと、毛を作れる皮膚の構造まで取り戻すことには、必要な過程の違いがあります。</strong></p>
+<details class="supplement"><summary>詳しく：傷の中で毛包が新しくできる研究</summary><div class="supplement-body"><p>成体マウスの大きな全層創傷では、創の中央に毛包が新しく形成される現象が示されています。新生毛包は既存のバルジ幹細胞領域の外に由来する上皮細胞から生じ、Wntシグナルが必要でした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17507982/" target="_blank" rel="noopener">Itoら, 2007</a></p>
+<p>これは、傷の環境で発生時に似た毛包形成が起こり得ることを示す研究です。ヒトで傷をつければ同じように毛包が再生するか、発毛治療として利用できるかは、別途検証が必要です。</p></div></details>
+<h2>この章の到達点</h2>
+<ol class="goal"><li>毛は角化した構造であり、毛包の中の細胞が増殖・分化することで作られる。</li><li>毛母は成長中の毛を作り、バルジの幹細胞や毛芽、毛乳頭は毛包の再生に関わる。</li><li>毛周期では、幹細胞を保ちながら毛包の下部が縮小・再形成される。</li><li>毛量は脱落だけでなく、毛包の規模や成長期の長さによっても変わる。幹細胞とその環境を保ち、毛を作る細胞を供給する過程が重要になる。</li><li>傷の下に残る毛包や汗腺系は再上皮化に参加する。表皮を修復する過程と、毛包そのものを新生する過程は異なる。</li></ol>
+<h3>中核参考文献</h3>
+<ul><li>Ohyama M, et al. Characterization and isolation of stem cell-enriched human hair follicle bulge cells. <em>J Clin Invest.</em> 2006. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16395407/" target="_blank" rel="noopener">PMID: 16395407</a>.（ヒトのバルジ細胞の分離と性質）</li><li>Greco V, et al. A Two-Step Mechanism for Stem Cell Activation during Hair Regeneration. <em>Cell Stem Cell.</em> 2009;4:155–169. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19200804/" target="_blank" rel="noopener">PMID: 19200804</a>. <a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2668200/" target="_blank" rel="noopener">全文</a>.（マウスの毛芽とバルジの活性化）</li><li>Ito M, et al. Stem cells in the hair follicle bulge contribute to wound repair but not to homeostasis of the epidermis. <em>Nat Med.</em> 2005;11:1351–1354. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16288281/" target="_blank" rel="noopener">PMID: 16288281</a>. <a class="ext" href="https://doi.org/10.1038/nm1328" target="_blank" rel="noopener">DOI: 10.1038/nm1328</a>.</li><li>Rittié L, et al. Eccrine sweat glands are major contributors to reepithelialization of human wounds. <em>Am J Pathol.</em> 2013;182:163–171. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23159944/" target="_blank" rel="noopener">PMID: 23159944</a>. <a class="ext" href="https://doi.org/10.1016/j.ajpath.2012.09.019" target="_blank" rel="noopener">DOI: 10.1016/j.ajpath.2012.09.019</a>.</li></ul>
+<ul><li>Higgins CA, et al. Microenvironmental reprogramming by three-dimensional culture enables dermal papilla cells to induce de novo human hair-follicle growth. <em>Proc Natl Acad Sci USA.</em> 2013;110:19679–19688. <a class="ext" href="https://doi.org/10.1073/pnas.1309970110" target="_blank" rel="noopener">DOI: 10.1073/pnas.1309970110</a>.</li><li>Plikus MV, et al. Cyclic dermal BMP signalling regulates stem cell activation during hair regeneration. <em>Nature.</em> 2008;451:340–344. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18202659/" target="_blank" rel="noopener">PMID: 18202659</a>. <a class="ext" href="https://doi.org/10.1038/nature06457" target="_blank" rel="noopener">DOI: 10.1038/nature06457</a>.</li><li>Hsu YC, Li L, Fuchs E. Transit-amplifying cells orchestrate stem cell activity and tissue regeneration. <em>Cell.</em> 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24813615/" target="_blank" rel="noopener">PMID: 24813615</a>. <a class="ext" href="https://doi.org/10.1016/j.cell.2014.02.057" target="_blank" rel="noopener">DOI: 10.1016/j.cell.2014.02.057</a>.</li><li>Heitman N, et al. Dermal sheath contraction powers stem cell niche relocation during hair cycle regression. <em>Science.</em> 2020;367:161–166. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31857493/" target="_blank" rel="noopener">PMID: 31857493</a>. <a class="ext" href="https://doi.org/10.1126/science.aax9131" target="_blank" rel="noopener">DOI: 10.1126/science.aax9131</a>.</li><li>Kwack MH, et al. Dihydrotestosterone-inducible dickkopf 1 from balding dermal papilla cells causes <span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span> in follicular keratinocytes. <em>J Invest Dermatol.</em> 2008. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17657240/" target="_blank" rel="noopener">PMID: 17657240</a>.</li><li>Garza LA, et al. Bald scalp in men with androgenetic alopecia retains hair follicle stem cells but lacks CD200-rich and CD34-positive hair follicle progenitor cells. <em>J Clin Invest.</em> 2011;121:613–622. <a class="ext" href="https://doi.org/10.1172/JCI44478" target="_blank" rel="noopener">DOI: 10.1172/JCI44478</a>.</li><li>Matsumura H, et al. Hair follicle aging is driven by transepidermal elimination of stem cells via COL17A1 proteolysis. <em>Science.</em> 2016. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26912707/" target="_blank" rel="noopener">PMID: 26912707</a>.</li><li>Nishimura EK, et al. Mechanisms of hair graying: incomplete <span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。" data-u="glossary.html#term-3f14f8b30147">melanocyte</span> stem cell maintenance in the niche. <em>Science.</em> 2005;307:720–724. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15618488/" target="_blank" rel="noopener">PMID: 15618488</a>.</li><li>Sun Q, et al. Dedifferentiation maintains melanocyte stem cells in a dynamic niche. <em>Nature.</em> 2023;616:774–782. <a class="ext" href="https://doi.org/10.1038/s41586-023-05960-6" target="_blank" rel="noopener">DOI: 10.1038/s41586-023-05960-6</a>.</li><li>Ito M, et al. Wnt-dependent de novo hair follicle regeneration in adult mouse skin after wounding. <em>Nature.</em> 2007;447:316–320. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17507982/" target="_blank" rel="noopener">PMID: 17507982</a>. <a class="ext" href="https://doi.org/10.1038/nature05766" target="_blank" rel="noopener">DOI: 10.1038/nature05766</a>.</li></ul>
+
+</article>
+<nav class="pager"><a class="prev" href="sebum.html"><span class="lbl">前へ</span>皮脂分泌の生化学</a><a class="next" href="adipose.html"><span class="lbl">次へ</span>脂肪</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
+  function show(el){
+    cancelHide();
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseenter',cancelHide);
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html" class="active">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html" class="active">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -710,16 +768,16 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <ul><li>Thiele JJ, Weber SU, Packer L. Sebaceous gland secretion is a major physiologic route of vitamin E delivery to skin. <em>J Invest Dermatol.</em> 1999;113(6):1006-1010. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10594744/" target="_blank" rel="noopener">PMID: 10594744</a>. <a class="ext" href="https://doi.org/10.1046/j.1523-1747.1999.00794.x" target="_blank" rel="noopener">DOI: 10.1046/j.1523-1747.1999.00794.x</a>.</li></ul>
 <ul><li>Zouboulis CC, Picardo M, Ju Q, Kurokawa I, Törőcsik D, Bíró T, Schneider MR. Beyond acne: current aspects of sebaceous gland biology and function. <em>Rev Endocr Metab Disord.</em> 2016;17(3):319-334. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/27726049/" target="_blank" rel="noopener">PMID: 27726049</a>. <a class="ext" href="https://doi.org/10.1007/s11154-016-9389-5" target="_blank" rel="noopener">DOI: 10.1007/s11154-016-9389-5</a>.（皮脂腺生物学の総説）</li><li>Plewig G, Christophers E. Renewal rate of human sebaceous glands. <em>Acta Derm Venereol.</em> 1974;54(3):177-182. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/4134657/" target="_blank" rel="noopener">PMID: 4134657</a>.（<strong>分裂から崩壊まで21〜25日</strong>。健常男性24生検、顔面と上背部のオートラジオグラフィ。腺が小さいほど短い）</li><li>Greene RS, Downing DT, Pochi PE, Strauss JS. Anatomical variation in the amount and composition of human skin surface lipid. <em>J Invest Dermatol.</em> 1970;54(3):240-247. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/5436951/" target="_blank" rel="noopener">PMID: 5436951</a>. <a class="ext" href="https://doi.org/10.1111/1523-1747.ep12280318" target="_blank" rel="noopener">DOI: 10.1111/1523-1747.ep12280318</a>.（部位差の定量。<strong>単一の点推定を置けない根拠</strong>）</li><li>Esler WP, Tesz GJ, Hellerstein MK, et al. Human sebum requires de novo lipogenesis, which is increased in acne vulgaris and suppressed by acetyl-CoA carboxylase inhibition. <em>Sci Transl Med.</em> 2019;11(492):eaau8465. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31092695/" target="_blank" rel="noopener">PMID: 31092695</a>. <a class="ext" href="https://doi.org/10.1126/scitranslmed.aau8465" target="_blank" rel="noopener">DOI: 10.1126/scitranslmed.aau8465</a>.（皮脂中のパルミチン酸・サピエン酸の約80〜85%が局所DNL由来。ACC阻害の第1相を含む。製薬企業主導の研究）</li><li>Landthaler M, Kummermehr J, Wagner A, Plewig G. Inhibitory effects of 13-cis-retinoic acid on human sebaceous glands. <em>Arch Dermatol Res.</em> 1980;269(3):297-309. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6453562/" target="_blank" rel="noopener">PMID: 6453562</a>. <a class="ext" href="https://doi.org/10.1007/BF00406424" target="_blank" rel="noopener">DOI: 10.1007/BF00406424</a>.（腺サイズと分化細胞プールの定量）</li><li>Goldstein JA, Comite H, Mescon H, Pochi PE. Isotretinoin in the treatment of acne: histologic changes, sebum production, and clinical observations. <em>Arch Dermatol.</em> 1982;118(8):555-558. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6213204/" target="_blank" rel="noopener">PMID: 6213204</a>.（皮脂産生88.4%減。皮脂抑制と臨床改善が一致しない例も報告）</li><li>Nelson AM, Zhao W, Gilliland KL, Zaenglein AL, Liu W, Thiboutot DM. Neutrophil gelatinase-associated lipocalin mediates 13-cis retinoic acid-induced <span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span> of human sebaceous gland cells. <em>J Clin Invest.</em> 2008;118(4):1468-1478. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18317594/" target="_blank" rel="noopener">PMID: 18317594</a>. <a class="ext" href="https://doi.org/10.1172/JCI33869" target="_blank" rel="noopener">DOI: 10.1172/JCI33869</a>.</li><li>Nelson AM, Cong Z, Gilliland KL, Thiboutot DM. TRAIL contributes to the apoptotic effect of 13-cis retinoic acid in human sebaceous gland cells. <em>Br J Dermatol.</em> 2011;165(3):526-533. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21564055/" target="_blank" rel="noopener">PMID: 21564055</a>. <a class="ext" href="https://doi.org/10.1111/j.1365-2133.2011.10392.x" target="_blank" rel="noopener">DOI: 10.1111/j.1365-2133.2011.10392.x</a>.</li><li>Smith TM, Gilliland K, Clawson GA, Thiboutot D. IGF-1 induces SREBP-1 expression and lipogenesis in SEB-1 sebocytes via activation of the phosphoinositide 3-kinase/Akt pathway. <em>J Invest Dermatol.</em> 2008;128(5):1286-1293. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17989724/" target="_blank" rel="noopener">PMID: 17989724</a>. <a class="ext" href="https://doi.org/10.1038/sj.jid.5701155" target="_blank" rel="noopener">DOI: 10.1038/sj.jid.5701155</a>.（先行研究は <em>J Invest Dermatol.</em> 2006;126(6):1226-1232. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16575389/" target="_blank" rel="noopener">PMID: 16575389</a>）</li><li>Smith RN, Mann NJ, Braue A, Mäkeläinen H, Varigos GA. A low-glycemic-load diet improves symptoms in acne vulgaris patients: a randomized controlled trial. <em>Am J Clin Nutr.</em> 2007;86(1):107-115. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17616769/" target="_blank" rel="noopener">PMID: 17616769</a>. <a class="ext" href="https://doi.org/10.1093/ajcn/86.1.107" target="_blank" rel="noopener">DOI: 10.1093/ajcn/86.1.107</a>.（生化学アウトカムは <em>J Am Acad Dermatol.</em> 2007;57(2):247-256. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17448569/" target="_blank" rel="noopener">PMID: 17448569</a>）</li><li>Ottaviani M, Alestas T, Flori E, Mastrofrancesco A, Zouboulis CC, Picardo M. Peroxidated squalene induces the production of inflammatory mediators in HaCaT keratinocytes: a possible role in acne vulgaris. <em>J Invest Dermatol.</em> 2006;126(11):2430-2437. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16778793/" target="_blank" rel="noopener">PMID: 16778793</a>. <a class="ext" href="https://doi.org/10.1038/sj.jid.5700434" target="_blank" rel="noopener">DOI: 10.1038/sj.jid.5700434</a>.（<em>in vitro</em>）</li><li>Pappas A, Johnsen S, Liu JC, Eisinger M. Sebum analysis of individuals with and without acne. <em>Dermatoendocrinol.</em> 2009;1(3):157-161. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20436883/" target="_blank" rel="noopener">PMID: 20436883</a>. <a class="ext" href="https://doi.org/10.4161/derm.1.3.8473" target="_blank" rel="noopener">DOI: 10.4161/derm.1.3.8473</a>.（皮脂組成の総説は Picardo M ら <em>Dermatoendocrinol.</em> 2009;1(2):68-71. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20224686/" target="_blank" rel="noopener">PMID: 20224686</a>、Smith KR, Thiboutot DM. <em>J Lipid Res.</em> 2008;49(2):271-281. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17975220/" target="_blank" rel="noopener">PMID: 17975220</a>）</li><li>Jourdain R, Moga A, Vingler P, et al. Exploration of scalp surface lipids reveals squalene peroxide as a potential actor in dandruff condition. <em>Arch Dermatol Res.</em> 2016;308(3):153-163. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26842231/" target="_blank" rel="noopener">PMID: 26842231</a>. <a class="ext" href="https://doi.org/10.1007/s00403-016-1623-1" target="_blank" rel="noopener">DOI: 10.1007/s00403-016-1623-1</a>.（フケのある頭皮でSQOOHとMDAの増加を示した観察研究）</li><li>Jourdain R, Moga A, Magiatis P, et al. <em>Malassezia restricta</em>-mediated lipoperoxidation: a novel trigger in dandruff. <em>Acta Derm Venereol.</em> 2023;103:adv00868. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36789756/" target="_blank" rel="noopener">PMID: 36789756</a>. <a class="ext" href="https://doi.org/10.2340/actadv.v103.4808" target="_blank" rel="noopener">DOI: 10.2340/actadv.v103.4808</a>.（<em>in vitro</em>で皮脂酸化と表皮バリア障害を検討。企業所属著者を含む）</li><li>Goodfellow A, Alaghband-Zadeh J, Carter G, et al. Oral spironolactone improves acne vulgaris and reduces sebum excretion. <em>Br J Dermatol.</em> 1984;111(2):209-214. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6235834/" target="_blank" rel="noopener">PMID: 6235834</a>. <a class="ext" href="https://doi.org/10.1111/j.1365-2133.1984.tb04045.x" target="_blank" rel="noopener">DOI: 10.1111/j.1365-2133.1984.tb04045.x</a>.（皮脂排出量への効果を示した小規模二重盲検）</li><li>Brown J, Farquhar C, Lee O, Toomath R, Jepson RG. Spironolactone versus placebo or in combination with steroids for hirsutism and/or acne. <em>Cochrane Database Syst Rev.</em> 2009;(2):CD000194. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19370553/" target="_blank" rel="noopener">PMID: 19370553</a>. <a class="ext" href="https://doi.org/10.1002/14651858.CD000194.pub2" target="_blank" rel="noopener">DOI: 10.1002/14651858.CD000194.pub2</a>.（2009年時点では痤瘡への有効性のエビデンスなしと結論）</li><li>Santer M, Lawrence M, Renz S, et al; SAFA trial investigators. Effectiveness of spironolactone for women with acne vulgaris (SAFA) in England and Wales: pragmatic, multicentre, phase 3, double blind, randomised controlled trial. <em>BMJ.</em> 2023;381:e074349. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/37192767/" target="_blank" rel="noopener">PMID: 37192767</a>. <a class="ext" href="https://doi.org/10.1136/bmj-2022-074349" target="_blank" rel="noopener">DOI: 10.1136/bmj-2022-074349</a>.（皮脂量は測定していない）</li></ul>
 <ul><li>Ekanayake-Mudiyanselage S, Kraemer K, Thiele JJ. Oral supplementation with all-Rac- and RRR-alpha-tocopherol increases vitamin E levels in human sebum after a latency period of 14-21 days. <em>Ann N Y Acad Sci.</em> 2004;1031:184-194. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15753144/" target="_blank" rel="noopener">PMID: 15753144</a>. <a class="ext" href="https://doi.org/10.1196/annals.1331.017" target="_blank" rel="noopener">DOI: 10.1196/annals.1331.017</a>.</li><li>Seo SH, Jung JY, Park K, Hossini AM, Zouboulis CC, Lee SE. Autophagy regulates lipid production and contributes to the sebosuppressive effect of retinoic acid in human SZ95 sebocytes. <em>J Dermatol Sci.</em> 2020;98(2):128-136. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/32354609/" target="_blank" rel="noopener">PMID: 32354609</a>. <a class="ext" href="https://doi.org/10.1016/j.jdermsci.2020.04.001" target="_blank" rel="noopener">DOI: 10.1016/j.jdermsci.2020.04.001</a>.</li><li>Smith RN, Braue A, Varigos GA, Mann NJ. The effect of a low glycemic load diet on acne vulgaris and the fatty acid composition of skin surface triglycerides. <em>J Dermatol Sci.</em> 2008;50(1):41-52. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18178063/" target="_blank" rel="noopener">PMID: 18178063</a>. <a class="ext" href="https://doi.org/10.1016/j.jdermsci.2007.11.005" target="_blank" rel="noopener">DOI: 10.1016/j.jdermsci.2007.11.005</a>.</li><li>Lee SE, Kim JM, Jeong MK, Zouboulis CC, Lee SH. 11β-hydroxysteroid dehydrogenase type 1 is expressed in human sebaceous glands and regulates glucocorticoid-induced lipid synthesis and toll-like <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> 2 expression in SZ95 sebocytes. <em>Br J Dermatol.</em> 2013;168(1):47-55. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22897663/" target="_blank" rel="noopener">PMID: 22897663</a>. <a class="ext" href="https://doi.org/10.1111/bjd.12009" target="_blank" rel="noopener">DOI: 10.1111/bjd.12009</a>.</li></ul>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-17</time>初公開。全分泌の説明から核DNA分解の補足を削除。ACC阻害薬を治療一覧から研究の補足へ移し、酵素の働きと阻害の意味を説明。経口イソトレチノインによる皮脂腺細胞のアポトーシス誘導を本文と治療表に明記</li><li><time>2026-09-16</time>食事とスキンケアのコラムを、皮膚表面の酸化抑制を示した研究の紹介に整理。導入を皮脂・常在菌・バリア・炎症と痤瘡・脂漏性皮膚炎の関係から説明する形に修正</li><li><time>2026-09-15</time>構造・全分泌からホルモン調節、脂質組成と食事、酸化・常在菌、治療へ全体を再構成。mTORとオートファジー、睡眠、DNLの測定対象、ビタミンEの種類と経口補充、RXRを共有する核内受容体、脂質酸化の連鎖を補足。腺の大きさと治療持続に関する断定、重複した説明と図の配置を整理。全分泌の補足から核分解のタイミングに関する推論を削除。酸化ドミノの説明を短くし、酸化ストレスと抗酸化への参照を追加。ビタミンEの補足を皮脂での検出・抗酸化作用・体内での保持の違いで再整理</li></ul></section>
+
 </article>
-<nav class="pager"><a class="prev" href="glycation.html"><span class="lbl">前へ</span>糖化とAGE</a></nav>
+<nav class="pager"><a class="prev" href="glycation.html"><span class="lbl">前へ</span>糖化とAGE</a><a class="next" href="hair-follicle.html"><span class="lbl">次へ</span>毛と毛包</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

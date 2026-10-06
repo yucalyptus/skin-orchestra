@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="title desc">
+  <title id="title">顔面の支持靭帯は、骨膜に起始するものと深部筋膜に起始するものがある</title>
+  <desc id="desc">左の骨膜起点の支持構造は骨表面から皮膚へ伸びる。右の筋膜起点の支持構造は深部筋膜からSMASへ伸びる。両者の起点と終点を比較した概念図。</desc>
+  <defs>
+    <linearGradient id="skin" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#efb9ad"/><stop offset="1" stop-color="#f9d8cd"/></linearGradient>
+    <linearGradient id="bone" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f9f6ee"/><stop offset="1" stop-color="#d9cdb7"/></linearGradient>
+  </defs>
+  <rect width="1200" height="660" fill="white"/>
+  <g font-family="system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif" fill="#1d2330">
+    <text x="36" y="51" font-size="30" font-weight="700">支持靭帯は「どこから、どこへつながるか」で見る</text>
+    <text x="340" y="105" text-anchor="middle" font-size="26" font-weight="700">真性：骨膜からの支持</text>
+    <text x="870" y="105" text-anchor="middle" font-size="26" font-weight="700">仮性：深部筋膜からの支持</text>
+  </g>
+  <line x1="603" y1="92" x2="603" y2="605" stroke="#d8dee5" stroke-width="2"/>
+  <!-- Parallel anatomical layers. White background between sections makes comparisons easy. -->
+  <g stroke="#b9958d" stroke-width="1.5">
+    <path d="M90 142 Q310 135 560 143 L560 185 Q320 179 90 185 Z" fill="url(#skin)"/>
+    <path d="M650 142 Q880 135 1110 143 L1110 185 Q880 179 650 185 Z" fill="url(#skin)"/>
+  </g>
+  <g fill="#f6e8b4" stroke="#ddc680" stroke-width="1">
+    <ellipse cx="149" cy="231" rx="53" ry="32"/><ellipse cx="253" cy="240" rx="53" ry="36"/><ellipse cx="390" cy="231" rx="64" ry="34"/><ellipse cx="502" cy="245" rx="50" ry="35"/>
+    <ellipse cx="150" cy="309" rx="51" ry="29"/><ellipse cx="258" cy="309" rx="56" ry="33"/><ellipse cx="397" cy="306" rx="57" ry="30"/><ellipse cx="504" cy="313" rx="51" ry="30"/>
+    <ellipse cx="713" cy="231" rx="50" ry="32"/><ellipse cx="816" cy="241" rx="52" ry="34"/><ellipse cx="944" cy="232" rx="57" ry="34"/><ellipse cx="1054" cy="241" rx="51" ry="34"/>
+    <ellipse cx="712" cy="310" rx="50" ry="28"/><ellipse cx="819" cy="309" rx="54" ry="31"/><ellipse cx="947" cy="308" rx="55" ry="31"/><ellipse cx="1054" cy="308" rx="50" ry="29"/>
+  </g>
+  <g>
+    <path d="M90 360 Q330 354 560 360 L560 382 Q330 378 90 382 Z" fill="#d6c4bc" stroke="#a98c82" stroke-width="2"/>
+    <path d="M650 360 Q880 354 1110 360 L1110 382 Q880 378 650 382 Z" fill="#d6c4bc" stroke="#a98c82" stroke-width="2"/>
+    <path d="M90 455 Q330 452 560 455 L560 477 Q330 473 90 477 Z" fill="#d4dde2" stroke="#728895" stroke-width="2"/>
+    <path d="M650 455 Q880 452 1110 455 L1110 477 Q880 473 650 477 Z" fill="#d4dde2" stroke="#728895" stroke-width="2"/>
+    <path d="M90 510 Q330 507 560 510 L560 559 Q330 554 90 559 Z" fill="url(#bone)" stroke="#9c8e7c" stroke-width="2"/>
+    <path d="M650 510 Q880 507 1110 510 L1110 559 Q880 554 650 559 Z" fill="url(#bone)" stroke="#9c8e7c" stroke-width="2"/>
+  </g>
+  <!-- Connective structures: left reaches periosteum to dermis, right fascia to SMAS. -->
+  <g fill="none" stroke="#14677b" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M310 513 C309 472 306 424 305 379 C305 331 309 261 308 201 L306 169" stroke-width="20"/>
+    <path d="M305 219 Q288 186 272 174 M308 218 Q324 183 344 173" stroke-width="9"/>
+  </g>
+  <g fill="none" stroke="#a25238" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M882 460 C885 428 886 407 884 379 L884 368" stroke-width="20"/>
+    <path d="M884 382 Q862 372 844 370 M884 382 Q906 372 925 370" stroke-width="8"/>
+  </g>
+  <g fill="#14677b"><circle cx="310" cy="510" r="9"/><circle cx="306" cy="173" r="9"/></g>
+  <g fill="#a25238"><circle cx="882" cy="460" r="9"/><circle cx="884" cy="368" r="9"/></g>
+  <g font-family="system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif" font-size="20" fill="#3c4755">
+    <text x="96" y="177">皮膚</text><text x="96" y="282">浅層脂肪</text><text x="96" y="407">SMAS</text><text x="96" y="499">深部筋膜</text><text x="96" y="548">骨・骨膜</text>
+    <text x="656" y="177">皮膚</text><text x="656" y="282">浅層脂肪</text><text x="656" y="407">SMAS</text><text x="656" y="499">深部筋膜</text><text x="656" y="548">骨・骨膜</text>
+  </g>
+  <g font-family="system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif" font-size="23" font-weight="700">
+    <text x="340" y="602" text-anchor="middle" fill="#14677b">骨膜 → 皮膚</text>
+    <text x="870" y="602" text-anchor="middle" fill="#a25238">深部筋膜 → SMAS</text>
+  </g>
+  <text x="35" y="642" font-family="system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif" font-size="17" fill="#596572">模式図：頬骨部と咬筋部を例に、付着先の違いのみを示す。</text>
+</svg>

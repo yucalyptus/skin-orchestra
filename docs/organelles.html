@@ -4,15 +4,15 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>オルガネラ ― 生化学で見る美容医療</title>
-<meta name="description" content="細胞の仕事は、一つのオルガネラでは完結しません。作る・加工する・運ぶ・エネルギーを供給する・不要なものを再利用する。複数のオルガネラがorchestration（連携）することで、一つの産物が完成します。">
+<meta name="description" content="オルガネラは、細胞の中で仕事を分担する構造です。 エネルギーの供給、物質の合成や輸送、分解と再利用を通じて、細胞の維持・成長・増殖を支えています。">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/organelles.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="オルガネラ ― 生化学で見る美容医療">
-<meta property="og:description" content="細胞の仕事は、一つのオルガネラでは完結しません。作る・加工する・運ぶ・エネルギーを供給する・不要なものを再利用する。複数のオルガネラがorchestration（連携）することで、一つの産物が完成します。">
+<meta property="og:description" content="オルガネラは、細胞の中で仕事を分担する構造です。 エネルギーの供給、物質の合成や輸送、分解と再利用を通じて、細胞の維持・成長・増殖を支えています。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/organelles.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/organelles_まず覚える7つのオルガネラ.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/organelles_まず覚える7つのオルガネラ_v3.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html" class="active">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -615,60 +673,57 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter" data-chapter="organelles">
-<p class="kicker">基礎　／　細胞の地図</p>
+<p class="kicker">生化学・細胞生物学の基礎　／　細胞の地図</p>
 <h1 class="ch-title">オルガネラ<small>細胞内小器官</small></h1>
-<p class="dateline">公開 2026-08-14　／　最終更新 2026-09-13</p>
-<blockquote>細胞の中には、核・ミトコンドリア・小胞体・<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。" data-u="glossary.html#term-4e8ff0e634e2">Golgi</span>装置など、異なる仕事を担う構造があります。これらを<strong>オルガネラ（細胞内小器官）</strong>と呼びます。一つの仕事を一つのオルガネラが完成させるのではなく、材料や情報を受け渡しながら進めています。この章では、分泌タンパク質が作られて細胞外へ出るまでをたどり、それぞれの役割を見ます。<br><br><strong>先に読んでおく章</strong>：細胞の基本構造（→ <a class="chref" href="cell.html">細胞とは何か</a>）</blockquote>
+<p class="dateline">公開 2026-08-14　／　最終更新 2026-10-01</p>
+<blockquote>健康な皮膚を保つにも、美容治療後に組織が修復されるにも、細胞が適切に働くことが欠かせません。その内側では、エネルギーを生み出し、必要な物質を作り、古くなったものを分解する活動が続いています。これらを担うオルガネラの構造と役割を知ることが、皮膚の状態や治療後の反応を理解する土台になります。<br><br><strong>先に読んでおく章</strong>：細胞の基本構造（→ <a class="chref" href="cell.html">細胞とは何か</a>）</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead"><strong>細胞の仕事は、一つのオルガネラでは完結しません。</strong>作る・加工する・運ぶ・エネルギーを供給する・不要なものを再利用する。複数のオルガネラが<strong>orchestration（連携）</strong>することで、一つの産物が完成します。</blockquote>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_まず覚える7つのオルガネラ.webp" alt="細胞内の主なオルガネラと役割。" width="1536" height="1024" loading="lazy"><figcaption>細胞内の主なオルガネラと役割。合成・加工・輸送・エネルギー供給・分解を分担する。</figcaption></figure>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　分泌タンパク質を1本、外に出すまで</a></li><li><a href="#s2">2　まず覚える7つのオルガネラ</a></li><li><a href="#s3">3　分泌タンパク質は、ERで加工されてGolgiへ進む</a></li><li><a href="#s4">4　実例：線維芽細胞がコラーゲンを作る</a></li><li><a href="#s5">5　補助的に押さえる構造</a></li></ul></nav><h2 id="s1">1　分泌タンパク質を1本、外に出すまで</h2>
-<p>コラーゲンなど、細胞外へ分泌される多くのタンパク質は、核・リボソーム・粗面ER・Golgi装置を順に経て外へ出ます。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_細胞は小さな工場.webp" alt="多くの分泌タンパク質は、signal peptideによってERへ入り、加工・品質管理を経てGolgiへ進む。" width="1774" height="887" loading="lazy"><figcaption>多くの分泌タンパク質は、signal peptideによってERへ入り、加工・品質管理を経てGolgiへ進む。ERに入らないタンパク質にも、別の移行シグナルで核やミトコンドリアへ運ばれるものがある。</figcaption></figure>
-<p><strong>一つのオルガネラが完成させるのではなく、受け渡しで完成します。</strong> 核がどの遺伝子をどれだけ読むかを決め、リボソームがその写し（mRNA）を読んでアミノ酸をつなぎ、粗面ERが折りたたみ、Golgiが仕分け、小胞が膜まで運ぶ。この搬送は細胞骨格のレール上で行われます。全工程が<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>を消費するので、ミトコンドリアはそのあいだずっと働いています。折り損じや古い部品はリソソームが分解し、アミノ酸に戻して次の合成へ返します。</p>
-<p>産生量は、材料の供給、合成、加工、輸送の各工程に左右されます。<strong>全体の進み方を制限している工程を、律速段階と呼びます。</strong> 一つのオルガネラだけでなく、どの工程が滞っているかを見る必要があります。</p>
-<h2 id="s2">2　まず覚える7つのオルガネラ</h2>
-<p>多くのオルガネラは膜で仕切られ、異なる環境を保っています。その違いが、担当する反応を支えます。リボソームのように膜を持たない構造もあります。</p>
-<div class="tblwrap"><table><thead><tr><th>オルガネラ</th><th>何を担当するか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>核</strong>（nucleus）</td><td>DNAを保管し、どの遺伝子を読むかを決める</td><td>二重の核膜で囲まれ、<strong>核膜孔</strong>を介してのみ細胞質とやりとりする。<strong>DNAの原本はここから出ない</strong>——出ていくのはコピー（mRNA）だけ。細胞の個性はここで決まる（→ <a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>・<a class="chref" href="epigenome.html">エピゲノム</a>）</td></tr><tr><td><strong>リボソーム</strong>（ribosome）</td><td>mRNAを読んでアミノ酸をつなぐ組み立て機</td><td>オルガネラの中では例外的に<strong>膜を持たない</strong>。細胞質に浮いているものと、粗面ERの膜に貼りついているものがある。<strong>この貼りつくかどうかが §3 の分岐点になる</strong></td></tr><tr><td><strong>粗面ER</strong>（rough ER）</td><td>分泌タンパク質を加工・品質管理する</td><td>リボソームが貼りついた膜の網。内部は細胞質より<strong>酸化的</strong>で、chaperone（折りたたみを介助する分子）がはたらき、折り損じは通さない。多くの分泌タンパク質は、この環境で折りたたまれる</td></tr><tr><td><strong>Golgi装置</strong></td><td>仕分けて送り出す</td><td>ERから届いた荷物に糖鎖などの仕上げをし、<strong>行き先ごとに仕分ける</strong>。細胞膜へ、リソソームへ、細胞外へ——宛先を付けて送り出す</td></tr><tr><td><strong>ミトコンドリア</strong>（mitochondria）</td><td>ATPを作り、代謝も調節する</td><td>二重膜で、内膜が大きく折れ込んで（cristae）表面積を稼ぐ。ATPを作るだけでなく、代謝物を通じて<strong>核へ状態を報告する調節装置</strong>。独自の小さなDNA（<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。" data-u="glossary.html#term-4c6bea64371f">mtDNA</span>）を持つ（→ 「エネルギー」・<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>）</td></tr><tr><td><strong>リソソーム</strong>（<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>）</td><td>不要物を分解して再利用する</td><td>内部が酸性（pH 5前後）の分解槽。古いタンパク質やオルガネラを<strong>アミノ酸・脂肪酸・糖に戻す</strong>。分解産物は材料として再利用される（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）</td></tr><tr><td><strong>ペルオキシソーム</strong>（peroxisome）</td><td>脂質の代謝と酸化還元</td><td>ミトコンドリアが苦手な<strong>極長鎖脂肪酸のβ酸化</strong>を担い、その反応で<strong>過酸化水素（H₂O₂）が出る</strong>。同時に <strong>catalase を大量に抱えていて、その H₂O₂ をその場で水と酸素に分解する</strong>——<strong>H₂O₂ を出す反応と、それを分解する酵素が、同じ小器官の中にある</strong>設計（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>・<a class="chref" href="sebum.html">皮脂分泌の生化学</a>）</td></tr></tbody></table></div>
-<p>ミトコンドリアのATP供給とリソソームの分解・再利用は、合成や輸送と並行して続きます。エネルギー不足や傷んだ成分の蓄積は、ほかのオルガネラの仕事にも影響します。</p>
+<blockquote class="lead"><strong>オルガネラは、細胞の中で仕事を分担する構造です。</strong> エネルギーの供給、物質の合成や輸送、分解と再利用を通じて、細胞の維持・成長・増殖を支えています。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　細胞の中には、異なる仕事を担う構造がある</a></li><li><a href="#s2">2　主なオルガネラの構造と役割</a></li><li><a href="#s3">3　細胞膜・細胞骨格と、物質を運ぶ構造</a></li><li><a href="#s4">4　役割分担が、細胞の維持・成長・増殖を支える</a></li></ul></nav><h2 id="s1">1　細胞の中には、異なる仕事を担う構造がある</h2>
+<p>細胞の中には、核・小胞体・ミトコンドリアなどの<strong>オルガネラ（細胞内小器官）</strong>があります。それぞれに形や内部の環境が異なり、担当する仕事も違います。</p>
+<p>多くのオルガネラは膜で囲まれています。膜で区切ることで、酸性に保つなど、反応に適した環境を細胞内の一部に作れます。一方、タンパク質を合成するリボソームのように、膜を持たない構造もあります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_まず覚える7つのオルガネラ_v3.webp" alt="主なオルガネラと、細胞膜・細胞骨格の構造と役割。" width="1536" height="1024" loading="lazy"><figcaption>主なオルガネラと、細胞膜・細胞骨格の構造と役割。各構造が細胞の活動を支える。</figcaption></figure>
+<h2 id="s2">2　主なオルガネラの構造と役割</h2>
+<h3>① 核：遺伝情報を保ち、使う</h3>
+<p><strong>核（nucleus）</strong>は、DNAを収める、二重の膜に囲まれた構造です。必要な遺伝子の情報を使い、細胞が作る物質や働きを調節します。膜にある<strong>核膜孔</strong>を通じて、RNAやタンパク質が細胞質と行き来します。分裂前にはDNAが複製され、二つの細胞へ引き継がれます。</p>
+<h3>② リボソーム：タンパク質を作る</h3>
+<p><strong>リボソーム（ribosome）</strong>は、RNAとタンパク質からなる、膜を持たない小さな粒子です。細胞質中や小胞体の表面にあり、<strong>メッセンジャーRNA（mRNA）</strong>の情報を読んでアミノ酸をつなぎます。こうして、酵素や細胞の構造を支えるタンパク質を作ります。</p>
+<h3>③ 小胞体：タンパク質や脂質を整える</h3>
+<p><strong>小胞体（endoplasmic reticulum：ER）</strong>は、袋や管がつながった膜の網です。表面にリボソームが付いているかどうかで、見え方と主な役割が異なります。</p>
+<div class="tblwrap"><table><thead><tr><th>部分</th><th>構造の特徴</th><th>主な仕事</th></tr></thead><tbody><tr><td><strong>粗面小胞体</strong></td><td>表面にリボソームが付く</td><td>分泌タンパク質や膜タンパク質などの合成・加工。働ける形への折りたたみと品質管理</td></tr><tr><td><strong>滑面小胞体</strong></td><td>リボソームが付かない</td><td>脂質の合成、カルシウムの貯蔵など</td></tr></tbody></table></div>
+<p>小胞体に蓄えられたカルシウムは、必要に応じて放出され、細胞内で情報を伝える働きにも使われます。</p>
+<h3>④ ゴルジ体：加工し、仕分ける</h3>
+<p><strong>ゴルジ体（<span class="term" tabindex="0" data-t="Golgi" data-d="ER から届いたタンパク質に糖鎖などの仕上げをし、細胞膜へ・lysosome へ・細胞外へと行き先ごとに仕分けて送り出すオルガネラ。古典的な分泌経路の中心（Golgi を経ない非古典的分泌もある）。" data-u="glossary.html#term-4e8ff0e634e2">Golgi</span> apparatus）</strong>は、扁平な袋が重なった構造です。届いたタンパク質や脂質に糖鎖の加工などを行い、細胞膜・リソソーム・細胞外など、必要な場所へ仕分けて送り出します。</p>
+<h3>⑤ ミトコンドリア：<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>を作る</h3>
+<p><strong>ミトコンドリア（mitochondria）</strong>は二重膜を持ち、内膜がひだ状に折れ込んでいます。栄養素から得たエネルギーを使って<strong>ATP（アデノシン三リン酸）</strong>を作り、合成・輸送・筋肉の収縮などを支えます。</p>
+<p>エネルギー供給に加え、さまざまな代謝反応の場でもあります。核とは別に、独自の<strong>ミトコンドリアDNA（<span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。" data-u="glossary.html#term-4c6bea64371f">mtDNA</span>）</strong>を持つことも特徴です。</p>
+<h3>⑥ リソソーム：分解し、再利用する</h3>
+<p><strong>リソソーム（<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>）</strong>は、内部を酸性に保った、膜に囲まれた構造です。そこで働く酵素が、取り込んだ物質や、古くなったタンパク質・傷んだオルガネラを分解します。生じたアミノ酸などは細胞質へ戻り、新しい物質の材料として再利用されます。</p>
+<h3>⑦ ペルオキシソーム：脂肪酸と過酸化水素を処理する</h3>
+<p><strong>ペルオキシソーム（peroxisome）</strong>は、膜に囲まれた小器官で、炭素の鎖が特に長い<strong>極長鎖脂肪酸</strong>などを分解します。その反応で生じる<strong>過酸化水素（H₂O₂）</strong>は、同じ小器官内の酵素<strong>カタラーゼ</strong>によって、水と酸素へ分解されます。</p>
 <aside class="column"><p class="col-t">コラム</p><h3 class="col-h">ミトコンドリアは、もとは別の生物だった</h3><p>ミトコンドリアは、真核細胞の祖先に取り込まれた好気性細菌に由来すると考えられています。これが<strong>細胞内共生説（endosymbiosis）</strong>です。二重膜であること、独自の環状DNAを持つこと、細胞分裂とは別に分裂することに、その名残があります。</p>
 <p>長い進化の過程で遺伝子の大半は核へ移り、現在のヒトmtDNAには13種類のタンパク質をコードする遺伝子が残っています。そのため、ミトコンドリアの部品を作るには核DNAとmtDNAの両方が使われます（→ <a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>）。</p>
 <p>ヒトのmtDNAは、原則として母親から受け継がれます。受精後、精子由来のミトコンドリアは通常残らないためです。現代人のmtDNAを母系へさかのぼったときに行き着く共通祖先は、<strong>ミトコンドリア・イヴ</strong>と呼ばれます。</p>
 <p><strong>母系で伝わることも、もとは別の生物だったことも、私は『パラサイト・イヴ』（1997年、原作は瀬名秀明）というホラー映画で知りました！</strong> ミトコンドリアが、取り込まれて以来いつか宿主から独立しようと企てる物語です。ストーリーの細部は忘れても、この設定だけは一生忘れません。</p>
-<p><strong>もとは別の生き物が自分の体のなかにいて、いまも一緒に働いている。</strong> 子供ながらに、怖いというより<strong>生物はこんなに未知なのか</strong>と驚いたのを覚えています。</p></aside>
-<h2 id="s3">3　分泌タンパク質は、ERで加工されてGolgiへ進む</h2>
-<h3>signal配列が、ERへの行き先を指定する</h3>
-<p>多くの分泌タンパク質では、合成が始まると鎖の先頭にある<strong>signal peptide（シグナルペプチド）</strong>が認識され、粗面ERへ運ばれます。</p>
-<div class="flow diagram"><span class="node">翻訳中の鎖に signal 配列がある</span><span class="arr">→</span><span class="node">粗面ERへ引き込まれる</span><span class="arr">→</span><span class="node">ER内で折りたたみ・品質検査</span><span class="arr">→</span><span class="node">小胞でGolgiへ</span><span class="arr">→</span><span class="node">分泌小胞</span><span class="arr">→</span><span class="node">細胞外へ　／　ERへのsignal 配列がない</span><span class="arr">→</span><span class="node">細胞質で合成（別の移行シグナルで他の場所へ運ばれるものもある）</span></div>
-<p><strong>分泌経路に入るかどうかは、あとから選ぶのではなく、設計図に書かれた&quot;宛名&quot;で最初から決まっています。</strong> signal 配列がある鎖は翻訳の途中で認識され、リボソームごと粗面ERの膜に引き寄せられ、合成されながらそのままER内へ送り込まれます（co-translational translocation）。ERへのsignal 配列がないタンパク質は細胞質で合成されます。<span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span>の酵素のようにそこで働くものも、別の移行シグナルによって核やミトコンドリアへ運ばれるものもあります。</p>
-<h3>折りたたみによって、働ける形になる</h3>
-<p><strong>タンパク質は、折りたたまれて初めて機能する形になります。</strong> タンパク質はアミノ酸が一列につながった鎖として作られますが、鎖のままでは働きません。酵素の活性部位も、受容体の結合部位も、鎖の上では離れた位置にあるアミノ酸が、折りたたまれて初めて一か所に集まってできます。並びが正しくても、折りたたみが違えば働きません。</p>
-<p>折りたたみ途中の鎖は、細胞にとって危険でもあります。完成したタンパク質では内側に隠れている疎水的な部分が、途中では外に出ています。細胞の中は分子が高密度に詰まっているので、露出したままの鎖は近くの分子とくっついて凝集します。だからERは折り損じを通さず、折り直せない鎖は分解へ回します。コラーゲンでいえば、三重らせんを組めなかった鎖は分泌されません。</p>
-<h3>折りたたみが追いつかないとき：ER stressとUPR</h3>
-<p>ERの折りたたみ能力を超えて、未完成や折り損じのタンパク質が溜まった状態が<strong>ER stress（小胞体ストレス）</strong>です。これを感知したERは、<strong>UPR（unfolded protein response）</strong>を起こします。UPRは、ERへ入る仕事量を減らし、折りたたむ能力と分解する能力を増やす応答です。</p>
-<div class="tblwrap"><table><thead><tr><th>UPRが行うこと</th><th>細胞内で起こること</th></tr></thead><tbody><tr><td><strong>新しく入る量を減らす</strong></td><td>タンパク質の翻訳を一時的に抑え、ERへ送り込まれる鎖を減らす</td></tr><tr><td><strong>折りたたむ能力を増やす</strong></td><td>chaperoneを増やし、ERの処理能力を高める</td></tr><tr><td><strong>折り直せないものを分解する</strong></td><td>ERから細胞質へ戻し、ubiquitinを付けてproteasomeで分解する（<strong>ERAD</strong>）</td></tr></tbody></table></div>
-<p>この応答を始めるER膜のセンサーが<strong>PERK・IRE1・ATF6</strong>です。まずは三つの名前を覚えるより、<strong>「入る量を減らす・折りたたむ力を増やす・直せないものを分解する」</strong>という目的を押さえれば十分です。</p>
-<p>ERADで一本ずつ処理できない凝集体や、傷んだER膜の一部は、<span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span>によってlysosomeへ送られます。ERそのものを選んで回収する仕組みを<strong>ER-phagy</strong>と呼びます（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>）。それでもER stressが解消しない状態が続くと、細胞は<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span>へ進むことがあります（→ <a class="chref" href="cell-death.html">細胞死</a>）。</p>
-<p>熱刺激で<strong><span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。" data-u="glossary.html#term-b3f5891ccf14">HSF1</span>からHSP70や<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。" data-u="glossary.html#term-19a718751983">HSP47</span></strong>が誘導されるheat shock responseと、ER内の折り損じに対するUPRは、どちらもタンパク質の品質を守る応答ですが、感知する場所と経路は異なります。美容デバイスの熱応答は熱・光・機械刺激、ER内で<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖がC末端側から一方向に巻かれて三重らせんを作る。細胞内6段階・細胞外4段階の一続きの経路を通って線維になり、どの段階も律速点になりうる。" data-u="glossary.html#term-a9ef90b73700">collagen</span>の三重らせん形成を助けるHSP47は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。</p>
-<h3>加工を終えたタンパク質を、小胞で運ぶ</h3>
-<p>分泌経路は、次の役割分担で進みます。</p>
-<ol><li><strong>ERで折りたたみと品質管理を行う。</strong> 多くの分泌タンパク質は、酸化的なER内でS–S結合（ジスルフィド結合）を作り、chaperoneの介助を受けて折りたたまれます。</li><li><strong>小胞の内側で運ぶ。</strong> 分泌するタンパク質は、ER内腔から輸送小胞へ入り、細胞質へ放出されずにGolgiへ届きます。</li><li><strong>ERを通ったあとの送り先を振り分けるのはGolgiです。</strong> ERを出たタンパク質は Golgi で仕上げと<strong>仕分け</strong>を受けて初めて送り先が確定します。</li><li><strong>前へ送る輸送と、戻す輸送がある。</strong> 分泌物はERからGolgi、細胞膜へ進みます。一方、輸送に使った成分やERへ戻すタンパク質は逆向きに回収されます。</li></ol>
-<h2 id="s4">4　実例：線維芽細胞がコラーゲンを作る</h2>
-<p>上の一般則を、この教材で最も多く扱う分泌タンパク質でたどります。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_オルガネラ.webp" alt="線維芽細胞の中でコラーゲンができるまでの経路。" width="1693" height="929" loading="lazy"><figcaption>線維芽細胞の中でコラーゲンができるまでの経路。核でCOL遺伝子を読み、リボソームで鎖を作り、粗面ERで水酸化と三重らせん形成、Golgiで梱包、分泌後に細胞外で線維へ組み上がる</figcaption></figure>
-<p><strong>ミトコンドリアとリソソームは、この過程のどの段階でも同時に働いています。</strong> 水酸化にどの補因子が要るか、三重らせんがどう組まれるか、細胞外でどう架橋するかは、<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_エネルギーと掃除.webp" alt="合成と輸送にはATPが使われる。" width="1672" height="941" loading="lazy"><figcaption>合成と輸送にはATPが使われる。古いタンパク質やオルガネラの分解で回収した材料は、細胞質へ戻して再利用する。</figcaption></figure>
-<p>工程は一続きです。<strong>どの段階が滞っても出力は落ちます。</strong></p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/organelles_律速.webp" alt="工程が滞ると、前後の受け渡しにも影響する。" width="1536" height="1024" loading="lazy"><figcaption>工程が滞ると、前後の受け渡しにも影響する。加工能力やエネルギー供給など、全体を制限する条件は一つとは限らない。</figcaption></figure>
-<p>この「律速」の考え方は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で正面から扱います。</p>
-<h2 id="s5">5　補助的に押さえる構造</h2>
-<p>主役ではありませんが、後の章で顔を出します。</p>
-<div class="tblwrap"><table><thead><tr><th>構造</th><th>何をするか</th><th>押さえどころ</th></tr></thead><tbody><tr><td><strong>細胞膜</strong></td><td>内と外を仕切り、物質の出入りを制御する</td><td>通す・通さないの規則は分子の側の性質で決まる（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>endosome</strong>（エンドソーム）</td><td>外から取り込んだものを仕分ける小胞</td><td>分解へ回すか、膜へ戻すかを決める（→ <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a>）</td></tr><tr><td><strong>lipid droplet</strong>（脂肪滴）</td><td>中性脂肪をためる小滴</td><td>脂肪細胞では細胞の大部分を占める主役になる（→ 脂肪）</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span></strong></td><td>細胞の&quot;外&quot;の足場</td><td>足場であると同時に、細胞に情報も伝える（→ <a class="chref" href="ecm.html">細胞外基質（ECM）</a>）</td></tr><tr><td><strong>cytoskeleton</strong>（細胞骨格）</td><td>形の維持・運搬・張力の感知</td><td><strong>actin filament</strong>＝膜直下で収縮し張力を生む／<strong>microtubule</strong>＝小胞とオルガネラを運ぶレール／<strong>intermediate filament</strong>＝引っ張りに耐える芯（表皮の keratin）。<strong><span class="term" tabindex="0" data-t="integrin" data-d="細胞膜を貫き、外でECMをつかみ内で細胞骨格につながる受容体。focal adhesion・FAK を介して足場の硬さと張力を細胞内シグナルに変換する入口（mechanotransduction）。" data-u="glossary.html#term-16f6a280a6cc">integrin</span></strong> で ECM に接着した点で細胞骨格を引くと、足場の硬さと張力が細胞内シグナルに変換される＝<strong><span class="term" tabindex="0" data-t="mechanotransduction" data-d="ECMの硬さ・張力という物理情報を細胞内シグナルへ翻訳する仕組み。道筋はintegrin→focal adhesion/FAK→actin→YAP/TAZ→核。ECMは足場ではなく、線維芽細胞に届く情報。" data-u="glossary.html#term-4c5528b83ccd">mechanotransduction</span></strong>（→ <a class="chref" href="ecm.html">細胞外基質（ECM）</a>）</td></tr></tbody></table></div>
+<p>もとは別の生き物だったものが、自分の体の中にいて、今も一緒に働いている。子供ながらに「生き物には、こんな仕組みがあるのか」と衝撃を受け、その不思議さにひかれたのを覚えています。</p></aside>
+<h2 id="s3">3　細胞膜・細胞骨格と、物質を運ぶ構造</h2>
+<p>細胞全体を理解するために、オルガネラに加えて、細胞の境界となる細胞膜と、内部を支える細胞骨格も押さえます。</p>
+<h3>細胞膜：内外を区切り、やり取りを調節する</h3>
+<p><strong>細胞膜（plasma membrane）</strong>は、リン脂質が二層に並んだ<strong>脂質二重層</strong>と、膜に組み込まれたタンパク質からできています。</p>
+<ul><li><strong>内外を区切る：</strong> 細胞を包み、内部の環境を保ちます。</li><li><strong>物質を通す：</strong> チャネルや輸送体が、イオンや栄養素の出入りを調節します。</li><li><strong>情報を受け取る：</strong> 受容体が細胞外からの情報を捉え、内部へ伝えます。</li></ul>
+<p>物質が膜を越える仕組みは <a class="chref" href="membrane-transport.html">細胞膜と物質輸送</a> で扱います。</p>
+<h3>細胞骨格：形を保ち、輸送や分裂を支える</h3>
+<p><strong>細胞骨格（cytoskeleton）</strong>は、細胞内に広がるタンパク質の線維です。アクチンフィラメント・微小管・中間径フィラメントなどが、形の維持や動き、細胞内の輸送を支えます。細胞が分裂するときにも、染色体の分配や、細胞を二つに分ける動きに関わります。</p>
+<h3>小胞とエンドソーム：物質を運び、仕分ける</h3>
+<p><strong>小胞（vesicle）</strong>は、膜で囲まれた小さな袋です。物質を包み、オルガネラ同士や細胞膜との間を運びます。細胞の外から取り込まれた物質は、<strong>エンドソーム（endosome）</strong>と呼ばれる構造で仕分けられ、細胞膜へ戻されたり、リソソームでの分解へ送られたりします。</p>
+<h2 id="s4">4　役割分担が、細胞の維持・成長・増殖を支える</h2>
+<p>細胞の維持・成長・増殖には、複数の構造の働きが必要です。</p>
+<div class="tblwrap"><table><thead><tr><th>細胞の活動</th><th>必要な仕事</th></tr></thead><tbody><tr><td><strong>維持する</strong></td><td>古くなった成分を分解し、新しいものへ置き換える</td></tr><tr><td><strong>成長する</strong></td><td>タンパク質や膜などの成分を増やす</td></tr><tr><td><strong>増殖する</strong></td><td>DNAを複製し、細胞の構成要素を二つの細胞へ分配する</td></tr></tbody></table></div>
+<p>どの活動にも、材料とエネルギーの供給が必要です。各オルガネラに加えて、細胞膜による内外の調節や、細胞骨格による支持・輸送が、それらを支えています。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>細胞の仕事は単一のオルガネラでは完結しない。<strong>分泌タンパク質を1本外へ出す</strong>という一つの仕事に、核・リボソーム・粗面ER・Golgi が順に関与し、ミトコンドリアとリソソームが全工程で同時に働く。</li><li>7つのオルガネラはそれぞれ別の環境を持つ（酸化的なER内、pH 5前後のリソソーム、catalase を抱えたペルオキシソーム）。担当する仕事は、その環境で何ができるかで決まっている。</li><li>この順番は覚えるだけの並びではない。<strong>多くの分泌タンパク質はsignal 配列によってERへ入り、加工・品質管理を経てGolgiで仕分けられる。</strong>だからこの順番になる。<strong>どの工程が滞っても出力は落ちる。</strong></li><li>ERの折りたたみ能力を超えて未完成のタンパク質が溜まると<strong>ER stress</strong>になり、<strong>UPR</strong>が入る量を減らし、折りたたみと分解の能力を高める。</li><li>産生量には、材料・エネルギーの供給と、合成・加工・輸送の各工程が関わる。<strong>全体を制限している律速段階</strong>を考える。</li></ol>
-<figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/organelles_まとめ.webp" alt="細胞の中は連携するオルガネラでできている" width="1536" height="1024" loading="lazy"><figcaption>細胞の中は連携するオルガネラでできている</figcaption></figure>
-<blockquote><a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>では、これらのオルガネラが<strong>独立した袋ではなく、互いに物質やシグナルを交換し合っている</strong>ことを見ます。「ミトコンドリアを活性化する」という説明が、なぜそれだけでは足りないのかという話につながります。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-14</time>初公開</li></ul></section>
+<ol class="goal"><li><strong>各オルガネラは、仕事に対応する構造や内部環境を持っています。</strong></li><li><strong>核は遺伝情報を保持し、リボソーム・小胞体・ゴルジ体は、必要な物質の合成・加工・仕分けを担います。</strong></li><li><strong>ミトコンドリアはATP産生などの代謝、リソソームは分解と再利用、ペルオキシソームは脂肪酸の分解や過酸化水素の処理を担います。</strong></li><li><strong>これらの働きと、細胞膜による内外の調節、細胞骨格や小胞による支持・輸送が、細胞の維持・成長・増殖を支えます。</strong></li></ol>
+<p><a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>では、これらのオルガネラがエネルギーや材料を受け渡し、互いの働きにどう影響するかを見ていきます。</p>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-10-01</time>オルガネラの役割から連携の全体像へ進む構成に合わせて章末の案内を更新</li><li><time>2026-09-29</time>細胞の維持・成長・増殖を支える各オルガネラの構造と基本的役割へ再構成し、合成・分泌経路の詳説を除外。細胞膜の説明を追加し、図1の指示線・日本語表記とコラムの表現を修正。図を冒頭の全体図に絞り、本文の見出しを図の①〜⑦に対応させて整理</li><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-14</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="cell.html"><span class="lbl">前へ</span>細胞とは何か</a><a class="next" href="cell-types.html"><span class="lbl">次へ</span>オルガネラはどう連携するか</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -677,7 +732,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

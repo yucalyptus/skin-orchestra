@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html" class="active">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html" class="active">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -615,9 +673,9 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter" data-chapter="tca-cycle">
-<p class="kicker">基礎　／　エネルギー</p>
+<p class="kicker">生化学・細胞生物学の基礎　／　エネルギー</p>
 <h1 class="ch-title">TCA回路</h1>
-<p class="dateline">公開 2026-08-24　／　最終更新 2026-09-13</p>
+<p class="dateline">公開 2026-08-24　／　最終更新 2026-09-17</p>
 <p><span class="term" tabindex="0" data-t="解糖系（glycolysis）" data-d="細胞質で glucose を pyruvate 2分子に分解する経路。ATPは正味2個しか出ず、産生の本体はミトコンドリア。要点は発電ではなく「炭素をどこへ流すか」の分岐で、中間体が核酸・アミノ酸・脂質の材料へ抜ける。増殖・修復中の細胞が解糖に寄るのはそのため。" data-u="glossary.html#term-1ac23709d593">解糖系</span>では、glucose（ブドウ糖）から<strong>pyruvate（ピルビン酸）</strong>ができました。このピルビン酸は、ミトコンドリアに入ると<strong><span class="term" tabindex="0" data-t="acetyl-CoA" data-d="pyruvate が PDH で変換されて TCA回路へ入る形。脂質合成にもヒストンのアセチル化にも回るが、ミトコンドリア・細胞質・核で区画化されており、それ自体は内膜を自由に通らない。" data-u="glossary.html#term-e45cb339bfe5">acetyl-CoA</span>（アセチルCoA）</strong>に変わり、<strong><span class="term" tabindex="0" data-t="TCA cycle" data-d="電子を積んだ荷物（NADH・FADH₂）を発電へ渡すと同時に、中間体をアミノ酸・脂質・heme の材料として抜き出す二役の交差点（amphibolic）。ビタミンB群・ミネラル・アミノ酸がそろって初めて回る。" data-u="glossary.html#term-39f9a8217f46">TCA回路</span></strong>でさらにエネルギーを取り出すために使われます。</p>
 <p>脂肪酸も、<strong>β酸化</strong>によってacetyl-CoAになります。TCA回路は、こうして糖と脂肪酸の分解が合流する場所です。</p>
 <h2>この章の一言</h2>
@@ -693,6 +751,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>TCA回路は、エネルギー産生とともに、<strong>細胞の成分を作るための材料の供給</strong>も担います。回路の中間体から、次のような物質が作られます。</p>
 <div class="tblwrap"><table><thead><tr><th>抜き出す中間体</th><th>何になるか</th></tr></thead><tbody><tr><td><strong>citrate</strong></td><td>細胞質へ出て、<strong>脂肪酸・コレステロール</strong>の材料になる</td></tr><tr><td><strong>α-ketoglutarate</strong></td><td>glutamate を経て<strong>アミノ酸</strong>へ。<strong>コラーゲンの <span class="term" tabindex="0" data-t="proline" data-d="collagen に多く含まれるアミノ酸で、TCA回路の α-ketoglutarate から作られる。鎖に入った後にER内で hydroxyproline へ水酸化される。材料であることは律速の証明ではない。" data-u="glossary.html#term-af0b30241251">proline</span> の水酸化</strong>にも使われる</td></tr><tr><td><strong>oxaloacetate</strong></td><td>aspartate を経て<strong>核酸</strong>の材料になる。malateなどに変えて炭素を細胞質へ渡し、<strong>糖新生</strong>につなぐ</td></tr><tr><td><strong>succinyl-CoA</strong></td><td><strong>heme</strong> の材料になる</td></tr></tbody></table></div>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/tca-cycle_中間体の供給と補充.svg" alt="合成へ中間体を取り出すcataplerosisと、中間体を補うanaplerosis。" width="760.0" height="790.0" loading="lazy"><figcaption>合成へ中間体を取り出すcataplerosisと、中間体を補うanaplerosis。</figcaption></figure>
+<p>増殖・肥大・修復で合成の需要が増えるときには、中間体を材料として取り出しながら、回路を続けるための補充も必要です。<strong>ATP産生へ電子を渡すことと、合成へ材料を供給することを、細胞の需要に応じて両立しています。</strong></p>
 <h3>コラーゲンの成熟にも、TCA回路の中間体が使われる</h3>
 <p>コラーゲンは、作られたあとに <strong>prolyl hydroxylase</strong>・<strong>lysyl hydroxylase</strong> による<strong>水酸化</strong>を受けて初めて成熟します（工程の詳細は<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>）。この酵素は反応のたびに <strong>α-ketoglutarate を共基質として消費します</strong>。TCA回路の中間体が、そのままコラーゲンの加工に使われているということです。</p>
 <p>この水酸化には、<strong>O₂・Fe²⁺・ascorbate（ビタミンC）</strong>も必要です。α-ketoglutarateは反応を支える材料として使われ、<strong>succinateとCO₂に変わります。</strong>コラーゲンの構造に組み込まれるわけではありません。</p>
@@ -700,7 +759,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h2>この章の到達点</h2>
 <ol class="goal"><li><strong>糖や脂肪由来のacetyl-CoAから電子を取り出し、電子伝達系でのATP産生につなぐ。</strong></li><li><strong>アミノ酸の炭素骨格も、エネルギー源や回路の中間体の補充に使われる。</strong></li><li><strong>回路の中間体は、アミノ酸・核酸・脂質などを作る材料にもなる。</strong></li></ol>
 <p><a class="chref" href="electron-transport.html">電子伝達系</a>では、受け取った電子を使ってATPを作る仕組みを見ます。</p>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>3本柱に再構成し、PDHと5種類の補酵素の表・ASTとALT・コラーゲン成熟を本文に配置、詳しい反応は対応する本文の直後に折りたたみで配置</li><li><time>2026-09-12</time>TCA回路の収支を全章共通の反応式表示に変更</li><li><time>2026-08-24</time>初公開</li></ul></section>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-17</time>ATP産生と合成材料の供給を需要に応じて両立する説明を第3節に補足。既存の構成・図を維持。</li><li><time>2026-09-13</time>3本柱に再構成し、PDHと5種類の補酵素の表・ASTとALT・コラーゲン成熟を本文に配置、詳しい反応は対応する本文の直後に折りたたみで配置</li><li><time>2026-09-12</time>TCA回路の収支を全章共通の反応式表示に変更</li><li><time>2026-08-24</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="fatty-acid-oxidation.html"><span class="lbl">前へ</span>脂肪酸とケトン体</a><a class="next" href="electron-transport.html"><span class="lbl">次へ</span>電子伝達系</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -709,7 +768,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html" class="active">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -615,9 +673,9 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter" data-chapter="ampk-mtor">
-<p class="kicker">基礎　／　掃除と作り直し</p>
+<p class="kicker">生化学・細胞生物学の基礎　／　掃除と作り直し</p>
 <h1 class="ch-title">AMPKとmTORC1――エネルギーと材料の使い方を調節する</h1>
-<p class="dateline">公開 2026-08-31　／　最終更新 2026-09-13</p>
+<p class="dateline">公開 2026-08-31　／　最終更新 2026-10-06</p>
 <blockquote>細胞は、栄養や仕事量に応じて、合成・エネルギー産生・分解と再利用の優先順位を変えます。この章では、その配分を調節する<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014">AMPK</span>と<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="アミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する酵素複合体。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e">mTORC1</span></strong>を扱います。mTORC1の活性化機構は<a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>、分解の過程は<a class="chref" href="autophagy.html">オートファジーとリソソーム</a>、ミトコンドリアの入れ替わりは<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>で説明しています。</blockquote>
 <h2>この章の一言</h2>
 <blockquote class="lead"><strong>材料とエネルギーがあるときはmTORC1が合成を進め、エネルギーが不足するとAMPKが使い方を切り替えます。</strong>細胞には、作る時間と、エネルギーを確保して再利用する時間の両方が必要です。</blockquote>
@@ -643,19 +701,19 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>ただし、この変化は<strong>断食時間・組織・運動量・もとの栄養状態</strong>によって異なります。「16時間たてば、全身のautophagyが一斉に始まる」という意味ではありません。ヒトのintermittent fastingでもautophagic <span class="term" tabindex="0" data-t="flux" data-d="隔離 → 分解 → 再利用という流れが最後まで回っている速さ。溜まっている量（スナップショット）からは高いか低いかを判断できず、分解を短時間止めたペア比較で読む。" data-u="glossary.html#term-ab35ba20c808">flux</span>が高くなる可能性が報告されていますが、確認されている組織や研究数はまだ限られています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/40345145/" target="_blank" rel="noopener">PMID 40345145</a>）。</p></aside>
 <h2 id="s5">5　Longevityと皮膚に、どう関係するか</h2>
 <h3>Longevityでは、なぜ重要なのか</h3>
-<p>細胞は、栄養があるときには新しい成分を作り、空腹時や運動時には蓄えた成分を使います。さらに、傷んだ成分を分解して再利用します。AMPKとmTORC1は、<strong>合成・エネルギー産生・分解と再利用の優先順位</strong>を調節するため、Longevity研究の中心的な経路の一つです。</p>
-<p>食べ物をいつでも得られ、食事をとる時間帯も長くなりやすい生活では、アミノ酸やインスリンによるmTORC1への刺激が繰り返されます。そのため、合成が優先される時間が長くなり、autophagyによる分解・再利用へ切り替わる機会が少なくなる可能性があります。<strong>過栄養がLongevity研究で注目される理由の一つ</strong>です。</p>
-<p>一方、mTORC1を常に抑えればよいわけでもありません。組織の維持や傷の修復には、タンパク質や脂質を作る働きが必要です。重要なのは、<strong>作る時間と、分解して再利用する時間を切り替えられること</strong>です。</p>
+<p>細胞の維持には、必要な成分の合成と、傷んだ成分の除去・更新が必要です。AMPKとmTORC1は、この<strong>合成・エネルギー産生・分解と再利用への配分</strong>を調節するため、Longevity研究で注目されています。</p>
+<p>mTORC1は合成を促す一方、autophagyの開始を抑えます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21258367/" target="_blank" rel="noopener">PMID 21258367</a>）。慢性的な栄養・成長刺激によってmTORC1の活性化が続くと、合成と品質管理の配分に影響し得ます。過栄養と細胞の維持機能との関係を考えるうえで、重要な経路です。</p>
+<p>傷んだものを取り除いた後には、新しいタンパク質や膜、オルガネラを作る工程が必要です。筋肉の維持や創傷治癒も、合成によって支えられています。<strong>目標は合成を最大限に高めることでも、分解を高め続けることでもなく、必要な合成と分解・再利用を、細胞の状態に応じて調節できることです。</strong></p>
 <p>rapamycinによるmTOR抑制はマウスの寿命を延ばしましたが、同じことが健康なヒトの寿命でも証明されたわけではありません（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19587680/" target="_blank" rel="noopener">PMID 19587680</a>）。健康な成人を対象にした低用量rapamycinの試験も行われていますが、現段階では安全性や短期的な指標を調べる研究であり、寿命延長を示した試験ではありません（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/40188830/" target="_blank" rel="noopener">PMID 40188830</a>）。</p>
 <h3>美容皮膚科では、何に関係するのか</h3>
-<p>皮膚でも、作る働きと品質を保つ働きの両方が必要です。</p>
-<ul><li><strong>作る</strong>：mTORC1が細胞の成長とタンパク質・脂質の合成を進め、表皮の更新や創傷治癒を支えます。</li><li><strong>整える</strong>：傷んだタンパク質やオルガネラの除去、材料の再利用、ミトコンドリアの品質管理にはAMPKやautophagyが関わります。</li></ul>
+<p>美容医療では、コラーゲンなどの合成を促すことが重視されます。合成は、失われた成分を補い、組織を修復するために必要です。同時に、傷んだタンパク質やオルガネラを除去し、更新する過程も必要になります。</p>
+<p><strong>合成量が増えたことだけでは、細胞や組織が健全になったとは判断できません。</strong>何を、どの組織で、どのくらいの期間作る必要があるか、不要・損傷成分の処理も保たれているかを合わせて考えます。局所で必要な修復を促すことと、全身で栄養・成長刺激が慢性的に続くことでは、作用する範囲と時間が異なります。</p>
 <p>マウスの表皮では、AMPKがmTORC1による<span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>の過剰な増殖を抑える働きも報告されています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33741392/" target="_blank" rel="noopener">PMID 33741392</a>）。したがって、この経路は美容皮膚科の治療標的としてすぐに使うというより、<strong>皮膚が刺激を受けたあと、分解・再利用と修復・合成をどう切り替えるかを理解する土台</strong>になります。</p>
-<p>acneにも関係します。皮脂腺では、<strong>insulin・IGF-1 → PI3K → AKT → mTORC1 → SREBP-1</strong>という経路が<span class="term" tabindex="0" data-t="sebocyte" data-d="皮脂腺で脂質を作る細胞。皮脂は分泌ではなく細胞がまるごと壊れて出る（holocrine）ので、皮脂量を決めるのは崩壊する細胞数、つまり腺の大きさ。" data-u="glossary.html#term-c7d2a2afabbf">sebocyte</span>の脂質合成を促します（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17989724/" target="_blank" rel="noopener">PMID 17989724</a>）。ただし、acneは毛包の角化、<em>Cutibacterium acnes</em>、炎症、androgenなども関わる多因子性の病態であり、mTORC1だけで起こるわけではありません。詳しくは<a class="chref" href="sebum.html">皮脂分泌の生化学</a>で扱います。</p>
+<p>acneにも関係します。皮脂腺では、<strong>insulin・IGF-1 → PI3K → AKT → mTORC1 → SREBP-1</strong>という経路が<span class="term" tabindex="0" data-t="sebocyte" data-d="皮脂腺で脂質を作る細胞。皮脂は分泌ではなく細胞がまるごと壊れて出る（holocrine）ので、皮脂量を決めるのは崩壊する細胞数、つまり腺の大きさ。" data-u="glossary.html#term-c7d2a2afabbf">sebocyte</span>の脂質合成を促します（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17989724/" target="_blank" rel="noopener">PMID 17989724</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28330814/" target="_blank" rel="noopener">PMID 28330814</a>）。ただし、acneは毛包の角化、<em>Cutibacterium acnes</em>、炎症、androgenなども関わる多因子性の病態であり、mTORC1だけで起こるわけではありません。詳しくは<a class="chref" href="sebum.html">皮脂分泌の生化学</a>で扱います。</p>
 <p>metforminやrapamycinがLongevityの文脈で扱われるのは、この調節系に作用するためです。ただし、薬を使った介入は効果と有害事象を分けて考える必要があるため、<span class="term" tabindex="0" data-t="senolytic" data-d="老化細胞が生存を依存する抗アポトーシス経路（SCAP）を外して死なせ、数そのものを減らす介入。SASPだけ抑えて細胞は残すsenomorphicとは別物。ヒトの美容アウトカムは空欄。" data-u="glossary.html#term-3f126e9e5140">senolytic</span>・mitophagy関連介入で扱います。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li><strong>AMPK</strong>は細胞内のエネルギー不足を感知し、ATPを作る方向へ代謝を切り替え、ATPを多く使う合成を一時的に抑える。</li><li><strong>mTORC1</strong>は材料・成長刺激・エネルギーの状態を受け取り、タンパク質などの合成を進める。</li><li>エネルギーが不足すると、AMPKがmTORC1を抑え、エネルギーの確保と再利用を優先する。</li><li>食後・運動・回復のなかで、AMPKとmTORC1のどちらが優先されるかは変化する。</li><li>細胞の維持には、<strong>作ることと、分解・再利用することの両方</strong>が必要である。</li></ol>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>構成を維持して説明の順序・見出し・図の説明を整理</li><li><time>2026-08-31</time>初公開</li></ul></section>
+<ol class="goal"><li><strong>AMPK</strong>は細胞内のエネルギー不足を感知し、ATPを作る方向へ代謝を切り替え、ATPを多く使う合成を一時的に抑える。</li><li><strong>mTORC1</strong>は材料・成長刺激・エネルギーの状態を受け取り、タンパク質などの合成を進める。</li><li>エネルギーが不足すると、AMPKがmTORC1を抑え、エネルギーの確保と再利用を優先する。</li><li>食後・運動・回復のなかで、AMPKとmTORC1のどちらが優先されるかは変化する。</li><li>細胞の維持には、<strong>必要な合成と、傷んだ成分の除去・更新を、需要に応じて調節すること</strong>が必要である。合成量だけでは組織の健康を評価できない。</li></ol>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-10-06</time>皮脂腺細胞のmTORC1と脂質合成を検討した原著を併記し、経路説明と引用の対応を補強。</li><li><time>2026-09-17</time>Longevityと美容皮膚科の既存節に、必要な合成と品質管理を需要に応じて調節する視点を追加。合成量だけで組織の健康を評価しないことを明確化。</li><li><time>2026-09-13</time>構成を維持して説明の順序・見出し・図の説明を整理</li><li><time>2026-08-31</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="mito-quality-control.html"><span class="lbl">前へ</span>ミトコンドリア品質管理</a><a class="next" href="oxidative-stress.html"><span class="lbl">次へ</span>酸化ストレスと抗酸化</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -664,7 +722,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

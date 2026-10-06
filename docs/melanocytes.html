@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html" class="active">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html" class="active">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -653,7 +711,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>炎症が続くと、周囲の細胞からの信号も変わります。炎症後の色素沈着を考えるときは、メラニン合成だけでなく、色素形成を刺激する組織環境が続いていないかも見ます。</p>
 <details class="supplement"><summary>詳しく：炎症・plasmin系と色素形成</summary><div class="supplement-body"><p><strong>plasmin</strong> はフィブリンを分解する酵素です。角化細胞が作る <strong>plasminogen activator</strong> によるplasminogenの活性化も、色素形成を調節する細胞間の反応との関連が研究されています。</p>
 <p>角化細胞の培養上清を使った実験では、<strong>tranexamic acid（トラネキサム酸）</strong> がその色素形成促進作用を抑え、plasminogen activatorの関与が検討されました。これは角化細胞を介した作用の根拠の一つです。ただし、肝斑や炎症後色素沈着を、すべて「plasmin → PGE₂ → MITF」の一本で説明できるわけではありません。<a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">Maeda・Tomita, 2007</a></p>
-<p>PGE₂・bFGF・<span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>などは、色素細胞や血管を含む組織環境に関わる因子ですが、すべてをplasminの下流に一列に並べるのは単純化しすぎです。病態と治療への接続は しみとくすみ、薬剤の作用は 美白外用の生化学 で扱います。</p></div></details>
+<p>PGE₂・bFGF・<span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>などは、色素細胞や血管を含む組織環境に関わる因子ですが、すべてをplasminの下流に一列に並べるのは単純化しすぎです。病態と治療への接続は <a class="chref" href="pigmentation.html">しみとくすみ</a>、薬剤の作用は 美白外用の生化学 で扱います。</p></div></details>
 <h2 id="s4">4　色素を渡し、角化細胞の中に配置する</h2>
 <p>色素を含むメラノソームは樹状突起側へ運ばれ、メラニンが角化細胞へ受け渡されます。<strong>細胞内で運ぶ過程と、細胞間で渡す過程は別です。</strong></p>
 <p>受け取った色素は角化細胞内に分布し、核上メラニンキャップにもなります。色素の量だけでなく、大きさ・まとまり方・分布が肌の色と光防御に関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">Thongら, 2003</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">Kobayashiら, 1998</a></p>
@@ -661,7 +719,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>細胞間の受け渡しには複数のモデルがあります。例えば、メラノサイトがメラニンの芯を放出し、角化細胞が取り込む仕組みが実験で示されています。<strong>Rab11b</strong> はこの放出に関わり、受け手側では <strong>PAR-2</strong> などが取り込みの調節に関わります。メラノソームが常に膜を保ったまま丸ごと渡る、と決めつけずに読みます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24141907/" target="_blank" rel="noopener">Tarafderら, 2014</a></p></div></details>
 <h2 id="s5">5　受け渡された色素は、表皮の更新とともに減っていく</h2>
 <p>角化細胞が上の層へ移動する間に、色素を含む細胞内構造の処理が進みます。表面に残った色素は、角層細胞の落屑とともに失われます。<strong>作る量が減っても、すでに表皮にある色素がすぐになくなるわけではありません。</strong> 表皮の更新は <a class="chref" href="epidermis.html">表皮とターンオーバー</a> で扱った流れです。</p>
-<p>また、色素が真皮へ落ち込み、<span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span>に取り込まれている場合は、表皮のターンオーバーだけでは除去されません。色素がどの層にあるかは、しみの経過を考えるうえでも重要です（→ しみとくすみ）。</p>
+<p>また、色素が真皮へ落ち込み、<span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span>に取り込まれている場合は、表皮のターンオーバーだけでは除去されません。色素がどの層にあるかは、しみの経過を考えるうえでも重要です（→ <a class="chref" href="pigmentation.html">しみとくすみ</a>）。</p>
 <h2 id="s6">6　美容医療は、どの過程に働きかけるのか</h2>
 <p>色素への作用は、<strong>合成・受け渡し・分布や消失</strong>のどこに働くかで整理できます。例えば、tyrosinaseへの作用は合成、niacinamideの培養研究で示された作用は受け渡しの抑制です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a></p>
 <p>レチノイドは角化細胞の増殖・分化を変えるため、「色素を速く排出する薬」だけでは説明できません。色素を作る細胞、受け取る細胞、周囲の炎症を分けて捉えることが、薬剤や施術の理解につながります（→ レチノイド外用の生化学・美白外用の生化学・Qスイッチ・ピコ秒レーザー）。</p>
@@ -672,7 +730,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h2>参考文献</h2>
 <ul><li>Kobayashi N, et al. Supranuclear melanin caps reduce ultraviolet induced DNA photoproducts in human epidermis. <em>J Invest Dermatol</em>. 1998. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">PMID: 9579550</a></li><li>Thong HY, et al. The patterns of melanosome distribution in keratinocytes of human skin as one determining factor of skin colour. <em>Br J Dermatol</em>. 2003. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">PMID: 14510981</a></li><li>Berson JF, et al. Pmel17 initiates premelanosome morphogenesis within multivesicular bodies. <em>Mol Biol Cell</em>. 2001. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11694580/" target="_blank" rel="noopener">PMID: 11694580</a></li><li>Bellono NW, et al. An intracellular anion channel critical for pigmentation. <em>eLife</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">PMID: 25513726</a></li><li>Cui R, et al. Central role of p53 in the suntan response and pathologic hyperpigmentation. <em>Cell</em>. 2007. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">PMID: 17350573</a></li><li>Wicks NL, et al. UVA phototransduction drives early melanin synthesis in human melanocytes. <em>Curr Biol</em>. 2011. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22055294/" target="_blank" rel="noopener">PMID: 22055294</a></li><li>Starner RJ, et al. PGE(2) is a UVR-inducible autocrine factor for human melanocytes that stimulates tyrosinase activation. <em>Exp Dermatol</em>. 2010. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20500768/" target="_blank" rel="noopener">PMID: 20500768</a></li><li>Maeda K, Tomita Y. Mechanism of the Inhibitory Effect of Tranexamic Acid on Melanogenesis in Cultured Human Melanocytes in the Presence of Keratinocyte-conditioned Medium. <em>J Health Sci</em>. 2007. <a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">doi:10.1248/jhs.53.389</a></li><li>Wu XS, et al. Identification of an organelle <span class="term" tabindex="0" data-t="receptor" data-d="ligand を受け取る鍵穴。結合すると形が変わり、細胞内へ情報が伝わる。同じ濃度の ligand が組織にあっても、その細胞に受容体が出ていなければ入口がない——応答の個体差がまずここで生まれる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> for myosin-Va. <em>Nat Cell Biol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11887186/" target="_blank" rel="noopener">PMID: 11887186</a></li><li>Tarafder AK, et al. Rab11b mediates melanin transfer between donor melanocytes and acceptor keratinocytes via coupled exo/endocytosis. <em>J Invest Dermatol</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24141907/" target="_blank" rel="noopener">PMID: 24141907</a></li><li>Hakozaki T, et al. The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer. <em>Br J Dermatol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">PMID: 12100180</a></li></ul>
 <p>概説：D'Mello SAN, et al. Signaling Pathways in Melanogenesis. <em>Int J Mol Sci</em>. 2016;17:1144. <a class="ext" href="https://doi.org/10.3390/ijms17071144" target="_blank" rel="noopener">doi:10.3390/ijms17071144</a>／Cichorek M, et al. Skin melanocytes: biology and development. <em>Postepy Dermatol Alergol</em>. 2013;30:30–41. <a class="ext" href="https://doi.org/10.5114/pdia.2013.33376" target="_blank" rel="noopener">doi:10.5114/pdia.2013.33376</a>／Videira IFDS, et al. Mechanisms regulating melanogenesis. <em>An Bras Dermatol</em>. 2013;88:76–83. <a class="ext" href="https://doi.org/10.1590/S0365-05962013000100009" target="_blank" rel="noopener">doi:10.1590/S0365-05962013000100009</a></p>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-14</time>初公開</li><li><time>2026-09-13</time>構造・合成・調節・受け渡し・消失の順に整理し、詳細を本文直後の折りたたみへ移動。色素とUVに関する断定および図の経路を修正</li></ul></section>
+
 </article>
 <nav class="pager"><a class="prev" href="epidermis.html"><span class="lbl">前へ</span>表皮とターンオーバー</a><a class="next" href="ecm.html"><span class="lbl">次へ</span>細胞外基質（ECM）</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -681,7 +739,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

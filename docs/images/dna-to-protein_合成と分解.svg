@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 510" role="img" aria-labelledby="title desc">
+  <title id="title">タンパク質の合成と分解</title>
+  <desc id="desc">アミノ酸を材料にタンパク質が合成され、分解されたタンパク質のアミノ酸は再利用される。タンパク質量は合成速度と分解速度の差で変わる。</desc>
+  <rect width="1050" height="510" fill="#fff" />
+  <text x="39" y="54" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="35px" font-weight="700">タンパク質は、作られながら入れ替わる</text>
+  <rect x="62" y="137" width="301" height="177" rx="25" fill="#eef5fa" stroke="#8cb2c9" stroke-width="3" />
+  <text x="121" y="184" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="30px" font-weight="700">アミノ酸</text>
+  <circle cx="155" cy="238" r="13" fill="#3c9aaa" />
+  <circle cx="196" cy="249" r="13" fill="#8a71bf" />
+  <circle cx="237" cy="233" r="13" fill="#dcab4d" />
+  <circle cx="278" cy="249" r="13" fill="#d98178" />
+  <text x="81" y="288" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#4b6074" font-size="24px">食事からの補充も</text>
+  <rect x="686" y="137" width="303" height="177" rx="25" fill="#f4eff9" stroke="#aa9ccc" stroke-width="3" />
+  <text x="716" y="184" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="30px" font-weight="700">タンパク質</text>
+  <path d="M769 245q19 -35 38 0t38 0t38 0t38 0" fill="none" stroke="#7967ad" stroke-width="9" stroke-linecap="round" />
+  <text x="720" y="288" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#4b6074" font-size="24px">細胞内で働くもの</text>
+  <path d="M378 187H671" fill="none" stroke="#24628f" stroke-width="5" stroke-linecap="round" />
+  <polygon points="671,187 658,179 658,195" fill="#24628f" />
+  <text x="476" y="170" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="30px" font-weight="700">合成</text>
+  <path d="M673 273H380" fill="none" stroke="#24628f" stroke-width="5" stroke-linecap="round" />
+  <polygon points="380,273 393,265 393,281" fill="#24628f" />
+  <text x="475" y="311" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="30px" font-weight="700">分解・再利用</text>
+  <path d="M55 351H995" stroke="#ced8e3" stroke-width="2" />
+  <text x="73" y="394" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#4b6074" font-size="24px">合成と分解の速さの差で、タンパク質の量が変わる</text>
+  <rect x="61" y="422" width="292" height="57" rx="15" fill="#edf4fa" />
+  <text x="77" y="460" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="22px" font-weight="700">合成＝分解　保つ</text>
+  <rect x="379" y="422" width="292" height="57" rx="15" fill="#edf7f4" />
+  <text x="396" y="460" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="22px" font-weight="700">合成＞分解　増える</text>
+  <rect x="697" y="422" width="292" height="57" rx="15" fill="#fcf1ef" />
+  <text x="713" y="460" font-family="&quot;Noto Sans CJK JP&quot;,&quot;Hiragino Sans&quot;,sans-serif" fill="#203148" font-size="22px" font-weight="700">合成＜分解　減る</text>
+</svg>

@@ -4,15 +4,15 @@
 <meta name="robots" content="noai, noimageai">
 <meta name="author" content="Yuka Aoki, MD">
 <title>エピゲノム ― 生化学で見る美容医療</title>
-<meta name="description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
+<meta name="description" content="エピゲノムは、DNA配列を変えずに、遺伝子の読みやすさに関わる目印や配置のパターンです。 細胞はこのパターンを保ちながら、必要な遺伝子の情報を使います。">
 <link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="生化学で見る美容医療">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="エピゲノム ― 生化学で見る美容医療">
-<meta property="og:description" content="エピゲノムは、DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするかを決める仕組みです。">
+<meta property="og:description" content="エピゲノムは、DNA配列を変えずに、遺伝子の読みやすさに関わる目印や配置のパターンです。 細胞はこのパターンを保ちながら、必要な遺伝子の情報を使います。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/epigenome.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epigenome_エピゲノム.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/epigenome_同じDNAと異なる読み分け.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html" class="active">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -615,42 +673,46 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter" data-chapter="epigenome">
-<p class="kicker">基礎　／　情報をどう読むか</p>
+<p class="kicker">生化学・細胞生物学の基礎　／　情報をどう読むか</p>
 <h1 class="ch-title">エピゲノム</h1>
-<p class="dateline">公開 2026-08-16　／　最終更新 2026-09-13</p>
-<blockquote>体の細胞は、基本的に共通のDNA配列を持っています。しかし <span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span> と <span class="term" tabindex="0" data-t="fibroblast" data-d="真皮でECMを作る主役の細胞。作るだけでなくMMPで壊して作り替えるのが本質で、真皮の質はいま合成と分解のどちらに傾いているかの結果。" data-u="glossary.html#term-9848bc37cb12">fibroblast</span> は、性質も作るものもまるで違います。<strong>この違いを支えているのがエピゲノム</strong>です。エピゲノムは配列を書き換えず、<strong>その領域が開いているか、閉じているか</strong>を調節します。<a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>の transcription factor が遺伝子に結合できるかどうかは、この開閉で決まります。そのパターンは加齢でも変化します。特定の部位のDNAメチル化から年齢などを推定する方法が、<strong>エピジェネティッククロック</strong>です。</blockquote>
+<p class="dateline">公開 2026-08-16　／　最終更新 2026-10-01</p>
+<blockquote>表皮のケラチノサイトはケラチンを、真皮の線維芽細胞はコラーゲンなどを作ります。基本的に同じDNAを持つのに、細胞によって作るものや役割が違うのはなぜでしょうか。<strong>その違いを支える仕組みの一つが、遺伝子の読みやすさを調節するエピゲノムです。</strong> 細胞が自分の役割を保つ仕組みと、それが加齢に伴ってどう変わるかを見ていきます。</blockquote>
 <h2>この章の一言</h2>
-<blockquote class="lead">エピゲノムは、<strong>DNAの文字（配列）を書き換えずに、どのページを開きやすく／閉じやすくするか</strong>を決める仕組みです。<br><br>細胞ごとの性質を保っているのはこの開閉パターンで、<strong>加齢とともに乱れます。</strong>だから老化の指標として測られます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　配列は変えない。「読みやすさ」を変える</a></li><li><a href="#s2">2　DNA methylation：DNAそのものへの目印</a></li><li><a href="#s3">3　histone modification と chromatin remodeling：histone 側からの調節</a></li><li><a href="#s4">4　epigenetic drift：加齢で開閉パターンがぼやける</a></li><li><a href="#s5">5　epigenetic clock は何を測っているか</a></li><li><a href="#s6">6　NAD⁺ – sirtuin – chromatin の接点</a></li></ul></nav><h2 id="s1">1　配列は変えない。「読みやすさ」を変える</h2>
-<p><strong>細胞ごとの性質の違いは、基本的に共通のDNAのどこを使うかによって生まれます。</strong> 細胞ごとに違うのは、<strong>転写因子や酵素がその配列のどこに近づけるか</strong>です。</p>
-<p>核の中でDNAは裸で伸びているわけではなく、タンパク質に巻き付いて折りたたまれた状態で収まっています。きつく畳まれた領域には転写因子も酵素も近づけず、そこにある遺伝子は読まれません。緩んだ領域には近づけます。この近づけるかどうかを <strong>chromatin accessibility（クロマチンの開き具合）</strong> と呼びます。決めているのは、DNAやタンパク質に付いた化学的な目印（メチル基・アセチル基など）と、その畳み方です。</p>
-<p><strong>この目印と畳み方のパターン全体が、エピゲノムです。</strong> 目印を付け外しするのは専用の酵素で、エピゲノムはその結果として細胞が持っている状態を指します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピゲノム.webp" alt="クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。" width="1672" height="941" loading="lazy"><figcaption>クロマチンの開き具合は、DNAメチル化・ヒストン修飾・再配置で調節される。図は同じDNA配列の読みやすさの違いを示す。</figcaption></figure>
+<blockquote class="lead"><strong>エピゲノムは、DNA配列を変えずに、遺伝子の読みやすさに関わる目印や配置のパターンです。</strong> 細胞はこのパターンを保ちながら、必要な遺伝子の情報を使います。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　DNAのまとめ方が、遺伝子の読みやすさを変える</a></li><li><a href="#s2">2　DNAメチル化：DNAに付く目印</a></li><li><a href="#s3">3　ヒストンの目印と、ヌクレオソームの配置を変える</a></li><li><a href="#s4">4　加齢に伴って、読み分けのパターンも変わる</a></li><li><a href="#s5">5　エピジェネティッククロックは、メチル化のパターンから年齢を推定する</a></li><li><a href="#s6">6　代謝の状態も、エピゲノムの調節に関わる</a></li></ul></nav><h2 id="s1">1　DNAのまとめ方が、遺伝子の読みやすさを変える</h2>
+<p><a class="chref" href="dna-to-protein.html">DNAからタンパク質まで</a>で見たように、タンパク質を作るには、まず遺伝子の情報をRNAへ写す必要があります。このとき、転写因子やRNAを作る酵素が、そのDNAの領域に近づける状態であることが大切です。</p>
+<p>核の中で、DNAは<strong>ヒストン</strong>というタンパク質に巻き付いています。この巻き付いた一つの単位が<strong>ヌクレオソーム</strong>で、DNAとヒストンなどがまとまった構造全体を<strong>クロマチン</strong>と呼びます。</p>
+<p>クロマチンが密にまとまった領域は、転写因子などがDNAに近づきにくく、緩んだ領域は近づきやすくなります。これが、ここでいう<strong>遺伝子の読みやすさ</strong>です。専門的にはクロマチンのアクセス性（chromatin accessibility）と呼びます。読みやすい状態になった領域で、転写因子などが働き、遺伝子の情報が使われます。</p>
+<p>DNAやヒストンには、メチル基・アセチル基などの化学的な目印が付きます。<strong>こうした目印やクロマチンの配置のパターン全体が、エピゲノムです。</strong> 目印を付け外しする酵素や、配置を変える仕組みが、その状態を調節します。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_同じDNAと異なる読み分け.webp" alt="ケラチノサイトと線維芽細胞は基本的に同じDNA配列を持つが、領域ごとの読みやすさが異なる。" width="1672" height="941" loading="lazy"><figcaption>ケラチノサイトと線維芽細胞は基本的に同じDNA配列を持つが、領域ごとの読みやすさが異なる。領域A・Bは説明用の模式例。</figcaption></figure>
 <p>一度確立された読み分けは、細胞分裂を越えてある程度受け継がれます。</p>
-<h2 id="s2">2　DNA methylation：DNAそのものへの目印</h2>
-<p>DNAの特定の塩基（多くは <strong>CpG</strong>＝C の隣に G が並ぶ配列の、その C）に<strong>メチル基</strong>が付く修飾です。</p>
-<p><strong>methylation＝常に遺伝子OFF、ではありません。</strong> 遺伝子の<strong>プロモーター領域</strong>のメチル化は発現抑制と関連しやすい一方、<strong>遺伝子本体（gene body）</strong>のメチル化はむしろ発現と正に相関することもあります。「メチル化が付いた＝その遺伝子が黙った」と機械的に読まないこと。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_DNAメチル化.webp" alt="DNAメチル化の意味は、付く場所によって異なる。" width="1672" height="941" loading="lazy"><figcaption>DNAメチル化の意味は、付く場所によって異なる。プロモーターの抑制と遺伝子本体のメチル化を分けて見る。</figcaption></figure>
-<h2 id="s3">3　histone modification と chromatin remodeling：histone 側からの調節</h2>
-<p>DNAは <strong>histone</strong> というタンパク質に巻き付いており、DNA＋histone のまとまりを <strong>chromatin</strong> と呼びます。読みやすさは、この histone 側から二系統で調節されます。</p>
-<ul><li><strong>histone modification</strong>：histone の尾部に化学修飾（アセチル化、メチル化、リン酸化、ユビキチン化など）が付き、巻きを緩める／締める方向に働く。アセチル化は緩める側に関与しやすいのが目安だが、修飾の種類・位置しだいで向きは変わる</li><li><strong>chromatin remodeling</strong>：専用の装置（remodeler）が <span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span> を使って、ヌクレオソームの巻き付きを<strong>物理的にずらす</strong>。転写因子や酵素がDNAに近づけるかどうかが変わる</li></ul>
+<h2 id="s2">2　DNAメチル化：DNAに付く目印</h2>
+<p><strong>DNAメチル化（DNA methylation）</strong>は、DNAの塩基にメチル基が付くことです。代表的なのが<strong>CpG部位</strong>のメチル化です。CpGは、DNA配列の中でシトシン（C）の次にグアニン（G）が続く部分を指し、そのCにメチル基が付きます。</p>
+<p>メチル化の意味は、付く場所によって変わります。転写の開始に関わる<strong>プロモーター領域</strong>では、メチル化は遺伝子が読まれにくい状態と関連しやすくなります。一方、転写される区間である<strong>遺伝子本体（gene body）</strong>では、よく読まれている遺伝子にもメチル化が見られます。<strong>どの場所のメチル化かを見て、遺伝子の働きとの関係を考えます。</strong></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_DNAメチル化と場所.webp" alt="プロモーターのメチル化は転写が抑えられる状態と関連しやすい。" width="1536" height="1024" loading="lazy"><figcaption>プロモーターのメチル化は転写が抑えられる状態と関連しやすい。一方、遺伝子本体のメチル化は、転写が活発な遺伝子でも見られる。</figcaption></figure>
+<h2 id="s3">3　ヒストンの目印と、ヌクレオソームの配置を変える</h2>
+<p>DNAが巻き付くヒストンにも、読みやすさを変える仕組みがあります。ここでは二つに分けて見ます。</p>
+<ul><li><strong>ヒストン修飾（histone modification）</strong>：ヒストンにアセチル基やメチル基などの目印を付けます。たとえばアセチル化は、遺伝子が読みやすい状態と関連することが多い修飾です。メチル化は、付く場所によって読みやすい状態にも読みにくい状態にも関わります。</li><li><strong>クロマチンリモデリング（chromatin remodeling）</strong>：専用のタンパク質複合体が<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>を使い、ヌクレオソームの位置や配置を変えます。DNAのどの部分が露出するかが変わり、転写因子などの近づきやすさも変わります。</li></ul>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_ヒストンとクロマチン.webp" alt="左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。" width="1672" height="941" loading="lazy"><figcaption>左は化学的な目印（アセチル化・メチル化など）、右は ATP を使ってヌクレオソームを物理的にずらす再配置。読みやすさはこの二系統の重ね合わせで決まる</figcaption></figure>
-<p>methylation・histone修飾・remodeling は連動して働き、「どの領域を今アクセス可能にするか」を決めています。</p>
-<h2 id="s4">4　epigenetic drift：加齢で開閉パターンがぼやける</h2>
-<p>若いときにきれいに保たれていた開閉パターンは、加齢とともに少しずつ<strong>ずれ・ばらつき（epigenetic drift）</strong>を蓄積します。本来閉じておくべき領域が緩んだり、開けておくべき領域が締まったりして、細胞ごとのばらつきが増えます。<strong>配列の突然変異ではありません。</strong> これが加齢の特徴のひとつ（<strong>エピゲノム変化</strong>）として <span class="term" tabindex="0" data-t="Hallmarks of Aging" data-d="老化を構成し互いに影響し合う12の機序の整理。老化そのものではなく、老化を構成する機序の一覧。損傷系・応答系・波及系の3層は時間順ではなく相互作用の地図。" data-u="glossary.html#term-d2cc465eadb1">Hallmarks of Aging</span> に挙がります（→ <a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
+<p>DNAメチル化、ヒストン修飾、クロマチンリモデリングは、互いに関わりながら遺伝子の読みやすさを調節します。</p>
+<h2 id="s4">4　加齢に伴って、読み分けのパターンも変わる</h2>
+<p>加齢に伴って、DNAメチル化やヒストン修飾のパターンも変わります。読みやすくなる領域も、読みにくくなる領域もあり、細胞が使う遺伝子に影響します。</p>
+<p>その中で、目印のパターンに少しずつずれが生じ、同じ種類の細胞の間でもばらつきが増える現象を<strong>エピジェネティックドリフト（epigenetic drift）</strong>と呼びます。変化するのはDNAの配列ではなく、それを使うための状態です。こうしたエピゲノムの変化は、加齢の特徴の一つとして<a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>でも扱います。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティックドリフト.webp" alt="加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。" width="1672" height="941" loading="lazy"><figcaption>加齢に伴って、エピゲノムのパターンにずれや細胞間のばらつきが生じる。DNA配列の突然変異とは異なる。</figcaption></figure>
-<h2 id="s5">5　epigenetic clock は何を測っているか</h2>
-<p><strong>epigenetic clockは、DNAメチル化のパターンから年齢などを推定する統計モデルです。</strong> ランダムなばらつきであるdriftの程度を、そのまま点数にしたものではありません。 あらかじめ選ばれた多数のCpG部位のメチル化状態を測定し、統計モデルに入れて「エピジェネティック年齢」を出します。測っているのは §2 の DNA methylation で（<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4015143/" target="_blank" rel="noopener">Horvathの多組織時計の研究</a>）、抗加齢・longevity の領域では、これが老化の指標として使われています。</p>
+<h2 id="s5">5　エピジェネティッククロックは、メチル化のパターンから年齢を推定する</h2>
+<p>加齢に伴うメチル化の変化には、多くの人で共通する傾向もあります。<strong>エピジェネティッククロック（epigenetic clock）</strong>は、こうしたパターンを利用して年齢などを推定する統計モデルです。</p>
+<p>あらかじめ選ばれた複数のCpG部位でメチル化の状態を測り、その値をモデルに入れると、<strong>エピジェネティック年齢</strong>が計算されます。多くの組織に使えるモデルの代表例が、Horvathの時計です（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24138928/" target="_blank" rel="noopener">Horvath, Genome Biology, 2013</a>）。ドリフトによるばらつきと、時計が使う年齢に関連したパターンは区別して考えます。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/epigenome_エピジェネティック時計.webp" alt="選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。" width="1672" height="941" loading="lazy"><figcaption>選ばれたCpG部位のメチル化を測り、統計モデルで年齢などを推定する。時計の値の変化だけでは、機能や見た目の改善は判定できない。</figcaption></figure>
-<p>この数値は <strong>methylation から推定した老化の一断面</strong>であり、多面的な老化（<a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>の12項目）の総合成績ではありません。組織・時計の種類・解析法で値は変わります。そして図の下段——「時計の数値が変わる」→「生物学的機能が改善する」→「見た目・臨床結果が改善する」の矢印は、<strong>それぞれ別に検証が必要</strong>です。</p>
-<h2 id="s6">6　<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span> – <span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。" data-u="glossary.html#term-6588d1474b33">sirtuin</span> – chromatin の接点</h2>
-<p>エピゲノムと代謝はつながっています（<a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>の「ミトコンドリアの状態は代謝物の形で核へ伝わる」の続き）。<strong>sirtuin</strong>はNAD⁺を使ってタンパク質の修飾を変える酵素群です。その一部はhistoneからアセチル基を外し、クロマチンの状態や転写を調節します。</p>
-<p>NAD⁺の利用可能量が変わると、sirtuinを介した調節にも影響しえます。作用する場所や標的はsirtuinごとに異なるため、NAD⁺の増減だけで遺伝子全体の読みやすさが一方向に変わるわけではありません。ここで言えるのは生化学的な接点までで、NAD⁺を増やす介入が実際にどこまで届くかは <a class="chref" href="nad.html">NAD⁺</a>・NAD⁺前駆体 で扱います。</p>
+<p>エピジェネティック年齢は、メチル化から見た加齢の一つの指標です。値は、調べる組織や時計の種類、解析法によって変わります。<strong>値が若い方向に変わったときも、皮膚の機能や見た目が改善したかは、それぞれ確かめる必要があります。</strong></p>
+<h2 id="s6">6　代謝の状態も、エピゲノムの調節に関わる</h2>
+<p>目印を付け外しする酵素は、細胞内にある物質を使って働きます。このため、細胞の代謝の状態もエピゲノムの調節に関わります（<a class="chref" href="cell-types.html">オルガネラはどう連携するか</a>）。</p>
+<p>一例が、<strong>サーチュイン（<span class="term" tabindex="0" data-t="sirtuin" data-d="NAD⁺ を消費してタンパク質を脱アシル化する酵素群。histone にも働き、代謝状態とエピゲノムをつなぐ。遊離 NAD⁺ 濃度に感受性があるので、プールの状態がそのまま活性に出る。" data-u="glossary.html#term-6588d1474b33">sirtuin</span>）</strong>という酵素群です。<span class="term" tabindex="0" data-t="NAD⁺・NADH" data-d="栄養素から取り出した電子を運ぶ分子。電子を受け取る前が NAD⁺、受け取った後が NADH。NADH は電子伝達系へ電子を渡して NAD⁺ に戻る。一部の反応では NAD⁺分子そのものが使われて減り、NMN は NAD⁺を作り直す途中の分子にあたる。" data-u="glossary.html#term-f1e557ee99f4">NAD⁺</span>を使ってタンパク質の修飾を変え、その一部はヒストンからアセチル基を外します。こうしてクロマチンの状態や転写を調節します。</p>
+<p>サーチュインごとに働く場所と標的は異なり、NAD⁺の量と遺伝子の読みやすさの関係も一様ではありません。NAD⁺の働きや介入については<a class="chref" href="nad.html">NAD⁺</a>・NAD⁺前駆体で詳しく扱います。</p>
 <h2>この章の到達点</h2>
-<ol class="goal"><li>エピゲノムは、DNA配列を変えずに遺伝子の読みやすさを調節し、細胞ごとの性質を保っている。仕組みは DNA methylation・histone modification・chromatin remodeling の連動。</li><li>methylation は常にOFFを意味しない（プロモーターと gene body で向きが違いうる）。</li><li>加齢で開閉パターンがぼやける（<strong>epigenetic drift</strong>）。配列の変異ではない。</li><li><strong>epigenetic clockは、選ばれたCpG部位のDNA methylationから年齢などを推定する。</strong> 値は組織・時計の種類・解析法で変わり、<strong>時計が戻ること＝臨床的若返りの証明ではない</strong>。</li><li>NAD⁺–sirtuin を介して、代謝状態とエピゲノムは接続している。</li></ol>
+<ol class="goal"><li><strong>DNA配列が基本的に同じでも、細胞ごとに使う遺伝子は異なります。</strong> エピゲノムは、その読み分けを支えます。</li><li><strong>DNAメチル化、ヒストン修飾、クロマチンリモデリングが、遺伝子の読みやすさを調節します。</strong> メチル化の意味は、付く場所によって変わります。</li><li><strong>加齢に伴って目印や配置のパターンが変わり、細胞間のばらつきも増えます。</strong> エピジェネティッククロックは、メチル化のパターンから年齢などを推定する指標です。</li><li><strong>時計の値の変化と、皮膚の機能や見た目の改善は、それぞれ確かめます。</strong></li></ol>
 <figure class="book-figure summary" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><p class="fig-label">この章のまとめ</p><img src="images/epigenome_まとめ.webp" alt="DNA配列を変えずに読みやすさを調節" width="1672" height="941" loading="lazy"><figcaption>DNA配列を変えずに読みやすさを調節</figcaption></figure>
-<blockquote><a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>では、その読みやすさを変えにくる側——細胞が外からの刺激をどう受け取り、核まで伝えるかを見ます。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-16</time>初公開</li></ul></section>
+<blockquote><a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>では、細胞が外からの刺激をどう受け取り、細胞内へ伝えるかを見ていきます。</blockquote>
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-10-01</time>同じDNAを持つ皮膚細胞の読み分けから導入し、ヒストン・ヌクレオソーム・クロマチンを先に定義。用語と説明の順序を整理し、加齢による変化と時計の役割を分けた。主図とDNAメチル化図を医学イラストで修正</li><li><time>2026-09-13</time>通読して説明の順序・重複・見出しと図の配置を整理</li><li><time>2026-08-16</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="dna-to-protein.html"><span class="lbl">前へ</span>DNAからタンパク質まで</a><a class="next" href="receptors-signaling.html"><span class="lbl">次へ</span>受容体と細胞内シグナル</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -659,7 +721,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

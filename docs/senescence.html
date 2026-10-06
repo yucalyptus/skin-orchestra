@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html" class="active">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html" class="active">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -615,7 +673,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </div></nav>
 <main class="main"><div class="col">
 <article class="chapter" data-chapter="senescence">
-<p class="kicker">基礎　／　細胞は加齢で何が変わるか</p>
+<p class="kicker">生化学・細胞生物学の基礎　／　細胞は加齢で何が変わるか</p>
 <h1 class="ch-title">細胞老化<small>cellular senescence</small></h1>
 <p class="dateline">公開 2026-09-14</p>
 <blockquote>加齢や紫外線による損傷で、皮膚には増殖を止めた老化細胞が蓄積します。老化細胞は生き続け、<strong><span class="term" tabindex="0" data-t="SASP" data-d="老化細胞の分泌形質。IL-6などの炎症性サイトカイン・ケモカイン・成長因子・MMPを出す。中身は細胞種と引き金で変わり、固定リストではない。一過性なら修復を助け、持続すれば慢性炎症とECM分解へ傾く。" data-u="glossary.html#term-624e675f1372">SASP</span>（老化に伴う分泌の変化）</strong> を通じて、周囲の炎症や<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>の代謝に影響します。この章では、その働きと皮膚への影響を学びます。</blockquote>
@@ -665,7 +723,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <ul><li><strong>線維芽細胞</strong>では、コラーゲン合成の低下や、MMP・炎症性サイトカインの分泌増加がみられます。ECMの合成と分解のバランスに影響します（→ <a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>）。</li><li><strong>角化細胞</strong>では、増殖停止や分泌の変化が、表皮の更新や周囲の細胞に影響します。</li><li><strong>メラノサイト</strong>では、色素の輸送機能が変化します。また、老化したヒトメラノサイトの分泌物が、周囲の細胞のテロメア損傷と増殖低下を促すことも示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31633821/" target="_blank" rel="noopener">Victorelliら, 2019</a></li></ul>
 <p>SASPを介して近隣の細胞にも老化が誘導される現象を <strong>paracrine senescence（傍分泌による細胞老化）</strong> と呼びます。このような波及が、局所の炎症や組織機能の低下を長引かせます。</p>
 <aside class="column"><p class="col-t">コラム</p><h3 class="col-h">色素への影響は、老化する細胞によって変わる</h3><p>UVで老化させたメラノサイトでは、メラノソームの輸送が低下し、メラニンが細胞内に蓄積する一方、角化細胞へ渡る量が減ることが報告されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/37554281/" target="_blank" rel="noopener">Parkら, 2023</a></p>
-<p>周囲の線維芽細胞や角化細胞からの信号も、メラノサイトの働きを変えます。色素沈着は、メラニンの合成・転送・分解と、周囲からの刺激を合わせて考えます（→ <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>、しみとくすみ）。</p></aside>
+<p>周囲の線維芽細胞や角化細胞からの信号も、メラノサイトの働きを変えます。色素沈着は、メラニンの合成・転送・分解と、周囲からの刺激を合わせて考えます（→ <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>、<a class="chref" href="pigmentation.html">しみとくすみ</a>）。</p></aside>
 <p>真皮の維持には、線維芽細胞がコラーゲンを作る力に加え、周囲の炎症とECMの分解も関わります。</p>
 <figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/senescence_皮膚の細胞老化.webp" alt="老化した皮膚の細胞は、SASPを介して周囲に影響する。" width="1024" height="1536" loading="lazy"><figcaption>老化した皮膚の細胞は、SASPを介して周囲に影響する。免疫による除去も、老化細胞の蓄積を左右する。</figcaption></figure>
 <h2>この章の到達点</h2>
@@ -678,7 +736,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <ul><li>Lee BY, et al. Senescence-associated beta-galactosidase is lysosomal beta-galactosidase. <em>Aging Cell</em>. 2006. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16626397/" target="_blank" rel="noopener">PMID: 16626397</a>.</li></ul>
 <ul><li>Demaria M, et al. An essential role for senescent cells in optimal wound healing through secretion of PDGF-AA. <em>Developmental Cell</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25499914/" target="_blank" rel="noopener">PMID: 25499914</a>.</li><li>Dou Z, et al. Cytoplasmic chromatin triggers inflammation in senescence and cancer. <em>Nature</em>. 2017. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28976970/" target="_blank" rel="noopener">PMID: 28976970</a>.</li><li>Pereira BI, et al. Senescent cells evade immune clearance via HLA-E-mediated NK and CD8⁺ T cell inhibition. <em>Nature Communications</em>. 2019. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31160572/" target="_blank" rel="noopener">PMID: 31160572</a>.</li><li>Victorelli S, et al. Senescent human melanocytes drive skin ageing via paracrine telomere dysfunction. <em>The EMBO Journal</em>. 2019. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31633821/" target="_blank" rel="noopener">PMID: 31633821</a>.</li><li>Victorelli S, et al. Apoptotic stress causes <span class="term" tabindex="0" data-t="mtDNA" data-d="ミトコンドリアが独自に持つ小さなDNA（16,569 bp、37遺伝子）。コードする13個のタンパク質はすべて電子伝達系そのものの部品で、ROS が漏れる場所のすぐ隣に置かれている。" data-u="glossary.html#term-4c6bea64371f">mtDNA</span> release during senescence and drives the SASP. <em>Nature</em>. 2023. <a class="ext" href="https://doi.org/10.1038/s41586-023-06621-4" target="_blank" rel="noopener">DOI: 10.1038/s41586-023-06621-4</a>.</li><li>Park YJ, et al. Senescent melanocytes driven by glycolytic changes are characterized by melanosome transport dysfunction. <em>Theranostics</em>. 2023. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/37554281/" target="_blank" rel="noopener">PMID: 37554281</a>.</li><li>Ogrodnik M, et al. Guidelines for minimal information on cellular senescence experimentation in vivo. <em>Cell</em>. 2024. 判定に関する合意指針。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/39121846/" target="_blank" rel="noopener">PMID: 39121846</a>.</li></ul>
 <blockquote>ミトコンドリアの変化と細胞老化がどう関係するかは、<a class="chref" href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>で扱います。</blockquote>
-<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-09-14</time>初公開</li><li><time>2026-09-13</time>皮膚の加齢と細胞老化の違いを明確化し、分子機序・マーカー・図表を整理</li></ul></section>
+
 </article>
 <nav class="pager"><a class="prev" href="hallmarks-of-aging.html"><span class="lbl">前へ</span>Hallmarks of Aging</a><a class="next" href="mito-dysfunction.html"><span class="lbl">次へ</span>ミトコンドリア機能不全と細胞老化</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -687,7 +745,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

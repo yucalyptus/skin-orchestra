@@ -12,7 +12,7 @@
 <meta property="og:title" content="生化学で見る美容医療 ― 皮膚の下のオーケストラ">
 <meta property="og:description" content="美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞はどのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。美容医療に携わる医師のための細胞生物学・生化学の教材です。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/index.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/巻頭_本教材が守る切り分け.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/og-cover-20260917.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -209,9 +209,7 @@ color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(
 /* ---- 表紙の説明・目次 ---- */
 .hero{margin:0 0 8px}
 .hero .lede{color:var(--ink);margin:0;font-size:16.5px}
-.flowline{display:block;margin-top:26px;padding:16px 0;border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);font-family:var(--sans);font-size:12px;letter-spacing:.06em;
-color:var(--sub);text-align:center}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
 .note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
 .contents{margin-top:64px}
 .part-block{margin:0 0 36px}
@@ -479,6 +477,10 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
 .chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
 .chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
 .chapter .flow.steps{font-size:1.125rem}
 .chapter .memo p:last-child{margin-bottom:0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
@@ -511,6 +513,62 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 .book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
 .book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
 }
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
 </style></head><body>
 <button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
 <div class="wrap">
@@ -524,7 +582,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="index.html#criteria">この教材の立ち方</a>
 <a href="changelog.html">更新履歴</a>
 <a href="glossary.html">用語集</a>
-<div class="sec">基礎</div>
+<div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
 <a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
 <a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a>
@@ -532,50 +590,50 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a>
 <a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
-<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
-<a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a>
-<a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a>
-<a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
 <div class="part">材料を感知し作る</div>
-<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a>
-<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
 <div class="part">掃除と作り直し</div>
-<a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a>
-<a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
 <a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
 <div class="part">傷害から修復まで</div>
-<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
-<a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a>
-<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
 <div class="part">細胞は加齢で何が変わるか</div>
-<a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a>
-<a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a>
-<a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a>
-<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
-<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
-<a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a>
-<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
-<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a>
-<a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a>
-<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<span class="soon">毛包と毛周期<em>準備中</em></span>
-<span class="soon">脂肪<em>準備中</em></span>
-<span class="soon">筋肉<em>準備中</em></span>
-<span class="soon">血管と内皮<em>準備中</em></span>
+<a href="epidermis.html">表皮とターンオーバー</a>
+<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学</a>
+<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
+<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
 <div class="part">訴えを細胞から読み解く</div>
-<span class="soon">赤みの生化学<em>準備中</em></span>
-<span class="soon">しみとくすみ<em>準備中</em></span>
-<span class="soon">たるみの多層構造<em>準備中</em></span>
+<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
+<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
+<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<span class="soon">酒さ<em>準備中</em></span>
+<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
 <span class="soon">脂漏性皮膚炎<em>準備中</em></span>
 <span class="soon">尋常性痤瘡<em>準備中</em></span>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -614,24 +672,26 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
+<div class="home">
 <header class="cover">
 <p class="cover-en">An Orchestra Beneath the Skin</p>
 <h1 class="cover-title">生化学で見る美容医療<span class="cover-sub">皮膚の下のオーケストラ</span></h1>
 <p class="cover-author">Yuka Aoki, MD</p>
 </header>
 <div class="hero">
-<p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。臨床でふだん意識しない基礎を思い出し、施術と結びつけて理解するための教材です。</p>
-<div class="flowline">細胞の構造　→　エネルギー代謝　→　品質管理　→　加齢変化　→　美容施術への応答</div>
-<p class="note">確認できた章から少しずつ公開しています。基礎が一本の筋を作り、そのうえに個々の施術を乗せます。</p>
+<p class="lede">美容施術の刺激を受けたあと、皮膚・脂肪・筋の細胞が、どのようにエネルギーを使い、傷んだものを除去し、新しい組織を作るのか。生化学と細胞生物学を学び直し、日々の施術と結びつけて理解するための教材です。</p>
+<p class="learning-path">細胞の構造から、エネルギーの使い方、傷んだものを除いて作り直す仕組み、加齢による変化へ。細胞の中で起こる反応を一つずつたどり、美容施術への応答を生化学から理解していきます。</p>
+<p class="note">確認できた章から少しずつ公開しています。</p>
+<nav class="home-jump" aria-label="このページの案内"><a href="#contents">目次から読む</a><a href="#introduction">はじめに</a><a href="#criteria">この教材の立ち方</a></nav>
 </div>
-<section class="score"><p class="sc-t">公開の状況</p><table><tr><th>基礎</th><td class="sc-n"><strong>25</strong> <span>/ 25</span></td></tr><tr><th>美容皮膚科</th><td class="sc-n"><strong>7</strong> <span>/ 41</span></td></tr><tr><th>美容内科</th><td class="sc-n"><strong>0</strong> <span>/ 4</span></td></tr><tr><th>おわりに</th><td class="sc-n"><strong>0</strong> <span>/ 1</span></td></tr><tr class="sc-total"><th>合計</th><td class="sc-n"><strong>32</strong> <span>/ 71</span></td></tr></table><p class="sc-note">確認できたものから、ひとつずつ増やしています。</p></section>
-<section class="recent"><p class="rc-t">最近の更新</p><ul><li><time>2026-09-17</time><span class="k upd">改訂</span><a href="glycation.html">糖化とAGE</a><span class="note">初公開</span></li><li><time>2026-09-17</time><span class="k upd">改訂</span><a href="sebum.html">皮脂分泌の生化学</a><span class="note">初公開。全分泌の説明から核DNA分解の補足を削除。ACC阻害薬を治療一覧から研究の補足へ移し、酵素の働きと阻害の意味を説明。経口イソトレチノインによる皮脂腺細胞のアポトーシス誘導を本文と治療表に明記</span></li><li><time>2026-09-16</time><span class="k upd">改訂</span><a href="sebum.html">皮脂分泌の生化学</a><span class="note">食事とスキンケアのコラムを、皮膚表面の酸化抑制を示した研究の紹介に整理。導入を皮脂・常在菌・バリア・炎症と痤瘡・脂漏性皮膚炎の関係から説明する形に修正</span></li><li><time>2026-09-15</time><span class="k upd">改訂</span><a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a><span class="note">初公開。コラーゲン製剤の補足を、由来・アテロ化・組換えの意味と、アレルギー・病原体・製造品質の確認点から整理</span></li><li><time>2026-09-15</time><span class="k new">新規</span><a href="glycation.html">糖化とAGE</a><span class="note">糖化の形成・蓄積からECMと細胞への作用へ再構成。調節不能・分解不能という断定を修正し、初期糖化の修復と前駆体の処理を補足。形成抑制・除去・自家蛍光の評価を整理。糖化の始まりとAGEの二つの作用の図を追加し、エビデンスメーターを削除。GSHを介するグリオキサラーゼ系と非侵襲RFのマウス研究を補足。代表的AGEの違いと、血糖・光防御・食事・抗糖化成分の節を追加。AGEの測定法を比較し、自家蛍光の位置づけを説明。冒頭に体内形成と食品由来の二つの経路を追加。刺身・蒸し料理・焼き料理・揚げ物で調理条件を比べる図を追加。介入目標の表に形成抑制の知見と除去・架橋への治療が未確立であることを明記</span></li></ul><p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></section>
-<section class="intro sec-rule">
-<h1>はじめに ― なぜこれを作ったか</h1>
-<blockquote class="lead">医学部で学んだ基礎は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
+<section class="score"><p class="sc-t">公開の状況</p><table><tr><th>生化学・細胞生物学の基礎</th><td class="sc-n"><strong>25</strong> <span>/ 25</span></td></tr><tr><th>美容皮膚科</th><td class="sc-n"><strong>15</strong> <span>/ 41</span></td></tr><tr><th>美容内科</th><td class="sc-n"><strong>0</strong> <span>/ 4</span></td></tr><tr><th>おわりに</th><td class="sc-n"><strong>0</strong> <span>/ 1</span></td></tr><tr class="sc-total"><th>合計</th><td class="sc-n"><strong>40</strong> <span>/ 71</span></td></tr></table><p class="sc-note">確認できたものから、ひとつずつ増やしています。</p></section>
+<details class="recent"><summary>最近の更新</summary><ul><li><time>2026-10-06</time><span class="k new">新規</span><a href="rosacea.html">酒さ</a><span class="note">公開前の通読で、毛細血管拡張を血管新生とECM分解による固定化と断定しない説明へ修正。既存図2点を活かし、神経終末のTRPチャネルと肥満細胞の放出物の表示を本文に合わせた。著者確認を経て初公開。</span></li><li><time>2026-10-06</time><span class="k new">新規</span><a href="erythema.html">赤みの生化学</a><span class="note">著者確認を経て初公開。</span></li><li><time>2026-10-06</time><span class="k upd">改訂</span><a href="glycolysis.html">解糖系</a><span class="note">酸素発生型光合成の成立と大気酸素の増加を区別し、腸内細菌へ直接つなぐ進化コラムの説明を修正。</span></li><li><time>2026-10-06</time><span class="k new">新規</span><a href="endothelium.html">血管と内皮</a><span class="note">著者確認を経て初公開。</span></li><li><time>2026-10-06</time><span class="k new">新規</span><a href="adipose.html">脂肪</a><span class="note">分泌する細胞の区別とbeigingの研究対象を明確化。yomiyasuで導入と本文を推敲し、用語を日本語中心に整理。分泌の標的と脂肪細胞の大きさ・数のイラストを追加。SOOF・ROOF、深部内側頬脂肪・頬脂肪体の位置関係を本文と解剖イラストで補足。著者確認を経て初公開。</span></li></ul><p class="rc-more"><a href="changelog.html">すべての更新履歴</a></p></details>
+<section id="introduction" class="intro sec-rule">
+<h2>はじめに ― なぜこれを作ったか</h2>
+<blockquote class="lead">医学部で学んだ生化学や細胞生物学は、いまの臨床に地続きでつながっている。そこまでイメージできると、より良い治療の選択ができるようになる。</blockquote>
 <p>私は美容医療に長く携わってきました。でも正直に言うと、最初は「レーザーでコラーゲンを増やす」と言葉で説明しながら、その裏で細胞が実際に何をしているのかを、うまくイメージできていませんでした。</p>
-<p>線維芽細胞（fibroblast）が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりに積み上がって<strong>ECMという土台</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
-<p>一つの細胞の中でも、いくつものオルガネラが順に噛み合って、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>どれか一つが主役なのではなく、全体が噛み合ったときに結果が出る。</strong>タイトルに「皮膚の下のオーケストラ」と付けたのは、そういう意味です。生命というのは神秘に溢れていて、とても精巧に作られていて、感動しますね。</p>
+<p>線維芽細胞が細胞の中でコラーゲンを合成して外へ出し、それが細胞のまわりで線維を作り、<strong>細胞外基質（ECM）という、細胞を支える構造の一部</strong>になる。そしてその土台が、こんどは細胞の側に働きかける。<strong>ひとつひとつの単語は知っていました。でもそれが、細胞の実際の働きとして結びついていませんでした。</strong></p>
+<p>一つの細胞の中でも、核やリボソーム、小胞体など、細胞内で役割を分担する構造が連携して、ようやく一本のタンパク質ができます。組織では、線維芽細胞も免疫細胞も血管内皮も、ECMまでが互いに働きかけ合っている。<strong>一つひとつの働きがつながって、組織全体の営みを支えている。</strong>その連携にオーケストラの姿を重ね、この教材を「皮膚の下のオーケストラ」と名づけました。生命というのは神秘に溢れていて、とても精巧にできていて、知れば知るほど感動します。</p>
 <p>医学部で習った生化学や細胞生物学は、日々の臨床からは遠ざかりがちです。そこまで立ち返らなくても、現場の仕事は回る。<strong>けれど、細胞・生化学のレベルまでイメージできると、治療の選び方が変わってきます。</strong></p>
 <p>これは新しい知識の詰め込みではなく、<strong>「学び直し」</strong>です。臨床で働く仲間が、施術の裏側を細胞から見直すための手がかりになればうれしいです。</p>
 <aside class="notice">
@@ -641,110 +701,105 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 </aside>
 </section>
 <section id="criteria" class="sec-rule">
-<h1>この教材の立ち方 ― 限られた根拠から、どう判断するか</h1>
-<blockquote class="lead">美容医療に、質の高い臨床試験がそろっている領域はほとんどありません。それでも私たちは毎日、治療を選んでいます。<strong>この教材は、限られた材料をつないで地図を作り、つないだところに「どのくらい確かか」を書き添えます。</strong></blockquote>
-<p>「エビデンスがないから何も言えない」で止めてしまうと、<strong>手元に残るのは経験談と広告だけ</strong>になります。美容医療で厳密な対照試験が組まれることは少なく、多くは小規模・単群・企業主導です。それを理由に、考えることをやめるわけにはいきません。</p>
-<p>使える材料は三つあります。<strong>①いま臨床で見えていること　②確立した細胞生物学・生化学　③確度はまちまちだが、報告されていること。</strong>よりよく治療するには、この三つをつなぐしかありません。</p>
-<p>三つをつなぐには、推論が要ります。<strong>推論は、私たちが日々の診療でしていることそのものです。</strong>問題になるのは推論すること自体ではなく、<strong>推論を確かめられた事実と取り違えること</strong>だけです。だからこの教材は、<strong>どこまでが確立していて、どこからが推論か</strong>を、本文や章末の根拠表示で区別しながら進みます。それが分かれば、あとは読者が自分の臨床で判断できます——「ヒトでは未確認だが、機序は筋が通っていてリスクも低いなら試す」も、「未確認だから患者さんには断定的に説明しない」も、どちらも成り立ちます。</p>
-<p>下の六つが、その目印です。<strong>主張を却下するためのふるいではなく、いま自分がどの段に立っているかを確かめるためのもの</strong>です。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/巻頭_本教材が守る切り分け.webp" alt="本教材が確認する六つの切り分け。" width="1536" height="1024" loading="lazy"><figcaption>本教材が確認する六つの切り分け。血液の値と標的組織の値、経路が動くことと臨床効果、欠乏の是正と上乗せ効果、経口と外用・皮内注入、全身への供給と局所での利用、前臨床とヒト臨床は、それぞれ同じではなく、左側が確認されても右側まで自動的には証明されない</figcaption></figure>
-<p>確かめられていることは、まだ限られています。それでも、<strong>いま分かっていること・言われていることを知っておくことは必要で、それがより良い治療につながることがある。</strong>この教材はその前提で書かれています。</p>
-<p class="scope-note"><strong>根拠表示の付け方について。</strong>「基礎」の各章（細胞の地図からエネルギー・品質管理・加齢まで）は、標準的な教科書レベルの内容です。ここは確度が争点にならないので、章末の Evidence meter と個別の参考文献は置いていません。<strong>それらを付けているのは、確度そのものが論点になる「美容皮膚科」「美容内科」の各章</strong>——個別の製剤・デバイス・臨床エビデンスを扱う章です。</p>
+<h2>この教材の立ち方 ― 仕組みと根拠をつなぐ</h2>
+<p>美容医療の情報に触れるとき、「細胞を活性化する」「若返りを促す」という説明だけでは、何がどう変わるのか、どこまで確かめられているのかが見えにくいことがあります。そこを、細胞の働きと研究の結果に立ち返って考えたいと思っています。</p>
+<p>この教材では、臨床で見ている現象を、細胞生物学・生化学の仕組みと結びつけます。そのうえで、<strong>研究で確かめられたこと、仕組みから考えられること、まだ分からないこと</strong>を区別して記します。</p>
+<p>例えば、細胞内である分子が重要な役割を持つことと、それを補う治療で効果が得られることは、確かめるべき内容が違います。仕組みを知り、根拠を確かめることを、治療を考え、患者さんに説明するための手がかりにしていただければと思います。</p>
 </section>
-<section class="contents sec-rule">
-<h1>目次</h1>
-<div class="sec-block"><h2 class="sec-title">基礎<small>細胞のしくみを思い出す</small></h2>
+<section id="contents" class="contents sec-rule">
+<h2>目次</h2>
+<div class="sec-block"><h3 class="sec-title">生化学・細胞生物学の基礎<small>細胞のしくみを思い出す</small></h3>
 <div class="part-block">
-<div class="part-title">細胞の地図</div>
-<p class="part-intro">美容医療で扱う細胞を確認し、その中のオルガネラと、オルガネラ同士の連携を見ます。</p>
+<h4 class="part-title">細胞の地図</h4>
+<p class="part-intro">細胞とオルガネラの基本を確認し、エネルギーや材料の供給、分解と再利用、情報のやり取りが、細胞の仕事をどう支えるかを学びます。</p>
 <ul class="toc-list">
 <li><a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a></li>
 <li><a href="organelles.html">オルガネラ<span class="badge bupd">更新</span></a></li>
 <li><a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">情報をどう読むか</div>
-<p class="part-intro">同じDNAを持つ細胞が、なぜ違うものを作るのか。転写・翻訳・エピゲノム・受容体・膜輸送まで、「読む」「伝える」「出入りする」を通します。</p>
+<h4 class="part-title">情報をどう読むか</h4>
+<p class="part-intro">連携するオルガネラの仕事の一例として、DNAの情報からタンパク質を作り、送り出す流れをたどります。続いて、使う遺伝子の調節、細胞の外から届く刺激、細胞膜を通る物質の出入りを見ていきます。</p>
 <ul class="toc-list">
 <li><a href="dna-to-protein.html">DNAからタンパク質まで<span class="badge bupd">更新</span></a></li>
 <li><a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a></li>
-<li><a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a></li>
-<li><a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a></li>
+<li><a href="receptors-signaling.html">受容体と細胞内シグナル</a></li>
+<li><a href="membrane-transport.html">細胞膜と物質輸送</a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">エネルギー</div>
-<p class="part-intro">コラーゲンを作るのも、傷んだものを片づけるのも、細胞が1回分裂するのも、ATP・還元力（NADPH）・材料になる炭素の3つを使います。栄養素からこの3つが取り出されるまでを、一本の流れとしてたどります。この経路は発電だけをしているのではありません。同じ経路が、材料と還元力の出どころでもあります。</p>
+<h4 class="part-title">エネルギー</h4>
+<p class="part-intro">細胞が働き、組織を維持するには、エネルギーと合成の材料が必要です。糖や脂肪からエネルギーを取り出す過程と、その途中で生じる物質が新しい分子の材料にもなることを学びます。</p>
 <ul class="toc-list">
-<li><a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a></li>
+<li><a href="atp.html">代謝とATP</a></li>
 <li><a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a></li>
-<li><a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a></li>
-<li><a href="tca-cycle.html">TCA回路<span class="badge bupd">更新</span></a></li>
-<li><a href="electron-transport.html">電子伝達系<span class="badge bupd">更新</span></a></li>
-<li><a href="nad.html">NAD⁺<span class="badge bupd">更新</span></a></li>
+<li><a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a></li>
+<li><a href="tca-cycle.html">TCA回路</a></li>
+<li><a href="electron-transport.html">電子伝達系</a></li>
+<li><a href="nad.html">NAD⁺</a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">材料を感知し作る</div>
-<p class="part-intro">エネルギーと並ぶもう一つの前提が材料です。アミノ酸と、材料と成長刺激がそろったかを判定して合成を始めるmTORC1を見ます。「エネルギーがある」と「材料がそろい、作る指令が出る」は別です。</p>
+<h4 class="part-title">材料を感知し作る</h4>
+<p class="part-intro">アミノ酸はタンパク質の材料であり、栄養が足りていることを細胞に伝える役割も持ちます。細胞が栄養や成長の刺激を受け取り、タンパク質の合成を調節する仕組みを学びます。</p>
 <ul class="toc-list">
-<li><a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある<span class="badge bupd">更新</span></a></li>
-<li><a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み<span class="badge bupd">更新</span></a></li>
+<li><a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a></li>
+<li><a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">掃除と作り直し</div>
-<p class="part-intro">作る話の裏側です。壊して再利用する仕組みと、ミトコンドリアの回転。品質は「量」ではなく「回っているか」で決まります。</p>
+<h4 class="part-title">掃除と作り直し</h4>
+<p class="part-intro">細胞は、傷んだタンパク質や細胞内の構造を分解し、その材料を再利用します。ミトコンドリアの修復・除去・新生と、栄養やエネルギーの状態に応じて合成と分解を調節する仕組みを学びます。</p>
 <ul class="toc-list">
-<li><a href="autophagy.html">オートファジーとリソソーム<span class="badge bupd">更新</span></a></li>
-<li><a href="mito-quality-control.html">ミトコンドリア品質管理<span class="badge bupd">更新</span></a></li>
+<li><a href="autophagy.html">オートファジーとリソソーム</a></li>
+<li><a href="mito-quality-control.html">ミトコンドリア品質管理</a></li>
 <li><a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">傷害から修復まで</div>
-<p class="part-intro">美容治療は、皮膚への刺激とその後の細胞の反応を利用します。ROSによる傷害と抗酸化防御、細胞死と除去、炎症の収束と組織修復を順に学びます。治療に利用する反応と、瘢痕・色素沈着などのトラブルが生じる仕組みを理解します。</p>
+<h4 class="part-title">傷害から修復まで</h4>
+<p class="part-intro">活性酸素による傷害と、それを抑える仕組みを学びます。続いて、傷んだ細胞の死と除去、炎症の収束、組織の修復をたどり、施術後の回復や瘢痕・色素沈着につながる反応を理解します。</p>
 <ul class="toc-list">
-<li><a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a></li>
-<li><a href="cell-death.html">細胞死<span class="badge bupd">更新</span></a></li>
-<li><a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a></li>
+<li><a href="oxidative-stress.html">酸化ストレスと抗酸化</a></li>
+<li><a href="cell-death.html">細胞死</a></li>
+<li><a href="wound-healing.html">炎症と創傷治癒</a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">細胞は加齢で何が変わるか</div>
-<p class="part-intro">加齢に伴い、細胞の増殖・代謝・分泌と、組織を維持する力がどう変わるかを学びます。細胞周期を復習し、老化に関わる仕組みの全体像、老化細胞とSASP、ミトコンドリアとの関係へ進みます。論文で使われるマーカーも、細胞内で起きている変化と結びつけて理解します。</p>
+<h4 class="part-title">細胞は加齢で何が変わるか</h4>
+<p class="part-intro">細胞の増殖・代謝・分泌が加齢とともにどう変化し、組織を維持する力に影響するかを学びます。細胞が分裂する仕組みを復習し、老化した細胞が周囲に及ぼす作用や、ミトコンドリアとの関係を見ていきます。</p>
 <ul class="toc-list">
-<li><a href="cell-cycle.html">細胞周期<span class="badge bupd">更新</span></a></li>
-<li><a href="hallmarks-of-aging.html">Hallmarks of Aging<span class="badge bupd">更新</span></a></li>
-<li><a href="senescence.html">細胞老化<span class="badge bupd">更新</span></a></li>
-<li><a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化<span class="badge bupd">更新</span></a></li>
+<li><a href="cell-cycle.html">細胞周期</a></li>
+<li><a href="hallmarks-of-aging.html">Hallmarks of Aging</a></li>
+<li><a href="senescence.html">細胞老化</a></li>
+<li><a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a></li>
 </ul></div>
 </div>
-<div class="sec-block"><h2 class="sec-title">美容皮膚科<small>局所に施術する</small></h2>
+<div class="sec-block"><h3 class="sec-title">美容皮膚科<small>組織と病態から治療を理解する</small></h3>
 <div class="part-block">
-<div class="part-title">組織の生化学</div>
-<p class="part-intro">治療の前に、扱う組織そのものを見ます。浅いところから順に、表皮と色素、真皮の線維とECM、付属器、その下の脂肪と筋、そして全層を貫く血管。何でできていて、どう働き、壊れたときに何が起きるか。ここに治療は出てきません。</p>
+<h4 class="part-title">組織の生化学</h4>
+<p class="part-intro">表皮、色素を作る細胞、真皮の線維、皮脂腺や毛包、脂肪・筋肉・血管を取り上げます。それぞれを構成する細胞と物質、その働きが、皮膚の見た目や組織の性質にどうつながるかを学びます。</p>
 <ul class="toc-list">
-<li><a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a></li>
-<li><a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a></li>
-<li><a href="ecm.html">細胞外基質（ECM）<span class="badge bnew">NEW</span></a></li>
-<li><a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a></li>
-<li><a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bnew">NEW</span></a></li>
-<li><a href="glycation.html">糖化とAGE<span class="badge bupd">更新</span></a></li>
-<li><a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a></li>
-<li class="soon"><span>毛包と毛周期</span><em>準備中</em></li>
-<li class="soon"><span>脂肪</span><em>準備中</em></li>
-<li class="soon"><span>筋肉</span><em>準備中</em></li>
-<li class="soon"><span>血管と内皮</span><em>準備中</em></li>
+<li><a href="epidermis.html">表皮とターンオーバー</a></li>
+<li><a href="melanocytes.html">メラノサイトと色素形成</a></li>
+<li><a href="ecm.html">細胞外基質（ECM）</a></li>
+<li><a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a></li>
+<li><a href="elastic-fibers.html">弾性線維と膠原線維<span class="badge bupd">更新</span></a></li>
+<li><a href="glycation.html">糖化とAGE</a></li>
+<li><a href="sebum.html">皮脂分泌の生化学</a></li>
+<li><a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a></li>
+<li><a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a></li>
+<li><a href="muscle.html">筋肉<span class="badge bnew">NEW</span></a></li>
+<li><a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">訴えを細胞から読み解く</div>
+<h4 class="part-title">訴えを細胞から読み解く</h4>
 <p class="part-intro">紅斑・色素斑・くすみ・たるみを、関与する細胞と組織の変化から整理します。共通の機序を理解し、疾患ごとの病態と治療標的につなげます。</p>
 <ul class="toc-list">
-<li class="soon"><span>赤みの生化学</span><em>準備中</em></li>
-<li class="soon"><span>しみとくすみ</span><em>準備中</em></li>
-<li class="soon"><span>たるみの多層構造</span><em>準備中</em></li>
+<li><a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a></li>
+<li><a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a></li>
+<li><a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">疾患・病態を細胞から理解する</div>
+<h4 class="part-title">疾患・病態を細胞から理解する</h4>
 <p class="part-intro">肝斑・酒さ・痤瘡など、臨床で診る疾患を細胞と組織の反応から理解します。臨床所見、病態の機序、治療標的をつなぎ、薬剤や機器の詳細は治療別の章で扱います。</p>
 <ul class="toc-list">
-<li class="soon"><span>酒さ</span><em>準備中</em></li>
+<li><a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a></li>
 <li class="soon"><span>脂漏性皮膚炎</span><em>準備中</em></li>
 <li class="soon"><span>尋常性痤瘡</span><em>準備中</em></li>
 <li class="soon"><span>日光黒子と雀卵斑</span><em>準備中</em></li>
@@ -753,8 +808,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <li class="soon"><span>真皮メラノサイトーシス</span><em>準備中</em></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">外用</div>
-<p class="part-intro">角層という関門を越えて分子を届ける治療です。届いた先で、細胞の何を書き換えるのかで剤が分かれます。</p>
+<h4 class="part-title">外用</h4>
+<p class="part-intro">皮膚に塗った成分がどこまで届き、どの細胞や構造に作用するかを学びます。角層のバリアを出発点に、表皮の分化、色素の産生、角層の剥離など、治療ごとに異なる作用を見ていきます。</p>
 <ul class="toc-list">
 <li class="soon"><span>角層バリアと経皮吸収</span><em>準備中</em></li>
 <li class="soon"><span>レチノイド外用の生化学</span><em>準備中</em></li>
@@ -762,8 +817,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <li class="soon"><span>ケミカルピーリングの生化学</span><em>準備中</em></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">注射</div>
-<p class="part-intro">分子を組織に直接置く治療です。置く・誘導する・止める・壊す——一次作用のまるで違うものが、同じ「注射」に同居しています。</p>
+<h4 class="part-title">注射</h4>
+<p class="part-intro">組織に直接届けた製剤が何を変えるかを学びます。体積を補う、組織の形成を促す、神経から筋への信号を抑える、脂肪細胞を傷害するといった作用の違いを、製剤ごとの根拠とともに見ていきます。</p>
 <ul class="toc-list">
 <li class="soon"><span>ヒアルロン酸フィラーの生化学</span><em>準備中</em></li>
 <li class="soon"><span>バイオスティミュレーター</span><em>準備中</em></li>
@@ -773,8 +828,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <li class="soon"><span>脂肪を減らす治療</span><em>準備中</em></li>
 </ul></div>
 <div class="part-block">
-<div class="part-title">デバイス</div>
-<p class="part-intro">デバイスが入れられるのは熱・光・機械の刺激だけです。組織を作り直すのは、そのあと動く細胞の側になります。</p>
+<h4 class="part-title">デバイス</h4>
+<p class="part-intro">デバイスは熱・光・機械刺激や電気・磁気刺激を組織に与えます。刺激による直接の変化と、その後の細胞の応答を見ていきます。</p>
 <ul class="toc-list">
 <li class="soon"><span>熱・光・機械刺激</span><em>準備中</em></li>
 <li class="soon"><span>ニードルRFの生化学</span><em>準備中</em></li>
@@ -788,24 +843,24 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <li class="soon"><span>導入</span><em>準備中</em></li>
 </ul></div>
 </div>
-<div class="sec-block"><h2 class="sec-title">美容内科<small>全身から入れる</small></h2>
-<p class="sec-intro">経口・点滴で全身に入れる介入です。血中の値が動くことと、標的組織で使われることは別——巻頭で立てた切り分けが、いちばん効く場所です。</p>
+<div class="sec-block"><h3 class="sec-title">美容内科<small>全身の代謝と加齢から考える</small></h3>
+<p class="sec-intro">栄養素の補充、老化した細胞への介入、腸内細菌などを、全身の代謝や加齢との関係から学びます。体内での働きと、介入によってヒトで確かめられた変化を結びつけて考えます。</p>
 <li class="soon"><span>NAD⁺前駆体</span><em>準備中</em></li>
 <li class="soon"><span>senolytic・mitophagy関連介入</span><em>準備中</em></li>
 <li class="soon"><span>抗酸化サプリメントと点滴</span><em>準備中</em></li>
 <li class="soon"><span>腸内細菌</span><em>準備中</em></li>
 </div>
-<div class="sec-block"><h2 class="sec-title">おわりに</h2>
+<div class="sec-block"><h3 class="sec-title">おわりに</h3>
 <li class="soon"><span>美容医療を細胞から考える</span><em>準備中</em></li>
 </div>
-</section>
+</section></div>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-09-17 ／ 版 8f75ee2</p>
+<p class="stamp">最終更新 2026-10-06 ／ 版 48884e7</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
