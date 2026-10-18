@@ -1042,12 +1042,30 @@ def inline(s):
 
     parts = []
     pos = 0
-    for m in re.finditer(r"\[([^\[\]\n]+)\]\((https?://[^\s<>\)]+)\)", s):
+    for m in re.finditer(r"\[([^\[\]\n]+)\]\((https?://)", s):
+        if m.start() < pos:
+            continue
+        # DOIなどのURL内にある括弧を、Markdownリンクの終端と区別する。
+        depth, end = 1, m.end()
+        while end < len(s):
+            char = s[end]
+            if char.isspace() or char in "<>":
+                break
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth -= 1
+                if depth == 0:
+                    break
+            end += 1
+        if depth != 0:
+            continue
+        url = s[m.start(2):end]
         parts.append(plain(s[pos:m.start()]))
         # ラベル内のPMIDを再リンク化して、a要素を入れ子にしない。
         parts.append('<a class="ext" href="%s" target="_blank" rel="noopener">%s</a>'
-                     % (esc(m.group(2)), decorate(esc(m.group(1)))))
-        pos = m.end()
+                     % (esc(url), decorate(esc(m.group(1)))))
+        pos = end + 1
     parts.append(plain(s[pos:]))
     return ''.join(parts)
 
