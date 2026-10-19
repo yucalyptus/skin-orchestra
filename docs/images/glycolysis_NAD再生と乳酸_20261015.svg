@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 780" role="img" aria-labelledby="title desc">
+  <title id="title">NAD⁺を再生して、解糖系を続ける</title>
+  <desc id="desc">細胞質のNADHをNAD⁺へ戻す二つの経路。上段はシャトルを介してミトコンドリアへ電子を渡す。下段はLDH反応でNADHがピルビン酸へ電子を渡し、NAD⁺と乳酸になる。どちらも再生したNAD⁺を解糖系で再利用する。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#64748b" stroke-width="1.8"/></marker>
+    <marker id="electron" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#1d4f91" stroke-width="1.8"/></marker>
+  </defs>
+  <rect width="900" height="780" fill="#fff"/>
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" fill="#1c1d23">
+    <text x="32" y="48" font-size="30" font-weight="700">NAD⁺を再生して、解糖系を続ける</text>
+
+    <rect x="24" y="80" width="852" height="46" rx="3" fill="#f2f4f7"/>
+    <text x="40" y="112" font-size="24" font-weight="700">ミトコンドリアへ電子を渡す経路</text>
+    <text x="40" y="160" font-size="20" fill="#64748b">細胞質</text>
+    <text x="160" y="218" font-size="36" font-weight="700" text-anchor="middle">NADH</text>
+    <path d="M250 205H525" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="605" y="218" font-size="36" font-weight="700" text-anchor="middle" fill="#1d4f91">NAD⁺</text>
+    <path d="M667 205H724" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="795" y="198" font-size="21" text-anchor="middle">解糖系で</text>
+    <text x="795" y="226" font-size="21" text-anchor="middle">再利用</text>
+
+    <path d="M390 211V278Q390 297 412 297H515" fill="none" stroke="#1d4f91" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#electron)"/>
+    <text x="375" y="267" font-size="20" text-anchor="end" fill="#1d4f91">電子</text>
+    <text x="375" y="304" font-size="20" text-anchor="end" fill="#64748b">シャトルを介して</text>
+    <path d="M548 260H816Q855 260 855 297Q855 334 816 334H548Q518 334 518 297Q518 260 548 260Z" fill="#f2f4f7" stroke="#c5cdd6" stroke-width="1.5"/>
+    <text x="686" y="250" font-size="20" text-anchor="middle" fill="#64748b">ミトコンドリア</text>
+    <text x="626" y="305" font-size="23" text-anchor="middle">電子伝達系</text>
+    <path d="M702 297H753" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#electron)"/>
+    <text x="797" y="306" font-size="26" text-anchor="middle">O₂</text>
+    <text x="40" y="365" font-size="20" fill="#64748b">NADH分子がそのままミトコンドリア内膜を通ることはありません。</text>
+
+    <rect x="24" y="400" width="852" height="46" rx="3" fill="#f2f4f7"/>
+    <text x="40" y="432" font-size="24" font-weight="700">ピルビン酸へ電子を渡し、乳酸を作る経路</text>
+    <text x="40" y="480" font-size="20" fill="#64748b">細胞質</text>
+    <text x="160" y="538" font-size="36" font-weight="700" text-anchor="middle">NADH</text>
+    <path d="M250 525H525" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="605" y="538" font-size="36" font-weight="700" text-anchor="middle" fill="#1d4f91">NAD⁺</text>
+    <path d="M667 525H724" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="795" y="518" font-size="21" text-anchor="middle">解糖系で</text>
+    <text x="795" y="546" font-size="21" text-anchor="middle">再利用</text>
+
+    <path d="M390 536V642" fill="none" stroke="#1d4f91" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#electron)"/>
+    <text x="417" y="586" font-size="21" fill="#1d4f91">電子を渡す</text>
+    <text x="160" y="673" font-size="31" font-weight="700" text-anchor="middle">pyruvate</text>
+    <text x="160" y="705" font-size="21" text-anchor="middle" fill="#64748b">ピルビン酸</text>
+    <path d="M250 660H525" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="299" y="629" font-size="22" font-weight="700" text-anchor="middle">LDH</text>
+    <text x="605" y="673" font-size="31" font-weight="700" text-anchor="middle">lactate</text>
+    <text x="605" y="705" font-size="21" text-anchor="middle" fill="#64748b">乳酸</text>
+    <text x="40" y="754" font-size="22" font-weight="700" fill="#1d4f91">乳酸を作る反応でNAD⁺が再生され、解糖系を続けられます。</text>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-labelledby="title desc">
+  <title id="title">糖の代謝が支える、細胞の仕事・組織の材料・抗酸化</title>
+  <desc id="desc">グルコース6リン酸から解糖系とペントースリン酸経路へ分かれる。解糖系はATPと合成に使う中間体を供給し、ペントースリン酸経路は核酸の材料とNADPHを供給する。ATPは細胞の仕事、合成材料は組織の更新、NADPHは抗酸化を支える。反応は省略している。</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#64748b" stroke-width="1.6"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#1d4f91" stroke-width="1.6"/></marker>
+  </defs>
+  <rect width="900" height="680" fill="#fff"/>
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,sans-serif" text-anchor="middle" fill="#1c1d23">
+    <text x="450" y="40" font-size="30" font-weight="700">糖は、エネルギーと材料を供給する</text>
+    <text x="450" y="93" font-size="28" font-weight="700">glucose（グルコース）</text>
+    <path d="M450 106V128" stroke="#64748b" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="450" y="164" font-size="28" font-weight="700">G6P</text>
+    <text x="450" y="193" font-size="22" fill="#64748b">グルコース6-リン酸</text>
+    <path d="M360 155H210V224" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#a)"/>
+    <path d="M540 155H690V224" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="210" y="259" font-size="29" font-weight="700" fill="#1d4f91">解糖系</text>
+    <text x="690" y="259" font-size="27" font-weight="700" fill="#1d4f91">PPP</text>
+    <text x="690" y="287" font-size="22" fill="#64748b">ペントースリン酸経路</text>
+    <g fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#a)">
+      <path d="M210 273V296H140V326"/><path d="M210 296H360V326"/>
+      <path d="M690 301V312H520V326"/><path d="M690 312H770V326"/>
+    </g>
+    <text x="140" y="361" font-size="32" font-weight="700">ATP</text>
+    <text x="360" y="357" font-size="25" font-weight="700">中間体</text>
+    <text x="520" y="357" font-size="22" font-weight="700">リボース5-リン酸</text>
+    <text x="770" y="361" font-size="32" font-weight="700">NADPH</text>
+    <g fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#a)">
+      <path d="M140 377V427"/><path d="M360 372V394H440V427"/><path d="M770 377V427"/>
+    </g>
+    <path d="M520 372V394H440" fill="none" stroke="#64748b" stroke-width="2.5"/>
+    <path d="M300 430V620M610 430V620" stroke="#c5cdd6" stroke-width="1.5"/>
+    <text x="140" y="462" font-size="27" font-weight="700" fill="#1d4f91">細胞の仕事</text>
+    <text x="440" y="462" font-size="27" font-weight="700" fill="#1d4f91">組織を作る材料</text>
+    <text x="770" y="462" font-size="27" font-weight="700" fill="#1d4f91">抗酸化を続ける</text>
+    <g stroke="#64748b" stroke-width="2.5" fill="none">
+      <path d="M70 502H95M113 502H138M156 502H181"/>
+      <circle cx="104" cy="502" r="9"/><circle cx="147" cy="502" r="9"/><circle cx="190" cy="502" r="9"/>
+    </g>
+    <text x="61" y="509" font-size="22">A</text>
+    <text x="140" y="541" font-size="22" fill="#64748b">仕事へエネルギーを渡す</text>
+    <g fill="none" stroke="#1d4f91" stroke-width="2.5">
+      <path d="M367 484C427 504 367 523 427 543M427 484C367 504 427 523 367 543"/>
+      <path d="M378 490H416M384 503H410M377 524H417M378 537H416" stroke="#64748b" stroke-width="2"/>
+      <g stroke="#64748b" stroke-width="2"><path d="M458 500l-4 10 4 10M477 500l-4 10 4 10M496 500l-4 10 4 10M458 534l4-10-4-10M477 534l4-10-4-10M496 534l4-10-4-10"/></g>
+      <g fill="#fff"><circle cx="458" cy="494" r="6"/><circle cx="477" cy="494" r="6"/><circle cx="496" cy="494" r="6"/><circle cx="458" cy="540" r="6"/><circle cx="477" cy="540" r="6"/><circle cx="496" cy="540" r="6"/></g>
+    </g>
+    <text x="716" y="517" font-size="23" font-weight="700">還元型</text>
+    <text x="823" y="517" font-size="23" font-weight="700">酸化型</text>
+    <path d="M731 490Q775 468 812 490" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#b)"/>
+    <path d="M809 531Q765 554 731 531" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#b)"/>
+    <text x="770" y="564" font-size="21" fill="#64748b">グルタチオン</text>
+    <text x="140" y="600" font-size="23">合成・輸送・移動</text>
+    <text x="440" y="600" font-size="23">核酸・アミノ酸・脂質</text>
+    <text x="770" y="600" font-size="23">還元型へ戻して再利用</text>
+    <text x="450" y="664" font-size="21" fill="#64748b">主な働きの模式図。中間反応と、NADPHの合成への利用は省略。</text>
+  </g>
+</svg>

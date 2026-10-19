@@ -1038,7 +1038,10 @@ def linkify_refs(s):
 def inline(s):
     """本文を変換し、HTTP(S)のMarkdownリンクはラベルだけを表示する。"""
     def plain(text):
-        return resolve_wikilinks(linkify_refs(decorate(esc(text))))
+        # 改行タグだけを許可し、不等号や任意のHTMLはエスケープしたままにする。
+        decorated = decorate(esc(text))
+        decorated = re.sub(r"&lt;br\s*/?&gt;", "<br>", decorated, flags=re.I)
+        return resolve_wikilinks(linkify_refs(decorated))
 
     parts = []
     pos = 0
