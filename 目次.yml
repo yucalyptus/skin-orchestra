@@ -88,7 +88,7 @@ sections:
 
           - ecm                       # 細胞外基質（ECM）
           - fibroblast-collagen       # 線維芽細胞とコラーゲン
-          - elastic-fibers            # 弾性線維と膠原線維
+          - elastic-fibers            # 弾性線維とコラーゲン線維
           - glycation                 # 糖化とAGE
 
           - sebum                     # 皮脂分泌の生化学
