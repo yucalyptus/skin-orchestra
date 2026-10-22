@@ -718,7 +718,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/endothelium_神経と免疫から血管へ.webp" alt="感覚神経からのCGRP、肥満細胞からのhistamine、内皮からのNOが血管に作用する。" width="1536" height="1024" loading="lazy"><figcaption>感覚神経からのCGRP、肥満細胞からのhistamine、内皮からのNOが血管に作用する。histamineによる血漿漏出は、血管透過性の節で説明する。細胞の配置は模式的に示す。</figcaption></figure>
 <p>炎症に伴うメディエーターや神経からの刺激が続けば、血管拡張も持続し得ます。<strong>血管の状態は、周囲の神経・免疫細胞の活動にも左右されます。</strong></p>
 <details class="supplement"><summary>詳しく読む：NO・PGI₂・CGRPが平滑筋に作用する経路</summary><div class="supplement-body"><p>NOは平滑筋の<strong>sGC（可溶性グアニル酸シクラーゼ）</strong>を活性化し、<strong>cGMP</strong>を増やします。続いてPKGが細胞内Ca²⁺や収縮装置の働きを調節し、弛緩につながります。</p>
-<p>内皮由来の<strong>prostacyclin（PGI₂）</strong>はIP受容体、CGRPはCGRP受容体を介して作用します。代表的な経路では<strong><span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。" data-u="glossary.html#term-1121990e3524">cAMP</span></strong>が増え、PKAを介して平滑筋の収縮が抑えられます。交感神経のnoradrenalineや内皮由来のendothelin-1は収縮を促す因子です。</p>
+<p>内皮由来の<strong>prostacyclin（PGI₂）</strong>はIP受容体、CGRPはCGRP受容体を介して作用します。代表的な経路では<strong><span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。" data-u="glossary.html#term-1121990e3524" data-p="pathways.html#s7">cAMP</span></strong>が増え、PKAを介して平滑筋の収縮が抑えられます。交感神経のnoradrenalineや内皮由来のendothelin-1は収縮を促す因子です。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/endothelium_血管拡張経路.webp" alt="内皮由来のNO・PGI₂と、感覚神経由来のCGRPが平滑筋へ作用する代表的な経路。" width="1672" height="941" loading="lazy"><figcaption>内皮由来のNO・PGI₂と、感覚神経由来のCGRPが平滑筋へ作用する代表的な経路。右側は収縮時と拡張時を比較する。分子や細胞の形は模式的に示す。</figcaption></figure>
 <p>感覚神経から放出されるCGRPと<strong>substance P（サブスタンスP）</strong>は、どちらも血管拡張を促します。ヒト皮膚へ投与した研究では、血漿漏出への作用に次の違いがありました。</p>
 <ul><li><strong>CGRP</strong>：血管拡張を起こしましたが、血漿タンパク質の漏出は認められませんでした。</li><li><strong>substance P</strong>：血管拡張に加え、一定以上の投与濃度で血漿タンパク質の漏出も起こしました。</li></ul>
@@ -778,7 +778,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 908f7e0</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 bc89b50</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -869,7 +869,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');

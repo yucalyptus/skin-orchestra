@@ -730,7 +730,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="reaction"><span class="reaction-label">ADPの間でリン酸を受け渡す反応</span><div class="reaction-equation" role="img" aria-label="ADPの間でリン酸を受け渡す反応：2 ADP ⇌ ATP ＋ AMP"><span class="reaction-side"><span class="reaction-species"><span>2 ADP</span><span class="reaction-name">アデノシン二リン酸</span></span></span><span class="reaction-arrow"><span class="reaction-enzyme">adenylate kinase</span><span aria-hidden="true">⇌</span></span><span class="reaction-side"><span class="reaction-species"><span>ATP</span><span class="reaction-name">アデノシン三リン酸</span></span><span class="reaction-plus">＋</span><span class="reaction-species"><span>AMP</span><span class="reaction-name">アデノシン一リン酸</span></span></span></div></div>
 <h3>AMPの増加が、エネルギー不足の合図になる</h3>
 <p>ATPの消費に再生が追いつかないと、ATPに対してADPが増え、adenylate kinaseの反応でAMPも増えます。<strong>AMPはもともとATPより少ないため、少し増えるだけでも、元の量に対しては大きな割合の変化になります</strong>。このため、ATPの小さな減少を、AMPの増加から捉えられます。</p>
-<h3><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014">AMPK</span>が、エネルギー不足を感知する</h3>
+<h3><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#s2">AMPK</span>が、エネルギー不足を感知する</h3>
 <p>AMPの上昇を感知するのが<strong>AMPK（AMP-activated protein kinase）</strong>です。AMPKは、ATPを作る分解反応を促し、ATPを消費する合成反応を抑えて、エネルギー不足に対応します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
 <blockquote><strong>発展：細胞外へ出たATP</strong>。組織の傷害などで局所的に細胞外へ放出されたATPは、エネルギー源としてではなく、<strong>P2受容体を介した危険信号</strong>として働きます。この役割は<span class="term" tabindex="0" data-t="DAMPs" data-d="本来は細胞内で役割を持つ分子（ATP・HMGB1・mtDNA など）が、壊れた細胞から外へ出て異常の合図として読まれるもの。場所が変わること自体が信号になる。感染がなくても炎症が始まる理由。" data-u="glossary.html#term-6531e203aa2e">DAMPs</span>を扱う<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>で説明します。</blockquote>
 <aside class="column"><p class="col-t">コラム</p><h3 class="col-h">カフェインは、アデノシンによる眠気の信号を弱める</h3><p>ATPやAMPなどの代謝から生じるアデノシンは、細胞外では受容体に結合し、神経の活動や睡眠・覚醒を調節する信号として働きます。覚醒が長く続くと、脳の一部で細胞外のアデノシンが増え、睡眠を促す作用が強まります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9157887/" target="_blank" rel="noopener">Porkka-Heiskanenら, Science, 1997：動物実験</a>）。</p>
@@ -747,7 +747,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 908f7e0</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 bc89b50</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -838,7 +838,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');

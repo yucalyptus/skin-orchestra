@@ -710,7 +710,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>EVは、表面の分子が相手の細胞の受容体に作用し、細胞内のシグナルを変えることがあります。この作用では、EVの内容物を細胞内へ渡す必要はありません。</p>
 <p>別の経路として、EVの内容物が相手の細胞内へ届き、働く場合があります。EVは、細胞膜で包み込む<strong>エンドサイトーシス</strong>によって取り込まれることがあります。その場合、EVはまず相手の細胞のエンドソームに入り、細胞質とは膜で隔てられています。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/extracellular-vesicles_近隣細胞への作用.webp" alt="EVが近隣細胞に作用する2つの経路。" width="1536" height="1024" loading="lazy"><figcaption>EVが近隣細胞に作用する2つの経路。上は表面の分子が受容体に作用する経路、下はエンドサイトーシスで取り込まれる経路。破線は内容物が細胞質へ届く場合を示し、その成立は条件によって異なる。細胞・小胞・分子の大きさは模式的。</figcaption></figure>
-<p>表面からの作用の例として、細胞の分化や増殖に関わる<strong>Wnt</strong>というシグナル分子があります。培養細胞などを用いた研究では、小胞の表面にあるWntが相手の細胞のシグナルを活性化しました（<a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">Grossら, 2012</a>）。受容体から細胞内へ情報を伝える基本は<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>で扱います。</p>
+<p>表面からの作用の例として、細胞の分化や増殖に関わる<strong><span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#s8">Wnt</span></strong>というシグナル分子があります。培養細胞などを用いた研究では、小胞の表面にあるWntが相手の細胞のシグナルを活性化しました（<a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">Grossら, 2012</a>）。受容体から細胞内へ情報を伝える基本は<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>で扱います。</p>
 <h3>取り込まれることと、中身が働くことは違う</h3>
 <p>たとえばmiRNAが細胞質のmRNAに作用するには、EVから出て、さらにエンドソームの膜を越えて細胞質へ届く必要があります。取り込まれたEVがリソソームで分解されることもあります。<strong>細胞内に小胞が見えたことだけでは、内容物が働いたとは言えません</strong>。</p>
 <p>培養細胞で、EVの内容物が細胞質へ届く過程を測定した研究があります。一方、別の培養実験では、EVが細胞に結合しても、miRNAによる遺伝子発現の変化は検出されませんでした。結果は小胞や受け取る細胞、実験条件によって異なります（<a class="ext" href="https://doi.org/10.1038/s41467-021-22126-y" target="_blank" rel="noopener">Bonsergentら, 2021</a>・<a class="ext" href="https://doi.org/10.1371/journal.pgen.1009951" target="_blank" rel="noopener">Albaneseら, 2021</a>）。</p>
@@ -738,7 +738,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 908f7e0</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 bc89b50</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -829,7 +829,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');

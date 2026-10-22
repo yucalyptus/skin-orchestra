@@ -716,7 +716,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>毛球のメラノサイトは、毛になる細胞へメラニンを渡します。毛の形成と色素の供給が組み合わさって、色のついた毛が作られます。メラニンの合成は<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>で扱います。</p>
 <p>毛包には、毛を構成する上皮細胞の幹細胞とは別に、<strong>メラノサイト幹細胞</strong>も存在します。毛の形を作る細胞と色素を供給する細胞は、成長期に合わせて働きます。白髪では、毛の形成が続いていても、十分な色素が供給されなくなります。</p>
 <details class="supplement"><summary>詳しく：白髪とメラノサイト幹細胞</summary><div class="supplement-body"><p>毛の色を保つには、成長期ごとに色素を作るメラノサイトを補う必要があります。メラノサイト幹細胞の維持と白髪の関係は、マウスとヒト毛包を調べた研究で示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15618488/" target="_blank" rel="noopener">Nishimuraら, 2005</a></p>
-<p>マウスの休止期毛包では、メラノサイト幹細胞は<strong>バルジと、その下にある毛芽（次の毛の形成を始める細胞集団）</strong>に存在し、多くは毛芽に見られます。細胞追跡では、毛周期に合わせて場所を移り、分化が進んだ状態から未分化な状態へ戻ることも示されました。移動先で受けるWntなどのシグナルが、この変化に関わります。</p>
+<p>マウスの休止期毛包では、メラノサイト幹細胞は<strong>バルジと、その下にある毛芽（次の毛の形成を始める細胞集団）</strong>に存在し、多くは毛芽に見られます。細胞追跡では、毛周期に合わせて場所を移り、分化が進んだ状態から未分化な状態へ戻ることも示されました。移動先で受ける<span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#s8">Wnt</span>などのシグナルが、この変化に関わります。</p>
 <p>加齢したマウスでは、バルジにとどまり、毛芽へ戻らない細胞が増えました。こうした細胞は色素を作るメラノサイトの供給に参加しにくくなります。<strong>幹細胞が残っていることに加え、必要な場所へ移り、分化できること</strong>が毛の色を保つうえで重要です。<a class="ext" href="https://www.nature.com/articles/s41586-023-05960-6" target="_blank" rel="noopener">Sunら, 2023</a></p></div></details>
 <h2 id="s3">3　バルジに細胞を残し、毛を作り直す</h2>
 <p>毛母細胞は、成長中に毛を作る細胞を大量に供給します。一方、バルジには、繰り返し毛包を再生するための幹細胞が保たれています。<strong>今の毛を作る毛母と、次の毛を作る細胞を供給するバルジは、場所も役割も異なります。</strong></p>
@@ -780,7 +780,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 908f7e0</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 bc89b50</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -871,7 +871,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');

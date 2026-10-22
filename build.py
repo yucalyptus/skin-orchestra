@@ -803,7 +803,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
@@ -1772,6 +1773,25 @@ TERM_ALIAS = {
 }
 
 GLOSSARY = []       # [(表示名, 定義, 登場章, [検索パターン]), ...]
+# 用語集の語 → シグナル伝達経路ページの節。経路ページを出力する版でだけ、
+# ツールチップと用語集から経路の図へ飛べるようにする。
+PATHWAY_SECTIONS = {
+    "mTOR・mTORC1": "s1", "AMPK": "s2", "MAPK": "s3", "AP-1": "s3",
+    "TGF-β": "s4", "NF-κB": "s5", "Nrf2": "s6", "cAMP": "s7",
+    "Wnt": "s8", "JAK–STAT": "s9",
+}
+
+
+_PATHWAYS_ON = []
+
+
+def pathway_href(term):
+    sec = PATHWAY_SECTIONS.get(term)
+    if not _PATHWAYS_ON:
+        _PATHWAYS_ON.append(load_pathways_reference() is not None)
+    if sec and _PATHWAYS_ON[0]:
+        return "pathways.html#" + sec
+    return ""
 TERMS_SEEN = set()  # 1章のなかで既に印を付けた語。章ごとにリセットする
 
 
@@ -1829,8 +1849,10 @@ def _mark_text(text):
         m, term, defi = best
         TERMS_SEEN.add(term)
         done.append(rest[:m.start()])
-        done.append('<span class="term" tabindex="0" data-t="%s" data-d="%s" data-u="glossary.html#%s">%s</span>'
-                    % (esc(term), esc(strip_marks(defi)), glossary_anchor(term), m.group(0)))
+        path = pathway_href(term)
+        done.append('<span class="term" tabindex="0" data-t="%s" data-d="%s" data-u="glossary.html#%s"%s>%s</span>'
+                    % (esc(term), esc(strip_marks(defi)), glossary_anchor(term),
+                       ' data-p="%s"' % path if path else "", m.group(0)))
         rest = rest[m.end():]
     done.append(rest)
     return "".join(done)
@@ -1905,8 +1927,10 @@ def glossary_body():
         term, defi, chaps = (c.strip() for c in cells[1:4])
         if not term or not defi or term == "用語" or set(term) <= set("-: "):
             continue
-        rows.append("<tr class=\"g-term\"><td class=\"g-name\" id=\"%s\"><strong>%s</strong></td><td>%s</td><td class=\"g-ch\">%s</td></tr>"
-                    % (glossary_anchor(term), esc(term), decorate(esc(defi)), resolve_wikilinks(esc(chaps))))
+        path = pathway_href(term)
+        path_link = ' <a class="chref" href="%s">経路の図で見る →</a>' % path if path else ""
+        rows.append("<tr class=\"g-term\"><td class=\"g-name\" id=\"%s\"><strong>%s</strong></td><td>%s%s</td><td class=\"g-ch\">%s</td></tr>"
+                    % (glossary_anchor(term), esc(term), decorate(esc(defi)), path_link, resolve_wikilinks(esc(chaps))))
     flush()
     blocks.append("</article>")
     return "\n".join(blocks)

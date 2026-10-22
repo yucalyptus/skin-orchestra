@@ -713,7 +713,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>接着する相手や配置が変わると、細胞の形や、増殖・生存・分化に関わる応答も変わります。細胞が移動するときには、進む側で新しい接着を作り、後方の接着を解きます。ECMの線維の並びや隙間も、移動の方向や通りやすさに関わります。</p>
 <h3>成長因子を保持し、細胞への作用を調節する</h3>
 <p>細胞は、成長因子というタンパク質のシグナルを受け取り、増殖や分化、作る物質の量を調節します。ECMには、この成長因子を周囲に留め、細胞へ届ける働きもあります。</p>
-<p>例えば、<strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75">TGF-β</span>（トランスフォーミング増殖因子β）</strong>は、線維芽細胞に働きかけ、コラーゲンなどのECM産生を促します。傷の修復では、新しい組織を作る反応を支えるシグナルの一つです（→ <a class="chref" href="wound-healing.html">炎症と創傷治癒</a>）。</p>
+<p>例えば、<strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75" data-p="pathways.html#s4">TGF-β</span>（トランスフォーミング増殖因子β）</strong>は、線維芽細胞に働きかけ、コラーゲンなどのECM産生を促します。傷の修復では、新しい組織を作る反応を支えるシグナルの一つです（→ <a class="chref" href="wound-healing.html">炎症と創傷治癒</a>）。</p>
 <p>TGF-βは、働きを抑えた状態でECMに蓄えられています。この状態を<strong>潜在型</strong>と呼びます。活性化されると、細胞表面の受容体に結合し、細胞内へシグナルを伝えます。ECMは、こうした因子が<strong>どこで、いつ働くか</strong>にも関わっています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18086923/" target="_blank" rel="noopener">Wipffら, 2007</a></p>
 <details class="supplement"><summary>詳しく：成長因子を「保持する」と「受容体へ提示する」</summary><div class="supplement-body"><p><strong>heparan sulfate（ヘパラン硫酸）</strong>という糖鎖を持つproteoglycanは、ECMにも細胞表面にも存在します。ECM内では成長因子を局所に保持し、細胞表面では成長因子と受容体が結合するのを助ける場合があります。</p>
 <p>Yayonらは、細胞表面のheparan sulfateがbFGF（FGF2）と高親和性受容体の結合に必要となることを、培養細胞で示しました。「成長因子がある」だけでなく、周囲の糖鎖との組み合わせもシグナルの成立に関わる例です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1847668/" target="_blank" rel="noopener">Yayonら, 1991</a></p></div></details>
@@ -780,7 +780,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 908f7e0</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 bc89b50</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
@@ -871,7 +871,8 @@ if(filt)filt.addEventListener('input',()=>{
     cancelHide();
     cur=el;
     tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
-      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>';
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
     tip.querySelector('.tip-t').textContent=el.dataset.t;
     tip.querySelector('.tip-b').textContent=el.dataset.d;
     tip.classList.add('on');
