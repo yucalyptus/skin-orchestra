@@ -59,11 +59,12 @@ sections:
           - ampk-mtor                 # AMPKとmTOR
 
       - part: 傷害から修復まで
-        intro: 活性酸素による傷害と、それを抑える仕組みを学びます。続いて、傷んだ細胞の死と除去、炎症の収束、組織の修復をたどり、施術後の回復や瘢痕・色素沈着につながる反応を理解します。
+        intro: 活性酸素による傷害と、それを抑える仕組みを学びます。続いて、傷んだ細胞の死と除去、炎症の収束、組織の修復をたどり、施術後の回復や瘢痕・色素沈着につながる反応を理解します。紫外線への応答を具体例に、DNA損傷と修復、炎症、色素形成が並行して進む過程と、光防御の作用点を見ていきます。
         chapters:
           - oxidative-stress          # 酸化ストレスと抗酸化
           - cell-death                # 細胞死
           - wound-healing             # 炎症と創傷治癒
+          - uv-response               # 紫外線に対する皮膚の反応
 
       - part: 細胞は加齢で何が変わるか
         intro: 細胞の増殖・代謝・分泌が加齢とともにどう変化し、組織を維持する力に影響するかを学びます。細胞が分裂する仕組みを復習し、老化した細胞が周囲に及ぼす作用や、ミトコンドリアとの関係を見ていきます。
@@ -146,6 +147,7 @@ sections:
           - pigment-laser             # Qスイッチ・ピコ秒レーザー
           - vascular-laser            # 血管レーザー
           - pbm                       # PBM・LEDの生化学
+          - muscle-stimulation        # 電気・磁気による筋刺激
           - plasma                    # プラズマ治療
           - transdermal-delivery      # 導入（組織に働きかけず、外用剤を角層の向こうへ運ぶ）
 
@@ -153,13 +155,19 @@ sections:
   # 標的が皮膚の特定構造なら美容皮膚科、全身に入れて全身を動かすなら美容内科。
   # 内服でもトラネキサム酸は skin-lightening、isotretinoin は sebum に置く。
   - section: 美容内科
-    subtitle: 全身の代謝と加齢から考える
-    intro: 栄養素の補充、老化した細胞への介入、腸内細菌などを、全身の代謝や加齢との関係から学びます。体内での働きと、介入によってヒトで確かめられた変化を結びつけて考えます。
+    subtitle: 皮膚を支える全身の状態から考える
+    intro: 慢性的な皮膚トラブルや加齢変化、治療後の回復を、局所と全身の両面から考えます。食事・栄養、睡眠、ストレス、運動が、血液・神経・ホルモン・代謝を介して皮膚の細胞へどうつながるかを学び、その土台からサプリメントや点滴などの介入を評価します。
     chapters:
+      - skin-systemic-care            # 皮膚と全身のつながり
+      - nutrition-metabolism-skin     # 食事・栄養と皮膚の代謝
+      - glucose-metabolism-skin       # 高血糖・インスリン抵抗性と皮膚
+      - sleep-skin                    # 睡眠・体内時計と皮膚
+      - stress-skin                   # ストレスと皮膚
+      - exercise-skin                 # 運動・筋肉と皮膚
+      - gut-microbiome                # 腸内細菌
+      - antioxidant-supplements       # 抗酸化サプリメントと点滴
       - nad-precursors                # NAD⁺前駆体
       - senolytics                    # senolytic・mitophagy関連介入
-      - antioxidant-supplements       # 抗酸化サプリメントと点滴
-      - gut-microbiome                # 腸内細菌
 
   # =========================================================================
   - section: おわりに
