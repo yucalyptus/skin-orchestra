@@ -48,7 +48,7 @@ padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line
 .toc a:hover{background:var(--soft);text-decoration:none}
 .toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
 .main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
-.col{max-width:40em;margin:0 auto;counter-reset:fig}
+.col{max-width:40em;margin:0 auto;counter-reset:fig vid}
 
 /* ---- 見出し ---- */
 .kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
@@ -142,6 +142,10 @@ font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
 .book-figure.summary img{border:none;border-radius:0}
 .book-figure.summary figcaption{padding:0 16px}
 .book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+figure.book-video{margin:36px 0;counter-increment:vid}
+.book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+.book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -584,17 +588,17 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="glossary.html">用語集</a>
 <div class="sec">生化学・細胞生物学の基礎</div>
 <div class="part">細胞の地図</div>
-<a href="cell.html">細胞とは何か<span class="badge bupd">更新</span></a>
+<a href="cell.html">細胞とは何か</a>
 <a href="organelles.html">オルガネラ</a>
-<a href="cell-types.html">オルガネラはどう連携するか<span class="badge bupd">更新</span></a>
+<a href="cell-types.html">オルガネラはどう連携するか</a>
 <div class="part">情報をどう読むか</div>
 <a href="dna-to-protein.html">DNAからタンパク質まで</a>
-<a href="epigenome.html">エピゲノム<span class="badge bupd">更新</span></a>
-<a href="receptors-signaling.html">受容体と細胞内シグナル<span class="badge bupd">更新</span></a>
-<a href="membrane-transport.html">細胞膜と物質輸送<span class="badge bupd">更新</span></a>
-<a href="extracellular-vesicles.html">細胞外小胞とエクソソーム<span class="badge bnew">NEW</span></a>
+<a href="epigenome.html">エピゲノム</a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="extracellular-vesicles.html">細胞外小胞とエクソソーム</a>
 <div class="part">エネルギー</div>
-<a href="atp.html">代謝とATP<span class="badge bupd">更新</span></a>
+<a href="atp.html">代謝とATP</a>
 <a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
 <a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
 <a href="tca-cycle.html">TCA回路</a>
@@ -606,7 +610,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="part">掃除と作り直し</div>
 <a href="autophagy.html">オートファジーとリソソーム</a>
 <a href="mito-quality-control.html" class="active">ミトコンドリア品質管理</a>
-<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する<span class="badge bupd">更新</span></a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>
 <div class="part">傷害から修復まで</div>
 <a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
 <a href="cell-death.html">細胞死</a>
@@ -625,16 +629,16 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="elastic-fibers.html">弾性線維と膠原線維</a>
 <a href="glycation.html">糖化とAGE</a>
 <a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
-<a href="hair-follicle.html">毛と毛包<span class="badge bnew">NEW</span></a>
-<a href="adipose.html">脂肪<span class="badge bnew">NEW</span></a>
+<a href="hair-follicle.html">毛と毛包</a>
+<a href="adipose.html">脂肪</a>
 <a href="muscle.html">筋肉<span class="badge bupd">更新</span></a>
-<a href="endothelium.html">血管と内皮<span class="badge bnew">NEW</span></a>
+<a href="endothelium.html">血管と内皮</a>
 <div class="part">訴えを細胞から読み解く</div>
-<a href="erythema.html">赤みの生化学<span class="badge bnew">NEW</span></a>
-<a href="pigmentation.html">しみとくすみ<span class="badge bnew">NEW</span></a>
-<a href="sagging.html">たるみの多層構造<span class="badge bnew">NEW</span></a>
+<a href="erythema.html">赤みの生化学</a>
+<a href="pigmentation.html">しみとくすみ</a>
+<a href="sagging.html">たるみの多層構造</a>
 <div class="part">疾患・病態を細胞から理解する</div>
-<a href="rosacea.html">酒さ<span class="badge bnew">NEW</span></a>
+<a href="rosacea.html">酒さ</a>
 <a href="seborrheic-dermatitis.html">脂漏性皮膚炎<span class="badge bupd">更新</span></a>
 <a href="acne.html">尋常性痤瘡<span class="badge bnew">NEW</span></a>
 <span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
@@ -720,7 +724,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-19 ／ 版 8eec816</p>
+<p class="stamp">最終更新 2026-10-22 ／ 版 f4d30b8</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
