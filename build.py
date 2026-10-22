@@ -140,7 +140,7 @@ padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line
 .toc a:hover{background:var(--soft);text-decoration:none}
 .toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
 .main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
-.col{max-width:40em;margin:0 auto;counter-reset:fig}
+.col{max-width:40em;margin:0 auto;counter-reset:fig vid}
 
 /* ---- 見出し ---- */
 .kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
@@ -234,6 +234,10 @@ font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
 .book-figure.summary img{border:none;border-radius:0}
 .book-figure.summary figcaption{padding:0 16px}
 .book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+figure.book-video{margin:36px 0;counter-increment:vid}
+.book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+.book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -1266,10 +1270,36 @@ def render_table(rows):
     return '<div class="tblwrap"><table>%s%s</table></div>' % (thead, tb)
 
 
+def render_video(alt, src, source_path):
+    # 動画は figures/<id>_名前.mp4（Web用に圧縮済み）をそのまま images/ へ複製する。
+    # 同名の _poster.jpg があれば再生前の表示に使う。拡大トグルは付けない。
+    names = [os.path.basename(src)]
+    poster = os.path.splitext(source_path)[0] + "_poster.jpg"
+    if os.path.isfile(poster):
+        names.append(os.path.basename(poster))
+    for name in names:
+        output_path = os.path.join(OUT_DIR, "images", name)
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        source = os.path.join(os.path.dirname(source_path), name)
+        if (not os.path.isfile(output_path)
+                or os.path.getmtime(output_path) < os.path.getmtime(source)):
+            shutil.copy2(source, output_path)
+    poster_attr = ' poster="images/%s"' % names[1] if len(names) > 1 else ""
+    caption = strip_wikilinks(alt.strip() or os.path.splitext(names[0])[0])
+    return (
+        '<figure class="book-video">'
+        '<video controls playsinline preload="metadata"%s aria-label="%s">'
+        '<source src="images/%s" type="video/mp4"></video>'
+        '<figcaption>%s</figcaption></figure>'
+    ) % (poster_attr, alt_text(caption), names[0], decorate(esc(caption)))
+
+
 def render_figslot(alt, src):
     # 本文は figures/<id>_図名.png（ソースPNG）を指す。公開側は images/ へ WebP で出す。
     # 流れは figures/ → ビルド → <出力先>/images/ の一方向。
     source_path = os.path.join(ROOT, src)
+    if os.path.isfile(source_path) and src.lower().endswith(".mp4"):
+        return render_video(alt, src, source_path)
     if os.path.isfile(source_path):
         base = os.path.basename(src)
         if Image is not None and base.lower().endswith(".png"):
@@ -1706,7 +1736,7 @@ def chapter_desc(text, fallback):
 
 def first_figure(text):
     """OGP画像。章の最初の図を使う（無ければ教材の表紙）。"""
-    m = re.search(r"^!\[[^\]]*\]\(figures/([^)]+)\)", text, flags=re.M)
+    m = re.search(r"^!\[[^\]]*\]\(figures/([^)]+\.(?:png|svg|jpe?g|webp))\)", text, flags=re.M | re.I)
     if not m:
         return OG_DEFAULT
     return "images/" + re.sub(r"\.png$", ".webp", m.group(1), flags=re.I)
@@ -2243,7 +2273,7 @@ def prune_unused_images(out_dir):
     for name in os.listdir(image_dir):
         path = os.path.join(image_dir, name)
         if (os.path.isfile(path) and
-                name.lower().endswith((".png", ".webp", ".svg", ".jpg", ".jpeg", ".gif")) and
+                name.lower().endswith((".png", ".webp", ".svg", ".jpg", ".jpeg", ".gif", ".mp4")) and
                 name not in references):
             os.unlink(path)
             removed += 1
