@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="750" viewBox="0 0 760 750" role="img" aria-labelledby="title"><title id="title">Wnt–β-catenin｜分解を抑え、核へ伝える</title><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker></defs><rect width="760" height="750" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<text x="30" y="40" text-anchor="start" font-size="25" fill="#1c1d23" font-weight="600">Wnt–β-catenin｜分解を抑え、核へ伝える</text>
+<rect x="20" y="175" width="720" height="525" rx="24" fill="#f2f4f7" stroke="#c5cdd6" stroke-width="2"/>
+<text x="40" y="92" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">細胞外</text>
+<text x="380" y="105" text-anchor="middle" font-size="23" fill="#1c1d23" font-weight="600">Wnt</text>
+<path d="M380 120 L380 148" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<path d="M20 173 H740 M20 183 H740" stroke="#c5cdd6" stroke-width="3"/>
+<text x="46" y="165" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">細胞膜</text>
+<rect x="220.0" y="150.0" width="320" height="54" rx="14" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="380" y="184" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">Frizzled ＋ LRP5/6</text>
+<text x="43" y="229" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">細胞質</text>
+<text x="380" y="266" text-anchor="middle" font-size="23" fill="#1c1d23" font-weight="400">β-cateninの分解が抑えられる</text>
+<path d="M380 205 L380 237" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<rect x="225.0" y="328.0" width="310" height="54" rx="14" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="380" y="362" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">β-cateninが蓄積</text>
+<path d="M380 281 L380 326" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<text x="380" y="698" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">Wnt刺激が乏しいときはβ-cateninが分解され、量が低い</text>
+<rect x="110" y="490" width="540" height="175" rx="55" fill="#ffffff" stroke="#1d4f91" stroke-width="2"/>
+<text x="147" y="525" text-anchor="middle" font-size="19" fill="#1d4f91" font-weight="400">核</text>
+<path d="M380 384 L380 516" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<text x="396.0" y="450.0" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">核へ移動</text>
+<text x="380" y="553" text-anchor="middle" font-size="24" fill="#1d4f91" font-weight="400">β-catenin ＋ TCF/LEF</text>
+<text x="380" y="604" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">毛包の形成・分化などの遺伝子発現</text>
+<text x="30" y="732" text-anchor="start" font-size="16" fill="#64748b" font-weight="400">矢印：代表的な信号の流れ。途中の分子・分岐は一部省略。</text>
+</g></svg>

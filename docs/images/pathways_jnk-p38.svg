@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="650" viewBox="0 0 760 650" role="img" aria-labelledby="title"><title id="title">JNK・p38｜ストレスに応答するMAPK</title><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker></defs><rect width="760" height="650" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<text x="30" y="40" text-anchor="start" font-size="25" fill="#1c1d23" font-weight="600">JNK・p38｜ストレスに応答するMAPK</text>
+<text x="380" y="99" text-anchor="middle" font-size="23" fill="#1c1d23" font-weight="400">紫外線・酸化ストレス・炎症性サイトカイン</text>
+<rect x="20" y="130" width="720" height="455" rx="18" fill="#f2f4f7" stroke="#c5cdd6" stroke-width="2"/>
+<text x="45" y="160" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">細胞内</text>
+<text x="380" y="194" text-anchor="middle" font-size="20" fill="#1c1d23" font-weight="400">上流のシグナルを介して</text>
+<path d="M380 208 L220 252" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<rect x="130.0" y="254.0" width="180" height="54" rx="14" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="220" y="288" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">JNK</text>
+<path d="M220 310 L220 360" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<text x="220" y="397" text-anchor="middle" font-size="20" fill="#1c1d23" font-weight="400">c-Junなど</text>
+<path d="M380 208 L550 252" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<rect x="460.0" y="254.0" width="180" height="54" rx="14" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="550" y="288" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">p38</text>
+<path d="M550 310 L550 360" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<text x="550" y="397" text-anchor="middle" font-size="20" fill="#1c1d23" font-weight="400">転写因子・細胞質の標的</text>
+<text x="220" y="438" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">AP-1の働きを調節</text>
+<path d="M220 454 L310 497" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<path d="M550 418 L460 497" fill="none" stroke="#1d4f91" stroke-width="2.7" marker-end="url(#arrow)"/>
+<text x="380" y="539" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">炎症・ECM分解・生存や細胞死の調節</text>
+<text x="30" y="632" text-anchor="start" font-size="16" fill="#64748b" font-weight="400">矢印：代表的な信号の流れ。途中の分子・分岐は一部省略。</text>
+</g></svg>
