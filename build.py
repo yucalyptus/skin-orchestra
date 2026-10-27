@@ -238,6 +238,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -921,7 +922,7 @@ def days_since(datestr):
 # インライン変換
 # ---------------------------------------------------------------------------
 
-WIKI_RE = re.compile(r"\[\[([a-z0-9-]+)(?:\|([^\]\n]+))?\]\]")
+WIKI_RE = re.compile(r"\[\[([a-z0-9-]+)(?:#([A-Za-z][\w-]*))?(?:\|([^\]\n]+))?\]\]")
 CHAPTERS = {}       # id -> 章dict（build時に作る）
 CURRENT_ID = None   # いま組み立てている章。自分自身へのリンクは張らない
 ORPHANS = []        # md はあるのに 目次.yml に無い章。ビルドの最後に必ず知らせる
@@ -941,15 +942,16 @@ def resolve_wikilinks(s):
     - 未公開章への参照は、公開ビルドではリンクを外して章題だけ残す
     """
     def rep(m):
-        cid, label = m.group(1), m.group(2)
+        cid, anchor, label = m.group(1), m.group(2), m.group(3)
         ch = CHAPTERS.get(cid)
         if ch is None:
             sys.exit("ERROR: 解決できない章参照 [[%s]]（%s の本文）"
                      % (cid, CURRENT_ID or "?"))
         text = label or ch["title"]
-        if cid == CURRENT_ID or not ch["visible"]:
+        if (cid == CURRENT_ID and not anchor) or not ch["visible"]:
             return text
-        return '<a class="chref" href="%s">%s</a>' % (ch["slug"], text)
+        href = ch["slug"] + ("#" + anchor if anchor else "")
+        return '<a class="chref" href="%s">%s</a>' % (href, text)
     return WIKI_RE.sub(rep, s)
 
 
@@ -959,7 +961,7 @@ def strip_wikilinks(s):
     figure 全体が拡大トグルなので、中にリンクを置くと1クリックで2つ動いてしまう。
     """
     def rep(m):
-        cid, label = m.group(1), m.group(2)
+        cid, anchor, label = m.group(1), m.group(2), m.group(3)
         ch = CHAPTERS.get(cid)
         if ch is None:
             sys.exit("ERROR: 解決できない章参照 [[%s]]（図のキャプション：%s）"
@@ -1050,8 +1052,18 @@ def inline(s):
 
     parts = []
     pos = 0
-    for m in re.finditer(r"\[([^\[\]\n]+)\]\((https?://)", s):
+    for m in re.finditer(r"\[([^\[\]\n]+)\]\((https?://|#)", s):
         if m.start() < pos:
+            continue
+        if m.group(2) == "#":
+            # 同じページ内の節へのリンク（参照ページの一覧など）。
+            end = s.find(")", m.end())
+            if end < 0:
+                continue
+            parts.append(plain(s[pos:m.start()]))
+            parts.append('<a href="%s">%s</a>'
+                         % (esc(s[m.start(2):end]), decorate(esc(m.group(1)))))
+            pos = end + 1
             continue
         # DOIなどのURL内にある括弧を、Markdownリンクの終端と区別する。
         depth, end = 1, m.end()
@@ -1086,6 +1098,12 @@ def heading_id(txt):
     """
     m = re.match(r"(\d+(?:\.\d+)?)[　 ]", txt)
     return ' id="s%s"' % m.group(1).replace(".", "-") if m else ""
+
+
+def explicit_id(txt):
+    """見出し末尾の {#id} を取り出す。参照ページの節へ、番号に依らず飛べるようにする。"""
+    m = re.match(r"(.*?)\s*\{#([A-Za-z][\w-]*)\}$", txt)
+    return (m.group(1), ' id="%s"' % m.group(2)) if m else (txt, "")
 
 
 def chapter_toc(body_html):
@@ -1578,16 +1596,16 @@ def parse_markdown(text):
             i += 1
             continue
         if stripped.startswith("### "):
-            txt = stripped[4:].strip()
-            blocks.append("<h3>%s</h3>" % inline(txt))
+            txt, hid = explicit_id(stripped[4:].strip())
+            blocks.append("<h3%s>%s</h3>" % (hid, inline(txt)))
             clear_pending()
             if txt == "Evidence meter":
                 pending_list_class = "evidence"
             i += 1
             continue
         if stripped.startswith("## "):
-            txt = stripped[3:].strip()
-            blocks.append('<h2%s>%s</h2>' % (heading_id(txt), inline(txt)))
+            txt, hid = explicit_id(stripped[3:].strip())
+            blocks.append('<h2%s>%s</h2>' % (hid or heading_id(txt), inline(txt)))
             clear_pending()
             if "到達点" in txt:
                 pending_list_class = "goal"
@@ -1776,9 +1794,9 @@ GLOSSARY = []       # [(表示名, 定義, 登場章, [検索パターン]), ...
 # 用語集の語 → シグナル伝達経路ページの節。経路ページを出力する版でだけ、
 # ツールチップと用語集から経路の図へ飛べるようにする。
 PATHWAY_SECTIONS = {
-    "mTOR・mTORC1": "s1", "AMPK": "s2", "MAPK": "s3", "AP-1": "s3",
-    "TGF-β": "s4", "NF-κB": "s5", "Nrf2": "s6", "cAMP": "s7",
-    "Wnt": "s8", "JAK–STAT": "s9",
+    "mTOR・mTORC1": "p-mtor", "AMPK": "p-ampk", "MAPK": "s2", "AP-1": "p-jnk",
+    "TGF-β": "p-tgfb", "NF-κB": "p-nfkb", "Nrf2": "p-nrf2", "cAMP": "p-camp",
+    "Wnt": "p-wnt", "JAK–STAT": "p-jak",
 }
 
 
@@ -2138,13 +2156,12 @@ def load_pathways_reference():
 
 
 def pathways_body(meta, text):
+    # 冒頭の「経路の一覧」が各経路への入口を兼ねるので、節の目次は置かない。
     body = "\n".join(parse_markdown(text))
-    toc = chapter_toc(body).replace("この章の節", "経路を選ぶ")
-    body = re.sub(r'(?=<h2 id="s)', toc, body, count=1)
     return ('<article class="chapter pathways"><p class="kicker">経路の解説%s</p>'
             '<h1>%s</h1><p>最終更新 %s</p>%s</article>') % (
                 " ／ 下書き" if meta.get("status") != "approved" else "",
-                esc(meta.get("title", "美容医療に関わるシグナル伝達経路")),
+                esc(meta.get("title", "よく出会うシグナル伝達経路")),
                 esc(meta.get("updated", "")), body)
 
 
@@ -2241,8 +2258,20 @@ def progress_html(chapters):
             '</section>' % rows)
 
 
+INTRO_VIDEO = "figures/intro_紹介動画.mp4"
+
+
+def intro_video_html():
+    """表紙の紹介動画。原本は video/intro/、Web用に圧縮したものを figures/ に置く。"""
+    path = os.path.join(ROOT, INTRO_VIDEO)
+    if not os.path.isfile(path):
+        return ""
+    html = render_video("この教材で学ぶこと：施術から細胞・分子へ（約90秒、音声と字幕あり）", INTRO_VIDEO, path)
+    return html.replace('class="book-video"', 'class="book-video home-video"', 1)
+
+
 def index_body(chapters):
-    blocks = ['<div class="home">', HERO, progress_html(chapters), recent_html(chapters), INTRO, criteria_html(),
+    blocks = ['<div class="home">', HERO, intro_video_html(), progress_html(chapters), recent_html(chapters), INTRO, criteria_html(),
               '<section id="contents" class="contents sec-rule">', "<h2>目次</h2>"]
     sec = part = None
     for ch in chapters:
@@ -2329,6 +2358,16 @@ def build():
     CHAPTERS.clear()
     for ch in chapters:
         CHAPTERS[ch["id"]] = ch
+    # 参照ページも [[id#節id|表示文字]] で参照できるようにする。
+    reference_path = os.path.join(ROOT, "資料", "よく出会うシグナル経路.md")
+    if os.path.exists(reference_path):
+        with io.open(reference_path, encoding="utf-8") as f:
+            reference_meta, _ = parse_front_matter(f.read())
+        CHAPTERS["pathways"] = {
+            "title": reference_meta.get("title", "シグナル伝達経路"),
+            "slug": "pathways.html",
+            "visible": PREVIEW or reference_meta.get("status") == "approved",
+        }
     load_glossary()
 
     written = 0
