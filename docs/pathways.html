@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -686,98 +687,94 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">美容医療を細胞から考える<em>準備中</em></span>
 </div></nav>
 <main class="main"><div class="col">
-<article class="chapter pathways"><p class="kicker">経路の解説</p><h1>美容医療に関わるシグナル伝達経路</h1><p>最終更新 2026-10-22</p><p>経路の名前を見たときに、<strong>何に反応し、細胞の何を変えるのか</strong>を確認するためのページです。各分子の定義は用語集、詳しい機序や組織での働きは関連する本文で扱います。</p>
-<p><strong>経路が活性化したというだけでは、望ましい効果かどうかは決まりません。</strong>どの細胞で、どの程度・どれくらい続くかによって、結果は変わります。合成や炎症、防御に関わる経路を、働きから見ていきます。</p>
-<p>図の矢印は、信号が伝わる代表的な順序を示します。分子そのものが次の分子へ変わる化学反応式ではありません。抑制・分解・核への移動は言葉で示し、途中の一部の分子や分岐は省略しています。</p>
-<nav class="chaptoc" aria-label="経路を選ぶ"><p class="chaptoc-t">経路を選ぶ</p><ul><li><a href="#s1">1　PI3K–Akt–mTORC1：成長刺激と栄養を、合成へつなぐ</a></li><li><a href="#s2">2　AMPK：エネルギーの需要に合わせて、産生と消費を調節する</a></li><li><a href="#s3">3　MAPK：ERKとJNK・p38、それぞれの応答</a></li><li><a href="#s4">4　TGF-β–Smad：修復とECM産生を調節する</a></li><li><a href="#s5">5　NF-κB：炎症や防御に必要な遺伝子の発現を調節する</a></li><li><a href="#s6">6　Nrf2–Keap1：酸化ストレスに対する防御を増やす</a></li><li><a href="#s7">7　cAMP–PKA：メラニンを作る酵素の発現につなぐ</a></li><li><a href="#s8">8　Wnt–β-catenin：毛包の形成と再生を調節する</a></li><li><a href="#s9">9　JAK–STAT：サイトカインの情報を、核へ伝える</a></li></ul></nav><h2 id="s1">1　PI3K–Akt–mTORC1：成長刺激と栄養を、合成へつなぐ</h2>
-<p><strong>何に反応するか：</strong>インスリンやIGF-1などの成長刺激。mTORC1の活性化には、アミノ酸や細胞内のエネルギー状態も関わります。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_pi3k-akt-mtor.svg" alt="成長刺激はPI3K・AktからmTORC1へ伝わり、アミノ酸の情報と合わせて合成とオートファジーを調節する。" width="760.0" height="760.0" loading="lazy"><figcaption>成長刺激はPI3K・AktからmTORC1へ伝わり、アミノ酸の情報と合わせて合成とオートファジーを調節する。</figcaption></figure>
-<p>PI3Kは細胞膜のリン脂質に作用し、Aktが活性化されるための条件を作ります。Aktは複数の標的に作用し、その一つとしてmTORC1の活性化を促します。<strong>mTORC1は成長刺激だけでなく、アミノ酸などの情報も受け取って合成を調節します。</strong></p>
-<p><strong>何が変わるか：</strong>mTORC1はタンパク質合成などを促すとともに、オートファジーの開始を抑えます。Aktには、mTORC1を介さない代謝や細胞生存への作用もあります。</p>
-<p><strong>美容との接点：</strong>筋肥大、皮脂の合成、組織修復、Longevity。必要な合成と、損傷成分の除去・更新を合わせて考える経路です。</p>
-<p>関連する本文：<a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>・<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>・<a class="chref" href="muscle.html">筋肉</a>・<a class="chref" href="sebum.html">皮脂分泌の生化学</a>。</p>
+<article class="chapter pathways"><p class="kicker">経路の解説</p><h1>よく出会うシグナル伝達経路</h1><p>最終更新 2026-10-27</p><p>経路の名前を見たときに、<strong>何に反応し、細胞の何を変えるのか</strong>を確認するためのページです。各分子の定義は用語集、詳しい機序や組織での働きは関連する章で扱います。</p>
+<p><strong>経路が活性化したというだけでは、望ましい効果かどうかは決まりません。</strong>どの細胞で、どの程度・どれくらい続くかによって、結果は変わります。</p>
+<p>図と流れの矢印は、信号が伝わる代表的な順序を示します。分子が次の分子へ変わる化学反応ではありません。途中の分子や分岐は一部省略しています。</p>
+<h2>経路の一覧</h2>
+<div class="tblwrap"><table><thead><tr><th>経路</th><th>何に反応するか</th><th>細胞の何を変えるか</th><th>皮膚・美容での例</th></tr></thead><tbody><tr><td><a href="#p-mtor">PI3K–Akt–mTORC1</a></td><td>インスリン・IGF-1などの成長刺激と、アミノ酸</td><td>タンパク質などの合成を促し、オートファジーを抑える</td><td>筋肥大、皮脂の合成、組織修復</td></tr><tr><td><a href="#p-ampk">AMPK</a></td><td>ATPに対するAMP・ADPの増加</td><td>ATPを作る反応を促し、ATPを使う合成を抑える</td><td>運動、筋の代謝</td></tr><tr><td><a href="#p-erk">MAPK：ERK</a></td><td>EGFなどの成長因子</td><td>増殖・分化</td><td>表皮の更新、創傷治癒</td></tr><tr><td><a href="#p-jnk">MAPK：JNK・p38</a></td><td>紫外線、酸化ストレス、炎症性サイトカイン</td><td>炎症、AP-1を介したMMPの発現、生存・細胞死</td><td>紫外線によるECMの分解</td></tr><tr><td><a href="#p-nfkb">NF-κB</a></td><td>TNF・IL-1などの炎症性サイトカイン、微生物由来の刺激</td><td>サイトカイン・ケモカインの産生</td><td>皮膚の炎症、老化細胞のSASP</td></tr><tr><td><a href="#p-nrf2">Nrf2–Keap1</a></td><td>酸化ストレス、一部の反応性化合物</td><td>抗酸化・解毒の酵素の発現</td><td>紫外線への応答、抗酸化成分</td></tr><tr><td><a href="#p-wnt">Wnt–β-catenin</a></td><td>Wntタンパク質</td><td>増殖・分化、組織の形成</td><td>毛包の形成と毛周期</td></tr><tr><td><a href="#p-tgfb">TGF-β–Smad</a></td><td>活性型TGF-β</td><td>ECMの産生、分化</td><td>コラーゲン産生、創傷治癒、瘢痕</td></tr><tr><td><a href="#p-jak">JAK–STAT</a></td><td>インターフェロン、一部のインターロイキン</td><td>免疫・炎症に関わる遺伝子の発現</td><td>炎症性皮膚疾患、円形脱毛症</td></tr><tr><td><a href="#p-camp">cAMP–PKA</a></td><td>メラノサイトではα-MSH（MC1R）など</td><td>メラノサイトでは、メラニンを作る酵素の発現</td><td>紫外線後の色素形成、美白</td></tr></tbody></table></div>
+<h2 id="s1">1　合成とエネルギー：作るか、節約するか</h2>
+<p>細胞は、材料とエネルギーが足りているときに合成を進め、エネルギーが不足すると消費を抑えます。<strong>mTORC1は合成を進める側、AMPKは節約する側</strong>で、AMPKはmTORC1を抑えます。この二つは、カロリー制限や運動が老化にどう関わるかを考える研究でも中心になり、Longevityの文脈で注目されています（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>・<a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_合成とエネルギー.svg" alt="成長刺激はPI3K・Aktを経てmTORC1へ伝わり、アミノ酸の情報もmTORC1に合流する。" width="1000.0" height="600.0" loading="lazy"><figcaption>成長刺激はPI3K・Aktを経てmTORC1へ伝わり、アミノ酸の情報もmTORC1に合流する。mTORC1は合成を促し、オートファジーを抑える。エネルギーが不足するとAMPKが働き、ATP産生を促すとともに、mTORC1を抑え、オートファジーの開始を促す。</figcaption></figure>
+<h3 id="p-mtor">PI3K–Akt–mTORC1</h3>
+<p>PI3Kは細胞膜のリン脂質に作用し、Aktが活性化される条件を作ります。Aktは複数の標的に作用し、その一つとしてmTORC1の活性化を促します。<strong>mTORC1は、成長刺激とアミノ酸の両方の情報を受けて合成を調節します。</strong></p>
+<p>タンパク質合成などが促され、オートファジーの開始が抑えられます。Aktには、mTORC1を介さない代謝や細胞生存への作用もあります。</p>
+<p>必要な合成と、傷んだ成分の除去・更新を合わせて考える経路です。</p>
+<p>関連する章：<a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>・<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>・<a class="chref" href="muscle.html">筋肉</a>・<a class="chref" href="sebum.html">皮脂分泌の生化学</a>。</p>
 <details class="supplement"><summary>詳しく読む：成長刺激とアミノ酸は、違う経路からmTORC1へ伝わる</summary><div class="supplement-body"><p>Aktは、mTORC1の上流にある抑制因子<strong>TSC複合体</strong>の働きを抑え、<strong>Rheb</strong>によるmTORC1活性化を促します。一方、アミノ酸の情報は<strong>Rag</strong>などを介し、mTORC1がリソソーム表面でRhebと出会える状態を作ります。</p>
 <p>mTORC1からオートファジー開始への抑制は、開始に関わる酵素<strong>ULK1</strong>のリン酸化などを介します。合成を促すことと、分解・再利用の開始を調節することが、同じ経路でつながっています（Kim et al., <em>Nat Cell Biol.</em>, 2011：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21258367/" target="_blank" rel="noopener">PMID 21258367</a>）。</p></div></details>
-<h2 id="s2">2　AMPK：エネルギーの需要に合わせて、産生と消費を調節する</h2>
-<p><strong>何に反応するか：</strong>ATPに対してAMPやADPが相対的に増えるなど、細胞内のエネルギー状態が変わること。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_ampk.svg" alt="AMPKはエネルギー状態に応じてATP産生を促し、消費の多い合成を抑え、オートファジーにも関わる。" width="760.0" height="650.0" loading="lazy"><figcaption>AMPKはエネルギー状態に応じてATP産生を促し、消費の多い合成を抑え、オートファジーにも関わる。</figcaption></figure>
-<p>AMPKは、エネルギー状態に応じて代謝を調節する酵素です。糖や脂肪酸の利用を促す一方、脂質合成などのATPを消費する反応を抑えます。</p>
-<p><strong>何が変わるか：</strong>エネルギーの確保に加え、オートファジーやミトコンドリアの品質管理にも関わります。作用先にはmTORC1とULK1などがあり、代謝と細胞内の更新をつなぎます。</p>
-<p><strong>美容との接点：</strong>運動、筋肉の代謝、Longevity。AMPKを高め続けることを目標にするのではなく、必要なエネルギー産生と修復・合成を調節する仕組みとして捉えます。</p>
-<p>関連する本文：<a class="chref" href="atp.html">代謝とATP</a>・<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>・<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>。</p>
+<h3 id="p-ampk">AMPK</h3>
+<p>AMPKは、絶食や運動などで細胞内のATPが減り、AMPやADPが相対的に増えると働きます。糖や脂肪酸の利用を促してATPを作り、脂質合成などATPを使う合成を止めます。</p>
+<p>さらに、mTORC1を抑え、ULK1を介してオートファジーを促します。オートファジーで分解された細胞内の成分はアミノ酸や脂肪酸に戻り、エネルギー源にも、生きるのに必要な合成の材料にもなります。ミトコンドリアの品質管理にも関わります。</p>
+<p>高め続けることを目標にするのではなく、エネルギー産生と修復・合成を調節する仕組みとして捉えます。</p>
+<p>関連する章：<a class="chref" href="atp.html">代謝とATP</a>・<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>・<a class="chref" href="mito-quality-control.html">ミトコンドリア品質管理</a>。</p>
 <details class="supplement"><summary>詳しく読む：AMPKからオートファジーへの二つの作用</summary><div class="supplement-body"><p>AMPKはmTORC1を抑えることでオートファジーが始まりやすい状態を作るほか、ULK1を直接リン酸化して作用します。ULK1のどの部位をリン酸化するかによって、mTORC1とAMPKの作用は異なります（Kim et al., <em>Nat Cell Biol.</em>, 2011：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21258367/" target="_blank" rel="noopener">PMID 21258367</a>）。</p></div></details>
-<h2 id="s3">3　MAPK：ERKとJNK・p38、それぞれの応答</h2>
-<p><strong>何に反応するか：</strong>EGFなどの成長因子。まず、MAPK群のうち、成長因子の刺激を増殖・分化へつなぐ<strong>Ras–Raf–MEK–ERK経路</strong>を示します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_erk.svg" alt="成長因子の刺激がRas・Raf・MEK・ERKへ伝わり、細胞質の標的や核の転写因子に作用する。" width="760.0" height="710.0" loading="lazy"><figcaption>成長因子の刺激がRas・Raf・MEK・ERKへ伝わり、細胞質の標的や核の転写因子に作用する。</figcaption></figure>
-<p>受容体からの刺激が、細胞内で複数のタンパク質を介して伝わります。Raf・MEK・ERKはリン酸化によって次の標的の働きを変える酵素です。ERKは核の転写因子にも作用し、遺伝子発現を調節します。</p>
-<p><strong>何が変わるか：</strong>細胞の増殖や分化など。結果は細胞の種類や、ERKが働く強さ・時間によって変わります。</p>
-<p><strong>美容との接点：</strong>成長因子、表皮の更新、創傷治癒。「ERKが活性化した」という測定結果から、組織が望ましく再生したと判断するには、その後の細胞・組織の変化も確認します。</p>
-<p>関連する本文：<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>・<a class="chref" href="epidermis.html">表皮とターンオーバー</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
-<details class="supplement"><summary>詳しく読む：MAPKは、一つの経路の名前ではない</summary><div class="supplement-body"><p>MAPK群にはERKのほかに<strong>JNK・p38</strong>などがあり、ストレス応答や炎症にも関わります。紫外線によるMMP発現などの説明で「MAPK」が出てきた場合は、どの分子を指すかを確認します。</p>
-<p>ERKの活性化時間と細胞の応答の関係は、PC12細胞の実験でも示されています。EGFによる一過性の応答と、NGFによる持続的な応答では分化の結果が異なりました。これは神経系の培養細胞での知見で、皮膚に同じ時間条件を当てはめるものではありません（Traverse et al., <em>EMBO J.</em>, 1992：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1334404/" target="_blank" rel="noopener">PMID 1334404</a>）。</p></div></details>
-<h3>JNK・p38：ストレスに応じて、炎症や細胞の応答を変える</h3>
-<p><strong>JNKとp38もMAPK群の酵素</strong>です。紫外線、酸化ストレス、炎症性サイトカインなどに応答します。ERKを含め、同じ刺激で複数のMAPK経路が働くことがあります。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_jnk-p38.svg" alt="紫外線や炎症性サイトカインなどの刺激は、JNKとp38へ伝わる。" width="760.0" height="650.0" loading="lazy"><figcaption>紫外線や炎症性サイトカインなどの刺激は、JNKとp38へ伝わる。JNKはc-Junなど、p38は転写因子や細胞質の標的に作用し、炎症やストレス応答を調節する。</figcaption></figure>
-<p>JNKは<strong>c-Jun</strong>をリン酸化します。c-Junは、複数のタンパク質が組んで働く転写因子<strong>AP-1</strong>の構成要素です。AP-1はMMPなどの遺伝子発現に関わります。p38も転写因子や細胞質の標的を介して、炎症性物質の産生やストレスへの応答を調節します。</p>
-<p><strong>皮膚との接点：</strong>紫外線によるECMの分解、炎症、細胞の生存・細胞死。ヒト皮膚への紫外線照射で、ERK・JNK・p38の活性化とc-Junの増加が調べられています（Fisher et al., <em>J Clin Invest.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9502786/" target="_blank" rel="noopener">PMID 9502786</a>）。</p>
-<p>関連する本文：<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>・<a class="chref" href="ecm.html">細胞外基質（ECM）</a>・<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>・<a class="chref" href="cell-death.html">細胞死</a>。</p>
-<h2 id="s4">4　TGF-β–Smad：修復とECM産生を調節する</h2>
-<p><strong>何に反応するか：</strong>活性型のTGF-βが細胞表面の受容体へ結合すること。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_tgfb-smad.svg" alt="活性型TGF-βの刺激を受けたSmad2・3がSmad4と複合体を作り、核でECMの遺伝子発現を調節する。" width="760.0" height="710.0" loading="lazy"><figcaption>活性型TGF-βの刺激を受けたSmad2・3がSmad4と複合体を作り、核でECMの遺伝子発現を調節する。</figcaption></figure>
-<p>Smadは、受容体からの情報を核へ伝えるタンパク質です。線維芽細胞では、コラーゲンなどのECM産生を調節します。ヒト皮膚線維芽細胞で、Smad3を介したコラーゲン遺伝子の転写促進が示されています（Chen et al., <em>J Invest Dermatol.</em>, 1999：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9886263/" target="_blank" rel="noopener">PMID 9886263</a>）。</p>
-<p><strong>何が変わるか：</strong>ECMの産生・分解の調節、細胞の分化など。作用は組織修復に必要ですが、持続的な活性化は線維化にも関わります。</p>
-<p><strong>美容との接点：</strong>コラーゲン産生、創傷治癒、瘢痕。「コラーゲンが増える」だけでなく、組織の構造や硬さ、分解との釣り合いを考えます。</p>
-<p>関連する本文：<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>・<a class="chref" href="ecm.html">細胞外基質（ECM）</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
-<details class="supplement"><summary>詳しく読む：組織の硬さや張力も、応答に関わる</summary><div class="supplement-body"><p>TGF-βへの応答には、周囲のECMや機械的な環境も関わります。線維芽細胞を用いた実験では、基材の条件や張力によって、TGF-βが筋線維芽細胞の指標であるα-SMAを誘導する程度が変わりました（Arora et al., <em>Am J Pathol.</em>, 1999：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10079265/" target="_blank" rel="noopener">PMID 10079265</a>）。</p></div></details>
-<h2 id="s5">5　NF-κB：炎症や防御に必要な遺伝子の発現を調節する</h2>
-<p><strong>何に反応するか：</strong>TNF・IL-1などの炎症性サイトカインや、微生物由来の刺激など。複数の受容体から、この経路へ情報が伝わります。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_nfkb.svg" alt="IκBの分解によってNF-κBが離れ、核へ移動して炎症・防御に関わる遺伝子発現を調節する。" width="760.0" height="710.0" loading="lazy"><figcaption>IκBの分解によってNF-κBが離れ、核へ移動して炎症・防御に関わる遺伝子発現を調節する。</figcaption></figure>
-<p>NF-κBは、遺伝子の転写を調節するタンパク質群です。代表的な経路では、細胞質で<strong>IκB</strong>に結合して働きを抑えられています。刺激によってIκBが分解されると、NF-κBが核へ移動して働きます。</p>
-<p><strong>何が変わるか：</strong>サイトカインやケモカインなどの産生、細胞の生存や感染防御に関わる応答。炎症が必要な場面で働き、刺激が続くと慢性的な炎症にも関わります。</p>
-<p><strong>美容との接点：</strong>皮膚の炎症、修復、老化細胞のSASP。活性化を一律に悪い反応と捉えず、炎症の目的と持続を考えます。</p>
-<p>関連する本文：<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>・<a class="chref" href="senescence.html">細胞老化</a>・<a class="chref" href="erythema.html">赤みの生化学</a>。</p>
+<h2 id="s2">2　MAPK：同じ3段の連鎖を、成長とストレスで使い分ける</h2>
+<p>MAPKは一つの経路の名前ではなく、<strong>3段のkinaseが順にリン酸化を受け渡す連鎖</strong>の総称です。成長因子を受けるとERKへ、紫外線や炎症性サイトカインなどのストレスを受けるとJNK・p38へ伝わります。同じ刺激で複数が同時に働くこともあるため、論文で「MAPK」とあるときは、どの分子を指すかを確認します。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_MAPK.svg" alt="MAPKの3段の連鎖。" width="1040.0" height="520.0" loading="lazy"><figcaption>MAPKの3段の連鎖。成長因子は受容体からRas・Raf・MEKを経てERKへ、紫外線・酸化ストレス・炎症性サイトカインは別の上流kinaseを経てJNK・p38へ伝わる。ERKは増殖・分化に、JNKはc-Jun（AP-1）を介してMMPなどの発現に、p38は炎症性物質の産生に関わる。</figcaption></figure>
+<h3 id="p-erk">ERK</h3>
+<p>Raf・MEK・ERKは、リン酸化によって次の標的の働きを変える酵素です。ERKは核の転写因子にも作用し、遺伝子発現を調節します。</p>
+<p>細胞の増殖や分化など。結果は細胞の種類や、ERKが働く強さ・時間によって変わります。</p>
+<p>「ERKが活性化した」という測定結果から組織が望ましく再生したと判断するには、その後の細胞・組織の変化も確かめます。</p>
+<p>関連する章：<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>・<a class="chref" href="epidermis.html">表皮とターンオーバー</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
+<details class="supplement"><summary>詳しく読む：ERKが働く時間で、応答が変わる</summary><div class="supplement-body"><p>ERKの活性化時間と細胞の応答の関係は、PC12細胞の実験でも示されています。EGFによる一過性の応答と、NGFによる持続的な応答では分化の結果が異なりました。これは神経系の培養細胞での知見で、皮膚に同じ時間条件を当てはめるものではありません（Traverse et al., <em>EMBO J.</em>, 1992：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1334404/" target="_blank" rel="noopener">PMID 1334404</a>）。</p></div></details>
+<h3 id="p-jnk">JNK・p38</h3>
+<p>JNKは<strong>c-Jun</strong>をリン酸化します。c-Junは、複数のタンパク質が組んで働く転写因子<strong>AP-1</strong>の構成要素で、AP-1はMMPなどの遺伝子発現に関わります。p38も転写因子や細胞質の標的を介して、炎症性物質の産生やストレスへの応答を調節します。</p>
+<p>炎症、ECMの分解、細胞の生存・細胞死。ヒト皮膚への紫外線照射で、ERK・JNK・p38の活性化とc-Junの増加が調べられています（Fisher et al., <em>J Clin Invest.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9502786/" target="_blank" rel="noopener">PMID 9502786</a>）。</p>
+<p>関連する章：<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>・<a class="chref" href="ecm.html">細胞外基質（ECM）</a>・<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>・<a class="chref" href="cell-death.html">細胞死</a>。</p>
+<h2 id="s3">3　抑えが外れて働く転写因子：NF-κB・Nrf2・β-catenin</h2>
+<p>この3つの転写因子は、ふだんは働けない状態に保たれています。<strong>NF-κBはIκBに結合して細胞質にとどめられ、Nrf2とβ-cateninは作られてもすぐに分解されます。</strong>刺激によって抑えや分解が外れると、核に入って遺伝子発現を変えます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_抑えが外れて働く.svg" alt="抑えが外れて働く3つの転写因子。" width="1040.0" height="560.0" loading="lazy"><figcaption>抑えが外れて働く3つの転写因子。NF-κBは、刺激でIκBが分解されると核へ移る。Nrf2は、酸化ストレスなどでKeap1による分解が止まると蓄積して核へ移る。β-cateninは、Wntの刺激で分解が止まると蓄積して核へ移る。</figcaption></figure>
+<h3 id="p-nfkb">NF-κB</h3>
+<p>NF-κBは、遺伝子の転写を調節するタンパク質群です。代表的な経路では、細胞質で<strong>IκB</strong>に結合して抑えられています。刺激によってIκBが分解されると、NF-κBが核へ移動して働きます。</p>
+<p>サイトカインやケモカインなどの産生、細胞の生存や感染防御に関わる応答。炎症が必要な場面で働き、刺激が続くと慢性的な炎症にも関わります。</p>
+<p>活性化を一律に悪い反応と捉えず、炎症の目的と持続を考えます。</p>
+<p>関連する章：<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>・<a class="chref" href="senescence.html">細胞老化</a>・<a class="chref" href="erythema.html">赤みの生化学</a>。</p>
 <details class="supplement"><summary>詳しく読む：合成を調節する経路と、炎症性の分泌がつながる</summary><div class="supplement-body"><p>老化細胞を用いた研究では、mTORがIL-1αの翻訳を支え、IL-1受容体からNF-κBへ伝わる信号を通じてSASPの維持に関わることが示されています。増殖を止めた細胞でも、合成と分泌は続き得ます（Laberge et al., <em>Nat Cell Biol.</em>, 2015：<a class="ext" href="https://doi.org/10.1038/ncb3195" target="_blank" rel="noopener">原著論文</a>）。</p></div></details>
-<h2 id="s6">6　Nrf2–Keap1：酸化ストレスに対する防御を増やす</h2>
-<p><strong>何に反応するか：</strong>酸化ストレスや、一部の反応性のある化合物によって、Keap1を介したNrf2の分解が抑えられること。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_nrf2-keap1.svg" alt="通常はNrf2が分解される。" width="760.0" height="730.0" loading="lazy"><figcaption>通常はNrf2が分解される。酸化ストレスなどで分解が抑えられるとNrf2が蓄積し、核で抗酸化・解毒の遺伝子発現を増やす。</figcaption></figure>
-<p><strong>Nrf2は転写因子、Keap1はその量を調節するタンパク質</strong>です。Nrf2が核で働くと、グルタチオンの合成など、防御に関わる仕組みが増強されます。Keap1によるNrf2の分解制御は、細胞実験で示されています（Zhang et al., <em>Mol Cell Biol.</em>, 2004：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15572695/" target="_blank" rel="noopener">PMID 15572695</a>）。</p>
-<p><strong>何が変わるか：</strong>細胞自身の抗酸化・解毒能力。Nrf2がROSを直接消去するのではなく、防御に必要な酵素などの発現を調節します。</p>
-<p><strong>美容との接点：</strong>酸化ストレス、紫外線への応答、抗酸化成分の作用機序。培養細胞でNrf2が活性化したという結果と、ヒトの皮膚で得られる効果は分けて読みます。</p>
-<p>関連する本文：<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>。</p>
+<h3 id="p-nrf2">Nrf2–Keap1</h3>
+<p><strong>Nrf2は転写因子、Keap1はその量を調節するタンパク質</strong>です。Keap1によるNrf2の分解制御は、細胞実験で示されています（Zhang et al., <em>Mol Cell Biol.</em>, 2004：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15572695/" target="_blank" rel="noopener">PMID 15572695</a>）。</p>
+<p>細胞自身の抗酸化・解毒能力。Nrf2がROSを直接消去するのではなく、グルタチオンの合成に関わる酵素など、防御に必要な分子の発現を増やします。</p>
+<p>培養細胞でNrf2が活性化したという結果と、ヒトの皮膚で得られる効果は分けて読みます。</p>
+<p>関連する章：<a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>。</p>
 <details class="supplement"><summary>詳しく読む：Nrf2が核で結合する場所</summary><div class="supplement-body"><p>Nrf2はsmall Mafなどと複合体を作り、標的遺伝子の調節領域にある<strong>ARE（antioxidant response element）</strong>を介して転写を調節します。初期のKeap1研究では、この転写応答の抑制が示されました（Itoh et al., <em>Genes Dev.</em>, 1999：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9887101/" target="_blank" rel="noopener">PMID 9887101</a>）。</p></div></details>
-<h2 id="s7">7　cAMP–PKA：メラニンを作る酵素の発現につなぐ</h2>
-<p>cAMP–PKAは複数の細胞で使われる経路です。ここでは<strong>メラノサイトでのメラニン生成</strong>を具体例にします。</p>
-<p><strong>何に反応するか：</strong>α-MSH（αメラノサイト刺激ホルモン）が、メラノサイトの<strong>MC1R</strong>に結合すること。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_camp-pka.svg" alt="メラノサイトではα-MSHからMC1R・cAMP・PKAを経てMITFの発現が増え、メラニン生成につながる。" width="760.0" height="800.0" loading="lazy"><figcaption>メラノサイトではα-MSHからMC1R・cAMP・PKAを経てMITFの発現が増え、メラニン生成につながる。</figcaption></figure>
-<p><strong>cAMP</strong>は細胞内で情報を伝える分子で、<strong>PKA</strong>はcAMPによって活性化される酵素です。PKAからの信号は、転写因子<strong>CREB</strong>を介して<strong>MITF</strong>の発現へつながります。MITFは、メラニンを作る酵素である<strong>tyrosinase（チロシナーゼ）</strong>などの遺伝子発現を調節します。</p>
-<p><strong>何が変わるか：</strong>メラニンを作る酵素が増え、メラニン生成が促されます。α-MSHとcAMPによる応答はヒトメラノサイトで、MITFを介する転写制御は細胞実験で調べられています（Im et al., <em>Cancer Res.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9426056/" target="_blank" rel="noopener">PMID 9426056</a>、Bertolotto et al., <em>J Cell Biol.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9700169/" target="_blank" rel="noopener">PMID 9700169</a>）。</p>
-<p><strong>美容との接点：</strong>紫外線後の色素形成、美白の作用点。受容体からの信号を調節すること、酵素の発現を変えること、できた酵素の活性を阻害することは、作用する段階が異なります。</p>
-<p>関連する本文：<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>・美白外用の生化学・<a class="chref" href="pigmentation.html">しみとくすみ</a>。</p>
-<details class="supplement"><summary>詳しく読む：同じcAMP–PKAでも、細胞によって結果が違う</summary><div class="supplement-body"><p>cAMPはアデニル酸シクラーゼがATPから作り、phosphodiesterase（PDE）が分解します。受容体や作用先のタンパク質が異なるため、同じcAMP–PKAでも、メラノサイトでは色素生成、脂肪細胞では脂肪分解の調節などに関わります。</p>
-<p>MITFの働きには、cAMP以外の経路も影響します。この図は、α-MSHからの代表的な流れを示しています。</p></div></details>
-<h2 id="s8">8　Wnt–β-catenin：毛包の形成と再生を調節する</h2>
-<p><strong>何に反応するか：</strong>細胞外のWntタンパク質が、細胞膜のFrizzledとLRP5/6に結合すること。ここでは、β-cateninを介する代表的な経路を示します。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_wnt.svg" alt="Wntが受容体へ結合すると、β-cateninの分解が抑えられる。" width="760.0" height="750.0" loading="lazy"><figcaption>Wntが受容体へ結合すると、β-cateninの分解が抑えられる。蓄積したβ-cateninが核でTCF/LEFと働き、毛包の形成や細胞の分化に関わる遺伝子発現を調節する。</figcaption></figure>
+<h3 id="p-wnt">Wnt–β-catenin</h3>
 <p>Wntの刺激が乏しいとき、細胞質の<strong>β-catenin</strong>は分解され、量が低く保たれます。Wntの刺激によって分解が抑えられると、β-cateninが蓄積し、核で<strong>TCF/LEF</strong>という転写因子とともに働きます。</p>
-<p><strong>何が変わるか：</strong>細胞の増殖や分化、組織の形成・再生。皮膚では毛包の形成や毛周期の調節に関わります。マウスでは、皮膚のβ-cateninを欠損させると、毛包の形成や維持が妨げられることが示されています（Huelsken et al., <em>Cell</em>, 2001：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11371349/" target="_blank" rel="noopener">PMID 11371349</a>）。</p>
-<p><strong>美容との接点：</strong>発毛、毛包の再生、色素細胞の分化。どの細胞で、毛周期のどの時期に働くかが重要です。</p>
-<p>関連する本文：<a class="chref" href="hair-follicle.html">毛と毛包</a>・<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>。</p>
+<p>細胞の増殖や分化、組織の形成・再生。マウスでは、皮膚のβ-cateninを欠損させると、毛包の形成や維持が妨げられました（Huelsken et al., <em>Cell</em>, 2001：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11371349/" target="_blank" rel="noopener">PMID 11371349</a>）。</p>
+<p>どの細胞で、毛周期のどの時期に働くかが重要です。</p>
+<p>関連する章：<a class="chref" href="hair-follicle.html">毛と毛包</a>・<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>。</p>
 <details class="supplement"><summary>詳しく読む：β-cateninの分解を調節する仕組み</summary><div class="supplement-body"><p>通常は、Axin・APC・GSK3・CK1などからなる複合体がβ-cateninのリン酸化を進め、分解へつなぎます。Wntを受けた受容体では、DishevelledやLRP5/6などを介してこの仕組みが調節され、β-cateninが分解されにくくなります。受容体LRP6のリン酸化とAxinの結合は、細胞実験などで調べられています（Zeng et al., <em>Nature</em>, 2005：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/16341017/" target="_blank" rel="noopener">PMID 16341017</a>）。</p></div></details>
-<h2 id="s9">9　JAK–STAT：サイトカインの情報を、核へ伝える</h2>
-<p><strong>何に反応するか：</strong>インターフェロンや、一部のインターロイキンなどが、それぞれの受容体へ結合すること。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/pathways_jak-stat.svg" alt="サイトカインが受容体へ結合すると、受容体に結びついたJAKが働く。" width="760.0" height="750.0" loading="lazy"><figcaption>サイトカインが受容体へ結合すると、受容体に結びついたJAKが働く。STATがリン酸化され、組になって核へ移動し、免疫・炎症などに関わる遺伝子発現を調節する。</figcaption></figure>
-<p><strong>JAK</strong>は受容体の細胞内側に結びつく酵素、<strong>STAT</strong>は転写因子です。受容体が刺激を受けるとJAKが働き、STATのリン酸化へつながります。活性化したSTATは組になって核へ移り、標的遺伝子の発現を調節します。</p>
-<p><strong>何が変わるか：</strong>免疫細胞や組織の細胞における、炎症・感染防御・増殖などの応答。受容体ごとに使うJAKとSTATの組み合わせが異なります。</p>
-<p><strong>皮膚との接点：</strong>炎症性皮膚疾患や円形脱毛症。円形脱毛症の研究では、毛包を傷つけるT細胞と、IFN-γ・IL-15などのシグナルが注目され、マウスでのJAK阻害と少人数のヒトでの治療結果が報告されました（Xing et al., <em>Nat Med.</em>, 2014：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25129481/" target="_blank" rel="noopener">PMID 25129481</a>）。</p>
-<p>関連する本文：<a class="chref" href="hair-follicle.html">毛と毛包</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
-<details class="supplement"><summary>詳しく読む：JAKとSTATの組み合わせ</summary><div class="supplement-body"><p>JAK群にはJAK1・JAK2・JAK3・TYK2があり、STATにも複数の種類があります。例えばIFN-γの受容体はJAK1・JAK2を使い、主にSTAT1へ信号を伝えます。STAT1がリン酸化を介して二量体を作る過程は、インターフェロンを用いた細胞実験で示されています（Shuai et al., <em>Cell</em>, 1994：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7510216/" target="_blank" rel="noopener">PMID 7510216</a>）。</p></div></details></article>
+<h2 id="s4">4　受容体から核へ、一本道で伝わる：TGF-β・JAK–STAT・cAMP</h2>
+<p>受容体が受けた信号が、少数の分子を順に経て核へ届く経路です。</p>
+<h3 id="p-tgfb">TGF-β–Smad</h3>
+<div class="flow diagram"><span class="node">活性型TGF-β</span><span class="arr">→</span><span class="node">受容体がSmad2/3をリン酸化</span><span class="arr">→</span><span class="node">Smad2/3＋Smad4の複合体</span><span class="arr">→</span><span class="node">核：ECMに関わる遺伝子の発現</span></div>
+<p>Smadは、受容体からの情報を核へ伝えるタンパク質です。線維芽細胞では、コラーゲンなどのECM産生を調節します。ヒト皮膚線維芽細胞で、Smad3を介したコラーゲン遺伝子の転写促進が示されています（Chen et al., <em>J Invest Dermatol.</em>, 1999：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9886263/" target="_blank" rel="noopener">PMID 9886263</a>）。</p>
+<p>ECMの産生・分解の調節、細胞の分化など。組織修復に必要な作用ですが、持続的な活性化は線維化にも関わります。</p>
+<p>コラーゲンの量だけでなく、組織の構造や硬さ、分解との釣り合いを考えます。</p>
+<p>関連する章：<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>・<a class="chref" href="ecm.html">細胞外基質（ECM）</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
+<details class="supplement"><summary>詳しく読む：組織の硬さや張力も、応答に関わる</summary><div class="supplement-body"><p>TGF-βへの応答には、周囲のECMや機械的な環境も関わります。線維芽細胞を用いた実験では、基材の条件や張力によって、TGF-βが筋線維芽細胞の指標であるα-SMAを誘導する程度が変わりました（Arora et al., <em>Am J Pathol.</em>, 1999：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10079265/" target="_blank" rel="noopener">PMID 10079265</a>）。</p></div></details>
+<h3 id="p-jak">JAK–STAT</h3>
+<div class="flow diagram"><span class="node">サイトカイン</span><span class="arr">→</span><span class="node">受容体に結びついたJAK</span><span class="arr">→</span><span class="node">STATのリン酸化</span><span class="arr">→</span><span class="node">STATが組になって核へ</span><span class="arr">→</span><span class="node">免疫・炎症に関わる遺伝子の発現</span></div>
+<p><strong>JAK</strong>は受容体の細胞内側に結びつく酵素、<strong>STAT</strong>は転写因子です。受容体ごとに、使うJAKとSTATの組み合わせが異なります。</p>
+<p>免疫細胞や組織の細胞での、炎症・感染防御・増殖などの応答。</p>
+<p>円形脱毛症の研究では、毛包を傷つけるT細胞と、IFN-γ・IL-15などのシグナルが注目され、マウスでのJAK阻害と少人数のヒトでの治療結果が報告されました（Xing et al., <em>Nat Med.</em>, 2014：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25129481/" target="_blank" rel="noopener">PMID 25129481</a>）。</p>
+<p>関連する章：<a class="chref" href="hair-follicle.html">毛と毛包</a>・<a class="chref" href="wound-healing.html">炎症と創傷治癒</a>。</p>
+<details class="supplement"><summary>詳しく読む：JAKとSTATの組み合わせ</summary><div class="supplement-body"><p>JAK群にはJAK1・JAK2・JAK3・TYK2があり、STATにも複数の種類があります。例えばIFN-γの受容体はJAK1・JAK2を使い、主にSTAT1へ信号を伝えます。STAT1がリン酸化を介して二量体を作る過程は、インターフェロンを用いた細胞実験で示されています（Shuai et al., <em>Cell</em>, 1994：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7510216/" target="_blank" rel="noopener">PMID 7510216</a>）。</p></div></details>
+<h3 id="p-camp">cAMP–PKA</h3>
+<p>cAMP–PKAは多くの細胞で使われる経路です。ここではメラノサイトでのメラニン生成を例にします。</p>
+<p>紫外線によるDNA損傷に応答した<strong>角化細胞がα-MSHを分泌し、メラノサイトが受け取ります。</strong> 受け取った後のcAMP–PKA経路は、メラノサイト内で働きます（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a>）。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_角化細胞から色素合成への信号.webp" alt="角化細胞から分泌されたα-MSHを、メラノサイト膜のMC1Rが受け取る。" width="1536" height="1024" loading="lazy"><figcaption>角化細胞から分泌されたα-MSHを、メラノサイト膜のMC1Rが受け取る。cAMP・PKAから核内の遺伝子発現へ信号が伝わり、核外のメラノソームでメラニン合成が増える。矢印は信号の伝達と応答を示し、中間反応は一部省略。</figcaption></figure>
+<p><strong>α-MSHは細胞間で信号を運び、cAMPは受け取ったメラノサイトの内部で信号を伝えます。</strong> cAMPは酵素PKAを活性化します。その信号が核内の転写因子CREBへ伝わるとMITFの発現が増え、MITFがチロシナーゼなどの遺伝子発現を促します。</p>
+<p>メラニンを作る酵素が増え、メラニン生成が促されます。α-MSHとcAMPによる応答はヒトメラノサイトで、MITFを介する転写制御は細胞実験で調べられています（Im et al., <em>Cancer Res.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9426056/" target="_blank" rel="noopener">PMID 9426056</a>、Bertolotto et al., <em>J Cell Biol.</em>, 1998：<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9700169/" target="_blank" rel="noopener">PMID 9700169</a>）。</p>
+<p>受容体からの信号を調節すること、酵素の発現を変えること、できた酵素の活性を阻害することは、作用する段階が異なります。</p>
+<p>関連する章：<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>・美白外用の生化学・<a class="chref" href="pigmentation.html">しみとくすみ</a>。</p>
+<details class="supplement"><summary>詳しく読む：同じcAMP–PKAでも、細胞によって結果が違う</summary><div class="supplement-body"><p>cAMPはアデニル酸シクラーゼがATPから作り、phosphodiesterase（PDE）が分解します。受容体や作用先のタンパク質が異なるため、同じcAMP–PKAでも、メラノサイトでは色素生成、脂肪細胞では脂肪分解の調節などに関わります。</p>
+<p>MITFの働きには、cAMP以外の経路も影響します。上の流れは、α-MSHからの代表的な順序です。</p></div></details></article>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
 <p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
 <p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

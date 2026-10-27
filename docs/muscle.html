@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -715,9 +716,9 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h2 id="s3">3　使うことで、筋肉の大きさと働きが変わる</h2>
 <h3>負荷を繰り返すと、筋線維が太くなる</h3>
 <p>筋肉は常にタンパク質を合成し、分解しています。抵抗運動などの負荷によって合成が促され、回復期間を含めた合成量が分解量を上回る状態が続くと、収縮に関わるタンパク質が増え、筋線維が太くなります。これが<strong>筋肥大</strong>です。</p>
-<p>この合成の調節に関わる代表的な経路が<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#s1">mTORC1</span></strong>です。機械的な負荷に加えて、アミノ酸などの材料とエネルギーが必要になります（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
+<p>この合成の調節に関わる代表的な経路が<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#p-mtor">mTORC1</span></strong>です。機械的な負荷に加えて、アミノ酸などの材料とエネルギーが必要になります（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
 <h3>運動を続けると、ATPを作り続ける能力も変わる</h3>
-<p>持久的な運動では、筋線維のミトコンドリアや酸化系酵素、周囲の毛細血管などが適応し、酸素を使ってATPを作る能力が高まります。この変化には、エネルギー状態に応答する<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#s2">AMPK</span></strong>や、遺伝子発現を調節する<strong><span class="term" tabindex="0" data-t="PGC-1α" data-d="mitochondrial biogenesis の転写の総括役。エネルギー状態・栄養・運動などの入力を受け、NRF1などの転写因子と協力して、ミトコンドリアの部品の発現を高める。" data-u="glossary.html#term-554276741c94">PGC-1α</span></strong>などが関わります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12468452/" target="_blank" rel="noopener">PMID 12468452</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20032509/" target="_blank" rel="noopener">PMID 20032509</a>）。</p>
+<p>持久的な運動では、筋線維のミトコンドリアや酸化系酵素、周囲の毛細血管などが適応し、酸素を使ってATPを作る能力が高まります。この変化には、エネルギー状態に応答する<strong><span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#p-ampk">AMPK</span></strong>や、遺伝子発現を調節する<strong><span class="term" tabindex="0" data-t="PGC-1α" data-d="mitochondrial biogenesis の転写の総括役。エネルギー状態・栄養・運動などの入力を受け、NRF1などの転写因子と協力して、ミトコンドリアの部品の発現を高める。" data-u="glossary.html#term-554276741c94">PGC-1α</span></strong>などが関わります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12468452/" target="_blank" rel="noopener">PMID 12468452</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20032509/" target="_blank" rel="noopener">PMID 20032509</a>）。</p>
 <p><strong>筋トレでは、重い負荷に対応して筋線維が太くなります。一方、ジョギングなどの持久的な運動では、ATPを持続的に供給する能力が高まり、疲れにくく、長く運動を続けられるようになります。</strong>実際には両方の変化が重なり、運動の強さや時間、繰り返し方によって、その程度が変わります。</p>
 <details class="supplement"><summary>詳しく読む：筋線維型とPGC-1α</summary><div class="supplement-body"><p>筋線維は、収縮の速さやATPの作り方によって分類されます。<strong>type I（遅筋線維）</strong>は収縮が比較的遅く、ミトコンドリアで酸素を使ってATPを持続的に作る能力に優れています。そのため疲れにくく、姿勢の維持や長時間の運動を支えます。<strong>type II（速筋線維）</strong>は速い収縮に適していますが、酸素を使ってATPを作る能力や疲れやすさは、IIa・IIxなどの型によって異なります。</p>
 <p>PGC-1αは、転写因子の働きを助ける<strong>転写共役因子</strong>です。ミトコンドリアを増やし、酸素を使ってATPを作るための遺伝子発現を調節します。マウスではPGC-1αの発現を増やすと、このATP産生に優れた筋線維の特徴が強まります。運動による筋線維の変化には、PGC-1αを含む複数の経路が関わります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12181572/" target="_blank" rel="noopener">PMID 12181572</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20032509/" target="_blank" rel="noopener">PMID 20032509</a>）。</p></div></details>
@@ -783,7 +784,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

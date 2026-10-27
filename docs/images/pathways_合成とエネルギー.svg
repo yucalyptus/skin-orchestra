@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" role="img" aria-labelledby="title"><title id="title">合成とエネルギー：mTORC1とAMPK</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker>
+<marker id="bar" viewBox="0 0 5 22" refX="2.5" refY="11" markerWidth="5" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto"><rect x="0" y="0" width="5" height="22" fill="#a34b40"/></marker></defs>
+<rect width="1000" height="600" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<text x="976" y="34" text-anchor="end" font-size="18" fill="#64748b" font-weight="400">細胞外</text>
+<rect x="10" y="80" width="980" height="450" rx="16" fill="#f2f4f7" stroke="#c5cdd6" stroke-width="2"/>
+<text x="28" y="514" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">細胞内</text>
+<text x="40" y="40" text-anchor="start" font-size="21" fill="#1c1d23" font-weight="400">成長刺激（インスリン・IGF-1など）</text>
+<path d="M130 50 L130 62" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="62" width="140" height="44" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="130.0" y="91.56" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">受容体</text>
+<path d="M130 106 L130 132" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="134" width="140" height="52" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="130.0" y="167.92" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">PI3K</text>
+<path d="M200 160 L256 160" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="260" y="134" width="140" height="52" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="330.0" y="167.92" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">Akt</text>
+<path d="M400 160 L466 160" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="470" y="128" width="180" height="64" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="560.0" y="169.0" text-anchor="middle" font-size="25" fill="#1c1d23" font-weight="600">mTORC1</text>
+<text x="330" y="268" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">アミノ酸</text>
+<path d="M378 262 L500 196" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="744" y="124" width="236" height="72" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="862.0" y="156.0" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">合成を促す</text>
+<text x="862.0" y="182.0" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">タンパク質・脂質など</text>
+<path d="M650 160 L740 160" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="744" y="284" width="236" height="72" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="862.0" y="316.0" text-anchor="middle" font-size="21" fill="#1c1d23" font-weight="400">オートファジーの開始</text>
+<text x="862.0" y="342.0" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">ULK1を介する</text>
+<path d="M630 192 L740 300" fill="none" stroke="#a34b40" stroke-width="3" marker-end="url(#bar)"/>
+<text x="705" y="232" text-anchor="start" font-size="17" fill="#a34b40" font-weight="600">抑える</text>
+<text x="170" y="452" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">エネルギー不足</text>
+<text x="170" y="480" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">（ATPに対しAMP・ADPが増加）</text>
+<path d="M310 460 L466 460" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="470" y="428" width="180" height="64" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="560.0" y="469.0" text-anchor="middle" font-size="25" fill="#1c1d23" font-weight="600">AMPK</text>
+<path d="M560 428 L560 198" fill="none" stroke="#a34b40" stroke-width="3" marker-end="url(#bar)"/>
+<text x="572" y="320" text-anchor="start" font-size="17" fill="#a34b40" font-weight="600">抑える</text>
+<path d="M650 444 L740 344" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="672" y="372" text-anchor="end" font-size="17" fill="#1d4f91" font-weight="600">促す</text>
+<rect x="744" y="424" width="236" height="72" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="862.0" y="456.0" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="400">ATP産生を促す</text>
+<text x="862.0" y="482.0" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">糖・脂肪酸の利用</text>
+<path d="M650 466 L740 462" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M36 566 L84 566" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="96" y="573" text-anchor="start" font-size="18" fill="#1c1d23" font-weight="400">促す（働きを強める）</text>
+<path d="M306 566 L354 566" fill="none" stroke="#a34b40" stroke-width="3" marker-end="url(#bar)"/>
+<text x="366" y="573" text-anchor="start" font-size="18" fill="#a34b40" font-weight="400">抑える（働きを止める）</text>
+</g></svg>

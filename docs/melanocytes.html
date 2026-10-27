@@ -12,7 +12,7 @@
 <meta property="og:title" content="メラノサイトと色素形成 ― 生化学で見る美容医療">
 <meta property="og:description" content="表皮の色素は、メラノサイトと角化細胞の共同作業で保たれています。 合成・受け渡し・分布・消失を順にたどると、肌の色が変わる仕組みが見えてきます。">
 <meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/melanocytes.html">
-<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/melanocytes_表皮メラニン単位.webp">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/melanocytes_受け渡しと核上キャップ.webp">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html" class="active">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html" class="active">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -689,16 +690,15 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <article class="chapter" data-chapter="melanocytes">
 <p class="kicker">美容皮膚科　／　組織の生化学</p>
 <h1 class="ch-title">メラノサイトと色素形成<small>核を守る色素を、作って配る</small></h1>
-<p class="dateline">公開 2026-09-14</p>
+<p class="dateline">公開 2026-09-14　／　最終更新 2026-10-27</p>
 <p>表皮では、<strong>メラノサイトがメラニンを作り、周囲の角化細胞へ渡しています。</strong> メラニンは肌の色に関わるとともに、紫外線による核DNAの損傷を減らします。色素形成を理解するには、作る量だけでなく、受け渡した色素がどこに分布し、どのくらい残るかも見る必要があります。</p>
 <h2>この章の一言</h2>
 <blockquote class="lead"><strong>表皮の色素は、メラノサイトと角化細胞の共同作業で保たれています。</strong> 合成・受け渡し・分布・消失を順にたどると、肌の色が変わる仕組みが見えてきます。</blockquote>
-<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</a></li><li><a href="#s2">2　メラノソームの中で、メラニンを合成する</a></li><li><a href="#s3">3　周囲からの信号が、作る量を変える</a></li><li><a href="#s4">4　色素を渡し、角化細胞の中に配置する</a></li><li><a href="#s5">5　受け渡された色素は、表皮の更新とともに減っていく</a></li><li><a href="#s6">6　美容医療は、どの過程に働きかけるのか</a></li></ul></nav><h2 id="s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</h2>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</a></li><li><a href="#s2">2　メラノソームの中で、メラニンを合成する</a></li><li><a href="#s3">3　周囲からの信号が、作る量を変える</a></li><li><a href="#s4">4　色素を渡し、角化細胞の中に配置する</a></li><li><a href="#s5">5　受け渡された色素は、表皮の更新とともに減っていく</a></li><li><a href="#s6">6　美白剤・内服・デバイスは、どこに働きかけるのか</a></li></ul></nav><h2 id="s1">1　メラノサイトは、基底層から周囲の細胞へ色素を配る</h2>
 <p><strong>メラノサイト（<span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。" data-u="glossary.html#term-3f14f8b30147">melanocyte</span>）</strong> は、表皮の基底層にある色素産生細胞です。細胞体から伸びる <strong>樹状突起</strong> を介して、周囲の <strong>角化細胞（<span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>）</strong> へメラニンを渡します。</p>
-<p>1個のメラノサイトと、およそ36個の角化細胞が作る機能単位を <strong>表皮メラニン単位（epidermal melanin unit）</strong> と呼びます。この数は目安で、部位などによって変わります。</p>
 <p>角化細胞に渡された色素は、核の表面側に集まって <strong>核上メラニンキャップ（supranuclear cap）</strong> を作ります。ヒト皮膚を用いた実験では、このキャップのある細胞でUVBによるDNA損傷が少ないことが確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">Kobayashiら, 1998</a></p>
-<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_表皮メラニン単位.webp" alt="基底層のメラノサイトと周囲の角化細胞が作る表皮メラニン単位。" width="1024" height="1536" loading="lazy"><figcaption>基底層のメラノサイトと周囲の角化細胞が作る表皮メラニン単位。下は、受け渡された色素が核の表面側に集まる核上メラニンキャップ。受け渡し方は模式的に示す。</figcaption></figure>
-<details class="supplement"><summary>詳しく：細胞の由来と肌色の違い</summary><div class="supplement-body"><p>メラノサイトは <strong>神経堤（neural crest）</strong> に由来し、発生の過程で皮膚へ移動します。表皮を作る角化細胞とは由来が異なります。</p>
+<figure class="book-figure tall" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_受け渡しと核上キャップ.webp" alt="基底層のメラノサイトから周囲の角化細胞へのメラニンの受け渡し。" width="1024" height="1536" loading="lazy"><figcaption>基底層のメラノサイトから周囲の角化細胞へのメラニンの受け渡し。下は、受け渡された色素が核の表面側に集まる核上メラニンキャップ。受け渡し方は模式的に示す。</figcaption></figure>
+<details class="supplement"><summary>詳しく：細胞の由来と肌色の違い</summary><div class="supplement-body"><p>メラノサイトは <strong>神経堤（neural crest）</strong> に由来し、発生の過程で皮膚へ移動します。一方、角化細胞は <strong>表面外胚葉</strong> から生じます。どちらも外胚葉に由来しますが、発生の途中で異なる系統に分かれます。</p>
 <p>同じ部位で比べた肌色の違いは、メラノサイトの数だけでは説明できません。メラニンの種類・量に加え、色素を含む粒子の大きさや、角化細胞内での分布・残り方が関わります。ヒト皮膚でも、肌色による角化細胞内の色素分布の違いが調べられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">Thongら, 2003</a></p>
 <p>メラニンはメラノサイトの中でも色を持っています。角化細胞への受け渡しは、すでにある色素を表皮に広く分布させる過程です。</p></div></details>
 <h2 id="s2">2　メラノソームの中で、メラニンを合成する</h2>
@@ -711,21 +711,21 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>合成にはtyrosinaseに加えて <strong>TYRP1・DCT（TYRP2）</strong> も関わります。DCTはユーメラニン合成過程の反応を担います。ドーパキノンが <strong>cysteine（システイン）</strong> と反応するとフェオメラニン側へ進むため、酵素だけでなく基質の環境も色素の種類を左右します。<span class="term" tabindex="0" data-t="MC1R" data-d="melanocortin 1 receptor。メラノサイトに発現するGPCRで、α-MSHが結合するとcAMP経路を介してMITFを活性化し、eumelanin産生方向へ促す。" data-u="glossary.html#term-e201809ba7c3">MC1R</span>シグナルも、この合成の方向と量の調節に関わります。</p>
 <p>ユーメラニンとフェオメラニンでは光に対する性質も異なり、同じ量なら同じ防御能がある、とは扱えません。</p></div></details>
 <p><strong>メラノソーム内部のpHも、合成酵素の働きを左右します。</strong> 内部の酸性が弱まるとtyrosinaseが働きやすくなります。これはオルガネラ内部の環境の話で、<a class="chref" href="epidermis.html">表皮とターンオーバー</a>で扱った皮膚表面・角層のpHとは分けて考えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">Bellonoら, 2014</a></p>
-<details class="supplement"><summary>詳しく：色素形成とイオン輸送体</summary><div class="supplement-body"><p><strong>OCA2</strong> はメラノソーム膜の塩化物イオンの通過に関わり、内部pHとメラニン合成に影響します。<strong>SLC45A2・SLC24A5</strong> なども色素形成に関わる輸送体です。これらをすべて同じpH調節機構として扱うのではなく、それぞれがイオン環境や成熟をどう変えるかを見ます。OCA2については、オルガネラのイオン電流とpHを測定した研究があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">Bellonoら, 2014</a></p></div></details>
 <h2 id="s3">3　周囲からの信号が、作る量を変える</h2>
 <p>メラノサイトは、周囲の角化細胞などが出す信号に応じてメラニン合成を変えます。代表的なのが、<strong>紫外線を受けた角化細胞からの信号</strong>です。</p>
 <p>角化細胞でDNA損傷への応答が起こると、<strong>α-MSH</strong> というペプチドの産生につながります。α-MSHがメラノサイトの受容体 <strong>MC1R</strong> に結合すると、細胞内の信号を介して、色素形成関連遺伝子を調節する転写因子 <strong>MITF</strong> の働きが高まります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a></p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_細胞間シグナル_整理版.webp" alt="角化細胞のDNA損傷からα-MSHを介してメラノサイトへ伝わる代表的な信号。" width="1536" height="1024" loading="lazy"><figcaption>角化細胞のDNA損傷からα-MSHを介してメラノサイトへ伝わる代表的な信号。下段はその他の入力で、すべてが同じ細胞内経路を通るわけではない。</figcaption></figure>
+<p>経路の詳しい説明は、<a class="chref" href="pathways.html#p-camp">シグナル伝達経路の「cAMP–PKA」</a>を参照してください。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_角化細胞から色素合成への信号.webp" alt="角化細胞が分泌したα-MSHを、メラノサイト膜のMC1Rが受け取る。" width="1536" height="1024" loading="lazy"><figcaption>角化細胞が分泌したα-MSHを、メラノサイト膜のMC1Rが受け取る。核内の遺伝子発現から、核外のメラノソームでのメラニン合成増加につながる。矢印は信号の伝達と応答を示し、中間反応は一部省略。</figcaption></figure>
 <p>メラノサイト自身も紫外線を受け、直接応答します。日焼けを理解するには、角化細胞を介した反応と、メラノサイトへの直接作用の両方が必要です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22055294/" target="_blank" rel="noopener">Wicksら, 2011</a></p>
-<details class="supplement"><summary>詳しく：α-MSHからMITFへ、その他の入力との違い</summary><div class="supplement-body"><p>角化細胞では、DNA損傷に応答する <strong><span class="term" tabindex="0" data-t="p53" data-d="DNA損傷を受けて働く転写因子。p21を介してCDK2を止め、修復が済めば下がって周期へ戻る一過性の停止をかける。停止を持続させるp16–RB系とは別系統。" data-u="glossary.html#term-f22c2605df7f">p53</span></strong> が <strong><span class="term" tabindex="0" data-t="POMC" data-d="proopiomelanocortin。切断されてACTH・α-MSH・β-endorphinなどになる前駆体タンパク質。皮膚では、UV刺激を受けたケラチノサイトからPOMC由来ペプチドが産生される。" data-u="glossary.html#term-bebf5fcded7e">POMC</span></strong> の発現を促します。POMCはα-MSHの前駆体です。受け取るメラノサイトでは、<strong>MC1R → <span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。" data-u="glossary.html#term-1121990e3524" data-p="pathways.html#s7">cAMP</span> → PKA → CREB → MITF</strong> という経路が働きます。MITFはtyrosinaseなど、合成やメラノソームに関わる遺伝子の発現を調節します（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a></p>
+<details class="supplement"><summary>詳しく：α-MSHからMITFへ、その他の入力との違い</summary><div class="supplement-body"><p>角化細胞では、DNA損傷に応答する <strong><span class="term" tabindex="0" data-t="p53" data-d="DNA損傷を受けて働く転写因子。p21を介してCDK2を止め、修復が済めば下がって周期へ戻る一過性の停止をかける。停止を持続させるp16–RB系とは別系統。" data-u="glossary.html#term-f22c2605df7f">p53</span></strong> が <strong><span class="term" tabindex="0" data-t="POMC" data-d="proopiomelanocortin。切断されてACTH・α-MSH・β-endorphinなどになる前駆体タンパク質。皮膚では、UV刺激を受けたケラチノサイトからPOMC由来ペプチドが産生される。" data-u="glossary.html#term-bebf5fcded7e">POMC</span></strong> の発現を促します。POMCはα-MSHの前駆体です。受け取るメラノサイトでは、<strong>MC1R → <span class="term" tabindex="0" data-t="cAMP" data-d="GPCRの下流で情報を広げるsecond messenger。PKA→CREBを介して転写まで届く。MC1R→MITFの色素産生、皮脂腺、血管平滑筋の弛緩まで、同じ部品が使い回される。" data-u="glossary.html#term-1121990e3524" data-p="pathways.html#p-camp">cAMP</span> → PKA → CREB → MITF</strong> という経路が働きます。MITFはtyrosinaseなど、合成やメラノソームに関わる遺伝子の発現を調節します（→ <a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">Cuiら, 2007</a></p>
 <p>メラノサイトへの入力はα-MSHだけではありません。</p>
 <div class="tblwrap"><table><thead><tr><th>信号</th><th>受容体・主な関わり</th></tr></thead><tbody><tr><td><strong>endothelin-1（ET-1）</strong></td><td>EDNRBを介し、色素形成などを調節する</td></tr><tr><td><strong>SCF（stem cell factor）</strong></td><td>KITを介し、生存・増殖・色素形成を支える。線維芽細胞などからも供給される</td></tr><tr><td><strong>PGE₂</strong></td><td>EP受容体を介し、樹状突起や色素合成に影響する。受容体の種類によって細胞内の反応が異なる</td></tr></tbody></table></div>
 <p>KITは受容体型チロシンキナーゼで、MC1Rと同じGPCRではありません。これらの信号を、すべて一本のcAMP経路として結ばないことが重要です。PGE₂についても、異なるEP受容体がcAMPに反対方向の影響を及ぼすことが示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20500768/" target="_blank" rel="noopener">Starnerら, 2010</a></p>
-<p><span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#s8">Wnt</span>/β-cateninや酸化還元状態も、メラノサイトの機能に関わります。多数の入力があるため、MITFだけを単純なオン・オフのスイッチとして扱うことはできません（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p></div></details>
+<p><span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#p-wnt">Wnt</span>/β-cateninや酸化還元状態も、メラノサイトの機能に関わります。多数の入力があるため、MITFだけを単純なオン・オフのスイッチとして扱うことはできません（→ <a class="chref" href="oxidative-stress.html">酸化ストレスと抗酸化</a>）。</p></div></details>
 <p>炎症が続くと、周囲の細胞からの信号も変わります。炎症後の色素沈着を考えるときは、メラニン合成だけでなく、色素形成を刺激する組織環境が続いていないかも見ます。</p>
 <details class="supplement"><summary>詳しく：炎症・plasmin系と色素形成</summary><div class="supplement-body"><p><strong>plasmin</strong> はフィブリンを分解する酵素です。角化細胞が作る <strong>plasminogen activator</strong> によるplasminogenの活性化も、色素形成を調節する細胞間の反応との関連が研究されています。</p>
 <p>角化細胞の培養上清を使った実験では、<strong>tranexamic acid（トラネキサム酸）</strong> がその色素形成促進作用を抑え、plasminogen activatorの関与が検討されました。これは角化細胞を介した作用の根拠の一つです。ただし、肝斑や炎症後色素沈着を、すべて「plasmin → PGE₂ → MITF」の一本で説明できるわけではありません。<a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">Maeda・Tomita, 2007</a></p>
-<p>PGE₂・bFGF・<span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>などは、色素細胞や血管を含む組織環境に関わる因子ですが、すべてをplasminの下流に一列に並べるのは単純化しすぎです。病態と治療への接続は <a class="chref" href="pigmentation.html">しみとくすみ</a>、薬剤の作用は 美白外用の生化学 で扱います。</p></div></details>
+<p>トラネキサム酸の作用と肝斑への有効性、内服時のリスクや継続の判断は、肝斑で扱います。</p></div></details>
 <h2 id="s4">4　色素を渡し、角化細胞の中に配置する</h2>
 <p>色素を含むメラノソームは樹状突起側へ運ばれ、メラニンが角化細胞へ受け渡されます。<strong>細胞内で運ぶ過程と、細胞間で渡す過程は別です。</strong></p>
 <p>受け取った色素は角化細胞内に分布し、核上メラニンキャップにもなります。色素の量だけでなく、大きさ・まとまり方・分布が肌の色と光防御に関わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">Thongら, 2003</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">Kobayashiら, 1998</a></p>
@@ -734,17 +734,28 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h2 id="s5">5　受け渡された色素は、表皮の更新とともに減っていく</h2>
 <p>角化細胞が上の層へ移動する間に、色素を含む細胞内構造の処理が進みます。表面に残った色素は、角層細胞の落屑とともに失われます。<strong>作る量が減っても、すでに表皮にある色素がすぐになくなるわけではありません。</strong> 表皮の更新は <a class="chref" href="epidermis.html">表皮とターンオーバー</a> で扱った流れです。</p>
 <p>また、色素が真皮へ落ち込み、<span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span>に取り込まれている場合は、表皮のターンオーバーだけでは除去されません。色素がどの層にあるかは、しみの経過を考えるうえでも重要です（→ <a class="chref" href="pigmentation.html">しみとくすみ</a>）。</p>
-<h2 id="s6">6　美容医療は、どの過程に働きかけるのか</h2>
-<p>色素への作用は、<strong>合成・受け渡し・分布や消失</strong>のどこに働くかで整理できます。例えば、tyrosinaseへの作用は合成、niacinamideの培養研究で示された作用は受け渡しの抑制です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a></p>
-<p>レチノイドは角化細胞の増殖・分化を変えるため、「色素を速く排出する薬」だけでは説明できません。色素を作る細胞、受け取る細胞、周囲の炎症を分けて捉えることが、薬剤や施術の理解につながります（→ レチノイド外用の生化学・美白外用の生化学・Qスイッチ・ピコ秒レーザー）。</p>
+<h2 id="s6">6　美白剤・内服・デバイスは、どこに働きかけるのか</h2>
+<p>ここまで見た<strong>合成・メラノソームの成熟・受け渡し・色素の消失</strong>に、治療の作用点を重ねてみます。一つの治療が複数の過程に作用することもあります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/melanocytes_治療の作用点_20261027.webp" alt="色素ができて消えるまでの5つの段階と、主な治療が作用する場所。" width="1672" height="941" loading="lazy"><figcaption>色素ができて消えるまでの5つの段階と、主な治療が作用する場所。①角化細胞からメラノサイトへの信号、②メラノソームの成熟、③メラノソームの中での合成、④樹状突起から角化細胞への受け渡し、⑤角層からの落屑による表皮の更新。各段階に作用する治療の例を添えている。赤いラベルは、メラニンを多く含むメラノサイトと角化細胞そのものを壊すレーザーの作用部位。細胞の大きさや配置は模式的に描いている。</figcaption></figure>
+<p>以下の表の「段階」の番号は、図の①〜⑤に対応します。</p>
+<h3>外用：合成・受け渡し・表皮の更新に作用する</h3>
+<p>合成の入口は、<strong>チロシン → DOPA → ドーパキノン</strong>です。この2つの反応を担うチロシナーゼに作用する成分と、できたドーパキノンをDOPAへ戻す成分では、介入する段階が異なります。</p>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>外用成分</th><th>作用する場所・過程</th><th>何が変わるか</th></tr></thead><tbody><tr><td>③ 合成</td><td><strong>ハイドロキノン</strong></td><td><strong>チロシナーゼの反応でできるドーパキノンとの酸化還元反応</strong>、メラノサイトの細胞機能</td><td>酵素を用いた実験系では、ドーパキノンをDOPAへ戻す一方、自身は酸化される。その際に生じる反応性物質による細胞障害も、作用に関わると考えられる</td></tr><tr><td>③ 合成</td><td><strong>アルブチン</strong></td><td><strong>チロシン → DOPA → ドーパキノン</strong>を担うチロシナーゼ</td><td>チロシナーゼ活性への作用が調べられている。ヒト酵素での阻害は弱く、酵素実験の結果と製剤の効果を区別する</td></tr><tr><td>③ 合成</td><td><strong>コウジ酸</strong></td><td><strong>チロシン → DOPA → ドーパキノン</strong>を担うチロシナーゼ</td><td>チロシナーゼ活性を抑える方向に作用する。ヒト酵素とキノコ由来酵素では阻害の強さが異なる</td></tr><tr><td>③ 合成</td><td><strong>チアミドール</strong></td><td><strong>チロシン → DOPA → ドーパキノン</strong>を担うチロシナーゼ</td><td>ヒトチロシナーゼを阻害し、培養メラノサイトでメラニン産生を抑える</td></tr><tr><td>③ 合成</td><td><strong>ビタミンC</strong></td><td><strong>ドーパキノン → DOPA</strong>へ戻す還元反応</td><td>できたドーパキノンを還元し、その先の色素形成へ進む反応を抑える。誘導体では皮膚内での変換も関わる</td></tr><tr><td>④ 受け渡し</td><td><strong>ナイアシンアミド</strong></td><td>メラノサイトから角化細胞への受け渡し</td><td>共培養実験でメラノソームの移送を抑えた。作る量への作用と、受け取る量への作用を分けて捉える</td></tr><tr><td>⑤ 表皮の更新</td><td><strong>トレチノインなどのレチノイド</strong></td><td><strong>角化細胞の核内受容体RAR/RXRを介する遺伝子発現</strong></td><td>表皮の更新や色素の分布に影響する。ヒトのトレチノイン試験では表皮色素の減少が確認されている</td></tr></tbody></table></div>
+<p>ハイドロキノンの代謝と細胞障害は<a class="ext" href="https://doi.org/10.3390/ijms262110734" target="_blank" rel="noopener">Itoら, 2025</a>、酵素への作用は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">Mannら, 2018</a>、ビタミンCの還元反応は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/211676/" target="_blank" rel="noopener">Seijiら, 1978</a>、受け渡しは<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a>、トレチノインの組織変化は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8217756/" target="_blank" rel="noopener">Griffithsら, 1993</a>を参照。外用成分ごとの詳しい機序や製剤の違いは 美白外用の生化学・レチノイド外用の生化学で扱います。</p>
+<h3>内服：色素形成への刺激と、酸化還元に関わる</h3>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>内服に用いられる成分</th><th>分子として作用する段階</th><th>その反応で何が変わるか</th></tr></thead><tbody><tr><td>① 信号</td><td><strong>トラネキサム酸</strong></td><td>角化細胞の<strong>プラスミノゲン活性化に関わる反応</strong></td><td>抗プラスミン作用を持つ薬。角化細胞を介した色素形成促進を抑える機序が研究されている。有効性・血栓リスク・継続の判断は 肝斑で扱う</td></tr><tr><td>③ 合成</td><td><strong>ビタミンC</strong></td><td><strong>ドーパキノン → DOPA</strong>へ戻す還元反応</td><td>合成途中のドーパキノンをDOPAへ戻し、その先の色素形成へ進む反応を抑える</td></tr><tr><td>③ 合成</td><td><strong>グルタチオン（<span class="term" tabindex="0" data-t="GSH" data-d="glycine・glutamate・cysteine からなるトリペプチドで、細胞内の主力の還元系。GPxがH₂O₂や脂質過酸化物を還元するときの還元当量を渡して酸化型（GSSG）になり、グルタチオン還元酵素がNADPHを使ってGSHへ戻す。それ自体がROSを消すのではなく、再生系とセットで回る。" data-u="glossary.html#term-2087d8e6dfd1">GSH</span>）</strong></td><td><strong>ドーパキノンと結合する反応</strong></td><td>チオール基（–SH）がドーパキノンに結合し、グルタチオニルDOPAを作る。実験系では、褐黒色のユーメラニンへ進む反応を変え、黄赤色のフェオメラニン側へつながる</td></tr></tbody></table></div>
+<p><strong>ここに示したのは分子の反応です。内服でこの反応が皮膚内でどれだけ変わり、しみが改善するかは、臨床研究で確かめる必要があります。</strong> ビタミンCの還元反応は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/211676/" target="_blank" rel="noopener">Seijiら, 1978</a>、グルタチオンの結合反応は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/3924652/" target="_blank" rel="noopener">チロシナーゼ反応系の研究</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2903772/" target="_blank" rel="noopener">色素合成の分岐を調べた研究</a>を参照。</p>
+<p>トラネキサム酸の機序研究は<a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">Maeda・Tomita, 2007</a>、グルタチオンの内服試験は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20524875/" target="_blank" rel="noopener">Arjinpathana・Asawanonda, 2012</a>を参照。抗酸化成分の体内での働きと、補充したときの有効性は 抗酸化サプリメントと点滴で扱います。</p>
+<h3>デバイス：色素を含む構造や、色素形成を調節する細胞に作用する</h3>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>治療</th><th>作用する場所・過程</th><th>観察されている変化</th></tr></thead><tbody><tr><td>②④ 成熟・受け渡し</td><td><strong>トーニング：低フルエンスQスイッチ1064 nm Nd:YAG</strong></td><td>成熟したメラノソームと、受け渡しに関わる樹状突起</td><td>ヒト皮膚でstage IVメラノソームの構造変化と樹状突起の減少を観察。成熟した顆粒への作用と、成熟そのものの抑制は区別する。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20937709/" target="_blank" rel="noopener">Munら, 2011</a></td></tr><tr><td>メラニンを含む細胞</td><td><strong>Qスイッチ・ピコ秒レーザーのスポット照射</strong></td><td>メラニンを多く含むメラノサイトと角化細胞、その中のメラノソーム</td><td>色素による光吸収で顆粒や細胞に損傷を与える。Qスイッチレーザーではモルモット皮膚のメラノソーム破裂が確認されている。影響する範囲は波長・パルス幅・照射条件で変わる（→ Qスイッチ・ピコ秒レーザー）</td></tr><tr><td>⑤ すでにある色素・表皮の更新</td><td><strong>IPL：日光黒子への照射</strong></td><td>主に表皮のメラニンを含む構造と、その排出</td><td>色素を含む微細な痂皮ができ、脱落する過程をヒトで観察。メラノソームと細胞残骸が痂皮内に確認されている。<a class="ext" href="https://doi.org/10.1038/sj.jid.5700414/" target="_blank" rel="noopener">Yamashitaら, 2006</a>（→ IPL）</td></tr><tr><td>① 信号</td><td><strong>ニードルRF</strong></td><td>熱を受けた細胞の応答、色素合成の信号、周囲の組織環境</td><td>針電極を用いたRFの培養細胞・動物実験では、HSP70の増加を介したメラニン合成の抑制が示されている。ヒトのニードルRFでは真皮や基底膜の変化も研究されている（→ ニードルRFの生化学）</td></tr></tbody></table></div>
+<p>トーニングで樹状突起が減る所見は、<strong>メラニンの受け渡しに影響する可能性</strong>を示します。ただし、形の変化と受け渡し量の測定は同じではありません。また、上の所見は低フルエンスQスイッチNd:YAGの研究であり、ピコトーニングを含むすべての照射法にそのまま当てはめるものではありません。</p>
+<p>Qスイッチレーザーの組織変化は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2746004/" target="_blank" rel="noopener">Andersonら, 1989</a>、RFの色素合成への作用は<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34946730/" target="_blank" rel="noopener">Kimら, 2021</a>を参照。<strong>どこに作用するかを理解したうえで、どの病態に使うかを考えます。</strong> 疾患ごとの治療選択は <a class="chref" href="pigmentation.html">しみとくすみ</a>・肝斑、各治療の効果とリスクはそれぞれの治療章へつなぎます。</p>
 <h2>この章の到達点</h2>
 <ol class="goal"><li><strong>メラノサイトは基底層にあり、樹状突起を介して角化細胞へ色素を配る。</strong></li><li><strong>メラニンはメラノソーム内で合成される。</strong> tyrosinase・内部の成熟・基質やpHが合成に関わる。</li><li><strong>角化細胞などからの信号が、メラノサイトの合成を調節する。</strong> α-MSH–MC1R–MITFは代表的な経路で、入力はこれだけではない。</li><li><strong>色素の受け渡しと分布は、色調と核DNAの保護に関わる。</strong> 合成量だけで見た目は決まらない。</li><li><strong>すでにある色素が減るには時間がかかる。</strong> 表皮内の色素と、真皮に残る色素を区別する。</li></ol>
-<h3>根拠の読み方</h3>
-<p>核上メラニンキャップの光防御、メラノソームの成熟、p53–POMCを介した細胞間の信号には実験的な裏づけがあります。一方、細胞間の受け渡し方や、各病態でどの炎症経路がどれだけ寄与するかは、複数のモデルと研究条件を区別して読みます。分子への作用が確認されても、製品や施術の効果量はそれぞれの臨床研究で判断します。</p>
 <h2>参考文献</h2>
 <ul><li>Kobayashi N, et al. Supranuclear melanin caps reduce ultraviolet induced DNA photoproducts in human epidermis. <em>J Invest Dermatol</em>. 1998. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9579550/" target="_blank" rel="noopener">PMID: 9579550</a></li><li>Thong HY, et al. The patterns of melanosome distribution in keratinocytes of human skin as one determining factor of skin colour. <em>Br J Dermatol</em>. 2003. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14510981/" target="_blank" rel="noopener">PMID: 14510981</a></li><li>Berson JF, et al. Pmel17 initiates premelanosome morphogenesis within multivesicular bodies. <em>Mol Biol Cell</em>. 2001. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11694580/" target="_blank" rel="noopener">PMID: 11694580</a></li><li>Bellono NW, et al. An intracellular anion channel critical for pigmentation. <em>eLife</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25513726/" target="_blank" rel="noopener">PMID: 25513726</a></li><li>Cui R, et al. Central role of p53 in the suntan response and pathologic hyperpigmentation. <em>Cell</em>. 2007. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17350573/" target="_blank" rel="noopener">PMID: 17350573</a></li><li>Wicks NL, et al. UVA phototransduction drives early melanin synthesis in human melanocytes. <em>Curr Biol</em>. 2011. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22055294/" target="_blank" rel="noopener">PMID: 22055294</a></li><li>Starner RJ, et al. PGE(2) is a UVR-inducible autocrine factor for human melanocytes that stimulates tyrosinase activation. <em>Exp Dermatol</em>. 2010. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20500768/" target="_blank" rel="noopener">PMID: 20500768</a></li><li>Maeda K, Tomita Y. Mechanism of the Inhibitory Effect of Tranexamic Acid on Melanogenesis in Cultured Human Melanocytes in the Presence of Keratinocyte-conditioned Medium. <em>J Health Sci</em>. 2007. <a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">doi:10.1248/jhs.53.389</a></li><li>Wu XS, et al. Identification of an organelle <span class="term" tabindex="0" data-t="receptor" data-d="リガンドが結合し、細胞の応答を調節する受容体タンパク質。細胞膜にあるものや、細胞質・核で働くものがある。受容体の種類や量も、同じリガンドに対する応答の違いにつながる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> for myosin-Va. <em>Nat Cell Biol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11887186/" target="_blank" rel="noopener">PMID: 11887186</a></li><li>Tarafder AK, et al. Rab11b mediates melanin transfer between donor melanocytes and acceptor keratinocytes via coupled exo/endocytosis. <em>J Invest Dermatol</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24141907/" target="_blank" rel="noopener">PMID: 24141907</a></li><li>Hakozaki T, et al. The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer. <em>Br J Dermatol</em>. 2002. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">PMID: 12100180</a></li></ul>
 <p>概説：D'Mello SAN, et al. Signaling Pathways in Melanogenesis. <em>Int J Mol Sci</em>. 2016;17:1144. <a class="ext" href="https://doi.org/10.3390/ijms17071144" target="_blank" rel="noopener">doi:10.3390/ijms17071144</a>／Cichorek M, et al. Skin melanocytes: biology and development. <em>Postepy Dermatol Alergol</em>. 2013;30:30–41. <a class="ext" href="https://doi.org/10.5114/pdia.2013.33376" target="_blank" rel="noopener">doi:10.5114/pdia.2013.33376</a>／Videira IFDS, et al. Mechanisms regulating melanogenesis. <em>An Bras Dermatol</em>. 2013;88:76–83. <a class="ext" href="https://doi.org/10.1590/S0365-05962013000100009" target="_blank" rel="noopener">doi:10.1590/S0365-05962013000100009</a></p>
-
+<section class="ch-history"><p class="chh-t">この章の更新</p><ul><li><time>2026-10-27</time>cAMP–PKA経路へリンク。表皮メラニン単位とイオン輸送体の詳説を削除し、角化細胞の由来を明記。受け渡し図から用語・個数の説明を除去。トラネキサム酸の参照先を肝斑へ変更。信号の図を細胞・核の位置が分かる構図へ更新。末尾の重複する根拠説明を削除。外用・内服・デバイスの作用点一覧を追加し、外用の作用点を反応・受容体まで具体化</li><li><time>2026-09-14</time>初公開</li></ul></section>
 </article>
 <nav class="pager"><a class="prev" href="epidermis.html"><span class="lbl">前へ</span>表皮とターンオーバー</a><a class="next" href="ecm.html"><span class="lbl">次へ</span>細胞外基質（ECM）</a></nav>
 <footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
@@ -753,7 +764,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -743,7 +744,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h3>血管内皮細胞が血管を作り、線維芽細胞がECMを作る</h3>
 <p>新しく作られる組織には、酸素と栄養が必要です。血管内皮細胞は新しい血管を作り、線維芽細胞はcollagenなどのECMを作ります。この時期の、細い血管と線維芽細胞が豊富な組織が<strong>肉芽組織（granulation tissue）</strong>です。</p>
 <p>こうした細胞の移動・増殖・合成を促す分子を、<strong>成長因子</strong>と呼びます。血小板やマクロファージなど、複数の細胞から供給されます。</p>
-<div class="tblwrap"><table><thead><tr><th>代表的な成長因子</th><th>主に促す反応</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>（血管内皮増殖因子）</strong></td><td>血管内皮細胞に働き、新生血管の形成を促す</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="PDGF" data-d="血小板と修復期のマクロファージが出す成長因子。fibroblastの増殖と遊走を促す。「作る細胞を増やして現場へ呼ぶ」のがPDGF、「呼ばれた細胞に作らせる」のがTGF-β。" data-u="glossary.html#term-21efcc2ecc7b">PDGF</span>（血小板由来増殖因子）</strong></td><td>線維芽細胞などの移動・増殖を促す</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75" data-p="pathways.html#s4">TGF-β</span>（トランスフォーミング増殖因子β）</strong></td><td>線維芽細胞のECM産生や、筋線維芽細胞への変化に関わる</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>代表的な成長因子</th><th>主に促す反応</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="VEGF" data-d="内皮に働き、血管を増やす（angiogenesis）と同時に漏らす因子。発見時の別名が vascular permeability factor。低酸素で HIF-1α が安定化すると誘導される。刺激が続けば維持されるが、消えれば退縮・再構築もしうる。" data-u="glossary.html#term-5aed088f1c1e">VEGF</span>（血管内皮増殖因子）</strong></td><td>血管内皮細胞に働き、新生血管の形成を促す</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="PDGF" data-d="血小板と修復期のマクロファージが出す成長因子。fibroblastの増殖と遊走を促す。「作る細胞を増やして現場へ呼ぶ」のがPDGF、「呼ばれた細胞に作らせる」のがTGF-β。" data-u="glossary.html#term-21efcc2ecc7b">PDGF</span>（血小板由来増殖因子）</strong></td><td>線維芽細胞などの移動・増殖を促す</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75" data-p="pathways.html#p-tgfb">TGF-β</span>（トランスフォーミング増殖因子β）</strong></td><td>線維芽細胞のECM産生や、筋線維芽細胞への変化に関わる</td></tr></tbody></table></div>
 <p>低酸素に応答するHIFとVEGFの関係は<a class="chref" href="endothelium.html">血管と内皮</a>で扱います。</p>
 <p><strong>美容治療で利用するcollagenの増加も、こうした細胞による修復反応につながっています。</strong> 作られたECMは、その後も組み替えられていきます。</p>
 <h2 id="s5">5　創を縮め、ECMを整え、修復の活動を落ち着かせる</h2>
@@ -804,7 +805,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

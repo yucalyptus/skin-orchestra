@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -690,13 +691,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p class="kicker">生化学・細胞生物学の基礎　／　材料を感知し作る</p>
 <h1 class="ch-title">mTORC1――タンパク質合成を調節する仕組み</h1>
 <p class="dateline">公開 2026-08-28　／　最終更新 2026-09-13</p>
-<blockquote>アミノ酸は、タンパク質の材料であると同時に、<strong>「材料がある」</strong>と細胞へ伝える情報でもあります。この章では、<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#s1">mTORC1</span></strong>がアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成を調節する仕組みを見ます。<br><br><strong>先に読んでおく章</strong>：アミノ酸の働きと輸送体（→ <a class="chref" href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>）／<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>とエネルギー代謝（→ <a class="chref" href="atp.html">代謝とATP</a>）</blockquote>
+<blockquote>アミノ酸は、タンパク質の材料であると同時に、<strong>「材料がある」</strong>と細胞へ伝える情報でもあります。この章では、<strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#p-mtor">mTORC1</span></strong>がアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成を調節する仕組みを見ます。<br><br><strong>先に読んでおく章</strong>：アミノ酸の働きと輸送体（→ <a class="chref" href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>）／<span class="term" tabindex="0" data-t="ATP" data-d="異化と同化をつなぐエネルギーの通貨。分解で得たエネルギーはそのまま使われず、いったん ATP に移されてから細胞の仕事へ渡る。貯蔵物質ではなく、使われるそばから ADP に戻って作り直される。だから見るのは濃度（今の蓄え）ではなく、必要なときに作り出す産生能。" data-u="glossary.html#term-6d89a344fca3">ATP</span>とエネルギー代謝（→ <a class="chref" href="atp.html">代謝とATP</a>）</blockquote>
 <h2>この章の一言</h2>
 <blockquote class="lead">mTORC1 は、<strong>アミノ酸・成長刺激・エネルギー</strong>の状態をまとめて受け取り、タンパク質合成と <span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span> の強さを調節します。</blockquote>
 <nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　mTORC1は、三つの情報をまとめる</a></li><li><a href="#s2">2　アミノ酸の量を感知するセンサー</a></li><li><a href="#s3">3　Ragが移し、Rhebが活性を高める</a></li><li><a href="#s4">4　食後は「作る」、空腹時は「分解して再利用する」</a></li><li><a href="#s5">5　この仕組みが関係するもの</a></li></ul></nav><h2 id="s1">1　mTORC1は、三つの情報をまとめる</h2>
 <p><strong>mTORC1（mechanistic target of rapamycin complex 1）</strong>は、タンパク質合成を調節する酵素複合体です。活性が高まるとタンパク質合成が進み、autophagy は抑えられます。活性が下がると、タンパク質合成は低下し、autophagy が進みやすくなります（→ <a class="chref" href="autophagy.html">オートファジーとリソソーム</a>、<a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
 <p>mTORC1は、主に三つの情報を受け取ります。</p>
-<ul><li><strong>アミノ酸</strong>：mTORC1を、働く場所である<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>の表面へ移動させます。</li><li><strong>インスリンやIGF-1</strong>：lysosomeの表面で、mTORC1の活性を高めます。</li><li><strong>細胞内のエネルギー</strong>：不足すると <span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#s2">AMPK</span> が働き、mTORC1 を抑えます（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</li></ul>
+<ul><li><strong>アミノ酸</strong>：mTORC1を、働く場所である<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>の表面へ移動させます。</li><li><strong>インスリンやIGF-1</strong>：lysosomeの表面で、mTORC1の活性を高めます。</li><li><strong>細胞内のエネルギー</strong>：不足すると <span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#p-ampk">AMPK</span> が働き、mTORC1 を抑えます（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</li></ul>
 <h2 id="s2">2　アミノ酸の量を感知するセンサー</h2>
 <p>細胞には、特定のアミノ酸や、その代謝物を感知するセンサータンパク質があります。leucineやarginineは、対応するセンサーに直接結合します。<strong>methionineは、そこから作られるSAM（S-adenosylmethionine、S-アデノシルメチオニン）を介して感知されます</strong>（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29123071/" target="_blank" rel="noopener">PMID 29123071</a>）。</p>
 <div class="tblwrap"><table><thead><tr><th>感知するもの</th><th>センサー</th><th>測り方</th></tr></thead><tbody><tr><td><strong>leucine</strong></td><td>Sestrin2</td><td>leucine が直接結合する</td></tr><tr><td><strong>arginine</strong></td><td>CASTOR1</td><td>arginine が直接結合する</td></tr><tr><td><strong>SAM（methionine から作られる）</strong></td><td>SAMTOR</td><td>methionine そのものではなく、そこから作られる SAM が結合する</td></tr></tbody></table></div>
@@ -825,7 +826,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

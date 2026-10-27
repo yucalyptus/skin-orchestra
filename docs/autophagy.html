@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -690,7 +691,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p class="kicker">生化学・細胞生物学の基礎　／　掃除と作り直し</p>
 <h1 class="ch-title">オートファジーとリソソーム</h1>
 <p class="dateline">公開 2026-08-31　／　最終更新 2026-09-13</p>
-<blockquote>細胞の中では、タンパク質やオルガネラが働き続けるうちに古くなり、傷んでいきます。<strong><span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span>（オートファジー）</strong>は、それらを回収して<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>（リソソーム）へ運び、分解して、材料として再利用する仕組みです。この章では、細胞内のリサイクルがどのように進み、なぜ皮膚や加齢にも関係するのかを見ます。<br><br><strong>先に読んでおく章</strong>：lysosomeというオルガネラ（→ <a class="chref" href="organelles.html">オルガネラ</a>）／栄養状態によって合成とautophagyを切り替える<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#s1">mTORC1</span>（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）</blockquote>
+<blockquote>細胞の中では、タンパク質やオルガネラが働き続けるうちに古くなり、傷んでいきます。<strong><span class="term" tabindex="0" data-t="autophagy" data-d="細胞が自分の中身を膜で包み、lysosomeで分解して材料を回収する仕組み。捨てるだけでなく作り直しに回すリサイクル。見るべきは量（溜まっている数）ではなく flux（分解と再利用が最後まで回っているか）。" data-u="glossary.html#term-677025ace176">autophagy</span>（オートファジー）</strong>は、それらを回収して<span class="term" tabindex="0" data-t="lysosome" data-d="内部が pH 5 前後に保たれた分解工場。古いタンパク質やオルガネラをアミノ酸・脂肪酸・糖に戻すリサイクルの回収口であり、同時に mTORC1 が材料の在庫を読む場所でもある。" data-u="glossary.html#term-1117596c1a08">lysosome</span>（リソソーム）へ運び、分解して、材料として再利用する仕組みです。この章では、細胞内のリサイクルがどのように進み、なぜ皮膚や加齢にも関係するのかを見ます。<br><br><strong>先に読んでおく章</strong>：lysosomeというオルガネラ（→ <a class="chref" href="organelles.html">オルガネラ</a>）／栄養状態によって合成とautophagyを切り替える<span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#p-mtor">mTORC1</span>（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）</blockquote>
 <h2>この章の一言</h2>
 <blockquote class="lead">細胞は、<strong>古くなった部品を分解し、回収した材料で新しい部品を作る</strong>ことで、細胞内の品質を保っています。</blockquote>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/autophagy_オートファジーとリソソーム-v2.webp" alt="オートファジーの一連の流れ。" width="1672" height="941" loading="lazy"><figcaption>オートファジーの一連の流れ。①傷んだタンパク質やミトコンドリアを二重膜で包む。②膜が閉じてオートファゴソームになる。③リソソームと融合する。④酸性環境と加水分解酵素によって内容物を分解する。⑤生じたアミノ酸・脂肪酸・糖を細胞質へ戻し、エネルギー産生や新しい細胞成分の合成に再利用する</figcaption></figure>
@@ -703,7 +704,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <div class="tblwrap"><table><thead><tr><th>対処するもの</th><th>主な仕組み</th><th>何をするか</th></tr></thead><tbody><tr><td>形が崩れかけたタンパク質</td><td><strong>chaperone（<span class="term" tabindex="0" data-t="HSP" data-d="heat shock protein＝chaperone。変性しかけたタンパク質を壊さずに正しい形へ戻す一次防衛線で、熱・酸化・機械ストレスで誘導される。熱を使うデバイスの応答を細胞の言葉で読む入口になる。" data-u="glossary.html#term-d010e3bed310">HSP</span>）</strong></td><td>正しい形に折り直す</td></tr><tr><td>不要になった個々のタンパク質</td><td><strong><span class="term" tabindex="0" data-t="ubiquitin–proteasome" data-d="個々のタンパク質にubiquitinの目印を付けてproteasomeで壊す分解系。オルガネラごと包むautophagyと違い、分子単位で選んで壊す。cyclinや筋タンパクは、この分解速度が量とタイミングを決める。" data-u="glossary.html#term-7841be8283cb">ubiquitin–proteasome</span>系</strong></td><td>目印を付けて一つずつ分解する</td></tr><tr><td>大きな凝集体やオルガネラ</td><td><strong>autophagy–lysosome系</strong></td><td>膜で包み、まとめて分解する</td></tr></tbody></table></div>
 <p>これらが協力して、タンパク質の合成・折りたたみ・分解の釣り合いを保っています。この維持の仕組みを<strong>proteostasis（タンパク質恒常性）</strong>と呼びます（→ <a class="chref" href="hallmarks-of-aging.html">Hallmarks of Aging</a>）。</p>
 <p>粗面ERでは、折り損じたタンパク質が増えると<strong>小胞体ストレス（ER stress）</strong>への応答が起こります。折りたたみや個々のタンパク質の分解で対処しきれない凝集体、傷んだER膜の一部は、autophagyがlysosomeへ運びます（→ <a class="chref" href="organelles.html">オルガネラ</a>）。</p>
-<p>熱刺激で誘導されるHSP70・<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。" data-u="glossary.html#term-19a718751983">HSP47</span>と美容デバイスとの関係は熱・光・機械刺激、<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖が線維芽細胞の小胞体内でC末端側からジッパーのように巻かれて三重らせんになり、分泌後に細胞の外で原線維・線維束へ組み立てられる。合成・組立・分解のどの段階も、線維の量と質を左右する。" data-u="glossary.html#term-a9ef90b73700">collagen</span>専用chaperoneであるHSP47の働きは<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。</p>
+<p>熱刺激で誘導されるHSP70・<span class="term" tabindex="0" data-t="HSP47" data-d="collagen専用の分子シャペロン（SERPINH1）。ERで三重らせんのほどけを防ぎ、Golgiへの輸送を助ける。専用なのでcollagen産生の指標に使われるが、発現だけで成熟線維の増加までは言えない。" data-u="glossary.html#term-19a718751983">HSP47</span>と美容デバイスとの関係は<a class="chref" href="energy-devices.html">デバイス治療の基本</a>、<span class="term" tabindex="0" data-t="collagen" data-d="真皮の主要な構造タンパク質。3本の鎖が線維芽細胞の小胞体内でC末端側からジッパーのように巻かれて三重らせんになり、分泌後に細胞の外で原線維・線維束へ組み立てられる。合成・組立・分解のどの段階も、線維の量と質を左右する。" data-u="glossary.html#term-a9ef90b73700">collagen</span>専用chaperoneであるHSP47の働きは<a class="chref" href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>で扱います。</p>
 <h2 id="s2">2　包んで運び、lysosomeで分解する</h2>
 <p>この章で扱うのは、細胞質の一部を二重膜で包む<strong>macroautophagy</strong>です。一般に「autophagy」と言うと、この仕組みを指します。</p>
 <p>流れは、次の五つです。</p>
@@ -717,7 +718,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>酸性化、autophagosomeとの融合、酵素による分解、材料の排出のどこかが止まれば、リサイクルは途中で滞ります。</p>
 <h2 id="s4">4　食後は作り、空腹時には分解して再利用する</h2>
 <p>食後はアミノ酸とインスリンが増え、mTORC1の活性が高まりやすくなります。すると、タンパク質や脂質を<strong>作る方向</strong>が優先され、autophagyは抑えられます。これは成長や組織の修復に必要な、正常な反応です。</p>
-<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンが減ります。細胞内のエネルギーが不足すると<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#s2">AMPK</span>も働き、mTORC1の活性が下がります。するとautophagyが始まりやすくなり、細胞内の成分から材料を回収します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
+<p>空腹の時間が続くと、食事から入るアミノ酸とインスリンが減ります。細胞内のエネルギーが不足すると<span class="term" tabindex="0" data-t="AMPK" data-d="細胞内のエネルギーが不足したときに活性化するkinase。ATPを消費する合成反応を抑え、ATPを作る反応を促す。mTORC1を抑え、ULK1を介してautophagyの開始を促す。" data-u="glossary.html#term-53f498cb2014" data-p="pathways.html#p-ampk">AMPK</span>も働き、mTORC1の活性が下がります。するとautophagyが始まりやすくなり、細胞内の成分から材料を回収します（→ <a class="chref" href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>）。</p>
 <p>大切なのは、mTORC1とautophagyのどちらか一方を常に働かせることではありません。<strong>栄養が入ったら作り、空腹時には分解して再利用する。細胞は、状態に応じて二つを切り替えています。</strong></p>
 <h2 id="s5">5　回収する対象を選ぶ仕組み</h2>
 <p>autophagyは、細胞質の一部をまとめて取り込む場合と、特定の対象を選んで取り込む場合があります。</p>
@@ -735,7 +736,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <aside class="memo"><h3 class="memo-h">ちなみに ―― autophagy低下は、低色素化にも過色素化にもつながる</h3><p>加齢・紫外線・酸化ストレス・代謝ストレスなどによってautophagyの調節が乱れると、傷んだタンパク質やオルガネラを処理しにくくなり、細胞の機能が低下します。ただし、<strong>どの細胞で強く起こるかによって、皮膚に現れる変化は異なります。</strong></p>
 <ul><li><strong>melanocyte</strong>：<span class="term" tabindex="0" data-t="ROS" data-d="酸素から派生する反応性の高い分子の総称。種類ごとに消し方が違い、O₂⁻とH₂O₂は酵素で処理できるが•OHと¹O₂はできない。ゼロにするのが目標ではなく、低〜中等度はシグナルとして働く。" data-u="glossary.html#term-88d24b96933a">ROS</span>や傷んだオルガネラを処理しにくくなり、<span class="term" tabindex="0" data-t="senescence" data-d="生きて代謝もしているが、増殖刺激を与えても分裂周期に戻らない状態。死細胞でも可逆な休止（G0）でもなく、生きたままSASPを出し続ける。害になるのは居座って出し続けたとき。" data-u="glossary.html#term-24501b34c7c0">senescence</span>や<span class="term" tabindex="0" data-t="apoptosis" data-d="細胞が縮み、膜を保ったまま小体に分かれて終わる死。caspase-3/7が実行する。炎症を伴わないのは死に方そのものではなく、efferocytosisが間に合っているからで、遅れれば二次性ネクローシスに転じる。" data-u="glossary.html#term-bbbbbd5702df">apoptosis</span>に傾くと、melanocyteの減少と低色素化につながりえます。</li><li><strong>keratinocyte</strong>：分化や角化が乱れるだけでなく、melanocyteから受け取ったmelanosomeを分解しにくくなります。そのため色素が残り、日光黒子や肝斑などの過色素化に関係する可能性があります。</li><li><strong>fibroblast</strong>：酸化・変性したタンパク質やDNA損傷が蓄積し、type I <span class="term" tabindex="0" data-t="procollagen" data-d="線維芽細胞が分泌する collagen の前駆体。両端の propeptide を ADAMTS2・BMP1 が切り、自己集合と LOX 架橋を経て線維になる。分泌させた＝強い成熟線維ができた、ではない。" data-u="glossary.html#term-f2e750a6fc61">procollagen</span>・hyaluronan・<span class="term" tabindex="0" data-t="elastin" data-d="伸びて戻る力を担う、弾性線維の主成分となるタンパク質。tropoelastinがfibrillinに富む微細線維に沿って配置され、架橋によって安定化する。成人での更新は緩やかで、成分が増えることと正常な線維構造・機能が回復することは区別する。" data-u="glossary.html#term-b160c75bd9a0">elastin</span>などのECMを維持する働きが低下します。これは真皮の老化や脆弱化につながります。</li></ul>
 <h4>白斑では、抗酸化と回収の働きがともに弱まることがある</h4>
-<p>vitiligoのmelanocyteでは、<strong>抗酸化応答とautophagyの両方が弱くなる仕組み</strong>が報告されています。酸化ストレスを感知した<span class="term" tabindex="0" data-t="Nrf2" data-d="NRF2とも表記する。NF-E2-related factor 2、遺伝子名はNFE2L2。抗酸化・解毒に働く遺伝子の転写を調節する転写因子。通常はKEAP1を介して分解され、酸化ストレスなどでこの分解が抑えられると核で働く。グルタチオン合成酵素や解毒酵素などの産生を促す。同じ略語を持つnuclear respiratory factor 2（GABP）とは別の因子。" data-u="glossary.html#term-ab9ff70dbdac" data-p="pathways.html#s6">Nrf2</span>は、抗酸化酵素とともに<strong>p62</strong>を増やします。p62は、目印の付いた障害タンパク質などをautophagosomeへ運ぶため、Nrf2–p62経路が十分に働かないと、抗酸化応答だけでなくautophagyによる回収も弱くなります。</p>
+<p>vitiligoのmelanocyteでは、<strong>抗酸化応答とautophagyの両方が弱くなる仕組み</strong>が報告されています。酸化ストレスを感知した<span class="term" tabindex="0" data-t="Nrf2" data-d="NRF2とも表記する。NF-E2-related factor 2、遺伝子名はNFE2L2。抗酸化・解毒に働く遺伝子の転写を調節する転写因子。通常はKEAP1を介して分解され、酸化ストレスなどでこの分解が抑えられると核で働く。グルタチオン合成酵素や解毒酵素などの産生を促す。同じ略語を持つnuclear respiratory factor 2（GABP）とは別の因子。" data-u="glossary.html#term-ab9ff70dbdac" data-p="pathways.html#p-nrf2">Nrf2</span>は、抗酸化酵素とともに<strong>p62</strong>を増やします。p62は、目印の付いた障害タンパク質などをautophagosomeへ運ぶため、Nrf2–p62経路が十分に働かないと、抗酸化応答だけでなくautophagyによる回収も弱くなります。</p>
 <p>また、転写を調節する<span class="term" tabindex="0" data-t="HSF1" data-d="熱・酸化・機械ストレスに応じてHSP70・HSP90などの発現を上げる転写因子（heat shock response）。熱デバイスでは、細胞が生き残るサブレサルな温度帯がHSP誘導域にあたる（境界は組織・到達温度・曝露時間で動く）。" data-u="glossary.html#term-b3f5891ccf14">HSF1</span>は、autophagosomeを作るために必要な<strong>ATG5とATG12</strong>の発現を高めます。HSF1–ATG5/12経路が弱いと、傷んだ成分を包むautophagosomeを作りにくくなります。</p>
 <p>その結果、ROSや傷んだミトコンドリアなどが蓄積し、melanocyteはapoptosisに傾きやすくなります。ただし、<strong>vitiligoはこの経路だけで起こる病気ではありません。</strong>酸化ストレスとautophagyの異常がmelanocyteを傷つきやすくし、免疫による攻撃なども加わってmelanocyteが失われ、白斑として現れると考えられています（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28186139/" target="_blank" rel="noopener">PMID 28186139</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34780715/" target="_blank" rel="noopener">PMID 34780715</a>）。</p>
 <p>色素の変化は、<strong>melanocyteの生存、メラニンの産生と受け渡し、keratinocyte内での分解</strong>を分けて見ると理解しやすくなります（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36230960/" target="_blank" rel="noopener">PMID 36230960</a>）。</p></aside>
@@ -757,7 +758,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

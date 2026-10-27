@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -688,6 +689,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <main class="main"><div class="col">
 <section class="sec-rule"><h1>更新履歴</h1>
 <blockquote class="lead">確認できた章から順に公開しています。新しく公開した章と、あとから直した内容が新しい順に並びます。</blockquote>
+<h2 class="cl-date">2026-10-27</h2><ul class="cl">
+<li><span class="k upd">改訂</span><a href="epidermis.html">表皮とターンオーバー</a><span class="note">ターンオーバー・分化の重複を整理し、角化を核や小器官の分解とバリア形成から説明。500 DaルールとpH勾配、落屑へのpHの作用を明確化。更新期間は定義の直後に集約し、独立節と比較図を削除。通読して重複と図の用語導入を整理</span></li>
+<li><span class="k upd">改訂</span><a href="sebum.html">皮脂分泌の生化学</a><span class="note">§2に皮脂の量が年齢と性別で変わることを追記。章の冒頭に、皮脂の役割と全分泌から皮脂量の調節までをたどる動画を追加し、小葉内の成熟を示していた説明用CGの補足は動画に置き換えて外した</span></li>
+<li><span class="k upd">改訂</span><a href="elastic-fibers.html">弾性線維とコラーゲン線維</a><span class="note">コラムのPLLAの段落を、被膜として作られた線維が正常な網として働き続けるかという問いと、皮膚コラーゲンの半減期との対比で書き直し、結びの表現を改めた。CaHAの研究紹介は§4本文に任せて短くした</span></li>
+<li><span class="k upd">改訂</span><a href="melanocytes.html">メラノサイトと色素形成</a><span class="note">cAMP–PKA経路へリンク。表皮メラニン単位とイオン輸送体の詳説を削除し、角化細胞の由来を明記。受け渡し図から用語・個数の説明を除去。トラネキサム酸の参照先を肝斑へ変更。信号の図を細胞・核の位置が分かる構図へ更新。末尾の重複する根拠説明を削除。外用・内服・デバイスの作用点一覧を追加し、外用の作用点を反応・受容体まで具体化</span></li>
+<li><span class="k new">新規</span><a href="energy-devices.html">デバイス治療の基本</a><span class="note">章全体の文章を見直し、英語まじりの表現と作り手向けの注記を整理。章末のまとめ図とEvidence meterを外した。章題を「デバイス治療の基本」に改め、導入と「この章の一言」を書き直し、直後の引き締まりと数か月後の変化の対比を、熱とコラーゲンの節の最後へ移し、直後の変化にむくみを加えた。§2「熱とコラーゲン：縮めることと、作り直すこと」を新設。熱変性・収縮の温度と時間、縮んだ線維が強くならないこと（関節包・腱の実験と肩の熱収縮術の臨床成績）、細胞とコラーゲンの温度の違い、マイルドな熱での細胞の応答を整理し、動画2本を追加</span></li>
+</ul>
 <h2 class="cl-date">2026-10-22</h2><ul class="cl">
 <li><span class="k upd">改訂</span><a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a><span class="note">導入で線維芽細胞が全身の結合組織にいることを示し、章の範囲を真皮中心と明記。§2に分子・原線維・線維束の階層図を置き、I型とIII型の割合を胎児・創傷・加齢の根拠から本文で整理。§3冒頭を細胞内外の場所を示すイラストと動画に替え、三重らせんがC末端からジッパーのように巻き上がることを本文で説明。§5に線維の更新の仕組みと、老化で更新が滞る要因をまとめ、動画を追加。切断・集合・架橋の補足は本文へ統合し、コラーゲン製剤の補足は肌育の章へ移動</span></li>
 <li><span class="k upd">改訂</span><a href="elastic-fibers.html">弾性線維とコラーゲン線維</a><span class="note">章題を「弾性線維とコラーゲン線維」に改め、線維の呼び方をコラーゲン線維に統一し、§1の冒頭に線維と材料タンパク質の対応表を追加。§2にコラーゲンの半減期（皮膚、約15年）とエラスチンの平均滞留時間（肺、約74年）を、測定法と限界とともに追記</span></li>
@@ -826,7 +834,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

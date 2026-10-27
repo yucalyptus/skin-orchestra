@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -707,7 +708,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h3>SASP：炎症やECMの代謝を変える分泌物</h3>
 <p>老化に伴う分泌の変化を <strong>SASP（senescence-associated secretory phenotype：老化関連分泌形質）</strong> と呼びます。</p>
 <h3>論文で出てくるSASP因子と、その働き</h3>
-<div class="tblwrap"><table><thead><tr><th>因子</th><th>種類</th><th>主な働き・論文で見ている変化</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="IL-6" data-d="炎症性サイトカインの一つで、SASPの代表的な成分。老化したfibroblastではMMPとともに上がり、真皮を分解側へ傾ける。肥大した脂肪組織と浸潤マクロファージからも出る。" data-u="glossary.html#term-732ecd5282f3">IL-6</span></strong></td><td>炎症性サイトカイン</td><td>炎症反応を調節する。炎症性SASPの指標としてよく測定される</td></tr><tr><td><strong>IL-1α・IL-1β</strong></td><td>炎症性サイトカイン</td><td>IL-6・IL-8などの産生を促し、炎症性SASPを強める。IL-1αは細胞表面で働く場合もある</td></tr><tr><td><strong>IL-8（CXCL8）</strong></td><td>ケモカイン</td><td>好中球を呼び寄せる。IL-6とともに、炎症性SASPの指標としてよく測定される</td></tr><tr><td><strong>CCL2（MCP-1）</strong></td><td>ケモカイン</td><td>単球などを呼び寄せる。免疫細胞の動員に関わる分泌の変化を見る</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75" data-p="pathways.html#s4">TGF-β</span></strong></td><td>サイトカイン・成長因子</td><td>ECM形成や組織の再構築に関わり、周囲の細胞の増殖停止を促す場合もある</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。" data-u="glossary.html#term-f1261b95fd78">MMP</span></strong></td><td>ECM分解酵素</td><td>コラーゲンなどの分解に関わる。サイトカインではないが、SASPの一部として調べられる</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>因子</th><th>種類</th><th>主な働き・論文で見ている変化</th></tr></thead><tbody><tr><td><strong><span class="term" tabindex="0" data-t="IL-6" data-d="炎症性サイトカインの一つで、SASPの代表的な成分。老化したfibroblastではMMPとともに上がり、真皮を分解側へ傾ける。肥大した脂肪組織と浸潤マクロファージからも出る。" data-u="glossary.html#term-732ecd5282f3">IL-6</span></strong></td><td>炎症性サイトカイン</td><td>炎症反応を調節する。炎症性SASPの指標としてよく測定される</td></tr><tr><td><strong>IL-1α・IL-1β</strong></td><td>炎症性サイトカイン</td><td>IL-6・IL-8などの産生を促し、炎症性SASPを強める。IL-1αは細胞表面で働く場合もある</td></tr><tr><td><strong>IL-8（CXCL8）</strong></td><td>ケモカイン</td><td>好中球を呼び寄せる。IL-6とともに、炎症性SASPの指標としてよく測定される</td></tr><tr><td><strong>CCL2（MCP-1）</strong></td><td>ケモカイン</td><td>単球などを呼び寄せる。免疫細胞の動員に関わる分泌の変化を見る</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="TGF-β" data-d="増殖期に「作らせる」側の指令。fibroblastのSMAD経路で COL1A1・COL3A1 の転写を上げる線維化のマスターサイトカイン。ECMにlatent型で繋留され、力でも活性化される。" data-u="glossary.html#term-51f087212a75" data-p="pathways.html#p-tgfb">TGF-β</span></strong></td><td>サイトカイン・成長因子</td><td>ECM形成や組織の再構築に関わり、周囲の細胞の増殖停止を促す場合もある</td></tr><tr><td><strong><span class="term" tabindex="0" data-t="MMP" data-d="ECMを分解する金属プロテアーゼ群。collagen を切って作り替えを可能にする必要な酵素であり、UV・慢性炎症で過剰・慢性化したときに正味の減少と線維の断片化を招く。" data-u="glossary.html#term-f1261b95fd78">MMP</span></strong></td><td>ECM分解酵素</td><td>コラーゲンなどの分解に関わる。サイトカインではないが、SASPの一部として調べられる</td></tr></tbody></table></div>
 <p>ケモカインは、細胞の移動を誘導するサイトカインの一群です。IL-8とCXCL8、CCL2とMCP-1は、それぞれ同じ分子の別名です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19053174/" target="_blank" rel="noopener">Coppéら, 2008</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23770676/" target="_blank" rel="noopener">Acostaら, 2013</a></p>
 <p><strong>これらは、老化細胞だけが出す物質ではありません。</strong> 免疫細胞や、炎症に反応した他の細胞からも出ます。IL-6やIL-8の増加は炎症性の分泌が増えたことを示しますが、老化細胞が増えたかは、増殖停止や<span class="term" tabindex="0" data-t="p16" data-d="主にCDK4/6を止めるCDK阻害因子。損傷の原因が消えないと蓄積し、RBを低リン酸化型に固定して停止を持続させる。ただしp16陽性というだけで老化細胞とは決められない。" data-u="glossary.html#term-c3a1e00ebc19">p16</span>・p21などと合わせて判断します。</p>
 <p>SASPの中身と量は、細胞種・刺激・経過時間で変わります。炎症性のSASPが弱い老化細胞もあります。また、IL-6などが低下しても、分泌が抑えられただけの場合があるため、老化細胞が除去されたかは別に確認します。</p>
@@ -720,9 +721,9 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <h2 id="s4">4　損傷の信号が、SASPの産生を促す</h2>
 <p>SASPの多くは、細胞が遺伝子を読み、タンパク質を合成して分泌したものです。その産生を促す経路の一つが、細胞質のDNAを検知する仕組みです。</p>
 <p>DNAは通常、核やミトコンドリアの中にあります。老化細胞では、そのDNAの一部が外へ漏れ出すことがあります。細胞はこれを異常として感知し、炎症性サイトカインの産生を増やします。<strong>DNAの漏出が、SASPを促すきっかけになるのです。</strong></p>
-<p>サイトカインを作るには、まずその遺伝子を読み取り、mRNAを作る必要があります。この読み取りを調節するタンパク質が <strong>転写因子</strong> です。<strong><span class="term" tabindex="0" data-t="NF-κB" data-d="炎症の中心的な転写因子。DAMPsやAGE–RAGEなどの入力を炎症性サイトカインの転写へ変え、SASPの炎症成分も駆動する。始まるだけでなく、確実に終わることまで含めて正常。" data-u="glossary.html#term-1533efdfddd2" data-p="pathways.html#s5">NF-κB</span>・C/EBPβ</strong> は、IL-6やIL-8などの産生に関わる遺伝子の働きを高め、炎症性SASPを促します。</p>
+<p>サイトカインを作るには、まずその遺伝子を読み取り、mRNAを作る必要があります。この読み取りを調節するタンパク質が <strong>転写因子</strong> です。<strong><span class="term" tabindex="0" data-t="NF-κB" data-d="炎症の中心的な転写因子。DAMPsやAGE–RAGEなどの入力を炎症性サイトカインの転写へ変え、SASPの炎症成分も駆動する。始まるだけでなく、確実に終わることまで含めて正常。" data-u="glossary.html#term-1533efdfddd2" data-p="pathways.html#p-nfkb">NF-κB</span>・C/EBPβ</strong> は、IL-6やIL-8などの産生に関わる遺伝子の働きを高め、炎症性SASPを促します。</p>
 <p>論文の「NF-κBの活性化」は、炎症に関わる遺伝子を働かせる仕組みが動いた、という意味です。NF-κB・C/EBPβは老化以外の炎症反応でも働きます。</p>
-<p><strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#s1">mTORC1</span></strong> は、mRNAをもとにSASP関連のタンパク質を作る段階（翻訳）を促します（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
+<p><strong><span class="term" tabindex="0" data-t="mTOR・mTORC1" data-d="mTORはキナーゼで、mTORC1はmTORを含む酵素複合体。mTORC1はアミノ酸・成長刺激・エネルギーの状態を受け取り、タンパク質合成とautophagyを調節する。アミノ酸の情報を受けるとRagを介してlysosome表面へ移動し、Rhebによって活性が高まる。S6K・4E-BP1を介して翻訳を促し、ULK1を介してautophagyを抑える。" data-u="glossary.html#term-87c3fdd53b8e" data-p="pathways.html#p-mtor">mTORC1</span></strong> は、mRNAをもとにSASP関連のタンパク質を作る段階（翻訳）を促します（→ <a class="chref" href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>）。</p>
 <h2 id="s5">5　免疫による除去が追いつかないと、蓄積する</h2>
 <p>免疫系は老化細胞の除去に関わります。SASPに含まれるケモカインも、免疫細胞を局所へ呼び寄せます。</p>
 <ul><li><strong>NK細胞</strong>は、老化細胞の表面に増えるストレスの目印を認識して攻撃します。NKG2D受容体と、そのリガンドであるMICA/MICBなどが関わります。</li><li><strong><span class="term" tabindex="0" data-t="macrophage" data-d="異物・微生物・死んだ細胞を貪食し、cytokineで炎症の開始・収束・修復を調節する細胞。組織に常在するものと、損傷後に血中のmonocyteから加わるものがある。掃除役であると同時に、次の反応を決める指令役。" data-u="glossary.html#term-b0ae25055c3d">マクロファージ</span></strong>は、貪食や他の免疫細胞との連携を通じて除去に関わります。</li><li><strong>T細胞</strong>も、老化細胞の認識と除去を担う場合があります。</li></ul>
@@ -759,7 +760,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

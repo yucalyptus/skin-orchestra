@@ -146,6 +146,7 @@ figure.book-video{margin:36px 0;counter-increment:vid}
 .book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
 .book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
 .book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
 .figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
 font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
 .figslot .fs-icon{display:none}
@@ -624,8 +625,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
 <div class="sec">美容皮膚科</div>
 <div class="part">組織の生化学</div>
-<a href="epidermis.html">表皮とターンオーバー</a>
-<a href="melanocytes.html">メラノサイトと色素形成</a>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
 <a href="ecm.html">細胞外基質（ECM）</a>
 <a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
 <a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
@@ -652,15 +653,8 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">レチノイド外用の生化学<em>準備中</em></span>
 <span class="soon">美白外用の生化学<em>準備中</em></span>
 <span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
-<div class="part">注射</div>
-<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
-<span class="soon">バイオスティミュレーター<em>準備中</em></span>
-<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
-<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
-<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
-<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="part">デバイス</div>
-<span class="soon">熱・光・機械刺激<em>準備中</em></span>
+<a href="energy-devices.html">デバイス治療の基本<span class="badge bnew">NEW</span></a>
 <span class="soon">ニードルRFの生化学<em>準備中</em></span>
 <span class="soon">HIFUの生化学<em>準備中</em></span>
 <span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
@@ -671,6 +665,13 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
 <span class="soon">プラズマ治療<em>準備中</em></span>
 <span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
 <div class="sec">美容内科</div>
 <span class="soon">皮膚と全身のつながり<em>準備中</em></span>
 <span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
@@ -710,7 +711,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p>EVは、表面の分子が相手の細胞の受容体に作用し、細胞内のシグナルを変えることがあります。この作用では、EVの内容物を細胞内へ渡す必要はありません。</p>
 <p>別の経路として、EVの内容物が相手の細胞内へ届き、働く場合があります。EVは、細胞膜で包み込む<strong>エンドサイトーシス</strong>によって取り込まれることがあります。その場合、EVはまず相手の細胞のエンドソームに入り、細胞質とは膜で隔てられています。</p>
 <figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/extracellular-vesicles_近隣細胞への作用.webp" alt="EVが近隣細胞に作用する2つの経路。" width="1536" height="1024" loading="lazy"><figcaption>EVが近隣細胞に作用する2つの経路。上は表面の分子が受容体に作用する経路、下はエンドサイトーシスで取り込まれる経路。破線は内容物が細胞質へ届く場合を示し、その成立は条件によって異なる。細胞・小胞・分子の大きさは模式的。</figcaption></figure>
-<p>表面からの作用の例として、細胞の分化や増殖に関わる<strong><span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#s8">Wnt</span></strong>というシグナル分子があります。培養細胞などを用いた研究では、小胞の表面にあるWntが相手の細胞のシグナルを活性化しました（<a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">Grossら, 2012</a>）。受容体から細胞内へ情報を伝える基本は<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>で扱います。</p>
+<p>表面からの作用の例として、細胞の分化や増殖に関わる<strong><span class="term" tabindex="0" data-t="Wnt" data-d="細胞外から働くシグナルタンパク質群。受容体に結合するとβ-cateninの分解が抑えられ、核でTCF/LEFとともに遺伝子発現を調節する。皮膚では毛包の形成と毛周期の調節に関わる。" data-u="glossary.html#term-3eb0fd899ae9" data-p="pathways.html#p-wnt">Wnt</span></strong>というシグナル分子があります。培養細胞などを用いた研究では、小胞の表面にあるWntが相手の細胞のシグナルを活性化しました（<a class="ext" href="https://doi.org/10.1038/ncb2574" target="_blank" rel="noopener">Grossら, 2012</a>）。受容体から細胞内へ情報を伝える基本は<a class="chref" href="receptors-signaling.html">受容体と細胞内シグナル</a>で扱います。</p>
 <h3>取り込まれることと、中身が働くことは違う</h3>
 <p>たとえばmiRNAが細胞質のmRNAに作用するには、EVから出て、さらにエンドソームの膜を越えて細胞質へ届く必要があります。取り込まれたEVがリソソームで分解されることもあります。<strong>細胞内に小胞が見えたことだけでは、内容物が働いたとは言えません</strong>。</p>
 <p>培養細胞で、EVの内容物が細胞質へ届く過程を測定した研究があります。一方、別の培養実験では、EVが細胞に結合しても、miRNAによる遺伝子発現の変化は検出されませんでした。結果は小胞や受け取る細胞、実験条件によって異なります（<a class="ext" href="https://doi.org/10.1038/s41467-021-22126-y" target="_blank" rel="noopener">Bonsergentら, 2021</a>・<a class="ext" href="https://doi.org/10.1371/journal.pgen.1009951" target="_blank" rel="noopener">Albaneseら, 2021</a>）。</p>
@@ -738,7 +739,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-22 ／ 版 eabc10d</p>
+<p class="stamp">最終更新 2026-10-27 ／ 版 5f26751</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>

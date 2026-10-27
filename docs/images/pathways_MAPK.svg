@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520" role="img" aria-labelledby="title"><title id="title">MAPK：成長とストレスで使い分ける3段の連鎖</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker>
+<marker id="bar" viewBox="0 0 5 22" refX="2.5" refY="11" markerWidth="5" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto"><rect x="0" y="0" width="5" height="22" fill="#a34b40"/></marker></defs>
+<rect width="1040" height="520" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<rect x="10" y="60" width="1020" height="410" rx="16" fill="#f2f4f7" stroke="#c5cdd6" stroke-width="2"/>
+<text x="28" y="90" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">細胞内</text>
+<text x="420" y="40" text-anchor="middle" font-size="18" fill="#64748b" font-weight="600">MAP3K</text>
+<text x="600" y="40" text-anchor="middle" font-size="18" fill="#64748b" font-weight="600">MAP2K</text>
+<text x="780" y="40" text-anchor="middle" font-size="18" fill="#64748b" font-weight="600">MAPK</text>
+<path d="M340 50 L860 50" stroke="#64748b" stroke-width="1.5" fill="none"/>
+<text x="330" y="44" text-anchor="end" font-size="16" fill="#64748b" font-weight="400">3段のkinase：</text>
+<text x="40" y="138" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">成長因子（EGFなど）</text>
+<path d="M120 150 L120 176" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="60" y="180" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="120.0" y="209.84" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">受容体</text>
+<path d="M180 203 L226 203" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="230" y="180" width="90" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="275.0" y="209.84" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">Ras</text>
+<path d="M320 203 L356 203" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="360" y="180" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="420.0" y="210.2" text-anchor="middle" font-size="20" fill="#1c1d23" font-weight="400">Raf</text>
+<path d="M480 203 L536 203" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="540" y="180" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="600.0" y="210.2" text-anchor="middle" font-size="20" fill="#1c1d23" font-weight="400">MEK</text>
+<path d="M660 203 L716 203" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="720" y="176" width="120" height="54" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="780.0" y="210.92" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="600">ERK</text>
+<path d="M840 203 L866 203" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="876" y="198" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">増殖・分化</text>
+<text x="876" y="222" text-anchor="start" font-size="14" fill="#64748b" font-weight="400">核の転写因子など</text>
+<text x="40" y="300" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">紫外線・酸化ストレス</text>
+<text x="40" y="326" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">炎症性サイトカイン</text>
+<path d="M240 340 L356 360" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="360" y="340" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="420.0" y="369.84" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">MAP3K</text>
+<path d="M480 352 L536 320" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M480 374 L536 410" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="540" y="296" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="600.0" y="325.84" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">MKK4/7</text>
+<rect x="540" y="388" width="120" height="46" rx="12" fill="white" stroke="#1d4f91" stroke-width="2"/>
+<text x="600.0" y="417.84" text-anchor="middle" font-size="19" fill="#1c1d23" font-weight="400">MKK3/6</text>
+<path d="M660 319 L716 319" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M660 411 L716 411" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="720" y="292" width="120" height="54" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="780.0" y="326.92" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="600">JNK</text>
+<rect x="720" y="384" width="120" height="54" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="780.0" y="418.92" text-anchor="middle" font-size="22" fill="#1c1d23" font-weight="600">p38</text>
+<path d="M840 319 L866 319" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="876" y="312" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">c-Jun（AP-1）</text>
+<text x="876" y="336" text-anchor="start" font-size="14" fill="#64748b" font-weight="400">MMPなどの発現</text>
+<path d="M840 411 L866 411" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="876" y="404" text-anchor="start" font-size="19" fill="#1c1d23" font-weight="400">炎症性物質の産生</text>
+<text x="876" y="428" text-anchor="start" font-size="14" fill="#64748b" font-weight="400">ストレスへの応答</text>
+<path d="M36 492 L80 492" fill="none" stroke="#1d4f91" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="90" y="498" text-anchor="start" font-size="16" fill="#64748b" font-weight="400">信号を伝える（リン酸化など）</text>
+</g></svg>
