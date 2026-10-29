@@ -705,11 +705,11 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><strong>LASERは、Light Amplification by Stimulated Emission of Radiation（誘導放出による光増幅）の略です。</strong> レーザーはほぼ単一の波長の光を用い、その波長の吸収特性を利用して標的を狙います。一方、<strong>IPL（intense pulsed light）は、フラッシュランプが発する幅広い波長帯の光</strong>を用います。フィルターで通す波長帯を選び、色素や血管などの標的に合わせます。<a class="ext" href="https://www.fda.gov/radiation-emitting-products/surgical-and-therapeutic-products/medical-lasers" target="_blank" rel="noopener">FDA：Medical Lasers</a></p>
 <h3>光は、吸収した物質のある場所で熱になる</h3>
 <p>皮膚の中で光を吸収する物質を<strong>クロモフォア</strong>と呼びます。美容の治療で主に狙うのは、メラニン・ヘモグロビン・水の3つです。光を吸収したクロモフォアのある場所が熱くなるので、吸収体の位置と熱の広がりによって、影響を受ける細胞や<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>が変わります。</p>
-<div class="tblwrap"><table><thead><tr><th>クロモフォア</th><th>よく吸収する光</th><th>熱を受ける細胞</th></tr></thead><tbody><tr><td><strong>メラニン</strong></td><td>短い波長ほど強く吸収し、長い波長ほど弱くなる</td><td>メラノサイトと、メラニンを受け取った角化細胞</td></tr><tr><td><strong>ヘモグロビン</strong></td><td>酸素と結びついたヘモグロビン（主に動脈側の血液）は、414・542・576 nm付近で強く吸収する。酸素を離したヘモグロビン（静脈血に多い）は、433・555 nm付近に吸収のピークがあり、755 nm付近では酸素と結びついたものの約3倍吸収する</td><td>血管（赤血球と、その周りの血管の壁）</td></tr><tr><td><strong>水</strong></td><td>近赤外から赤外（1450・1940・2940 nm、10600 nm）で強く吸収する</td><td>照射した範囲の細胞全体</td></tr></tbody></table></div>
+<div class="tblwrap"><table><thead><tr><th>クロモフォア</th><th>よく吸収する光</th><th>熱を受ける細胞</th></tr></thead><tbody><tr><td><strong>メラニン</strong></td><td>短い波長ほど強く吸収し、長い波長ほど弱くなる</td><td>メラノサイトと、メラニンを受け取った角化細胞</td></tr><tr><td><strong>ヘモグロビン</strong></td><td>酸素と結びついたヘモグロビンは、414・542・576 nm付近で強く吸収する</td><td>血管（赤血球と、その周りの血管の壁）</td></tr><tr><td><strong>水</strong></td><td>近赤外から赤外（1450・1940・2940 nm、10600 nm）で強く吸収する</td><td>照射した範囲の細胞全体</td></tr></tbody></table></div>
 <p>（ヘモグロビンと水の吸収は、<a class="ext" href="https://omlc.org/spectra/hemoglobin/summary.html" target="_blank" rel="noopener">ヘモグロビンの吸収スペクトル</a>、<a class="ext" href="https://omlc.org/spectra/water/data/hale73.txt" target="_blank" rel="noopener">水の吸収スペクトル</a>による）</p>
 <h4>吸収曲線から、波長を選ぶ理由を読む</h4>
 <p>吸収曲線は、横軸に波長、縦軸に光の吸収の強さを示します。ここでは<strong>吸収係数</strong>を使い、値が大きいほど、短い距離で多くの光が吸収されることを表します。縦軸は対数目盛なので、等間隔でも値は一定の倍率で増えます。</p>
-<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_吸収曲線_可視近赤外_v3.svg" alt="可視〜近赤外の吸収スペクトル。" width="504.0" height="403.2" loading="lazy"><figcaption>可視〜近赤外の吸収スペクトル。縦軸は対数目盛、下段の●は代表的な治療標的です。532 nm：KTP・Nd:YAG、595 nm：色素（ダイ）、694 nm：ルビー、755 nm：アレキサンドライト、810 nm：ダイオードの代表例、1064 nm：Nd:YAG。色素レーザーには585 nmもあります。</figcaption></figure>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_吸収曲線_可視近赤外_v3.svg" alt="可視〜近赤外の吸収スペクトル。" width="504.0" height="403.2" loading="lazy"><figcaption>可視〜近赤外の吸収スペクトル。縦軸は対数目盛、下段の●は代表的な治療標的です。532 nm：KTP・Nd:YAG、595 nm：色素（ダイ）、694 nm：ルビー、755 nm：アレキサンドライト、810 nm：ダイオードの代表例、1064 nm：Nd:YAG。色素レーザーには585 nmもあります。ヘモグロビンの2本の曲線のうち、酸素を離したヘモグロビン（静脈血に多い）は、酸素と結びついたものとピークの位置が少しずれます。</figcaption></figure>
 <p><strong>同じ波長でも、複数のクロモフォアが光を吸収します。</strong> 532 nmはメラニンにもヘモグロビンにも吸収されるため、色素治療と血管治療の両方に使われます。</p>
 <p><strong>1064 nmも、メラニンを狙う色素治療と、血液の吸収を利用する血管治療の両方に使われます。</strong> 可視域の強い吸収帯に比べると吸収は弱いものの、光が深く届きやすいことを利用します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2746004/" target="_blank" rel="noopener">Andersonら, 1989</a>、<a class="ext" href="https://jamanetwork.com/journals/jamadermatology/fullarticle/478337" target="_blank" rel="noopener">Sadickら, 2001</a></p>
 <p>実際の皮膚でどれだけ光が吸収されるかは、吸収体の量と位置、散乱、標的の深さによって変わります。</p>
@@ -795,7 +795,7 @@ width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important
 <p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
 <p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
 </section>
-<p class="stamp">最終更新 2026-10-29 ／ 版 f7f691dd</p>
+<p class="stamp">最終更新 2026-10-29 ／ 版 0e2c12fb</p>
 <div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
 </footer>
 </div></main></div>
