@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="580" viewBox="0 0 1100 580" role="img" aria-labelledby="title"><title id="title">イオンが行き来して、ぶつかった分が熱になる（動く図）</title>
+<style>
+@keyframes pos {0%,100%{transform:translateX(-26px)} 50%{transform:translateX(26px)}}
+@keyframes neg {0%,100%{transform:translateX(26px)} 50%{transform:translateX(-26px)}}
+@keyframes heat {0%,20%,55%,70%,100%{opacity:0} 30%,45%,80%,95%{opacity:1}}
+@keyframes sa {0%,49.9%{opacity:1} 50%,100%{opacity:0}}
+@keyframes sb {0%,49.9%{opacity:0} 50%,100%{opacity:1}}
+.p{animation:pos 2.4s ease-in-out infinite} .n{animation:neg 2.4s ease-in-out infinite}
+.h{animation:heat 2.4s linear infinite} .a{animation:sa 2.4s steps(1) infinite} .b{animation:sb 2.4s steps(1) infinite;opacity:0}
+@media (prefers-reduced-motion: reduce){.p,.n,.h,.a,.b{animation:none}.h{opacity:1}}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker>
+<defs><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker></defs>
+<marker id="bar" viewBox="0 0 5 22" refX="2.5" refY="11" markerWidth="5" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto"><rect x="0" y="0" width="5" height="22" fill="#a34b40"/></marker></defs>
+<rect width="1100" height="580" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<rect x="60" y="80" width="26" height="300" rx="4" fill="#475569"/><rect x="1014" y="80" width="26" height="300" rx="4" fill="#475569"/>
+<g class="a"><text x="73" y="60" text-anchor="middle" font-size="30" fill="#1d4f91" font-weight="700">＋</text></g><g class="b"><text x="73" y="60" text-anchor="middle" font-size="30" fill="#1d4f91" font-weight="700">−</text></g>
+<g class="a"><text x="1027" y="60" text-anchor="middle" font-size="30" fill="#1d4f91" font-weight="700">−</text></g><g class="b"><text x="1027" y="60" text-anchor="middle" font-size="30" fill="#1d4f91" font-weight="700">＋</text></g>
+<text x="73" y="410" text-anchor="middle" font-size="18" fill="#1c1d23" font-weight="400">電極</text>
+<text x="1027" y="410" text-anchor="middle" font-size="18" fill="#1c1d23" font-weight="400">電極</text>
+<rect x="100" y="80" width="900" height="300" fill="#f2f4f7" stroke="#c5cdd6"/>
+<text x="550" y="50" text-anchor="middle" font-size="19" fill="#1d4f91" font-weight="600">電極の＋と−が、1秒間に数十万〜数千万回入れ替わる（図はゆっくり再生）</text>
+<circle cx="325" cy="241" r="6" fill="#cbd5e1"/>
+<circle cx="438" cy="257" r="6" fill="#cbd5e1"/>
+<circle cx="658" cy="117" r="6" fill="#cbd5e1"/>
+<circle cx="131" cy="318" r="6" fill="#cbd5e1"/>
+<circle cx="343" cy="161" r="6" fill="#cbd5e1"/>
+<circle cx="976" cy="222" r="6" fill="#cbd5e1"/>
+<circle cx="839" cy="224" r="6" fill="#cbd5e1"/>
+<circle cx="670" cy="139" r="6" fill="#cbd5e1"/>
+<circle cx="666" cy="326" r="6" fill="#cbd5e1"/>
+<circle cx="570" cy="293" r="6" fill="#cbd5e1"/>
+<circle cx="697" cy="117" r="6" fill="#cbd5e1"/>
+<circle cx="772" cy="254" r="6" fill="#cbd5e1"/>
+<circle cx="379" cy="108" r="6" fill="#cbd5e1"/>
+<circle cx="864" cy="223" r="6" fill="#cbd5e1"/>
+<circle cx="738" cy="328" r="6" fill="#cbd5e1"/>
+<circle cx="734" cy="339" r="6" fill="#cbd5e1"/>
+<circle cx="460" cy="308" r="6" fill="#cbd5e1"/>
+<circle cx="502" cy="343" r="6" fill="#cbd5e1"/>
+<circle cx="876" cy="125" r="6" fill="#cbd5e1"/>
+<circle cx="237" cy="156" r="6" fill="#cbd5e1"/>
+<circle cx="950" cy="213" r="6" fill="#cbd5e1"/>
+<circle cx="659" cy="178" r="6" fill="#cbd5e1"/>
+<circle cx="556" cy="200" r="6" fill="#cbd5e1"/>
+<circle cx="422" cy="252" r="6" fill="#cbd5e1"/>
+<circle cx="622" cy="335" r="6" fill="#cbd5e1"/>
+<circle cx="707" cy="342" r="6" fill="#cbd5e1"/>
+<circle cx="857" cy="358" r="6" fill="#cbd5e1"/>
+<circle cx="697" cy="142" r="6" fill="#cbd5e1"/>
+<circle cx="860" cy="351" r="6" fill="#cbd5e1"/>
+<circle cx="898" cy="248" r="6" fill="#cbd5e1"/>
+<circle cx="734" cy="155" r="6" fill="#cbd5e1"/>
+<circle cx="835" cy="249" r="6" fill="#cbd5e1"/>
+<circle cx="365" cy="116" r="6" fill="#cbd5e1"/>
+<circle cx="854" cy="357" r="6" fill="#cbd5e1"/>
+<circle cx="196" cy="308" r="6" fill="#cbd5e1"/>
+<circle cx="473" cy="139" r="6" fill="#cbd5e1"/>
+<circle cx="373" cy="300" r="6" fill="#cbd5e1"/>
+<circle cx="871" cy="111" r="6" fill="#cbd5e1"/>
+<circle cx="648" cy="112" r="6" fill="#cbd5e1"/>
+<circle cx="738" cy="186" r="6" fill="#cbd5e1"/>
+<circle cx="878" cy="355" r="6" fill="#cbd5e1"/>
+<circle cx="555" cy="360" r="6" fill="#cbd5e1"/>
+<circle cx="386" cy="120" r="6" fill="#cbd5e1"/>
+<circle cx="636" cy="108" r="6" fill="#cbd5e1"/>
+<circle cx="290" cy="206" r="6" fill="#cbd5e1"/>
+<circle cx="645" cy="141" r="6" fill="#cbd5e1"/>
+<circle cx="156" cy="326" r="6" fill="#cbd5e1"/>
+<circle cx="390" cy="349" r="6" fill="#cbd5e1"/>
+<circle cx="891" cy="198" r="6" fill="#cbd5e1"/>
+<circle cx="516" cy="235" r="6" fill="#cbd5e1"/>
+<circle cx="674" cy="255" r="6" fill="#cbd5e1"/>
+<circle cx="601" cy="261" r="6" fill="#cbd5e1"/>
+<circle cx="929" cy="232" r="6" fill="#cbd5e1"/>
+<circle cx="491" cy="287" r="6" fill="#cbd5e1"/>
+<circle cx="324" cy="178" r="6" fill="#cbd5e1"/>
+<circle cx="961" cy="235" r="6" fill="#cbd5e1"/>
+<circle cx="592" cy="103" r="6" fill="#cbd5e1"/>
+<circle cx="477" cy="251" r="6" fill="#cbd5e1"/>
+<circle cx="137" cy="260" r="6" fill="#cbd5e1"/>
+<circle cx="664" cy="116" r="6" fill="#cbd5e1"/>
+<circle cx="660" cy="221" r="6" fill="#cbd5e1"/>
+<circle cx="704" cy="192" r="6" fill="#cbd5e1"/>
+<circle cx="728" cy="292" r="6" fill="#cbd5e1"/>
+<circle cx="139" cy="116" r="6" fill="#cbd5e1"/>
+<circle cx="701" cy="350" r="6" fill="#cbd5e1"/>
+<circle cx="336" cy="219" r="6" fill="#cbd5e1"/>
+<circle cx="630" cy="183" r="6" fill="#cbd5e1"/>
+<circle cx="433" cy="181" r="6" fill="#cbd5e1"/>
+<circle cx="437" cy="255" r="6" fill="#cbd5e1"/>
+<circle cx="378" cy="198" r="6" fill="#cbd5e1"/>
+<path d="M180 150 L260 150" stroke="#1d4f91" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="p"><circle cx="220" cy="150" r="15" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="220" y="157" text-anchor="middle" font-size="20" fill="#1d4f91" font-weight="700">+</text></g>
+<g class="h"><path d="M167 130 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M177 130 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M263 130 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M273 130 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M290 280 L370 280" stroke="#475569" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="n"><circle cx="330" cy="280" r="15" fill="white" stroke="#475569" stroke-width="2.5"/><text x="330" y="287" text-anchor="middle" font-size="20" fill="#475569" font-weight="700">−</text></g>
+<g class="h"><path d="M277 260 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M287 260 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M373 260 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M383 260 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M430 180 L510 180" stroke="#1d4f91" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="p"><circle cx="470" cy="180" r="15" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="470" y="187" text-anchor="middle" font-size="20" fill="#1d4f91" font-weight="700">+</text></g>
+<g class="h"><path d="M417 160 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M427 160 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M513 160 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M523 160 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M560 310 L640 310" stroke="#475569" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="n"><circle cx="600" cy="310" r="15" fill="white" stroke="#475569" stroke-width="2.5"/><text x="600" y="317" text-anchor="middle" font-size="20" fill="#475569" font-weight="700">−</text></g>
+<g class="h"><path d="M547 290 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M557 290 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M643 290 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M653 290 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M680 140 L760 140" stroke="#1d4f91" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="p"><circle cx="720" cy="140" r="15" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="720" y="147" text-anchor="middle" font-size="20" fill="#1d4f91" font-weight="700">+</text></g>
+<g class="h"><path d="M667 120 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M677 120 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M763 120 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M773 120 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M800 250 L880 250" stroke="#475569" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="n"><circle cx="840" cy="250" r="15" fill="white" stroke="#475569" stroke-width="2.5"/><text x="840" y="257" text-anchor="middle" font-size="20" fill="#475569" font-weight="700">−</text></g>
+<g class="h"><path d="M787 230 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M797 230 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M883 230 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M893 230 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M890 340 L970 340" stroke="#1d4f91" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="p"><circle cx="930" cy="340" r="15" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="930" y="347" text-anchor="middle" font-size="20" fill="#1d4f91" font-weight="700">+</text></g>
+<g class="h"><path d="M877 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M887 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M973 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M983 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M220 340 L300 340" stroke="#1d4f91" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="p"><circle cx="260" cy="340" r="15" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="260" y="347" text-anchor="middle" font-size="20" fill="#1d4f91" font-weight="700">+</text></g>
+<g class="h"><path d="M207 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M217 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M303 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M313 320 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<path d="M520 120 L600 120" stroke="#475569" stroke-opacity="0.25" stroke-width="2" fill="none"/>
+<g class="n"><circle cx="560" cy="120" r="15" fill="white" stroke="#475569" stroke-width="2.5"/><text x="560" y="127" text-anchor="middle" font-size="20" fill="#475569" font-weight="700">−</text></g>
+<g class="h"><path d="M507 100 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M517 100 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<g class="h"><path d="M603 100 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/><path d="M613 100 q 5 -7 0 -14 q -5 -7 0 -14" fill="none" stroke="#a34b40" stroke-width="2.5"/></g>
+<circle cx="130" cy="430" r="12" fill="white" stroke="#1d4f91" stroke-width="2.5"/><text x="130" y="436" text-anchor="middle" font-size="16" fill="#1d4f91" font-weight="700">+</text><text x="152" y="436" text-anchor="start" font-size="17" fill="#1c1d23" font-weight="400">Na⁺など</text>
+<circle cx="270" cy="430" r="12" fill="white" stroke="#475569" stroke-width="2.5"/><text x="270" y="436" text-anchor="middle" font-size="16" fill="#475569" font-weight="700">−</text><text x="292" y="436" text-anchor="start" font-size="17" fill="#1c1d23" font-weight="400">Cl⁻など</text>
+<circle cx="410" cy="430" r="6" fill="#cbd5e1"/><text x="424" y="436" text-anchor="start" font-size="17" fill="#1c1d23" font-weight="400">水分子</text>
+<path d="M520 440 q 6 -8 0 -16 q -6 -8 0 -16" fill="none" stroke="#a34b40" stroke-width="2.5"/><text x="536" y="436" text-anchor="start" font-size="17" fill="#1c1d23" font-weight="400">ぶつかって生じた熱</text>
+<text x="720" y="436" text-anchor="start" font-size="17" fill="#64748b" font-weight="400">＋イオンと−イオンは逆向きに動く</text>
+<rect x="100" y="465" width="900" height="90" rx="12" fill="white" stroke="#1d4f91" stroke-width="3"/>
+<text x="550.0" y="506.0" text-anchor="middle" font-size="24" fill="#1c1d23" font-weight="600">熱は、電流が流れ、しかも抵抗がある場所で生じる</text>
+<text x="550.0" y="532.0" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">同じ電流なら電流を通しにくい組織、同じ電圧なら電流を通しやすい組織が強く熱くなる</text>
+</g></svg>

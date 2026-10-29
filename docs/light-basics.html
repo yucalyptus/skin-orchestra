@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>レーザー・光治療の基本 ― 生化学で見る美容医療</title>
+<meta name="description" content="レーザー・光治療では、標的に十分な作用を与えながら、周囲組織への損傷を抑えるように照射条件を組み合わせます。 波長はクロモフォア（光を吸収する物質）への吸収と到達深度に、パルス幅は熱の広がりや光機械作用に、フルエンス（単…">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/light-basics.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="レーザー・光治療の基本 ― 生化学で見る美容医療">
+<meta property="og:description" content="レーザー・光治療では、標的に十分な作用を与えながら、周囲組織への損傷を抑えるように照射条件を組み合わせます。 波長はクロモフォア（光を吸収する物質）への吸収と到達深度に、パルス幅は熱の広がりや光機械作用に、フルエンス（単…">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/light-basics.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/light-basics_波長.svg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig vid}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+figure.book-video{margin:36px 0;counter-increment:vid}
+.book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+.book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border:0;font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border:0;font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   見出しと薄い背景で補足のまとまりを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border:0;border-radius:4px;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<a href="pathways.html">シグナル伝達経路</a>
+<div class="sec">生化学・細胞生物学の基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か</a>
+<a href="organelles.html">オルガネラ</a>
+<a href="cell-types.html">オルガネラはどう連携するか</a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
+<a href="epigenome.html">エピゲノム</a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="extracellular-vesicles.html">細胞外小胞とエクソソーム</a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP</a>
+<a href="glycolysis.html">解糖系<span class="badge bupd">更新</span></a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体<span class="badge bupd">更新</span></a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
+<div class="part">材料を感知し作る</div>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
+<div class="part">掃除と作り直し</div>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>
+<div class="part">傷害から修復まで</div>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化<span class="badge bupd">更新</span></a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒</a>
+<span class="soon">紫外線に対する皮膚の反応<em>準備中</em></span>
+<div class="part">細胞は加齢で何が変わるか</div>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン<span class="badge bupd">更新</span></a>
+<a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
+<a href="hair-follicle.html">毛と毛包</a>
+<a href="adipose.html">脂肪</a>
+<a href="muscle.html">筋肉<span class="badge bupd">更新</span></a>
+<a href="endothelium.html">血管と内皮</a>
+<div class="part">訴えを細胞から読み解く</div>
+<a href="erythema.html">赤みの生化学</a>
+<a href="pigmentation.html">しみとくすみ</a>
+<a href="sagging.html">たるみの多層構造</a>
+<div class="part">疾患・病態を細胞から理解する</div>
+<a href="rosacea.html">酒さ</a>
+<a href="seborrheic-dermatitis.html">脂漏性皮膚炎<span class="badge bupd">更新</span></a>
+<a href="acne.html">尋常性痤瘡<span class="badge bnew">NEW</span></a>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<a href="melasma.html">肝斑<span class="badge bupd">更新</span></a>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
+<div class="part">外用</div>
+<span class="soon">角層バリアと経皮吸収<em>準備中</em></span>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<span class="soon">美白外用の生化学<em>準備中</em></span>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">デバイス</div>
+<a href="energy-devices.html">デバイスによる熱治療<span class="badge bupd">更新</span></a>
+<a href="light-basics.html" class="active">レーザー・光治療の基本<span class="badge bnew">NEW</span></a>
+<a href="rf.html">RFの生化学<span class="badge bnew">NEW</span></a>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<span class="soon">導入<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">皮膚と全身のつながり<em>準備中</em></span>
+<span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
+<span class="soon">高血糖・インスリン抵抗性と皮膚<em>準備中</em></span>
+<span class="soon">睡眠・体内時計と皮膚<em>準備中</em></span>
+<span class="soon">ストレスと皮膚<em>準備中</em></span>
+<span class="soon">運動・筋肉と皮膚<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter" data-chapter="light-basics">
+<p class="kicker">美容皮膚科　／　デバイス</p>
+<h1 class="ch-title">レーザー・光治療の基本<small>クロモフォアと選択的光熱融解</small></h1>
+<p class="dateline">公開 2026-10-29</p>
+<p>この章では、紫外線・可視光線・赤外線の違いから始め、光が皮膚に吸収され、熱や機械的な作用を起こすまでをつなげます。熱による細胞の傷害と修復は<a class="chref" href="energy-devices.html">デバイスによる熱治療</a>で扱います。</p>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>レーザー・光治療では、標的に十分な作用を与えながら、周囲組織への損傷を抑えるように照射条件を組み合わせます。</strong> 波長はクロモフォア（光を吸収する物質）への吸収と到達深度に、パルス幅は熱の広がりや光機械作用に、フルエンス（単位面積あたりの照射エネルギー）は標的に与えるエネルギー量に関わります。同じ波長でも、これらの条件によって組織に起こる変化は異なります。</blockquote>
+<h2>照射条件の全体像</h2>
+<p>レーザー・光治療の作用を考えるときは、次の条件を組み合わせます。波長から順に、それぞれが何を変えるかを見ていきます。</p>
+<div class="tblwrap"><table><thead><tr><th>条件</th><th>何を表すか</th><th>組織への作用を考えるポイント</th></tr></thead><tbody><tr><td><strong>波長</strong></td><td>光の種類を表す指標（nm）。波長によって、吸収されやすい物質や皮膚への届き方が異なる</td><td>何に吸収され、どの深さまで届くか</td></tr><tr><td><strong>パルス幅</strong></td><td>1回の照射で光が出ている時間（ms・ns・ps）</td><td>照射中に熱や圧力がどの程度広がるか</td></tr><tr><td><strong>エネルギー・パワー</strong></td><td>エネルギーは与える総量（J）、パワーは単位時間あたりに与える量（W）</td><td>標的へ与えるエネルギー量と、与える速さ</td></tr><tr><td><strong>スポット径</strong></td><td>皮膚に照射する光の直径（mm）。エネルギーを照射面積で割った値がフルエンス（J/cm²）</td><td>同じエネルギー（J）なら、小さいほどフルエンスが高くなる。同じ波長・同じフルエンスなら、大きいほど深部へ光が届きやすい</td></tr><tr><td><strong>繰り返し周波数・照射間隔</strong></td><td>周波数は1秒あたりのパルス数（Hz）、照射間隔は次のパルスまでの時間</td><td>同じ部位に熱が蓄積するか、次の照射までに冷めるか</td></tr><tr><td><strong>冷却</strong></td><td>照射前・照射中・照射後に皮膚から熱を逃がすこと</td><td>表皮の熱損傷を抑えながら、標的に作用させる</td></tr></tbody></table></div>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　波長：何に吸収され、どこまで届くか</a></li><li><a href="#s2">2　パルス幅：熱と圧力が広がる時間を考える</a></li><li><a href="#s3">3　エネルギー・パワーとスポット径：どれだけ、どの面積に与えるか</a></li><li><a href="#s4">4　繰り返し周波数：何発を、どの間隔で与えるか</a></li><li><a href="#s5">5　冷却：表皮を守りながら標的を加熱する</a></li></ul></nav><h2 id="s1">1　波長：何に吸収され、どこまで届くか</h2>
+<p>光は<strong>電磁波</strong>の一種です。波の山から次の山までの距離を<strong>波長</strong>といいます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_波長.svg" alt="紫外線・可視光線・赤外線の並び。" width="900.0" height="440.0" loading="lazy"><figcaption>紫外線・可視光線・赤外線の並び。可視光線は短い波長側の紫から長い波長側の赤へと変わります。波長の範囲と治療波長の位置関係を示す模式図で、横幅は波長に比例しません。</figcaption></figure>
+<p>波長の短い側から、<strong>紫外線・可視光線・赤外線</strong>と並びます。可視光線の範囲はおよそ400〜700 nmで、短い側は紫、長い側は赤として見えます。境界は概略で、厳密な区分は定義によって異なります。紫外線と赤外線は目には見えません。<a class="ext" href="https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html" target="_blank" rel="noopener">NASA：電磁波の分類</a></p>
+<p><strong>LASERは、Light Amplification by Stimulated Emission of Radiation（誘導放出による光増幅）の略です。</strong> レーザーはほぼ単一の波長の光を用い、その波長の吸収特性を利用して標的を狙います。一方、<strong>IPL（intense pulsed light）は、フラッシュランプが発する幅広い波長帯の光</strong>を用います。フィルターで通す波長帯を選び、色素や血管などの標的に合わせます。<a class="ext" href="https://www.fda.gov/radiation-emitting-products/surgical-and-therapeutic-products/medical-lasers" target="_blank" rel="noopener">FDA：Medical Lasers</a></p>
+<h3>光は、吸収した物質のある場所で熱になる</h3>
+<p>皮膚の中で光を吸収する物質を<strong>クロモフォア</strong>と呼びます。美容の治療で主に狙うのは、メラニン・ヘモグロビン・水の3つです。光を吸収したクロモフォアのある場所が熱くなるので、吸収体の位置と熱の広がりによって、影響を受ける細胞や<span class="term" tabindex="0" data-t="ECM" data-d="真皮の体積の大半を占める線維と糖鎖の集合（collagen・elastin・proteoglycan・hyaluronan ほか）。足場ではなく、硬さと張力そのものが線維芽細胞に届く情報。" data-u="glossary.html#term-2f8ac6523372">ECM</span>が変わります。</p>
+<div class="tblwrap"><table><thead><tr><th>クロモフォア</th><th>よく吸収する光</th><th>熱を受ける細胞</th></tr></thead><tbody><tr><td><strong>メラニン</strong></td><td>短い波長ほど強く吸収し、長い波長ほど弱くなる</td><td>メラノサイトと、メラニンを受け取った角化細胞</td></tr><tr><td><strong>ヘモグロビン</strong></td><td>酸素と結びついたヘモグロビン（主に動脈側の血液）は、414・542・576 nm付近で強く吸収する。酸素を離したヘモグロビン（静脈血に多い）は、433・555 nm付近に吸収のピークがあり、755 nm付近では酸素と結びついたものの約3倍吸収する</td><td>血管（赤血球と、その周りの血管の壁）</td></tr><tr><td><strong>水</strong></td><td>近赤外から赤外（1450・1940・2940 nm、10600 nm）で強く吸収する</td><td>照射した範囲の細胞全体</td></tr></tbody></table></div>
+<p>（ヘモグロビンと水の吸収は、<a class="ext" href="https://omlc.org/spectra/hemoglobin/summary.html" target="_blank" rel="noopener">ヘモグロビンの吸収スペクトル</a>、<a class="ext" href="https://omlc.org/spectra/water/data/hale73.txt" target="_blank" rel="noopener">水の吸収スペクトル</a>による）</p>
+<h4>吸収曲線から、波長を選ぶ理由を読む</h4>
+<p>吸収曲線は、横軸に波長、縦軸に光の吸収の強さを示します。ここでは<strong>吸収係数</strong>を使い、値が大きいほど、短い距離で多くの光が吸収されることを表します。縦軸は対数目盛なので、等間隔でも値は一定の倍率で増えます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_吸収曲線_可視近赤外_v3.svg" alt="可視〜近赤外の吸収スペクトル。" width="504.0" height="403.2" loading="lazy"><figcaption>可視〜近赤外の吸収スペクトル。縦軸は対数目盛、下段の●は代表的な治療標的です。532 nm：KTP・Nd:YAG、595 nm：色素（ダイ）、694 nm：ルビー、755 nm：アレキサンドライト、810 nm：ダイオードの代表例、1064 nm：Nd:YAG。色素レーザーには585 nmもあります。</figcaption></figure>
+<p><strong>同じ波長でも、複数のクロモフォアが光を吸収します。</strong> 532 nmはメラニンにもヘモグロビンにも吸収されるため、色素治療と血管治療の両方に使われます。</p>
+<p><strong>1064 nmも、メラニンを狙う色素治療と、血液の吸収を利用する血管治療の両方に使われます。</strong> 可視域の強い吸収帯に比べると吸収は弱いものの、光が深く届きやすいことを利用します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2746004/" target="_blank" rel="noopener">Andersonら, 1989</a>、<a class="ext" href="https://jamanetwork.com/journals/jamadermatology/fullarticle/478337" target="_blank" rel="noopener">Sadickら, 2001</a></p>
+<p>実際の皮膚でどれだけ光が吸収されるかは、吸収体の量と位置、散乱、標的の深さによって変わります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_吸収曲線_赤外水_v3.svg" alt="赤外域の水の吸収。" width="504.0" height="216.0" loading="lazy"><figcaption>赤外域の水の吸収。Er:YAGの2940 nmとCO₂の10600 nmを示します。縦軸・横軸は対数目盛です。</figcaption></figure>
+<p><strong>Er:YAGレーザーの2940 nmは水に強く吸収されるため、光のエネルギーが皮膚のごく浅い範囲に集中します。</strong> そのため、深いところまで光を届ける治療ではなく、表面の組織を加熱して除去する治療に利用します。<a class="ext" href="https://omlc.org/spectra/water/data/hale73.txt" target="_blank" rel="noopener">Hale・Querry, 1973：水のデータ</a></p>
+<p>水を標的にする治療でも、波長と照射条件によって、蒸散を伴わない熱凝固から、組織を除去する蒸散まで作用が異なります。非蒸散型フラクショナルレーザーでは、組織を蒸散させずに微小な熱凝固域を作ります（→ フラクショナルレーザーの生化学）。</p>
+<h3>吸収と散乱で、光が届く深さが変わる</h3>
+<p>光は皮膚の中で吸収されるだけでなく、コラーゲン線維などに当たって散乱します。短い波長ほど表皮のメラニンに吸収され、散乱もされやすいため、浅いところで止まります。可視光の赤から近赤外の一部では、比較的深くまで届きます。さらに長い赤外域では、水への吸収が強い波長で光が浅い範囲に吸収されます。（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7252245/" target="_blank" rel="noopener">Anderson・Parrish, 1981</a>）</p>
+<p>皮膚の色が濃い人では、表皮のメラニンが多く、標的に届く前に光を吸収して、表皮が傷みやすくなります。メラニンの吸収は長い波長ほど弱くなるので、長い波長を選ぶことと、表皮を冷やすことが、表皮を守る方法になります（§5）。</p>
+<h2 id="s2">2　パルス幅：熱と圧力が広がる時間を考える</h2>
+<p><strong>パルス幅</strong>は、1回の照射で光が出ている時間です。ms（ミリ秒）は1,000分の1秒、ns（ナノ秒）は10億分の1秒、ps（ピコ秒）は1兆分の1秒です。1 ns＝1,000 psなので、500 psは0.5 nsに相当します。</p>
+<p>同じ1064 nmのレーザーでも、色素治療ではナノ秒・ピコ秒、血管治療では主にミリ秒のパルスを使います。波長が同じでも、エネルギーを与える時間によって、熱や圧力の生じ方が変わります。</p>
+<h3>熱緩和時間と選択的光熱融解</h3>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_熱緩和_時間軸.svg" alt="同じ標的・同じ吸収エネルギーで、短いパルスと長いパルスを比較した模式図。" width="504.0" height="331.2" loading="lazy"><figcaption>同じ標的・同じ吸収エネルギーで、短いパルスと長いパルスを比較した模式図。破線はTRTの目安、青い長方形の幅は照射時間、高さはパワーを表します。右側はそれぞれの照射終了時の熱の広がりです。</figcaption></figure>
+<p>光を吸収して温まった標的は、熱を周りへ逃がしていきます。標的が熱を周りへ逃がすのにかかる時間を<strong>熱緩和時間（thermal relaxation time：TRT）</strong>といい、標的の温度上昇が冷却によって減る速さの目安です。形状と熱の伝わりやすさが同じなら、標的が大きいほど長くなります（大きさの2乗に比例します）。（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2761336/" target="_blank" rel="noopener">van Gemert・Welch, 1989</a>）</p>
+<p>熱緩和時間より短い時間で光を当てると、熱が周りへ広がる前に加熱が終わり、周囲への熱拡散を抑えながら、標的を加熱できます。<strong>波長で標的を選び、照射時間を熱緩和時間に合わせ、標的を壊すのに十分なエネルギーを当てる</strong>。この考え方を<strong>選択的光熱融解</strong>と呼びます。（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6836297/" target="_blank" rel="noopener">Anderson・Parrish, 1983</a>）</p>
+<h4>標的の大きさで、熱が逃げる時間が変わる</h4>
+<p><strong>小さな標的はすぐに冷え、大きな標的は熱を保ちやすい</strong>ため、標的ごとに熱緩和時間の桁が変わります。次の値は、大きさと時間を結びつけるための推定の目安です。形状や熱物性、どこまでを標的とするかによって変わります。実際のパルス幅は、標的へ熱を伝える時間も含めて選びます。</p>
+<div class="tblwrap"><table><thead><tr><th>標的</th><th>大きさの例</th><th>熱緩和時間の目安</th><th>パルス幅を考えるときの要点</th></tr></thead><tbody><tr><td><strong>メラノソーム</strong></td><td>約0.5〜1 µm</td><td>数百ns前後〜約1 µs</td><td>個々のメラノソームを標的にする色素レーザーでは、nsやpsの短いパルスを使う</td></tr><tr><td><strong>細い血管</strong></td><td>直径約50 µm</td><td>約1 ms</td><td>熱が逃げるのが速く、短いms域を考える</td></tr><tr><td><strong>より太い血管</strong></td><td>直径約100〜200 µm</td><td>約5〜20 ms</td><td>太くなるほど熱を保つ時間が長くなる</td></tr><tr><td><strong>終毛の毛包</strong></td><td>直径約200〜300 µm</td><td>数十〜100 ms程度</td><td>毛のメラニンから、周囲の毛包組織へ熱を伝える時間も考える</td></tr></tbody></table></div>
+<details class="supplement"><summary>表の出典と推定条件</summary><div class="supplement-body"><p>メラノソームの値は粒子の熱拡散モデルによる推定で、眼の色素上皮を扱う研究でも約100〜420 nsという例が示されています。血管の約1・5・20 msは、円柱モデルで直径50・100・200 µm、熱拡散率を約1.4×10⁻⁷ m²/sとした計算の目安です。毛包の数十〜100 msもサイズに基づく推定値です。<a class="ext" href="https://iovs.arvojournals.org/article.aspx?articleid=2772417" target="_blank" rel="noopener">メラノソームの熱緩和モデル</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2761336/" target="_blank" rel="noopener">van Gemert・Welch, 1989</a>、<a class="ext" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5718238/" target="_blank" rel="noopener">脱毛の熱モデル</a></p></div></details>
+<p><strong>色素粒子を狙う治療ではns・ps、毛包や血管全体への熱作用を狙う治療ではmsのパルスを使います。</strong></p>
+<p>単純性血管腫の微小血管を調べた研究では、血管径に応じた1〜10 ms域の必要性が示されています。血管径に合わせて、<strong>血液が吸収した熱を血管壁へ伝えつつ、周囲への拡散を抑える</strong>という関係で考えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7594649/" target="_blank" rel="noopener">Dierickxら, 1995</a></p>
+<p>脱毛では、毛のメラニンが吸収した熱を周囲へ伝え、<strong>毛包幹細胞があるバルジ領域や毛球部など、毛の再生に関わる組織を加熱して損傷させます。</strong> そのため、熱が伝わる時間を確保するようにパルス幅を選びます。<a class="ext" href="https://doi.org/10.1002/lsm.1136" target="_blank" rel="noopener">Altshulerら, 2001</a> 毛包の構造と再生については<a class="chref" href="hair-follicle.html">毛と毛包</a>で扱います。</p>
+<h3>ナノ秒・ピコ秒レーザーの光機械作用</h3>
+<p>従来の<strong>ナノ秒Qスイッチレーザー</strong>は、短い時間に光を当てて色素を含む標的を損傷させます。<strong>ピコ秒レーザーは、その照射時間をさらに短くしたもの</strong>です。</p>
+<p>メラノソームが光を吸収すると、急に温度が上がって膨張し、周囲を押します。この押す力が波として伝わるのが<strong>圧力波</strong>です。急な膨張や圧力波による力も、メラノソームを傷つけたり壊したりします。これを<strong>光機械作用</strong>と呼びます。ナノ秒の照射でも圧力波は確認されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2308465/" target="_blank" rel="noopener">Araら, 1990</a></p>
+<p><strong>同じ標的に同じ量のエネルギーが吸収されるなら、短時間に与えるほど温度が急に上がり、膨張も急激になります。</strong> 圧力が周囲へ伝わって下がる前に加熱を終えられると、標的の内部に高い圧力が生じやすくなります。ピコ秒の短いパルスは、この性質を利用して小さな標的にも機械的な作用を与えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8744336/" target="_blank" rel="noopener">Venugopalanら, 1996</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36786528/" target="_blank" rel="noopener">Shimojoら, 2023</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_ナノ秒とピコ秒_破砕比較.webp" alt="ピコ秒レーザーが機械的な破壊を引き出し、より細かく破砕できる条件の模式図。" width="1536" height="1024" loading="lazy"><figcaption>ピコ秒レーザーが機械的な破壊を引き出し、より細かく破砕できる条件の模式図。上段は照射中、下段は破砕後の一例です。破片の大きさは実測値ではなく、色素の種類・大きさ・照射条件で変わります。青い波紋は圧力波を表し、損傷範囲を示しません。</figcaption></figure>
+<details class="supplement"><summary>応力緩和時間と光音響効果</summary><div class="supplement-body"><p>標的に生じた圧力が周囲へ伝わり、下がるまでの時間の目安が<strong>応力緩和時間</strong>です。標的の大きさと音速によって決まり、小さな標的ほど短くなります。この時間より短い照射では、圧力が十分に下がる前にエネルギーを与えられます。熱が周囲へ逃げる速さを表す<strong>熱緩和時間（TRT）</strong>とは、比べている現象が異なります。</p>
+<p>光の吸収によって圧力波が発生する現象を<strong>光音響効果</strong>と呼びます。光機械作用は、こうした圧力波や膨張による機械的な力が組織に作用することを指します。</p></div></details>
+<p>短いパルスは小さな標的に機械的な作用を与えるのに有用ですが、破砕の程度は波長、吸収、標的の大きさ、パルス幅、エネルギーによって変わります。黒色刺青を対象に同じ1064 nmで比較した研究では、ピコ秒側でナノ秒側より良好な消退が得られました。差の大きさは、色素の種類や照射条件によって変わります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9487208/" target="_blank" rel="noopener">Rossら, 1998</a></p>
+<p>破砕された色素は、その後に細胞による処理や排出を受け、しだいに色が薄くなります。メラノソームと刺青色素の違い、トーニングで狙う作用はQスイッチ・ピコ秒レーザーで扱います。</p>
+<h3>IPLは、色素を含む組織や血管をミリ秒の光で加熱する</h3>
+<p>IPLでは、フィルターで選んだ波長帯の光を<strong>ミリ秒のパルスで照射し、吸収された光を熱として利用します。</strong> メラニンを含む表皮細胞や、ヘモグロビンを含む血液が加熱され、周囲の組織にも熱が伝わります。</p>
+<ul><li><strong>しみへの作用</strong>：日光黒子では、メラニンを含む表皮細胞が熱で傷つき、メラニンを多く含む微小な痂皮（microcrust）となって脱落する過程が観察されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12088609/" target="_blank" rel="noopener">Kawadaら, 2002</a></li><li><strong>赤みへの作用</strong>：血液が吸収した熱を血管壁へ伝え、拡張した血管の熱凝固を狙います。血管を対象にしたIPL治療でも、通す波長帯とパルス幅を調整します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33026752/" target="_blank" rel="noopener">Petersonら, 2020</a></li></ul>
+<p>このように、IPLでは波長帯と照射時間を組み合わせて、色素や血管への作用を調整します。機器のフィルターや照射方法、病態ごとの使い分けはIPLで扱います。</p>
+<h2 id="s3">3　エネルギー・パワーとスポット径：どれだけ、どの面積に与えるか</h2>
+<div class="tblwrap"><table><thead><tr><th>表示</th><th>何を表すか</th><th>読み方</th></tr></thead><tbody><tr><td><strong>J（ジュール）</strong></td><td>エネルギー量</td><td>パルス照射では1発あたりの量か、総量かを確認する</td></tr><tr><td><strong>W（ワット）</strong></td><td>パワー（出力）</td><td>1 W＝1 J/s。平均出力とピーク出力は異なる</td></tr><tr><td><strong>スポット径（mm）</strong></td><td>照射面の直径</td><td>円形なら面積はπ×（直径÷2）²</td></tr><tr><td><strong>J/cm²</strong></td><td>フルエンス</td><td>照射面積あたりのエネルギー量</td></tr><tr><td><strong>W/cm²</strong></td><td>放射照度</td><td>照射面積あたりのパワー</td></tr></tbody></table></div>
+<p>一定のパワーで照射するとき、<strong>エネルギー（J）＝パワー（W）×時間（s）</strong>です。たとえば2 Wで3秒なら6 Jになります。出力が変動するパルスでは、出力を時間に沿って足し合わせた量がエネルギーです。<a class="ext" href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes" target="_blank" rel="noopener">NIST：SI単位</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_JとW.svg" alt="同じエネルギーでも、与える時間と面積によってパワーとフルエンスが変わります。" width="900.0" height="480.0" loading="lazy"><figcaption>同じエネルギーでも、与える時間と面積によってパワーとフルエンスが変わります。</figcaption></figure>
+<p>同じ1発のエネルギーを短い時間に集中させるほど、パルス中のパワーは大きくなります。<strong>矩形のパルスなら、パルス中のパワー＝1発のエネルギー÷パルス幅</strong>です。<strong>照射中のパワーの最大値が、ピークパワー（ピーク出力）です。</strong> 上の図は一定出力の例なので、長方形の高さがピークパワーにもなります。実際のパルスでは出力が時間とともに変わるため、ピークパワーは波形によって異なります。</p>
+<p>フルエンスは、1発のエネルギーを照射面積で割った値です。同じJでも、スポット径を小さくするとJ/cm²は大きくなります。表示されたフルエンスは皮膚へ入射する光の量です。そのうち標的に吸収される量は、波長や組織の吸収・散乱によって変わります。</p>
+<p>短いパルスで標的に効率よく機械的な作用を与えられると、<strong>より低いフルエンスで治療効果を得られる場合があります。</strong> ピコ秒レーザーの利点の一つですが、必要なフルエンスは波長や標的、機器によって変わります。</p>
+<h3>照射径が大きいほど、深部へ光が届きやすくなる</h3>
+<p><strong>同じ波長・同じフルエンスで比較すると、スポット径（照射径）が大きい方が、深部の標的へ光が届きやすくなります。</strong> 皮膚に入った光は散乱して横方向にも広がります。小さなスポットでは照射範囲の外へ広がる光の割合が大きく、中心の深部に届く光が減ります。大きなスポットでは周囲から散乱してくる光も加わるため、中心の深部へより多くの光が届きます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1753854/" target="_blank" rel="noopener">Keijzerら, 1991</a></p>
+<p>同じフルエンスを保って照射径を大きくするには、1発あたりのエネルギーも増やします。</p>
+<h2 id="s4">4　繰り返し周波数：何発を、どの間隔で与えるか</h2>
+<p><strong>繰り返し周波数（Hz）</strong>は、1秒間に何発照射するかを表します。10 Hzなら1秒間に10発です。1発のパルス幅、パルス間の間隔、施術全体の照射時間は、それぞれ区別します。IPLなどでは1回の照射を複数のサブパルスに分けることもあり、その場合は各パルスの長さと間の休止時間を見ます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/light-basics_Hzの比較.svg" alt="同じ1秒間に、2 Hzでは2発、5 Hzでは5発を照射します。" width="652.510781" height="494.88" loading="lazy"><figcaption>同じ1秒間に、2 Hzでは2発、5 Hzでは5発を照射します。発数と照射開始間隔を比較し、下段に1発のパルス幅を拡大して示します。</figcaption></figure>
+<p>同じパルスを繰り返す場合の平均出力は、1発のエネルギー×繰り返し周波数です。</p>
+<h3>照射の間隔は、組織が冷える時間でもある</h3>
+<p>同じ場所へ繰り返し照射するとき、<strong>次の照射までに熱が逃げる時間を確保すると、熱の蓄積を抑えられます。</strong> 間隔が短ければ、組織がまだ熱い状態で次の照射が加わります。</p>
+<p>CO₂レーザーの<strong>連続波（CW：continuous wave）</strong>では、同じ場所に光を当て続けている間、加熱が続きます。一方、<strong>ウルトラパルス</strong>では、短時間に高いピークパワーを与えて組織を蒸散させ、照射中に周囲へ熱が広がる時間を抑えます。さらに、同じ場所への照射間隔を確保することで、照射を繰り返したときの熱の蓄積も抑えられます。<strong>1発を短くすることと、次の1発までに冷ますことは、それぞれ熱の影響を調整する方法です。</strong> <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8887913/" target="_blank" rel="noopener">パルス幅と残存熱損傷の研究</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9829429/" target="_blank" rel="noopener">反復照射時の温度変化</a></p>
+<h3>同じ場所へ重ねて照射すると、熱が蓄積する</h3>
+<p><strong>同じ場所に続けて照射することを、スタッキングと呼びます。</strong> 1発目の熱が十分に逃げる前に2発目を重ねると、熱が蓄積して組織の温度がさらに上がります。そのため、1発あたりの設定が同じでも、照射回数と間隔によって組織への作用が変わります。熱の蓄積を利用する照射法もありますが、過剰な重ね打ちは熱損傷を強めます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9829429/" target="_blank" rel="noopener">Choiら, 1998</a></p>
+<p>同じHzでも、照射位置を移して打つ場合と、同じ場所に重ねる場合では、局所に蓄積する熱が異なります。</p>
+<h2 id="s5">5　冷却：表皮を守りながら標的を加熱する</h2>
+<p>照射の直前に皮膚の表面を冷やすと、表皮を守りながら、深い標的には十分な熱を届けられます。血管の治療では、表面を冷やすことで表皮の傷みを防ぎ、より高いエネルギーで治療できました。（<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7778922/" target="_blank" rel="noopener">Nelsonら, 1995</a>）</p>
+<p>冷却方法は、<strong>冷たい面を皮膚に当てる接触冷却、冷媒を吹き付けるスプレー冷却、冷たい空気を送る冷風冷却</strong>に分けられます。</p>
+<div class="tblwrap"><table><thead><tr><th>方法</th><th>どう冷やすか</th><th>照射との組み合わせ</th></tr></thead><tbody><tr><td><strong>接触冷却（水冷式など）</strong></td><td>冷却したサファイア窓などを皮膚に当て、皮膚の熱を窓へ逃がす。窓を冷やす方式には循環水や熱電素子などがある</td><td>光を通す窓を使えば、照射中も接触させたまま冷却できる</td></tr><tr><td><strong>冷媒スプレー冷却（いわゆるガス冷却）</strong></td><td>冷媒を短時間噴霧し、皮膚表面で蒸発するときに熱を奪う</td><td>レーザー照射と同期させ、照射直前などに短く噴霧する</td></tr><tr><td><strong>冷風冷却</strong></td><td>冷たい空気を皮膚へ吹き付け、表面の熱を運び去る</td><td>皮膚に接触せず、照射前・中・後に連続して冷却できる</td></tr></tbody></table></div>
+<p>接触冷却と冷媒スプレーでは、皮膚表面が冷える速さや熱を奪う時間が異なります。<strong>冷却方法に加えて、照射のいつ、どのくらいの時間冷やすか</strong>が、表皮の保護と標的の加熱を両立させる条件になります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9644903/" target="_blank" rel="noopener">Anvariら, 1998</a></p>
+<h3>治療後の炎症は、PIHにつながることがある</h3>
+<p>レーザーやIPLによる組織傷害で炎症が起こると、メラノサイトが刺激され、色素産生が増えることがあります。これが治療後の<strong>炎症後色素沈着（PIH）</strong>につながります。標的への作用と周囲の傷害の程度は、波長・パルス幅・フルエンス・照射の重なり・冷却、そして肌の状態によって変わります。PIHの機序と色素が残る場所は炎症後色素沈着（PIH）で扱います。</p>
+<details class="supplement"><summary>ナノ秒Qスイッチとピコ秒：PIHを比較した試験</summary><div class="supplement-body"><p>日光黒子のある韓国人20人の左右比較では、532 nmピコ秒レーザーを0.3〜0.5 J/cm²、ナノ秒Qスイッチレーザーを0.6〜0.8 J/cm²で照射し、ピコ秒側で良好な改善が得られました。</p>
+<p>4週時点の炎症後色素沈着（PIH）はピコ秒側1/20（5％）、ナノ秒側6/20（30％）でしたが、統計的な有意差はありませんでした（p＝0.057）。パルス幅・機器・フルエンスが同時に異なる試験なので、PIHの差を短いパルスや低フルエンスだけの効果と断定することはできません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33911703/" target="_blank" rel="noopener">Kimら, 2020</a></p></div></details>
+<h2>この章の到達点</h2>
+<ol class="goal"><li>吸収曲線を使い、選んだ波長がメラニン・ヘモグロビン・水のどこに吸収されるかを説明できます。同じ波長を複数の標的に使う理由も、吸収と到達深度から考えられます。</li><li>Jはエネルギー、Wはパワー、J/cm²はフルエンスです。同じJでも、与える時間と面積が変われば作用は異なります。</li><li>吸収する物質と到達深度を波長で考え、標的の熱緩和時間とパルス幅から熱の広がりを考えます。</li><li>短いパルスでは急速な加熱による圧力波が破砕に寄与します。熱緩和時間と応力緩和時間は異なり、熱作用と機械作用は併存します。</li></ol>
+<h3>参考文献</h3>
+<ul><li>Anderson RR, Parrish JA. Selective photothermolysis: precise microsurgery by selective absorption of pulsed radiation. <em>Science.</em> 1983;220:524–527. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/6836297/" target="_blank" rel="noopener">PMID 6836297</a>. <a class="ext" href="https://doi.org/10.1126/science.6836297" target="_blank" rel="noopener">DOI: 10.1126/science.6836297</a>.</li><li>Anderson RR, Parrish JA. The optics of human skin. <em>J Invest Dermatol.</em> 1981;77:13–19. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7252245/" target="_blank" rel="noopener">PMID 7252245</a>.</li><li>van Gemert MJ, Welch AJ. Time constants in thermal laser medicine. <em>Lasers Surg Med.</em> 1989;9:405–421. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2761336/" target="_blank" rel="noopener">PMID 2761336</a>.</li><li>Dierickx CC, et al. <em>J Invest Dermatol.</em> 1995;105:709–714. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7594649/" target="_blank" rel="noopener">PMID 7594649</a>.</li><li>Venugopalan V, Nishioka NS, Mikić BB. <em>Biophys J.</em> 1996;70:2981–2993. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8744336/" target="_blank" rel="noopener">PMID 8744336</a>.</li><li>Ross V, et al. <em>Arch Dermatol.</em> 1998;134:167–171. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9487208/" target="_blank" rel="noopener">PMID 9487208</a>.</li><li>Keijzer M, et al. <em>Lasers Surg Med.</em> 1991;11:601–605. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1753854/" target="_blank" rel="noopener">PMID 1753854</a>.</li><li>Nelson JS, et al. <em>Arch Dermatol.</em> 1995;131:695–700. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7778922/" target="_blank" rel="noopener">PMID 7778922</a>.</li><li>Prahl S. Optical absorption of hemoglobin（Oregon Medical Laser Center のデータ集）. https://omlc.org/spectra/hemoglobin/summary.html</li><li>Hale GM, Querry MR. <em>Appl Opt.</em> 1973;12:555–563. <a class="ext" href="https://doi.org/10.1364/AO.12.000555" target="_blank" rel="noopener">DOI: 10.1364/AO.12.000555</a>.</li><li>Ara G, et al. Irradiation of pigmented melanoma cells with high intensity pulsed radiation generates acoustic waves and kills cells. <em>Lasers Surg Med.</em> 1990;10(1):52–59. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2308465/" target="_blank" rel="noopener">PMID 2308465</a>. <a class="ext" href="https://doi.org/10.1002/lsm.1900100112" target="_blank" rel="noopener">DOI: 10.1002/lsm.1900100112</a>.</li><li>Shimojo Y, et al. Nonlinear absorption-based analysis of energy deposition in melanosomes for 532-nm short-pulsed laser skin treatment. <em>Lasers Surg Med.</em> 2023;55(3):305–315. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36786528/" target="_blank" rel="noopener">PMID 36786528</a>. <a class="ext" href="https://doi.org/10.1002/lsm.23642" target="_blank" rel="noopener">DOI: 10.1002/lsm.23642</a>.</li><li>Anderson RR, et al. Selective photothermolysis of cutaneous pigmentation by Q-switched Nd:YAG laser pulses at 1064, 532, and 355 nm. <em>J Invest Dermatol.</em> 1989;93(1):28–32. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/2746004/" target="_blank" rel="noopener">PMID 2746004</a>. <a class="ext" href="https://doi.org/10.1111/1523-1747.ep12277339" target="_blank" rel="noopener">DOI: 10.1111/1523-1747.ep12277339</a>.</li><li>Sadick NS, et al. Clinical and pathophysiologic correlates of 1064-nm Nd:YAG laser treatment of reticular veins and venulectasias. <em>Arch Dermatol.</em> 2001;137(5):613–617. <a class="ext" href="https://jamanetwork.com/journals/jamadermatology/fullarticle/478337" target="_blank" rel="noopener">DOI: 10.1001/archderm.137.5.613</a>.</li><li>Altshuler GB, et al. Extended theory of selective photothermolysis. <em>Lasers Surg Med.</em> 2001;29(5):416–432. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11891730/" target="_blank" rel="noopener">PMID 11891730</a>. <a class="ext" href="https://doi.org/10.1002/lsm.1136" target="_blank" rel="noopener">DOI: 10.1002/lsm.1136</a>.</li><li>Anvari B, et al. A comparative study of human skin thermal response to sapphire contact and cryogen spray cooling. <em>IEEE Trans Biomed Eng.</em> 1998;45(7):934–941. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9644903/" target="_blank" rel="noopener">PMID 9644903</a>. <a class="ext" href="https://doi.org/10.1109/10.686802" target="_blank" rel="noopener">DOI: 10.1109/10.686802</a>.</li><li>Seifert E, et al. Investigations on Retinal Pigment Epithelial Damage at Laser Irradiation in the Lower Microsecond Time Regime. <em>Invest Ophthalmol Vis Sci.</em> 2021;62(3):32. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33755044/" target="_blank" rel="noopener">PMID 33755044</a>. <a class="ext" href="https://doi.org/10.1167/iovs.62.3.32" target="_blank" rel="noopener">DOI: 10.1167/iovs.62.3.32</a>.</li><li>Ash C, et al. Mathematical modeling of the optimum pulse structure for safe and effective photo epilation using broadband pulsed light. <em>J Appl Clin Med Phys.</em> 2012;13(5):290–299. <a class="ext" href="https://aapm.onlinelibrary.wiley.com/doi/10.1120/jacmp.v13i5.3702" target="_blank" rel="noopener">DOI: 10.1120/jacmp.v13i5.3702</a>.</li></ul>
+<ul><li>Kim JY, et al. A Split-Face, Single-Blinded, Randomized Controlled Comparison of 532 nm Picosecond Neodymium-Doped Yttrium Aluminum Garnet Laser versus 532 nm Q-Switched Neodymium-Doped Yttrium Aluminum Garnet Laser in the Treatment of Solar Lentigines. <em>Ann Dermatol.</em> 2020;32(1):8–13. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33911703/" target="_blank" rel="noopener">PMID 33911703</a>. <a class="ext" href="https://doi.org/10.5021/ad.2020.32.1.8" target="_blank" rel="noopener">DOI: 10.5021/ad.2020.32.1.8</a>.</li><li>Kawada A, et al. Videomicroscopic and histopathological investigation of intense pulsed light therapy for solar lentigines. <em>J Dermatol Sci.</em> 2002;29(2):91–96. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12088609/" target="_blank" rel="noopener">PMID 12088609</a>. <a class="ext" href="https://doi.org/10.1016/S0923-1811" target="_blank" rel="noopener">DOI: 10.1016/S0923-1811</a>(02)00014-2.</li></ul>
+<ul><li>Peterson JD, et al. Efficacy and Safety of Intense Pulsed Light With a KTP/PDLlike Filter for the Treatment of Facial Telangiectasias. <em>J Drugs Dermatol.</em> 2020;19(9):844–850. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33026752/" target="_blank" rel="noopener">PMID 33026752</a>.</li></ul>
+<h4>図・単位の資料</h4>
+<ul><li>NASA. <a class="ext" href="https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html" target="_blank" rel="noopener">Electromagnetic Spectrum</a>.</li><li>NIST. <a class="ext" href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes" target="_blank" rel="noopener">SI Units and SI Prefixes</a>.</li><li>OMLC. <a class="ext" href="https://omlc.org/spectra/melanin/mua.html" target="_blank" rel="noopener">メラノソームの吸収係数</a>、<a class="ext" href="https://omlc.org/news/feb15/generic_optics/index.html" target="_blank" rel="noopener">組織成分の光学特性と1000 nm超の血液データ</a>。</li></ul>
+<ul><li>FDA. <a class="ext" href="https://www.fda.gov/radiation-emitting-products/surgical-and-therapeutic-products/medical-lasers" target="_blank" rel="noopener">Medical Lasers</a>.</li></ul>
+<ul><li>Choi B, et al. Imaging of the irradiation of skin with a clinical CO₂ laser system: implications for laser skin resurfacing. <em>Lasers Surg Med.</em> 1998;23:185–193. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9829429/" target="_blank" rel="noopener">PMID 9829429</a>.</li></ul>
+<ul><li>Ross EV, Domankevitz Y, Skrobal M, Anderson RR. Effects of CO₂ laser pulse duration in ablation and residual thermal damage: implications for skin resurfacing. <em>Lasers Surg Med.</em> 1996;19(2):123–129. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8887913/" target="_blank" rel="noopener">PMID 8887913</a>.</li></ul>
+
+</article>
+<nav class="pager"><a class="prev" href="energy-devices.html"><span class="lbl">前へ</span>デバイスによる熱治療</a><a class="next" href="rf.html"><span class="lbl">次へ</span>RFの生化学</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-10-29 ／ 版 f7f691dd</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
+  function show(el){
+    cancelHide();
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseenter',cancelHide);
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>

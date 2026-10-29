@@ -129,7 +129,8 @@ sections:
         intro: デバイスは熱・光・機械刺激や電気・磁気刺激を組織に与えます。刺激による直接の変化と、その後の細胞の応答を見ていきます。
         chapters:
           - energy-devices            # デバイスによる熱治療（総論）
-          - microneedling-rf          # ニードルRFの生化学
+          - light-basics              # レーザー・光治療の基本
+          - rf                        # RFの生化学（物理・モノポーラ・ニードル）
           - hifu                      # HIFUの生化学
           - fractional-laser          # フラクショナルレーザーの生化学
           - ipl                       # IPL

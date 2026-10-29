@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title"><title id="title">RFの電極の置き方：モノポーラ・バイポーラ・マルチポーラ・ユニポーラ</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker>
+<defs><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#1d4f91"/></marker></defs>
+<marker id="bar" viewBox="0 0 5 22" refX="2.5" refY="11" markerWidth="5" markerHeight="22" markerUnits="userSpaceOnUse" orient="auto"><rect x="0" y="0" width="5" height="22" fill="#a34b40"/></marker></defs>
+<rect width="1200" height="860" fill="white"/><g font-family="Hiragino Sans, Noto Sans JP, sans-serif" fill="#1c1d23">
+<text x="40" y="54" text-anchor="start" font-size="26" fill="#1c1d23" font-weight="700">モノポーラ</text>
+<text x="40" y="84" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">施術部の電極 → 体に貼った対極板</text>
+<rect x="40" y="120" width="520" height="14" fill="#e9d6d2"/>
+<rect x="40" y="134" width="520" height="96" fill="#f6ecea"/>
+<rect x="40" y="230" width="520" height="120" fill="#fbf5df"/>
+<path d="M144.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M248.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M352.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M456.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<rect x="40" y="120" width="520" height="230" fill="none" stroke="#c5cdd6" stroke-width="1.5"/>
+<rect x="255.0" y="104" width="90" height="16" rx="3" fill="#475569"/>
+<path d="M270.0 124 C 247.5 190, 165.0 270, 120.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M284.0 124 C 272.0 190, 228.0 270, 204.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M295.0 124 C 291.25 190, 277.5 270, 270.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M305.0 124 C 308.75 190, 322.5 270, 330.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M316.0 124 C 328.0 190, 372.0 270, 396.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M330.0 124 C 352.5 190, 435.0 270, 480.0 370" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<rect x="100" y="382" width="400" height="14" rx="4" fill="#94a3b8"/>
+<text x="300.0" y="420" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">対極板（体の離れた場所に貼る）</text>
+<text x="552" y="150" text-anchor="end" font-size="16" fill="#64748b" font-weight="400">表皮</text>
+<text x="552" y="195" text-anchor="end" font-size="16" fill="#64748b" font-weight="400">真皮</text>
+<text x="552" y="300" text-anchor="end" font-size="16" fill="#64748b" font-weight="400">皮下脂肪</text>
+<text x="640" y="54" text-anchor="start" font-size="26" fill="#1c1d23" font-weight="700">バイポーラ</text>
+<text x="640" y="84" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">施術部の2つの電極の間</text>
+<rect x="640" y="120" width="520" height="14" fill="#e9d6d2"/>
+<rect x="640" y="134" width="520" height="96" fill="#f6ecea"/>
+<rect x="640" y="230" width="520" height="120" fill="#fbf5df"/>
+<path d="M744.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M848.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M952.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M1056.0 230 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<rect x="640" y="120" width="520" height="230" fill="none" stroke="#c5cdd6" stroke-width="1.5"/>
+<rect x="790.0" y="104" width="60" height="16" rx="3" fill="#475569"/>
+<rect x="950.0" y="104" width="60" height="16" rx="3" fill="#475569"/>
+<path d="M830.0 124 C 840.0 170, 960.0 170, 970.0 126" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M830.0 124 C 840.0 200, 960.0 200, 970.0 126" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M830.0 124 C 840.0 228, 960.0 228, 970.0 126" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<text x="900.0" y="420" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">対極板はない</text>
+<text x="40" y="474" text-anchor="start" font-size="26" fill="#1c1d23" font-weight="700">マルチポーラ</text>
+<text x="40" y="504" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">3つ以上の電極で、流す組を切り替える</text>
+<rect x="40" y="540" width="520" height="14" fill="#e9d6d2"/>
+<rect x="40" y="554" width="520" height="96" fill="#f6ecea"/>
+<rect x="40" y="650" width="520" height="120" fill="#fbf5df"/>
+<path d="M144.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M248.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M352.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M456.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<rect x="40" y="540" width="520" height="230" fill="none" stroke="#c5cdd6" stroke-width="1.5"/>
+<rect x="95.0" y="524" width="50" height="16" rx="3" fill="#475569"/>
+<rect x="215.0" y="524" width="50" height="16" rx="3" fill="#475569"/>
+<rect x="335.0" y="524" width="50" height="16" rx="3" fill="#475569"/>
+<rect x="455.0" y="524" width="50" height="16" rx="3" fill="#475569"/>
+<path d="M128.0 544 C 140.0 610, 220.0 610, 232.0 546" fill="none" stroke="#1d4f91" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#ab)"/>
+<path d="M248.0 544 C 260.0 610, 340.0 610, 352.0 546" fill="none" stroke="#1d4f91" stroke-width="2.5" marker-end="url(#ab)"/>
+<path d="M368.0 544 C 380.0 610, 460.0 610, 472.0 546" fill="none" stroke="#1d4f91" stroke-width="2.5" stroke-dasharray="6 6" marker-end="url(#ab)"/>
+<text x="300.0" y="840" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">実線：いま電流を流している組　破線：次に切り替える組</text>
+<text x="640" y="474" text-anchor="start" font-size="26" fill="#1c1d23" font-weight="700">ユニポーラ</text>
+<text x="640" y="504" text-anchor="start" font-size="18" fill="#64748b" font-weight="400">文献によって意味が違う</text>
+<rect x="640" y="540" width="520" height="14" fill="#e9d6d2"/>
+<rect x="640" y="554" width="520" height="96" fill="#f6ecea"/>
+<rect x="640" y="650" width="520" height="120" fill="#fbf5df"/>
+<path d="M744.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M848.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M952.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<path d="M1056.0 650 q 12 60 -6 120" fill="none" stroke="#e2d3b0" stroke-width="3"/>
+<rect x="640" y="540" width="520" height="230" fill="none" stroke="#c5cdd6" stroke-width="1.5"/>
+<rect x="865.0" y="524" width="70" height="16" rx="3" fill="#475569"/>
+<path d="M860.0 546 A 40 36.0 0 0 0 940.0 546" fill="none" stroke="#1d4f91" stroke-width="2" stroke-dasharray="5 6"/>
+<path d="M820.0 546 A 80 72.0 0 0 0 980.0 546" fill="none" stroke="#1d4f91" stroke-width="2" stroke-dasharray="5 6"/>
+<path d="M780.0 546 A 120 108.0 0 0 0 1020.0 546" fill="none" stroke="#1d4f91" stroke-width="2" stroke-dasharray="5 6"/>
+<text x="900.0" y="808" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">① 対極板のない単一の電極を指す場合</text>
+<text x="900.0" y="836" text-anchor="middle" font-size="17" fill="#64748b" font-weight="400">② モノポーラと同じ意味で使う場合</text>
+</g></svg>
