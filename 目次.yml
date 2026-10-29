@@ -139,7 +139,6 @@ sections:
           - pbm                       # PBM・LEDの生化学
           - muscle-stimulation        # 電気・磁気による筋刺激
           - plasma                    # プラズマ治療
-          - transdermal-delivery      # 導入（組織に働きかけず、外用剤を角層の向こうへ運ぶ）
 
       # 置く → 誘導する → 止める → 壊す の順。同じ注射でも一次作用が違う。
       - part: 注射
