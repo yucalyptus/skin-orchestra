@@ -87,6 +87,7 @@ sections:
           - melanocytes               # メラノサイトと色素形成
 
           - ecm                       # 細胞外基質（ECM）
+          - mechanotransduction       # 張力と細胞：mechanotransduction
           - fibroblast-collagen       # 線維芽細胞とコラーゲン
           - elastic-fibers            # 弾性線維とコラーゲン線維
           - glycation                 # 糖化とAGE
