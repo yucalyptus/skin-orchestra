@@ -169,6 +169,7 @@ Q 66.1 42.4, 68.0 42.4
 <text x="190" y="288" text-anchor="middle" font-size="17" fill="#64748b">tyrosine</text>
 <line x1="340" y1="135" x2="440" y2="135" stroke="#1c1d23" stroke-width="3" marker-end="url(#a)"/>
 <text x="390" y="118" text-anchor="middle" font-size="19" font-weight="700" fill="#1d4f91">チロシナーゼ</text>
+<text x="390" y="162" text-anchor="middle" font-size="17" font-weight="400" fill="#64748b">–OHを付ける</text>
 <svg x="450.0" y="30" width="280" height="210" viewBox="0 0 280 210">
 
 <!-- END OF HEADER -->
@@ -370,6 +371,7 @@ Q 66.1 57.4, 68.0 57.4
 <text x="590" y="288" text-anchor="middle" font-size="17" fill="#64748b">DOPA</text>
 <line x1="740" y1="135" x2="840" y2="135" stroke="#1c1d23" stroke-width="3" marker-end="url(#a)"/>
 <text x="790" y="118" text-anchor="middle" font-size="19" font-weight="700" fill="#1d4f91">チロシナーゼ</text>
+<text x="790" y="162" text-anchor="middle" font-size="17" font-weight="400" fill="#64748b">酸化</text>
 <svg x="850.0" y="30" width="280" height="210" viewBox="0 0 280 210">
 
 <!-- END OF HEADER -->
