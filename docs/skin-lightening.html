@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noai, noimageai">
+<meta name="author" content="Yuka Aoki, MD">
+<title>美白の生化学――外用と内服 ― 生化学で見る美容医療</title>
+<meta name="description" content="美白成分は、メラニンができて表皮に残るまでの、どの段階に作用するかで分かれます。 作用する段階が違えば、効き方も、効果が出るまでの時間も、注意すべき副作用も変わります。">
+<link rel="canonical" href="https://yucalyptus.github.io/skin-orchestra/skin-lightening.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="生化学で見る美容医療">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="美白の生化学――外用と内服 ― 生化学で見る美容医療">
+<meta property="og:description" content="美白成分は、メラニンができて表皮に残るまでの、どの段階に作用するかで分かれます。 作用する段階が違えば、効き方も、効果が出るまでの時間も、注意すべき副作用も変わります。">
+<meta property="og:url" content="https://yucalyptus.github.io/skin-orchestra/skin-lightening.html">
+<meta property="og:image" content="https://yucalyptus.github.io/skin-orchestra/images/skin-lightening_作用点_20261102.svg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+--bg:#f4f3f0;--paper:#ffffff;--ink:#1c1d23;--sub:#494c54;--faint:#6b6e77;
+--line:#e7e5df;--rule:#cdcbc4;--accent:#1d4f91;--accent-line:#b9cde8;--accent-bg:#f2f6fc;--soft:#f1f2f4;
+--col-bg:#fdf1f4;--col-line:#edc9d5;--col-ink:#b5476a;
+--serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,"Courier New",monospace;
+}
+@media(prefers-color-scheme:dark){:root{
+--bg:#15161a;--paper:#1b1d21;--ink:#eceae6;--sub:#b6b9c0;--faint:#9a9da5;
+--line:#2c2e34;--rule:#3b3d44;--accent:#82b1e8;--accent-line:#33506f;--accent-bg:#1b2330;--soft:#24272d;
+--col-bg:#2c2126;--col-line:#4d3740;--col-ink:#f0a0b8;}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);
+font-size:18px;line-height:2.0;letter-spacing:.02em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a.chref{border-bottom:1px solid var(--accent-line);white-space:nowrap}
+
+/* ---- 骨格 ---- */
+.wrap{display:flex;max-width:1180px;margin:0 auto}
+.side{width:272px;flex:none;position:sticky;top:0;height:100vh;overflow:auto;
+padding:28px 16px 48px;background:var(--paper);border-right:1px solid var(--line);font-family:var(--sans)}
+.brand{display:block;font-size:13.5px;font-weight:700;line-height:1.55;color:var(--ink)}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.brand small{display:block;font-weight:400;font-size:11px;color:var(--sub);margin-top:4px;letter-spacing:.02em}
+.toc{margin-top:22px;font-size:13px;line-height:1.65}
+.toc .part{margin:22px 0 6px;padding:0 8px;color:var(--faint);font-size:11px;font-weight:700;letter-spacing:.09em}
+.toc a{display:block;padding:4px 8px;border-radius:5px;color:var(--sub)}
+.toc a:hover{background:var(--soft);text-decoration:none}
+.toc a.active{background:var(--soft);color:var(--accent);font-weight:700}
+.main{flex:1;min-width:0;background:var(--paper);padding:56px clamp(18px,5vw,64px) 88px}
+.col{max-width:40em;margin:0 auto;counter-reset:fig vid}
+
+/* ---- 見出し ---- */
+.kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;
+color:var(--accent);margin:0 0 12px}
+h1{font-family:var(--sans);font-size:clamp(21px,2.8vw,26px);font-weight:700;line-height:1.55;
+margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid var(--rule);letter-spacing:.01em}
+h2{font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.65;margin:58px 0 14px;
+color:var(--accent);padding-bottom:9px;border-bottom:1px solid var(--accent-line)}
+h3{font-family:var(--sans);font-size:16px;font-weight:700;line-height:1.7;margin:34px 0 8px;color:var(--ink)}
+p{margin:17px 0}
+strong{font-weight:700}
+.accent-label{color:var(--accent);font-weight:700}
+
+/* ---- 引用（章の入口・この章の一言） ---- */
+blockquote{margin:24px 0;padding:0;border:0;color:var(--ink)}
+blockquote.lead{border:0;color:var(--ink);background:var(--accent-bg);
+padding:24px;border-radius:4px;margin:24px 0 40px}
+
+/* 読書用組版：DADSの文字階層・余白を参考にした全章共通の組版。資料/表示デザイン.md */
+.chapter{font-family:var(--sans);font-size:1.125rem;line-height:1.8;letter-spacing:.02em}
+.chapter h1{font-size:clamp(1.75rem,3vw,2rem);line-height:1.4;margin-bottom:32px}
+.chapter h2{font-size:1.75rem;line-height:1.5;margin:80px 0 24px;padding-bottom:16px}
+/* 番号付きの節だけを帯で区切り、冒頭の要点と囲みを連続させない。 */
+.chapter h2[id^="s"]{padding:20px 24px;background:var(--soft);color:var(--accent);border:0;border-top:2px solid var(--rule);scroll-margin-top:24px}
+.chapter h3{font-size:1.5rem;line-height:1.5;margin:40px 0 16px;color:var(--accent)}
+.chapter h2+h3{margin-top:24px}
+.chapter h4{font-family:var(--sans);font-size:1.125rem;font-weight:700;line-height:1.6;margin:40px 0 12px;color:var(--ink);scroll-margin-top:24px;border-left:3px solid var(--accent);padding-left:12px}
+.chapter h3+h4{margin-top:24px}
+.chapter p{max-width:38em;margin:24px 0}
+.chapter li{margin:8px 0}
+.chapter a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.chapter a.ext{white-space:normal;overflow-wrap:anywhere}
+.chapter a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.chapter .chref{white-space:normal;border-bottom:0}
+.chapter .reaction{margin:24px 0 32px;padding:0;border:0;background:none}
+.chapter .reaction-label{display:block;font-size:.875rem;color:var(--sub);margin-bottom:8px}
+.chapter .reaction-formula{display:block;font-family:var(--sans);font-size:1.125rem;line-height:1.8;overflow-x:auto;white-space:nowrap;padding-bottom:8px}
+.chapter .book-figure{margin:32px 0 48px}
+.chapter .book-figure img{border:0}
+.chapter .book-figure figcaption{font-size:.875rem;line-height:1.75;max-width:54em;margin-top:16px}
+.chapter table{font-size:1rem;line-height:1.75}
+.chapter th{font-size:1rem;line-height:1.5;padding:16px}
+.chapter td{padding:16px;line-height:1.75}
+.chapter tbody tr:nth-child(even){background:var(--soft)}
+.chapter .memo{font-size:1rem;line-height:1.75;padding:24px;background:var(--soft);border:0}
+.chapter .memo h4{font-size:1.125rem;margin:32px 0 12px}
+.chapter .memo p{font-size:1rem;line-height:1.75;margin:16px 0}
+.chapter .ros-species{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.chapter .ros-species li{padding:16px 0;margin:0;border-bottom:1px solid var(--accent-line);color:var(--accent)}
+@media(max-width:600px){
+.chapter h2{font-size:1.5rem;margin-top:56px}
+.chapter h2[id^="s"]{padding:16px}
+.chapter h3{font-size:1.25rem;margin-top:32px}
+.chapter .ros-species{grid-template-columns:1fr}
+.chapter .memo{padding:16px}
+.chapter .reaction-formula{font-size:1rem}
+}
+
+/* ---- 矢印フロー ---- */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:28px 0;font-family:var(--sans);font-size:13.5px;line-height:1.75}
+.flow .node{background:var(--paper);border:1px solid var(--accent-line);border-radius:4px;padding:6px 11px}
+.flow .arr{color:var(--accent);font-size:14px}
+.flow.vert{flex-direction:column;align-items:flex-start;gap:3px}
+.flow.vert .arr{margin-left:16px}
+.flow.diagram{background:var(--accent-bg);border-radius:8px;padding:18px 20px}
+.flow.vert.diagram .node{display:flex;align-items:baseline;width:100%;max-width:34em}
+.flow.vert.diagram .node strong{color:var(--accent)}
+.flow.steps{width:100%;box-sizing:border-box;background:transparent;padding:0;font-size:17px;line-height:1.8;gap:0}
+.flow.vert.diagram.steps .node{max-width:none;box-sizing:border-box;padding:4px 0;border:none;background:transparent;align-items:flex-start}
+.flow.steps .step-text{display:block;flex:1;min-width:0}
+.flow.steps .num{width:22px;height:22px;font-size:12px;margin-top:.28em}
+.flow.vert.steps .arr{margin:0 0 0 5px;line-height:1.15}
+.flow .num{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;
+border-radius:50%;background:var(--accent);color:#fff;font-size:10.5px;font-weight:700;margin-right:9px;flex:none}
+
+/* ---- 図 ---- */
+figure.book-figure{margin:36px 0;counter-increment:fig}
+.book-figure img{display:block;width:100%;height:auto;margin:0 auto;border:1px solid var(--line);cursor:zoom-in}
+.book-figure.tall img{max-width:420px}
+/* 縦長のインラインSVG。横に広げすぎず、スマホでは幅いっぱいに収まる大きさにそろえる。 */
+.book-figure.tall svg{max-width:520px;margin:0 auto}
+.book-figure.square img{max-width:600px}
+.book-figure.zoom img{max-width:100%;cursor:zoom-out}
+/* インラインSVGの図は縮小せずに読めるよう、図そのものを縦長に作る。横スクロールはさせない。 */
+.book-figure figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+/* まとめ図は帯を付けて、章の締めであることをHTML側で示す */
+.book-figure.summary{background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:8px;
+overflow:hidden;padding-bottom:14px}
+.book-figure.summary .fig-label{margin:0 0 14px;padding:9px 16px;background:var(--accent);color:#fff;
+font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em}
+.book-figure.summary img{border:none;border-radius:0}
+.book-figure.summary figcaption{padding:0 16px}
+.book-figure figcaption::before{content:"図" counter(fig) "　";font-weight:700;color:var(--accent)}
+figure.book-video{margin:36px 0;counter-increment:vid}
+.book-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.book-video figcaption{margin-top:11px;font-family:var(--sans);font-size:14px;line-height:1.85;color:var(--sub)}
+.book-video figcaption::before{content:"動画" counter(vid) "　";font-weight:700;color:var(--accent)}
+.home-video{margin:8px 0 40px}.home-video figcaption::before{content:none}
+.figslot{margin:32px 0;padding:18px 20px;border:1px dashed var(--rule);border-radius:6px;
+font-family:var(--sans);font-size:12.5px;line-height:1.8;color:var(--sub)}
+.figslot .fs-icon{display:none}
+.fs-path{color:var(--faint)}
+.inlineslot{font-family:var(--sans);font-size:12.5px;color:var(--sub);border-bottom:1px dashed var(--rule)}
+
+/* ---- 表 ---- */
+.tblwrap{overflow-x:auto;margin:30px 0}
+table{border-collapse:collapse;width:100%;min-width:400px;font-family:var(--sans);font-size:15.5px;line-height:1.85}
+th,td{padding:11px 14px 11px 0;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th:not(:last-child),td:not(:last-child){padding-right:20px}
+thead th{background:var(--accent-bg);border-top:1px solid var(--accent-line);
+border-bottom:1px solid var(--accent-line);color:var(--accent);font-size:13px;font-weight:700;
+letter-spacing:.03em;padding:11px 14px}
+tbody tr:last-child td{border-bottom:1px solid var(--rule)}
+
+/* ---- リスト ---- */
+ul,ol{padding-left:1.5em;margin:17px 0}
+li{margin:7px 0}
+ul.goal,ol.goal{background:var(--accent-bg);border-radius:8px;padding:22px 26px 22px 46px;margin:30px 0}
+ul.goal li::marker,ol.goal li::marker{color:var(--accent);font-weight:700}
+ul.goal li,ol.goal li{margin:8px 0}
+ul.evidence{list-style:none;padding:18px 0;margin:30px 0;border-top:2px solid var(--accent-line);border-bottom:2px solid var(--accent-line)}
+ul.evidence li{margin:9px 0;padding-left:0;font-size:15px;line-height:1.85}
+
+/* ---- その他の要素 ---- */
+code{font-family:var(--mono);background:var(--soft);border-radius:3px;padding:1px 5px;font-size:.85em}
+pre.code{font-family:var(--sans);background:var(--soft);border-radius:8px;padding:16px 18px;
+font-size:12.5px;line-height:1.95;overflow-x:auto;margin:28px 0}
+hr{border:none;border-top:1px solid var(--line);margin:36px 0}
+
+/* ---- 前後の章 ---- */
+.pager{display:flex;gap:20px;margin:72px 0 0;padding-top:26px;border-top:1px solid var(--rule);
+font-family:var(--sans);font-size:14.5px;line-height:1.75}
+.pager a{display:block;max-width:46%;color:var(--sub)}
+.pager a:hover{color:var(--accent);text-decoration:none}
+.pager .lbl{display:block;font-size:11.5px;color:var(--accent);margin-bottom:4px;letter-spacing:.06em;font-weight:700}
+.pager .next{margin-left:auto;text-align:right}
+
+/* ---- 扉（表紙） ---- */
+/* 囲みは使わない。紙の上に、字と余白と五線だけで組む。*/
+.cover{position:relative;text-align:center;
+padding:clamp(40px,8vw,92px) 0 clamp(40px,6vw,64px);margin-bottom:clamp(36px,5vw,58px)}
+/* 背景の五線 ―― 副題（オーケストラ）に掛けた譜面。中央は伏せて題字を邪魔しない。*/
+.cover::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+width:min(880px,104%);height:168px;pointer-events:none;
+background:repeating-linear-gradient(to bottom,var(--accent) 0 1px,transparent 1px 27px);
+-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);
+mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);opacity:.45}
+.cover > *{position:relative}
+/* 文字の幅ぶんだけ紙を抜いて、五線が字に重ならないようにする（囲みではない）*/
+.cover-en,.cover-title,.cover-sub,.cover-author{background:var(--paper);display:table;
+margin-left:auto;margin-right:auto}
+.cover-en{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.34em;
+text-transform:uppercase;color:var(--accent);margin:0 auto clamp(26px,4vw,40px);padding:2px 22px 2px calc(22px + .34em)}
+.cover-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5.8vw,50px);line-height:1.45;
+letter-spacing:.12em;color:var(--ink);margin:0 auto;border:none;padding:8px .55em 8px calc(.55em + .12em)}
+.cover-sub{margin:clamp(18px,3vw,28px) auto 0;font-size:clamp(14.5px,2.2vw,19px);
+font-weight:400;letter-spacing:.2em;color:var(--accent);padding:6px 1.1em 6px calc(1.1em + .2em)}
+.cover-sub::before{content:"";display:block;width:44px;height:1px;background:var(--accent-line);
+margin:0 auto clamp(18px,3vw,28px)}
+.cover-author{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.2em;
+color:var(--faint);margin:clamp(34px,5vw,48px) auto 0;padding:4px 20px 4px calc(20px + .2em)}
+
+/* ---- 表紙の説明・目次 ---- */
+.hero{margin:0 0 8px}
+.hero .lede{color:var(--ink);margin:0;font-size:16.5px}
+.hero .learning-path{margin:24px 0 0;font-size:1.125rem;line-height:1.8;color:var(--ink)}
+.note{font-family:var(--sans);font-size:13.5px;line-height:1.95;color:var(--sub);margin-top:22px}
+.contents{margin-top:64px}
+.part-block{margin:0 0 36px}
+.part-title{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.09em;color:var(--faint);
+padding-bottom:9px;border-bottom:1px solid var(--rule);margin-bottom:2px}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin:0}
+.toc-list a{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--ink);
+font-size:15px;line-height:1.75}
+.toc-list a:hover{background:var(--soft);text-decoration:none}
+.sec-rule{margin:72px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.disc{margin:72px 0 0;padding-top:24px;border-top:1px solid var(--line);
+font-family:var(--sans);font-size:12.5px;line-height:1.95;color:var(--sub)}
+
+/* ---- 根拠表示の付け方の注記。本文より一段控えめに ---- */
+.scope-note{margin-top:26px;padding:14px 18px;background:var(--accent-bg);
+border:0;font-size:15px;line-height:1.9}
+
+/* ---- 「はじめに」の案内欄。本文より一段控えめに ---- */
+.notice{margin:38px 0 0;padding:16px 20px;background:var(--soft);
+border:0;font-family:var(--sans);
+font-size:14px;line-height:1.95;color:var(--sub)}
+.notice p{margin:0 0 10px}
+.notice p:last-child{margin:0}
+.notice-t{font-weight:700;color:var(--ink)}
+
+/* ---- 全ページ共通フッター ---- */
+.sitefoot{margin:72px 0 0}
+.feedback{padding:22px 24px;background:var(--soft);border:1px solid var(--line);
+border-radius:8px;font-family:var(--sans);font-size:14px;line-height:1.9;color:var(--sub)}
+.feedback p{margin:0 0 12px}
+.fb-t{font-size:15px;font-weight:700;color:var(--ink)}
+.fb-btn{display:inline-block;max-width:100%;padding:9px 20px;
+border:1px solid var(--accent);border-radius:6px;
+color:var(--accent);font-size:13.5px;font-weight:700}
+.fb-btn:hover{background:var(--accent);color:var(--paper);text-decoration:none}
+.fb-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fb-note{margin:0;font-size:12px;color:var(--faint)}
+.sitefoot .stamp{margin:24px 0 0}
+.sitefoot .disc{margin:6px 0 0}
+
+/* ---- モバイル ---- */
+.menubtn{display:none;position:fixed;left:14px;top:14px;z-index:60;font-family:var(--sans);font-size:13px;
+background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px 13px;
+box-shadow:0 2px 12px rgba(0,0,0,.10)}
+@media(max-width:900px){
+.wrap{display:block}
+.side{position:fixed;left:0;top:0;z-index:50;width:min(84vw,300px);transform:translateX(-100%);
+transition:transform .22s;box-shadow:2px 0 18px rgba(0,0,0,.12)}
+.side.open{transform:none}
+.menubtn{display:block}
+.main{padding:66px 20px 64px}
+body{font-size:17px;line-height:1.95}
+h2{margin-top:46px}
+}
+/* ---- 文献への外部リンク ---- */
+a.ext{border-bottom:1px dotted var(--accent-line);white-space:nowrap}
+a.ext::after{content:"↗";font-size:.75em;vertical-align:.35em;margin-left:.15em;opacity:.7}
+
+/* ---- 章内目次 ---- */
+.chaptoc{margin:40px 0 48px;padding:0;background:none;
+border:0;font-family:var(--sans)}
+.chapter .chaptoc .chaptoc-t{margin:0 0 16px;font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:.02em}
+/* 横並びにすると、和文の長い節タイトルが折り返して項目の切れ目が見えなくなる。1行1節。 */
+.chaptoc ul{margin:0;padding:0;list-style:none;display:grid;gap:2px}
+.chapter .chaptoc li{font-size:1rem;line-height:1.7;padding:0;margin:0}
+.chaptoc a{display:block;padding:8px 0}
+.chaptoc a{color:var(--sub)}
+.chaptoc a:hover{color:var(--accent)}
+
+/* ---- 左ナビの凡例と絞り込み ---- */
+.legend{margin:2px 0 12px;font-size:11.5px;line-height:1.65;color:var(--faint)}
+.navfilter{width:100%;margin:0 0 12px;padding:7px 10px;font-family:var(--sans);font-size:13px;
+color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:5px}
+.navfilter:focus{outline:2px solid var(--accent-line);outline-offset:1px}
+.toc a.hide,.toc .part.hide{display:none}
+
+/* ---- キーボード操作の可視化 ---- */
+figure.book-figure:focus-visible,.menubtn:focus-visible,.toc a:focus-visible{
+outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---- 平易版／専門版の切り替え ---- */
+.readmode{display:flex;align-items:center;gap:8px;margin:0 0 26px;
+font-family:var(--sans);font-size:12.5px;color:var(--faint)}
+.readmode-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.readmode-sw button{appearance:none;border:0;padding:5px 14px;cursor:pointer;
+font-family:var(--sans);font-size:12.5px;color:var(--sub);background:var(--paper)}
+.readmode-sw button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:700}
+.readmode-sw button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.easy{display:none}
+body.mode-easy .easy{display:block}
+body.mode-easy .pro{display:none}
+
+/* ---- 用語のツールチップ ---- */
+.term{border-bottom:1.5px dotted var(--accent);cursor:help;transition:background .15s ease}
+.term:hover,.term:focus{background:var(--accent-bg)}
+.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+#tip{position:absolute;z-index:60;max-width:340px;padding:12px 15px;
+background:var(--paper);border:1px solid var(--accent-line);border-radius:8px;
+box-shadow:0 8px 28px rgba(0,0,0,.16);font-family:var(--sans);
+font-size:13.5px;line-height:1.8;color:var(--ink);display:none}
+#tip.on{display:block}
+#tip .tip-t{font-weight:700;font-size:14px;margin-bottom:5px}
+#tip .tip-l{display:block;margin-top:9px;font-size:12px;color:var(--accent)}
+.g-ch{font-family:var(--sans);font-size:12.5px;color:var(--sub);white-space:normal}
+.g-name:target,.g-name:target~td{background:var(--accent-bg)}
+
+/* ---- 版と最終更新 ---- */
+.stamp{margin:0 0 6px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(max-width:900px){
+.feedback{padding:18px 16px}
+}
+@media print{
+.side,.menubtn,.pager,.chaptoc,.navfilter,.feedback{display:none}
+.wrap{display:block}.main{padding:0;background:#fff}
+body{background:#fff;font-size:10.5pt;line-height:1.8}
+h2{margin-top:24pt}
+}
+
+/* ---- セクションと部の扉（目次） ---- */
+.sec-block{margin:0 0 42px}
+.sec-title{font-family:var(--sans);font-size:19px;font-weight:700;letter-spacing:.02em;
+  margin:0 0 4px;padding:0 0 8px;border-bottom:2px solid var(--ink)}
+.sec-title small{display:block;font-size:12px;font-weight:400;color:var(--faint);
+  letter-spacing:.06em;margin-top:4px}
+.sec-intro{margin:10px 0 20px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.part-intro{margin:2px 0 9px;padding:0 6px;font-size:12.5px;line-height:1.75;color:var(--faint)}
+/* ---- 左ナビのセクション見出し ---- */
+.toc .sec{margin:26px 0 2px;padding:0 8px;color:var(--ink);font-size:11.5px;
+  font-weight:700;letter-spacing:.09em;border-bottom:1px solid var(--line);padding-bottom:5px}
+/* ---- NEW / 更新 / 準備中 ---- */
+.badge{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.06em;vertical-align:middle}
+.badge.bnew{background:var(--accent);color:#fff}
+.badge.bupd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.badge.bst{background:#f4f1e8;color:#8a7a52;border:1px solid #ddd3b4}
+.toc-list li.soon{display:block;padding:11px 6px;border-bottom:1px solid var(--line);color:var(--faint)}
+.toc .soon{display:block;padding:4px 8px;font-size:13px;color:var(--faint)}
+.soon em{font-style:normal;margin-left:8px;font-size:10.5px;letter-spacing:.06em;opacity:.85}
+/* ---- 最近の更新・更新履歴 ---- */
+.recent{margin:24px 0 32px;padding:16px 18px;background:var(--soft);border-radius:8px}
+.rc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+.recent ul,.cl{list-style:none;margin:0;padding:0}
+.recent li,.cl li{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;padding:7px 0;
+  font-size:13.5px;line-height:1.65;border-bottom:1px solid var(--line)}
+.recent li:last-child,.cl li:last-child{border-bottom:0}
+.recent time,.cl time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+.k{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.06em;
+  padding:1.5px 6px;border-radius:3px;white-space:nowrap}
+.k.new{background:var(--accent);color:#fff}
+.k.upd{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.recent .note,.cl .note{flex:1 1 100%;font-size:12.5px;color:var(--sub);line-height:1.7}
+.rc-more{margin:11px 0 0;font-size:12.5px}
+.cl-date{font-family:var(--sans);font-size:13px;letter-spacing:.04em;margin:28px 0 6px;color:var(--sub)}
+/* ---- 章の見出し・日付・更新 ---- */
+.ch-title{margin:2px 0 6px}
+.ch-title small{display:block;font-family:var(--sans);font-size:12.5px;font-weight:400;
+  color:var(--faint);letter-spacing:.04em;margin-top:6px}
+.dateline{margin:0 0 24px;font-family:var(--sans);font-size:11.5px;color:var(--faint)}
+.ch-history{margin:32px 0 0;padding:14px 18px;background:var(--soft);border-radius:8px}
+.chh-t{margin:0 0 7px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--faint)}
+.ch-history ul{list-style:none;margin:0;padding:0}
+.ch-history li{display:flex;gap:11px;font-size:12.5px;line-height:1.75;padding:3px 0}
+.ch-history time{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap}
+@media print{.recent,.ch-history,.dateline .badge{display:none}}
+
+/* ---- コラム ---- */
+/* 本筋から外れる話の受け皿。読み飛ばしても筋は通る。
+   地の文は明朝なので、ここだけゴシックにして「別の声」であることを書体で示す。
+   見出しと背景で補足のまとまりを示し、左端の装飾線は使わない。 */
+.column{margin:40px 0;padding:22px 26px 20px;background:var(--col-bg);
+  border:1px solid var(--col-line);border-radius:10px;font-family:var(--sans)}
+.col-t{margin:0 0 10px;font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  color:var(--col-ink)}
+.col-h{margin:0 0 14px;padding-left:0;font-size:17.5px;font-weight:700;
+  line-height:1.6;color:var(--ink);border:0;
+  text-wrap:balance}
+.column p{margin:0 0 14px;font-size:15px;line-height:1.95;color:var(--sub)}
+.column p:last-child{margin-bottom:0}
+.column strong{color:var(--ink);font-weight:700}
+.column ul,.column ol{margin:0 0 14px;padding-left:1.25em;font-size:15px;
+  line-height:1.95;color:var(--sub)}
+.column li{margin:0 0 5px}
+.column a.chref{color:var(--col-ink);text-decoration-color:var(--col-line)}
+.column figure.book-figure{margin:18px 0}
+.column .tblwrap{margin:16px 0;font-size:14.5px}
+@media(max-width:600px){.column{padding:18px 18px 16px}}
+@media print{.column{background:none;border:1px solid var(--rule)}}
+
+/* 本文の「ちなみに」。コラムより軽く、枠もラベルも持たない。
+   見出しと薄い背景で補足のまとまりを示す。 */
+.memo{margin:30px 0;padding:16px 20px 14px;background:var(--soft);
+  border:0;border-radius:4px;
+  font-family:var(--sans)}
+.memo-h{margin:0 0 8px;font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.7}
+.memo p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.memo p:last-child{margin-bottom:0}
+.memo strong{color:var(--ink);font-weight:700}
+.memo figure.book-figure{margin:16px 0}
+.memo .tblwrap{margin:14px 0;font-size:14px}
+.memo ul,.memo ol{margin:0 0 10px;padding-left:1.25em;font-size:14.5px;
+  line-height:1.9;color:var(--sub)}
+.memo li{margin:0 0 4px}
+.supplement{margin:24px 0;background:var(--soft);border:1px solid var(--rule);border-radius:6px}
+.supplement>summary{padding:14px 18px;cursor:pointer;font-family:var(--sans);font-weight:700;line-height:1.7}
+.supplement>summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.supplement[open]>summary{border-bottom:1px solid var(--rule)}
+.supplement-body{padding:0 18px 8px}
+.chapter .supplement-body p{font-size:1rem;line-height:1.85}
+.supplement-body .tblwrap{margin:18px 0}
+
+/* ---- 公開の状況（スコア表） ---- */
+/* 章は増え続けるので、本数ぶん場所を取る表現（マス・帯）は避け、数字だけで見せる。
+   数字は等幅にして桁を揃える——増えたことが一目で分かるのは、桁が動くときなので。 */
+.score{margin:26px 0 30px;padding:16px 20px 14px;border:1px solid var(--line);border-radius:8px}
+.sc-t{margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;color:var(--faint)}
+/* 本文用の table は min-width:400px と行の下線を持っている（.tblwrap で横スクロール
+   させる前提）。この表は囲んでいないので、狭い画面ではみ出さないよう打ち消す。 */
+.score table{width:100%;min-width:0;border-collapse:collapse}
+.score th,.score td{border:0;padding:6px 0;vertical-align:baseline}
+.score th{text-align:left;font-family:var(--sans);font-size:13.5px;font-weight:400;
+  color:var(--sub);padding-right:12px}
+.sc-n{text-align:right;font-family:var(--sans);
+  font-variant-numeric:tabular-nums;white-space:nowrap;width:1%}
+.sc-n strong{font-size:17px;font-weight:700;color:var(--ink)}
+.sc-n span{font-size:12.5px;color:var(--faint);margin-left:1px}
+.score .sc-total th,.score .sc-total td{border-top:1px solid var(--line);padding-top:9px}
+.sc-total th{font-weight:700;color:var(--ink)}
+.sc-total .sc-n strong{color:var(--accent)}
+.sc-note{margin:11px 0 0;font-size:12.5px;color:var(--sub)}
+@media print{.score{display:none}}
+
+/* 共通のナビゲーション・補足。本文と操作対象の役割を分ける。 */
+body{font-family:var(--sans);line-height:1.8}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.brand{font-size:1rem}.brand small{font-size:.875rem}
+.toc{font-size:1rem;line-height:1.6;margin-top:24px}
+.toc .part{font-size:.875rem;margin:32px 0 8px;letter-spacing:.02em}
+.toc a,.toc .soon{padding:8px;font-size:1rem}
+.toc a.active{background:var(--soft);box-shadow:none}
+.navfilter{font-size:1rem;min-height:44px}
+.menubtn{font-size:1rem;min-height:44px}
+.part-title{font-size:1rem;margin-bottom:8px;padding-bottom:16px}
+.toc-list a{font-family:var(--sans);font-size:1.125rem;padding:16px 8px}
+.part-block{margin-bottom:48px}
+.hero .lede{font-size:1.125rem;line-height:1.8}
+.note,.disc,.feedback,.notice{font-size:1rem;line-height:1.75}
+.chapter .memo .memo-h{font-size:1.125rem;font-weight:700;margin:0 0 16px}
+.chapter .column .col-h{font-size:1.125rem;font-weight:700;line-height:1.6;margin:0 0 16px}
+.chapter .memo h4,.chapter .column h4{margin-top:28px}
+.chapter .memo .memo-h+h4,.chapter .column .col-h+h4{margin-top:16px}
+.chapter .memo,.chapter .column{overflow-wrap:anywhere}
+.chapter .book-figure svg{display:block;cursor:zoom-in}
+/* 拡大時だけ図の中を横に移動できる。本文とキャプションの幅は保つ。 */
+.chapter .book-figure.zoom{overflow-x:auto}
+.chapter .book-figure.zoom img,.chapter .book-figure.zoom svg{
+width:max(100%,var(--figure-zoom-width,100%))!important;max-width:none!important;max-height:none!important;cursor:zoom-out}
+.chapter .book-figure figcaption{overflow-wrap:anywhere}
+.chapter .memo p,.chapter .memo ul,.chapter .memo ol,.chapter .column p,.chapter .column ul,.chapter .column ol{font-size:1rem;line-height:1.75}
+.chapter .kicker,.chapter .dateline{font-size:.875rem;margin:0 0 24px}
+.chapter .ch-history li,.chapter .ch-history time,.chapter .ch-title small{font-size:.875rem}
+.chapter .flow{font-size:1rem}
+.pathways .flow.diagram{background:transparent;padding:12px 0;border-radius:0;gap:12px;font-size:1.125rem}
+.pathways .flow .node{background:transparent;border:0;padding:4px 0;font-weight:600}
+.pathways .flow .arr{color:var(--accent)}
+@media(max-width:640px){.pathways .flow.diagram{flex-direction:column;align-items:stretch;text-align:center}.pathways .flow .arr{transform:rotate(90deg);align-self:center}}
+.chapter .flow.steps{font-size:1.125rem}
+.chapter .memo p:last-child{margin-bottom:0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side{transition:none}}
+@media print{body,.chapter{font-size:11pt}.chapter h2{font-size:18pt;margin-top:32px}.chapter h3{font-size:14pt;margin-top:24px}.chapter h4{font-size:12pt}.chapter h2,.chapter h3,.chapter h4{break-after:avoid}}
+
+/* 反応式：分子を囲まず、左右と演算子の間隔で構造を示す。 */
+.chapter .reaction-label{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:16px}
+.chapter .reaction-equation{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;padding:24px 0 12px;font-size:1.375rem;line-height:1.5}
+.reaction-side{display:flex;align-items:flex-start;gap:16px;flex:none}
+/* 生成物が多い収支式は、縦に流して生成物を折り返す。 */
+.chapter .reaction-long .reaction-equation{flex-direction:column;gap:16px;overflow:visible;min-width:0}
+.reaction-long .reaction-side{flex-wrap:wrap;max-width:100%;gap:12px 16px}
+.reaction-long .reaction-arrow{min-width:44px;height:48px;margin-left:16px}
+.reaction-long .reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-long .reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+.reaction-species{display:flex;flex-direction:column;align-items:center;white-space:nowrap;font-weight:500;letter-spacing:.025em}
+.reaction-name{display:block;font-size:.875rem;font-weight:400;line-height:1.5;white-space:normal;width:max-content;max-width:10em;text-align:center;color:var(--sub);margin-top:8px}
+.reaction-plus{color:var(--sub);font-size:1.125rem}
+.reaction-arrow{position:relative;display:flex;justify-content:center;align-items:center;min-width:88px;flex:none;font-size:2.25rem;color:var(--accent);line-height:1}
+.reaction-enzyme{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:.875rem;font-weight:700;white-space:nowrap;line-height:1.4;margin-bottom:4px}
+@media(max-width:600px){
+.chapter .reaction-equation{flex-direction:column;align-items:flex-start;gap:24px;font-size:1.25rem;padding-top:0}
+.reaction-side{flex-wrap:wrap;flex:none;gap:8px 12px}
+.reaction-arrow{margin-left:16px;min-width:44px;height:48px}
+.reaction-arrow>span[aria-hidden]{transform:rotate(90deg)}
+.reaction-enzyme{bottom:auto;left:100%;transform:none;margin:0 0 0 12px;white-space:normal;width:190px}
+}
+
+@media screen and (min-width:901px){
+.book-figure.portrait-illustration img{width:auto;max-width:100%;max-height:min(78vh,800px)}
+.book-figure.portrait-illustration.zoom img{width:100%;max-height:none}
+}
+.book-figure.compact-illustration img{width:auto;max-width:100%;max-height:520px}
+.book-figure.compact-illustration.zoom img{width:100%;max-height:none}
+
+/* 表紙と目次：読み物・案内・更新情報を文字階層と余白で区別する。 */
+.home .cover{padding:32px 0 24px;margin-bottom:32px}
+.home .cover-en{font-size:.875rem;letter-spacing:.14em;margin-bottom:24px}
+.home .cover-title{font-size:clamp(1.75rem,4vw,2.75rem);letter-spacing:.06em}
+.home .cover-sub{font-size:1.125rem;margin-top:16px;letter-spacing:.12em}
+.home .cover-sub::before{margin-bottom:16px}
+.home .cover-author{font-size:.875rem;margin-top:24px;letter-spacing:.1em}
+.home .hero,.home .intro>p,.home #criteria>p{max-width:36em}
+.home .hero .learning-path{color:var(--sub)}
+.home .hero .note{font-size:.875rem;margin-top:16px}
+.home-jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin:24px 0 32px;font-size:1rem}
+.home-jump a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:.25em;font-weight:700}
+.home .sec-rule{margin-top:56px;padding-top:32px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.home .sec-rule>h2{font-size:1.75rem;line-height:1.5;margin:0 0 24px;padding:0;border:0;color:var(--ink)}
+.home .intro .lead{font-size:1.25rem;line-height:1.8;font-weight:700;background:none;padding:0;margin:0 0 32px}
+.home .intro>p,.home #criteria>p{margin:0 0 24px;line-height:1.85}
+.home .notice{margin-top:32px;padding:20px 24px}
+.home .score{margin:24px 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px}
+.home .sc-t{font-size:1rem;color:var(--ink);letter-spacing:0;margin-bottom:12px}
+.home .score th{font-size:1rem;line-height:1.6}
+.home .sc-n span,.home .sc-note{font-size:.875rem;color:var(--sub)}
+.home .sc-n strong{font-size:1.125rem}
+.home .recent{margin:0;background:none;padding:0;border-radius:0;border:0}
+.home .recent>summary{font-size:1rem;font-weight:700;padding:16px 0;cursor:pointer;color:var(--accent)}
+.home .recent>summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.home .recent ul{padding:0 0 8px}
+.home .recent li{font-size:1rem;padding:16px 0}
+.home .recent time,.home .recent .note,.home .recent .k,.home .recent .rc-more{font-size:.875rem}
+.home .recent .note{margin:0}.home .recent .rc-more{margin:0 0 24px}
+.home .contents .sec-block{margin:40px 0 64px}
+.home .contents .sec-title{font-size:1.5rem;line-height:1.5;color:var(--accent);margin:0 0 32px;padding:0 0 20px;border-bottom:2px solid var(--accent-line)}
+.home .sec-title small{font-size:1rem;line-height:1.75;color:var(--sub);letter-spacing:0;margin-top:8px}
+.home .contents .part-title{font-size:1.25rem;line-height:1.6;font-weight:700;color:var(--ink);letter-spacing:0;margin:0 0 12px;padding:0;border:0}
+.home .part-intro,.home .sec-intro{font-size:1rem;line-height:1.8;color:var(--sub);margin:0 0 20px;padding:0;max-width:38em}
+.home .part-block{margin-bottom:40px}
+.home .toc-list{border-top:1px solid var(--line)}
+.home .toc-list a,.home .toc-list li.soon{font-size:1.125rem;line-height:1.7;padding:14px 12px}
+.home .toc-list a{color:var(--accent)}
+.home .toc-list li.soon{color:var(--sub)}
+.home .toc-list .badge,.home .toc-list .soon em{font-size:.875rem;letter-spacing:0}
+@media(max-width:600px){
+.home .cover{padding-top:16px;margin-bottom:24px}
+.home .cover-title{padding-left:0;padding-right:0;letter-spacing:.02em}
+.home .cover-en{font-size:.875rem;letter-spacing:.05em;padding-left:0;padding-right:0}
+.home .cover-sub{font-size:1rem;letter-spacing:.06em}
+.home .sec-rule{margin-top:40px;padding-top:24px;scroll-margin-top:72px}
+.home .sec-rule>h2{font-size:1.5rem}
+.home .contents .sec-title{font-size:1.375rem}
+.home .score,.home .notice{padding:16px}
+.home .score th{max-width:13em}
+.home .score .sc-n{padding-left:12px}
+.home .toc-list a,.home .toc-list li.soon{padding-left:4px;padding-right:4px}
+}
+</style></head><body>
+<button class="menubtn" onclick="toggleMenu()" aria-controls="side" aria-expanded="false">目次</button>
+<div class="wrap">
+<nav class="side" id="side">
+<a class="brand" href="index.html">生化学で見る美容医療<small>皮膚の下のオーケストラ</small></a>
+<label class="sr-only" for="navfilter">しぼり込む</label>
+<input class="navfilter" id="navfilter" type="search" autocomplete="off" placeholder="しぼり込む（例：NAD、レーザー）">
+<div class="toc">
+<div class="part">はじめに</div>
+<a href="index.html">表紙と目次</a>
+<a href="index.html#criteria">この教材の立ち方</a>
+<a href="changelog.html">更新履歴</a>
+<a href="glossary.html">用語集</a>
+<a href="pathways.html">シグナル伝達経路</a>
+<div class="sec">生化学・細胞生物学の基礎</div>
+<div class="part">細胞の地図</div>
+<a href="cell.html">細胞とは何か</a>
+<a href="organelles.html">オルガネラ</a>
+<a href="cell-types.html">オルガネラはどう連携するか</a>
+<div class="part">情報をどう読むか</div>
+<a href="dna-to-protein.html">DNAからタンパク質まで</a>
+<a href="epigenome.html">エピゲノム</a>
+<a href="receptors-signaling.html">受容体と細胞内シグナル</a>
+<a href="membrane-transport.html">細胞膜と物質輸送</a>
+<a href="extracellular-vesicles.html">細胞外小胞とエクソソーム</a>
+<div class="part">エネルギー</div>
+<a href="atp.html">代謝とATP</a>
+<a href="glycolysis.html">解糖系</a>
+<a href="fatty-acid-oxidation.html">脂肪酸とケトン体</a>
+<a href="tca-cycle.html">TCA回路</a>
+<a href="electron-transport.html">電子伝達系</a>
+<a href="nad.html">NAD⁺</a>
+<div class="part">材料を感知し作る</div>
+<a href="amino-acids.html">アミノ酸は材料であり、シグナルでもある</a>
+<a href="mtorc1.html">mTORC1――タンパク質合成を調節する仕組み</a>
+<div class="part">掃除と作り直し</div>
+<a href="autophagy.html">オートファジーとリソソーム</a>
+<a href="mito-quality-control.html">ミトコンドリア品質管理</a>
+<a href="ampk-mtor.html">AMPKとmTORC1――エネルギーと材料の使い方を調節する</a>
+<div class="part">傷害から修復まで</div>
+<a href="oxidative-stress.html">酸化ストレスと抗酸化</a>
+<a href="cell-death.html">細胞死</a>
+<a href="wound-healing.html">炎症と創傷治癒<span class="badge bupd">更新</span></a>
+<span class="soon">紫外線に対する皮膚の反応<em>準備中</em></span>
+<div class="part">細胞は加齢で何が変わるか</div>
+<a href="cell-cycle.html">細胞周期</a>
+<a href="hallmarks-of-aging.html">Hallmarks of Aging</a>
+<a href="senescence.html">細胞老化</a>
+<a href="mito-dysfunction.html">ミトコンドリア機能不全と細胞老化</a>
+<div class="sec">美容皮膚科</div>
+<div class="part">組織の生化学</div>
+<a href="epidermis.html">表皮とターンオーバー<span class="badge bupd">更新</span></a>
+<a href="melanocytes.html">メラノサイトと色素形成<span class="badge bupd">更新</span></a>
+<a href="ecm.html">細胞外基質（ECM）</a>
+<a href="mechanotransduction.html">張力と細胞：mechanotransduction<span class="badge bupd">更新</span></a>
+<a href="fibroblast-collagen.html">線維芽細胞とコラーゲン</a>
+<a href="elastic-fibers.html">弾性線維とコラーゲン線維<span class="badge bupd">更新</span></a>
+<a href="glycation.html">糖化とAGE</a>
+<a href="sebum.html">皮脂分泌の生化学<span class="badge bupd">更新</span></a>
+<a href="hair-follicle.html">毛と毛包</a>
+<a href="adipose.html">脂肪</a>
+<a href="muscle.html">筋肉</a>
+<a href="endothelium.html">血管と内皮</a>
+<div class="part">訴えを細胞から読み解く</div>
+<a href="erythema.html">赤みの生化学</a>
+<a href="pigmentation.html">しみとくすみ</a>
+<a href="sagging.html">たるみの多層構造</a>
+<div class="part">疾患・病態を細胞から理解する</div>
+<a href="rosacea.html">酒さ</a>
+<a href="seborrheic-dermatitis.html">脂漏性皮膚炎</a>
+<a href="acne.html">尋常性痤瘡</a>
+<span class="soon">日光黒子と雀卵斑<em>準備中</em></span>
+<a href="melasma.html">肝斑<span class="badge bupd">更新</span></a>
+<span class="soon">炎症後色素沈着（PIH）<em>準備中</em></span>
+<span class="soon">真皮メラノサイトーシス<em>準備中</em></span>
+<div class="part">外用</div>
+<a href="skin-penetration.html">角層バリアと経皮吸収<span class="badge bnew">NEW</span></a>
+<span class="soon">レチノイド外用の生化学<em>準備中</em></span>
+<a href="skin-lightening.html" class="active">美白の生化学――外用と内服<span class="badge bnew">NEW</span></a>
+<span class="soon">ケミカルピーリングの生化学<em>準備中</em></span>
+<div class="part">デバイス</div>
+<a href="energy-devices.html">デバイスによる熱治療<span class="badge bupd">更新</span></a>
+<a href="light-basics.html">レーザー・光治療の基本<span class="badge bnew">NEW</span></a>
+<a href="rf.html">RFの生化学<span class="badge bnew">NEW</span></a>
+<span class="soon">HIFUの生化学<em>準備中</em></span>
+<span class="soon">フラクショナルレーザーの生化学<em>準備中</em></span>
+<span class="soon">IPL<em>準備中</em></span>
+<span class="soon">Qスイッチ・ピコ秒レーザー<em>準備中</em></span>
+<span class="soon">血管レーザー<em>準備中</em></span>
+<span class="soon">PBM・LEDの生化学<em>準備中</em></span>
+<span class="soon">電気・磁気による筋刺激<em>準備中</em></span>
+<span class="soon">プラズマ治療<em>準備中</em></span>
+<div class="part">注射</div>
+<span class="soon">ヒアルロン酸フィラーの生化学<em>準備中</em></span>
+<span class="soon">バイオスティミュレーター<em>準備中</em></span>
+<span class="soon">肌育治療を細胞生物学で読む<em>準備中</em></span>
+<span class="soon">エクソソームと幹細胞培養上清<em>準備中</em></span>
+<span class="soon">ボツリヌストキシンの生化学<em>準備中</em></span>
+<span class="soon">脂肪を減らす治療<em>準備中</em></span>
+<div class="sec">美容内科</div>
+<span class="soon">皮膚と全身のつながり<em>準備中</em></span>
+<span class="soon">食事・栄養と皮膚の代謝<em>準備中</em></span>
+<span class="soon">高血糖・インスリン抵抗性と皮膚<em>準備中</em></span>
+<span class="soon">睡眠・体内時計と皮膚<em>準備中</em></span>
+<span class="soon">ストレスと皮膚<em>準備中</em></span>
+<span class="soon">運動・筋肉と皮膚<em>準備中</em></span>
+<span class="soon">腸内細菌<em>準備中</em></span>
+<span class="soon">抗酸化サプリメントと点滴<em>準備中</em></span>
+<span class="soon">NAD⁺前駆体<em>準備中</em></span>
+<span class="soon">senolytic・mitophagy関連介入<em>準備中</em></span>
+<div class="sec">おわりに</div>
+<span class="soon">美容医療を細胞から考える<em>準備中</em></span>
+</div></nav>
+<main class="main"><div class="col">
+<article class="chapter" data-chapter="skin-lightening">
+<p class="kicker">美容皮膚科　／　外用</p>
+<h1 class="ch-title">美白の生化学――外用と内服</h1>
+<p class="dateline">公開 2026-11-06</p>
+<p><a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>で見たように、メラニンはメラノサイトのメラノソームの中で、チロシナーゼが始める反応から作られ、角化細胞へ渡されて表皮に広がります。美白に使われる成分は、この流れのどこかに作用します。</p>
+<h2>この章の一言</h2>
+<blockquote class="lead"><strong>美白成分は、メラニンができて表皮に残るまでの、どの段階に作用するかで分かれます。</strong> 作用する段階が違えば、効き方も、効果が出るまでの時間も、注意すべき副作用も変わります。</blockquote>
+<nav class="chaptoc" aria-label="この章の節"><p class="chaptoc-t">この章の節</p><ul><li><a href="#s1">1　色素ができて表皮に残るまでの、どこに作用するか</a></li><li><a href="#s2">2　チロシナーゼに作用する成分</a></li><li><a href="#s3">3　ドーパキノンに作用する成分</a></li><li><a href="#s4">4　合成を促す信号に作用する</a></li><li><a href="#s5">5　受け渡しと、表皮の更新に作用する</a></li><li><a href="#s6">6　届くかどうか、ヒトで効くかどうか</a></li></ul></nav><h2 id="s1">1　色素ができて表皮に残るまでの、どこに作用するか</h2>
+<p>メラニンが表皮の色として見えるまでを、<a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>の作用点の図と同じ①〜⑤の段階に分けます。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_作用点_20261102.svg" alt="メラニン合成経路と美白成分の作用点。" width="1440.0" height="1500.0" loading="lazy"><figcaption>メラニン合成経路と美白成分の作用点。①合成を促す信号には光防御・ポリポディウム・トラネキサム酸、③合成のうちチロシナーゼの反応にはハイドロキノン・アルブチン・コウジ酸・4-n-ブチルレゾルシノール・チアミドール・デカペプチド-12、ドーパキノンにはビタミンC（還元）とシステイン・グルタチオン・システアミン（チオール）、④角化細胞への受け渡しにはナイアシンアミド、⑤表皮の更新にはレチノイドとケミカルピーリングが作用する。番号はメラノサイトの章の作用点の図と対応する。</figcaption></figure>
+<div class="tblwrap"><table><thead><tr><th>段階</th><th>そこで起きること</th><th>色素を減らす成分・治療</th><th>節</th></tr></thead><tbody><tr><td>① 合成を促す信号</td><td>紫外線・可視光・炎症を受けた角化細胞が、メラノサイトに合成を促す信号を送る</td><td>光防御（紫外線・可視光を防ぐ）、ポリポディウム・レウコトモス（内服）、トラネキサム酸（外用・内服）</td><td>4</td></tr><tr><td>② メラノソームの成熟</td><td>メラノソームに酵素が運び込まれ、合成できる状態に整う</td><td>主な標的とする成分は、現時点でない</td><td>—</td></tr><tr><td>③ 合成：チロシナーゼの反応</td><td>チロシナーゼがチロシンをDOPAに、DOPAをドーパキノンに酸化する。メラニンの量を決める中心の反応</td><td>ハイドロキノン、アルブチン、コウジ酸、4-n-ブチルレゾルシノール、チアミドール、デカペプチド-12</td><td>2</td></tr><tr><td>③ 合成：ドーパキノンから先</td><td>反応性の高いドーパキノンが、酵素なしでもメラニンへ進む</td><td>ビタミンC、システイン、グルタチオン、システアミン（外用・内服）</td><td>3</td></tr><tr><td>④ 角化細胞への受け渡し</td><td>メラニンを含むメラノソームが、樹状突起から角化細胞へ渡される</td><td>ナイアシンアミド</td><td>5</td></tr><tr><td>⑤ 表皮の更新</td><td>メラニンを受け取った角化細胞が角層へ上がり、剥がれ落ちる</td><td>レチノイド、ケミカルピーリング</td><td>5</td></tr></tbody></table></div>
+<p>①〜③に作用する成分は、<strong>これから作られるメラニン</strong>を減らします。日本の医薬部外品で認められている美白の効能が「メラニンの生成を抑え、しみ、そばかすを防ぐ」なのも、この作用を表しています。<a class="ext" href="https://www.jcia.org/user/common/download/business/advertising/JCIA20200615_ADguide.pdf" target="_blank" rel="noopener">日本化粧品工業連合会「化粧品等の適正広告ガイドライン」2020年版</a> すでに角化細胞に渡ったメラニンは、その細胞が角層へ上がって剥がれ落ちるまで表皮に残ります。基底層で生まれた角化細胞が角層から剥がれるまでの時間は、測定法によって約4週から6週以上と幅があります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/5837896/" target="_blank" rel="noopener">Weinstein・Van Scott, 1965</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/871385/" target="_blank" rel="noopener">Bergstresser・Taylor, 1977</a> 美白成分の効果を評価するのに数か月かかるのは、このためです。</p>
+<p>同じ成分を塗っても飲んでも、作用する段階は同じです。違うのは、作用点まで届くかどうかと、ヒトで効果を確かめた試験があるかどうかです。この違いは6節でまとめます。</p>
+<h2 id="s2">2　チロシナーゼに作用する成分</h2>
+<h3>チロシナーゼは、フェノールをキノンに変える</h3>
+<p>チロシナーゼ（tyrosinase）は、活性中心に2個の銅を持つ酵素です。ベンゼン環に水酸基（–OH）が1つ付いた<strong>フェノール</strong>に、もう1つ–OHを付けて<strong>カテコール</strong>にします。続けてカテコールから水素を2つ取り去り（酸化し）、<strong>キノン</strong>にします。チロシン → DOPA → ドーパキノンは、この2段階の反応です。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_フェノールからキノン_20261105.svg" alt="チロシナーゼがすることと、キノンの性質。" width="1440.0" height="740.0" loading="lazy"><figcaption>チロシナーゼがすることと、キノンの性質。上段：チロシナーゼは、ベンゼン環に–OHが1つ付いたフェノールに–OHをもう1つ付けてカテコールにし、さらに水素を2つ取ってキノンにする。チロシンがDOPAを経てドーパキノンになる反応がこれにあたる。下段：キノンは–SHを持つ分子とすぐ結合し、結合物では環が安定な形に戻る。–SHを持つ分子がシステインやグルタチオンならドーパキノンが捕まえられ、タンパク質のシステインならタンパク質が働かなくなる。</figcaption></figure>
+<p><strong>キノン（quinone）</strong>は、環の炭素に酸素が二重結合（=O）で2つ付いた形です。ベンゼン環が本来持つ安定な形を失っているため、電子を多く持つ相手とすぐ反応し、反応すると環は安定な形に戻ります。特に–SH（チオール基）とは速く結合します。この性質が、美白にも傷害にも関わります。</p>
+<ul><li>ドーパキノンに、システインやグルタチオンの–SHが結合すると、ドーパキノンはメラニンへ進めなくなります（3節）。</li><li>美白成分からできたキノンが、メラノサイトのタンパク質の–SHに結合すると、タンパク質が働かなくなります（下で説明）。</li></ul>
+<h3>反応が起きる場所は、酵素の表面のくぼみ</h3>
+<p>酵素はタンパク質全体で反応するのではなく、表面にある小さなくぼみだけが反応の場です。このくぼみを<strong>活性中心</strong>と呼びます。チロシナーゼでは、くぼみの底に銅が2個あり、そこに酸素が結合します。チロシンはこのくぼみにはまり、フェノール環が銅と酸素のすぐそばに置かれます。</p>
+<p>くぼみは形が決まっているので、はまる分子と、はまらない分子があります。<strong>くぼみは1つなので、別の分子が入っている間、チロシンは入れません。</strong> 美白成分の多くはチロシンと似たフェノール環を持ち、このくぼみにはまります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_活性中心_20261105.svg" alt="チロシナーゼの活性中心と、入った成分の2つの行き先。" width="1440.0" height="900.0" loading="lazy"><figcaption>チロシナーゼの活性中心と、入った成分の2つの行き先。活性中心は酵素の表面のくぼみで、底に銅が2個あり、そこに酸素が結合する。チロシンはこのくぼみにはまり、フェノール環が銅のそばに置かれる。くぼみに入った成分は、酸化されてキノンになって出ていくもの（ハイドロキノン、ロドデノール）と、酸化されずにくぼみに居座るもの（4-n-ブチルレゾルシノール、チアミドール）に分かれる。前者のキノンはメラノサイトを傷つけ、後者はチロシンが入れないことでメラニンの合成を減らす。</figcaption></figure>
+<h3>美白成分は、酸化されるか、されないかで分かれる</h3>
+<p>くぼみに入った後が、2つに分かれます。<strong>チロシンと同じように酸化されてキノンになる成分</strong>（ハイドロキノン、ロドデノール）は、できたキノンがメラノサイトを傷つけます。<strong>酸化されずにくぼみをふさぐ成分</strong>（4-n-ブチルレゾルシノール、チアミドールなど）は、チロシンを入れないことで合成を減らします。後者はやめて濃度が下がれば出ていくので、酵素の働きが戻ります。</p>
+<p>分かれ目は、環についた水酸基の並び方です。水酸基が1つおきに並ぶ環（レゾルシノール）は、くぼみに入っても酸化されません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26228294/" target="_blank" rel="noopener">Ito・Wakamatsu, 2015</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_酸化されるか阻害か_20261105.svg" alt="チロシナーゼに酸化される成分と、酸化されずに阻害する成分。" width="1440.0" height="1270.0" loading="lazy"><figcaption>チロシナーゼに酸化される成分と、酸化されずに阻害する成分。チロシンはDOPAを経てドーパキノンになる。ロドデノールも同じ2段階で酸化されてキノンになり、その速さはチロシンより速い。ハイドロキノンはチロシンよりずっと遅く酸化されてベンゾキノンなどになる。4-n-ブチルレゾルシノールとチアミドールは、水酸基が1つおきに並ぶレゾルシノール構造を持ち、活性中心に入るが酸化されず、酵素をふさぐ。アルブチンとコウジ酸はヒトの酵素への阻害が弱い。酸化の速さの比較は別々の酵素実験による。</figcaption></figure>
+<h3>酸化されてキノンになる成分：メラノサイトを傷つける</h3>
+<h4>キノンがメラノサイトを傷つける仕組み</h4>
+<p>ハイドロキノンやロドデノールがメラノソームの中でキノンになると、メラノサイトの中では次のように傷害が進むと考えられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24903082/" target="_blank" rel="noopener">Itoら, 2014a</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10761994/" target="_blank" rel="noopener">Thörneby-Anderssonら, 2000</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36567223/" target="_blank" rel="noopener">Nishimaki-Mogamiら, 2022</a></p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_キノンによる傷害_20261105.svg" alt="キノンがメラノサイトを傷つける仕組み。" width="1440.0" height="940.0" loading="lazy"><figcaption>キノンがメラノサイトを傷つける仕組み。メラノソームの中でハイドロキノンやロドデノールがチロシナーゼに酸化されてキノンになる。①キノンにはまずグルタチオンの–SHが結合して無害な結合物になるが、キノンが作られ続けるとグルタチオンが使い切られる。②余ったキノンはタンパク質のシステインに結合し、タンパク質の形が変わって働かなくなる。③形の崩れたタンパク質がたまって小胞体に負担がかかり、細胞死に至る。加わる要因として、紫外線で増える活性酸素と、キノンが結合したチロシナーゼを標的にする免疫がある。</figcaption></figure>
+<ol><li><strong>グルタチオンが先に受け止め、使い切られる</strong>：グルタチオンは、システインを含む小さな分子（トリペプチド）で、細胞の中に多くあります。入ってきたキノンには、まずグルタチオンの–SHが結合し、キノンはタンパク質に届く前に無害な結合物になります。キノンが作られ続けると、グルタチオンが足りなくなります。</li><li><strong>キノンがタンパク質に結合し、タンパク質が働かなくなる</strong>：グルタチオンが足りなくなると、キノンはタンパク質の中のシステイン（–SHを持つアミノ酸）に結合します。結合された場所の形が変わり、酵素などのタンパク質が働かなくなります。</li><li><strong>形の崩れたタンパク質がたまり、細胞が死ぬ</strong>：形の崩れたタンパク質がたまると、タンパク質を作って折りたたむ小胞体に負担がかかります（小胞体ストレス）。負担が続くと、細胞は自ら死ぬ仕組み（アポトーシス）を動かします。ロドデノールを加えた培養メラノサイトで確かめられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24890809/" target="_blank" rel="noopener">Sasakiら, 2014</a></li></ol>
+<p>これに二つの要因が加わります。</p>
+<ul><li><strong>活性酸素</strong>：キノンや、そこからできる重合体が活性酸素を生じ、紫外線でその量や毒性が増えます（試験管内・培養細胞）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29474003/" target="_blank" rel="noopener">Itoら, 2018</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29630780/" target="_blank" rel="noopener">Gotoら, 2018</a> 傷害を強めますが、主な原因かどうかは分かっていません。上の培養実験では、活性酸素は検出されませんでした。</li><li><strong>免疫</strong>：キノンが結合して形の変わったチロシナーゼを、免疫が異物とみなし、T細胞がメラノサイトを攻撃します。白斑の治療で残った色素を抜くのに使うモノベンゾン（ハイドロキノンの類縁物質）で示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21326294/" target="_blank" rel="noopener">van den Boornら, 2011</a> ロドデノールで白斑が出た患者でも、チロシナーゼに反応するT細胞が見つかっています（8例）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26613259/" target="_blank" rel="noopener">Takagiら, 2016</a></li></ul>
+<h4>ハイドロキノン：酸化されにくいが、メラノサイトを傷つける</h4>
+<p>ハイドロキノン（hydroquinone, HQ）は、チロシナーゼに酸化されにくい成分です。それでも少しずつ酸化されてキノンになります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1899343/" target="_blank" rel="noopener">Palumboら, 1991</a>、<a class="ext" href="https://doi.org/10.3390/ijms262110734" target="_blank" rel="noopener">Itoら, 2025</a> チロシンと一緒にあると、酵素はハイドロキノンを先に酸化するため、その間はチロシンからのメラニン合成も止まります（酵素実験）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1899343/" target="_blank" rel="noopener">Palumboら, 1991</a></p>
+<p>ただし脱色の主な理由は、酵素を止めることではなく、メラノサイトを傷つけることと考えられています。ハイドロキノンでヒトのチロシナーゼを止めるには、mmol/L域の高い濃度が必要です。ところが培養メラノサイトでは、その数十分の1以下の約16 µmol/Lでメラニン合成が止まり、ハイドロキノンを取り除いても戻りませんでした。酵素を止めているだけなら、取り除けば戻るはずです。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">Mannら, 2018a</a></p>
+<p><strong>ハイドロキノンでも白斑は起こります。</strong> 症例報告があり、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7105694/" target="_blank" rel="noopener">Fisher, 1982</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/4085240/" target="_blank" rel="noopener">Boyle・Kennedy, 1985</a> 欧州連合が2001年に化粧品への配合を禁止した理由の一つです。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17166200/" target="_blank" rel="noopener">Westerhof・Kooyers, 2005</a> ただ、報告は症例の集積にとどまり、頻度は分かっていません。長く使ったときにより問題になるのは、使った部位が青黒くなる<strong>外因性組織黒変症（exogenous ochronosis）</strong>です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34486734/" target="_blank" rel="noopener">Ishack・Lipner, 2022</a></p>
+<h4>ロドデノール：よく酸化され、白斑が多発した</h4>
+<p>ロドデノールは、チロシナーゼを阻害する美白成分として医薬部外品に配合されていました。2013年に使用者に白斑が多発し、製品は自主回収されました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25622988/" target="_blank" rel="noopener">Nishigoriら, 2015</a> ロドデノールを2%配合した美白化粧品（医薬部外品）の使用者では、<strong>約2.4%</strong>に白斑が出ました。2018年3月末までに報告された19,593例を、推定した使用者数およそ80万人で割った値です。分母は推定で、製造企業の委託研究による報告です。<a class="ext" href="https://doi.org/10.14924/dermatol.128.2255" target="_blank" rel="noopener">松永ら, 2018</a></p>
+<p>原因は、ロドデノールがチロシナーゼに<strong>よく酸化される</strong>ことでした。ヒトのチロシナーゼは、ロドデノール（S体）をチロシンより速く酸化します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25130058/" target="_blank" rel="noopener">Itoら, 2014b</a> 酵素を止めるはずの成分が、酵素に次々と酸化されてキノンになり、メラノサイトを傷つけていました。培養メラノサイトでチロシナーゼを働かなくすると、ロドデノールの毒性は消えます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24890809/" target="_blank" rel="noopener">Sasakiら, 2014</a></p>
+<p>白斑の96%は塗った部位に一致して出て、約8割の症例では使用をやめると、一部または全体に色が戻りました。組織では、メラノサイトは減っていても残っていることが多くみられます。ただし、塗っていない部位にも白斑が出た例が14%あり、治りにくい例もあります。<a class="ext" href="https://doi.org/10.14924/dermatol.128.2255" target="_blank" rel="noopener">松永ら, 2018</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25622988/" target="_blank" rel="noopener">Nishigoriら, 2015</a></p>
+<h4>なぜロドデノールで白斑が多発したのか</h4>
+<p>酸化される速さが違うためと考えられます。ロドデノールはチロシンより速く、ハイドロキノンはチロシンよりずっと遅く酸化されます。速く酸化されるほど、メラノサイトの中でキノンが多くできます。ただし、二つを同じ条件で比べた実験はなく、別々の研究を並べた推論です。</p>
+<p>ハイドロキノンとロドデノールは、構造式の図の上段と同じ形（水酸基の向かい側に別の基があるフェノール）です。職場で白斑を起こす4-tert-ブチルフェノールや、モノベンゾンも同じ形で、チロシナーゼに酸化されてキノンになります。一方、4-n-ブチルレゾルシノールは酵素を阻害しますが、酸化はされません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26228294/" target="_blank" rel="noopener">Ito・Wakamatsu, 2015</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36567223/" target="_blank" rel="noopener">Nishimaki-Mogamiら, 2022</a> <strong>美白成分の安全性は、酵素を止めるかどうかだけでなく、酵素に酸化されるかどうかで分かれます。</strong></p>
+<details class="supplement"><summary>詳しく：ハイドロキノンのヒトでの試験と、ロドデノールによる白斑の補足</summary><div class="supplement-body"><p>肝斑では、ハイドロキノン4%・トレチノイン0.05%・フルオシノロンアセトニド0.01%の3剤配合を各2剤配合と比べた無作為化試験（2試験の合計641例、8週）で、完全に消えた割合が3剤配合で26.1%、2剤配合で4.6%でした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12889718/" target="_blank" rel="noopener">Taylorら, 2003</a> 作用する段階の違う成分を組み合わせた例です（トレチノインは5節）。</p>
+<p>外因性組織黒変症では、真皮に黄褐色のバナナ状の線維がみられます。症例報告を集めた系統的レビュー（126例）では、4%を超える濃度や数年にわたる使用、肌の色が濃い人に多くみられました。症例報告の集積のため、発生頻度は分かりません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34486734/" target="_blank" rel="noopener">Ishack・Lipner, 2022</a></p>
+<p>ロドデノールの培養メラノサイトでの細胞毒性は、チロシナーゼを阻害するのに十分な高い濃度で現れました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24890809/" target="_blank" rel="noopener">Sasakiら, 2014</a> ロドデノールからできたメラニン様の重合体は、細胞内のシステインやグルタチオンを酸化して減らしました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28132436/" target="_blank" rel="noopener">Itoら, 2017</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29474003/" target="_blank" rel="noopener">Itoら, 2018</a> 患者の組織では、尋常性白斑と違い、浸潤するT細胞にCD8陽性細胞の偏りはみられませんでした。免疫の関与を調べた患者は治りにくい例に偏っている可能性があり、免疫がすべての例の主な原因かは分かっていません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33951216/" target="_blank" rel="noopener">Inoueら, 2021</a> 治療では、紫外線療法が最も有効とまとめられています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33686651/" target="_blank" rel="noopener">Matsunagaら, 2021</a></p></div></details>
+<h3>酵素の働きを妨げる成分</h3>
+<p>活性中心に入ってチロシンの代わりに居座り、チロシンが酸化されるのを妨げます。メラノサイトを傷つけるのではなく、酵素の働きを止めて合成を減らす作用です。チアミドールでは、培養メラノサイトでの抑制が薬を除くと戻り、ハイドロキノンと対照的でした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">Mannら, 2018a</a></p>
+<ul><li><strong>アルブチン（arbutin）</strong>：ハイドロキノンにブドウ糖が結合した構造です。培養ヒトメラノサイトでは、細胞毒性のない濃度でチロシナーゼを競合的に阻害し、酵素のmRNAは変えませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8632348/" target="_blank" rel="noopener">Maeda・Fukuda, 1996</a> ただしヒトの酵素への阻害は弱いものでした（下の表）。皮膚の常在菌はアルブチンをハイドロキノンへ分解できます（試験管内）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18789053/" target="_blank" rel="noopener">Bangら, 2008</a></li><li><strong>コウジ酸（kojic acid）</strong>：チロシナーゼを阻害します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7714722/" target="_blank" rel="noopener">Cabanesら, 1994</a> 活性中心の銅に結合するという説明が広く使われていますが、ヒトの酵素で結合の構造は確かめられていません。日本では動物実験の結果から2003年に製造・輸入の見合わせが求められ、2005年に解除されました。<a class="ext" href="https://www.mhlw.go.jp/houdou/2003/03/h0307-2.html" target="_blank" rel="noopener">厚生労働省, 2003</a></li><li><strong>4-n-ブチルレゾルシノール</strong>：水酸基を1つおきに2個持つレゾルシノール構造で、チロシナーゼを直接阻害します。MITFなど合成を促す信号は変えませんでした（培養細胞）。<a class="ext" href="https://doi.org/10.1248/bpb.28.2216" target="_blank" rel="noopener">Kimら, 2005</a></li><li><strong>チアミドール（thiamidol）</strong>：4-n-ブチルレゾルシノールと同じレゾルシノール構造を持ち、ヒトの酵素を強く阻害します。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">Mannら, 2018a</a></li><li><strong>デカペプチド-12（decapeptide-12）</strong>：10個のアミノ酸からなるペプチドです。キノコの酵素を競合的に阻害し、培養ヒトメラノサイトでメラニンを減らしましたが、ヒトの酵素への阻害は100 µmol/Lで25〜35%にとどまりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19440221/" target="_blank" rel="noopener">Abu Ubeidら, 2009</a></li></ul>
+<h3>ヒトの酵素とキノコの酵素では、効く成分が違う</h3>
+<p>美白成分の「チロシナーゼを阻害する」という説明の多くは、入手しやすいキノコ（マッシュルーム）のチロシナーゼで調べた結果です。キノコとヒトの酵素は別のタンパク質なので、同じ成分でも阻害の強さが変わります。</p>
+<p>ヒトのチロシナーゼで調べ直すと、下のようになりました。IC50は酵素の働きを半分に下げるのに必要な濃度で、<strong>小さいほど少ない量で効きます</strong>。</p>
+<div class="tblwrap"><table><thead><tr><th>成分</th><th>ヒトの酵素でのIC50</th></tr></thead><tbody><tr><td>チアミドール</td><td>1.1 µmol/L</td></tr><tr><td>4-n-ブチルレゾルシノール</td><td>21 µmol/L</td></tr><tr><td>コウジ酸</td><td>500 µmol/L以上</td></tr><tr><td>ハイドロキノン、アルブチン</td><td>mmol/L域（1 mmol/L＝1,000 µmol/L）</td></tr></tbody></table></div>
+<p>チアミドールはキノコの酵素では108 µmol/Lで、ヒトの酵素の約100倍の濃度が必要でした。ハイドロキノン・アルブチン・コウジ酸は、ヒトの酵素を阻害するのにチアミドールの数百倍以上の濃度が必要でした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">Mannら, 2018a</a>、<a class="ext" href="https://doi.org/10.3390/ijms19030690" target="_blank" rel="noopener">Mannら, 2018b</a>（4-n-ブチルレゾルシノール。同じ測定系） <strong>キノコの酵素で阻害が示されても、ヒトの皮膚で効くとは限りません。</strong> なお、いずれもチアミドールを開発した企業の研究者による試験管内の測定です。</p>
+<details class="supplement"><summary>詳しく：阻害する成分のヒトでの試験と、酵素の量を減らす成分</summary><div class="supplement-body"><ul><li><strong>アルブチン</strong>：単独で肝斑への効果を示した質の高い無作為化試験は、確認できていません。</li><li><strong>4-n-ブチルレゾルシノール</strong>：0.3%製剤を基剤と左右で比べた無作為化試験（32例、12週）では、色素のスコアが基剤より低くなりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17388924/" target="_blank" rel="noopener">Khemisら, 2007</a></li><li><strong>チアミドール</strong>：肝斑では、ハイドロキノン2%と比べた開発企業の試験で、改善が大きくなりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/30825454/" target="_blank" rel="noopener">Arrowitzら, 2019</a> ハイドロキノン4%と比べた試験（50例、90日）では、改善に差がなく、チアミドール群でアレルギー性接触皮膚炎が2例ありました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33988887/" target="_blank" rel="noopener">Limaら, 2021</a></li><li><strong>デカペプチド-12</strong>：ヒトの試験は、5例のパイロット試験と小規模な対照のない報告にとどまります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19663110/" target="_blank" rel="noopener">Hantashら, 2009</a></li></ul>
+<p><strong>リノール酸</strong>は、酵素を阻害するのではなく、酵素の量を減らします。チロシナーゼのmRNAは変えずに、酵素タンパク質のユビキチン化とプロテアソームによる分解を促しました（培養細胞）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14739285/" target="_blank" rel="noopener">Andoら, 2004</a> モルモットでは外用で紫外線による色素沈着が軽くなりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9749992/" target="_blank" rel="noopener">Andoら, 1998</a> ヒトでリノール酸だけの効果を基剤と比べた無作為化試験は、確認できていません。</p></div></details>
+<h2 id="s3">3　ドーパキノンに作用する成分</h2>
+<p>チロシナーゼが作ったドーパキノンは反応性が高く、その先の反応は酵素なしでも進みます（→ <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>）。ここに作用する成分には、<strong>ドーパキノンを還元してDOPAへ戻す成分</strong>と、<strong>チオール基（–SH）でドーパキノンに結合する成分</strong>があります。</p>
+<figure class="book-figure" role="button" tabindex="0" aria-expanded="false" aria-label="図を拡大／縮小"><img src="images/skin-lightening_ドーパキノンへの作用_20261105.svg" alt="ドーパキノンに作用する2種類の成分。" width="1440.0" height="780.0" loading="lazy"><figcaption>ドーパキノンに作用する2種類の成分。ビタミンCはドーパキノンに電子を渡してDOPAへ戻す。DOPAはチロシナーゼが残っていれば再び酸化される。システインなどのチオールは–SHでドーパキノンに結合してシステイニルDOPAを作り、ドーパキノンを捕まえる。メラノソームの中では、システイニルDOPAはフェオメラニンの材料になる。</figcaption></figure>
+<p>どちらも、チロシナーゼの量や働きは変えません。DOPAへ戻しても、チロシナーゼが残っていれば再び酸化されます。このため、効果は還元剤やチオールが供給され続ける間に限られ、メラニンの総量を決めるチロシナーゼの反応に比べて、作用の大きさには限りがあります。</p>
+<h3>ビタミンC：ドーパキノンを還元して戻す</h3>
+<p>アスコルビン酸は、ドーパキノンに電子を渡してDOPAへ戻し、メラニンへ進む反応を止めます（試験管内）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/211676/" target="_blank" rel="noopener">Seijiら, 1978</a> リン酸アスコルビルマグネシウムやアスコルビン酸2-グルコシドなどの誘導体は、皮膚の中で酵素によりアスコルビン酸に変わると考えられていますが、ヒトの皮膚で変わる量を測ったデータは限られます。</p>
+<h3>チオール：ドーパキノンを捕まえる</h3>
+<p>システイン、グルタチオン（glutathione, <span class="term" tabindex="0" data-t="GSH" data-d="glycine・glutamate・cysteine からなるトリペプチドで、細胞内の主力の還元系。GPxがH₂O₂や脂質過酸化物を還元するときの還元当量を渡して酸化型（GSSG）になり、グルタチオン還元酵素がNADPHを使ってGSHへ戻す。それ自体がROSを消すのではなく、再生系とセットで回る。" data-u="glossary.html#term-2087d8e6dfd1">GSH</span>）、システアミン（cysteamine）は、チオール基を持ちます。チオールはドーパキノンに速く結合し、システイニルDOPAなどを作ります。こうしてドーパキノンを捕まえ、メラニンへ進む量を減らします。</p>
+<p>メラノソームの中では、この結合物がフェオメラニンの材料になります（→ <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>）。ただし、チオールの作用は「フェオメラニンへ寄せて白くする」ことではありません。ヒト表皮のユーメラニンとフェオメラニンの比は肌の色によらずほぼ一定で、色の差はメラニンの総量で決まります。チオールを補って、ヒトの皮膚でこの比が変わったという実測データもありません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26285058/" target="_blank" rel="noopener">Del Binoら, 2015</a> また、フェオメラニンは紫外線や可視光を受けると、ユーメラニンより活性酸素を生じやすい色素です。赤毛のマウスでは、紫外線がなくても黒色腫が生じやすく、皮膚で酸化によるDNA損傷が増えていました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23123854/" target="_blank" rel="noopener">Mitraら, 2012</a> フェオメラニンを増やすこと自体は、美白の目標になりません。</p>
+<ul><li><strong>システイン</strong>：日本では、L-システインを配合した一般用医薬品に、しみ・そばかすの緩和の効能があります。</li><li><strong>グルタチオン</strong>：内服・外用の試験はいずれも小規模で結果が一致せず、系統的レビューは、根拠は結論を出せる段階にないとしています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/30895708/" target="_blank" rel="noopener">Dilokthornsakulら, 2019</a> 点滴・注射は美白への有効性を示す根拠が乏しく、安全性への注意喚起も出ています（下の詳しく）。</li><li><strong>システアミン</strong>：システインからカルボキシ基が外れた構造のアミノチオールです。培養メラノーマ細胞では、システアミンの二量体であるシスタミンが色素の形成を抑え、ドーパキノンなどのキノンを捕まえる作用が主と考えられました。同じ系で、グルタチオンやシステインは効果を示しませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10620110/" target="_blank" rel="noopener">Qiuら, 2000</a> 細胞にシスチンを取り込ませて細胞内のグルタチオンを増やす作用も、培養細胞で示されています。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/3345201/" target="_blank" rel="noopener">Isselsら, 1988</a></li></ul>
+<details class="supplement"><summary>詳しく：ビタミンCとチオールのヒトでの試験</summary><div class="supplement-body"><ul><li><strong>ビタミンC外用</strong>：肝斑で5%アスコルビン酸と4%ハイドロキノンを左右で比べた試験（16例、16週）では、色差計の値に差はなく、医師の評価ではハイドロキノンが上回りました。刺激などの副作用はハイドロキノン側で多くみられました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15304189/" target="_blank" rel="noopener">Espinal-Perezら, 2004</a></li><li><strong>ビタミンC内服</strong>：日本ではビタミンCを主薬とする一般用医薬品に「しみ、そばかす、日焼け・かぶれによる色素沈着の緩和」の効能があります。一方、ビタミンCの内服だけで色素の変化を評価した無作為化試験は見当たりません。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33456250/" target="_blank" rel="noopener">Sanadi・Deshmukh, 2020</a></li><li><strong>システイン内服</strong>：L-システインの内服で色素への効果を検証した無作為化試験は、確認できていません。L-シスチン（システインが2個つながった形）とグルタチオンを組み合わせた内服では、併用群だけで肌の色の値としみの大きさが改善しました（124例、12週、原料メーカーの資金による試験）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33834608/" target="_blank" rel="noopener">Duperrayら, 2022</a></li><li><strong>グルタチオン内服</strong>：500 mg/日（健康な60例、4週）では、測った6部位のうち2部位でのみ、プラセボよりメラニンの指標が下がりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20524875/" target="_blank" rel="noopener">Arjinpathana・Asawanonda, 2012</a> 250 mg/日（60例、12週）では、全体でプラセボとの差がありませんでした。<a class="ext" href="https://doi.org/10.2147/CCID.S128339" target="_blank" rel="noopener">Weschawalitら, 2017</a></li><li><strong>グルタチオン外用</strong>：酸化型グルタチオン2%を左右で比べた試験（30例、10週）で、メラニンの指標が下がりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25378941/" target="_blank" rel="noopener">Watanabeら, 2014</a> この試験と上の12週の内服試験は、製造企業の研究者や資金が関わっています。</li><li><strong>グルタチオンの点滴・注射</strong>：フィリピン食品医薬品局は2019年に、美白目的の注射に肝臓・腎臓・神経への毒性や重い皮膚障害などの危険があると注意を促しています。米国食品医薬品局は2019年に、エンドトキシンが混入した原料を注射剤の調製に使わないよう警告しました。<a class="ext" href="https://www.fda.gov/drugs/drug-safety-and-availability/fda-warns-compounders-not-use-glutathione-letco-medical-compound-sterile-drugs" target="_blank" rel="noopener">FDA, 2019</a> 点滴の安全性の考え方は抗酸化サプリメントと点滴・<a class="chref" href="skin-penetration.html">角層バリアと経皮吸収</a>で扱います。</li><li><strong>システアミン外用</strong>：表皮型の肝斑を対象にした5%クリームのプラセボ対照試験（50例、4か月）では、病変と周囲の皮膚との色の差がプラセボより小さくなりました。著者に開発企業の関係者が含まれます。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25251767/" target="_blank" rel="noopener">Mansouriら, 2015</a></li></ul></div></details>
+<h2 id="s4">4　合成を促す信号に作用する</h2>
+<h3>光防御：合成の入口を減らす</h3>
+<p>紫外線は、角化細胞のDNA損傷からα-MSHの産生を増やし、メラノサイトの合成を促します（→ <a class="chref" href="melanocytes.html">メラノサイトと色素形成</a>、紫外線に対する皮膚の反応）。紫外線を防ぐことは、①の入口そのものを減らします。</p>
+<p>肌の色が濃い型では、可視光も色素沈着を起こします。<strong>Fitzpatrick skin type IV〜VI</strong>では、可視光による色素沈着はUVAによるものより濃く、長く続き、type IIでは生じませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20410914/" target="_blank" rel="noopener">Mahmoudら, 2010</a> type III〜IVでは、415 nmの青色光でも色素沈着が生じました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24888214/" target="_blank" rel="noopener">Duteilら, 2014</a> このため肝斑では、可視光も防ぐ酸化鉄入りの日焼け止めが使われます（→ <a class="chref" href="melasma.html">肝斑</a>）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24313385/" target="_blank" rel="noopener">Castanedo-Cazaresら, 2014</a></p>
+<p>シダ植物の抽出物<strong>ポリポディウム・レウコトモス（Polypodium leucotomos）</strong>は、内服で光防御を補う成分です。紫外線で紅斑が出る最小の線量（MED）が上がることは、独立した複数の試験で一致しています（→ 紫外線に対する皮膚の反応）。色素については、Fitzpatrick skin type IV〜VIの22例で、可視光による持続型黒化と遅延型黒化が照射前より軽くなりました。対照を置かない前後比較です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/31859468/" target="_blank" rel="noopener">Mohammadら, 2019</a></p>
+<p><strong>一方、肝斑では上乗せの効果を示せていません。</strong> 日焼け止めを併用したプラセボ対照試験（40例、12週）では、主要評価項目のメラニン指数に群間差がありませんでした（P=.14）。この試験では、<strong>日焼け止めだけの群でもメラニン指数が約14%改善しています</strong>。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23740292/" target="_blank" rel="noopener">Ahmedら, 2013</a> 遮光そのものの効果が大きく、内服の上乗せ分は検出できませんでした。</p>
+<h3>トラネキサム酸：角化細胞からの信号を抑える</h3>
+<p>トラネキサム酸（tranexamic acid）は抗線溶薬で、プラスミノゲンがプラスミンに変わるのを妨げます。培養実験では、角化細胞の培養液によるメラノサイトのチロシナーゼ活性の上昇を抑え、その作用は角化細胞由来のプラスミノゲン活性化因子を介していました。<a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">Maeda・Tomita, 2007</a> チロシナーゼそのものではなく、角化細胞からメラノサイトへの①の信号に作用します。内服の作用機序、肝斑での臨床試験、血栓リスクと継続の判断は<a class="chref" href="melasma.html">肝斑</a>で扱います。</p>
+<p>外用のトラネキサム酸は、日本では医薬部外品の美白有効成分として使われています。<a class="ext" href="https://corp.shiseido.com/jp/newsimg/3784_g4f79_jp.pdf" target="_blank" rel="noopener">資生堂, 2024</a> ただし水に溶けやすい分子で、角層を通りにくい性質を持ちます（→ <a class="chref" href="skin-penetration.html">角層バリアと経皮吸収</a>）。外用で表皮や真皮へどれだけ届くかを測った査読付きのヒトのデータは、確認できていません。</p>
+<details class="supplement"><summary>詳しく：ポリポディウムと外用トラネキサム酸のヒトでの試験</summary><div class="supplement-body"><ul><li><strong>ポリポディウム・レウコトモス</strong>：ハイドロキノン4%と日焼け止めに上乗せしたパイロット試験（解析33例、12週）では、重症度スコア（mMASI）の減少率が54.9%対44.4%で、途中から群間差がつきました。ただし客観指標のメラニン指数には差がなく、本文中の数値にも不整合があります。製造企業が全額を出資し、著者2名は同社の社員です。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29606995/" target="_blank" rel="noopener">Gohら, 2018</a></li><li>紫外線によるDNAの損傷（シクロブタン型ピリミジン二量体）の減少は、9例の非盲検試験で報告されました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15583582/" target="_blank" rel="noopener">Middelkamp-Hupら, 2004</a> 一方、質量分析でチミン二量体を測った独立した2つの試験（47例・50例）では、MEDは上がったものの、DNAの損傷は減りませんでした。紅斑の閾値が上がることと、DNAの損傷が減ることは、同じようには確かめられていません（→ 紫外線に対する皮膚の反応）。</li><li><strong>外用トラネキサム酸</strong>：肝斑では、5%外用を基剤と左右で比べた試験（23例、12週）で、両側とも改善し、基剤との差はありませんでした。トラネキサム酸側では紅斑が増えました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22506692/" target="_blank" rel="noopener">Kanechorn Na Ayuthayaら, 2012</a> ハイドロキノンと比べた小規模な試験では、改善に差がありませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25422661/" target="_blank" rel="noopener">Ebrahimi・Naeini, 2014</a>、<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28748406/" target="_blank" rel="noopener">Atefiら, 2017</a></li><li><strong>可視光と肝斑</strong>：全員がハイドロキノンを使う条件で、酸化鉄入りの日焼け止めは、紫外線だけを防ぐ製剤より改善を大きくしました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24313385/" target="_blank" rel="noopener">Castanedo-Cazaresら, 2014</a> 青色光による色素沈着は量に応じて生じ、最長3か月続きました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24888214/" target="_blank" rel="noopener">Duteilら, 2014</a></li></ul></div></details>
+<h2 id="s5">5　受け渡しと、表皮の更新に作用する</h2>
+<h3>ナイアシンアミド：角化細胞への受け渡しを抑える</h3>
+<p>ナイアシンアミド（niacinamide）は、メラノサイトと角化細胞を一緒に培養すると、メラノソームの受け渡しを35〜68%抑えました。チロシナーゼの活性や、メラノサイト単独でのメラニン合成は変えませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a> 作られたメラニンが角化細胞へ渡らず、表皮に広がりにくくなる作用です。受け渡しを抑える分子の標的は分かっていません。抑制は中止すると約3日で回復しました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15946237/" target="_blank" rel="noopener">Greatensら, 2005</a></p>
+<p>受け渡しには、渡す側のメラノサイトと、受け取る側の角化細胞があります。受け取る側で働くのが、角化細胞の受容体<strong>PAR-2</strong>（protease-activated <span class="term" tabindex="0" data-t="receptor" data-d="リガンドが結合し、細胞の応答を調節する受容体タンパク質。細胞膜にあるものや、細胞質・核で働くものがある。受容体の種類や量も、同じリガンドに対する応答の違いにつながる。" data-u="glossary.html#term-930ae6f5c338">receptor</span> 2）です。PAR-2はプロテアーゼに切断されて活性化し、角化細胞がメラノソームを取り込むのを促します。PAR-2はメラノサイトにはなく角化細胞にあり、セリンプロテアーゼの阻害薬で色素が減りました（培養・動物）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10623462/" target="_blank" rel="noopener">Seibergら, 2000</a> 大豆に含まれるトリプシン阻害因子も、同じようにPAR-2の活性化と取り込みを抑えました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11286627/" target="_blank" rel="noopener">Paineら, 2001</a> ただし、PAR-2を標的として色素への効果が確かめられた外用薬は、まだありません。</p>
+<h3>レチノイドとピーリング：すでに渡ったメラニンを出す</h3>
+<p>すでに角化細胞へ渡ったメラニンは、角化細胞とともに表皮から出ていきます。トレチノインなどのレチノイドは、核内受容体を介して表皮の更新を早め、色素の分布を変えます。光老化に伴う色素斑では、10か月の外用で色素斑が薄くなり、組織でも表皮内のメラニンが減りました（→ 日光黒子と雀卵斑）。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1729619/" target="_blank" rel="noopener">Rafalら, 1992</a> ケミカルピーリングは、角層の剥離を促します。それぞれの仕組みはレチノイド外用の生化学・ケミカルピーリングの生化学で扱います。</p>
+<details class="supplement"><summary>詳しく：受け渡しに作用する成分のヒトでの試験</summary><div class="supplement-body"><ul><li><strong>ナイアシンアミド</strong>：5%製剤を基剤と比べた試験（18例、4週）で、色素沈着が軽くなりました。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">Hakozakiら, 2002</a> 肝斑で4%ナイアシンアミドと4%ハイドロキノンを左右で比べた試験（27例、8週）では、色の測定値に差がありませんでした。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21822427/" target="_blank" rel="noopener">Navarrete-Solísら, 2011</a></li><li><strong>大豆抽出物</strong>：ヒトでの根拠は、大豆抽出物を含む保湿剤の試験にとどまります。<a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17941363/" target="_blank" rel="noopener">Walloら, 2007</a> 大豆抽出物にはイソフラボンなど別の成分も含まれるため、この結果をトリプシン阻害因子の作用とは判断できません。</li></ul></div></details>
+<h2 id="s6">6　届くかどうか、ヒトで効くかどうか</h2>
+<p>美白成分の根拠は、次の三つを分けて読みます。</p>
+<ol><li><strong>酵素や培養細胞で作用するか</strong>：作用点と機序を示します。キノコの酵素での結果は、ヒトの酵素に当てはまらないことがあります（2節）。</li><li><strong>作用点まで届くか</strong>：外用では角層を越え、基底層のメラノサイトや、その周りの角化細胞まで届く必要があります。水に溶けやすい分子や大きな分子は、角層を通りにくくなります（→ <a class="chref" href="skin-penetration.html">角層バリアと経皮吸収</a>）。内服では、吸収されて血液から皮膚へ届く必要があります。</li><li><strong>ヒトで色が変わるか</strong>：プラセボや基剤と比べた試験で確かめます。</li></ol>
+<div class="tblwrap"><table><thead><tr><th>成分</th><th>経路</th><th>ヒトでの主な根拠</th><th>読むときの注意</th></tr></thead><tbody><tr><td>ハイドロキノン</td><td>外用</td><td>肝斑の3剤配合の大規模試験</td><td>長期使用での外因性組織黒変症</td></tr><tr><td>チアミドール</td><td>外用</td><td>ハイドロキノンとの比較試験</td><td>開発企業の試験を含む</td></tr><tr><td>4-n-ブチルレゾルシノール</td><td>外用</td><td>基剤対照の小規模試験</td><td>—</td></tr><tr><td>システアミン</td><td>外用</td><td>肝斑のプラセボ対照試験</td><td>開発企業の関係者が著者に含まれる</td></tr><tr><td>ナイアシンアミド</td><td>外用</td><td>基剤対照・ハイドロキノン比較の小規模試験</td><td>中止で受け渡しの抑制は戻る</td></tr><tr><td>トラネキサム酸</td><td>外用</td><td>ハイドロキノン比較で差なし</td><td>基剤との差が出なかった試験がある</td></tr><tr><td>トラネキサム酸</td><td>内服</td><td>肝斑のプラセボ対照試験（→ <a class="chref" href="melasma.html">肝斑</a>）</td><td>血栓リスクの評価</td></tr><tr><td>ビタミンC</td><td>外用</td><td>ハイドロキノン比較の小規模試験</td><td>誘導体の皮膚内での変換量は不明</td></tr><tr><td>ビタミンC、L-システイン</td><td>内服</td><td>単独の無作為化試験は見当たらない</td><td>一般用医薬品の効能は承認上の表現</td></tr><tr><td>グルタチオン</td><td>内服</td><td>小規模試験で一部の部位のみ</td><td>系統的レビューで結論は出ていない</td></tr><tr><td>ポリポディウム・レウコトモス</td><td>内服</td><td>肝斑のプラセボ対照試験で主要評価項目は陰性</td><td>MEDの上昇は再現性あり。DNA損傷の減少は再現されていない</td></tr></tbody></table></div>
+<p>ヒトの試験の多くは、数十例の規模で、顔の左右で比べるデザインが中心です。製造・開発企業が資金や著者として関わる試験も多くあります。ハイドロキノンの3剤配合のように、<strong>作用する段階の違う成分を組み合わせる</strong>と、効果が大きくなる場合があります。</p>
+<h2>この章の到達点</h2>
+<ol class="goal"><li>美白成分が、合成を促す信号、メラノソームの中での合成（チロシナーゼとドーパキノン）、受け渡し、表皮の更新のどこに作用するかを説明できます。</li><li>すでに表皮にあるメラニンは、角化細胞とともに出ていくまで残るため、効果の評価に時間がかかることを説明できます。</li><li>チロシナーゼに酸化されてキノンになる成分（ハイドロキノン、ロドデノール）と、酵素を阻害する成分を区別し、メラノサイトの傷害との関係を説明できます。</li><li>キノコの酵素での結果をヒトに当てはめられない理由を説明できます。</li><li>還元剤とチオールがドーパキノンに作用する仕組みと、その作用に限りがある理由を説明できます。</li><li>外用と内服で作用点は同じでも、届くかどうかとヒトでの根拠が成分ごとに違うことを説明できます。</li></ol>
+<h2>参考文献</h2>
+<ul><li>日本化粧品工業連合会. 化粧品等の適正広告ガイドライン 2020年版. <a class="ext" href="https://www.jcia.org/user/common/download/business/advertising/JCIA20200615_ADguide.pdf" target="_blank" rel="noopener">PDF</a></li><li>Weinstein GD, Van Scott EJ. <em>J Invest Dermatol</em>. 1965;45:257. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/5837896/" target="_blank" rel="noopener">PMID: 5837896</a></li><li>Bergstresser PR, Taylor JR. <em>Br J Dermatol</em>. 1977;96:503. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/871385/" target="_blank" rel="noopener">PMID: 871385</a></li><li>Mann T, et al. Inhibition of human tyrosinase requires molecular motifs distinctively different from mushroom tyrosinase. <em>J Invest Dermatol</em>. 2018;138:1601–1608. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29427586/" target="_blank" rel="noopener">PMID: 29427586</a></li><li>Mann T, Scherner C, Röhm KH, Kolbe L. <em>Int J Mol Sci</em>. 2018;19(3):690. <a class="ext" href="https://doi.org/10.3390/ijms19030690" target="_blank" rel="noopener">DOI: 10.3390/ijms19030690</a></li><li>Palumbo A, et al. <em>Biochim Biophys Acta</em>. 1991;1073:85–90. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1899343/" target="_blank" rel="noopener">PMID: 1899343</a></li><li>Ito S, et al. <em>Int J Mol Sci</em>. 2025;26(21):10734. <a class="ext" href="https://doi.org/10.3390/ijms262110734" target="_blank" rel="noopener">doi:10.3390/ijms262110734</a></li><li>Taylor SC, et al. <em>Cutis</em>. 2003;72:67–72. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12889718/" target="_blank" rel="noopener">PMID: 12889718</a></li><li>Ishack S, Lipner SR. Exogenous ochronosis associated with hydroquinone: a systematic review. <em>Int J Dermatol</em>. 2022;61:675–684. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/34486734/" target="_blank" rel="noopener">PMID: 34486734</a></li><li>Nishigori C, et al. <em>J Dermatol</em>. 2015;42:113–128. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25622988/" target="_blank" rel="noopener">PMID: 25622988</a></li><li>Sasaki M, et al. <em>Pigment Cell Melanoma Res</em>. 2014;27:754–763. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24890809/" target="_blank" rel="noopener">PMID: 24890809</a></li><li>Ito S, et al. <em>Pigment Cell Melanoma Res</em>. 2014. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24903082/" target="_blank" rel="noopener">PMID: 24903082</a></li><li>Ito S, Gerwat W, Kolbe L, et al. Human tyrosinase is able to oxidize both enantiomers of rhododendrol. <em>Pigment Cell Melanoma Res</em>. 2014;27:1149–1153. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25130058/" target="_blank" rel="noopener">PMID: 25130058</a></li><li>Thörneby-Andersson K, Sterner O, Hansson C. <em>Pigment Cell Res</em>. 2000;13:33–38. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10761994/" target="_blank" rel="noopener">PMID: 10761994</a></li><li>Nishimaki-Mogami T, et al. <em>J Dermatol Sci</em>. 2022;108:77–86. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/36567223/" target="_blank" rel="noopener">PMID: 36567223</a></li><li>Goto N, Tsujimoto M, Nagai H, et al. Rhododendrol-induced <span class="term" tabindex="0" data-t="melanocyte" data-d="基底層に点在し、メラニンを作って樹状突起で周囲の keratinocyte 数十個へ渡す細胞。色の濃さは細胞数の差ではなく、作る量と渡し方・分布の差。" data-u="glossary.html#term-3f14f8b30147">melanocyte</span> cytotoxicity is enhanced by UVB exposure through generation of oxidative stress. <em>Exp Dermatol</em>. 2018;27:754–762. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29630780/" target="_blank" rel="noopener">PMID: 29630780</a></li><li>van den Boorn JG, et al. <em>J Invest Dermatol</em>. 2011;131:1240–1251. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21326294/" target="_blank" rel="noopener">PMID: 21326294</a></li><li>Takagi R, et al. <em>Dermatology</em>. 2016;232:44–49. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26613259/" target="_blank" rel="noopener">PMID: 26613259</a></li><li>Fisher AA. <em>Contact Dermatitis</em>. 1982;8:272–273. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7105694/" target="_blank" rel="noopener">PMID: 7105694</a></li><li>Boyle J, Kennedy CT. <em>Contact Dermatitis</em>. 1985;13:287–288. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/4085240/" target="_blank" rel="noopener">PMID: 4085240</a></li><li>Westerhof W, Kooyers TJ. <em>J Cosmet Dermatol</em>. 2005;4:55–59. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17166200/" target="_blank" rel="noopener">PMID: 17166200</a></li><li>Inoue S, Katayama I, Suzuki T, et al. Rhododendrol-induced leukoderma update II. <em>J Dermatol</em>. 2021;48:969–978. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33951216/" target="_blank" rel="noopener">PMID: 33951216</a></li><li>Ito S, Wakamatsu K. <em>J Dermatol Sci</em>. 2015. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26228294/" target="_blank" rel="noopener">PMID: 26228294</a></li><li>Ito S, et al. <em>Pigment Cell Melanoma Res</em>. 2017. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28132436/" target="_blank" rel="noopener">PMID: 28132436</a></li><li>Ito S, et al. <em>Pigment Cell Melanoma Res</em>. 2018. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29474003/" target="_blank" rel="noopener">PMID: 29474003</a></li><li>ロドデノール誘発性脱色素斑に関する調査研究チーム（RD-Team）, 松永佳世子ほか. ロドデノール誘発性脱色素斑調査研究報告2018. <em>日本皮膚科学会雑誌</em>. 2018;128:2255–2267. <a class="ext" href="https://doi.org/10.14924/dermatol.128.2255" target="_blank" rel="noopener">doi:10.14924/dermatol.128.2255</a></li><li>Matsunaga K, Suzuki K, Ito A, et al. Rhododendrol-induced leukoderma update I: Clinical findings and treatment. <em>J Dermatol</em>. 2021;48:961–968. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33686651/" target="_blank" rel="noopener">PMID: 33686651</a></li><li>Maeda K, Fukuda M. <em>J Pharmacol Exp Ther</em>. 1996;276:765–769. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/8632348/" target="_blank" rel="noopener">PMID: 8632348</a></li><li>Bang SH, et al. <em>J Cosmet Dermatol</em>. 2008;7:189–193. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/18789053/" target="_blank" rel="noopener">PMID: 18789053</a></li><li>Cabanes J, et al. <em>J Pharm Pharmacol</em>. 1994. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/7714722/" target="_blank" rel="noopener">PMID: 7714722</a></li><li>厚生労働省. コウジ酸を含有する医薬部外品の取扱いについて. 2003. <a class="ext" href="https://www.mhlw.go.jp/houdou/2003/03/h0307-2.html" target="_blank" rel="noopener">URL</a></li><li>Kim DS, et al. <em>Biol Pharm Bull</em>. 2005;28:2216–2219. <a class="ext" href="https://doi.org/10.1248/bpb.28.2216" target="_blank" rel="noopener">doi:10.1248/bpb.28.2216</a></li><li>Khemis A, et al. <em>Br J Dermatol</em>. 2007. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17388924/" target="_blank" rel="noopener">PMID: 17388924</a></li><li>Arrowitz C, et al. <em>J Invest Dermatol</em>. 2019;139:1691–1698. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/30825454/" target="_blank" rel="noopener">PMID: 30825454</a></li><li>Lima PB, et al. <em>J Eur Acad Dermatol Venereol</em>. 2021;35:1881–1887. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33988887/" target="_blank" rel="noopener">PMID: 33988887</a></li><li>Abu Ubeid A, et al. <em>J Invest Dermatol</em>. 2009;129:2242–2249. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19440221/" target="_blank" rel="noopener">PMID: 19440221</a></li><li>Hantash BM, Jimenez F. <em>J Drugs Dermatol</em>. 2009. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/19663110/" target="_blank" rel="noopener">PMID: 19663110</a></li><li>Ando H, et al. <em>Arch Dermatol Res</em>. 1998;290:375. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/9749992/" target="_blank" rel="noopener">PMID: 9749992</a></li><li>Ando H, et al. <em>J Biol Chem</em>. 2004;279:15427. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/14739285/" target="_blank" rel="noopener">PMID: 14739285</a></li><li>Seiji M, Sasaki M, Tomita Y. Nature of tyrosinase inactivation in melanosomes. <em>Tohoku J Exp Med</em>. 1978;125:233–245. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/211676/" target="_blank" rel="noopener">PMID: 211676</a></li><li>Espinal-Perez LE, et al. <em>Int J Dermatol</em>. 2004;43:604–607. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15304189/" target="_blank" rel="noopener">PMID: 15304189</a></li><li>Sanadi RM, Deshmukh RS. <em>J Oral Maxillofac Pathol</em>. 2020;24:374–382. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33456250/" target="_blank" rel="noopener">PMID: 33456250</a></li><li>Del Bino S, et al. Chemical analysis of constitutive pigmentation of human epidermis reveals constant eumelanin to pheomelanin ratio. <em>Pigment Cell Melanoma Res</em>. 2015;28:707–717. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/26285058/" target="_blank" rel="noopener">PMID: 26285058</a></li><li>Mitra D, et al. <em>Nature</em>. 2012;491:449–453. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23123854/" target="_blank" rel="noopener">PMID: 23123854</a></li><li>Duperray J, et al. <em>J Cosmet Dermatol</em>. 2022;21:802–813. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/33834608/" target="_blank" rel="noopener">PMID: 33834608</a></li><li>Arjinpathana N, Asawanonda P. <em>J Dermatolog Treat</em>. 2012;23:97–102. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20524875/" target="_blank" rel="noopener">PMID: 20524875</a></li><li>Weschawalit S, et al. <em>Clin Cosmet Investig Dermatol</em>. 2017;10:147–153. <a class="ext" href="https://doi.org/10.2147/CCID.S128339" target="_blank" rel="noopener">doi:10.2147/CCID.S128339</a></li><li>Watanabe F, et al. <em>Clin Cosmet Investig Dermatol</em>. 2014;7:267–274. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25378941/" target="_blank" rel="noopener">PMID: 25378941</a></li><li>Dilokthornsakul W, et al. <em>J Cosmet Dermatol</em>. 2019;18:728–737. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/30895708/" target="_blank" rel="noopener">PMID: 30895708</a></li><li>U.S. Food and Drug Administration. FDA warns compounders not to use glutathione from Letco Medical to compound sterile drugs. 2019. <a class="ext" href="https://www.fda.gov/drugs/drug-safety-and-availability/fda-warns-compounders-not-use-glutathione-letco-medical-compound-sterile-drugs" target="_blank" rel="noopener">URL</a></li><li>Qiu L, et al. <em>J Invest Dermatol</em>. 2000;114:21–27. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10620110/" target="_blank" rel="noopener">PMID: 10620110</a></li><li>Issels RD, et al. <em>Biochem Pharmacol</em>. 1988;37:881–888. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/3345201/" target="_blank" rel="noopener">PMID: 3345201</a></li><li>Mansouri P, et al. <em>Br J Dermatol</em>. 2015;173:209–217. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25251767/" target="_blank" rel="noopener">PMID: 25251767</a></li><li>Mahmoud BH, et al. <em>J Invest Dermatol</em>. 2010;130:2092. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/20410914/" target="_blank" rel="noopener">PMID: 20410914</a></li><li>Duteil L, et al. <em>Pigment Cell Melanoma Res</em>. 2014;27:822–826. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24888214/" target="_blank" rel="noopener">PMID: 24888214</a></li><li>Castanedo-Cazares JP, et al. <em>Photodermatol Photoimmunol Photomed</em>. 2014;30:35–42. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/24313385/" target="_blank" rel="noopener">PMID: 24313385</a></li><li>Middelkamp-Hup MA, et al. <em>J Am Acad Dermatol</em>. 2004;51:910. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15583582/" target="_blank" rel="noopener">PMID: 15583582</a></li><li>Ahmed AM, et al. <em>JAMA Dermatol</em>. 2013;149:981. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/23740292/" target="_blank" rel="noopener">PMID: 23740292</a></li><li>Goh CL, et al. <em>J Clin Aesthet Dermatol</em>. 2018;11(3):14. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/29606995/" target="_blank" rel="noopener">PMID: 29606995</a></li><li>Maeda K, Tomita Y. Mechanism of the inhibitory effect of tranexamic acid on melanogenesis in cultured human melanocytes in the presence of <span class="term" tabindex="0" data-t="keratinocyte" data-d="表皮の9割以上を占める細胞。基底層で分裂し、扁平化・脱核して角層のレンガになる。バリアはこの細胞の最終産物で、同時にUVやストレスを感じてサイトカインを出す発信源。" data-u="glossary.html#term-ef8adcaf9548">keratinocyte</span>-conditioned medium. <em>J Health Sci</em>. 2007;53:389–396. <a class="ext" href="https://doi.org/10.1248/jhs.53.389" target="_blank" rel="noopener">doi:10.1248/jhs.53.389</a></li><li>資生堂. ニュースリリース. 2024. <a class="ext" href="https://corp.shiseido.com/jp/newsimg/3784_g4f79_jp.pdf" target="_blank" rel="noopener">PDF</a></li><li>Kanechorn Na Ayuthaya P, et al. <em>J Cosmet Laser Ther</em>. 2012. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/22506692/" target="_blank" rel="noopener">PMID: 22506692</a></li><li>Ebrahimi B, Naeini FF. <em>J Res Med Sci</em>. 2014;19:753. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/25422661/" target="_blank" rel="noopener">PMID: 25422661</a></li><li>Atefi N, et al. <em>Dermatol Ther (Heidelb)</em>. 2017. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/28748406/" target="_blank" rel="noopener">PMID: 28748406</a></li><li>Hakozaki T, et al. The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer. <em>Br J Dermatol</em>. 2002;147:20–31. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/12100180/" target="_blank" rel="noopener">PMID: 12100180</a></li><li>Greatens A, et al. <em>Exp Dermatol</em>. 2005;14:498. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/15946237/" target="_blank" rel="noopener">PMID: 15946237</a></li><li>Navarrete-Solís J, et al. <em>Dermatol Res Pract</em>. 2011;2011:379173. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/21822427/" target="_blank" rel="noopener">PMID: 21822427</a></li><li>Seiberg M, et al. <em>Exp Cell Res</em>. 2000;254:25–32. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/10623462/" target="_blank" rel="noopener">PMID: 10623462</a></li><li>Paine C, et al. <em>J Invest Dermatol</em>. 2001;116:587–595. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/11286627/" target="_blank" rel="noopener">PMID: 11286627</a></li><li>Wallo W, et al. <em>J Drugs Dermatol</em>. 2007;6:917. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/17941363/" target="_blank" rel="noopener">PMID: 17941363</a></li><li>Rafal ES, et al. Topical tretinoin (retinoic acid) treatment for liver spots associated with photodamage. <em>N Engl J Med</em>. 1992;326:368–374. <a class="ext" href="https://pubmed.ncbi.nlm.nih.gov/1729619/" target="_blank" rel="noopener">PMID: 1729619</a></li></ul>
+
+</article>
+<nav class="pager"><a class="prev" href="skin-penetration.html"><span class="lbl">前へ</span>角層バリアと経皮吸収</a><a class="next" href="energy-devices.html"><span class="lbl">次へ</span>デバイスによる熱治療</a></nav>
+<footer class="sitefoot"><section class="feedback" aria-labelledby="fb-t">
+<p class="fb-t" id="fb-t">ご意見・ご感想をお聞かせください</p>
+<p>内容の誤りやわかりにくい点、追加するとよさそうな内容、読んだ感想などがありましたら、ぜひお聞かせください。みなさまのお力も借りながら、より充実した教材に育てていけたらうれしいです。</p>
+<p><a class="fb-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd8Cw6652qaE6gRcVhSjbDO0HoRwTkypatWEvGkLonF3Fk9cA/viewform" target="_blank" rel="noopener noreferrer">ご意見・感想を送る</a></p>
+<p class="fb-note">※個別の医療相談には回答できません。患者さんを特定できる情報は入力しないでください。</p>
+</section>
+<p class="stamp">最終更新 2026-11-06 ／ 版 b8e06e58</p>
+<div class="disc">© 2026 Yuka Aoki, MD.　営利目的での利用、改変しての再配布、著者名を外した転載、生成AIの学習データとしての利用は認めません。執筆と図版の作成過程では生成AIを使用しています。引用文献は一次文献を確認したものを載せ、未照合の箇所は本文に「要確認」と表示しています。本教材は生化学・細胞学の教育目的の資料であり、特定製品の効能保証や医療行為の指示ではありません。実際の適応・用量・安全性は、最新の一次情報と各国の規制に従ってご判断ください。</div>
+</footer>
+</div></main></div>
+<script>
+const side=document.getElementById('side');
+const mbtn=document.querySelector('.menubtn');
+function setMenu(open){
+  side.classList.toggle('open',open);
+  if(mbtn)mbtn.setAttribute('aria-expanded',open?'true':'false');
+  if(open){const f=side.querySelector('.navfilter');if(f)f.focus();}
+  else if(mbtn&&innerWidth<=900)mbtn.focus();
+}
+function toggleMenu(){setMenu(!side.classList.contains('open'));}
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<=900)setMenu(false);}));
+/* 背景（本文）を触ったら閉じる。狭い画面でナビが本文に重なるため。*/
+document.addEventListener('click',e=>{
+  if(innerWidth>900||!side.classList.contains('open'))return;
+  if(!side.contains(e.target)&&e.target!==mbtn&&!mbtn.contains(e.target))setMenu(false);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(side.classList.contains('open'))setMenu(false);
+  document.querySelectorAll('figure.zoom').forEach(f=>{f.classList.remove('zoom');f.setAttribute('aria-expanded','false');});
+});
+/* 図の拡大。クリックだけでなくEnter/Spaceでも開閉できるようにする。*/
+document.querySelectorAll('figure.book-figure').forEach(f=>{
+  const visual=f.querySelector('img,svg');
+  if(!visual)return;
+  f.setAttribute('role','button');
+  f.setAttribute('tabindex','0');
+  f.setAttribute('aria-expanded','false');
+  f.setAttribute('aria-label','図を拡大／縮小');
+  const naturalWidth=visual.tagName.toLowerCase()==='svg'
+    ? visual.viewBox.baseVal.width : Number(visual.getAttribute('width'));
+  f.style.setProperty('--figure-zoom-width',Math.min(1200,Math.max(900,naturalWidth||900))+'px');
+  const flip=()=>{const on=f.classList.toggle('zoom');f.setAttribute('aria-expanded',on?'true':'false');};
+  f.addEventListener('click',e=>{if(!e.target.closest('a'))flip();});
+  f.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();flip();}
+  });
+});
+/* 章名の絞り込み。56章を目で追わずに目的の章へ行けるようにする。*/
+const filt=side&&side.querySelector('.navfilter');
+if(filt)filt.addEventListener('input',()=>{
+  const q=filt.value.trim().toLowerCase();
+  const items=side.querySelectorAll('.toc a, .toc .part');
+  let lastPart=null,shown=0;
+  items.forEach(el=>{
+    if(el.classList.contains('part')){
+      if(lastPart)lastPart.classList.toggle('hide',shown===0);
+      lastPart=el;shown=0;el.classList.remove('hide');return;
+    }
+    const hit=!q||el.textContent.toLowerCase().includes(q);
+    el.classList.toggle('hide',!hit);
+    if(hit)shown++;
+  });
+  if(lastPart)lastPart.classList.toggle('hide',shown===0);
+});
+/* 平易版／専門版の切り替え。選んだ読み方は他の章へ移っても保つ。*/
+(function(){
+  const KEY='readmode';
+  function apply(m){
+    document.body.classList.toggle('mode-easy',m==='easy');
+    document.querySelectorAll('.readmode-sw button').forEach(b=>
+      b.setAttribute('aria-pressed',b.dataset.m===m?'true':'false'));
+  }
+  let mode='pro';
+  try{mode=localStorage.getItem(KEY)||'pro';}catch(e){}
+  apply(mode);
+  document.querySelectorAll('.readmode-sw button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      apply(b.dataset.m);
+      try{localStorage.setItem(KEY,b.dataset.m);}catch(e){}
+    });
+  });
+})();
+/* 用語のツールチップ。ページを移動せずにその場で定義を出す。*/
+(function(){
+  const terms=document.querySelectorAll('.term');
+  if(!terms.length)return;
+  const tip=document.createElement('div');
+  tip.id='tip';document.body.appendChild(tip);
+  let cur=null,hideTimer=null;
+  function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+  function hide(){cancelHide();tip.classList.remove('on');cur=null;}
+  function scheduleHide(){cancelHide();hideTimer=setTimeout(hide,180);}
+  function show(el){
+    cancelHide();
+    cur=el;
+    tip.innerHTML='<div class="tip-t"></div><div class="tip-b"></div>'+
+      '<a class="tip-l" href="'+el.dataset.u+'">用語集で見る →</a>'+
+      (el.dataset.p?'<a class="tip-l" href="'+el.dataset.p+'">経路の図で見る →</a>':'');
+    tip.querySelector('.tip-t').textContent=el.dataset.t;
+    tip.querySelector('.tip-b').textContent=el.dataset.d;
+    tip.classList.add('on');
+    const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+    let x=r.left+scrollX+r.width/2-w/2;
+    x=Math.max(scrollX+8,Math.min(x,scrollX+innerWidth-w-8));
+    /* 下に入らなければ上に出す */
+    let y=r.bottom+scrollY+8;
+    if(r.bottom+8+h>innerHeight)y=r.top+scrollY-h-8;
+    tip.style.left=x+'px';tip.style.top=Math.max(scrollY+8,y)+'px';
+  }
+  terms.forEach(el=>{
+    el.addEventListener('mouseenter',()=>show(el));
+    el.addEventListener('focus',()=>show(el));
+    el.addEventListener('mouseleave',scheduleHide);
+    el.addEventListener('blur',scheduleHide);
+    /* スマホ：タップで開閉 */
+    el.addEventListener('click',e=>{e.preventDefault();cur===el?hide():show(el);});
+  });
+  tip.addEventListener('mouseenter',cancelHide);
+  tip.addEventListener('mouseleave',hide);
+  document.addEventListener('click',e=>{
+    if(cur&&!e.target.closest('.term')&&!e.target.closest('#tip'))hide();
+  });
+  addEventListener('scroll',()=>{if(cur)hide();},{passive:true});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+})();
+/* いま読んでいる章を左ナビの中央に出す。ページ本体は動かさない（scrollIntoViewだと本文まで飛ぶ）。*/
+const cur=document.querySelector('.toc a.active');
+if(cur&&side)side.scrollTop=cur.offsetTop-side.clientHeight/2;
+</script>
+</body></html>
